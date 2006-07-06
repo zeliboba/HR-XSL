@@ -1,6 +1,6 @@
-<html><head><meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1"><title>Associations</title><meta name="generator" content="DocBook XSL Stylesheets V1.69.1"><link rel="start" href="index.html" title="CV Sieve Documentation"><link rel="up" href="ch06.html" title="Chapter 6. The Elements of HR-XML Resume"><link rel="prev" href="ch06s13.html" title="Achievements"><link rel="next" href="ch06s15.html" title="References"></head><body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF"><div class="navheader"><table width="100%" summary="Navigation header"><tr><th colspan="3" align="center">Associations</th></tr><tr><td width="20%" align="left"><a accesskey="p" href="ch06s13.html">Prev</a> </td><th width="60%" align="center">Chapter 6. The Elements of HR-XML Resume</th><td width="20%" align="right"> <a accesskey="n" href="ch06s15.html">Next</a></td></tr></table><hr></div><div class="sect1" lang="en"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a name="id2905035"></a>Associations</h2></div></div></div><p>
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1"><title>Associations</title><meta name="generator" content="DocBook XSL Stylesheets V1.70.1"><link rel="start" href="index.html" title="HR-XSL Documentation"><link rel="up" href="ch06.html" title="Chapter 6. The Elements of HR-XML Resume"><link rel="prev" href="ch06s13.html" title="Achievements"><link rel="next" href="ch06s15.html" title="References"></head><body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF"><div class="navheader"><table width="100%" summary="Navigation header"><tr><th colspan="3" align="center">Associations</th></tr><tr><td width="20%" align="left"><a accesskey="p" href="ch06s13.html">Prev</a> </td><th width="60%" align="center">Chapter 6. The Elements of HR-XML Resume</th><td width="20%" align="right"> <a accesskey="n" href="ch06s15.html">Next</a></td></tr></table><hr></div><div class="sect1" lang="en"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a name="Associations"></a>Associations</h2></div></div></div><p>
 				This element lists organizations (professional, social, etc.) to which the subject of the CV or résumé belongs.
-			</p><div class="sect2" lang="en"><div class="titlepage"><div><div><h3 class="title"><a name="id2905048"></a>Examples</h3></div></div></div><pre class="programlisting">
+			</p><div class="sect2" lang="en"><div class="titlepage"><div><div><h3 class="title"><a name="Associations.Examples"></a>Examples</h3></div></div></div><pre class="programlisting">
 &lt;Associations&gt;
     &lt;Association type="Professional"&gt;
         &lt;Name&gt;HR-XML Consortium&lt;/Name&gt;
@@ -16,20 +16,20 @@
             &lt;Deliverable&gt;Resume 2.0 Specification&lt;/Deliverable&gt;
         &lt;/Role&gt;
     &lt;/Association&gt;
-&lt;/Associations&gt;</pre></div><div class="sect2" lang="en"><div class="titlepage"><div><div><h3 class="title"><a name="id2905060"></a>CV Sieve Output</h3></div></div></div><pre class="screen">
+&lt;/Associations&gt;</pre></div><div class="sect2" lang="en"><div class="titlepage"><div><div><h3 class="title"><a name="Associations.HR-XSL_Output"></a>HR-XSL Output</h3></div></div></div><pre class="screen">
 Associations
 
 Professional Associations
 
      * Recruiting and Staffing Project Lead, HR-XML Consortium, March
-       2002 - July 2003</pre></div><div class="sect2" lang="en"><div class="titlepage"><div><div><h3 class="title"><a name="id2905092"></a>Notes</h3></div></div></div><p>
+       2002 - July 2003</pre></div><div class="sect2" lang="en"><div class="titlepage"><div><div><h3 class="title"><a name="Associations.Notes"></a>Notes</h3></div></div></div><p>
 					The list of associations is broken up into subcategories. Associations with identical <code class="sgmltag-attribute">type</code> attributes are grouped together.
 				</p><p>
 					The built-in types (Professional, Social, Community, Non-Profit, Religious, and Political) are automatically localized. To specify a custom type, prefix the <code class="sgmltag-attribute">type</code> attribute with <strong class="userinput"><code>x:</code></strong>.
 				</p><p>
 					Unlike the <code class="sgmltag-element">EmploymentHistory</code> element, if no <code class="sgmltag-element">EndDate</code> is given, the date is <span class="emphasis"><em>not</em></span> assumed to be a time period ranging from <code class="sgmltag-element">StartDate</code> to the present. Instead, no additional text is added. This allows the user to specify discontiguous dates for association membership, such as <strong class="userinput"><code>1999, 2001, and 2002</code></strong>.
 				</p><p>
-					HR-XML allows multiple roles to be specified for each association. This is not supported in CV Sieve. If you want to list multiple roles, you will need to duplicate the association for each role. Also, the <code class="sgmltag-element">StartDate</code> and <code class="sgmltag-element">EndDate</code> of a <code class="sgmltag-element">Role</code> are ignored.
+					HR-XML allows multiple roles to be specified for each association. This is not supported in HR-XSL. If you want to list multiple roles, you will need to duplicate the association for each role. Also, the <code class="sgmltag-element">StartDate</code> and <code class="sgmltag-element">EndDate</code> of a <code class="sgmltag-element">Role</code> are ignored.
 				</p><p>
 					The HR-XML website has <a href="http://ns.hr-xml.org/2_4/HR-XML-2_4/SEP/Resume.html#_Toc127541951" target="_top">more documentation</a>.
 				</p></div></div><div class="navfooter"><hr><table width="100%" summary="Navigation footer"><tr><td width="40%" align="left"><a accesskey="p" href="ch06s13.html">Prev</a> </td><td width="20%" align="center"><a accesskey="u" href="ch06.html">Up</a></td><td width="40%" align="right"> <a accesskey="n" href="ch06s15.html">Next</a></td></tr><tr><td width="40%" align="left" valign="top">Achievements </td><td width="20%" align="center"><a accesskey="h" href="index.html">Home</a></td><td width="40%" align="right" valign="top"> References</td></tr></table></div></body></html>
