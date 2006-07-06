@@ -50,7 +50,7 @@
 			A better approach is to put all of your CV or résumé content into a single "master" copy, then let your computer automatically generate and format different versions of the document from this master. The HR-XSL project provides the tools for exactly this purpose. All you need to do is create a CV in a special XML format. HR-XSL can then take this XML file as input and create a PDF, HTML, or plain text version as output.
 		</para>
 
-		<sect1 id="HR-XML Format">
+		<sect1 id="The_HR-XML_Format">
 			<title>The HR-XML Format</title>
 			
 			<para>
@@ -70,7 +70,7 @@
 			</para>
 		</sect1>
 	
-		<sect1 id="HR-XSL Stylesheets">
+		<sect1 id="The_HR-XSL_Stylesheets">
 			<title>The HR-XSL Stylesheets</title>
 			<para>
 				HR-XML is only part of the solution. XML is easy for computers to understand, but most humans would rather not have to read raw XML data. More importantly, recruiters who have not yet adopted the HR-XML standard would probably reject your job application if you sent them a CV or résumé in XML form.
@@ -85,17 +85,17 @@
 	    	</para>
 	
 			<para>
-				  Another benefit of HR-XSL is that it simplifies the writing process. By allowing the computer to handle the presentation of the data, you can focus on the specific content of your CV or résumé and avoid worrying about line spacing, indentation, and other formatting concerns. Updating the content is also easier because you can defer (or entirely ignore) decisions such as what font to use<footnote><para>HR-XSL itself does not provide explicit customization of appearance, such as font family or size. Instead, the output appearance can be changed through HTML stylesheets and DocBook parameters, as described in <xref linkend="DocBookCustomization"/>.</para></footnote> or how to display a date (e.g., September 7, Sep. 7, or 9/7). The automation provided by the stylesheets also ensures consistency: When and if you decide to specify a font or date format, it will be used consistently throughout the document.
+				  Another benefit of HR-XSL is that it simplifies the writing process. By allowing the computer to handle the presentation of the data, you can focus on the specific content of your CV or résumé and avoid worrying about line spacing, indentation, and other formatting concerns. Updating the content is also easier because you can defer (or entirely ignore) decisions such as what font to use<footnote><para>HR-XSL itself does not provide explicit customization of appearance, such as font family or size. Instead, the output appearance can be changed through HTML stylesheets and DocBook parameters, as described in <xref linkend="DocBook_Customization"/>.</para></footnote> or how to display a date (e.g., September 7, Sep. 7, or 9/7). The automation provided by the stylesheets also ensures consistency: When and if you decide to specify a font or date format, it will be used consistently throughout the document.
 			</para>
 
 		</sect1>
 
 	</chapter>
 
-	<chapter>
+	<chapter id="Installation">
 		<title>Installation</title>
 
-		<sect1>
+		<sect1 id="Quick_Install">
 			<title>Quick Install</title>
 			
 			<orderedlist>
@@ -112,7 +112,7 @@
 			</orderedlist>
 		</sect1>
 				
-		<sect1 id="requirements">
+		<sect1 id="Requirements">
 
 			<title>Requirements</title>
 
@@ -162,9 +162,9 @@
 
 	</chapter>
 	
-	<chapter>
+	<chapter id="Usage">
 		<title>Usage</title>
-		<sect1>
+		<sect1 id="Quick_Start">
 			<title>Quick Start</title>
 			<orderedlist>
 				<listitem>
@@ -184,7 +184,7 @@
 				</listitem>
 			</orderedlist>
 		</sect1>
-		<sect1>
+		<sect1 id="The_HR-XSL_Helper_Script">
 			<title>The HR-XSL Helper Script</title>
 			<para>
 				HR-XSL supplies an Ant script that offers a convenient way of using the stylesheets. Located in the <filename class="directory">util</filename> directory, it is designed to be used in conjunction with your own Ant scripts. You simply import the <filename>hr-xsl.xml</filename> script and call the pre-defined macros, as shown in <xref linkend="helper.script.example"/>.
@@ -219,7 +219,7 @@
 				
 		</sect1>
 
-		<sect1>
+		<sect1 id="Validating_your_CV_or_Résumé">
 			<title>Validating your CV or Résumé</title>
 			<para>
 				One of the major benefits of using XML for your CV or résumé is validation. An XML validation tool can scan through the document and look for errors. If, for example, you enter a date in your CV as <userinput>2003-06-31</userinput>, the tool will flag it as invalid.
@@ -240,7 +240,7 @@
 			</para>
 		</sect1>
 		
-		<sect1>
+		<sect1 id="Extended_Characters">
 			<title>Extended Characters</title>
 			
 			<para>
@@ -255,21 +255,21 @@
 
 	</chapter>				
 
-	<chapter>
+	<chapter id="Customization">
 		<title>Customization</title>
 
 		<para>
 			Generating a CV or résumé with HR-XSL is a two-stage process: First, HR-XSL generates a DocBook version of the original file; next, this DocBook file is transformed into a PDF, HTML, or plain text version. Thus, to fully control the look of your CV or résumé, you need to customize the two stages individually, depending on the kind of customization you want. For content modifications (e.g., names of headings, date format, etc.), you would customize the HR-XSL transformation. For appearance modifications (e.g., font sizes, whether page numbers are displayed, etc.), you would customize the DocBook transformation.
 		</para>
 
-		<sect1>
+		<sect1 id="HR-XSL_Customization">
 			<title>HR-XSL Customization</title>
 
 			<para>
 				There are two ways to customize the output of HR-XSL: stylesheet parameters and localized messages.
 			</para>
 
-			<sect2>
+			<sect2 id="Stylesheet_Parameters">
 				<title>Stylesheet Parameters</title>
 		
 				<para>
@@ -302,7 +302,7 @@
 			
 			</sect2>
 
-			<sect2 id="LocalizedMessages">
+			<sect2 id="Localized_Messages">
 				<title>Localized Messages</title>
 			
 				<para>
@@ -322,14 +322,14 @@
 			</sect2>
 		</sect1> 
 				
-		<sect1 id="DocBookCustomization">
+		<sect1 id="DocBook_Customization">
 			<title>DocBook Customization</title>
 
 			<para>
 				Most DocBook customization is accomplished with stylesheet parameters. For the HTML transformation, Cascading Style Sheets can also be used.
 			</para>
 
-			<sect2>
+			<sect2 id="DocBook_Customization.Stylesheet_Parameters">
 				<title>Stylesheet Parameters</title>
 
 				<para>
@@ -367,7 +367,7 @@
 
 			</sect2>
 
-			<sect2>
+			<sect2 id="DocBook_Customization.Cascading_Style_Sheets">
 				<title>Cascading Style Sheets</title>
 
 				<para>
@@ -401,21 +401,21 @@
 		</sect1>
 	</chapter>
 	
-	<chapter>
+	<chapter id="Examples">
 		<title>Examples</title>
 		
 		<para>
 			The HR-XSL distribution provides some sample HR-XML Resume documents that illustrate how the stylesheets can be used. They are located in the <filename class="directory">examples</filename> directory.
 		</para>
 		
-		<sect1>
+		<sect1 id="Résumé">
 			<title>Résumé</title>
 			
 			<para>This is a simple résumé that can be used as a template for one of your own. Located in the <filename class="directory">resume</filename> sub-directory, it illustrates only a small subset of the capabilities of HR-XSL. To create a PDF, HTML, or plain text version of this example, go to the command line and type <userinput>ant pdf</userinput>, <userinput>ant html</userinput>, or <userinput>ant text</userinput>, respectively.
 			</para>
 		</sect1>
 		
-		<sect1>
+		<sect1 id="Curriculum_Vitae">
 			<title>Curriculum Vitae</title>
 			
 			<para>
@@ -455,7 +455,7 @@
 			
 		</sect1>
 		
-		<sect1>
+		<sect1 id="XML_Resume">
 			<title>XML Resume</title>
 			
 			<para>
@@ -470,7 +470,7 @@
 
 	</chapter>
 	
-	<chapter>
+	<chapter id="Elements_of_HR-XML_Resume">
 		<title>The Elements of HR-XML Resume</title>
 		
 		<para>
@@ -481,21 +481,21 @@
 			Note that all of the example output is the plain text version. Other versions will look slightly different, primarily in the use of bold and italic fonts.
 		</para>
 		
-		<sect1>
+		<sect1 id="ContactInfo">
 			<title>ContactInfo</title>
 			
 			<para>
 				The <sgmltag>ContactInfo</sgmltag> element is simply a container for two other elements: <sgmltag>PersonName</sgmltag> and <sgmltag>ContactMethod</sgmltag>.
 			</para>
 			
-			<sect2>
+			<sect2 id="PersonName">
 				<title>PersonName</title>
 				
 				<para>
 					<sgmltag>PersonName</sgmltag> describes, as you might expect, a person's name.
 				</para>
 				
-				<sect3>
+				<sect3 id="PersonName.Examples">
 					<title>Examples</title>
 					
 					<informalexample>
@@ -519,7 +519,7 @@
 					
 				</sect3>
 				
-				<sect3>
+				<sect3 id="PersonName.HR-XSL_Output">
 					<title>HR-XSL Output</title>
 
 					<para>
@@ -536,7 +536,7 @@
 
 				</sect3>
 				
-				<sect3>
+				<sect3 id="PersonName.Notes">
 					<title>Notes</title>
 
 					<para>
@@ -554,18 +554,17 @@
 
 			</sect2>
 			
-			<sect2>
+			<sect2 id="ContactMethod">
 				<title>ContactMethod</title>
 
 				<para>
 					<sgmltag>ContactMethod</sgmltag> describes a person's telephone numbers, e-mail address, website, and postal address.
 				</para>
 				
-				<sect3>
+				<sect3 id="Telephone_numbers_e-mail_and_website">
 					<title>Telephone numbers, e-mail, and website</title>					
 						
-					<sect4>
-					
+					<sect4 id="Telephone_numbers_e-mail_and_website.Examples">
 						<title>Examples</title>
 
 						<programlisting>
@@ -598,7 +597,7 @@
 
 					</sect4>
 
-					<sect4>
+					<sect4 id="Telephone_numbers_e-mail_and_website.HR-XSL_Output">
 						<title>HR-XSL Output</title>
 
 						<screen>
@@ -611,7 +610,7 @@ Telephone +1 (925) 598-5209
 
 					</sect4>
 
-					<sect4>
+					<sect4 id="Telephone_numbers_e-mail_and_website.Notes">
 						<title>Notes</title>
 
 						<para>
@@ -625,11 +624,10 @@ Telephone +1 (925) 598-5209
 					
 				</sect3>
 				
-				<sect3>
+				<sect3 id="PostalAddress">
 					<title>PostalAddress</title>
 
-					<sect4>
-
+					<sect4 id="PostalAddress.Examples">
 						<title>Examples</title>
 
 						<programlisting>
@@ -693,7 +691,7 @@ Telephone +1 (925) 598-5209
 
 					</sect4>
 
-					<sect4>
+					<sect4 id="PostalAddress.HR-XSL_Output">
 						<title>HR-XSL Output</title>
 
 						<screen>
@@ -724,7 +722,7 @@ Mexico					</screen>
 
 					</sect4>
 
-					<sect4>
+					<sect4 id="PostalAddress.Notes">
 						<title>Notes</title>
 
 						<para>
@@ -732,7 +730,7 @@ Mexico					</screen>
 						</para>
 						
 						<para>
-							If you need to change the translated names, you will have to create a new translation file as described in <xref linkend="LocalizedMessages"/>.
+							If you need to change the translated names, you will have to create a new translation file as described in <xref linkend="Localized_Messages"/>.
 						</para>
 
 						<para>
@@ -746,14 +744,14 @@ Mexico					</screen>
 			
 		</sect1>
 
-		<sect1>
+		<sect1 id="ExecutiveSummary">
 			<title>ExecutiveSummary</title>
 			
 			<para>
 				This element gives an overview of the person described in the CV or résumé.
 			</para>
 			
-			<sect2>
+			<sect2 id="ExecutiveSummary.Examples">
 				<title>Examples</title>
 				
 				<programlisting>
@@ -768,7 +766,7 @@ Mexico					</screen>
 
 			</sect2>
 			
-			<sect2>
+			<sect2 id="ExecutiveSummary.HR-XSL_Output">
 				<title>HR-XSL Output</title>
 				
 				<screen>
@@ -785,7 +783,7 @@ such community.	</screen>
 
 			</sect2>
 										
-			<sect2>
+			<sect2 id="ExecutiveSummary.Notes">
 				<title>Notes</title>
 				
 				<para>
@@ -799,14 +797,14 @@ such community.	</screen>
 			
 		</sect1>
 
-		<sect1>
+		<sect1 id="Objective">
 			<title>Objective</title>
 			
 			<para>
 				This element describes the position being sought or the desired career path or professional objectives.
 			</para>
 
-			<sect2>
+			<sect2 id="Objective.Examples">
 				<title>Examples</title>
 
 				<programlisting>
@@ -816,7 +814,7 @@ such community.	</screen>
 
 			</sect2>
 
-			<sect2>
+			<sect2 id="Objective.HR-XSL_Output">
 				<title>HR-XSL Output</title>
 
 				<screen>
@@ -825,7 +823,7 @@ experience.		</screen>
 
 			</sect2>
 
-			<sect2>
+			<sect2 id="Objective.Notes">
 				<title>Notes</title>
 
 				<para>
@@ -837,14 +835,14 @@ experience.		</screen>
 
 		</sect1>
 
-		<sect1>
+		<sect1 id="EmploymentHistory">
 			<title>EmploymentHistory</title>
 			
 			<para>
 				The <sgmltag>EmploymentHistory</sgmltag> element is a list of past and present employment.
 			</para>
 
-			<sect2>
+			<sect2 id="EmploymentHistory.Examples">
 				<title>Examples</title>
 
 				<programlisting>
@@ -887,7 +885,7 @@ experience.		</screen>
 
 			</sect2>
 
-			<sect2>
+			<sect2 id="EmploymentHistory.HR-XSL_Output">
 				<title>HR-XSL Output</title>
 
 				<screen>
@@ -907,7 +905,7 @@ Work Experience
 
 			</sect2>
 
-			<sect2>
+			<sect2 id="EmploymentHistory.Notes">
 				<title>Notes</title>
 
 				<para>
@@ -929,14 +927,14 @@ Work Experience
 
 		</sect1>
 
-		<sect1>
+		<sect1 id="EducationHistory">
 			<title>EducationHistory</title>
 			
 			<para>
 				This section is designed for listing academic degrees, but it also supports partial degree completion.
 			</para>
 
-			<sect2>
+			<sect2 id="EducationHistory.Examples">
 				<title>Examples</title>
 
 				<programlisting>
@@ -1026,7 +1024,7 @@ Work Experience
 
 			</sect2>
 
-			<sect2>
+			<sect2 id="EducationHistory.HR-XSL_Output">
 				<title>HR-XSL Output</title>
 
 				<screen>
@@ -1043,7 +1041,7 @@ Education
 
 			</sect2>
 
-			<sect2>
+			<sect2 id="EducationHistory.Notes">
 				<title>Notes</title>
 				
 				<para>
@@ -1057,7 +1055,7 @@ Education
 
 		</sect1>
 
-		<sect1>
+		<sect1 id="LicensesAndCertifications">
 			<title>LicensesAndCertifications</title>
 			
 			<para>
@@ -1069,7 +1067,7 @@ Education
 			</para>
 		</sect1>
 
-		<sect1>
+		<sect1 id="MilitaryHistory">
 			<title>MilitaryHistory</title>
 			
 			<para>
@@ -1081,7 +1079,7 @@ Education
 			</para>
 		</sect1>
 
-		<sect1>
+		<sect1 id="PatentHistory">
 			<title>PatentHistory</title>
 			
 			<para>
@@ -1093,14 +1091,14 @@ Education
 			</para>
 		</sect1>
 
-		<sect1>
+		<sect1 id="PublicationHistory">
 			<title>PublicationHistory</title>
 			
 			<para>
 				This element lists all types of published work.
 			</para>
 
-			<sect2>
+			<sect2 id="PublicationHistory.Examples">
 				<title>Examples</title>
 
 				<programlisting>
@@ -1182,7 +1180,7 @@ Education
 
 			</sect2>
 
-			<sect2>
+			<sect2 id="PublicationHistory.HR-XSL_Output">
 				<title>HR-XSL Output</title>
 
 				<screen>
@@ -1213,7 +1211,7 @@ Other Publications
 
 			</sect2>
 
-			<sect2>
+			<sect2 id="PublicationHistory.Notes">
 				<title>Notes</title>
 
 				<para>
@@ -1231,14 +1229,14 @@ Other Publications
 
 		</sect1>
 
-		<sect1>
+		<sect1 id="SpeakingEventsHistory">
 			<title>SpeakingEventsHistory</title>
 			
 			<para>
 				This element describes formal talks, panel discussions, and other speaking engagements.
 			</para>
 
-			<sect2>
+			<sect2 id="SpeakingEventsHistory.Examples">
 				<title>Examples</title>
 
 				<programlisting>
@@ -1272,7 +1270,7 @@ Other Publications
 
 			</sect2>
 
-			<sect2>
+			<sect2 id="SpeakingEventsHistory.HR-XSL_Output">
 				<title>HR-XSL Output</title>
 
 				<screen>
@@ -1285,7 +1283,7 @@ Speaking Events
 
 			</sect2>
 
-			<sect2>
+			<sect2 id="SpeakingEventsHistory.Notes">
 				<title>Notes</title>
 
 				<para>
@@ -1295,14 +1293,14 @@ Speaking Events
 
 		</sect1>
 
-		<sect1>
+		<sect1 id="Qualifications">
 			<title>Qualifications</title>
 			
 			<para>
 				The <sgmltag>Qualifications</sgmltag> element describes professional skills.
 			</para>
 			
-			<sect2>
+			<sect2 id="Qualifications.Examples">
 				<title>Examples</title>
 
 				<programlisting>
@@ -1327,7 +1325,7 @@ Speaking Events
 
 			</sect2>
 
-			<sect2>
+			<sect2 id="Qualifications.HR-XSL_Output">
 				<title>HR-XSL Output</title>
 
 				<screen>
@@ -1339,7 +1337,7 @@ Qualifications
 
 			</sect2>
 
-			<sect2>
+			<sect2 id="Qualifications.Notes">
 				<title>Notes</title>
 
 				<para>
@@ -1358,14 +1356,14 @@ Qualifications
 
 		</sect1>
 
-		<sect1>
+		<sect1 id="Languages">
 			<title>Languages</title>
 			
 			<para>
 				The <sgmltag>Languages</sgmltag> element lists foreign language skills.
 			</para>
 			
-			<sect2>
+			<sect2 id="Languages.Examples">
 				<title>Examples</title>
 
 				<programlisting>
@@ -1387,7 +1385,7 @@ Qualifications
 
 			</sect2>
 
-			<sect2>
+			<sect2 id="Languages.HR-XSL_Output">
 				<title>HR-XSL Output</title>
 
 				<screen>
@@ -1399,7 +1397,7 @@ Languages
 
 			</sect2>
 
-			<sect2>
+			<sect2 id="Languages.Notes">
 				<title>Notes</title>
 
 				<para>
@@ -1418,14 +1416,14 @@ Languages
 
 		</sect1>
 
-		<sect1>
+		<sect1 id="Achievements">
 			<title>Achievements</title>
 			
 			<para>
 				This element provides a place to list honors and awards.
 			</para>
 			
-			<sect2>
+			<sect2 id="Achievements.Examples">
 				<title>Examples</title>
 
 				<programlisting>
@@ -1441,7 +1439,7 @@ Languages
 
 			</sect2>
 
-			<sect2>
+			<sect2 id="Achievements.HR-XSL_Output">
 				<title>HR-XSL Output</title>
 
 				<screen>
@@ -1451,7 +1449,7 @@ Achievements
 
 			</sect2>
 
-			<sect2>
+			<sect2 id="Achievements.Notes">
 				<title>Notes</title>
 
 				<para>
@@ -1462,14 +1460,14 @@ Achievements
 
 		</sect1>
 
-		<sect1>
+		<sect1 id="Associations">
 			<title>Associations</title>
 			
 			<para>
 				This element lists organizations (professional, social, etc.) to which the subject of the CV or résumé belongs.
 			</para>
 			
-			<sect2>
+			<sect2 id="Associations.Examples">
 				<title>Examples</title>
 
 				<programlisting>
@@ -1492,7 +1490,7 @@ Achievements
 
 			</sect2>
 
-			<sect2>
+			<sect2 id="Associations.HR-XSL_Output">
 				<title>HR-XSL Output</title>
 
 				<screen>
@@ -1505,7 +1503,7 @@ Professional Associations
 
 			</sect2>
 
-			<sect2>
+			<sect2 id="Associations.Notes">
 				<title>Notes</title>
 				
 				<para>
@@ -1532,7 +1530,7 @@ Professional Associations
 
 		</sect1>
 
-		<sect1>
+		<sect1 id="References">
 			<title>References</title>
 			
 			<para>
@@ -1545,7 +1543,7 @@ Professional Associations
 
 		</sect1>
 
-		<sect1>
+		<sect1 id="SecurityCredentials">
 			<title>SecurityCredentials</title>
 			
 			<para>
@@ -1557,14 +1555,14 @@ Professional Associations
 			</para>
 		</sect1>
 
-		<sect1>
+		<sect1 id="ResumeAdditionalItems">
 			<title>ResumeAdditionalItems</title>
 			
 			<para>
 				This element provides a place to store supplemental information such as professional interests, hobbies, and volunteer activities.
 			</para>
 
-			<sect2>
+			<sect2 id="ResumeAdditionalItems.Examples">
 				<title>Examples</title>
 
 				<programlisting>
@@ -1595,7 +1593,7 @@ Professional Associations
 
 			</sect2>
 
-			<sect2>
+			<sect2 id="ResumeAdditionalItems.HR-XSL_Output">
 				<title>HR-XSL Output</title>
 
 				<screen>
@@ -1615,7 +1613,7 @@ Hobbies
 
 			</sect2>
 
-			<sect2>
+			<sect2 id="ResumeAdditionalItems.Notes">
 				<title>Notes</title>
 
 				<para>
@@ -1630,7 +1628,7 @@ Hobbies
 
 		</sect1>
 
-		<sect1>
+		<sect1 id="SupportingMaterials">
 			<title>SupportingMaterials</title>
 			
 			<para>
@@ -1642,7 +1640,7 @@ Hobbies
 			</para>
 		</sect1>
 
-		<sect1>
+		<sect1 id="Dates">
 			<title>Dates</title>
 
 			<para>
@@ -1688,7 +1686,7 @@ Hobbies
 
 	</chapter>
 	
-	<chapter>
+	<chapter id="Support">
 		<title>Support</title>
 		<para>
 			To report a bug, request a new feature, or discuss this project with other users, visit the <ulink url="http://sourceforge.net/projects/hr-xsl/">HR-XSL project page</ulink>.
@@ -1731,7 +1729,7 @@ Hobbies
 
 	</appendix>
 	
-	<appendix>
+	<appendix id="Copyright_License_and_Disclaimer">
 		<title>Copyright, License, and Disclaimer</title>
 
 		<para>

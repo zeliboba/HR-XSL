@@ -5,7 +5,7 @@
 	<import file="../../util/hr-xsl.xml"/>
 
 	<!-- For some reason, trying to use the chunk.xsl stylesheet fails with SAXON 8.7.3, so we use xsltproc instead. -->
-	<target name="html-chunked">
+	<target name="html-chunked" depends="validate">
 		<delete>
 			<fileset dir="../html" includes="*.html"/>
 		</delete>
@@ -15,8 +15,14 @@
 	</target>
 
 	<!-- This target works fine with the bundled SAXON processor, and the output looks slightly better than docbook2html. -->
-	<target name="html-nochunks">
+	<target name="html-nochunks" depends="validate">
 		<translate-docbook in="documentation.xml" out="../documentation.html" format="html"/>
+	</target>
+	
+	<target name="validate">
+		<exec executable="xmllint" failonerror="true">
+			<arg line="--noout --dtdvalid ../../lib/docbook-xml-4.4/docbookx.dtd documentation.xml"/>
+		</exec>
 	</target>
 
 </project>
