@@ -22,7 +22,7 @@
 		</copyright>
 	</bookinfo>
 
-	<chapter>
+	<chapter id="Introduction">
 
 		<title>Introduction</title>
 
@@ -50,7 +50,7 @@
 			A better approach is to put all of your CV or résumé content into a single "master" copy, then let your computer automatically generate and format different versions of the document from this master. The HR-XSL project provides the tools for exactly this purpose. All you need to do is create a CV in a special XML format. HR-XSL can then take this XML file as input and create a PDF, HTML, or plain text version as output.
 		</para>
 
-		<sect1>
+		<sect1 id="HR-XML Format">
 			<title>The HR-XML Format</title>
 			
 			<para>
@@ -70,7 +70,7 @@
 			</para>
 		</sect1>
 	
-		<sect1>
+		<sect1 id="HR-XSL Stylesheets">
 			<title>The HR-XSL Stylesheets</title>
 			<para>
 				HR-XML is only part of the solution. XML is easy for computers to understand, but most humans would rather not have to read raw XML data. More importantly, recruiters who have not yet adopted the HR-XML standard would probably reject your job application if you sent them a CV or résumé in XML form.

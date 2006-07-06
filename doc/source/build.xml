@@ -6,9 +6,12 @@
 
 	<!-- For some reason, trying to use the chunk.xsl stylesheet fails with SAXON 8.7.3, so we use xsltproc instead. -->
 	<target name="html-chunked">
-		<exec executable="xsltproc"> 
-			<arg line="-o ../html/ ../../lib/docbook-xsl-1.69.1/html/chunk.xsl documentation.xml"/> 
-		</exec> 
+		<delete>
+			<fileset dir="../html" includes="*.html"/>
+		</delete>
+		<exec executable="xsltproc">  
+			<arg line="-o ../html/ ../../lib/docbook-xsl-1.70.1/html/chunk.xsl documentation.xml"/>  
+		</exec>  
 	</target>
 
 	<!-- This target works fine with the bundled SAXON processor, and the output looks slightly better than docbook2html. -->
