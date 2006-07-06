@@ -2,7 +2,7 @@
 
 <project default="html-chunked">
 
-	<import file="../../util/cvsieve.xml"/>
+	<import file="../../util/hr-xsl.xml"/>
 
 	<!-- For some reason, trying to use the chunk.xsl stylesheet fails with SAXON 8.7.3, so we use xsltproc instead. -->
 	<target name="html-chunked">

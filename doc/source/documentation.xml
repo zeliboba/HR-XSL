@@ -5,7 +5,7 @@
 <book>
 
 	<bookinfo>
-		<title>CV Sieve Documentation</title>
+		<title>HR-XSL Documentation</title>
 		<authorgroup>
 			<author>
 				<surname>Harmon</surname>
@@ -47,18 +47,18 @@
 		</para>
 		
 		<para>
-			A better approach is to put all of your CV or résumé content into a single "master" copy, then let your computer automatically generate and format different versions of the document from this master. The CV Sieve project provides the tools for exactly this purpose. All you need to do is create a CV in a special XML format. CV Sieve can then take this XML file as input and create a PDF, HTML, or plain text version as output.
+			A better approach is to put all of your CV or résumé content into a single "master" copy, then let your computer automatically generate and format different versions of the document from this master. The HR-XSL project provides the tools for exactly this purpose. All you need to do is create a CV in a special XML format. HR-XSL can then take this XML file as input and create a PDF, HTML, or plain text version as output.
 		</para>
 
 		<sect1>
 			<title>The HR-XML Format</title>
 			
 			<para>
-				CV Sieve can't work with just any XML data; it has to use a specific XML format so that it can understand the content of a CV or résumé. The question is: Which format should it use? Over the years, a variety of custom XML formats have been developed for CVs and résumés, but none of them has grown popular enough to become an industry standard. Meanwhile, the human resources industry saw the benefits of XML and formed an independent, non-profit group called <ulink url="http://www.hr-xml.org/">The HR-XML Consortium</ulink>. Its key mission is to promote and standardize the use of XML in human resources.
+				HR-XSL can't work with just any XML data; it has to use a specific XML format so that it can understand the content of a CV or résumé. The question is: Which format should it use? Over the years, a variety of custom XML formats have been developed for CVs and résumés, but none of them has grown popular enough to become an industry standard. Meanwhile, the human resources industry saw the benefits of XML and formed an independent, non-profit group called <ulink url="http://www.hr-xml.org/">The HR-XML Consortium</ulink>. Its key mission is to promote and standardize the use of XML in human resources.
 			</para>
 			
 			<para>
-	        	One of the XML vocabularies published by HR-XML is the Resume specification. This specification defines a CV or résumé document in pure XML, allowing the content to be processed by machines and exchanged easily on the Internet. Like all of the HR-XML specifications, it is fully documented and freely available. The latest version can be downloaded by visiting the <ulink url="http://sourceforge.net/project/showfiles.php?group_id=161286&amp;package_id=195356">File Releases</ulink> section of the CV Sieve project website.
+	        	One of the XML vocabularies published by HR-XML is the Resume specification. This specification defines a CV or résumé document in pure XML, allowing the content to be processed by machines and exchanged easily on the Internet. Like all of the HR-XML specifications, it is fully documented and freely available. The latest version can be downloaded by visiting the <ulink url="http://sourceforge.net/project/showfiles.php?group_id=161286&amp;package_id=195356">File Releases</ulink> section of the HR-XSL project website.
 			</para>
 			
 			<para>
@@ -66,18 +66,18 @@
 	    	</para>
 	
 			<para>
-				For these reasons, CV Sieve is designed exclusively for the HR-XML Resume specification. You will therefore need to convert your CV or résumé to the HR-XML format in order to use CV Sieve.
+				For these reasons, HR-XSL is designed exclusively for the HR-XML Resume specification. You will therefore need to convert your CV or résumé to the HR-XML format in order to use HR-XSL.
 			</para>
 		</sect1>
 	
 		<sect1>
-			<title>The CV Sieve Stylesheets</title>
+			<title>The HR-XSL Stylesheets</title>
 			<para>
 				HR-XML is only part of the solution. XML is easy for computers to understand, but most humans would rather not have to read raw XML data. More importantly, recruiters who have not yet adopted the HR-XML standard would probably reject your job application if you sent them a CV or résumé in XML form.
 			</para>
 			
 			<para>
-				The purpose of the CV Sieve project, then, is to convert an HR-XML Resume file into a more attractive, human-readable form. It does this by providing a library of XSLT stylesheets that can convert any valid HR-XML Resume file into <ulink url="http://en.wikipedia.org/wiki/Docbook">DocBook</ulink> XML format. DocBook was chosen because it is a generic format that can then be transformed into various presentation formats: HTML, PDF, plain text, and more.<footnote><para>You need not learn DocBook in order to use CV Sieve; it is only an intermediate representation. CV Sieve provides scripts for the full HTML/PDF/text conversion, allowing you to ignore DocBook completely if you wish.</para></footnote>
+				The purpose of the HR-XSL project, then, is to convert an HR-XML Resume file into a more attractive, human-readable form. It does this by providing a library of XSLT stylesheets that can convert any valid HR-XML Resume file into <ulink url="http://en.wikipedia.org/wiki/Docbook">DocBook</ulink> XML format. DocBook was chosen because it is a generic format that can then be transformed into various presentation formats: HTML, PDF, plain text, and more.<footnote><para>You need not learn DocBook in order to use HR-XSL; it is only an intermediate representation. HR-XSL provides scripts for the full HTML/PDF/text conversion, allowing you to ignore DocBook completely if you wish.</para></footnote>
 	    	</para>
 	
 			<para>
@@ -85,7 +85,7 @@
 	    	</para>
 	
 			<para>
-				  Another benefit of CV Sieve is that it simplifies the writing process. By allowing the computer to handle the presentation of the data, you can focus on the specific content of your CV or résumé and avoid worrying about line spacing, indentation, and other formatting concerns. Updating the content is also easier because you can defer (or entirely ignore) decisions such as what font to use<footnote><para>CV Sieve itself does not provide explicit customization of appearance, such as font family or size. Instead, the output appearance can be changed through HTML stylesheets and DocBook parameters, as described in <xref linkend="DocBookCustomization"/>.</para></footnote> or how to display a date (e.g., September 7, Sep. 7, or 9/7). The automation provided by the stylesheets also ensures consistency: When and if you decide to specify a font or date format, it will be used consistently throughout the document.
+				  Another benefit of HR-XSL is that it simplifies the writing process. By allowing the computer to handle the presentation of the data, you can focus on the specific content of your CV or résumé and avoid worrying about line spacing, indentation, and other formatting concerns. Updating the content is also easier because you can defer (or entirely ignore) decisions such as what font to use<footnote><para>HR-XSL itself does not provide explicit customization of appearance, such as font family or size. Instead, the output appearance can be changed through HTML stylesheets and DocBook parameters, as described in <xref linkend="DocBookCustomization"/>.</para></footnote> or how to display a date (e.g., September 7, Sep. 7, or 9/7). The automation provided by the stylesheets also ensures consistency: When and if you decide to specify a font or date format, it will be used consistently throughout the document.
 			</para>
 
 		</sect1>
@@ -101,7 +101,7 @@
 			<orderedlist>
 				<listitem>
 					<simpara>
-						Download <ulink url="http://sourceforge.net/project/showfiles.php?group_id=161286&amp;package_id=181690">CV Sieve</ulink> from the project website.
+						Download <ulink url="http://sourceforge.net/project/showfiles.php?group_id=161286&amp;package_id=181690">HR-XSL</ulink> from the project website.
 					</simpara>
 				</listitem>
 				<listitem>
@@ -117,7 +117,7 @@
 			<title>Requirements</title>
 
 			<para>
-				CV Sieve comes bundled with a script and the recommended third-party libraries for XSLT and DocBook processing. Therefore, CV Sieve requires only three additional packages to get started:
+				HR-XSL comes bundled with a script and the recommended third-party libraries for XSLT and DocBook processing. Therefore, HR-XSL requires only three additional packages to get started:
 			</para>
 				
 			<itemizedlist>
@@ -151,11 +151,11 @@
 			</itemizedlist>
 				
 			<para>
-				Strictly speaking, however, CV Sieve requires none of the above. An <ulink url="http://en.wikipedia.org/wiki/Xslt">XSLT 2.0</ulink>-compatible processor is all that is needed to convert an HR-XML Resume into DocBook format. You could then write some basic XSLT code to convert the DocBook file into any format you wish. In other words, the bundled script and libraries are certainly not required to use the CV Sieve stylesheets.
+				Strictly speaking, however, HR-XSL requires none of the above. An <ulink url="http://en.wikipedia.org/wiki/Xslt">XSLT 2.0</ulink>-compatible processor is all that is needed to convert an HR-XML Resume into DocBook format. You could then write some basic XSLT code to convert the DocBook file into any format you wish. In other words, the bundled script and libraries are certainly not required to use the HR-XSL stylesheets.
 			</para>
 			
 			<para>
-				Realistically, though, CV Sieve has only been tested with the XSLT processors and DocBook stylesheets included in the <filename class="directory">lib</filename> directory of the distribution. In fact, <ulink url="http://saxon.sourceforge.net/">Saxon-B</ulink> is probably the only open-source XSLT processor capable of handling the CV Sieve stylesheets properly. It is therefore recommended that you use only the bundled libraries (unless you have some compelling reason not to).
+				Realistically, though, HR-XSL has only been tested with the XSLT processors and DocBook stylesheets included in the <filename class="directory">lib</filename> directory of the distribution. In fact, <ulink url="http://saxon.sourceforge.net/">Saxon-B</ulink> is probably the only open-source XSLT processor capable of handling the HR-XSL stylesheets properly. It is therefore recommended that you use only the bundled libraries (unless you have some compelling reason not to).
 			</para>
 
 		</sect1>
@@ -169,7 +169,7 @@
 			<orderedlist>
 				<listitem>
 					<simpara>
-						Locate the directory where you unpacked CV Sieve and go to the <filename class="directory">examples/resume</filename> sub-directory
+						Locate the directory where you unpacked HR-XSL and go to the <filename class="directory">examples/resume</filename> sub-directory
 					</simpara>
 				</listitem>
 				<listitem>
@@ -185,9 +185,9 @@
 			</orderedlist>
 		</sect1>
 		<sect1>
-			<title>The CV Sieve Helper Script</title>
+			<title>The HR-XSL Helper Script</title>
 			<para>
-				CV Sieve supplies an Ant script that offers a convenient way of using the stylesheets. Located in the <filename class="directory">util</filename> directory, it is designed to be used in conjunction with your own Ant scripts. You simply import the <filename>cvsieve.xml</filename> script and call the pre-defined macros, as shown in <xref linkend="helper.script.example"/>.
+				HR-XSL supplies an Ant script that offers a convenient way of using the stylesheets. Located in the <filename class="directory">util</filename> directory, it is designed to be used in conjunction with your own Ant scripts. You simply import the <filename>hr-xsl.xml</filename> script and call the pre-defined macros, as shown in <xref linkend="helper.script.example"/>.
 			</para>
 		
 			<example id="helper.script.example">
@@ -197,7 +197,7 @@
 <![CDATA[<project default="all">
 
     <property file="build.properties"/>
-    <import file="../../util/cvsieve.xml"/>
+    <import file="../../util/hr-xsl.xml"/>
 
     <target name="all" depends="html, pdf, text"/>
 
@@ -248,7 +248,7 @@
 			</para>
 			
 			<para>
-				With CV Sieve, these special codes are not necessary. As long as your editor supports Unicode and is able to save XML files in the UTF-8 encoding, you can simply enter the extended characters directly into your editor. They will show up correctly in the final CV or résumé output.
+				With HR-XSL, these special codes are not necessary. As long as your editor supports Unicode and is able to save XML files in the UTF-8 encoding, you can simply enter the extended characters directly into your editor. They will show up correctly in the final CV or résumé output.
 			</para>
 			
 		</sect1>
@@ -259,25 +259,25 @@
 		<title>Customization</title>
 
 		<para>
-			Generating a CV or résumé with CV Sieve is a two-stage process: First, CV Sieve generates a DocBook version of the original file; next, this DocBook file is transformed into a PDF, HTML, or plain text version. Thus, to fully control the look of your CV or résumé, you need to customize the two stages individually, depending on the kind of customization you want. For content modifications (e.g., names of headings, date format, etc.), you would customize the CV Sieve transformation. For appearance modifications (e.g., font sizes, whether page numbers are displayed, etc.), you would customize the DocBook transformation.
+			Generating a CV or résumé with HR-XSL is a two-stage process: First, HR-XSL generates a DocBook version of the original file; next, this DocBook file is transformed into a PDF, HTML, or plain text version. Thus, to fully control the look of your CV or résumé, you need to customize the two stages individually, depending on the kind of customization you want. For content modifications (e.g., names of headings, date format, etc.), you would customize the HR-XSL transformation. For appearance modifications (e.g., font sizes, whether page numbers are displayed, etc.), you would customize the DocBook transformation.
 		</para>
 
 		<sect1>
-			<title>CV Sieve Customization</title>
+			<title>HR-XSL Customization</title>
 
 			<para>
-				There are two ways to customize the output of CV Sieve: stylesheet parameters and localized messages.
+				There are two ways to customize the output of HR-XSL: stylesheet parameters and localized messages.
 			</para>
 
 			<sect2>
 				<title>Stylesheet Parameters</title>
 		
 				<para>
-					XSL stylesheets can change their behavior based on user-specified parameters. For example, a parameter such as <userinput>roman.headings=true</userinput> might tell a stylesheet to use Roman numerals for chapter headings. <xref linkend="cvsieve.stylesheet.parameters"/> lists the parameters that can be used in CV Sieve.<footnote><para>Currently, there is only one parameter, but future versions of CV Sieve should offer more.</para></footnote>
+					XSL stylesheets can change their behavior based on user-specified parameters. For example, a parameter such as <userinput>roman.headings=true</userinput> might tell a stylesheet to use Roman numerals for chapter headings. <xref linkend="hr-xsl.stylesheet.parameters"/> lists the parameters that can be used in HR-XSL.<footnote><para>Currently, there is only one parameter, but future versions of HR-XSL should offer more.</para></footnote>
 				</para>
 		
-				<table id="cvsieve.stylesheet.parameters">
-					<title>CV Sieve Stylesheet Parameters</title>
+				<table id="hr-xsl.stylesheet.parameters">
+					<title>HR-XSL Stylesheet Parameters</title>
 					<tgroup cols="3">
 						<thead>
 							<row>
@@ -297,7 +297,7 @@
 				</table>
 			
 				<para>
-		   			The method of specifying these parameters depends on how you use the stylesheets. If you are using the included CV Sieve helper script, a parameter would simply be specified in the <userinput>cvsieve.params</userinput> property. (Refer to the <filename>build.properties</filename> files in the <filename class="directory">examples</filename> directory to see how this is done.) For other methods, you will need to refer to the documentation of your stylesheet processor.
+		   			The method of specifying these parameters depends on how you use the stylesheets. If you are using the included HR-XSL helper script, a parameter would simply be specified in the <userinput>hr-xsl.params</userinput> property. (Refer to the <filename>build.properties</filename> files in the <filename class="directory">examples</filename> directory to see how this is done.) For other methods, you will need to refer to the documentation of your stylesheet processor.
 				</para>
 			
 			</sect2>
@@ -306,11 +306,11 @@
 				<title>Localized Messages</title>
 			
 				<para>
-					All of the CV Sieve stylesheets have been <emphasis>localized</emphasis>. Simply stated, this means you can easily change the output of CV Sieve to a different language. To do so, go to the <filename class="directory">xsl/common/messages</filename> directory and make a copy of the <filename>en.xml</filename> file, giving it a name that represents your language. For example, if you want to create a French localization, you should use the <ulink url="http://www.loc.gov/standards/iso639-2/langcodes.html">two-letter language code</ulink> for French, <emphasis>fr</emphasis>. You can then edit this new <filename>fr.xml</filename> file and translate all the English messages to their French equivalents.<footnote><para>If you have created a localization file for your language, please consider submitting it to the <ulink url="mailto:trevor@vocaro.com">CV Sieve maintainer</ulink> so that it can be included in the distribution for others to use.</para></footnote>
+					All of the HR-XSL stylesheets have been <emphasis>localized</emphasis>. Simply stated, this means you can easily change the output of HR-XSL to a different language. To do so, go to the <filename class="directory">xsl/common/messages</filename> directory and make a copy of the <filename>en.xml</filename> file, giving it a name that represents your language. For example, if you want to create a French localization, you should use the <ulink url="http://www.loc.gov/standards/iso639-2/langcodes.html">two-letter language code</ulink> for French, <emphasis>fr</emphasis>. You can then edit this new <filename>fr.xml</filename> file and translate all the English messages to their French equivalents.<footnote><para>If you have created a localization file for your language, please consider submitting it to the <ulink url="mailto:trevor@vocaro.com">HR-XSL maintainer</ulink> so that it can be included in the distribution for others to use.</para></footnote>
 				</para>
 			
 				<para>
-					Once you have created a localized message file, you can tell CV Sieve to use it simply by setting the XSL parameter <userinput>lang</userinput> to the appropriate language code. Continuing with the French example above, if you are using the included Ant helper script, you would change the résumé example to French by adding the following string to the <userinput>cvsieve.params</userinput> variable of the <filename>build.properties</filename> file:
+					Once you have created a localized message file, you can tell HR-XSL to use it simply by setting the XSL parameter <userinput>lang</userinput> to the appropriate language code. Continuing with the French example above, if you are using the included Ant helper script, you would change the résumé example to French by adding the following string to the <userinput>hr-xsl.params</userinput> variable of the <filename>build.properties</filename> file:
 				</para>
 			
 				<blockquote>
@@ -333,7 +333,7 @@
 				<title>Stylesheet Parameters</title>
 
 				<para>
-					XSL stylesheets can change their behavior based on user-specified parameters. For example, a parameter such as <userinput>roman.headings=true</userinput> might tell a stylesheet to use Roman numerals for chapter headings. <xref linkend="docbook.stylesheet.parameters"/> lists some DocBook-specific parameters that you might need when using CV Sieve. (Note that this is only a small subset of the available DocBook parameters; for a complete list, refer to <ulink url="http://www.sagehill.net/docbookxsl/">DocBook XSL: The Complete Guide</ulink>.)
+					XSL stylesheets can change their behavior based on user-specified parameters. For example, a parameter such as <userinput>roman.headings=true</userinput> might tell a stylesheet to use Roman numerals for chapter headings. <xref linkend="docbook.stylesheet.parameters"/> lists some DocBook-specific parameters that you might need when using HR-XSL. (Note that this is only a small subset of the available DocBook parameters; for a complete list, refer to <ulink url="http://www.sagehill.net/docbookxsl/">DocBook XSL: The Complete Guide</ulink>.)
 				</para>
 		
 				<table id="docbook.stylesheet.parameters">
@@ -362,7 +362,7 @@
 				</table>
 
 				<para>
-		   			The method of specifying these parameters depends on how you use the stylesheets. If you are using the included CV Sieve helper script, a parameter would simply be specified in the <userinput>docbook.params</userinput> property. (Refer to the <filename>build.properties</filename> files in the <filename class="directory">examples</filename> directory to see how this is done.) For other methods, you will need to refer to the documentation of your stylesheet processor.
+		   			The method of specifying these parameters depends on how you use the stylesheets. If you are using the included HR-XSL helper script, a parameter would simply be specified in the <userinput>docbook.params</userinput> property. (Refer to the <filename>build.properties</filename> files in the <filename class="directory">examples</filename> directory to see how this is done.) For other methods, you will need to refer to the documentation of your stylesheet processor.
 				</para>
 
 			</sect2>
@@ -382,7 +382,7 @@
 					</listitem>
 					<listitem>
 						<simpara>
-							Use CV Sieve to generate the HTML file.
+							Use HR-XSL to generate the HTML file.
 						</simpara>
 					</listitem>
 					<listitem>
@@ -393,7 +393,7 @@
 				</orderedlist>
 				
 				<para>
-					Refer to the CV Sieve <filename class="directory">examples</filename> directory for examples of CSS files and how to specify them.
+					Refer to the HR-XSL <filename class="directory">examples</filename> directory for examples of CSS files and how to specify them.
 				</para>
 
 			</sect2> 
@@ -405,13 +405,13 @@
 		<title>Examples</title>
 		
 		<para>
-			The CV Sieve distribution provides some sample HR-XML Resume documents that illustrate how the stylesheets can be used. They are located in the <filename class="directory">examples</filename> directory.
+			The HR-XSL distribution provides some sample HR-XML Resume documents that illustrate how the stylesheets can be used. They are located in the <filename class="directory">examples</filename> directory.
 		</para>
 		
 		<sect1>
 			<title>Résumé</title>
 			
-			<para>This is a simple résumé that can be used as a template for one of your own. Located in the <filename class="directory">resume</filename> sub-directory, it illustrates only a small subset of the capabilities of CV Sieve. To create a PDF, HTML, or plain text version of this example, go to the command line and type <userinput>ant pdf</userinput>, <userinput>ant html</userinput>, or <userinput>ant text</userinput>, respectively.
+			<para>This is a simple résumé that can be used as a template for one of your own. Located in the <filename class="directory">resume</filename> sub-directory, it illustrates only a small subset of the capabilities of HR-XSL. To create a PDF, HTML, or plain text version of this example, go to the command line and type <userinput>ant pdf</userinput>, <userinput>ant html</userinput>, or <userinput>ant text</userinput>, respectively.
 			</para>
 		</sect1>
 		
@@ -419,7 +419,7 @@
 			<title>Curriculum Vitae</title>
 			
 			<para>
-				The Curriculum Vitae example, located in the <filename class="directory">cv</filename> sub-directory, is a large, comprehensive document that illustrates most of CV Sieve's features. It is based on the actual CV of a university professor. To create a PDF, HTML, or plain text version of this example, go to the command line and type <userinput>ant pdf</userinput>, <userinput>ant html</userinput>, or <userinput>ant text</userinput>, respectively.
+				The Curriculum Vitae example, located in the <filename class="directory">cv</filename> sub-directory, is a large, comprehensive document that illustrates most of HR-XSL's features. It is based on the actual CV of a university professor. To create a PDF, HTML, or plain text version of this example, go to the command line and type <userinput>ant pdf</userinput>, <userinput>ant html</userinput>, or <userinput>ant text</userinput>, respectively.
 			</para>
 			
 			<para>
@@ -431,7 +431,7 @@
 					<formalpara>
 						<title>Functional employment history</title>
 						<para>
-							Employment histories are typically presented in one of two forms: chronological or functional. The former lists each job in order as a single group, while the latter separates the job descriptions into categories. CV Sieve supports both types, and the CV example given here shows the functional type. Notice how each job specifies an <sgmltag>OrgIndustry/IndustryDescription</sgmltag> element, which is then used by CV Sieve to group the jobs into categories.
+							Employment histories are typically presented in one of two forms: chronological or functional. The former lists each job in order as a single group, while the latter separates the job descriptions into categories. HR-XSL supports both types, and the CV example given here shows the functional type. Notice how each job specifies an <sgmltag>OrgIndustry/IndustryDescription</sgmltag> element, which is then used by HR-XSL to group the jobs into categories.
 						</para>
 					</formalpara>
 				</listitem>
@@ -447,7 +447,7 @@
 					<formalpara>
 						<title>HR-XML "hacks"</title>
 						<para>
-							Some users may have unusual requirements for their CV. The university professor in this example wanted to list the names of all the courses he has taught throughout his career. Although the HR-XML Resume specification has no element to contain such information, it is possible to include it by "hacking" the spec. Here, the course information is stored as a single employment position, even though multiple jobs are represented by each course. In addition, the <emphasis>Teaching</emphasis> job category is used, and the <sgmltag>EmployerOrgName</sgmltag> element is left empty. As a result, CV Sieve correctly formats the list of courses as the user desired. Although this kind of "hack" is not recommended when exchanging HR-XML data with others, it is useful when the user only wishes to create an HR-XML Resume document for internal use.
+							Some users may have unusual requirements for their CV. The university professor in this example wanted to list the names of all the courses he has taught throughout his career. Although the HR-XML Resume specification has no element to contain such information, it is possible to include it by "hacking" the spec. Here, the course information is stored as a single employment position, even though multiple jobs are represented by each course. In addition, the <emphasis>Teaching</emphasis> job category is used, and the <sgmltag>EmployerOrgName</sgmltag> element is left empty. As a result, HR-XSL correctly formats the list of courses as the user desired. Although this kind of "hack" is not recommended when exchanging HR-XML data with others, it is useful when the user only wishes to create an HR-XML Resume document for internal use.
 							</para>
 					</formalpara>
 				</listitem>
@@ -459,7 +459,7 @@
 			<title>XML Resume</title>
 			
 			<para>
-				The CV Sieve project maintains a set of stylesheets, described in <xref linkend="XMLResume"/>, that can translate an <ulink url="http://xmlresume.sourceforge.net/">XML Resume</ulink> document directly to an HR-XML Resume document.
+				The HR-XSL project maintains a set of stylesheets, described in <xref linkend="XMLResume"/>, that can translate an <ulink url="http://xmlresume.sourceforge.net/">XML Resume</ulink> document directly to an HR-XML Resume document.
 			</para>
 			
 			<para>
@@ -474,7 +474,7 @@
 		<title>The Elements of HR-XML Resume</title>
 		
 		<para>
-			This chapter describes the top-level elements of the HR-XML Resume specification. It provides at least one example, along with the corresponding CV Sieve output, for each element. Links to the full HR-XML documentation are also provided.
+			This chapter describes the top-level elements of the HR-XML Resume specification. It provides at least one example, along with the corresponding HR-XSL output, for each element. Links to the full HR-XML documentation are also provided.
 		</para>
 		
 		<para>
@@ -520,7 +520,7 @@
 				</sect3>
 				
 				<sect3>
-					<title>CV Sieve Output</title>
+					<title>HR-XSL Output</title>
 
 					<para>
 						<computeroutput>
@@ -544,7 +544,7 @@
 					</para>
 
 					<para>
-						CV Sieve ignores <sgmltag>LegalName</sgmltag>, <sgmltag>AlternateScript</sgmltag>, and <sgmltag>FamilyName/@primary</sgmltag>.
+						HR-XSL ignores <sgmltag>LegalName</sgmltag>, <sgmltag>AlternateScript</sgmltag>, and <sgmltag>FamilyName/@primary</sgmltag>.
 					</para>
 					
 					<para>
@@ -599,7 +599,7 @@
 					</sect4>
 
 					<sect4>
-						<title>CV Sieve Output</title>
+						<title>HR-XSL Output</title>
 
 						<screen>
 Telephone +1 (925) 598-5209
@@ -694,7 +694,7 @@ Telephone +1 (925) 598-5209
 					</sect4>
 
 					<sect4>
-						<title>CV Sieve Output</title>
+						<title>HR-XSL Output</title>
 
 						<screen>
 P.O. Box 1243
@@ -769,7 +769,7 @@ Mexico					</screen>
 			</sect2>
 			
 			<sect2>
-				<title>CV Sieve Output</title>
+				<title>HR-XSL Output</title>
 				
 				<screen>
 Abstract
@@ -789,7 +789,7 @@ such community.	</screen>
 				<title>Notes</title>
 				
 				<para>
-					As indicated in the example above, CV Sieve converts an <sgmltag>ExecutiveSummary</sgmltag> into an abstract, placed at the beginning of the document.
+					As indicated in the example above, HR-XSL converts an <sgmltag>ExecutiveSummary</sgmltag> into an abstract, placed at the beginning of the document.
 				</para>
 				
 				<para>
@@ -817,7 +817,7 @@ such community.	</screen>
 			</sect2>
 
 			<sect2>
-				<title>CV Sieve Output</title>
+				<title>HR-XSL Output</title>
 
 				<screen>
 Objective. To find an opportunity that best fits my skills and
@@ -888,7 +888,7 @@ experience.		</screen>
 			</sect2>
 
 			<sect2>
-				<title>CV Sieve Output</title>
+				<title>HR-XSL Output</title>
 
 				<screen>
 Work Experience
@@ -915,11 +915,11 @@ Work Experience
 				</para>
 
 				<para>
-					The HR-XML Resume specification is very limited in terms of describing a position. It offers only a single element called <sgmltag>Description</sgmltag>. To expand the capabilities of HR-XML Resume, CV Sieve handles this element in a special way: If the text is all on a single line, it is rendered as a simple paragraph; otherwise, each line is rendered as a bullet point (as in the example above).
+					The HR-XML Resume specification is very limited in terms of describing a position. It offers only a single element called <sgmltag>Description</sgmltag>. To expand the capabilities of HR-XML Resume, HR-XSL handles this element in a special way: If the text is all on a single line, it is rendered as a simple paragraph; otherwise, each line is rendered as a bullet point (as in the example above).
 				</para>
 
 				<para>
-					Normally, CV Sieve generates a work history in the order that each position appears in the XML file. You can alter this behavior so that CV Sieve groups the positions into categorizes. In other words, you can choose between a chronological or a functional employment history. To create a functional history, simply specify a category in the <sgmltag>OrgIndustry/IndustryDescription</sgmltag> element of each <sgmltag>PositionHistory</sgmltag> element. (Note that <emphasis>all</emphasis> of the positions must specify this element.) Refer to the <filename>examples/cv/cv.xml</filename> file for an example.
+					Normally, HR-XSL generates a work history in the order that each position appears in the XML file. You can alter this behavior so that HR-XSL groups the positions into categorizes. In other words, you can choose between a chronological or a functional employment history. To create a functional history, simply specify a category in the <sgmltag>OrgIndustry/IndustryDescription</sgmltag> element of each <sgmltag>PositionHistory</sgmltag> element. (Note that <emphasis>all</emphasis> of the positions must specify this element.) Refer to the <filename>examples/cv/cv.xml</filename> file for an example.
 				</para>
 
 				<para>
@@ -1027,7 +1027,7 @@ Work Experience
 			</sect2>
 
 			<sect2>
-				<title>CV Sieve Output</title>
+				<title>HR-XSL Output</title>
 
 				<screen>
 Education
@@ -1047,7 +1047,7 @@ Education
 				<title>Notes</title>
 				
 				<para>
-					The <sgmltag>EducationHistory</sgmltag> element is quite comprehensive and includes many details and HR-specific data that most people do not require for their CVs or résumés. CV Sieve ignores most of these but may support them in later versions.
+					The <sgmltag>EducationHistory</sgmltag> element is quite comprehensive and includes many details and HR-specific data that most people do not require for their CVs or résumés. HR-XSL ignores most of these but may support them in later versions.
 				</para>
 				
 				<para>
@@ -1061,7 +1061,7 @@ Education
 			<title>LicensesAndCertifications</title>
 			
 			<para>
-				This element is not supported by CV Sieve.
+				This element is not supported by HR-XSL.
 			</para>
 
 			<para>
@@ -1073,7 +1073,7 @@ Education
 			<title>MilitaryHistory</title>
 			
 			<para>
-				This element is not supported by CV Sieve.
+				This element is not supported by HR-XSL.
 			</para>
 
 			<para>
@@ -1085,7 +1085,7 @@ Education
 			<title>PatentHistory</title>
 			
 			<para>
-				This element is not supported by CV Sieve.
+				This element is not supported by HR-XSL.
 			</para>
 
 			<para>
@@ -1183,7 +1183,7 @@ Education
 			</sect2>
 
 			<sect2>
-				<title>CV Sieve Output</title>
+				<title>HR-XSL Output</title>
 
 				<screen>
 Publications
@@ -1221,7 +1221,7 @@ Other Publications
 				</para>
 				
 				<para>
-					For numbered elements, such as <sgmltag>Volume</sgmltag>, <sgmltag>Issue</sgmltag>, and <sgmltag>PageNumber</sgmltag>, do not add a label. CV Sieve will automatically add a localized label for you. For example, <userinput>12</userinput>, not <userinput>Issue 12</userinput>.
+					For numbered elements, such as <sgmltag>Volume</sgmltag>, <sgmltag>Issue</sgmltag>, and <sgmltag>PageNumber</sgmltag>, do not add a label. HR-XSL will automatically add a localized label for you. For example, <userinput>12</userinput>, not <userinput>Issue 12</userinput>.
 				</para>
 
 				<para>
@@ -1273,7 +1273,7 @@ Other Publications
 			</sect2>
 
 			<sect2>
-				<title>CV Sieve Output</title>
+				<title>HR-XSL Output</title>
 
 				<screen>
 Speaking Events
@@ -1328,7 +1328,7 @@ Speaking Events
 			</sect2>
 
 			<sect2>
-				<title>CV Sieve Output</title>
+				<title>HR-XSL Output</title>
 
 				<screen>
 Qualifications
@@ -1343,11 +1343,11 @@ Qualifications
 				<title>Notes</title>
 
 				<para>
-					The <sgmltag>Qualifications</sgmltag> element is simply a hierarchy of <sgmltag>Competency</sgmltag> elements. HR-XML allows an unbounded number of levels in the hierarchy, but CV Sieve supports only two levels, as shown in the example above.
+					The <sgmltag>Qualifications</sgmltag> element is simply a hierarchy of <sgmltag>Competency</sgmltag> elements. HR-XML allows an unbounded number of levels in the hierarchy, but HR-XSL supports only two levels, as shown in the example above.
 				</para>
 				
 				<para>
-					The <sgmltag>Competency</sgmltag> element is complex and very detailed, as evidenced by the <ulink url="http://ns.hr-xml.org/2_4/HR-XML-2_4/CPO/Competencies.html">documentation</ulink>, but CV Sieve ignores everything except for the <sgmltag class="attribute">name</sgmltag> attribute. A <sgmltag class="attribute">name</sgmltag> on the first level of competencies is assumed to be a skill category, and a <sgmltag class="attribute">name</sgmltag> on the second level is assumed to be a skill in this category.
+					The <sgmltag>Competency</sgmltag> element is complex and very detailed, as evidenced by the <ulink url="http://ns.hr-xml.org/2_4/HR-XML-2_4/CPO/Competencies.html">documentation</ulink>, but HR-XSL ignores everything except for the <sgmltag class="attribute">name</sgmltag> attribute. A <sgmltag class="attribute">name</sgmltag> on the first level of competencies is assumed to be a skill category, and a <sgmltag class="attribute">name</sgmltag> on the second level is assumed to be a skill in this category.
 				</para>
 
 				<para>
@@ -1388,7 +1388,7 @@ Qualifications
 			</sect2>
 
 			<sect2>
-				<title>CV Sieve Output</title>
+				<title>HR-XSL Output</title>
 
 				<screen>
 Languages
@@ -1403,11 +1403,11 @@ Languages
 				<title>Notes</title>
 
 				<para>
-					To specify a language, use the appropriate <emphasis>two-letter</emphasis> <ulink url="http://www.loc.gov/standards/iso639-2/langcodes.html">ISO 639-1</ulink> code. HR-XML allows either a two- or three-letter code, but CV Sieve supports only the two-letter codes.
+					To specify a language, use the appropriate <emphasis>two-letter</emphasis> <ulink url="http://www.loc.gov/standards/iso639-2/langcodes.html">ISO 639-1</ulink> code. HR-XML allows either a two- or three-letter code, but HR-XSL supports only the two-letter codes.
 				</para>
 
 				<para>
-					In CV Sieve, the actual values for the <sgmltag>Read</sgmltag>, <sgmltag>Write</sgmltag>, and <sgmltag>Speak</sgmltag> elements are ignored. They are considered true if they are merely specified, as shown in the above example.
+					In HR-XSL, the actual values for the <sgmltag>Read</sgmltag>, <sgmltag>Write</sgmltag>, and <sgmltag>Speak</sgmltag> elements are ignored. They are considered true if they are merely specified, as shown in the above example.
 				</para>
 
 				<para>
@@ -1442,7 +1442,7 @@ Languages
 			</sect2>
 
 			<sect2>
-				<title>CV Sieve Output</title>
+				<title>HR-XSL Output</title>
 
 				<screen>
 Achievements
@@ -1493,7 +1493,7 @@ Achievements
 			</sect2>
 
 			<sect2>
-				<title>CV Sieve Output</title>
+				<title>HR-XSL Output</title>
 
 				<screen>
 Associations
@@ -1521,7 +1521,7 @@ Professional Associations
 				</para>
 
 				<para>
-					HR-XML allows multiple roles to be specified for each association. This is not supported in CV Sieve. If you want to list multiple roles, you will need to duplicate the association for each role. Also, the <sgmltag>StartDate</sgmltag> and <sgmltag>EndDate</sgmltag> of a <sgmltag>Role</sgmltag> are ignored.
+					HR-XML allows multiple roles to be specified for each association. This is not supported in HR-XSL. If you want to list multiple roles, you will need to duplicate the association for each role. Also, the <sgmltag>StartDate</sgmltag> and <sgmltag>EndDate</sgmltag> of a <sgmltag>Role</sgmltag> are ignored.
 				</para>
 
 				<para>
@@ -1536,7 +1536,7 @@ Professional Associations
 			<title>References</title>
 			
 			<para>
-				This element is not supported by CV Sieve.
+				This element is not supported by HR-XSL.
 			</para>
 
 			<para>
@@ -1549,7 +1549,7 @@ Professional Associations
 			<title>SecurityCredentials</title>
 			
 			<para>
-				This element is not supported by CV Sieve.
+				This element is not supported by HR-XSL.
 			</para>
 
 			<para>
@@ -1596,7 +1596,7 @@ Professional Associations
 			</sect2>
 
 			<sect2>
-				<title>CV Sieve Output</title>
+				<title>HR-XSL Output</title>
 
 				<screen>
 Additional Items
@@ -1634,7 +1634,7 @@ Hobbies
 			<title>SupportingMaterials</title>
 			
 			<para>
-				This element is not supported by CV Sieve.
+				This element is not supported by HR-XSL.
 			</para>
 
 			<para>
@@ -1646,11 +1646,11 @@ Hobbies
 			<title>Dates</title>
 
 			<para>
-				There is no top-level element for dates; however, the date type deserves its own section because almost every top-level element specifies dates, and CV Sieve always formats them the same way.
+				There is no top-level element for dates; however, the date type deserves its own section because almost every top-level element specifies dates, and HR-XSL always formats them the same way.
 			</para>
 			
 			<para>
-				CV Sieve supports the following date elements:
+				HR-XSL supports the following date elements:
 			</para>
 
 			<itemizedlist>
@@ -1674,7 +1674,7 @@ Hobbies
 					<formalpara>
 						<title>AnyDate</title>
 						<para>
-							If the value matches the pattern YYYY-MM-DD, it is formatted like the <sgmltag>YearMonth</sgmltag> type, except that the value for DD is inserted. (For example, <userinput>2003-10-23</userinput> becomes <computeroutput>Oct. 23, 2003</computeroutput>.) CV Sieve also recognizes the pre-defined values <userinput>notApplicable</userinput> and <userinput>notKnown</userinput> and localizes them accordingly. Otherwise, the value is formatted as-is.
+							If the value matches the pattern YYYY-MM-DD, it is formatted like the <sgmltag>YearMonth</sgmltag> type, except that the value for DD is inserted. (For example, <userinput>2003-10-23</userinput> becomes <computeroutput>Oct. 23, 2003</computeroutput>.) HR-XSL also recognizes the pre-defined values <userinput>notApplicable</userinput> and <userinput>notKnown</userinput> and localizes them accordingly. Otherwise, the value is formatted as-is.
 						</para>
 					</formalpara>
 				</listitem>
@@ -1691,11 +1691,11 @@ Hobbies
 	<chapter>
 		<title>Support</title>
 		<para>
-			To report a bug, request a new feature, or discuss this project with other users, visit the <ulink url="http://sourceforge.net/projects/cvsieve/">CV Sieve project page</ulink>.
+			To report a bug, request a new feature, or discuss this project with other users, visit the <ulink url="http://sourceforge.net/projects/hr-xsl/">HR-XSL project page</ulink>.
 		</para>
 		
 		<para>
-			CV Sieve is maintained by <ulink url="mailto:trevor@vocaro.com">Trevor Harmon</ulink>.
+			HR-XSL is maintained by <ulink url="mailto:trevor@vocaro.com">Trevor Harmon</ulink>.
 		</para>
 	</chapter>
 	
@@ -1718,7 +1718,7 @@ Hobbies
 		</itemizedlist>
 			
 		<para>
-			 Still, the project remains somewhat popular, and a number of users have converted their unstructured résumés to the XML Resume specification. Some of these users may now wish to convert their CV or résumé content to the HR-XML standard. To support these users, the CV Sieve project maintains a set of stylesheets that can translate an <ulink url="http://xmlresume.sourceforge.net/">XML Resume</ulink> document directly to an HR-XML Resume document.
+			 Still, the project remains somewhat popular, and a number of users have converted their unstructured résumés to the XML Resume specification. Some of these users may now wish to convert their CV or résumé content to the HR-XML standard. To support these users, the HR-XSL project maintains a set of stylesheets that can translate an <ulink url="http://xmlresume.sourceforge.net/">XML Resume</ulink> document directly to an HR-XML Resume document.
 		</para>
 		
 		<para>
