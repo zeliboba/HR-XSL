@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--
+This Ant build script defines several helper tasks for using CV Sieve. To use, simply import it, then call the pre-defined macros. See the CV Sieve examples for some examples.
+Author: Trevor Harmon
+-->
+
+<project name="cvsieve" default="all">
+
+	<!-- Grab the directory of this build file (instead of the directory of whatever includes this file)-->
+	<dirname property="cvsieve.basedir" file="${ant.file.cvsieve}"/>
+
+	<!-- Location of the DocBook XSL stylesheets -->
+	<property name="docbook.xsl" value="${cvsieve.basedir}/../lib/docbook-xsl-1.70.1"/> 
+
+	<!-- Make sure the parameters have been initialized so that the -->
+	<!-- macros don't fail if the user doesn't specify them. -->
+	<property name="docbook.params" value=""/>
+	<property name="cvsieve.params" value=""/>
+
+	<path id="saxon.classpath">   
+		<fileset dir="${cvsieve.basedir}/../lib/saxon-b-8.7.3">   
+			<include name="**/*.jar"/>   
+		</fileset>   
+	</path>   
+
+	<path id="fop.classpath">   
+		<fileset dir="${cvsieve.basedir}/../lib/fop-0.20.5">   
+			<include name="**/*.jar"/>   
+		</fileset>   
+	</path>   
+
+	<!-- Load the FOP task -->
+    <taskdef name="fop" classname="org.apache.fop.tools.anttasks.Fop" classpathref="fop.classpath"/>
+
+	<!-- Performs an XSL translation of an XML file using the Saxon processor. -->
+	<macrodef name="saxon">
+		<attribute name="in" description="An XML file"/>
+		<attribute name="xsl" description="A stylesheet for translating the XML file"/>
+		<attribute name="out" description="A file to receive the output of the translation"/>
+		<attribute name="params" description="The XSL parameters to be passed to the stylesheet" default=""/>
+		<sequential>
+			<echo level="info" message="Translating '@{in}' to '@{out}'..."/>
+			<!-- Theoretically, we should be able to use the built-in xslt Ant task here, but there doesn't-->
+			<!-- seem to be any way of forcing the task to use an external processor, such as Saxon, even -->
+			<!-- when a classpath is specified. Instead, we call Saxon directly. -->
+			<java classname="net.sf.saxon.Transform" classpathref="saxon.classpath" fork="true">  
+				<arg line="-o '@{out}' '@{in}' '@{xsl}' @{params}"/>  
+			</java>  
+		</sequential>
+	</macrodef>
+
+	<!-- Converts an HR-XML resume file into DocBook format -->
+	<macrodef name="translate-resume">
+		<attribute name="in" description="The filename of the HR-XML resume"/>
+		<sequential>
+			<dirname property="in.dir" file="@{in}"/>
+			<basename property="in.filename" file="@{in}" suffix=".xml"/> 
+			<property name="in" value="${in.dir}/${in.filename}"/>
+			<saxon in="@{in}" out="${in}-docbook.xml"
+				xsl="${cvsieve.basedir}/../xsl/docbook/cvsieve.xsl"
+				params="${cvsieve.params}"/>
+		</sequential>
+	</macrodef>
+
+	<!-- Converts a DocBook file into a specified format -->
+	<macrodef name="translate-docbook"> 
+		<attribute name="in" description="The DocBook file"/>
+		<attribute name="out" description="The output file"/>
+		<attribute name="format" description="The format of the output; must be a DocBook XSL sub-directory"/>
+		<attribute name="stylesheet" description="The filename of the root stylesheet to use" default="docbook.xsl"/>
+		<sequential> 
+			<saxon
+				in="@{in}"
+				out="@{out}"
+				xsl="${docbook.xsl}/@{format}/@{stylesheet}"
+				params="${docbook.params}"/>
+		</sequential> 
+	</macrodef> 
+
+	<!-- Converts an HR-XML resume to HTML -->
+	<macrodef name="resume-to-html"> 
+		<attribute name="in" description="The filename of the HR-XML resume"/> 
+		<sequential> 
+			<translate-resume in="@{in}"/> 
+			<dirname property="in.dir" file="@{in}"/> 
+			<basename property="in.filename" file="@{in}" suffix=".xml"/>  
+			<property name="in" value="${in.dir}/${in.filename}"/>
+			<translate-docbook in="${in}-docbook.xml" out="${in}.html" format="html"/> 
+		</sequential> 
+	</macrodef> 
+	
+	<!-- Converts an HR-XML resume to PDF -->
+	<macrodef name="resume-to-pdf"> 
+		<attribute name="in" description="The filename of the HR-XML resume"/> 
+		<sequential> 
+			<translate-resume in="@{in}"/> 
+			<dirname property="in.dir" file="@{in}"/> 
+			<basename property="in.filename" file="@{in}" suffix=".xml"/>  
+			<property name="in" value="${in.dir}/${in.filename}"/>
+			<translate-docbook in="${in}-docbook.xml" out="${in}.fo" format="fo"/> 
+			<fop fofile="${in}.fo" outfile="${in}.pdf" format="application/pdf"/>
+		</sequential> 
+	</macrodef> 
+	
+	<!-- Converts an HR-XML resume to plain text -->
+	<macrodef name="resume-to-text"> 
+		<attribute name="in" description="The filename of the HR-XML resume"/> 
+		<sequential>
+			<translate-resume in="@{in}"/> 
+			<dirname property="in.dir" file="@{in}"/> 
+			<basename property="in.filename" file="@{in}" suffix=".xml"/>  
+			<property name="in" value="${in.dir}/${in.filename}"/>
+			<!-- First convert to HTML -->
+			<translate-docbook in="${in}-docbook.xml" out="${in}.html" format="html"/> 
+			<!-- Then use a text-mode web browser to convert the HTML to plain text -->
+			<exec executable="lynx" output="${in}.txt">
+				<arg line="-dump -nolist '${in}.html'"/>
+			</exec>
+		</sequential> 
+	</macrodef> 
+	
+</project>

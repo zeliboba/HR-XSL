@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<project default="all">
+
+	<property name="stylesheet" value="../../xsl/xmlresume/XMLResume-to-HR-XML.xsl"/>
+
+	<target name="all">
+		
+		<antcall target="translate">
+			<param name="input-file" value="example1.xml"/>
+			<param name="output-file" value="example1_HR-XML.xml"/>
+		</antcall>
+		
+		<antcall target="translate">
+			<param name="input-file" value="example2.xml"/>
+			<param name="output-file" value="example2_HR-XML.xml"/>
+		</antcall>
+		
+	</target>
+	
+	<target name="translate">
+		
+		<!-- Convert the XML Résumé document to HR-XML format. -->
+ 		<xslt in="${input-file}" out="${output-file}" style="${stylesheet}" force="true">
+			<xmlcatalog>
+				<catalogpath>
+					<fileset dir="dtd" includes="catalog"/>
+				</catalogpath>
+			</xmlcatalog>
+		</xslt>
+
+	</target>
+	
+</project>

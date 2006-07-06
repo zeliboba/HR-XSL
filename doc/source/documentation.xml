@@ -1,0 +1,1771 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE book PUBLIC "-//OASIS//DTD DocBook XML V4.2//EN" "http://www.oasis-open.org/docbook/xml/4.2/docbookx.dtd">
+
+<book>
+
+	<bookinfo>
+		<title>CV Sieve Documentation</title>
+		<authorgroup>
+			<author>
+				<surname>Harmon</surname>
+				<firstname>Trevor</firstname>
+			</author>
+			<author>
+				<surname>Chan</surname>
+				<firstname>Charles</firstname>
+			</author>
+		</authorgroup>
+		<copyright>
+			<year>2002</year>
+			<holder>Charles Chan</holder>
+		</copyright>
+	</bookinfo>
+
+	<chapter>
+
+		<title>Introduction</title>
+
+		<para>
+			Keeping one's CV current is a tedious, never-ending process. One common problem is that several different versions of the same document have to be maintained. For example, job hunters these days typically have to maintain at least three separate forms of their CV or résumé:
+		</para>
+		
+		<itemizedlist>
+			<listitem>
+				<simpara>An HTML version for posting to the web</simpara>
+			</listitem>
+			<listitem>
+				<simpara>A plain text one for sending via email</simpara>
+			</listitem>
+			<listitem>
+				<simpara>A nicely-formatted PDF version for printing</simpara>
+			</listitem>
+		</itemizedlist>
+
+		<para>
+			With all of these different versions, making changes to your CV or résumé can be tiresome and prone to error. Cutting and pasting can help, but a typo in one version will still propagate to all the others, and then you must correct each separate version. And, when deadlines are approaching, you might quickly make an important change to one version and forget to make that same change in all of the others.
+		</para>
+		
+		<para>
+			A better approach is to put all of your CV or résumé content into a single "master" copy, then let your computer automatically generate and format different versions of the document from this master. The CV Sieve project provides the tools for exactly this purpose. All you need to do is create a CV in a special XML format. CV Sieve can then take this XML file as input and create a PDF, HTML, or plain text version as output.
+		</para>
+
+		<sect1>
+			<title>The HR-XML Format</title>
+			
+			<para>
+				CV Sieve can't work with just any XML data; it has to use a specific XML format so that it can understand the content of a CV or résumé. The question is: Which format should it use? Over the years, a variety of custom XML formats have been developed for CVs and résumés, but none of them has grown popular enough to become an industry standard. Meanwhile, the human resources industry saw the benefits of XML and formed an independent, non-profit group called <ulink url="http://www.hr-xml.org/">The HR-XML Consortium</ulink>. Its key mission is to promote and standardize the use of XML in human resources.
+			</para>
+			
+			<para>
+	        	One of the XML vocabularies published by HR-XML is the Resume specification. This specification defines a CV or résumé document in pure XML, allowing the content to be processed by machines and exchanged easily on the Internet. Like all of the HR-XML specifications, it is fully documented and freely available. The latest version can be downloaded by visiting the <ulink url="http://sourceforge.net/project/showfiles.php?group_id=161286&amp;package_id=195356">File Releases</ulink> section of the CV Sieve project website.
+			</para>
+			
+			<para>
+				Of course, no résumé specification can meet everyone's needs, and the HR-XML Resume spec is no exception. It does not allow tagging résumé content for a specific kind of job, for instance. Nevertheless, it is quite comprehensive and, more importantly, it is an industry standard. The more people use it, the easier it will be to look for a job. For example, instead of tediously re-entering all of your résumé data into a website form, you could simply upload an HR-XML Resume file.
+	    	</para>
+	
+			<para>
+				For these reasons, CV Sieve is designed exclusively for the HR-XML Resume specification. You will therefore need to convert your CV or résumé to the HR-XML format in order to use CV Sieve.
+			</para>
+		</sect1>
+	
+		<sect1>
+			<title>The CV Sieve Stylesheets</title>
+			<para>
+				HR-XML is only part of the solution. XML is easy for computers to understand, but most humans would rather not have to read raw XML data. More importantly, recruiters who have not yet adopted the HR-XML standard would probably reject your job application if you sent them a CV or résumé in XML form.
+			</para>
+			
+			<para>
+				The purpose of the CV Sieve project, then, is to convert an HR-XML Resume file into a more attractive, human-readable form. It does this by providing a library of XSLT stylesheets that can convert any valid HR-XML Resume file into <ulink url="http://en.wikipedia.org/wiki/Docbook">DocBook</ulink> XML format. DocBook was chosen because it is a generic format that can then be transformed into various presentation formats: HTML, PDF, plain text, and more.<footnote><para>You need not learn DocBook in order to use CV Sieve; it is only an intermediate representation. CV Sieve provides scripts for the full HTML/PDF/text conversion, allowing you to ignore DocBook completely if you wish.</para></footnote>
+	    	</para>
+	
+			<para>
+				Of course, there is no single right way when it comes to formatting a CV or résumé. Some want their names formatted with bold text while others want their names in italics. It is therefore not the goal of this project to define a standard look and feel of a resume. Rather, the goal is to provide a reasonable starting point for end-users who write their CVs or résumés according to the HR-XML standard and want to present it in a human-readable format.
+	    	</para>
+	
+			<para>
+				  Another benefit of CV Sieve is that it simplifies the writing process. By allowing the computer to handle the presentation of the data, you can focus on the specific content of your CV or résumé and avoid worrying about line spacing, indentation, and other formatting concerns. Updating the content is also easier because you can defer (or entirely ignore) decisions such as what font to use<footnote><para>CV Sieve itself does not provide explicit customization of appearance, such as font family or size. Instead, the output appearance can be changed through HTML stylesheets and DocBook parameters, as described in <xref linkend="DocBookCustomization"/>.</para></footnote> or how to display a date (e.g., September 7, Sep. 7, or 9/7). The automation provided by the stylesheets also ensures consistency: When and if you decide to specify a font or date format, it will be used consistently throughout the document.
+			</para>
+
+		</sect1>
+
+	</chapter>
+
+	<chapter>
+		<title>Installation</title>
+
+		<sect1>
+			<title>Quick Install</title>
+			
+			<orderedlist>
+				<listitem>
+					<simpara>
+						Download <ulink url="http://sourceforge.net/project/showfiles.php?group_id=161286&amp;package_id=181690">CV Sieve</ulink> from the project website.
+					</simpara>
+				</listitem>
+				<listitem>
+					<simpara>
+						Unpack the distribution into a directory of your choice.
+					</simpara>
+				</listitem>
+			</orderedlist>
+		</sect1>
+				
+		<sect1 id="requirements">
+
+			<title>Requirements</title>
+
+			<para>
+				CV Sieve comes bundled with a script and the recommended third-party libraries for XSLT and DocBook processing. Therefore, CV Sieve requires only three additional packages to get started:
+			</para>
+				
+			<itemizedlist>
+				<listitem>
+					<simpara>
+						<emphasis role="bold">
+							<ulink url="http://java.sun.com/javase/downloads/index.html">Java</ulink>
+						</emphasis>
+
+						1.4 or higher
+					</simpara>
+				</listitem>
+				<listitem>
+					<simpara>
+						<emphasis role="bold">
+							<ulink url="http://ant.apache.org/bindownload.cgi">Ant</ulink>
+						</emphasis>
+
+						 1.6 or higher
+					</simpara>
+				</listitem>
+				<listitem>
+					<simpara>
+						<emphasis role="bold">
+							<ulink url="http://lynx.browser.org/">Lynx</ulink>
+						</emphasis>
+
+						Only required if you want to convert an HR-XML Resume to plain text
+					</simpara>
+				</listitem>
+			</itemizedlist>
+				
+			<para>
+				Strictly speaking, however, CV Sieve requires none of the above. An <ulink url="http://en.wikipedia.org/wiki/Xslt">XSLT 2.0</ulink>-compatible processor is all that is needed to convert an HR-XML Resume into DocBook format. You could then write some basic XSLT code to convert the DocBook file into any format you wish. In other words, the bundled script and libraries are certainly not required to use the CV Sieve stylesheets.
+			</para>
+			
+			<para>
+				Realistically, though, CV Sieve has only been tested with the XSLT processors and DocBook stylesheets included in the <filename class="directory">lib</filename> directory of the distribution. In fact, <ulink url="http://saxon.sourceforge.net/">Saxon-B</ulink> is probably the only open-source XSLT processor capable of handling the CV Sieve stylesheets properly. It is therefore recommended that you use only the bundled libraries (unless you have some compelling reason not to).
+			</para>
+
+		</sect1>
+
+	</chapter>
+	
+	<chapter>
+		<title>Usage</title>
+		<sect1>
+			<title>Quick Start</title>
+			<orderedlist>
+				<listitem>
+					<simpara>
+						Locate the directory where you unpacked CV Sieve and go to the <filename class="directory">examples/resume</filename> sub-directory
+					</simpara>
+				</listitem>
+				<listitem>
+					<simpara>
+						Open the file <filename>resume.xml</filename> and, using it as a template, edit as needed
+					</simpara>
+				</listitem>
+				<listitem>
+					<simpara>
+						On the command line, go to the <filename class="directory">examples/resume</filename> directory and type <userinput>ant html</userinput>. This will create an HTML version of the résumé. (For a PDF or plain text version, type <userinput>ant pdf</userinput> or <userinput>ant text</userinput>, respectively.)
+					</simpara>
+				</listitem>
+			</orderedlist>
+		</sect1>
+		<sect1>
+			<title>The CV Sieve Helper Script</title>
+			<para>
+				CV Sieve supplies an Ant script that offers a convenient way of using the stylesheets. Located in the <filename class="directory">util</filename> directory, it is designed to be used in conjunction with your own Ant scripts. You simply import the <filename>cvsieve.xml</filename> script and call the pre-defined macros, as shown in <xref linkend="helper.script.example"/>.
+			</para>
+		
+			<example id="helper.script.example">
+				<title>Using the Ant helper script</title>
+				
+				<programlisting>
+<![CDATA[<project default="all">
+
+    <property file="build.properties"/>
+    <import file="../../util/cvsieve.xml"/>
+
+    <target name="all" depends="html, pdf, text"/>
+
+    <target name="html">
+        <resume-to-html in="cv.xml"/>
+    </target>
+
+    <target name="pdf">
+        <resume-to-pdf in="cv.xml"/>
+    </target>
+
+    <target name="text">
+        <resume-to-text in="cv.xml"/>
+    </target>
+
+</project>]]>
+				</programlisting>
+			</example>
+				
+		</sect1>
+
+		<sect1>
+			<title>Validating your CV or Résumé</title>
+			<para>
+				One of the major benefits of using XML for your CV or résumé is validation. An XML validation tool can scan through the document and look for errors. If, for example, you enter a date in your CV as <userinput>2003-06-31</userinput>, the tool will flag it as invalid.
+			</para>
+			
+			<para>
+				One such tool is known as <emphasis>xmllint</emphasis>. If you have this program installed, you can validate your CV or résumé by running the following command:
+			</para>
+			
+			<blockquote>
+				<para>
+					<userinput>xmllint --schema <replaceable>Resume.xsd</replaceable> <replaceable>myresume.xml</replaceable></userinput>
+				</para>
+			</blockquote>
+				
+			<para>
+				Here, <filename>Resume.xsd</filename> refers to the XML Schema Definition file for HR-XML Resume, which can be obtained by downloading the <ulink url="http://sourceforge.net/project/showfiles.php?group_id=161286&amp;package_id=195356">HR-XML distribution</ulink>.
+			</para>
+		</sect1>
+		
+		<sect1>
+			<title>Extended Characters</title>
+			
+			<para>
+				Traditionally, non-ASCII characters have been a problem for XML formats like HR-XML Resume. Characters such as é, ß, or © required the user to type the special codes <userinput><![CDATA[&eacute;]]></userinput>, <userinput><![CDATA[&eszlig;]]></userinput>, and <userinput><![CDATA[&copy;]]></userinput>, respectively.
+			</para>
+			
+			<para>
+				With CV Sieve, these special codes are not necessary. As long as your editor supports Unicode and is able to save XML files in the UTF-8 encoding, you can simply enter the extended characters directly into your editor. They will show up correctly in the final CV or résumé output.
+			</para>
+			
+		</sect1>
+
+	</chapter>				
+
+	<chapter>
+		<title>Customization</title>
+
+		<para>
+			Generating a CV or résumé with CV Sieve is a two-stage process: First, CV Sieve generates a DocBook version of the original file; next, this DocBook file is transformed into a PDF, HTML, or plain text version. Thus, to fully control the look of your CV or résumé, you need to customize the two stages individually, depending on the kind of customization you want. For content modifications (e.g., names of headings, date format, etc.), you would customize the CV Sieve transformation. For appearance modifications (e.g., font sizes, whether page numbers are displayed, etc.), you would customize the DocBook transformation.
+		</para>
+
+		<sect1>
+			<title>CV Sieve Customization</title>
+
+			<para>
+				There are two ways to customize the output of CV Sieve: stylesheet parameters and localized messages.
+			</para>
+
+			<sect2>
+				<title>Stylesheet Parameters</title>
+		
+				<para>
+					XSL stylesheets can change their behavior based on user-specified parameters. For example, a parameter such as <userinput>roman.headings=true</userinput> might tell a stylesheet to use Roman numerals for chapter headings. <xref linkend="cvsieve.stylesheet.parameters"/> lists the parameters that can be used in CV Sieve.<footnote><para>Currently, there is only one parameter, but future versions of CV Sieve should offer more.</para></footnote>
+				</para>
+		
+				<table id="cvsieve.stylesheet.parameters">
+					<title>CV Sieve Stylesheet Parameters</title>
+					<tgroup cols="3">
+						<thead>
+							<row>
+								<entry>Parameter</entry>
+								<entry>Description</entry>
+								<entry>Possible Values</entry>
+							</row>
+						</thead>
+						<tbody>
+							<row>
+								<entry><userinput>month.format</userinput></entry>
+								<entry>For date elements, this parameter indicates how the month should be displayed</entry>
+								<entry><userinput>short</userinput> an abbreviated month, such as "Sep."; <userinput>long</userinput> the full month name</entry>
+							</row>
+						</tbody>
+					</tgroup>
+				</table>
+			
+				<para>
+		   			The method of specifying these parameters depends on how you use the stylesheets. If you are using the included CV Sieve helper script, a parameter would simply be specified in the <userinput>cvsieve.params</userinput> property. (Refer to the <filename>build.properties</filename> files in the <filename class="directory">examples</filename> directory to see how this is done.) For other methods, you will need to refer to the documentation of your stylesheet processor.
+				</para>
+			
+			</sect2>
+
+			<sect2 id="LocalizedMessages">
+				<title>Localized Messages</title>
+			
+				<para>
+					All of the CV Sieve stylesheets have been <emphasis>localized</emphasis>. Simply stated, this means you can easily change the output of CV Sieve to a different language. To do so, go to the <filename class="directory">xsl/common/messages</filename> directory and make a copy of the <filename>en.xml</filename> file, giving it a name that represents your language. For example, if you want to create a French localization, you should use the <ulink url="http://www.loc.gov/standards/iso639-2/langcodes.html">two-letter language code</ulink> for French, <emphasis>fr</emphasis>. You can then edit this new <filename>fr.xml</filename> file and translate all the English messages to their French equivalents.<footnote><para>If you have created a localization file for your language, please consider submitting it to the <ulink url="mailto:trevor@vocaro.com">CV Sieve maintainer</ulink> so that it can be included in the distribution for others to use.</para></footnote>
+				</para>
+			
+				<para>
+					Once you have created a localized message file, you can tell CV Sieve to use it simply by setting the XSL parameter <userinput>lang</userinput> to the appropriate language code. Continuing with the French example above, if you are using the included Ant helper script, you would change the résumé example to French by adding the following string to the <userinput>cvsieve.params</userinput> variable of the <filename>build.properties</filename> file:
+				</para>
+			
+				<blockquote>
+					<para>
+						<userinput>lang=fr</userinput>
+					</para>
+				</blockquote>
+			
+			</sect2>
+		</sect1> 
+				
+		<sect1 id="DocBookCustomization">
+			<title>DocBook Customization</title>
+
+			<para>
+				Most DocBook customization is accomplished with stylesheet parameters. For the HTML transformation, Cascading Style Sheets can also be used.
+			</para>
+
+			<sect2>
+				<title>Stylesheet Parameters</title>
+
+				<para>
+					XSL stylesheets can change their behavior based on user-specified parameters. For example, a parameter such as <userinput>roman.headings=true</userinput> might tell a stylesheet to use Roman numerals for chapter headings. <xref linkend="docbook.stylesheet.parameters"/> lists some DocBook-specific parameters that you might need when using CV Sieve. (Note that this is only a small subset of the available DocBook parameters; for a complete list, refer to <ulink url="http://www.sagehill.net/docbookxsl/">DocBook XSL: The Complete Guide</ulink>.)
+				</para>
+		
+				<table id="docbook.stylesheet.parameters">
+					<title>DocBook Stylesheet Parameters</title>
+					<tgroup cols="3">
+						<thead>
+							<row>
+								<entry>Parameter</entry>
+								<entry>Description</entry>
+								<entry>Possible Values</entry>
+							</row>
+						</thead>
+						<tbody>
+							<row>
+								<entry><userinput>generate.toc</userinput></entry>
+								<entry>Whether to include a table of contents in the CV or résumé</entry>
+								<entry><userinput>article toc</userinput> generates a table of contents; <userinput>article nop</userinput> suppresses it.</entry>
+							</row>
+							<row>
+								<entry><userinput>html.stylesheet</userinput></entry>
+								<entry>The value of this HTML-only parameter specifies a name for the CSS file. If not specified, no CSS file will be used in the HTML output.</entry>
+								<entry>Any user-specified filename (e.g., <filename>style.css</filename>)</entry>
+							</row>
+						</tbody>
+					</tgroup>
+				</table>
+
+				<para>
+		   			The method of specifying these parameters depends on how you use the stylesheets. If you are using the included CV Sieve helper script, a parameter would simply be specified in the <userinput>docbook.params</userinput> property. (Refer to the <filename>build.properties</filename> files in the <filename class="directory">examples</filename> directory to see how this is done.) For other methods, you will need to refer to the documentation of your stylesheet processor.
+				</para>
+
+			</sect2>
+
+			<sect2>
+				<title>Cascading Style Sheets</title>
+
+				<para>
+					When generating an HTML version of the CV or résumé, <ulink url="http://en.wikipedia.org/wiki/Cascading_Style_Sheets/">Cascading Style Sheets</ulink> can be used to customize its appearance. To do so:
+				</para>
+
+				<orderedlist>
+					<listitem>
+						<simpara>
+							Specify a stylesheet file using the <userinput>html.stylesheet</userinput> parameter, as described in <xref linkend="docbook.stylesheet.parameters"/>.
+						</simpara>
+					</listitem>
+					<listitem>
+						<simpara>
+							Use CV Sieve to generate the HTML file.
+						</simpara>
+					</listitem>
+					<listitem>
+						<simpara>
+							Create a CSS file with the same name as the parameter you specified and place it in the same directory as the HTML file.
+						</simpara>
+					</listitem>
+				</orderedlist>
+				
+				<para>
+					Refer to the CV Sieve <filename class="directory">examples</filename> directory for examples of CSS files and how to specify them.
+				</para>
+
+			</sect2> 
+			
+		</sect1>
+	</chapter>
+	
+	<chapter>
+		<title>Examples</title>
+		
+		<para>
+			The CV Sieve distribution provides some sample HR-XML Resume documents that illustrate how the stylesheets can be used. They are located in the <filename class="directory">examples</filename> directory.
+		</para>
+		
+		<sect1>
+			<title>Résumé</title>
+			
+			<para>This is a simple résumé that can be used as a template for one of your own. Located in the <filename class="directory">resume</filename> sub-directory, it illustrates only a small subset of the capabilities of CV Sieve. To create a PDF, HTML, or plain text version of this example, go to the command line and type <userinput>ant pdf</userinput>, <userinput>ant html</userinput>, or <userinput>ant text</userinput>, respectively.
+			</para>
+		</sect1>
+		
+		<sect1>
+			<title>Curriculum Vitae</title>
+			
+			<para>
+				The Curriculum Vitae example, located in the <filename class="directory">cv</filename> sub-directory, is a large, comprehensive document that illustrates most of CV Sieve's features. It is based on the actual CV of a university professor. To create a PDF, HTML, or plain text version of this example, go to the command line and type <userinput>ant pdf</userinput>, <userinput>ant html</userinput>, or <userinput>ant text</userinput>, respectively.
+			</para>
+			
+			<para>
+				Some of the features demonstrated in this CV are:
+			</para>
+			
+			<itemizedlist>
+				<listitem>
+					<formalpara>
+						<title>Functional employment history</title>
+						<para>
+							Employment histories are typically presented in one of two forms: chronological or functional. The former lists each job in order as a single group, while the latter separates the job descriptions into categories. CV Sieve supports both types, and the CV example given here shows the functional type. Notice how each job specifies an <sgmltag>OrgIndustry/IndustryDescription</sgmltag> element, which is then used by CV Sieve to group the jobs into categories.
+						</para>
+					</formalpara>
+				</listitem>
+				<listitem>
+					<formalpara>
+						<title>Customized elements</title>
+						<para>
+							The HR-XML Resume specification provides built-in categories for certain elements. For example, an Association is expected to be one of: Professional, Social, Community, Non-Profit, Religious, or Political. However, these categories are very broad, and some users may wish to be more specific. Luckily, the HR-XML Resume specification allows this; simply prefix the custom category name with the string <userinput>x:</userinput>. The CV example given here shows how this is done for the <sgmltag>Associations</sgmltag> and <sgmltag>ResumeAdditionalItems</sgmltag> elements.
+						</para>
+					</formalpara>
+				</listitem>
+				<listitem>
+					<formalpara>
+						<title>HR-XML "hacks"</title>
+						<para>
+							Some users may have unusual requirements for their CV. The university professor in this example wanted to list the names of all the courses he has taught throughout his career. Although the HR-XML Resume specification has no element to contain such information, it is possible to include it by "hacking" the spec. Here, the course information is stored as a single employment position, even though multiple jobs are represented by each course. In addition, the <emphasis>Teaching</emphasis> job category is used, and the <sgmltag>EmployerOrgName</sgmltag> element is left empty. As a result, CV Sieve correctly formats the list of courses as the user desired. Although this kind of "hack" is not recommended when exchanging HR-XML data with others, it is useful when the user only wishes to create an HR-XML Resume document for internal use.
+							</para>
+					</formalpara>
+				</listitem>
+			</itemizedlist>
+			
+		</sect1>
+		
+		<sect1>
+			<title>XML Resume</title>
+			
+			<para>
+				The CV Sieve project maintains a set of stylesheets, described in <xref linkend="XMLResume"/>, that can translate an <ulink url="http://xmlresume.sourceforge.net/">XML Resume</ulink> document directly to an HR-XML Resume document.
+			</para>
+			
+			<para>
+				The examples in the <filename class="directory">xmlresume</filename> sub-directory demonstrate the use of these stylesheets on two example résumés taken directly from the XML Resume project website. Note that the translation is imperfect; some elements of the XML Resume specification have no equivalent in HR-XML and must be translated by the user. Such elements are indicated by comments in the output, as shown in the files <filename>example1_HR-XML.xml</filename> and <filename>example2_HR-XML.xml</filename>.
+			</para>
+			
+		</sect1>
+
+	</chapter>
+	
+	<chapter>
+		<title>The Elements of HR-XML Resume</title>
+		
+		<para>
+			This chapter describes the top-level elements of the HR-XML Resume specification. It provides at least one example, along with the corresponding CV Sieve output, for each element. Links to the full HR-XML documentation are also provided.
+		</para>
+		
+		<para>
+			Note that all of the example output is the plain text version. Other versions will look slightly different, primarily in the use of bold and italic fonts.
+		</para>
+		
+		<sect1>
+			<title>ContactInfo</title>
+			
+			<para>
+				The <sgmltag>ContactInfo</sgmltag> element is simply a container for two other elements: <sgmltag>PersonName</sgmltag> and <sgmltag>ContactMethod</sgmltag>.
+			</para>
+			
+			<sect2>
+				<title>PersonName</title>
+				
+				<para>
+					<sgmltag>PersonName</sgmltag> describes, as you might expect, a person's name.
+				</para>
+				
+				<sect3>
+					<title>Examples</title>
+					
+					<informalexample>
+						<programlisting>
+<![CDATA[<PersonName>
+	<GivenName>John</GivenName>
+	<FamilyName>Smith</FamilyName>
+	<Affix type="formOfAddress">Major</Affix>
+</PersonName>]]></programlisting>
+					</informalexample>
+
+					<informalexample>
+						<programlisting>
+<![CDATA[<PersonName>
+    <GivenName>Maria</GivenName>
+    <FamilyName primary="true">Garcia</FamilyName>
+    <FamilyName primary="false" prefix="de">Silva</FamilyName>
+    <Affix type="formOfAddress">Srta.</Affix>
+</PersonName>]]></programlisting>
+					</informalexample>
+					
+				</sect3>
+				
+				<sect3>
+					<title>CV Sieve Output</title>
+
+					<para>
+						<computeroutput>
+							Major John Smith
+						</computeroutput>
+					</para>
+					
+					<para>
+						<computeroutput>
+							Srta. Maria Garcia de Silva
+						</computeroutput>
+					</para>
+
+				</sect3>
+				
+				<sect3>
+					<title>Notes</title>
+
+					<para>
+						If <sgmltag>PreferredGivenName</sgmltag> is specified, it is used in place of <sgmltag>GivenName</sgmltag>.
+					</para>
+
+					<para>
+						CV Sieve ignores <sgmltag>LegalName</sgmltag>, <sgmltag>AlternateScript</sgmltag>, and <sgmltag>FamilyName/@primary</sgmltag>.
+					</para>
+					
+					<para>
+						The HR-XML website has <ulink url="http://ns.hr-xml.org/2_4/HR-XML-2_4/CPO/PersonName.html">more documentation</ulink>.
+					</para>
+				</sect3>
+
+			</sect2>
+			
+			<sect2>
+				<title>ContactMethod</title>
+
+				<para>
+					<sgmltag>ContactMethod</sgmltag> describes a person's telephone numbers, e-mail address, website, and postal address.
+				</para>
+				
+				<sect3>
+					<title>Telephone numbers, e-mail, and website</title>					
+						
+					<sect4>
+					
+						<title>Examples</title>
+
+						<programlisting>
+<![CDATA[<Telephone>
+   <FormattedNumber>+1 (925) 598-5209</FormattedNumber>
+</Telephone>
+
+<Mobile>
+   <InternationalCountryCode>1</InternationalCountryCode>
+   <AreaCityCode>925</AreaCityCode>
+   <SubscriberNumber>598-5209</SubscriberNumber>
+</Mobile>
+
+<Fax>
+   <InternationalCountryCode>33</InternationalCountryCode>
+   <AreaCityCode>1</AreaCityCode>
+   <SubscriberNumber>40 20 50 50</SubscriberNumber>
+</Fax>
+
+<Pager>
+   <InternationalCountryCode>1</InternationalCountryCode>
+   <AreaCityCode>925</AreaCityCode>
+   <SubscriberNumber>5985200</SubscriberNumber>
+   <Extension>5209</Extension>
+</Pager>
+
+<InternetEmailAddress>webmaster@hr-xml.org</InternetEmailAddress>
+<InternetWebAddress>http://www.hr-xml.org</InternetWebAddress>
+]]></programlisting>
+
+					</sect4>
+
+					<sect4>
+						<title>CV Sieve Output</title>
+
+						<screen>
+Telephone +1 (925) 598-5209
+      Fax (1) 40 20 50 50
+    Pager (925) 5985200 ext. 5209
+   Mobile (925) 598-5209
+   E-mail webmaster@hr-xml.org
+  Website http://www.hr-xml.org</screen>
+
+					</sect4>
+
+					<sect4>
+						<title>Notes</title>
+
+						<para>
+							The telephone, e-mail, and website portions of <sgmltag>ContactMethod</sgmltag> are rendered in a tabular format, with labels in the left column and the content in the right column. The e-mail and website elements are rendered as links to themselves, if the output format supports it (e.g., HTML and PDF).
+						</para>
+
+						<para>
+							The HR-XML website has <ulink url="http://ns.hr-xml.org/2_4/HR-XML-2_4/CPO/ContactMethod.html">more documentation</ulink>.
+						</para>
+					</sect4>
+					
+				</sect3>
+				
+				<sect3>
+					<title>PostalAddress</title>
+
+					<sect4>
+
+						<title>Examples</title>
+
+						<programlisting>
+<![CDATA[<PostalAddress>
+    <CountryCode>US</CountryCode>
+    <PostalCode>22153</PostalCode>
+    <Region>VA</Region>
+    <Municipality>Springfield</Municipality>
+    <DeliveryAddress>
+        <PostOfficeBox>1243</PostOfficeBox>
+    </DeliveryAddress>
+</PostalAddress>]]></programlisting>
+
+						<programlisting>
+<![CDATA[<PostalAddress>
+    <CountryCode>US</CountryCode> 
+    <PostalCode>80237 </PostalCode>
+    <Region>CO</Region>
+    <Municipality>Denver</Municipality>
+    <DeliveryAddress>
+        <AddressLine>2455 University Blvd</AddressLine>
+    </DeliveryAddress>
+    <Recipient>
+        <PersonName>
+            <FormattedName>Karen Barber</FormattedName>
+        </PersonName>
+        <AdditionalText>Mailstop: B1-210</AdditionalText>
+        <OrganizationName>Market Surveyors</OrganizationName>
+    </Recipient>
+</PostalAddress>]]></programlisting>
+
+						<programlisting>
+<![CDATA[<PostalAddress>
+    <CountryCode>US</CountryCode>
+    <PostalCode>50493-1234</PostalCode>
+    <Region>MN</Region>
+    <Municipality>Minneapolis</Municipality>
+    <DeliveryAddress>
+        <StreetName>E Beauregard Ave.</StreetName>
+        <BuildingNumber>4982</BuildingNumber>
+    </DeliveryAddress>
+    <Recipient>
+        <PersonName>
+            <GivenName>Santhi</GivenName>
+            <FamilyName>Mwanza</FamilyName>
+        </PersonName>
+        <OrganizationName>MinnBest Corp.</OrganizationName>
+    </Recipient>
+</PostalAddress>]]></programlisting>
+
+						<programlisting>
+<![CDATA[<PostalAddress>
+    <CountryCode>MX</CountryCode>
+    <PostalCode>13355</PostalCode>
+    <Municipality>Naucalpan de Juárez</Municipality>
+    <DeliveryAddress>
+        <AddressLine>Hacienda de Corralejo No. 5</AddressLine>
+        <AddressLine>Bosques de Echegaray</AddressLine>
+    </DeliveryAddress>
+</PostalAddress>]]></programlisting>
+
+					</sect4>
+
+					<sect4>
+						<title>CV Sieve Output</title>
+
+						<screen>
+P.O. Box 1243
+Springfield, VA 22153
+United States			</screen>
+
+						<screen>
+Mailstop: B1-210
+Karen Barber
+Market Surveyors
+2455 University Blvd
+Denver, CO 80237
+United States			</screen>
+
+						<screen>
+Santhi Mwanza
+MinnBest Corp.
+4982 E Beauregard Ave.
+Minneapolis, MN 50493-1234
+United States			</screen>
+
+						<screen>
+Hacienda de Corralejo No. 5
+Bosques de Echegaray
+Naucalpan de Juárez, 13355
+Mexico					</screen>
+
+					</sect4>
+
+					<sect4>
+						<title>Notes</title>
+
+						<para>
+							In the last example, note that the country code was automatically translated into the proper English name. If you need to specify an address for a country other than the U.S., simply use the appropriate two-letter <ulink url="http://www.iso.ch/iso/en/prods-services/iso3166ma/02iso-3166-code-lists/list-en1.html">ISO 3166 country code</ulink>.
+						</para>
+						
+						<para>
+							If you need to change the translated names, you will have to create a new translation file as described in <xref linkend="LocalizedMessages"/>.
+						</para>
+
+						<para>
+							The HR-XML website has <ulink url="http://ns.hr-xml.org/2_4/HR-XML-2_4/CPO/PostalAddress.html">more documentation</ulink>.
+						</para>
+					</sect4>
+
+				</sect3>
+
+			</sect2>	
+			
+		</sect1>
+
+		<sect1>
+			<title>ExecutiveSummary</title>
+			
+			<para>
+				This element gives an overview of the person described in the CV or résumé.
+			</para>
+			
+			<sect2>
+				<title>Examples</title>
+				
+				<programlisting>
+<![CDATA[<ExecutiveSummary>
+    As more people in all sectors of society come online, it is important to consider
+    how we might help these groups work together in meaningful ways. My research focuses
+    on the design and management of online communities that bring together diverse
+    stakeholders, particularly underrepresented populations (kids, elders, minorities,
+    etc.), and support them in leveraging their strengths in a collaborative environment.
+    My thesis work, Palaver Tree Online, is an example of one such community.
+</ExecutiveSummary>]]></programlisting>
+
+			</sect2>
+			
+			<sect2>
+				<title>CV Sieve Output</title>
+				
+				<screen>
+Abstract
+
+As more people in all sectors of society come online, it is important
+to consider how we might help these groups work together in meaningful
+ways. My research focuses on the design and management of online
+communities that bring together diverse stakeholders, particularly
+underrepresented populations (kids, elders, minorities, etc.), and
+support them in leveraging their strengths in a collaborative
+environment. My thesis work, Palaver Tree Online, is an example of one
+such community.	</screen>					
+
+			</sect2>
+										
+			<sect2>
+				<title>Notes</title>
+				
+				<para>
+					As indicated in the example above, CV Sieve converts an <sgmltag>ExecutiveSummary</sgmltag> into an abstract, placed at the beginning of the document.
+				</para>
+				
+				<para>
+					The HR-XML website has <ulink url="http://ns.hr-xml.org/2_4/HR-XML-2_4/SEP/Resume.html#_Toc127541917">more documentation</ulink>.
+				</para>
+			</sect2>
+			
+		</sect1>
+
+		<sect1>
+			<title>Objective</title>
+			
+			<para>
+				This element describes the position being sought or the desired career path or professional objectives.
+			</para>
+
+			<sect2>
+				<title>Examples</title>
+
+				<programlisting>
+<![CDATA[<Objective>
+    To find an opportunity that best fits my skills and experience.
+</Objective>]]></programlisting>
+
+			</sect2>
+
+			<sect2>
+				<title>CV Sieve Output</title>
+
+				<screen>
+Objective. To find an opportunity that best fits my skills and
+experience.		</screen>					
+
+			</sect2>
+
+			<sect2>
+				<title>Notes</title>
+
+				<para>
+					The Objective is rendered as a simple titled paragraph at the top of the document.
+				</para>
+
+			</sect2>
+
+
+		</sect1>
+
+		<sect1>
+			<title>EmploymentHistory</title>
+			
+			<para>
+				The <sgmltag>EmploymentHistory</sgmltag> element is a list of past and present employment.
+			</para>
+
+			<sect2>
+				<title>Examples</title>
+
+				<programlisting>
+<![CDATA[<EmploymentHistory>
+    <EmployerOrg>
+        <EmployerOrgName>General Electric</EmployerOrgName>
+        <PositionHistory>
+            <Title>Vice-President</Title>
+            <OrgName>
+                <OrganizationName>Aircraft Engines (GEAE)</OrganizationName>
+            </OrgName>
+            <Description>
+                Key Player in the GE growth initiative...
+                Ensured fundamental IT capabilities were present in...
+                Led several new market opportunity assessments...
+            </Description>
+            <StartDate>
+                <AnyDate>2002-02-01</AnyDate>
+            </StartDate>
+        </PositionHistory>
+        <PositionHistory>
+            <Title>E-Business Program Manager</Title>
+            <OrgName>
+                <OrganizationName>Aircraft Engines (GEAE)</OrganizationName>
+            </OrgName>
+            <Description>
+                Led B2Bi initiative and interface that enabled...
+                Personally managed and Created Customer Relationships...
+                Led cross-functional team that led to...
+            </Description>
+            <StartDate>
+                <AnyDate>1998-10-01</AnyDate>
+            </StartDate>
+            <EndDate>
+                <AnyDate>2002-02-01</AnyDate>
+            </EndDate>
+        </PositionHistory>
+    </EmployerOrg>
+</EmploymentHistory>]]></programlisting>
+
+			</sect2>
+
+			<sect2>
+				<title>CV Sieve Output</title>
+
+				<screen>
+Work Experience
+
+   Vice-President, Aircraft Engines (GEAE). General Electric. February 1,
+   2002 - Present
+     * Key Player in the GE growth initiative...
+     * Ensured fundamental IT capabilities were present in...
+     * Led several new market opportunity assessments...
+
+   E-Business Program Manager, Aircraft Engines (GEAE). General Electric.
+   October 1, 1998 - February 1, 2002
+     * Led B2Bi initiative and interface that enabled...
+     * Personally managed and Created Customer Relationships...
+     * Led cross-functional team that led to...</screen>					
+
+			</sect2>
+
+			<sect2>
+				<title>Notes</title>
+
+				<para>
+					To indicate present employment, simply leave out the <sgmltag>EndDate</sgmltag>.
+				</para>
+
+				<para>
+					The HR-XML Resume specification is very limited in terms of describing a position. It offers only a single element called <sgmltag>Description</sgmltag>. To expand the capabilities of HR-XML Resume, CV Sieve handles this element in a special way: If the text is all on a single line, it is rendered as a simple paragraph; otherwise, each line is rendered as a bullet point (as in the example above).
+				</para>
+
+				<para>
+					Normally, CV Sieve generates a work history in the order that each position appears in the XML file. You can alter this behavior so that CV Sieve groups the positions into categorizes. In other words, you can choose between a chronological or a functional employment history. To create a functional history, simply specify a category in the <sgmltag>OrgIndustry/IndustryDescription</sgmltag> element of each <sgmltag>PositionHistory</sgmltag> element. (Note that <emphasis>all</emphasis> of the positions must specify this element.) Refer to the <filename>examples/cv/cv.xml</filename> file for an example.
+				</para>
+
+				<para>
+					The HR-XML website has <ulink url="http://ns.hr-xml.org/2_4/HR-XML-2_4/CPO/EmploymentHistory.html">more documentation</ulink>.
+				</para>
+			</sect2>
+
+		</sect1>
+
+		<sect1>
+			<title>EducationHistory</title>
+			
+			<para>
+				This section is designed for listing academic degrees, but it also supports partial degree completion.
+			</para>
+
+			<sect2>
+				<title>Examples</title>
+
+				<programlisting>
+<![CDATA[<EducationHistory>
+	<SchoolOrInstitution schoolType="college">
+	    <School type="prior">
+	        <SchoolName>Boston College</SchoolName>
+	    </School>
+	    <OrganizationUnit organizationType="subSchool">Wallace E. Carroll School of Management</OrganizationUnit>
+	    <Degree degreeType="bachelors" examPassed="false" graduatingDegree="graduating">
+	        <DegreeName>Bachelors of Science</DegreeName>
+	        <DegreeDate>
+	            <Year>2001</Year>
+	        </DegreeDate>
+	        <DegreeMajor>
+	            <DegreeConcentration>Management</DegreeConcentration>
+	            <Name>Human Resource Management</Name>
+	        </DegreeMajor>
+	        <DegreeMajor>
+	            <Name>Marketing</Name>
+	        </DegreeMajor>
+	        <DatesOfAttendance currentlyEnrolled="true">
+	            <StartDate>
+	                <AnyDate>1998-01-01</AnyDate>
+	            </StartDate>
+	        </DatesOfAttendance>
+	    </Degree>
+	</SchoolOrInstitution>
+	<SchoolOrInstitution schoolType="university">
+	    <School type="prior">
+	        <SchoolId>
+	            <IdValue>MS1786534</IdValue>
+	        </SchoolId>
+	        <SchoolName>Harvard</SchoolName>
+	    </School>
+	    <LocationSummary>
+	        <Municipality>Fayette</Municipality>
+	        <Region>MS</Region>
+	        <CountryCode>US</CountryCode>
+	    </LocationSummary>
+	    <OrganizationUnit organizationType="subSchool">Andover</OrganizationUnit>
+	    <Degree degreeType="bachelors" graduatingDegree="graduating">
+	        <DegreeName>Bachelors of Science</DegreeName>
+	        <DegreeDate>
+	            <AnyDate>1987-01-02</AnyDate>
+	        </DegreeDate>
+	        <DegreeMajor>
+	            <ProgramId>
+	                <IdValue>173.24</IdValue>
+	            </ProgramId>
+	            <DegreeConcentration>Applied Math</DegreeConcentration>
+	            <Name>Mathematics</Name>
+	        </DegreeMajor>
+	        <DegreeMeasure>
+	            <EducationalMeasure>
+	                <MeasureSystem>GPA</MeasureSystem>
+	                <MeasureValue>
+	                    <NumericValue>3.9</NumericValue>
+	                </MeasureValue>
+	                <GoodStudentIndicator>true</GoodStudentIndicator>
+	            </EducationalMeasure>
+	            <AcademicCreditCode>A</AcademicCreditCode>
+	            <ClassRank numberOfStudents="100">78</ClassRank>
+	        </DegreeMeasure>
+	        <DatesOfAttendance currentlyEnrolled="false">
+	            <StartDate>
+	                <YearMonth>1980-09</YearMonth>
+	            </StartDate>
+	            <EndDate>
+	                <YearMonth>1981-04</YearMonth>
+	            </EndDate>
+	        </DatesOfAttendance>
+	        <DatesOfAttendance currentlyEnrolled="false">
+	            <StartDate>
+	                <YearMonth>1984-09</YearMonth>
+	            </StartDate>
+	            <EndDate>
+	                <YearMonth>1987-04</YearMonth>
+	            </EndDate>
+	        </DatesOfAttendance>
+	        <Comments>
+	            Due to financial reasons, it was necessary to withdraw after the first year.
+	        </Comments>
+	    </Degree>
+	</SchoolOrInstitution>
+</EducationHistory>]]></programlisting>
+
+			</sect2>
+
+			<sect2>
+				<title>CV Sieve Output</title>
+
+				<screen>
+Education
+
+   B.S., Human Resource Management Marketing, 2001, Boston College,
+   concentration in Management
+
+   B.S., Mathematics, January 2, 1987, Harvard, Cambridge, MA,
+   concentration in Applied Math
+
+     Due to financial reasons, it was necessary to withdraw after the
+     first year.</screen>					
+
+			</sect2>
+
+			<sect2>
+				<title>Notes</title>
+				
+				<para>
+					The <sgmltag>EducationHistory</sgmltag> element is quite comprehensive and includes many details and HR-specific data that most people do not require for their CVs or résumés. CV Sieve ignores most of these but may support them in later versions.
+				</para>
+				
+				<para>
+					The HR-XML website has <ulink url="http://ns.hr-xml.org/2_4/HR-XML-2_4/CPO/EducationHistory.html">more documentation</ulink>.
+				</para>
+			</sect2>
+
+		</sect1>
+
+		<sect1>
+			<title>LicensesAndCertifications</title>
+			
+			<para>
+				This element is not supported by CV Sieve.
+			</para>
+
+			<para>
+				The HR-XML website has <ulink url="http://ns.hr-xml.org/2_4/HR-XML-2_4/SEP/Resume.html#_Toc127541926">more documentation</ulink>.
+			</para>
+		</sect1>
+
+		<sect1>
+			<title>MilitaryHistory</title>
+			
+			<para>
+				This element is not supported by CV Sieve.
+			</para>
+
+			<para>
+				The HR-XML website has <ulink url="http://ns.hr-xml.org/2_4/HR-XML-2_4/CPO/MilitaryHistory.html">more documentation</ulink>.
+			</para>
+		</sect1>
+
+		<sect1>
+			<title>PatentHistory</title>
+			
+			<para>
+				This element is not supported by CV Sieve.
+			</para>
+
+			<para>
+				The HR-XML website has <ulink url="http://ns.hr-xml.org/2_4/HR-XML-2_4/SEP/Resume.html#_Toc127541934">more documentation</ulink>.
+			</para>
+		</sect1>
+
+		<sect1>
+			<title>PublicationHistory</title>
+			
+			<para>
+				This element lists all types of published work.
+			</para>
+
+			<sect2>
+				<title>Examples</title>
+
+				<programlisting>
+<![CDATA[<PublicationHistory>
+    <Article>
+        <Title>Designing Interfaces for Youth Services Information Management</Title>
+        <Name role="author">
+            <FormattedName>John A. Example</FormattedName>
+        </Name>
+        <PublicationDate>
+            <YearMonth>1996-06</YearMonth>
+        </PublicationDate>
+        <JournalOrSerialName>
+            1996 Human-Computer Interaction Laboratory Video Reports
+        </JournalOrSerialName>
+        <Volume>2</Volume>
+        <Issue>3</Issue>
+        <PageNumber>319-329</PageNumber>
+        <PublicationLanguage>EN</PublicationLanguage>
+    </Article>
+    <Book>
+        <Title>XML in a Seashell</Title>
+        <Name role="author">
+            <FormattedName>John A. Example</FormattedName>
+        </Name>
+        <PublicationDate>
+            <YearMonth>2001-02</YearMonth>
+        </PublicationDate>
+        <Abstract>
+            A very readable introduction to XML.
+        </Abstract>
+        <Copyright>
+            <CopyrightDates>
+                <OriginalDate>
+                    <Year>2001</Year>
+                </OriginalDate>
+            </CopyrightDates>
+            <CopyrightText>Copyright 2nd edition</CopyrightText>
+        </Copyright>
+        <Edition>2nd Edition</Edition>
+        <ISBN>0596000222</ISBN>
+        <PublisherName>O'Malley Associates</PublisherName>
+        <PublisherLocation>Garden City, NY, US</PublisherLocation>
+    </Book>
+    <ConferencePaper>
+        <Title>Trends in Employee Benefit Offerings</Title>
+        <Name role="author">
+            <FormattedName>Debra J. Cohen</FormattedName>
+        </Name>
+        <EventName>SHRM 55th Annual Conference and Exposition</EventName>
+        <ConferenceDate>
+            <AnyDate>2003-06-10</AnyDate>
+        </ConferenceDate>
+        <ConferenceLocation>Orlando, FL</ConferenceLocation>
+    </ConferencePaper>
+    <OtherPublication type="x:Software">
+        <Title>UCLA Tree-Repeater-Interconnect-Optimization (TRIO) Package</Title>
+        <Name role="x:developer">
+            <FormattedName>John A. Example</FormattedName>
+        </Name>
+        <PublicationDate>
+            <Year>2002</Year>
+        </PublicationDate>
+        <Link>http://ballade.cs.ucla.edu/~cong/slides/vlsi99.html</Link>
+    </OtherPublication>
+    <OtherPublication type="Thesis">
+        <Title>Interconnect Synthesis and Planning for High-Performance IC Designs</Title>
+        <Name role="author">
+            <FormattedName>John A. Example</FormattedName>
+        </Name>
+        <PublicationDate>
+            <Year>2000</Year>
+        </PublicationDate>
+        <Comments>Ph.D., University of California</Comments>
+        <NumberOfPages>158</NumberOfPages>
+        <PublisherLocation>Los Angeles, CA, US</PublisherLocation>
+    </OtherPublication>
+</PublicationHistory>]]></programlisting>
+
+			</sect2>
+
+			<sect2>
+				<title>CV Sieve Output</title>
+
+				<screen>
+Publications
+
+Articles
+
+     * "Designing Interfaces for Youth Services Information Management".
+       John A. Example. 1996 Human-Computer Interaction Laboratory Video
+       Reports, June 1996, Volume 2, Issue 3, pg. 319-329.
+
+Books
+
+     * XML in a Seashell. John A. Example. O'Malley Associates, Garden
+       City, NY, US, February 2001.
+
+Conference Papers
+
+     * Trends in Employee Benefit Offerings. Debra J. Cohen. SHRM 55th
+       Annual Conference and Exposition, Orlando, FL, June 10, 2003.
+
+Other Publications
+
+     * UCLA Tree-Repeater-Interconnect-Optimization (TRIO) Package . John
+       A. Example. 2002.
+     * Interconnect Synthesis and Planning for High-Performance IC
+       Designs. John A. Example. 2000. Ph.D., University of California</screen>					
+
+			</sect2>
+
+			<sect2>
+				<title>Notes</title>
+
+				<para>
+					To specify a publication that does not fit into the categories of <sgmltag>Article</sgmltag>, <sgmltag>Book</sgmltag>, or <sgmltag>ConferencePublication</sgmltag>, use the <sgmltag>OtherPublication</sgmltag> element and specify a <sgmltag class="attribute">type</sgmltag> attribute prefixed with <userinput>x:</userinput>. Or, leave out the <userinput>x:</userinput> and use one of the built-in types: Thesis, Whitepaper, Report, TechnicalDocumentation, Study, Manual, or ResearchPaper.
+				</para>
+				
+				<para>
+					For numbered elements, such as <sgmltag>Volume</sgmltag>, <sgmltag>Issue</sgmltag>, and <sgmltag>PageNumber</sgmltag>, do not add a label. CV Sieve will automatically add a localized label for you. For example, <userinput>12</userinput>, not <userinput>Issue 12</userinput>.
+				</para>
+
+				<para>
+					The HR-XML website has <ulink url="http://ns.hr-xml.org/2_4/HR-XML-2_4/SEP/Resume.html#_Toc127541938">more documentation</ulink>.
+				</para>
+			</sect2>
+
+		</sect1>
+
+		<sect1>
+			<title>SpeakingEventsHistory</title>
+			
+			<para>
+				This element describes formal talks, panel discussions, and other speaking engagements.
+			</para>
+
+			<sect2>
+				<title>Examples</title>
+
+				<programlisting>
+<![CDATA[<SpeakingEventsHistory>
+    <SpeakingEvent type="x:reviewer">
+        <StartDate>
+            <Year>1997</Year>
+        </StartDate>
+        <EventName>ACM/IEEE Design Automation Conference (DAC)</EventName>
+        <EventType>conference</EventType>
+    </SpeakingEvent>
+    <SpeakingEvent type="panel discussion">
+        <Title>Palaver Tree Online: A Community of Oral History</Title>
+        <StartDate>
+            <AnyDate>2000-06-15</AnyDate>
+        </StartDate>
+        <EventName>International Conference of the Learning Sciences 2000</EventName>
+        <EventType>conference</EventType>
+        <Location>Ann Arbor, MI</Location>
+        <Link>http://www.umich.edu/~icls/</Link>
+    </SpeakingEvent>
+    <SpeakingEvent type="x:invited guest speaker">
+        <Title>Community Updated</Title>
+        <StartDate>
+            <AnyDate>1999-03-07</AnyDate>
+        </StartDate>
+        <EventName>Cleveland Talk Radio 1490am</EventName>
+        <EventType>radio show</EventType>
+    </SpeakingEvent>
+</SpeakingEventsHistory>]]></programlisting>
+
+			</sect2>
+
+			<sect2>
+				<title>CV Sieve Output</title>
+
+				<screen>
+Speaking Events
+
+     * ACM/IEEE Design Automation Conference (DAC), 1997.
+     * Palaver Tree Online: A Community of Oral History. International
+       Conference of the Learning Sciences 2000, June 15, 2000.
+     * Community Updated. Cleveland Talk Radio 1490am, March 7, 1999.</screen>					
+
+			</sect2>
+
+			<sect2>
+				<title>Notes</title>
+
+				<para>
+					The HR-XML website has <ulink url="http://ns.hr-xml.org/2_4/HR-XML-2_4/SEP/Resume.html#_Toc127541942">more documentation</ulink>.
+				</para>
+			</sect2>
+
+		</sect1>
+
+		<sect1>
+			<title>Qualifications</title>
+			
+			<para>
+				The <sgmltag>Qualifications</sgmltag> element describes professional skills.
+			</para>
+			
+			<sect2>
+				<title>Examples</title>
+
+				<programlisting>
+<![CDATA[<Qualifications>
+    <Competency name="Theory">
+        <Competency name="Gastronomy"/>
+        <Competency name="Culinary math"/>
+        <Competency name="Meat identification"/>
+    </Competency>
+    <Competency name="Culinary Skills">
+        <Competency name="Braise"/>
+        <Competency name="Sauté"/>
+        <Competency name="Reductions"/>
+        <Competency name="Sauces"/>
+    </Competency>
+    <Competency name="Cuisines">
+        <Competency name="American Regional"/>
+        <Competency name="Pâtisserie"/>
+        <Competency name="Modern French"/>
+    </Competency>
+</Qualifications>]]></programlisting>
+
+			</sect2>
+
+			<sect2>
+				<title>CV Sieve Output</title>
+
+				<screen>
+Qualifications
+
+     * Theory: Gastronomy, Culinary math, Meat identification
+     * Culinary Skills: Braise, Sauté, Reductions, Sauces
+     * Cuisines: American Regional, Pâtisserie, Modern French</screen>
+
+			</sect2>
+
+			<sect2>
+				<title>Notes</title>
+
+				<para>
+					The <sgmltag>Qualifications</sgmltag> element is simply a hierarchy of <sgmltag>Competency</sgmltag> elements. HR-XML allows an unbounded number of levels in the hierarchy, but CV Sieve supports only two levels, as shown in the example above.
+				</para>
+				
+				<para>
+					The <sgmltag>Competency</sgmltag> element is complex and very detailed, as evidenced by the <ulink url="http://ns.hr-xml.org/2_4/HR-XML-2_4/CPO/Competencies.html">documentation</ulink>, but CV Sieve ignores everything except for the <sgmltag class="attribute">name</sgmltag> attribute. A <sgmltag class="attribute">name</sgmltag> on the first level of competencies is assumed to be a skill category, and a <sgmltag class="attribute">name</sgmltag> on the second level is assumed to be a skill in this category.
+				</para>
+
+				<para>
+					The HR-XML website has <ulink url="http://ns.hr-xml.org/2_4/HR-XML-2_4/SEP/Resume.html#_Toc127541946">more documentation</ulink>.
+				</para>
+
+			</sect2>
+
+		</sect1>
+
+		<sect1>
+			<title>Languages</title>
+			
+			<para>
+				The <sgmltag>Languages</sgmltag> element lists foreign language skills.
+			</para>
+			
+			<sect2>
+				<title>Examples</title>
+
+				<programlisting>
+<![CDATA[<Languages>
+    <Language>
+        <LanguageCode>EN</LanguageCode>
+        <Read>true</Read>
+        <Write>true</Write>
+        <Speak>true</Speak>
+        <Comments>Learned as a second language.</Comments>
+    </Language>
+    <Language>
+        <LanguageCode>FR</LanguageCode>
+        <Read>false</Read>
+        <Write>false</Write>
+        <Speak>true</Speak>
+    </Language>
+</Languages>]]></programlisting>
+
+			</sect2>
+
+			<sect2>
+				<title>CV Sieve Output</title>
+
+				<screen>
+Languages
+
+     * English: Ability to read, write, and speak. Learned as a second
+       language.
+     * French: Ability to read, write, and speak.</screen>
+
+			</sect2>
+
+			<sect2>
+				<title>Notes</title>
+
+				<para>
+					To specify a language, use the appropriate <emphasis>two-letter</emphasis> <ulink url="http://www.loc.gov/standards/iso639-2/langcodes.html">ISO 639-1</ulink> code. HR-XML allows either a two- or three-letter code, but CV Sieve supports only the two-letter codes.
+				</para>
+
+				<para>
+					In CV Sieve, the actual values for the <sgmltag>Read</sgmltag>, <sgmltag>Write</sgmltag>, and <sgmltag>Speak</sgmltag> elements are ignored. They are considered true if they are merely specified, as shown in the above example.
+				</para>
+
+				<para>
+					The HR-XML website has <ulink url="http://ns.hr-xml.org/2_4/HR-XML-2_4/SEP/Resume.html#_Toc127541947">more documentation</ulink>.
+				</para>
+
+			</sect2>
+
+		</sect1>
+
+		<sect1>
+			<title>Achievements</title>
+			
+			<para>
+				This element provides a place to list honors and awards.
+			</para>
+			
+			<sect2>
+				<title>Examples</title>
+
+				<programlisting>
+<![CDATA[<Achievements>
+    <Achievement>
+        <Date>
+            <StringDate>2001-2002</StringDate>
+        </Date>
+        <Description>Graduate Fellowship</Description>
+        <IssuingAuthority>Intel Foundation</IssuingAuthority>
+    </Achievement>
+</Achievements>]]></programlisting>
+
+			</sect2>
+
+			<sect2>
+				<title>CV Sieve Output</title>
+
+				<screen>
+Achievements
+
+     * Graduate Fellowship. Intel Foundation, 2001-2002</screen>
+
+			</sect2>
+
+			<sect2>
+				<title>Notes</title>
+
+				<para>
+					The HR-XML website has <ulink url="http://ns.hr-xml.org/2_4/HR-XML-2_4/SEP/Resume.html#_Toc127541951">more documentation</ulink>.
+				</para>
+
+			</sect2>
+
+		</sect1>
+
+		<sect1>
+			<title>Associations</title>
+			
+			<para>
+				This element lists organizations (professional, social, etc.) to which the subject of the CV or résumé belongs.
+			</para>
+			
+			<sect2>
+				<title>Examples</title>
+
+				<programlisting>
+<![CDATA[<Associations>
+    <Association type="Professional">
+        <Name>HR-XML Consortium</Name>
+        <Link>www.hr-xml.org</Link>
+        <StartDate>
+            <YearMonth>2002-03</YearMonth>
+        </StartDate>
+        <EndDate>
+            <YearMonth>2003-07</YearMonth>
+        </EndDate>
+        <Role>
+            <Name>Recruiting and Staffing Project Lead</Name>
+            <Deliverable>Resume 2.0 Specification</Deliverable>
+        </Role>
+    </Association>
+</Associations>]]></programlisting>
+
+			</sect2>
+
+			<sect2>
+				<title>CV Sieve Output</title>
+
+				<screen>
+Associations
+
+Professional Associations
+
+     * Recruiting and Staffing Project Lead, HR-XML Consortium, March
+       2002 - July 2003</screen>
+
+			</sect2>
+
+			<sect2>
+				<title>Notes</title>
+				
+				<para>
+					The list of associations is broken up into subcategories. Associations with identical <sgmltag class="attribute">type</sgmltag> attributes are grouped together.
+				</para>
+				
+				<para>
+					The built-in types (Professional, Social, Community, Non-Profit, Religious, and Political) are automatically localized. To specify a custom type, prefix the <sgmltag class="attribute">type</sgmltag> attribute with <userinput>x:</userinput>.
+				</para>
+				
+				<para>
+					Unlike the <sgmltag>EmploymentHistory</sgmltag> element, if no <sgmltag>EndDate</sgmltag> is given, the date is <emphasis>not</emphasis> assumed to be a time period ranging from <sgmltag>StartDate</sgmltag> to the present. Instead, no additional text is added. This allows the user to specify discontiguous dates for association membership, such as <userinput>1999, 2001, and 2002</userinput>.
+				</para>
+
+				<para>
+					HR-XML allows multiple roles to be specified for each association. This is not supported in CV Sieve. If you want to list multiple roles, you will need to duplicate the association for each role. Also, the <sgmltag>StartDate</sgmltag> and <sgmltag>EndDate</sgmltag> of a <sgmltag>Role</sgmltag> are ignored.
+				</para>
+
+				<para>
+					The HR-XML website has <ulink url="http://ns.hr-xml.org/2_4/HR-XML-2_4/SEP/Resume.html#_Toc127541951">more documentation</ulink>.
+				</para>
+
+			</sect2>
+
+		</sect1>
+
+		<sect1>
+			<title>References</title>
+			
+			<para>
+				This element is not supported by CV Sieve.
+			</para>
+
+			<para>
+				The HR-XML website has <ulink url="http://ns.hr-xml.org/2_4/HR-XML-2_4/SEP/Resume.html#_Toc127541959">more documentation</ulink>.
+			</para>
+
+		</sect1>
+
+		<sect1>
+			<title>SecurityCredentials</title>
+			
+			<para>
+				This element is not supported by CV Sieve.
+			</para>
+
+			<para>
+				The HR-XML website has <ulink url="http://ns.hr-xml.org/2_4/HR-XML-2_4/SEP/Resume.html#_Toc127541930">more documentation</ulink>.
+			</para>
+		</sect1>
+
+		<sect1>
+			<title>ResumeAdditionalItems</title>
+			
+			<para>
+				This element provides a place to store supplemental information such as professional interests, hobbies, and volunteer activities.
+			</para>
+
+			<sect2>
+				<title>Examples</title>
+
+				<programlisting>
+<![CDATA[<ResumeAdditionalItems>
+    <ResumeAdditionalItem type="Personal">
+        <Description>Married with 4 children</Description>
+    </ResumeAdditionalItem>
+    <ResumeAdditionalItem type="Volunteer">
+        <EffectiveDate>
+            <StartDate>
+                <Year>1999</Year>
+            </StartDate>
+            <EndDate>
+                <Year>2001</Year>
+            </EndDate>
+        </EffectiveDate>
+        <Description>Delivered Meals on Wheels to homebound elderly</Description>
+    </ResumeAdditionalItem>
+    <ResumeAdditionalItem type="Hobbies">
+        <EffectiveDate>
+            <StartDate>
+                <Year>2000</Year>
+            </StartDate>
+        </EffectiveDate>
+        <Description>Rock Climbing</Description>
+    </ResumeAdditionalItem>
+</ResumeAdditionalItems>]]></programlisting>
+
+			</sect2>
+
+			<sect2>
+				<title>CV Sieve Output</title>
+
+				<screen>
+Additional Items
+
+Personal
+
+     * Married with 4 children
+
+Volunteer
+
+     * 1999 - 2001: Delivered Meals on Wheels to homebound elderly
+
+Hobbies
+
+     * 2000: Rock Climbing</screen>
+
+			</sect2>
+
+			<sect2>
+				<title>Notes</title>
+
+				<para>
+					The additional items are grouped into categories according to the <sgmltag class="attribute">type</sgmltag> attribute.
+				</para>
+
+				<para>
+					The HR-XML website has <ulink url="http://ns.hr-xml.org/2_4/HR-XML-2_4/SEP/Resume.html#_Toc127541963">more documentation</ulink>.
+				</para>
+
+			</sect2>
+
+		</sect1>
+
+		<sect1>
+			<title>SupportingMaterials</title>
+			
+			<para>
+				This element is not supported by CV Sieve.
+			</para>
+
+			<para>
+				The HR-XML website has <ulink url="http://ns.hr-xml.org/2_4/HR-XML-2_4/CPO/SupportingMaterials.html">more documentation</ulink>.
+			</para>
+		</sect1>
+
+		<sect1>
+			<title>Dates</title>
+
+			<para>
+				There is no top-level element for dates; however, the date type deserves its own section because almost every top-level element specifies dates, and CV Sieve always formats them the same way.
+			</para>
+			
+			<para>
+				CV Sieve supports the following date elements:
+			</para>
+
+			<itemizedlist>
+				<listitem>
+					<formalpara>
+						<title>StringDate</title>
+						<para>
+							Formatted as-is.
+						</para>
+					</formalpara>
+				</listitem>
+				<listitem>
+					<formalpara>
+						<title>YearMonth</title>
+						<para>
+                    		The YYYY-MM pattern is converted to <computeroutput><replaceable>month</replaceable> <replaceable>year</replaceable></computeroutput>, where <computeroutput><replaceable>month</replaceable></computeroutput> is a month name taken from the message file for the specified language. If the parameter <parameter>month.format</parameter> is equal to <userinput>long</userinput>, full month names are used. Otherwise, abbreviated month names are used.
+						</para>
+					</formalpara>
+				</listitem>
+				<listitem>
+					<formalpara>
+						<title>AnyDate</title>
+						<para>
+							If the value matches the pattern YYYY-MM-DD, it is formatted like the <sgmltag>YearMonth</sgmltag> type, except that the value for DD is inserted. (For example, <userinput>2003-10-23</userinput> becomes <computeroutput>Oct. 23, 2003</computeroutput>.) CV Sieve also recognizes the pre-defined values <userinput>notApplicable</userinput> and <userinput>notKnown</userinput> and localizes them accordingly. Otherwise, the value is formatted as-is.
+						</para>
+					</formalpara>
+				</listitem>
+			</itemizedlist>
+
+			<para>
+				The HR-XML website has <ulink url="http://ns.hr-xml.org/2_4/HR-XML-2_4/CPO/DateTimeDataTypes.html">more documentation</ulink>.
+			</para>
+			
+		</sect1>
+
+	</chapter>
+	
+	<chapter>
+		<title>Support</title>
+		<para>
+			To report a bug, request a new feature, or discuss this project with other users, visit the <ulink url="http://sourceforge.net/projects/cvsieve/">CV Sieve project page</ulink>.
+		</para>
+		
+		<para>
+			CV Sieve is maintained by <ulink url="mailto:trevor@vocaro.com">Trevor Harmon</ulink>.
+		</para>
+	</chapter>
+	
+	<appendix id="XMLResume">
+		<title>XML Resume to HR-XML Resume Conversion</title>
+		<para>
+			The <ulink url="http://xmlresume.sourceforge.net/">XML Resume</ulink> project defines an XML format similar to HR-XML Resume. Originated by volunteers in 2001, the project has apparently been abandoned since mid-2004. As a result, the format appears to be somewhat unfinished. For example, it is missing elements to describe:
+		</para>
+		
+		<itemizedlist>
+			<listitem>
+				<simpara>Certifications</simpara>
+			</listitem>
+			<listitem>
+				<simpara>Various details about job history, such as the department of the company</simpara>
+			</listitem>
+			<listitem>
+				<simpara>Important data about a publication, such as its ISBN number</simpara>
+			</listitem>
+		</itemizedlist>
+			
+		<para>
+			 Still, the project remains somewhat popular, and a number of users have converted their unstructured résumés to the XML Resume specification. Some of these users may now wish to convert their CV or résumé content to the HR-XML standard. To support these users, the CV Sieve project maintains a set of stylesheets that can translate an <ulink url="http://xmlresume.sourceforge.net/">XML Resume</ulink> document directly to an HR-XML Resume document.
+		</para>
+		
+		<para>
+			Note that the translation is imperfect; some elements of the XML Resume specification have no equivalent in HR-XML and must be translated by the end-user. In most cases, when the stylesheets encounter such unsupported elements, comments are inserted into the output. The user must then decide how best to translate the missing XML Resume data into HR-XML Resume format. Despite this issue, these stylesheets should be able to convert at least 90% of an XML Resume file to the HR-XML format.
+		</para>
+		
+		<para>
+			The XML Resume stylesheets can be found in the <filename class="directory">xsl/xmlresume</filename> directory. More details about the unsupported elements can be found in the comments of the XSL files. For examples of how to use these stylesheets, refer to the examples in the <filename class="directory">examples/xmlresume</filename> directory.		
+		</para>
+
+	</appendix>
+	
+	<appendix>
+		<title>Copyright, License, and Disclaimer</title>
+
+		<para>
+			Copyright © 2002 Charles Chan
+		</para>
+		
+		<para>
+			Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
+		</para>
+		
+		<para>
+			<orderedlist>
+				<listitem>
+			  		<simpara>
+						The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
+					</simpara>
+				</listitem>
+				<listitem>
+					<simpara>
+						Except as contained in this notice, the names of individuals credited with contribution to this software shall not be used in advertising or otherwise to promote the sale, use or other dealings in this Software without prior written authorization from the individuals in question.
+					</simpara>
+				</listitem>
+				<listitem>
+					<simpara>
+						Any stylesheet derived from this Software that is publicly distributed will be identified with a different name and the version strings in any derived Software will be changed so that no possibility of confusion between the derived package and this Software will exist.
+					</simpara>
+				</listitem>
+			</orderedlist>
+		</para>
+		
+		<para>
+			THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL CHARLES CHAN OR ANY OTHER CONTRIBUTOR BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+		</para>
+	
+	</appendix>
+
+</book>

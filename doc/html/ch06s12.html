@@ -1,0 +1,29 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1"><title>Languages</title><meta name="generator" content="DocBook XSL Stylesheets V1.69.1"><link rel="start" href="index.html" title="CV Sieve Documentation"><link rel="up" href="ch06.html" title="Chapter 6. The Elements of HR-XML Resume"><link rel="prev" href="ch06s11.html" title="Qualifications"><link rel="next" href="ch06s13.html" title="Achievements"></head><body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF"><div class="navheader"><table width="100%" summary="Navigation header"><tr><th colspan="3" align="center">Languages</th></tr><tr><td width="20%" align="left"><a accesskey="p" href="ch06s11.html">Prev</a> </td><th width="60%" align="center">Chapter 6. The Elements of HR-XML Resume</th><td width="20%" align="right"> <a accesskey="n" href="ch06s13.html">Next</a></td></tr></table><hr></div><div class="sect1" lang="en"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a name="id2904866"></a>Languages</h2></div></div></div><p>
+				The <code class="sgmltag-element">Languages</code> element lists foreign language skills.
+			</p><div class="sect2" lang="en"><div class="titlepage"><div><div><h3 class="title"><a name="id2904879"></a>Examples</h3></div></div></div><pre class="programlisting">
+&lt;Languages&gt;
+    &lt;Language&gt;
+        &lt;LanguageCode&gt;EN&lt;/LanguageCode&gt;
+        &lt;Read&gt;true&lt;/Read&gt;
+        &lt;Write&gt;true&lt;/Write&gt;
+        &lt;Speak&gt;true&lt;/Speak&gt;
+        &lt;Comments&gt;Learned as a second language.&lt;/Comments&gt;
+    &lt;/Language&gt;
+    &lt;Language&gt;
+        &lt;LanguageCode&gt;FR&lt;/LanguageCode&gt;
+        &lt;Read&gt;false&lt;/Read&gt;
+        &lt;Write&gt;false&lt;/Write&gt;
+        &lt;Speak&gt;true&lt;/Speak&gt;
+    &lt;/Language&gt;
+&lt;/Languages&gt;</pre></div><div class="sect2" lang="en"><div class="titlepage"><div><div><h3 class="title"><a name="id2904891"></a>CV Sieve Output</h3></div></div></div><pre class="screen">
+Languages
+
+     * English: Ability to read, write, and speak. Learned as a second
+       language.
+     * French: Ability to read, write, and speak.</pre></div><div class="sect2" lang="en"><div class="titlepage"><div><div><h3 class="title"><a name="id2904920"></a>Notes</h3></div></div></div><p>
+					To specify a language, use the appropriate <span class="emphasis"><em>two-letter</em></span> <a href="http://www.loc.gov/standards/iso639-2/langcodes.html" target="_top">ISO 639-1</a> code. HR-XML allows either a two- or three-letter code, but CV Sieve supports only the two-letter codes.
+				</p><p>
+					In CV Sieve, the actual values for the <code class="sgmltag-element">Read</code>, <code class="sgmltag-element">Write</code>, and <code class="sgmltag-element">Speak</code> elements are ignored. They are considered true if they are merely specified, as shown in the above example.
+				</p><p>
+					The HR-XML website has <a href="http://ns.hr-xml.org/2_4/HR-XML-2_4/SEP/Resume.html#_Toc127541947" target="_top">more documentation</a>.
+				</p></div></div><div class="navfooter"><hr><table width="100%" summary="Navigation footer"><tr><td width="40%" align="left"><a accesskey="p" href="ch06s11.html">Prev</a> </td><td width="20%" align="center"><a accesskey="u" href="ch06.html">Up</a></td><td width="40%" align="right"> <a accesskey="n" href="ch06s13.html">Next</a></td></tr><tr><td width="40%" align="left" valign="top">Qualifications </td><td width="20%" align="center"><a accesskey="h" href="index.html">Home</a></td><td width="40%" align="right" valign="top"> Achievements</td></tr></table></div></body></html>

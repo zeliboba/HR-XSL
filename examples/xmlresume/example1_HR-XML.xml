@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Resume xmlns="http://ns.hr-xml.org/2006-02-28" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://ns.hr-xml.org/2006-02-28 Resume.xsd">
+   <StructuredXMLResume>
+      <ContactInfo>
+         <PersonName>
+            <GivenName>Jo</GivenName>
+            <FamilyName>Doe</FamilyName>
+         </PersonName>
+         <ContactMethod>
+<!-- Phone location not supported. -->
+            <Telephone>
+               <FormattedNumber>555.555.5555</FormattedNumber>
+            </Telephone>
+            <InternetEmailAddress>doe@doe.doe</InternetEmailAddress>
+            <InternetWebAddress>http://doe.com/~doe/</InternetWebAddress>
+            <PostalAddress>
+<!-- Country not found; assumed to be US. -->
+               <CountryCode>US</CountryCode>
+               <PostalCode>99999-9999</PostalCode>
+               <Region>NX</Region>
+               <Municipality>Garbonzoville</Municipality>
+               <DeliveryAddress>
+                  <AddressLine>123 Elm #456</AddressLine>
+               </DeliveryAddress>
+            </PostalAddress>
+         </ContactMethod>
+      </ContactInfo>
+      <Objective>I really, really, really, really want a job.</Objective>
+      <EmploymentHistory>
+         <EmployerOrg>
+            <EmployerOrgName>HM Secret Service</EmployerOrgName>
+            <EmployerContactInfo/>
+            <PositionHistory>
+               <Title>Senior Toilet Cleaner</Title>
+<!-- HR-XML OrgName required but not supported (no equivalent for it in XML Resume). -->
+               <OrgName>
+                  <OrganizationName/>
+               </OrgName>
+               <Description>Cleaned out public lavoratories using my toothbrush. Assissted with enterprise resource planning.</Description>
+               <StartDate>
+                  <YearMonth>1943-08</YearMonth>
+               </StartDate>
+            </PositionHistory>
+         </EmployerOrg>
+         <EmployerOrg>
+            <EmployerOrgName>Framingham Palace</EmployerOrgName>
+            <EmployerContactInfo/>
+            <PositionHistory>
+               <Title>Junior Bedpan Cleaner</Title>
+<!-- HR-XML OrgName required but not supported (no equivalent for it in XML Resume). -->
+               <OrgName>
+                  <OrganizationName/>
+               </OrgName>
+               <Description>Analyzed bedpan cleanliness strategies for royal family. Learned how to make soufflés.</Description>
+               <StartDate>
+                  <YearMonth>1633-10</YearMonth>
+               </StartDate>
+               <EndDate>
+                  <YearMonth>1634-10</YearMonth>
+               </EndDate>
+            </PositionHistory>
+         </EmployerOrg>
+      </EmploymentHistory>
+      <EducationHistory>
+<!-- All degrees assumed to be university-level. -->
+         <SchoolOrInstitution schoolType="university">
+            <School>
+               <SchoolName>Fishbaum del Schloßberg</SchoolName>
+            </School>
+            <Degree>
+               <DegreeName>BA</DegreeName>
+               <DegreeMajor>
+                  <Name>Renaissance Bedpan Design</Name>
+               </DegreeMajor>
+               <DatesOfAttendance>
+                  <StartDate>
+                     <YearMonth>1631-02</YearMonth>
+                  </StartDate>
+               </DatesOfAttendance>
+               <Comments>Graduated with lowest honors.</Comments>
+            </Degree>
+         </SchoolOrInstitution>
+      </EducationHistory>
+      <Qualifications>
+<!-- Skill area title not supported (unless no skill set title is given). -->
+         <Competency name="Special Skills">
+            <Competency name="Speak multiple European languages with no discernable accent"/>
+            <Competency name="Able to predict earthquakes"/>
+         </Competency>
+      </Qualifications>
+<!-- Copyright not supported. -->
+   </StructuredXMLResume>
+</Resume>

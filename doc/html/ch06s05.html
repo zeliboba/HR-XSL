@@ -1,0 +1,100 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1"><title>EducationHistory</title><meta name="generator" content="DocBook XSL Stylesheets V1.69.1"><link rel="start" href="index.html" title="CV Sieve Documentation"><link rel="up" href="ch06.html" title="Chapter 6. The Elements of HR-XML Resume"><link rel="prev" href="ch06s04.html" title="EmploymentHistory"><link rel="next" href="ch06s06.html" title="LicensesAndCertifications"></head><body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF"><div class="navheader"><table width="100%" summary="Navigation header"><tr><th colspan="3" align="center">EducationHistory</th></tr><tr><td width="20%" align="left"><a accesskey="p" href="ch06s04.html">Prev</a> </td><th width="60%" align="center">Chapter 6. The Elements of HR-XML Resume</th><td width="20%" align="right"> <a accesskey="n" href="ch06s06.html">Next</a></td></tr></table><hr></div><div class="sect1" lang="en"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a name="id2904155"></a>EducationHistory</h2></div></div></div><p>
+				This section is designed for listing academic degrees, but it also supports partial degree completion.
+			</p><div class="sect2" lang="en"><div class="titlepage"><div><div><h3 class="title"><a name="id2904166"></a>Examples</h3></div></div></div><pre class="programlisting">
+&lt;EducationHistory&gt;
+	&lt;SchoolOrInstitution schoolType="college"&gt;
+	    &lt;School type="prior"&gt;
+	        &lt;SchoolName&gt;Boston College&lt;/SchoolName&gt;
+	    &lt;/School&gt;
+	    &lt;OrganizationUnit organizationType="subSchool"&gt;Wallace E. Carroll School of Management&lt;/OrganizationUnit&gt;
+	    &lt;Degree degreeType="bachelors" examPassed="false" graduatingDegree="graduating"&gt;
+	        &lt;DegreeName&gt;Bachelors of Science&lt;/DegreeName&gt;
+	        &lt;DegreeDate&gt;
+	            &lt;Year&gt;2001&lt;/Year&gt;
+	        &lt;/DegreeDate&gt;
+	        &lt;DegreeMajor&gt;
+	            &lt;DegreeConcentration&gt;Management&lt;/DegreeConcentration&gt;
+	            &lt;Name&gt;Human Resource Management&lt;/Name&gt;
+	        &lt;/DegreeMajor&gt;
+	        &lt;DegreeMajor&gt;
+	            &lt;Name&gt;Marketing&lt;/Name&gt;
+	        &lt;/DegreeMajor&gt;
+	        &lt;DatesOfAttendance currentlyEnrolled="true"&gt;
+	            &lt;StartDate&gt;
+	                &lt;AnyDate&gt;1998-01-01&lt;/AnyDate&gt;
+	            &lt;/StartDate&gt;
+	        &lt;/DatesOfAttendance&gt;
+	    &lt;/Degree&gt;
+	&lt;/SchoolOrInstitution&gt;
+	&lt;SchoolOrInstitution schoolType="university"&gt;
+	    &lt;School type="prior"&gt;
+	        &lt;SchoolId&gt;
+	            &lt;IdValue&gt;MS1786534&lt;/IdValue&gt;
+	        &lt;/SchoolId&gt;
+	        &lt;SchoolName&gt;Harvard&lt;/SchoolName&gt;
+	    &lt;/School&gt;
+	    &lt;LocationSummary&gt;
+	        &lt;Municipality&gt;Fayette&lt;/Municipality&gt;
+	        &lt;Region&gt;MS&lt;/Region&gt;
+	        &lt;CountryCode&gt;US&lt;/CountryCode&gt;
+	    &lt;/LocationSummary&gt;
+	    &lt;OrganizationUnit organizationType="subSchool"&gt;Andover&lt;/OrganizationUnit&gt;
+	    &lt;Degree degreeType="bachelors" graduatingDegree="graduating"&gt;
+	        &lt;DegreeName&gt;Bachelors of Science&lt;/DegreeName&gt;
+	        &lt;DegreeDate&gt;
+	            &lt;AnyDate&gt;1987-01-02&lt;/AnyDate&gt;
+	        &lt;/DegreeDate&gt;
+	        &lt;DegreeMajor&gt;
+	            &lt;ProgramId&gt;
+	                &lt;IdValue&gt;173.24&lt;/IdValue&gt;
+	            &lt;/ProgramId&gt;
+	            &lt;DegreeConcentration&gt;Applied Math&lt;/DegreeConcentration&gt;
+	            &lt;Name&gt;Mathematics&lt;/Name&gt;
+	        &lt;/DegreeMajor&gt;
+	        &lt;DegreeMeasure&gt;
+	            &lt;EducationalMeasure&gt;
+	                &lt;MeasureSystem&gt;GPA&lt;/MeasureSystem&gt;
+	                &lt;MeasureValue&gt;
+	                    &lt;NumericValue&gt;3.9&lt;/NumericValue&gt;
+	                &lt;/MeasureValue&gt;
+	                &lt;GoodStudentIndicator&gt;true&lt;/GoodStudentIndicator&gt;
+	            &lt;/EducationalMeasure&gt;
+	            &lt;AcademicCreditCode&gt;A&lt;/AcademicCreditCode&gt;
+	            &lt;ClassRank numberOfStudents="100"&gt;78&lt;/ClassRank&gt;
+	        &lt;/DegreeMeasure&gt;
+	        &lt;DatesOfAttendance currentlyEnrolled="false"&gt;
+	            &lt;StartDate&gt;
+	                &lt;YearMonth&gt;1980-09&lt;/YearMonth&gt;
+	            &lt;/StartDate&gt;
+	            &lt;EndDate&gt;
+	                &lt;YearMonth&gt;1981-04&lt;/YearMonth&gt;
+	            &lt;/EndDate&gt;
+	        &lt;/DatesOfAttendance&gt;
+	        &lt;DatesOfAttendance currentlyEnrolled="false"&gt;
+	            &lt;StartDate&gt;
+	                &lt;YearMonth&gt;1984-09&lt;/YearMonth&gt;
+	            &lt;/StartDate&gt;
+	            &lt;EndDate&gt;
+	                &lt;YearMonth&gt;1987-04&lt;/YearMonth&gt;
+	            &lt;/EndDate&gt;
+	        &lt;/DatesOfAttendance&gt;
+	        &lt;Comments&gt;
+	            Due to financial reasons, it was necessary to withdraw after the first year.
+	        &lt;/Comments&gt;
+	    &lt;/Degree&gt;
+	&lt;/SchoolOrInstitution&gt;
+&lt;/EducationHistory&gt;</pre></div><div class="sect2" lang="en"><div class="titlepage"><div><div><h3 class="title"><a name="id2904179"></a>CV Sieve Output</h3></div></div></div><pre class="screen">
+Education
+
+   B.S., Human Resource Management Marketing, 2001, Boston College,
+   concentration in Management
+
+   B.S., Mathematics, January 2, 1987, Harvard, Cambridge, MA,
+   concentration in Applied Math
+
+     Due to financial reasons, it was necessary to withdraw after the
+     first year.</pre></div><div class="sect2" lang="en"><div class="titlepage"><div><div><h3 class="title"><a name="id2904196"></a>Notes</h3></div></div></div><p>
+					The <code class="sgmltag-element">EducationHistory</code> element is quite comprehensive and includes many details and HR-specific data that most people do not require for their CVs or résumés. CV Sieve ignores most of these but may support them in later versions.
+				</p><p>
+					The HR-XML website has <a href="http://ns.hr-xml.org/2_4/HR-XML-2_4/CPO/EducationHistory.html" target="_top">more documentation</a>.
+				</p></div></div><div class="navfooter"><hr><table width="100%" summary="Navigation footer"><tr><td width="40%" align="left"><a accesskey="p" href="ch06s04.html">Prev</a> </td><td width="20%" align="center"><a accesskey="u" href="ch06.html">Up</a></td><td width="40%" align="right"> <a accesskey="n" href="ch06s06.html">Next</a></td></tr><tr><td width="40%" align="left" valign="top">EmploymentHistory </td><td width="20%" align="center"><a accesskey="h" href="index.html">Home</a></td><td width="40%" align="right" valign="top"> LicensesAndCertifications</td></tr></table></div></body></html>

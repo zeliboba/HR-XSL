@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<project default="all">
+
+	<property file="build.properties"/>
+	<import file="../../util/cvsieve.xml"/>
+
+	<target name="all" depends="html, pdf, text"/>
+
+	<target name="html">
+		<resume-to-html in="resume.xml"/>
+	</target>
+
+	<target name="pdf">
+		<resume-to-pdf in="resume.xml"/>
+	</target>
+
+	<target name="text">
+		<resume-to-text in="resume.xml"/>
+	</target>
+
+</project>

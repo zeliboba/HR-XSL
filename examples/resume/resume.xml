@@ -1,0 +1,1152 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- Add more info about Autonet project leadership (NSF grant proposal, future publication?) -->
+<!-- Add info about working for July 2005–September 2005 Arguello Software Consulting, CA Software Engineer (Internship) -->
+<!-- Missing some publications? (RTZen) -->
+<!-- I think there are some things missing from the publications section. What about that TimeSys Linux HOWTO? It would go in OtherPublications, I guess. There may be other similar docs, too. -->
+<!-- are all possible links (according to the hr-xml spec) specified?  -->
+
+<!--
+Resume Tips
+===========
+Objective should hit these points: time, position, work environment, skills 
+Jobs: use the PAR model - projects, actions, results 
+Emphasize TEAMWORK - how many people you worked with 
+http://www.eweek.com/article2/0,1759,1983949,00.asp?kc=EWRSS03119TX1K0000594 
+-->
+
+<Resume
+	xmlns="http://ns.hr-xml.org/2006-02-28"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://ns.hr-xml.org/2006-02-28 Resume.xsd">
+
+	<StructuredXMLResume>
+
+		<ContactInfo>
+
+			<PersonName>
+				<GivenName>Trevor</GivenName>
+				<MiddleName>Wade</MiddleName>
+				<FamilyName>Harmon</FamilyName>
+			</PersonName>
+
+			<ContactMethod>
+				<Mobile>
+					<InternationalCountryCode>1</InternationalCountryCode>
+					<AreaCityCode>949</AreaCityCode>
+					<SubscriberNumber>923-5356</SubscriberNumber>
+				</Mobile>
+				<InternetEmailAddress>trevor@vocaro.com</InternetEmailAddress>
+				<InternetWebAddress>http://doc.ece.uci.edu/~tharmon/</InternetWebAddress>
+				<PostalAddress>
+					<CountryCode>US</CountryCode>
+					<PostalCode>92617-3101</PostalCode>
+					<Region>California</Region>
+					<Municipality>Irvine</Municipality>
+					<DeliveryAddress>
+						<AddressLine>115 Verano Place</AddressLine>
+					</DeliveryAddress>
+				</PostalAddress>
+			</ContactMethod>
+
+		</ContactInfo>
+
+		<EmploymentHistory>
+
+			<EmployerOrg>
+				<EmployerOrgName>University of California, Irvine</EmployerOrgName>
+				<EmployerContactInfo>
+					<LocationSummary>
+						<Municipality>Irvine</Municipality>
+						<Region>California</Region>
+					</LocationSummary>
+				</EmployerContactInfo>
+				<PositionHistory>
+					<Title>Graduate Student Researcher</Title>
+					<OrgName>
+						<OrganizationName>Electrical Engineering and Computer Science</OrganizationName>
+					</OrgName>
+					<OrgInfo>
+						<WebSite>http://www.eng.uci.edu/eecs/</WebSite>
+					</OrgInfo>
+					<Description>
+						Authored four conference papers on real-time Java and CORBA
+						Led NSF-funded research project in middleware for wireless, peer-to-peer, self-organizing traffic management systems
+						Project manager of Autonet, a research effort funded by the National Science Foundation to develop peer-to-peer, self-organizing traffic management systems
+						Created ZenQA, automatic verification and performance analysis tool for middleware
+						Contributing author of National Science Foundation grant proposal "Collaborative Research: Components and Aspects for Embedded Middleware". Approved for $690,000 from 2004 to 2007.
+					</Description>
+					<!-- http://doc.ece.uci.edu/autonet/ -->
+					<!-- http://www.nsf.gov/awardsearch/showAward.do?AwardNumber=0410218" -->
+					<StartDate>
+						<YearMonth>2003-07</YearMonth>
+					</StartDate>
+				</PositionHistory>
+			</EmployerOrg>
+
+			<EmployerOrg>
+				<EmployerOrgName>Nova Group</EmployerOrgName>
+				<EmployerContactInfo>
+					<LocationSummary>
+						<Municipality>Tarumi</Municipality>
+						<Region>Hyogo</Region>
+						<CountryCode>JP</CountryCode>
+					</LocationSummary>
+				</EmployerContactInfo>
+				<PositionHistory>
+					<Title>English Teacher</Title>
+					<OrgName>
+						<OrganizationName/>
+					</OrgName>
+					<OrgInfo>
+						<WebSite>http://www.teachinjapan.com/</WebSite>
+					</OrgInfo>
+					<Description>
+						Instructed Japanese students in English as a second language
+						Designed lesson plans and group activities
+						Presented demo lessons to potential customers
+					</Description>
+					<StartDate>
+						<YearMonth>2001-11</YearMonth>
+					</StartDate>
+					<EndDate>
+						<YearMonth>2002-08</YearMonth>
+					</EndDate>
+				</PositionHistory>
+			</EmployerOrg>
+
+			<EmployerOrg>
+				<EmployerOrgName>Peace Corps Ghana</EmployerOrgName>
+				<EmployerContactInfo>
+					<LocationSummary>
+						<Municipality>Tumu</Municipality>
+						<CountryCode>GH</CountryCode>
+					</LocationSummary>
+				</EmployerContactInfo>
+				<PositionHistory>
+					<Title>Math and Physics Teacher</Title>
+					<OrgName>
+						<OrganizationName/>
+					</OrgName>
+					<OrgInfo>
+						<WebSite>http://peacecorps.gov/</WebSite>
+					</OrgInfo>
+					<Description>
+						Co-authored "Peace Corps Math Manual", a collection of lesson plans
+						Founded and led after-school clubs in African literature and computer literacy
+						Launched "Girls Club" program to encourage girls to stay in school
+						Conceived and supervised a community-based "Physics Day" to showcase students' abilities and encourage physics education
+						Created stage adaptation of a scene from the Nigerian book Things Fall Apart to be performed by students
+						Coached students in games of baseball, basketball, and (American) football
+						Trained and evaluated new Peace Corps volunteers in teaching techniques
+					</Description>
+					<StartDate>
+						<YearMonth>1999-06</YearMonth>
+					</StartDate>
+					<EndDate>
+						<YearMonth>2001-08</YearMonth>
+					</EndDate>
+				</PositionHistory>
+			</EmployerOrg>
+
+			<EmployerOrg>
+				<EmployerOrgName>Kedly Inc.</EmployerOrgName>
+				<EmployerContactInfo>
+					<LocationSummary>
+						<Municipality>Saint Louis</Municipality>
+						<Region>Missouri</Region>
+					</LocationSummary>
+				</EmployerContactInfo>
+				<PositionHistory>
+					<Title>Software Engineer</Title>
+					<OrgName>
+						<OrganizationName/>
+					</OrgName>
+					<Description>
+						Assisted with development of low-power, handheld computer
+						Overhauled and documented graphics subsystem
+						Implemented space-efficient database API
+						Programmed serial port driver
+						Built from scratch a space-efficient database library
+						Programmed serial port driver to enable both wired and infrared connections
+						Designed custom user interface, icons, and fonts
+						Redesigned and redeployed engineering firm's web site for easier navigation and readability
+						Developed Java-based desktop application for data synchronization with device.
+					</Description>
+					<StartDate>
+						<YearMonth>1999-02</YearMonth>
+					</StartDate>
+					<EndDate>
+						<YearMonth>1999-06</YearMonth>
+					</EndDate>
+				</PositionHistory>
+			</EmployerOrg>
+
+			<EmployerOrg>
+				<EmployerOrgName>Washington University</EmployerOrgName>
+				<EmployerContactInfo>
+					<LocationSummary>
+						<Municipality>Saint Louis</Municipality>
+						<Region>Missouri</Region>
+					</LocationSummary>
+				</EmployerContactInfo>
+				<PositionHistory>
+					<Title>Research Assistant</Title>
+					<OrgName>
+						<OrganizationName>Institute for Biomedical Computing</OrganizationName>
+					</OrgName>
+					<Description>
+						Completed undergraduate research of team-oriented databases
+						Developed algorithms for visualizing DNA sequences
+						Presented, with visual aids and live demonstrations, results of thesis research to associates
+						Completed academic research of multi-tier database architectures using Java and SQL
+						Developed algorithms for visualizing DNA sequences as XML; funded by U.S. Human Genome Project
+					</Description>
+					<StartDate>
+						<YearMonth>1998-12</YearMonth>
+					</StartDate>
+					<EndDate>
+						<YearMonth>1999-02</YearMonth>
+					</EndDate>
+				</PositionHistory>
+			</EmployerOrg>
+
+			<EmployerOrg>
+				<EmployerOrgName>Jenoptik Systemhaus</EmployerOrgName>
+				<EmployerContactInfo>
+					<LocationSummary>
+						<Municipality>Nürtingen</Municipality>
+						<CountryCode>DE</CountryCode>
+					</LocationSummary>
+				</EmployerContactInfo>
+				<PositionHistory>
+					<Title>Software Engineer</Title>
+					<OrgName>
+						<OrganizationName/>
+					</OrgName>
+					<Description>
+						Wrote C++ libraries to speed development of large Oracle-based client/server database
+						Designed APIs for application automation and network messaging
+						Trained peers by designing and leading an 8-hour tutorial on ActiveX, the software component architecture
+						Designed and implemented systems for application automation (via OLE and DCOM) and network messaging
+					</Description>
+					<StartDate>
+						<YearMonth>1997-02</YearMonth>
+					</StartDate>
+					<EndDate>
+						<YearMonth>1997-06</YearMonth>
+					</EndDate>
+				</PositionHistory>
+			</EmployerOrg>
+
+			<EmployerOrg>
+				<EmployerOrgName>Washington University</EmployerOrgName>
+				<EmployerContactInfo>
+					<LocationSummary>
+						<Municipality>Saint Louis</Municipality>
+						<Region>Missouri</Region>
+					</LocationSummary>
+				</EmployerContactInfo>
+				<PositionHistory>
+					<Title>Software Engineer</Title>
+					<OrgName>
+						<OrganizationName>Computer Science and Engineering</OrganizationName>
+					</OrgName>
+					<Description>Ported low-level graphics API from Unix to Windows</Description>
+					<StartDate>
+						<YearMonth>1995-10</YearMonth>
+					</StartDate>
+					<EndDate>
+						<YearMonth>1996-04</YearMonth>
+					</EndDate>
+				</PositionHistory>
+			</EmployerOrg>
+
+			<EmployerOrg>
+				<EmployerOrgName>Microdyne Technologies</EmployerOrgName>
+				<EmployerContactInfo>
+					<LocationSummary>
+						<Municipality>Overland Park</Municipality>
+						<Region>Kansas</Region>
+					</LocationSummary>
+				</EmployerContactInfo>
+				<PositionHistory>
+					<Title>Software Engineer</Title>
+					<OrgName>
+						<OrganizationName/>
+					</OrgName>
+					<Description>Designed, implemented, and tested pluggable user interface components for Microsoft Windows programmers using Visual C++ and Visual Basic</Description>
+					<StartDate>
+						<YearMonth>1993-10</YearMonth>
+					</StartDate>
+					<EndDate>
+						<YearMonth>1996-05</YearMonth>
+					</EndDate>
+				</PositionHistory>
+			</EmployerOrg>
+
+			<EmployerOrg>
+				<EmployerOrgName>Harmon Optical</EmployerOrgName>
+				<EmployerContactInfo>
+					<LocationSummary>
+						<Municipality>Tahlequah</Municipality>
+						<Region>Oklahoma</Region>
+					</LocationSummary>
+				</EmployerContactInfo>
+				<PositionHistory>
+					<Title>Data Entry Clerk</Title>
+					<OrgName>
+						<OrganizationName/>
+					</OrgName>
+					<Description>Data processing of accounts and customer records.</Description>
+					<StartDate>
+						<Year>1991</Year>
+					</StartDate>
+					<EndDate>
+						<Year>1993</Year>
+					</EndDate>
+				</PositionHistory>
+			</EmployerOrg>
+		</EmploymentHistory>
+
+		<EducationHistory>
+
+			<SchoolOrInstitution schoolType="university">
+				<School>
+					<SchoolName>University of California</SchoolName>
+					<!-- http://www.uci.edu/ -->
+				</School>
+				<LocationSummary>
+					<Municipality>Irvine</Municipality>
+					<Region>California</Region>
+				</LocationSummary>
+				<OrganizationUnit organizationType="department">Electrical Engineering And Computer Science</OrganizationUnit>
+				<Degree degreeType="masters" graduatingDegree="graduating">
+					<DegreeName>Master of Science</DegreeName>
+					<DegreeDate>
+						<AnyDate>2005-06-18</AnyDate>
+					</DegreeDate>
+					<DegreeMajor>
+						<DegreeConcentration>Computer Systems and Software</DegreeConcentration>
+						<Name>Electrical and Computer Engineering</Name>
+					</DegreeMajor>
+					<DegreeMeasure>
+						<EducationalMeasure>
+							<MeasureSystem>GPA</MeasureSystem>
+							<MeasureValue>
+								<NumericValue>3.95</NumericValue>
+							</MeasureValue>
+							<HighestPossibleValue>
+								<NumericValue>4.0</NumericValue>
+							</HighestPossibleValue>
+						</EducationalMeasure>
+					</DegreeMeasure>
+					<DatesOfAttendance>
+						<StartDate>
+							<YearMonth>2003-09</YearMonth>
+						</StartDate>
+						<EndDate>
+							<YearMonth>2005-06</YearMonth>
+						</EndDate>
+					</DatesOfAttendance>
+				</Degree>
+				<Comments>Developed teaching skills in the California Community College Internship Program (CCCIP), where I partnered with faculty at a local college to gain real-world teaching experience and knowledge of the activities and responsibilities associated with an academic career.</Comments>
+			</SchoolOrInstitution>
+
+			<SchoolOrInstitution schoolType="university">
+				<School>
+					<SchoolName>Washington University</SchoolName>
+					<!-- http://www.wustl.edu/ -->
+				</School>
+				<LocationSummary>
+					<Municipality>Saint Louis</Municipality>
+					<Region>Missouri</Region>
+				</LocationSummary>
+				<OrganizationUnit organizationType="department">Computer Science and Engineering</OrganizationUnit>
+				<Degree degreeType="bachelors" graduatingDegree="graduating">
+					<DegreeName>Bachelor of Science</DegreeName>
+					<DegreeDate>
+						<YearMonth>1998-12</YearMonth>
+					</DegreeDate>
+					<DegreeMajor>
+						<Name>Computer Engineering</Name>
+					</DegreeMajor>
+					<DegreeMeasure>
+						<EducationalMeasure>
+							<MeasureSystem>GPA</MeasureSystem>
+							<MeasureValue>
+								<NumericValue>3.46</NumericValue>
+							</MeasureValue>
+							<HighestPossibleValue>
+								<NumericValue>4.0</NumericValue>
+							</HighestPossibleValue>
+						</EducationalMeasure>
+					</DegreeMeasure>
+					<DatesOfAttendance>
+						<StartDate>
+							<YearMonth>1995-09</YearMonth>
+						</StartDate>
+						<EndDate>
+							<YearMonth>1998-12</YearMonth>
+						</EndDate>
+					</DatesOfAttendance>
+					<Comments>Active member of Alpha Phi Omega</Comments>
+				</Degree>
+			</SchoolOrInstitution>
+
+			<SchoolOrInstitution schoolType="university">
+				<School>
+					<SchoolName>Universität Stuttgart</SchoolName>
+					<!-- http://www.uni-stuttgart.de/ -->
+				</School>
+				<LocationSummary>
+					<Municipality>Stuttgart</Municipality>
+					<CountryCode>DE</CountryCode>
+				</LocationSummary>
+				<Degree degreeType="international">
+					<DatesOfAttendance>
+						<StartDate>
+							<YearMonth>1996-10</YearMonth>
+						</StartDate>
+						<EndDate>
+							<YearMonth>1997-02</YearMonth>
+						</EndDate>
+					</DatesOfAttendance>
+				</Degree>
+			</SchoolOrInstitution>
+
+			<SchoolOrInstitution schoolType="college">
+				<School>
+					<SchoolName>Johnson County Community College</SchoolName>
+					<!-- http://www.jccc.net/ -->
+				</School>
+				<LocationSummary>
+					<Municipality>Overland Park</Municipality>
+					<Region>Kansas</Region>
+				</LocationSummary>
+				<Degree degreeType="associates">
+					<DegreeName>Associate of Arts</DegreeName>
+					<DegreeDate>
+						<Year>1995</Year>
+					</DegreeDate>
+					<DegreeMajor>
+						<Name>Liberal Arts</Name>
+					</DegreeMajor>
+					<DegreeMeasure>
+						<EducationalMeasure>
+							<MeasureSystem>GPA</MeasureSystem>
+							<MeasureValue>
+								<NumericValue>3.70</NumericValue>
+							</MeasureValue>
+							<HighestPossibleValue>
+								<NumericValue>4.0</NumericValue>
+							</HighestPossibleValue>
+						</EducationalMeasure>
+					</DegreeMeasure>
+					<DatesOfAttendance>
+						<StartDate>
+							<YearMonth>1993-09</YearMonth>
+						</StartDate>
+						<EndDate>
+							<YearMonth>1995-05</YearMonth>
+						</EndDate>
+					</DatesOfAttendance>
+					<!-- Move this info to the dedicated elements (honorsProgram, academicHonors) -->
+					<Comments>Honors program graduate. Phi Theta Kappa member.</Comments> 
+				</Degree>
+			</SchoolOrInstitution>
+
+			<SchoolOrInstitution schoolType="highschool">
+				<School>
+					<SchoolName>Tahlequah High School</SchoolName>
+					<!-- http://www.tahlequah.k12.ok.us/~tiger14/main/ -->
+				</School>
+				<LocationSummary>
+					<Municipality>Tahlequah</Municipality>
+					<Region>Oklahoma</Region>
+				</LocationSummary>
+				<Degree degreeType="high school or equivalent">
+					<DegreeDate>
+						<Year>1993</Year>
+					</DegreeDate>
+					<DegreeMeasure>
+						<EducationalMeasure>
+							<MeasureSystem>GPA</MeasureSystem>
+							<MeasureValue>
+								<NumericValue>4.0</NumericValue>
+							</MeasureValue>
+							<HighestPossibleValue>
+								<NumericValue>4.0</NumericValue>
+							</HighestPossibleValue>
+						</EducationalMeasure>
+					</DegreeMeasure>
+					<DatesOfAttendance>
+						<StartDate>
+							<YearMonth>1990-09</YearMonth>
+						</StartDate>
+						<EndDate>
+							<YearMonth>1995-05</YearMonth>
+						</EndDate>
+					</DatesOfAttendance>
+					<!-- Move this info to the dedicated elements (honorsProgram, academicHonors) -->
+					<Comments>Graduated with honors in top 2% of class.</Comments> 
+				</Degree>
+			</SchoolOrInstitution>
+
+		</EducationHistory>
+
+		<PublicationHistory>
+
+			<Article>
+				<Title>CORBA is dead! Long live CORBA!</Title>
+				<PublicationDate>
+					<YearMonth>2004-03</YearMonth>
+				</PublicationDate>
+				<Link>http://www.linux-mag.com/2004-03/corba_01.html</Link>
+				<Abstract>Though it's no longer trendy, CORBA is alive and well. This article shows developers how to take advantage of CORBA services on Linux.</Abstract>
+				<JournalOrSerialName>Linux Magazine</JournalOrSerialName>
+			</Article>
+
+			<Article>
+				<Title>Building a Universal SQL Client</Title>
+				<PublicationDate>
+					<YearMonth>2003-09</YearMonth>
+				</PublicationDate>
+				<Link>http://www.linux-mag.com/2003-09/compile_01.html</Link>
+				<Abstract>The Qt toolkit's SQL classes can help build a database client that can run almost anywhere.</Abstract>
+				<JournalOrSerialName>Linux Magazine</JournalOrSerialName>
+				<ISSN>ISSN1536-4674</ISSN>
+				<PageNumber>48-52</PageNumber>
+			</Article>
+
+			<Article>
+				<Title>Portability and the ARM Processor</Title>
+				<PublicationDate>
+					<YearMonth>2003-09</YearMonth>
+				</PublicationDate>
+				<Link>http://www.ddj.com/showArticle.jhtml?articleID=184405435</Link>
+				<Abstract>Porting a Linux application to the StrongARM-based iPAQ handheld computer showed that "ANSI C" and "portability" don't always go hand-in-hand.</Abstract>
+				<JournalOrSerialName>Dr. Dobb's Journal</JournalOrSerialName>
+				<ISSN>ISSN1044-789X</ISSN>
+				<Volume>28</Volume>
+				<Issue>9</Issue>
+				<PageNumber>54-58</PageNumber>
+			</Article>
+
+			<Article>
+				<Title>Linux and the iPAQ, Arm in Arm</Title>
+				<PublicationDate>
+					<YearMonth>2003-05</YearMonth>
+				</PublicationDate>
+				<Link>http://www.ddj.com/dept/cpp/184403954</Link>
+				<Abstract>The Compaq iPAQ: Is it a consumer product or a powerful platform for embedded applications? This article shows how to create an embedded-style application for the iPAQ.</Abstract>
+				<JournalOrSerialName>The C/C++ Users Journal</JournalOrSerialName>
+				<!-- http://www.cuj.com/ -->
+			</Article>
+
+			<Article>
+				<Title>More than one way to make a difference</Title>
+				<PublicationDate>
+					<AnyDate>2003-01-06</AnyDate>
+				</PublicationDate>
+				<Link>http://www.embedded.com/showArticle.jhtml?articleID=9900950</Link>
+				<JournalOrSerialName>Embedded.com</JournalOrSerialName>
+			</Article>
+
+			<Article>
+				<Title>Probing the Palm OS</Title>
+				<PublicationDate>
+					<YearMonth>2002-02</YearMonth>
+				</PublicationDate>
+				<Link>http://www.ddj.com/dept/cpp/184401486</Link>
+				<Abstract>You can develop Palm applications in most any host language. Here's how to do so in C.</Abstract>
+				<JournalOrSerialName>The C/C++ Users Journal</JournalOrSerialName>
+				<ISSN>ISSN1075-2838</ISSN>
+				<Volume>20</Volume>
+				<Issue>2</Issue>
+				<PageNumber>6-19</PageNumber>
+			</Article>
+
+			<Article>
+				<Title>Girls in Ghana Get Computerized</Title>
+				<PublicationDate>
+					<YearMonth>2001-09</YearMonth>
+				</PublicationDate>
+				<Link>http://www.peacecorps.gov/library/pdf/exchange_vol35.pdf</Link>
+				<Abstract>Experiences teaching computer literacy to female students in Ghana, West Africa</Abstract>
+				<JournalOrSerialName>The Exchange: Peace Corps' Women in Development Newsletter</JournalOrSerialName>
+				<Volume>35</Volume>
+				<!-- http://www.peacecorps.gov/index.cfm?shell=pchq.ol.comdev -->
+			</Article>
+
+			<Article>
+				<Title>Zarte Bande knüpfen: Java Communications API</Title>
+				<PublicationDate>
+					<YearMonth>1999-06</YearMonth>
+				</PublicationDate>
+				<Link>http://www.javamagazin.de/itr/ausgaben/psecom,id,68,nodeid,20.html</Link>
+				<Abstract>Describes how to communicate through the serial port in Java. (Written in German for publication in Germany.)</Abstract>
+				<JournalOrSerialName>Java Magazin</JournalOrSerialName>
+				<!-- http://www.javamagazin.de/ -->
+			</Article>
+
+			<Article>
+				<Title>A class hierarchy for team-oriented database application development on the Java platform</Title>
+				<PublicationDate>
+					<StringDate>Spring 1999</StringDate>
+				</PublicationDate>
+				<Abstract>Database application development is a complex task. In recent years, a move toward object-oriented design and the client/server paradigm has produced a cleaner, more formal structure for the task, and technologies such as the Java platform’s JDBC architecture have simplified the implementation process. These approaches, however, focus primarily on the raw data link between the client and the server. Relatively few technologies address the problem of how to extend this link to the graphical user interface. In this paper, I present a class hierarchy for extending the link to the Java platform’s user interface. The hierarchy binds data types on the server to a corresponding user interface class on the client. These classes may be extended, modified, and loaded dynamically at runtime to provide high flexibility and customization. Due to its reliance on standard design patterns and traditional data abstraction techniques, the hierarchy is ideal for team-oriented database application development, in which three independent teams work separately: one each for the database server, the client application framework, and the user interface widgets within the framework. Source code for the complete, ready- to-use classes is available. A discussion of future extensions to the hierarchy is also included.</Abstract>
+				<JournalOrSerialName>Washington University Journal of Science</JournalOrSerialName>
+				<Volume>1</Volume>
+				<Issue>1</Issue>
+				<PageNumber>31-45</PageNumber>
+			</Article>
+
+			<Article>
+				<Title>Using RMI in the Real World</Title>
+				<PublicationDate>
+					<YearMonth>1998-11</YearMonth>
+				</PublicationDate>
+				<Link>https://ftponline.com/archives/listissue.asp?pubID=3&amp;MagIssueId=161#</Link>
+				<Abstract>In theory, RMI makes it easy to connect Java running on different machines. In practice, there are still some obstacles for the unwary. Trevor offers seven useful tips.</Abstract>
+				<JournalOrSerialName>Java Pro</JournalOrSerialName>
+				<ISSN>ISSN1096-4495</ISSN>
+				<Volume>2</Volume>
+				<Issue>6</Issue>
+				<PageNumber>30-38</PageNumber>
+			</Article>
+
+			<Article>
+				<Title>Von Menschen und Fruchtfliegen: Mit RMI auf einfache Weise verteilte Java-Anwendungen erstellen</Title>
+				<PublicationDate>
+					<StringDate>October/November 1998</StringDate>
+				</PublicationDate>
+				<Abstract>Describes Java's Remote Method Invocation (RMI) protocol and how to use it. (Written in German for publication in Germany.)</Abstract>
+				<JournalOrSerialName>Java Magazin</JournalOrSerialName>
+				<PageNumber>34-38</PageNumber>
+				<!-- http://www.javamagazin.de/ -->
+			</Article>
+
+			<Article>
+				<Title>Java Dates Made Simple</Title>
+				<PublicationDate>
+					<YearMonth>1998-07</YearMonth>
+				</PublicationDate>
+				<Abstract>Date handling has been yet another criticism of the Java API. With the need for strong international support, Sun wisely opted to license a set of date and time classes from Taligent that provide excellent support for custom languages and time zones, as well as comprehensive classes for handling dates and times.</Abstract>
+				<JournalOrSerialName>Java Report</JournalOrSerialName>
+				<ISSN>ISSN1086-4660</ISSN>
+				<Volume>3</Volume>
+				<Issue>7</Issue>
+				<PageNumber>57-61</PageNumber>
+				<!-- http://www.adtmag.com/java/index.aspx -->
+			</Article>
+
+			<Article>
+				<Title>Maskenball: ActiveX in Java einfügen, JavaBeans in ActiveX? Microsoft Java SDK 2.0</Title>
+				<PublicationDate>
+					<StringDate>February/March 1998</StringDate>
+				</PublicationDate>
+				<Abstract>Using the Java SDK to integrate JavaBeans components with ActiveX controls. (Written in German for publication in Germany.)</Abstract>
+				<JournalOrSerialName>Java Magazin</JournalOrSerialName>
+				<PageNumber>48-53</PageNumber>
+				<!-- http://www.javamagazin.de/ -->
+			</Article>
+
+			<Article>
+				<Title>Java SDK 2.0: A two-way bridge between ActiveX and Java</Title>
+				<PublicationDate>
+					<YearMonth>1998-02</YearMonth>
+				</PublicationDate>
+				<Abstract>The new version of the Microsoft Java SDK packs power and simplicity, providing a nearly transparent two-way bridge between the ActiveX architecture and the Java language. You now have the freedom to choose whatever tool works best for you.</Abstract>
+				<Comments>Featured on the front cover.</Comments>
+				<JournalOrSerialName>Microsoft Visual J++ Informant</JournalOrSerialName>
+				<ISSN>ISSN1094-8791</ISSN>
+				<Volume>3</Volume>
+				<Issue>2</Issue>
+			</Article>
+
+			<Article>
+				<Title>Informant Spotlight: Java Controls</Title>
+				<PublicationDate>
+					<YearMonth>1997-10</YearMonth>
+				</PublicationDate>
+				<Abstract>Java is the be-all and end-all. At least, that's the hype. But programs must be rewritten in Java before they can claim its advantages, and who has time for that? Enter OLE Automation. This articles shows how to transform Java programs into OLE objects.</Abstract>
+				<JournalOrSerialName>Microsoft Visual J++ Informant</JournalOrSerialName>
+				<ISSN>ISSN1094-8791</ISSN>
+				<Volume>2</Volume>
+				<Issue>9</Issue>
+				<PageNumber>18-31</PageNumber>
+			</Article>
+
+			<Article>
+				<Title>Sun's ActiveX Bridge</Title>
+				<PublicationDate>
+					<YearMonth>1997-07</YearMonth>
+				</PublicationDate>
+				<Abstract>Sun's new structure spans the chasm between JavaBeans and ActiveX controls, allowing the former to act as the latter. Read how this new route may lead to better Web pages and allow you to work both sides of the divide.</Abstract>
+				<Comments>Featured on the front cover.</Comments>
+				<JournalOrSerialName>Web Informant Magazine</JournalOrSerialName>
+				<ISSN>ISSN1087-7711</ISSN>
+				<Volume>2</Volume>
+				<Issue>7</Issue>
+				<PageNumber>10-15</PageNumber>
+			</Article>
+
+			<Article>
+				<Title>OLE Controls for Mortals</Title>
+				<PublicationDate>
+					<StringDate>August/September 1996</StringDate>
+				</PublicationDate>
+				<Abstract>The machinery behind OLE controls is complex, but it's object-oriented and can be inherited in toto from MFC. In the future, your OLE control will work without modification across distributed networks and the World Wide Web.</Abstract>
+				<Comments>Featured on the front cover.</Comments>
+				<JournalOrSerialName>Visual Developer Magazine</JournalOrSerialName>
+				<ISSN>ISSN1088-0992</ISSN>
+				<Volume>7</Volume>
+				<Issue>3</Issue>
+				<PageNumber>23-29</PageNumber>
+			</Article>
+
+			<Article>
+				<Title>Tech Tips: An MFC class for DIB sections</Title>
+				<PublicationDate>
+					<YearMonth>1996-08</YearMonth>
+				</PublicationDate>
+				<Abstract>Offers a custom Microsoft Foundation Classes class to provide simplified creation and manipulation of Device-Independent Bitmaps under Windows.</Abstract>
+				<JournalOrSerialName>Windows Developer's Journal</JournalOrSerialName>
+				<ISSN>ISSN1083-9887</ISSN>
+				<Volume>7</Volume>
+				<Issue>6</Issue>
+				<PageNumber>47-53</PageNumber>
+				<!-- http://www.windevnet.com/ -->
+			</Article>
+
+			<Article>
+				<Title>Extending the Win95 Taskbar Tray</Title>
+				<PublicationDate>
+					<StringDate>April/May 1996</StringDate>
+				</PublicationDate>
+				<Abstract>That little thing in the corner of your screen could be an opportunity to make small apps big winners.</Abstract>
+				<JournalOrSerialName>Visual Developer Magazine</JournalOrSerialName>
+				<ISSN>ISSN1053-6205</ISSN>
+				<Volume>7</Volume>
+				<Issue>1</Issue>
+				<PageNumber>43-47</PageNumber>
+			</Article>
+
+			<Article>
+				<Title>Exploring the science of love</Title>
+				<PublicationDate>
+					<AnyDate>1996-02-13</AnyDate>
+				</PublicationDate>
+				<Abstract>Light-hearted commentary on the similarities between romantic love and physics.</Abstract>				
+				<JournalOrSerialName>Student Life: Washington University's Student Newspaper</JournalOrSerialName>
+				<Volume>117</Volume>
+				<Issue>34</Issue>
+				<PageNumber>6</PageNumber>
+				<!-- http://www.studlife.com/ -->
+			</Article>
+
+			<Article>
+				<Title>Tech Tips: A C++ class for microsecond timer services</Title>
+				<PublicationDate>
+					<YearMonth>1996-02</YearMonth>
+				</PublicationDate>
+				<Abstract>A C++ class for microsecond timing, based on QueryPerformanceCounter().</Abstract>
+				<JournalOrSerialName>Windows Developer's Journal</JournalOrSerialName>
+				<ISSN>ISSN1083-9887</ISSN>
+				<Volume>7</Volume>
+				<Issue>2</Issue>
+				<PageNumber>36-38</PageNumber>
+				<!-- http://www.windevnet.com/ -->
+			</Article>
+
+			<Article>
+				<Title>Tech Tips: An easy digital video interface library</Title>
+				<PublicationDate>
+					<YearMonth>1995-12</YearMonth>
+				</PublicationDate>
+				<Abstract>A function library to play and manipulate full-motion video under Windows.</Abstract>
+				<JournalOrSerialName>Windows Developer's Journal</JournalOrSerialName>
+				<ISSN>ISSN1083-9887</ISSN>
+				<Volume>6</Volume>
+				<Issue>12</Issue>
+				<PageNumber>73-75</PageNumber>
+				<!-- http://www.windevnet.com/ -->
+			</Article>
+
+			<Article>
+				<Title>Manipulating Bitmap Palettes in Windows</Title>
+				<PublicationDate>
+					<YearMonth>1995-08</YearMonth>
+				</PublicationDate>
+				<Abstract>Device-independent bitmaps (DIBs) might more accurately be called "color-independent," since their only claim to device independence is that they contain a color table, or palette. This article explains the DIB format and shows how you can manipulate a DIB's palette at runtime to accomplish useful effects.</Abstract>
+				<JournalOrSerialName>Windows/DOS Developer's Journal</JournalOrSerialName>
+				<ISSN>ISSN1059-2407</ISSN>
+				<Volume>6</Volume>
+				<Issue>8</Issue>
+				<PageNumber>17-24</PageNumber>
+				<!-- http://www.windevnet.com/ -->
+			</Article>
+
+			<Article>
+				<Title>Extending the Windows File Manager</Title>
+				<PublicationDate>
+					<YearMonth>1994-09</YearMonth>
+				</PublicationDate>
+				<Link>http://www.ddj.com/showArticle.jhtml?articleID=184402922</Link>
+				<Abstract>If you learn how to negotiate with the Windows file manager, it can make your code look like part of the establishment.</Abstract>
+				<JournalOrSerialName>The C/C++ Users Journal</JournalOrSerialName>
+				<ISSN>ISSN1075-2838</ISSN>
+				<Volume>12</Volume>
+				<Issue>9</Issue>
+				<PageNumber>37-46</PageNumber>
+				<!-- http://www.cuj.com/ -->
+			</Article>
+
+			<Book>
+				<Title>Web Developer's Guide To Visual J++ And ActiveX</Title>
+				<Name role="author">
+					<GivenName>Trevor</GivenName>
+					<FamilyName>Harmon</FamilyName>
+				</Name>
+				<PublicationDate>
+					<Year>1996</Year>
+				</PublicationDate>
+				<Link>http://www.amazon.com/exec/obidos/tg/detail/-/1576100626/qid=1099468941/sr=1-1/ref=sr_1_1/104-6402237-4588719</Link>
+				<Abstract>Provides step-by-step guides for building Java applets and ActiveX controls. Features a tour of Visual J++, including the debugger, the Java Type Library Wizard, and the Applet Wizard. Includes tips for integrating the power of ActiveX with the elegance of Java. Contains instructions for writing database applications in Java, enhancing applets with OLE automation, and code-signing your ActiveX controls. Shows how to incorporate VBScript and JavaScript code with controls and applets. CD-ROM included. This book has been translated into Spanish and Korean.</Abstract>
+				<ISBN>1576100626</ISBN>
+				<NumberOfPages>410</NumberOfPages>
+ 				<PublisherName>Coriolis Group</PublisherName>
+			</Book>
+
+			<Book>
+				<Title>Programming JavaBeans 1.1</Title>
+				<Name role="author">
+					<GivenName>Reaz</GivenName>
+					<FamilyName>Hoque</FamilyName>
+				</Name>
+				<Name role="contributor">
+					<GivenName>Trevor</GivenName>
+					<FamilyName>Harmon</FamilyName>
+				</Name>
+				<PublicationDate>
+					<StringDate>1998</StringDate>
+				</PublicationDate>
+				<Abstract>Explains how to deploy Java applications on the Web and create Bean components with advanced functionality.</Abstract>
+				<ISBN>0079137040</ISBN>
+				<NumberOfPages>524</NumberOfPages>
+ 				<PublisherName>McGraw Hill</PublisherName>
+			</Book>
+
+			<Book>
+				<Title>Visual J++ Bible</Title>
+				<Name role="author">
+					<GivenName>Richard</GivenName>
+					<FamilyName>Leinecker</FamilyName>
+				</Name>
+				<Name role="contributor">
+					<GivenName>Trevor</GivenName>
+					<FamilyName>Harmon</FamilyName>
+				</Name>
+				<PublicationDate>
+					<StringDate>1997</StringDate>
+				</PublicationDate>
+				<Abstract>A reference and tutorial for Visual J++. Also shares basic principles of effective Web site, software, and user interface design. Includes CD-ROM.</Abstract>
+				<ISBN>0764580213</ISBN>
+				<NumberOfPages>924</NumberOfPages>
+ 				<PublisherName>IDG Books</PublisherName>
+			</Book>
+
+			<ConferencePaper>
+				<Title>RTZen: Highly Predictable, Real-time Java Middleware for Distributed and Embedded Systems</Title>
+				<Name role="author">
+					<GivenName>Krishna</GivenName>
+					<FamilyName>Raman</FamilyName>
+				</Name>
+				<Name role="author">
+					<GivenName>Yue</GivenName>
+					<FamilyName>Zhang</FamilyName>
+				</Name>
+				<Name role="author">
+					<GivenName>Mark</GivenName>
+					<FamilyName>Panahi</FamilyName>
+				</Name>
+				<Name role="author">
+					<GivenName>Juan</GivenName>
+					<FamilyName>Colmenares</FamilyName>
+				</Name>
+				<Name role="author">
+					<GivenName>Raymond</GivenName>
+					<FamilyName>Klefstad</FamilyName>
+				</Name>
+				<Name role="author">
+					<GivenName>Trevor</GivenName>
+					<FamilyName>Harmon</FamilyName>
+				</Name>
+				<EventName>Middleware 2005</EventName>
+				<ConferenceDate>
+					<YearMonth>2005-11</YearMonth>
+				</ConferenceDate>
+			</ConferencePaper>
+
+			<ConferencePaper>
+				<Title>VADRE: A Visual Approach to Performance Analysis of Distributed, Real-time Systems</Title>
+				<Name role="author">
+					<GivenName>Trevor</GivenName>
+					<FamilyName>Harmon</FamilyName>
+				</Name>
+				<Name role="contributor">
+					<GivenName>Raymond</GivenName>
+					<FamilyName>Klefstad</FamilyName>
+				</Name>
+				<EventName>Proceedings of the 2005 International Conference on Modeling, Simulation and Visualization Methods</EventName>
+				<ConferenceDate>
+					<YearMonth>2005-06</YearMonth>
+				</ConferenceDate>
+			</ConferencePaper>
+
+			<ConferencePaper>
+				<Title>Late Demarshalling: A Technique for Efficient Multi-language Middleware for Embedded Systems</Title>
+				<Name role="author">
+					<GivenName>Gunar</GivenName>
+					<FamilyName>Schirner</FamilyName>
+				</Name>
+				<Name role="author">
+					<GivenName>Trevor</GivenName>
+					<FamilyName>Harmon</FamilyName>
+				</Name>
+				<Name role="contributor">
+					<GivenName>Raymond</GivenName>
+					<FamilyName>Klefstad</FamilyName>
+				</Name>
+				<Link>http://www.cs.rmit.edu.au/fedconf/doa/2004/</Link> 
+				<EventName>International Symposium on Distributed Objects and Applications</EventName>
+				<ConferenceDate>
+					<YearMonth>2004-10</YearMonth>
+				</ConferenceDate>
+			</ConferencePaper>
+
+			<ConferencePaper>
+				<Title>Adaptive Techniques for Minimizing Middleware Memory Footprint for Distributed, Real-Time, Embedded Systems</Title>
+				<Name role="author">
+					<GivenName>Trevor</GivenName>
+					<FamilyName>Harmon</FamilyName>
+				</Name>
+				<Name role="author">
+					<GivenName>Mark</GivenName>
+					<FamilyName>Panahi</FamilyName>
+				</Name>
+				<Name role="contributor">
+					<GivenName>Raymond</GivenName>
+					<FamilyName>Klefstad</FamilyName>
+				</Name>
+				<Link>http://www.zen.uci.edu/publications/ccw03.rtf</Link>
+				<EventName>IEEE 18th Annual Workshop on Computer Communications Proceedings</EventName>
+				<!-- http://ieeexplore.ieee.org/xpl/tocresult.jsp?isnumber=27817&amp;isYear=2003 -->
+				<ConferenceDate>
+					<YearMonth>2003-10</YearMonth>
+				</ConferenceDate>
+			</ConferencePaper>
+			
+			<OtherPublication type="TechnicalDocumentation">
+				<Title>TimeSys Linux Install mini HOWTO</Title>
+				<PublicationDate>
+					<AnyDate>2005-04-05</AnyDate>
+				</PublicationDate>
+				<Link>http://tldp.org/HOWTO/TimeSys-Linux-Install-HOWTO/index.html</Link>
+				<Abstract>A quick-start guide for installing TimeSys Linux on a typical desktop workstation.</Abstract>
+				<PublisherName>The Linux Documentation Project</PublisherName>
+			</OtherPublication>
+			
+			<OtherPublication type="x:Artwork">
+				<Title>Spires</Title>
+				<PublicationDate>
+					<StringDate>Fall 1996</StringDate>
+				</PublicationDate>
+				<!-- http://sugroups.wustl.edu/~spires/ -->
+				<Comments>Untitled computer-rendered image for Spires, a periodical of poems by Washington University students</Comments>
+				<PublisherName>Washington University</PublisherName>
+				<PublisherLocation>Saint Louis, Missouri</PublisherLocation>
+			</OtherPublication>
+					
+		</PublicationHistory>
+		
+		<SpeakingEventsHistory>
+			
+			<SpeakingEvent>
+				<Title>Toward Automatic Performance Visualization of Distributed Real-Time Systems</Title>
+				<StartDate>
+					<AnyDate>2005-10-17</AnyDate>
+				</StartDate>
+				<EventName>Java Technologies for Real-time and Embedded Systems</EventName>
+				<EventType>conference</EventType>
+				<Location>San Diego, California</Location>
+				<Link>http://www.cs.purdue.edu/homes/jv/JTRES05/</Link>
+			</SpeakingEvent>
+			
+			<SpeakingEvent>
+				<Title>Eye on the Tiger: New Features in Java 1.5</Title>
+				<StartDate>
+					<AnyDate>2004-02-20</AnyDate>
+				</StartDate>
+				<EventName>Tea Time Talk, Distribute Object Computing laboratory</EventName>
+				<Location>Irvine, California</Location>
+			</SpeakingEvent>
+			
+		</SpeakingEventsHistory>
+		
+		<Qualifications>
+			<Competency name="Technical writing">
+				<Competency name="Over twenty publications on software engineering, including a 410-page book on Java"/>
+			</Competency>
+			<Competency name="Languages">
+				<Competency name="Java"/>
+				<Competency name="C"/>
+				<Competency name="C++"/>
+				<Competency name="Python"/>
+				<Competency name="Ruby"/>
+				<Competency name="PHP"/>
+				<Competency name="shell scripts (Bash)"/>
+				<Competency name="several assembly dialects"/>
+			</Competency>
+			<Competency name="Web services">
+				<Competency name="J2EE"/>
+				<Competency name="Struts"/>
+				<Competency name="Hibernate"/>
+			</Competency>
+			<Competency name="Databases">
+				<Competency name="SQL"/>
+				<Competency name="MySQL"/>
+				<Competency name="JDBC"/>
+			</Competency>
+			<Competency name="Internet technologies">
+				<Competency name="HTML"/>
+				<Competency name="XML"/>
+				<Competency name="XSL"/>
+				<Competency name="JavaScript"/>
+			</Competency>
+			<Competency name="GUI frameworks">
+				<Competency name="Swing"/>
+				<Competency name="Qt"/>
+			</Competency>
+			<Competency name="System administration">
+				<Competency name="Linux"/>
+				<Competency name="Unix"/>
+				<Competency name="Mac OS X"/>
+			</Competency>
+			<Competency name="Teaching">
+				<Competency name="Three years of full-time teaching experience"/>
+			</Competency>
+			<Competency name="Open-source contributor">
+				<Competency name="KDE"/>
+				<Competency name="Mozilla"/>
+				<Competency name="Fink"/>
+				<Competency name="HR-XSL"/>
+			</Competency>
+		</Qualifications>
+				
+
+		<Languages>
+			<Language>
+				<LanguageCode>DE</LanguageCode>
+				<Read>true</Read>
+				<Write>true</Write>
+				<Speak>true</Speak>
+				<Comments>Intermediate level.</Comments>
+			</Language>
+		</Languages>
+
+		<Achievements>
+			<Achievement>
+				<Date>
+					<StringDate>2005-present</StringDate>
+				</Date>
+				<Description>Graduate Research Fellowship</Description>
+				<IssuingAuthority>National Science Foundation</IssuingAuthority>
+			</Achievement>
+			<Achievement>
+				<Date>
+					<StringDate>1995-1998</StringDate>
+				</Date>
+				<Description>Engineers' Class of 1991 Scholarship</Description>
+				<IssuingAuthority>Washington University</IssuingAuthority>
+			</Achievement>
+			<Achievement>
+				<Date>
+					<StringDate>1994-1995</StringDate>
+				</Date>
+				<Description>Honors Program Scholarship</Description>
+				<IssuingAuthority>Johnson County Community College Honors Program</IssuingAuthority>
+				<!-- http://www.jccc.net/home/depts/5214/site/scholarships -->
+			</Achievement>
+			<Achievement>
+				<Date>
+					<StringDate>1993-1995</StringDate>
+				</Date>
+				<Description>Honor Roll - President's List in Spring 1994, Dean's List all other semesters</Description>
+				<IssuingAuthority>Johnson County Community College</IssuingAuthority>
+			</Achievement>
+			<Achievement>
+				<Date>
+					<StringDate>1993-1995</StringDate>
+				</Date>
+				<Description>Senator - Elected by student body for two consecutive terms</Description>
+				<IssuingAuthority>Johnson County Community College Student Senate</IssuingAuthority>
+				<!-- http://students.jccc.net/senate/ -->
+			</Achievement>
+			<Achievement>
+				<Date>
+					<StringDate>1993-1995</StringDate>
+				</Date>
+				<Description>Membership</Description>
+				<IssuingAuthority>Phi Theta Kappa International Honor Society</IssuingAuthority>
+				<!-- http://www.ptk.org/ -->
+			</Achievement>
+			<Achievement>
+				<Date>
+					<StringDate>1993</StringDate>
+				</Date>
+				<Description>First place for the state of Oklahoma in the Computer Program category. Competition sponsored by the United States Senate</Description>
+				<IssuingAuthority>Foundation for a Creative America Competition</IssuingAuthority>
+			</Achievement>
+			<Achievement>
+				<Date>
+					<StringDate>1993</StringDate>
+				</Date>
+				<Description>Tandy Technology Award - For "Outstanding Achievement in Math, Science, And Computer Science"</Description>
+				<IssuingAuthority>Tandy Corporation</IssuingAuthority>
+			</Achievement>
+			<Achievement>
+				<Date>
+					<StringDate>1992</StringDate>
+				</Date>
+				<Description>First Place - Written essay regarding the balance of power between the United States President and the Congress</Description>
+				<IssuingAuthority>Masonic Lodge Essay Contest</IssuingAuthority>
+			</Achievement>
+			<Achievement>
+				<Date>
+					<StringDate>1992</StringDate>
+				</Date>
+				<Description>Second Place - For short story titled "Desert Inn"</Description>
+				<IssuingAuthority>Starwatch Creative Writing Contest</IssuingAuthority>
+			</Achievement>
+			<Achievement>
+				<Date>
+					<YearMonth>1992-01</YearMonth>
+				</Date>
+				<Description>Student of the Month</Description>
+				<IssuingAuthority>Tahlequah High School</IssuingAuthority>
+				<!-- http://www.tahlequah.k12.ok.us/ths/ -->
+			</Achievement>
+			<Achievement>
+				<Date>
+					<StringDate>1990-1993</StringDate>
+				</Date>
+				<Description>Membership</Description>
+				<IssuingAuthority>National Honor Society</IssuingAuthority>
+				<!-- http://www.nhs.us/ -->
+			</Achievement>
+		</Achievements>
+
+	</StructuredXMLResume>
+</Resume>

@@ -1,0 +1,279 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Resume xmlns="http://ns.hr-xml.org/2006-02-28" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://ns.hr-xml.org/2006-02-28 Resume.xsd">
+   <ResumeId>
+      <IdValue>x9281cp35</IdValue>
+   </ResumeId>
+   <StructuredXMLResume>
+      <ContactInfo>
+<!-- Name IDs not supported. -->
+         <PersonName>
+            <GivenName>Alexis</GivenName>
+            <FamilyName>Kernighan</FamilyName>
+         </PersonName>
+         <ContactMethod>
+<!-- Phone location not supported. -->
+            <Telephone>
+               <FormattedNumber>+1-55-4362-4562</FormattedNumber>
+            </Telephone>
+            <Mobile>
+               <FormattedNumber>+1-55-5252-4356</FormattedNumber>
+            </Mobile>
+            <InternetEmailAddress>alexis@finecooks.xyz</InternetEmailAddress>
+<!-- Instant message not supported. -->
+            <PostalAddress>
+<!-- Country not found; assumed to be US. -->
+               <CountryCode>US</CountryCode>
+               <DeliveryAddress>
+                  <AddressLine>Reina #35, apt. 4a, e/ Gervasio y Escobar</AddressLine>
+                  <AddressLine>Cuidad de la Habana, CP 11900</AddressLine>
+                  <AddressLine>CUBA</AddressLine>
+               </DeliveryAddress>
+            </PostalAddress>
+         </ContactMethod>
+      </ContactInfo>
+<!-- Objective targets not supported. -->
+      <Objective>To achieve my Master Chef certification and become executive chef at a fine restaurant in the Hawaiian islands.</Objective>
+      <EmploymentHistory>
+         <EmployerOrg>
+            <EmployerOrgName>Mike's Wiring Co.</EmployerOrgName>
+            <EmployerContactInfo/>
+            <PositionHistory>
+               <Title>Electrician's Assistant</Title>
+<!-- HR-XML OrgName required but not supported (no equivalent for it in XML Resume). -->
+               <OrgName>
+                  <OrganizationName/>
+               </OrgName>
+               <Description>
+<!-- Project titles not supported. -->Rewired the city of Phoenix
+Fixed my mom's living room lamp</Description>
+               <StartDate>
+                  <YearMonth>1993-05</YearMonth>
+               </StartDate>
+            </PositionHistory>
+         </EmployerOrg>
+         <EmployerOrg>
+            <EmployerOrgName>SysOps4Cheap.com</EmployerOrgName>
+            <EmployerContactInfo/>
+            <PositionHistory>
+               <Title>Senior System Administrator</Title>
+<!-- HR-XML OrgName required but not supported (no equivalent for it in XML Resume). -->
+               <OrgName>
+                  <OrganizationName/>
+               </OrgName>
+               <Description>SysOps4Cheap.com was a small startup whose aim was to supply sysadmins over the web. The business failed because the very few sysadmins could survive the process of being overnighted by FedEx.
+Ran a beowulf cluster of Commodore 64s
+
+<!-- Project titles not supported. -->Used scuba tanks to keep sysadmins fresh in the mail</Description>
+               <StartDate>
+                  <Year>1987</Year>
+               </StartDate>
+            </PositionHistory>
+         </EmployerOrg>
+         <EmployerOrg>
+            <EmployerOrgName>The Four Seasons</EmployerOrgName>
+            <EmployerContactInfo/>
+            <PositionHistory>
+               <Title>Sous Chef</Title>
+<!-- HR-XML OrgName required but not supported (no equivalent for it in XML Resume). -->
+               <OrgName>
+                  <OrganizationName/>
+               </OrgName>
+               <Description>
+<!-- Project titles not supported. -->Created an extensive menu for our fall offerings
+Revamping of Grill Area
+Developed 13 new menu items
+Prepared daily operations plan
+Streamlined procedures for fresh foods procurement</Description>
+               <StartDate>
+                  <YearMonth>1997-03</YearMonth>
+               </StartDate>
+            </PositionHistory>
+         </EmployerOrg>
+         <EmployerOrg>
+            <EmployerOrgName>Zolo</EmployerOrgName>
+            <EmployerContactInfo/>
+            <PositionHistory>
+               <Title>Assistant Chef</Title>
+<!-- HR-XML OrgName required but not supported (no equivalent for it in XML Resume). -->
+               <OrgName>
+                  <OrganizationName/>
+               </OrgName>
+               <Description>Prepared standard daily mise en place, stocks, and sauces. Assembled cold plates and salads.</Description>
+               <StartDate>
+                  <YearMonth>1993-04</YearMonth>
+               </StartDate>
+               <EndDate>
+                  <YearMonth>1997-01</YearMonth>
+               </EndDate>
+            </PositionHistory>
+         </EmployerOrg>
+      </EmploymentHistory>
+      <EducationHistory>
+<!-- All degrees assumed to be university-level. -->
+         <SchoolOrInstitution schoolType="university">
+            <School>
+               <SchoolName>Culinary Institute of America</SchoolName>
+            </School>
+            <Degree>
+               <DegreeName>AA</DegreeName>
+               <DegreeMajor>
+                  <Name>Culinary Arts</Name>
+               </DegreeMajor>
+               <DatesOfAttendance>
+                  <StartDate>
+                     <YearMonth>1995-05</YearMonth>
+                  </StartDate>
+               </DatesOfAttendance>
+               <Comments>Stocks, broths, and soups: A
+French and world sauces: A
+French cuisine: B
+World cuisine: A
+Kitchen sanitation: A
+Pastry: B
+Culinary history: A
+Hotel restaurant management: C</Comments>
+            </Degree>
+         </SchoolOrInstitution>
+      </EducationHistory>
+      <PublicationHistory>
+         <Article>
+            <Title>High speed reduction of wine based sauces</Title>
+<!-- Author IDs not supported. -->
+            <Name role="author">
+               <FormattedName>Charles Bell</FormattedName>
+            </Name>
+            <Name role="author">
+               <FormattedName>Kassandra Kassis</FormattedName>
+            </Name>
+            <PublicationDate>
+               <YearMonth>2000-02</YearMonth>
+            </PublicationDate>
+            <JournalOrSerialName>Journal of the Occidental Culinary Federation</JournalOrSerialName>
+            <PageNumber>132-136</PageNumber>
+<!-- Publisher of articles not supported. -->
+         </Article>
+<!-- This publication lacks an article name, so it is assumed to be a book. Note that this may cause this HR-XML file to be invalid: All articles must come before books; they cannot be interspersed with each other. In other words, you might need to reorder your PublicationHistory elements manually before this file will validate. -->
+         <Book>
+            <Title>The Texas Ranger Chow Book</Title>
+<!-- Author IDs not supported. -->
+            <PublicationDate>
+               <Year>1998</Year>
+            </PublicationDate>
+            <PublisherName>Deltoid Press, http://www.deltoid.co/</PublisherName>
+         </Book>
+      </PublicationHistory>
+      <Qualifications>
+<!-- Skill area targets not supported. -->
+<!-- Skill area title not supported (unless no skill set title is given). -->
+         <Competency name="General Experience">
+            <Competency name="Gastronomy"/>
+<!-- Skill level not supported. -->
+            <Competency name="Culinary math"/>
+            <Competency name="Nutrition"/>
+            <Competency name="Sanitation"/>
+            <Competency name="Culinary French"/>
+<!-- Skill level not supported. -->
+            <Competency name="Meat identification"/>
+            <Competency name="Wines"/>
+            <Competency name="Restaurant Law"/>
+            <Competency name="Brodeger's Sanitation science background"/>
+         </Competency>
+         <Competency name="Culinary Skills">
+            <Competency name="Braise"/>
+            <Competency name="Sauté"/>
+            <Competency name="Fry"/>
+            <Competency name="Bake"/>
+            <Competency name="Stocks"/>
+            <Competency name="Reductions"/>
+            <Competency name="Sauces"/>
+         </Competency>
+         <Competency name="Cuisines">
+            <Competency name="Seafood"/>
+            <Competency name="American Regional"/>
+            <Competency name="Asian"/>
+            <Competency name="Charcuterie"/>
+            <Competency name="Garde Manger"/>
+            <Competency name="Pâtisserie"/>
+            <Competency name="Modern French"/>
+         </Competency>
+<!-- Skill area targets not supported. -->
+<!-- Skill area title not supported (unless no skill set title is given). -->
+         <Competency name="Computer Skills">
+            <Competency name="Perl"/>
+            <Competency name="J2EE"/>
+            <Competency name="XML Parsing"/>
+            <Competency name="Debugging"/>
+         </Competency>
+<!-- Skill area targets not supported. -->
+<!-- Skill area title not supported (unless no skill set title is given). -->
+         <Competency name="Construction Skills">
+            <Competency name="Hammering"/>
+            <Competency name="Drilling"/>
+            <Competency name="Sawing"/>
+            <Competency name="Wiring"/>
+            <Competency name="Plunging"/>
+         </Competency>
+      </Qualifications>
+<!-- Awards title not supported. -->
+      <Achievements>
+<!-- Award targets not supported. -->
+         <Achievement>
+            <Date>
+               <StringDate>January 1992 - 1995</StringDate>
+            </Date>
+            <Description>Cooking Honor Roll</Description>
+            <IssuingAuthority>Culinary Institute of America</IssuingAuthority>
+         </Achievement>
+<!-- Award targets not supported. -->
+         <Achievement>
+            <Date>
+               <YearMonth>1987-05</YearMonth>
+            </Date>
+            <Description>Sysop's Choice Award for Best Cook</Description>
+            <IssuingAuthority>Usenix</IssuingAuthority>
+         </Achievement>
+      </Achievements>
+<!-- All memberships are assumed to be professional societies. Memberships title is ignored. -->
+      <Associations>
+         <Association>
+            <Name>Association of Aluminum Utensils</Name>
+         </Association>
+         <Association>
+            <Name>Stonecutters</Name>
+            <StartDate>
+               <Year>1934</Year>
+            </StartDate>
+            <Role>
+               <Name>Grand Poobah</Name>
+            </Role>
+         </Association>
+         <Association>
+            <Name>Society for Creative Cuisine</Name>
+            <StartDate>
+               <YearMonth>1993-02</YearMonth>
+            </StartDate>
+            <Role>
+               <Name>Senior Fellow</Name>
+            </Role>
+            <Comments>As senior fellow, I was responsible for all recruiting efforts of the organization.</Comments>
+         </Association>
+      </Associations>
+<!-- Interests title not supported. -->
+      <ResumeAdditionalItems>
+         <ResumeAdditionalItem type="Hobbies">
+            <Description>Kite Flying: Two-time Cuban national champion.</Description>
+         </ResumeAdditionalItem>
+         <ResumeAdditionalItem type="Hobbies">
+            <Description>High-speed driving</Description>
+         </ResumeAdditionalItem>
+         <ResumeAdditionalItem type="Hobbies">
+            <Description>Woodworking</Description>
+         </ResumeAdditionalItem>
+      </ResumeAdditionalItems>
+<!-- Misc not supported. -->
+<!-- Referees not supported. -->
+<!-- Clearances not supported. -->
+<!-- Revision day of month hard-coded to 01. -->
+      <RevisionDate>2002-05-01</RevisionDate>
+   </StructuredXMLResume>
+</Resume>

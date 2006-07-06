@@ -1,0 +1,83 @@
+0.4 (2006-07-03) Trevor Harmon
+XMLResume-to-HR-XML converter
+	- Fixed a few bugs
+	- Clarified some of the output comments and removed others that were unneeded
+	- Added a few more element translations
+Stylesheets
+	- Changed layout of EmploymentHistory to make it look a lot nicer
+	- Changed list items to use <simpara> instead of <para> to avoid excess linebreaks
+	- Qualifications title now rendered in bold
+	- Added quotation marks and italics in appropriate places for Publications
+	- Put the postal address into the table with the rest of the contact info
+	- Corrected copyright notices
+	- Fixed bug in lists with hypertext links
+Examples
+	- Showed how to specify CSS files for HTML output
+	- Included some example CSS files that make HTML output look a lot prettier
+Documentation
+	- Added documentation on how to customize HTML output with CSS
+
+0.3 (2006-06-29) Trevor Harmon
+
+Added new stylesheets for DocBook output
+Removed FO stylesheets (obsolete; FO can be generated from DocBook directly)
+Removed plain text stylesheets (obsolete; plain text can be generated from DocBook directly)
+Removed LaTeX stylesheets (obsolete; LaTeX can be generated from DocBook directly)
+Removed helper script command (obsolete; will be replaced by Ant scripts)
+Implemented much more of the HR-XSL standard
+	- PostalAddress now fully implemented, including country code mappings
+	- PersonName nearly complete
+	- AnyDate strings in the form of YYYY-MM-DD are now parsed and pretty-printed
+	- Country code implemented (country names automatically translated from the 2-letter code)
+	- Languages implemented (language names automatically translated from the 2-letter code)
+	- Many other small additions and improvements
+XMLResume-to-HR-XML converter
+	- Integrated the stylesheet and documentation into the distribution
+	- Updated it to support many more entities of XML Resume
+	- Fixed many bugs
+Overhauled the documentation again; added lots of new material
+New examples
+	- Cleaned up the simple example (it was not valid)
+	- Added new, comprehensive example of a CV
+	- New Ant build scripts make using the stylesheets a piece of cake
+New libraries
+	- All required libraries are now bundled with the distribution
+	- Only thing you need now to build the examples is Java and Ant
+	
+0.2 (2006-06-12) Trevor Harmon
+
+Added new stylesheets for plain text output
+	- Much more complete than the current FO and LaTeX versions
+	- This will be the basis for all new stylesheets
+Updated the homepage
+	- Gave it a "spicier" look
+	- Added additional background information
+	- Added links to other HR-XML projects
+Reorganized the documentation
+	- Moved HR-XML reference into an appendix
+	- Merged README.html into the main documentation
+    - Made sure it was well-formed and valid according to the DocBook DTD
+	- Minor cleanups
+Updated the libraries (FOP, etc.)
+Removed the Windows batch files (I hadn't been maintaining them)
+Stylesheet refactoring
+	- Created a "common" directory for shared templates
+Updated to the February 2006 release of HR-XML 
+Added more localized messages
+Removed MilitaryHistory from FO stylesheet because it was never actually implemented
+Marked all stylesheets as version 2.0 so that XSLT 2.0 functions can be used anywhere needed.
+
+0.1 (2006-02-27) Trevor Harmon
+
+Initial release, largely a fork of Charles Chan's HR-XSL project (version 0.3).
+Directory structure simplified and pruned, easier for new users to comprehend now.
+Added new supported sections of the HR-XML standard.
+	- PublicationHistory and Achievements sections are now handled instead of ignored
+	- Postal address is now displayed if specified
+Corrected errors and omissions in the existing XSL for sections already supported.
+	- Bug fixes in the Education section (mainly for institutions attended with no degree awarded)
+Corrected misspellings in the documentation; converted README to HTML.
+Build files added for the resume sample and the documentation
+Added XML Resume to HR-XML converter.
+Added HR-XML to LaTeX converter (buggy and incomplete at this point).
+Other small improvements, fixes, and tweaks
