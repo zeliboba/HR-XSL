@@ -47,7 +47,7 @@
 		</para>
 		
 		<para>
-			A better approach is to put all of your CV or résumé content into a single "master" copy, then let your computer automatically generate and format different versions of the document from this master. The HR-XSL project provides the tools for exactly this purpose. All you need to do is create a CV in a special XML format. HR-XSL can then take this XML file as input and create a PDF, HTML, or plain text version as output.
+			A better approach is to put all of your CV or résumé content into a single <quote>master</quote> copy, then let your computer automatically generate and format different versions of the document from this master. The HR-XSL project provides the tools for exactly this purpose. All you need to do is create a CV in a special XML format. HR-XSL can then take this XML file as input and create a PDF, HTML, or plain text version as output.
 		</para>
 
 		<sect1 id="The_HR-XML_Format">
@@ -58,7 +58,7 @@
 			</para>
 			
 			<para>
-	        	One of the XML vocabularies published by HR-XML is the Resume specification. This specification defines a CV or résumé document in pure XML, allowing the content to be processed by machines and exchanged easily on the Internet. Like all of the HR-XML specifications, it is fully documented and freely available. The latest version can be downloaded by visiting the <ulink url="http://sourceforge.net/project/showfiles.php?group_id=161286&amp;package_id=195356">File Releases</ulink> section of the HR-XSL project website.
+	        	One of the XML vocabularies published by HR-XML is the Resume specification. This specification defines a CV or résumé document in pure XML, allowing the content to be processed by machines and exchanged easily on the Internet. Like all of the HR-XML specifications, it is fully documented and freely available. The latest version can be downloaded by visiting the <ulink url="http://sourceforge.net/project/showfiles.php?group_id=50922&amp;package_id=196442">File Releases</ulink> section of the HR-XSL project website.
 			</para>
 			
 			<para>
@@ -101,7 +101,7 @@
 			<orderedlist>
 				<listitem>
 					<simpara>
-						Download <ulink url="http://sourceforge.net/project/showfiles.php?group_id=161286&amp;package_id=181690">HR-XSL</ulink> from the project website.
+						Download <ulink url="http://sourceforge.net/project/showfiles.php?group_id=50922&amp;package_id=44637">HR-XSL</ulink> from the project website.
 					</simpara>
 				</listitem>
 				<listitem>
@@ -236,7 +236,7 @@
 			</blockquote>
 				
 			<para>
-				Here, <filename>Resume.xsd</filename> refers to the XML Schema Definition file for HR-XML Resume, which can be obtained by downloading the <ulink url="http://sourceforge.net/project/showfiles.php?group_id=161286&amp;package_id=195356">HR-XML distribution</ulink>.
+				Here, <filename>Resume.xsd</filename> refers to the XML Schema Definition file for HR-XML Resume, which can be obtained by downloading the <ulink url="http://sourceforge.net/project/showfiles.php?group_id=50922&amp;package_id=196442">HR-XML distribution</ulink>.
 			</para>
 		</sect1>
 		
@@ -244,11 +244,11 @@
 			<title>Extended Characters</title>
 			
 			<para>
-				Traditionally, non-ASCII characters have been a problem for XML formats like HR-XML Resume. Characters such as é, ß, or © required the user to type the special codes <userinput><![CDATA[&eacute;]]></userinput>, <userinput><![CDATA[&eszlig;]]></userinput>, and <userinput><![CDATA[&copy;]]></userinput>, respectively.
+				Traditionally, non-ASCII characters have been an issue for XML formats like HR-XML Resume. Characters such as é, ß, or © required the user to type the special codes <userinput><![CDATA[&eacute;]]></userinput>, <userinput><![CDATA[&eszlig;]]></userinput>, and <userinput><![CDATA[&copy;]]></userinput>, respectively.
 			</para>
 			
 			<para>
-				With HR-XSL, these special codes are not necessary. As long as your editor supports Unicode and is able to save XML files in the UTF-8 encoding, you can simply enter the extended characters directly into your editor. They will show up correctly in the final CV or résumé output.
+				These special codes are not necessary. As long as your editor supports Unicode and is able to save XML files in the UTF-8 encoding, you can simply enter the extended characters directly into your editor. They will show up correctly in the final CV or résumé.
 			</para>
 			
 		</sect1>
@@ -290,7 +290,7 @@
 							<row>
 								<entry><userinput>month.format</userinput></entry>
 								<entry>For date elements, this parameter indicates how the month should be displayed</entry>
-								<entry><userinput>short</userinput> an abbreviated month, such as "Sep."; <userinput>long</userinput> the full month name</entry>
+								<entry><userinput>short</userinput> an abbreviated month, such as <quote>Sep.</quote>; <userinput>long</userinput> the full month name</entry>
 							</row>
 						</tbody>
 					</tgroup>
@@ -445,9 +445,9 @@
 				</listitem>
 				<listitem>
 					<formalpara>
-						<title>HR-XML "hacks"</title>
+						<title>HR-XML <quote>hacks</quote></title>
 						<para>
-							Some users may have unusual requirements for their CV. The university professor in this example wanted to list the names of all the courses he has taught throughout his career. Although the HR-XML Resume specification has no element to contain such information, it is possible to include it by "hacking" the spec. Here, the course information is stored as a single employment position, even though multiple jobs are represented by each course. In addition, the <emphasis>Teaching</emphasis> job category is used, and the <sgmltag>EmployerOrgName</sgmltag> element is left empty. As a result, HR-XSL correctly formats the list of courses as the user desired. Although this kind of "hack" is not recommended when exchanging HR-XML data with others, it is useful when the user only wishes to create an HR-XML Resume document for internal use.
+							Some users may have unusual requirements for their CV. The university professor in this example wanted to list the names of all the courses he has taught throughout his career. Although the HR-XML Resume specification has no element to contain such information, it is possible to include it by <quote>hacking</quote> the spec. Here, the course information is stored as a single employment position, even though multiple jobs are represented by each course. In addition, the <emphasis>Teaching</emphasis> job category is used, and the <sgmltag>EmployerOrgName</sgmltag> element is left empty. As a result, HR-XSL correctly formats the list of courses as the user desired. Although this kind of <quote>hack</quote> is not recommended when exchanging HR-XML data with others, it is useful when the user only wishes to create an HR-XML Resume document for internal use.
 							</para>
 					</formalpara>
 				</listitem>
@@ -1737,7 +1737,7 @@ Hobbies
 		</para>
 		
 		<para>
-			Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
+			Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the <quote>Software</quote>), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
 		</para>
 		
 		<para>
@@ -1761,7 +1761,7 @@ Hobbies
 		</para>
 		
 		<para>
-			THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL CHARLES CHAN OR ANY OTHER CONTRIBUTOR BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+			THE SOFTWARE IS PROVIDED <quote>AS IS</quote>, WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL CHARLES CHAN OR ANY OTHER CONTRIBUTOR BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 		</para>
 	
 	</appendix>
