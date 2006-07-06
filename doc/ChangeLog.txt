@@ -1,10 +1,11 @@
-0.4 (2006-07-03) Trevor Harmon
+0.7 (2006-07-06) Trevor Harmon
 XMLResume-to-HR-XML converter
 	- Fixed a few bugs
 	- Clarified some of the output comments and removed others that were unneeded
 	- Added a few more element translations
 Stylesheets
 	- Changed layout of EmploymentHistory to make it look a lot nicer
+	- Changed layout of EducationHistory to make it look a lot nicer
 	- Changed list items to use <simpara> instead of <para> to avoid excess linebreaks
 	- Qualifications title now rendered in bold
 	- Added quotation marks and italics in appropriate places for Publications
@@ -16,8 +17,11 @@ Examples
 	- Included some example CSS files that make HTML output look a lot prettier
 Documentation
 	- Added documentation on how to customize HTML output with CSS
+Libraries
+	- Updated docbook-xsl to 0.70.1
+	- Updated FOP to development trunk
 
-0.3 (2006-06-29) Trevor Harmon
+0.6 (not released) Trevor Harmon
 
 Added new stylesheets for DocBook output
 Removed FO stylesheets (obsolete; FO can be generated from DocBook directly)
@@ -44,7 +48,7 @@ New libraries
 	- All required libraries are now bundled with the distribution
 	- Only thing you need now to build the examples is Java and Ant
 	
-0.2 (2006-06-12) Trevor Harmon
+0.5 (not released) Trevor Harmon
 
 Added new stylesheets for plain text output
 	- Much more complete than the current FO and LaTeX versions
@@ -67,9 +71,8 @@ Added more localized messages
 Removed MilitaryHistory from FO stylesheet because it was never actually implemented
 Marked all stylesheets as version 2.0 so that XSLT 2.0 functions can be used anywhere needed.
 
-0.1 (2006-02-27) Trevor Harmon
+0.4 (not released) Trevor Harmon
 
-Initial release, largely a fork of Charles Chan's HR-XSL project (version 0.3).
 Directory structure simplified and pruned, easier for new users to comprehend now.
 Added new supported sections of the HR-XML standard.
 	- PublicationHistory and Achievements sections are now handled instead of ignored
