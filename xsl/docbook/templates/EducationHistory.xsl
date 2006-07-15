@@ -110,7 +110,7 @@
 											</xsl:call-template>
 										</xsl:variable>
 										
-										<xsl:if test="$degreeDate &gt; current-date()">
+										<xsl:if test="string-length($degreeDate) and ($degreeDate &gt; current-date())">
 											<xsl:text> </xsl:text>
 											<emphasis>
 												<xsl:text>(</xsl:text>
