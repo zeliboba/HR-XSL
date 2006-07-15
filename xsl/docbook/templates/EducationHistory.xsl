@@ -42,100 +42,128 @@
 
 			<xsl:for-each select="sep:SchoolOrInstitution/sep:Degree">
 		
-				<para>
-					<xsl:choose>
-						<xsl:when test="@degreeType = 'high school or equivalent'">					
-							<xsl:call-template name="message">
-								<xsl:with-param name="name">educationHistory.highschool</xsl:with-param>
-							</xsl:call-template>
-						</xsl:when>
-						<xsl:when test="@degreeType = 'associates'">					
-							<xsl:call-template name="message">
-								<xsl:with-param name="name">educationHistory.associates</xsl:with-param>
-							</xsl:call-template>
-						</xsl:when>
-						<xsl:when test="@degreeType = 'bachelors'">					
-							<xsl:call-template name="message">
-								<xsl:with-param name="name">educationHistory.bachelors</xsl:with-param>
-							</xsl:call-template>
-						</xsl:when>
-						<xsl:when test="@degreeType = 'masters'">					
-							<xsl:call-template name="message">
-								<xsl:with-param name="name">educationHistory.masters</xsl:with-param>
-							</xsl:call-template>
-						</xsl:when>
-						<xsl:when test="@degreeType = 'doctorate'">					
-							<xsl:call-template name="message">
-								<xsl:with-param name="name">educationHistory.doctorate</xsl:with-param>
-							</xsl:call-template>
-						</xsl:when>
-						<xsl:when test="@degreeType = 'international'">					
-							<xsl:call-template name="message">
-								<xsl:with-param name="name">educationHistory.international</xsl:with-param>
-							</xsl:call-template>
-						</xsl:when>
-					</xsl:choose>
+				<informaltable frame="none" pgwide="1">
+					<tgroup cols="2">
+						<colspec colname="description"/>
+						<colspec colname="date"/>
+						<tbody>
+							<row>
+								
+								<entry>
+									<emphasis role="bold">
+
+										<!-- Degree type -->
+										<xsl:choose>
+											<xsl:when test="@degreeType = 'high school or equivalent'">					
+												<xsl:call-template name="message">
+													<xsl:with-param name="name">educationHistory.highschool</xsl:with-param>
+												</xsl:call-template>
+											</xsl:when>
+											<xsl:when test="@degreeType = 'associates'">					
+												<xsl:call-template name="message">
+													<xsl:with-param name="name">educationHistory.associates</xsl:with-param>
+												</xsl:call-template>
+											</xsl:when>
+											<xsl:when test="@degreeType = 'bachelors'">					
+												<xsl:call-template name="message">
+													<xsl:with-param name="name">educationHistory.bachelors</xsl:with-param>
+												</xsl:call-template>
+											</xsl:when>
+											<xsl:when test="@degreeType = 'masters'">					
+												<xsl:call-template name="message">
+													<xsl:with-param name="name">educationHistory.masters</xsl:with-param>
+												</xsl:call-template>
+											</xsl:when>
+											<xsl:when test="@degreeType = 'doctorate'">					
+												<xsl:call-template name="message">
+													<xsl:with-param name="name">educationHistory.doctorate</xsl:with-param>
+												</xsl:call-template>
+											</xsl:when>
+											<xsl:when test="@degreeType = 'international'">					
+												<xsl:call-template name="message">
+													<xsl:with-param name="name">educationHistory.international</xsl:with-param>
+												</xsl:call-template>
+											</xsl:when>
+										</xsl:choose>
 		
-					<xsl:choose>
-						<xsl:when test="@degreeType and not(sep:DegreeMajor/sep:Name)">
-							<xsl:text>, </xsl:text>
-						</xsl:when>
-						<xsl:when test="@degreeType and sep:DegreeMajor/sep:Name">
-							<xsl:text> </xsl:text>
-							<xsl:call-template name="message">
-								<xsl:with-param name="name">educationHistory.degreeIn</xsl:with-param>
-							</xsl:call-template>
-							<xsl:text> </xsl:text>
-							<xsl:value-of select="sep:DegreeMajor/sep:Name"/>
-							<xsl:text>, </xsl:text>
-						</xsl:when>
-					</xsl:choose>
+										<!-- Major -->
+										<xsl:if test="@degreeType and sep:DegreeMajor/sep:Name">
+											<xsl:text> </xsl:text>
+											<xsl:call-template name="message">
+												<xsl:with-param name="name">educationHistory.degreeIn</xsl:with-param>
+											</xsl:call-template>
+											<xsl:text> </xsl:text>
+											<xsl:value-of select="sep:DegreeMajor/sep:Name"/>
+										</xsl:if>
+									
+									</emphasis>
+								</entry>
+								
+								<!-- Degree date -->
+								<entry align="right">
+									<xsl:if test="sep:DegreeDate">
+										<xsl:apply-templates select="sep:DegreeDate"/>
+									</xsl:if>
+								</entry>
 
-					<xsl:if test="sep:DegreeDate">
-						<xsl:apply-templates select="sep:DegreeDate"/>
-						<xsl:text>, </xsl:text>
-					</xsl:if>
+							</row>
+							
+							<!-- School -->
+							<row>
+								<entry namest="description" nameend="date">
+									<emphasis>
+										<xsl:value-of select="../sep:School/sep:SchoolName"/>
+										<xsl:if test="../sep:LocationSummary">
+											<xsl:text>, </xsl:text>
+											<xsl:apply-templates select="../sep:LocationSummary"/>
+										</xsl:if>
+									</emphasis>
+								</entry>
+							</row>
 
-					<xsl:value-of select="../sep:School/sep:SchoolName"/>
+							<!-- Concentration -->
+							<xsl:if test="sep:DegreeMajor/sep:DegreeConcentration">
+								<row>
+									<entry namest="description" nameend="date">
+										<xsl:call-template name="message">
+											<xsl:with-param name="name">educationHistory.concentrationIn</xsl:with-param>
+										</xsl:call-template>
+										<xsl:text> </xsl:text>
+										<xsl:value-of select="sep:DegreeMajor/sep:DegreeConcentration"/>
+									</entry>
+								</row>
+							</xsl:if>
 
-					<xsl:if test="../sep:LocationSummary">
-						<xsl:text>, </xsl:text>
-						<xsl:apply-templates select="../sep:LocationSummary"/>
-					</xsl:if>
+							<!-- Honors -->
+							<xsl:if test="sep:OtherHonors">
+								<row>
+									<entry namest="description" nameend="date">
+										<itemizedlist>
+											<xsl:for-each select="sep:OtherHonors">
+												<listitem>
+													<simpara>
+														<xsl:value-of select="."/>
+													</simpara>
+												</listitem>
+											</xsl:for-each>
+										</itemizedlist>
+									</entry>
+								</row>
+							</xsl:if>
 
-					<xsl:if test="sep:DegreeMajor/sep:DegreeConcentration">
-						<xsl:text>, </xsl:text>
-						<xsl:call-template name="message">
-							<xsl:with-param name="name">educationHistory.concentrationIn</xsl:with-param>
-						</xsl:call-template>
-						<xsl:text> </xsl:text>
-						<xsl:value-of select="sep:DegreeMajor/sep:DegreeConcentration"/>
-					</xsl:if>
+							<!-- Comments -->
+							<xsl:if test="sep:Comments">
+								<row>
+									<entry namest="description" nameend="date">
+										<xsl:value-of select="sep:Comments"/>
+									</entry>
+								</row>
+							</xsl:if>
+
+						</tbody>
+					</tgroup>
+				</informaltable>
 				
-				</para>
-				
-				<xsl:if test="sep:OtherHonors or sep:Comments">
-					<xsl:if test="sep:OtherHonors">
-						<itemizedlist>
-							<xsl:for-each select="sep:OtherHonors">
-								<listitem>
-									<simpara>
-										<xsl:value-of select="."/>
-									</simpara>
-								</listitem>
-							</xsl:for-each>
-						</itemizedlist>
-					</xsl:if>
-				
-					<xsl:if test="sep:Comments">
-						<blockquote>
-							<para>
-								<xsl:value-of select="sep:Comments"/>
-							</para>
-						</blockquote>
-					</xsl:if>
-				</xsl:if>
-
 			</xsl:for-each> 
 			
 		</sect1>
