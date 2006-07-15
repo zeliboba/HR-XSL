@@ -44,7 +44,7 @@ Author: Trevor Harmon
 			<!-- Theoretically, we should be able to use the built-in xslt Ant task here, but there doesn't-->
 			<!-- seem to be any way of forcing the task to use an external processor, such as Saxon, even -->
 			<!-- when a classpath is specified. Instead, we call Saxon directly. -->
-			<java classname="net.sf.saxon.Transform" classpathref="saxon.classpath" fork="true">  
+			<java classname="net.sf.saxon.Transform" classpathref="saxon.classpath" fork="true" failOnError="true">  
 				<arg line="-o '@{out}' '@{in}' '@{xsl}' @{params}"/>  
 			</java>  
 		</sequential>
