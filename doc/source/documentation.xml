@@ -357,6 +357,11 @@
 								<entry>The value of this HTML-only parameter specifies a name for the CSS file. If not specified, no CSS file will be used in the HTML output.</entry>
 								<entry>Any user-specified filename (e.g., <filename>style.css</filename>)</entry>
 							</row>
+							<row>
+								<entry><userinput>ulink.show</userinput></entry>
+								<entry>For HTML output, this option has no effect. For FO (e.g., PDF) output, this option controls whether the full URL should be printed after a hyperlink. (When the URL is identical to the hyperlink text, it is not printed, regardless of this setting.)</entry>
+								<entry>0 suppresses the display of URLs; 1 shows them</entry>
+							</row>
 						</tbody>
 					</tgroup>
 				</table>
