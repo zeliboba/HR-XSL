@@ -20,6 +20,7 @@
 
 <xsl:stylesheet version="2.0"
 	xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
+	xmlns:xs="http://www.w3.org/2001/XMLSchema"
 	xmlns:sep="http://ns.hr-xml.org/2006-02-28">
 
 	<xsl:template match="sep:YearMonth">
@@ -78,6 +79,24 @@
 			</xsl:otherwise>
 
 		</xsl:choose>				
+		
+	</xsl:template>
+	
+	<!-- Converts a sep:Date value to an xs:date value -->
+	<xsl:template name="getDate">
+		<xsl:param name="date"/>
+		
+		<xsl:choose>
+			<xsl:when test="$date/sep:Year">
+				<xsl:value-of select="xs:date(concat($date/sep:Year, '-01-01'))"/>
+			</xsl:when>
+			<xsl:when test="$date/sep:YearMonth">
+				<xsl:value-of select="xs:date(concat($date/sep:YearMonth, '-01'))"/>
+			</xsl:when>
+			<xsl:when test="$date/sep:AnyDate">
+				<xsl:value-of select="xs:date($date/sep:AnyDate)"/>
+			</xsl:when>
+		</xsl:choose>
 		
 	</xsl:template>
 
