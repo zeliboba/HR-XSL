@@ -1045,6 +1045,10 @@ Education
 				<title>Notes</title>
 				
 				<para>
+					If you have not yet received a degree, but you know the date on which you expect to receive it, simply specify the expected date in the <sgmltag>DegreeDate</sgmltag> element. If this date is in the future, HR-XSL will add the phrase <quote>(expected)</quote> to the date.
+				</para>
+				
+				<para>
 					The <sgmltag>EducationHistory</sgmltag> element is quite comprehensive and includes many details and HR-specific data that most people do not require for their CVs or résumés. HR-XSL ignores most of these but may support them in later versions.
 				</para>
 				
