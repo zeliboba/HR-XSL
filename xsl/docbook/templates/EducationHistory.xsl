@@ -103,6 +103,24 @@
 								<entry align="right">
 									<xsl:if test="sep:DegreeDate">
 										<xsl:apply-templates select="sep:DegreeDate"/>
+										
+										<xsl:variable name="degreeDate">
+											<xsl:call-template name="getDate">
+												<xsl:with-param name="date" select="sep:DegreeDate"/>
+											</xsl:call-template>
+										</xsl:variable>
+										
+										<xsl:if test="$degreeDate &gt; current-date()">
+											<xsl:text> </xsl:text>
+											<emphasis>
+												<xsl:text>(</xsl:text>
+												<xsl:call-template name="message">
+													<xsl:with-param name="name">educationHistory.expected</xsl:with-param>
+												</xsl:call-template>
+												<xsl:text>)</xsl:text>
+											</emphasis>
+										</xsl:if>
+										
 									</xsl:if>
 								</entry>
 
@@ -163,7 +181,10 @@
 						</tbody>
 					</tgroup>
 				</informaltable>
-				
+
+				<!-- Ugly hack to add some vertical space between the entries so they're not squished together -->
+				<para></para>				
+
 			</xsl:for-each> 
 			
 		</sect1>
