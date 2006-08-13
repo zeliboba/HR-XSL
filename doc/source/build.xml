@@ -9,7 +9,7 @@
 		<delete>
 			<fileset dir="../html" includes="*.html"/>
 		</delete>
-		<exec executable="xsltproc">  
+		<exec executable="xsltproc" failOnError="true">  
 			<arg line="-o ../html/ ../../lib/docbook-xsl-1.70.1/html/chunk.xsl documentation.xml"/>  
 		</exec>  
 	</target>
@@ -20,7 +20,7 @@
 	</target>
 	
 	<target name="validate">
-		<exec executable="xmllint" failonerror="true">
+		<exec executable="xmllint" failOnError="true">
 			<arg line="--noout --dtdvalid ../../lib/docbook-xml-4.4/docbookx.dtd documentation.xml"/>
 		</exec>
 	</target>
