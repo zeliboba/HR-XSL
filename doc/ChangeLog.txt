@@ -1,3 +1,16 @@
+0.8 (2006-08-12) Trevor Harmon
+Stylesheets
+	- The EducationHistory section is now rendered as a table (like EmploymentHistory), so it looks a lot nicer
+	- SchoolOrInstitution/Degree/DegreeName now overrides @degreeType. (Previously it was simply ignored.)
+	- Changed behavior of date display to show "(expected)" if the date is in the future
+	- Corrected the English messages file so that degree types are neither science- nor arts-specific
+	- Internal date handling improvements and fixes
+Documentation
+	- Explained how to turn off the annoying URL display in PDF output
+	- Minor homepage corrections
+Examples
+	- Turned off the annoying URL display for PDF output
+
 0.7 (2006-07-06) Trevor Harmon
 XMLResume-to-HR-XML converter
 	- Fixed a few bugs
