@@ -52,40 +52,17 @@
 								<entry>
 									<emphasis role="bold">
 
-										<!-- Degree type -->
-										<xsl:choose>
-											<xsl:when test="@degreeType = 'high school or equivalent'">					
-												<xsl:call-template name="message">
-													<xsl:with-param name="name">educationHistory.highschool</xsl:with-param>
-												</xsl:call-template>
-											</xsl:when>
-											<xsl:when test="@degreeType = 'associates'">					
-												<xsl:call-template name="message">
-													<xsl:with-param name="name">educationHistory.associates</xsl:with-param>
-												</xsl:call-template>
-											</xsl:when>
-											<xsl:when test="@degreeType = 'bachelors'">					
-												<xsl:call-template name="message">
-													<xsl:with-param name="name">educationHistory.bachelors</xsl:with-param>
-												</xsl:call-template>
-											</xsl:when>
-											<xsl:when test="@degreeType = 'masters'">					
-												<xsl:call-template name="message">
-													<xsl:with-param name="name">educationHistory.masters</xsl:with-param>
-												</xsl:call-template>
-											</xsl:when>
-											<xsl:when test="@degreeType = 'doctorate'">					
-												<xsl:call-template name="message">
-													<xsl:with-param name="name">educationHistory.doctorate</xsl:with-param>
-												</xsl:call-template>
-											</xsl:when>
-											<xsl:when test="@degreeType = 'international'">					
-												<xsl:call-template name="message">
-													<xsl:with-param name="name">educationHistory.international</xsl:with-param>
-												</xsl:call-template>
-											</xsl:when>
-										</xsl:choose>
-		
+										<!-- If the DegreeName element is specified, use it. Otherwise, generate the degree name -->
+										<!-- automatically according to the degreeType attribute. -->
+										<xsl:choose> 
+											<xsl:when test="sep:DegreeName"> 
+												<xsl:value-of select="sep:DegreeName"/> 
+											</xsl:when> 
+											<xsl:otherwise> 
+												<xsl:apply-templates select="@degreeType"/>
+											</xsl:otherwise> 
+										</xsl:choose> 
+
 										<!-- Major -->
 										<xsl:if test="@degreeType and sep:DegreeMajor/sep:Name">
 											<xsl:text> </xsl:text>
@@ -189,6 +166,41 @@
 			
 		</sect1>
 	
+	</xsl:template>
+
+	<xsl:template match="@degreeType">
+		<xsl:choose>
+			<xsl:when test=". = 'high school or equivalent'">					 
+				<xsl:call-template name="message"> 
+					<xsl:with-param name="name">educationHistory.highschool</xsl:with-param> 
+				</xsl:call-template> 
+			</xsl:when> 
+			<xsl:when test=". = 'associates'">					 
+				<xsl:call-template name="message"> 
+					<xsl:with-param name="name">educationHistory.associates</xsl:with-param> 
+				</xsl:call-template> 
+			</xsl:when> 
+			<xsl:when test=". = 'bachelors'">					 
+				<xsl:call-template name="message"> 
+					<xsl:with-param name="name">educationHistory.bachelors</xsl:with-param> 
+				</xsl:call-template> 
+			</xsl:when> 
+			<xsl:when test=". = 'masters'">					 
+				<xsl:call-template name="message"> 
+					<xsl:with-param name="name">educationHistory.masters</xsl:with-param> 
+				</xsl:call-template> 
+			</xsl:when> 
+			<xsl:when test=". = 'doctorate'">					 
+				<xsl:call-template name="message"> 
+					<xsl:with-param name="name">educationHistory.doctorate</xsl:with-param> 
+				</xsl:call-template> 
+			</xsl:when> 
+			<xsl:when test=". = 'international'">					 
+				<xsl:call-template name="message"> 
+					<xsl:with-param name="name">educationHistory.international</xsl:with-param> 
+				</xsl:call-template> 
+			</xsl:when> 
+		</xsl:choose> 
 	</xsl:template>
 
 	<xsl:template match="sep:LocationSummary">
