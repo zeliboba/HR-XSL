@@ -1050,6 +1050,10 @@ Education
 				<title>Notes</title>
 				
 				<para>
+					Use the <sgmltag class="attribute">degreeType</sgmltag> attribute to specify the type of degree. For instance, if you have a Master's degree, you can say <code>degreeType="masters"</code>. By default, HR-XSL will then translate this attribute according to the messages file. (See <xref linkend="Localized_Messages"/> for more information about the messages file.) If you need to specify a name for the degree that differs from the messages file, you can simply add a <sgmltag>DegreeName</sgmltag> element, as shown in the example above. This element will then override the degree name stored in the messages file.
+				</para>
+				    				
+				<para>
 					If you have not yet received a degree, but you know the date on which you expect to receive it, simply specify the expected date in the <sgmltag>DegreeDate</sgmltag> element. If this date is in the future, HR-XSL will add the phrase <quote>(expected)</quote> to the date.
 				</para>
 				
