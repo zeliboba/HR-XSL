@@ -362,6 +362,16 @@
 								<entry>For HTML output, this option has no effect. For FO (e.g., PDF) output, this option controls whether the full URL should be printed after a hyperlink. (When the URL is identical to the hyperlink text, it is not printed, regardless of this setting.)</entry>
 								<entry>0 suppresses the display of URLs; 1 shows them</entry>
 							</row>
+							<row>
+								<entry><userinput>paper.type</userinput></entry>
+								<entry>For FO (e.g., PDF) output, this option controls the paper size conveniently.</entry>
+								<entry><userinput>USletter</userinput> (default), <userinput>A4</userinput>, and most of the standard A, B and C sizes. <ulink url="http://docbook.sourceforge.net/release/xsl/current/doc/fo/page.width.portrait.html">Here</ulink> you can find the complete list.</entry>
+							</row>
+							<row>
+								<entry><userinput>page.orientation</userinput></entry>
+								<entry>For PDF output, this option controls whether the longest edge should be horizontal (landscape) or vertical (portrait).</entry>
+								<entry><userinput>portrait</userinput> (default) or <userinput>landscape</userinput></entry>
+							</row>
 						</tbody>
 					</tgroup>
 				</table>
