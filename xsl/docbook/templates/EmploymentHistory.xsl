@@ -28,48 +28,65 @@
 
 	<xsl:template match="sep:EmploymentHistory">
 
+		<!-- Section title -->
+		<xsl:variable name="title">
+			<xsl:call-template name="message">
+				<xsl:with-param name="name">header.employmentHistory</xsl:with-param>
+			</xsl:call-template>
+		</xsl:variable>
+
 		<!-- Is this a functional or chronological list? -->
 		<xsl:choose>
 
 			<xsl:when test="sep:EmployerOrg/sep:PositionHistory/sep:OrgIndustry">
+
 				<!-- It's functional -->
-				<xsl:for-each-group
-					select="sep:EmployerOrg/sep:PositionHistory"
-					group-by="sep:OrgIndustry/sep:IndustryDescription">
 
-					<xsl:variable name="title">
-						<xsl:value-of select="current-grouping-key()"/>
-						<xsl:text> </xsl:text>
-						<xsl:call-template name="message">
-							<xsl:with-param name="name">header.experience</xsl:with-param>
-						</xsl:call-template>
-					</xsl:variable>
+				<sect1>
 
-					<sect1>
-						<xsl:attribute name="id">
-							<xsl:value-of select="translate($title, ' ', '')"/>
-						</xsl:attribute>
+					<!-- Add an ID attribute to the section element. All spaces have to be removed according to the DocBook spec. -->
+					<xsl:attribute name="id">
+						<xsl:value-of select="translate($title, ' ', '')"/>
+					</xsl:attribute>
+
+					<title>
+						<xsl:value-of select="$title"/>
+					</title>
+
+					<xsl:for-each-group
+						select="sep:EmployerOrg/sep:PositionHistory"
+						group-by="sep:OrgIndustry/sep:IndustryDescription">
 						
-						<title>
-							<xsl:value-of select="$title"/>
-						</title>
-				
-						<xsl:apply-templates select="current-group()"/>						
-					</sect1>
-				</xsl:for-each-group>
+						<sect2>
+							<xsl:variable name="subTitle">
+								<xsl:value-of select="current-grouping-key()"/>
+							</xsl:variable>
+
+							<!-- Add an ID attribute to the section element. All spaces have to be removed according to the DocBook spec. -->
+							<xsl:attribute name="id">
+								<xsl:value-of select="translate($subTitle, ' ', '')"/>
+							</xsl:attribute>
+
+							<title>
+								<xsl:value-of select="$subTitle"/>
+							</title>
+
+							<xsl:apply-templates select="current-group()"/>						
+						</sect2>
+						
+					</xsl:for-each-group>
+
+				</sect1>
+
 			</xsl:when>
 
 			<xsl:otherwise>
-				
+
 				<!-- It's chronological -->
 				
-				<xsl:variable name="title">
-					<xsl:call-template name="message">
-						<xsl:with-param name="name">header.employmentHistory</xsl:with-param>
-					</xsl:call-template>
-				</xsl:variable>
-				
 				<sect1>
+
+					<!-- Add an ID attribute to the section element. All spaces have to be removed according to the DocBook spec. -->
 					<xsl:attribute name="id">
 						<xsl:value-of select="translate($title, ' ', '')"/>
 					</xsl:attribute>
@@ -80,6 +97,7 @@
 
 					<xsl:apply-templates select="sep:EmployerOrg/sep:PositionHistory"/> 
 				</sect1>
+
 			</xsl:otherwise>
 
 		</xsl:choose>
