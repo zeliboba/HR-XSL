@@ -8,10 +8,10 @@ Author: Trevor Harmon
 <project name="hr-xsl" default="all">
 
 	<!-- Grab the directory of this build file (instead of the directory of whatever includes this file)-->
-	<dirname property="hr-xsl.basedir" file="${ant.file.hr-xsl}"/>
+	<dirname property="hr-xsl.basedir" file="${ant.file.hr-xsl}/.."/>
 
 	<!-- Location of the DocBook XSL stylesheets -->
-	<property name="docbook.xsl" value="${hr-xsl.basedir}/../lib/docbook-xsl-1.70.1"/> 
+	<property name="docbook.xsl" value="${hr-xsl.basedir}/lib/docbook-xsl-1.70.1"/> 
 
 	<!-- Make sure the parameters have been initialized so that the -->
 	<!-- macros don't fail if the user doesn't specify them. -->
@@ -19,7 +19,7 @@ Author: Trevor Harmon
 	<property name="hr-xsl.params" value=""/>
 
 	<path id="saxon.classpath">   
-		<fileset dir="${hr-xsl.basedir}/../lib/saxon-b-8.7.3">   
+		<fileset dir="${hr-xsl.basedir}/lib/saxon-b-8.7.3">   
 			<include name="**/*.jar"/>   
 		</fileset>   
 	</path>   
@@ -27,20 +27,53 @@ Author: Trevor Harmon
 	<!-- Load the FOP task -->
     <taskdef name="fop" classname="org.apache.fop.tools.anttasks.Fop">
 		<classpath>
-			<fileset dir="${hr-xsl.basedir}/../lib/fop-trunk-r419324">
+			<fileset dir="${hr-xsl.basedir}/lib/fop-trunk-r419324">
 				<include name="fop.jar"/>
 				<include name="lib/*.jar"/>
 			</fileset>   
+		</classpath>
+	</taskdef>
+	
+	<!-- Load the JTidy task -->
+	<taskdef name="tidy" classname="org.w3c.tidy.ant.JTidyTask">
+		<classpath>
+			<pathelement location="${hr-xsl.basedir}/lib/jtidy-r8-SNAPSHOT/jtidy-r8-SNAPSHOT.jar"/>
 		</classpath>
 	</taskdef>
 
 	<!-- Load the Ant-Contrib tasks -->
 	<taskdef resource="net/sf/antcontrib/antcontrib.properties">
 		<classpath>
-			<pathelement location="${hr-xsl.basedir}/../lib/ant-contrib-1.0b2/ant-contrib.jar"/>
+			<pathelement location="${hr-xsl.basedir}/lib/ant-contrib-1.0b2/ant-contrib.jar"/>
 		</classpath>
 	</taskdef>
 
+	<!-- Tidy up an HTML file -->
+	<macrodef name="tidy-html">
+		<attribute name="in" description="The HTML file to tidy up"/>
+		<sequential>
+			<tempfile property="temp.file"/> 
+			<tidy srcfile="@{in}" destfile="${temp.file}" failonerror="true"> 
+				<parameter name="indent" value="auto"/> 
+			</tidy> 
+			<move file="${temp.file}" tofile="@{in}"/>  
+		</sequential>
+	</macrodef>
+	
+	<!-- Tidy up an XML file -->
+	<macrodef name="tidy-xml">
+		<attribute name="in" description="The XML file to tidy up"/>
+		<sequential>
+			<tempfile property="temp.file"/> 
+			<tidy srcfile="@{in}" destfile="${temp.file}" failonerror="true"> 
+				<parameter name="indent" value="auto"/> 
+				<parameter name="input-xml" value="yes"/> 
+				<parameter name="char-encoding" value="UTF-8"/> 
+			</tidy> 
+			<move file="${temp.file}" tofile="@{in}"/>  
+		</sequential>
+	</macrodef>
+	
 	<!-- Performs an XSL translation of an XML file using the Saxon processor. -->
 	<macrodef name="saxon">
 		<attribute name="in" description="An XML file"/>
@@ -66,7 +99,7 @@ Author: Trevor Harmon
 			<basename property="in.filename" file="@{in}" suffix=".xml"/> 
 			<property name="in" value="${in.dir}/${in.filename}"/>
 			<saxon in="@{in}" out="${in}-docbook.xml"
-				xsl="${hr-xsl.basedir}/../xsl/docbook/hr-xsl.xsl"
+				xsl="${hr-xsl.basedir}/xsl/docbook/hr-xsl.xsl"
 				params="${hr-xsl.params}"/>
 		</sequential>
 	</macrodef>
@@ -106,9 +139,10 @@ Author: Trevor Harmon
 				</targetfiles>
 				<sequential>
 					<resume-to-docbook in="@{in}"/> 
+					<tidy-xml in="${in}-docbook.xml"/>
 				</sequential>
 			</outofdate>
-			
+
 			<!-- Convert the DocBook to HTML -->
 			<outofdate>
 				<sourcefiles>
@@ -119,6 +153,7 @@ Author: Trevor Harmon
 				</targetfiles>
 				<sequential>
 					<docbook-to format="html" in="${in}-docbook.xml" out="${in}.html"/> 
+					<tidy-html in="${in}.html"/>
 				</sequential>
 			</outofdate>
 			
@@ -145,6 +180,7 @@ Author: Trevor Harmon
 				</targetfiles>
 				<sequential>
 					<resume-to-docbook in="@{in}"/> 
+					<tidy-xml in="${in}-docbook.xml"/>
 				</sequential>
 			</outofdate>
 
@@ -158,6 +194,7 @@ Author: Trevor Harmon
 				</targetfiles>
 				<sequential>
 					<docbook-to format="fo" in="${in}-docbook.xml" out="${in}.fo"/> 
+					<tidy-xml in="${in}.fo"/>
 				</sequential>
 			</outofdate>
 
@@ -209,6 +246,7 @@ Author: Trevor Harmon
 					<exec executable="lynx" output="${in}.txt">
 						<arg line="-dump -nolist '${in}.html'"/>
 					</exec>
+
 				</sequential>
 			</outofdate>
 
