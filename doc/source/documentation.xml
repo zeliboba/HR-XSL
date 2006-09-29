@@ -1709,6 +1709,21 @@ Hobbies
 
 	</chapter>
 	
+	<chapter id="Troubleshooting">
+		<title>Troubleshooting</title>
+		<para>
+			If you use the provided Ant tasks to generate a PDF from an HR-XML document, you may encounter the following error:
+		</para>
+
+		<para>
+			<errortext>java.lang.IllegalStateException: FOTreeBuilder (and the Fop class) cannot be reused. Please instantiate a new instance.</errortext>
+		</para>
+		
+		<para>
+			The probable cause is that the Saxon library is already on your CLASSPATH. To fix this problem, remove all Saxon references from your CLASSPATH.
+		</para>
+	</chapter>
+	
 	<chapter id="Support">
 		<title>Support</title>
 		<para>
