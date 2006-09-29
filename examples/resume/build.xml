@@ -18,5 +18,13 @@
 	<target name="text">
 		<resume-to-text in="resume.xml"/>
 	</target>
+	
+	<target name="clean">
+		<delete file="resume-docbook.xml"/>
+		<delete file="resume.html"/>
+		<delete file="resume.fo"/>
+		<delete file="resume.pdf"/>
+		<delete file="resume.txt"/>
+	</target>
 
 </project>

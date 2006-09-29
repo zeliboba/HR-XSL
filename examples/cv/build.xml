@@ -19,4 +19,12 @@
 		<resume-to-text in="cv.xml"/>
 	</target>
 
+	<target name="clean">
+		<delete file="cv-docbook.xml"/>
+		<delete file="cv.html"/>
+		<delete file="cv.fo"/>
+		<delete file="cv.pdf"/>
+		<delete file="cv.txt"/>
+	</target>
+
 </project>
