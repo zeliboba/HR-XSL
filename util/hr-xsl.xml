@@ -24,14 +24,22 @@ Author: Trevor Harmon
 		</fileset>   
 	</path>   
 
-	<path id="fop.classpath">   
-		<fileset dir="${hr-xsl.basedir}/../lib/fop-trunk-r419324">   
-			<include name="**/*.jar"/>   
-		</fileset>   
-	</path>   
-
 	<!-- Load the FOP task -->
-    <taskdef name="fop" classname="org.apache.fop.tools.anttasks.Fop" classpathref="fop.classpath"/>
+    <taskdef name="fop" classname="org.apache.fop.tools.anttasks.Fop">
+		<classpath>
+			<fileset dir="${hr-xsl.basedir}/../lib/fop-trunk-r419324">
+				<include name="fop.jar"/>
+				<include name="lib/*.jar"/>
+			</fileset>   
+		</classpath>
+	</taskdef>
+
+	<!-- Load the Ant-Contrib tasks -->
+	<taskdef resource="net/sf/antcontrib/antcontrib.properties">
+		<classpath>
+			<pathelement location="${hr-xsl.basedir}/../lib/ant-contrib-1.0b2/ant-contrib.jar"/>
+		</classpath>
+	</taskdef>
 
 	<!-- Performs an XSL translation of an XML file using the Saxon processor. -->
 	<macrodef name="saxon">
@@ -51,7 +59,7 @@ Author: Trevor Harmon
 	</macrodef>
 
 	<!-- Converts an HR-XML resume file into DocBook format -->
-	<macrodef name="translate-resume">
+	<macrodef name="resume-to-docbook">
 		<attribute name="in" description="The filename of the HR-XML resume"/>
 		<sequential>
 			<dirname property="in.dir" file="@{in}"/>
@@ -64,7 +72,7 @@ Author: Trevor Harmon
 	</macrodef>
 
 	<!-- Converts a DocBook file into a specified format -->
-	<macrodef name="translate-docbook"> 
+	<macrodef name="docbook-to"> 
 		<attribute name="in" description="The DocBook file"/>
 		<attribute name="out" description="The output file"/>
 		<attribute name="format" description="The format of the output; must be a DocBook XSL sub-directory"/>
@@ -76,17 +84,44 @@ Author: Trevor Harmon
 				xsl="${docbook.xsl}/@{format}/@{stylesheet}"
 				params="${docbook.params}"/>
 		</sequential> 
-	</macrodef> 
+	</macrodef>
 
 	<!-- Converts an HR-XML resume to HTML -->
 	<macrodef name="resume-to-html"> 
 		<attribute name="in" description="The filename of the HR-XML resume"/> 
-		<sequential> 
-			<translate-resume in="@{in}"/> 
+		<sequential>
+			
+			<!-- Determine the filenames -->
 			<dirname property="in.dir" file="@{in}"/> 
 			<basename property="in.filename" file="@{in}" suffix=".xml"/>  
 			<property name="in" value="${in.dir}/${in.filename}"/>
-			<translate-docbook in="${in}-docbook.xml" out="${in}.html" format="html"/> 
+			
+			<!-- Convert the HR-XML to DocBook -->
+			<outofdate>
+				<sourcefiles>
+					<pathelement path="@{in}"/>
+				</sourcefiles>
+				<targetfiles>
+					<pathelement path="${in}-docbook.xml"/>
+				</targetfiles>
+				<sequential>
+					<resume-to-docbook in="@{in}"/> 
+				</sequential>
+			</outofdate>
+			
+			<!-- Convert the DocBook to HTML -->
+			<outofdate>
+				<sourcefiles>
+					<pathelement path="${in}-docbook.xml"/>
+				</sourcefiles>
+				<targetfiles>
+					<pathelement path="${in}.html"/>
+				</targetfiles>
+				<sequential>
+					<docbook-to format="html" in="${in}-docbook.xml" out="${in}.html"/> 
+				</sequential>
+			</outofdate>
+			
 		</sequential> 
 	</macrodef> 
 	
@@ -94,12 +129,51 @@ Author: Trevor Harmon
 	<macrodef name="resume-to-pdf"> 
 		<attribute name="in" description="The filename of the HR-XML resume"/> 
 		<sequential> 
-			<translate-resume in="@{in}"/> 
+
+			<!-- Determine the filenames -->
 			<dirname property="in.dir" file="@{in}"/> 
 			<basename property="in.filename" file="@{in}" suffix=".xml"/>  
 			<property name="in" value="${in.dir}/${in.filename}"/>
-			<translate-docbook in="${in}-docbook.xml" out="${in}.fo" format="fo"/> 
-			<fop fofile="${in}.fo" outfile="${in}.pdf" format="application/pdf"/>
+
+			<!-- Convert the HR-XML to DocBook -->
+			<outofdate>
+				<sourcefiles>
+					<pathelement path="@{in}"/>
+				</sourcefiles>
+				<targetfiles>
+					<pathelement path="${in}-docbook.xml"/>
+				</targetfiles>
+				<sequential>
+					<resume-to-docbook in="@{in}"/> 
+				</sequential>
+			</outofdate>
+
+			<!-- Convert the DocBook to FO -->
+			<outofdate>
+				<sourcefiles>
+					<pathelement path="${in}-docbook.xml"/>
+				</sourcefiles>
+				<targetfiles>
+					<pathelement path="${in}.fo"/>
+				</targetfiles>
+				<sequential>
+					<docbook-to format="fo" in="${in}-docbook.xml" out="${in}.fo"/> 
+				</sequential>
+			</outofdate>
+
+			<!-- Convert the FO to PDF -->
+			<outofdate>
+				<sourcefiles>
+					<pathelement path="${in}.fo"/>
+				</sourcefiles>
+				<targetfiles>
+					<pathelement path="${in}.pdf"/>
+				</targetfiles>
+				<sequential>
+					<fop fofile="${in}.fo" outfile="${in}.pdf" format="application/pdf"/>
+				</sequential>
+			</outofdate>
+
 		</sequential> 
 	</macrodef> 
 	
@@ -107,16 +181,37 @@ Author: Trevor Harmon
 	<macrodef name="resume-to-text"> 
 		<attribute name="in" description="The filename of the HR-XML resume"/> 
 		<sequential>
-			<translate-resume in="@{in}"/> 
+
+			<!-- Determine the filenames -->
 			<dirname property="in.dir" file="@{in}"/> 
 			<basename property="in.filename" file="@{in}" suffix=".xml"/>  
 			<property name="in" value="${in.dir}/${in.filename}"/>
-			<!-- First convert to HTML -->
-			<translate-docbook in="${in}-docbook.xml" out="${in}.html" format="html"/> 
-			<!-- Then use a text-mode web browser to convert the HTML to plain text -->
-			<exec executable="lynx" output="${in}.txt">
-				<arg line="-dump -nolist '${in}.html'"/>
-			</exec>
+
+			<!-- Convert the HR-XML to HTML -->
+			<resume-to-html in="@{in}"/>
+
+			<!-- Convert the HTML to plain text -->
+			<outofdate>
+				<sourcefiles>
+					<pathelement path="${in}.html"/>
+				</sourcefiles>
+				<targetfiles>
+					<pathelement path="${in}.txt"/>
+				</targetfiles>
+				<sequential>
+					
+					<!-- Make sure the lynx command is available -->
+					<property environment="env"/>
+					<available file="lynx" filepath="${env.PATH}" property="lynx-available"/>
+					<fail unless="lynx-available" message="Could not create plain-text version of resume because lynx was not found on the path (${env.PATH}). Please install Lynx (http://lynx.isc.org/)."/>
+					
+					<!-- Use lynx to convert the HTML to plain text -->
+					<exec executable="lynx" output="${in}.txt">
+						<arg line="-dump -nolist '${in}.html'"/>
+					</exec>
+				</sequential>
+			</outofdate>
+
 		</sequential> 
 	</macrodef> 
 	
