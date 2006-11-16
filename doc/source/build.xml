@@ -21,7 +21,7 @@
 	
 	<target name="validate">
 		<exec executable="xmllint" failOnError="true">
-			<arg line="--noout --dtdvalid ../../lib/docbook-xml-4.4/docbookx.dtd documentation.xml"/>
+			<arg line="--noout --dtdvalid ../../lib/docbook-xml-4.5/docbookx.dtd documentation.xml"/>
 		</exec>
 	</target>
 

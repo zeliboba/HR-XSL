@@ -1,5 +1,5 @@
 <!-- ...................................................................... -->
-<!-- DocBook notations module V4.4 ........................................ -->
+<!-- DocBook notations module V4.5 ........................................ -->
 <!-- File dbnotnx.mod ..................................................... -->
 
 <!-- Copyright 1992-2004 HaL Computer Systems, Inc.,
@@ -8,7 +8,7 @@
      Organization for the Advancement of Structured Information
      Standards (OASIS).
 
-     $Id: dbnotnx.mod,v 1.31 2005/01/27 13:52:00 nwalsh Exp $
+     $Id: dbnotnx.mod 6340 2006-10-03 13:23:24Z nwalsh $
 
      Permission to use, copy, modify and distribute the DocBook DTD
      and its accompanying documentation for any purpose and without fee
@@ -36,7 +36,7 @@
      declaration that uses the public identifier shown below:
 
      <!ENTITY % dbnotn PUBLIC
-     "-//OASIS//ENTITIES DocBook Notations V4.4//EN"
+     "-//OASIS//ENTITIES DocBook Notations V4.5//EN"
      "dbnotnx.mod">
      %dbnotn;
 
@@ -97,5 +97,5 @@
 <!NOTATION SWF          SYSTEM "http://www.macromedia.com/software/flash">
 <!NOTATION linespecific	SYSTEM "linespecific">
 
-<!-- End of DocBook notations module V4.4 ................................. -->
+<!-- End of DocBook notations module V4.5 ................................. -->
 <!-- ...................................................................... -->

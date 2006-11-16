@@ -1,5 +1,5 @@
 <!-- ...................................................................... -->
-<!-- DocBook character entities module V4.4 ............................... -->
+<!-- DocBook character entities module V4.5 ............................... -->
 <!-- File dbcentx.mod ..................................................... -->
 
 <!-- Copyright 1992-2004 HaL Computer Systems, Inc.,
@@ -8,7 +8,7 @@
      Organization for the Advancement of Structured Information
      Standards (OASIS).
 
-     $Id: dbcentx.mod,v 1.28 2005/01/27 13:52:00 nwalsh Exp $
+     $Id: dbcentx.mod 6340 2006-10-03 13:23:24Z nwalsh $
 
      Permission to use, copy, modify and distribute the DocBook DTD
      and its accompanying documentation for any purpose and without fee
@@ -37,7 +37,7 @@
      declaration that uses the public identifier shown below:
 
      <!ENTITY % dbcent PUBLIC
-     "-//OASIS//ENTITIES DocBook Character Entities V4.4//EN"
+     "-//OASIS//ENTITIES DocBook Character Entities V4.5//EN"
      "dbcentx.mod">
      %dbcent;
 
@@ -380,5 +380,5 @@
 %ISOtech;
 ]]>
 
-<!-- End of DocBook character entity sets module V4.4 ..................... -->
+<!-- End of DocBook character entity sets module V4.5 ..................... -->
 <!-- ...................................................................... -->
