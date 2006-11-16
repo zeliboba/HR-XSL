@@ -10,7 +10,7 @@
 			<fileset dir="../html" includes="*.html"/>
 		</delete>
 		<exec executable="xsltproc" failOnError="true">  
-			<arg line="-o ../html/ ../../lib/docbook-xsl-1.70.1/html/chunk.xsl documentation.xml"/>  
+			<arg line="-o ../html/ ../../lib/docbook-xsl-1.71.1/html/chunk.xsl documentation.xml"/>  
 		</exec>  
 	</target>
 

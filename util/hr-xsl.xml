@@ -11,7 +11,7 @@ Author: Trevor Harmon
 	<dirname property="hr-xsl.basedir" file="${ant.file.hr-xsl}/.."/>
 
 	<!-- Location of the DocBook XSL stylesheets -->
-	<property name="docbook.xsl" value="${hr-xsl.basedir}/lib/docbook-xsl-1.70.1"/> 
+	<property name="docbook.xsl" value="${hr-xsl.basedir}/lib/docbook-xsl-1.71.1"/> 
 
 	<!-- Make sure the parameters have been initialized so that the -->
 	<!-- macros don't fail if the user doesn't specify them. -->
