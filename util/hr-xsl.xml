@@ -44,7 +44,7 @@ Author: Trevor Harmon
 	<!-- Load the Ant-Contrib tasks -->
 	<taskdef resource="net/sf/antcontrib/antcontrib.properties">
 		<classpath>
-			<pathelement location="${hr-xsl.basedir}/lib/ant-contrib-1.0b2/ant-contrib.jar"/>
+			<pathelement location="${hr-xsl.basedir}/lib/ant-contrib-1.0b3/ant-contrib.jar"/>
 		</classpath>
 	</taskdef>
 
