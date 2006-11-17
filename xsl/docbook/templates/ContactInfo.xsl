@@ -35,7 +35,8 @@
 
 	<xsl:template match="sep:ContactMethod"> 
 
-		<informaltable frame="none">
+		<!-- Setting rowsep and colsep to 0 turns off the internal table borders in PDF output -->
+		<informaltable frame="none" rowsep="0" colsep="0">
 			<tgroup cols="2">
 				<tbody>
 

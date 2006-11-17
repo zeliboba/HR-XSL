@@ -106,7 +106,8 @@
 
 	<xsl:template match="sep:EmployerOrg/sep:PositionHistory">
 
-		<informaltable frame="none" pgwide="1">
+		<!-- Setting rowsep and colsep to 0 turns off the internal table borders in PDF output -->
+		<informaltable frame="none" pgwide="1" rowsep="0" colsep="0">
 			<tgroup cols="2">
 				<colspec colname="description"/>
 				<colspec colname="date"/>
