@@ -4,17 +4,22 @@
 
 	<import file="../../util/hr-xsl.xml"/>
 
-	<!-- For some reason, trying to use the chunk.xsl stylesheet fails with SAXON 8.7.3, so we use xsltproc instead. -->
 	<target name="html-chunked" depends="validate">
-		<delete>
-			<fileset dir="../html" includes="*.html"/>
-		</delete>
-		<exec executable="xsltproc" failOnError="true">  
-			<arg line="-o ../html/ ../../lib/docbook-xsl-1.71.1/html/chunk.xsl documentation.xml"/>  
-		</exec>  
+
+		<!-- Only delete the files; don't wipe out the entire directory to avoid erasing .svn -->
+		<delete> 
+			<fileset dir="../html" includes="*"/> 
+		</delete> 
+
+		<!-- Can't get this to work... -->
+		<!-- <docbook-to in="documentation.xml" out="../html/" format="html" stylesheet="chunk.xsl"/> -->
+		<!-- ...so I use xsltproc instead. -->
+		<exec executable="xsltproc" failOnError="true">   
+			<arg line="-o ../html/ ../../lib/docbook-xsl-1.71.1/html/chunk.xsl documentation.xml"/>   
+		</exec>   
+
 	</target>
 
-	<!-- This target works fine with the bundled SAXON processor, and the output looks slightly better than docbook2html. -->
 	<target name="html-nochunks" depends="validate">
 		<docbook-to in="documentation.xml" out="../documentation.html" format="html"/>
 	</target>
