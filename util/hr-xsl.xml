@@ -19,7 +19,7 @@ Author: Trevor Harmon
 	<property name="hr-xsl.params" value=""/>
 
 	<path id="saxon.classpath">   
-		<fileset dir="${hr-xsl.basedir}/lib/saxon-b-8.7.3">   
+		<fileset dir="${hr-xsl.basedir}/lib/saxon-b-8.8">   
 			<include name="**/*.jar"/>   
 		</fileset>   
 	</path>   
