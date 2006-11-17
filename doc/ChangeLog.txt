@@ -1,3 +1,23 @@
+0.9 (2006-11-16) Trevor Harmon
+Stylesheets
+	- Each functional work experience section is now a sub-section under a larger "Work Experience" section. This is necessary for some localizations, and it also makes functional CVs look a bit more organized. (Guido De Rosa)
+Documentation
+	- Explains how to choose between A4 and letter size in PDF output (Guido De Rosa)
+	- Added troubleshooting chapter explaining how to handle a FOTreeBuilder error
+Examples
+	- Build scripts only generate output if the files are out-of-date (suggested by Guido De Rosa)
+	- Demonstrations of how to choose between A4 and letter size in PDF output (Guido De Rosa)
+	- There is now a "clean" target to remove generated files
+	- Build scripts tidy up the HTML and XML output (suggested by Guido De Rosa)
+Localization
+	- Added Italian translation (Guido De Rosa)
+Libraries
+	- Updated DocBook XML to 4.5
+	- Updated DocBook XSL to 1.71.1
+	- Updated FOP to revision 475989 of trunk
+	- Updated Saxon-B to 8.8
+	- New: ant-contrib 1.0b3 (necessary for out-of-date checking)
+
 0.8 (2006-08-12) Trevor Harmon
 Stylesheets
 	- The EducationHistory section is now rendered as a table (like EmploymentHistory), so it looks a lot nicer
