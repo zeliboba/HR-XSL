@@ -1,0 +1,844 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1"><title>HR-XSL Documentation</title><link rel="stylesheet" href="style.css" type="text/css"><meta name="generator" content="DocBook XSL Stylesheets V1.71.1"></head><body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF"><div class="book" lang="en"><div class="titlepage"><div><div><h1 class="title"><a name="d54e1"></a>HR-XSL Documentation</h1></div><div><div class="authorgroup"><div class="author"><h3 class="author"><span class="firstname">Trevor</span> <span class="surname">Harmon</span></h3></div><div class="author"><h3 class="author"><span class="firstname">Charles</span> <span class="surname">Chan</span></h3></div></div></div><div><p class="copyright">Copyright © 2002 Charles Chan</p></div></div><hr></div><div class="toc"><p><b>Table of Contents</b></p><dl><dt><span class="chapter"><a href="#Introduction">1. Introduction</a></span></dt><dd><dl><dt><span class="sect1"><a href="#The_HR-XML_Format">The HR-XML Format</a></span></dt><dt><span class="sect1"><a href="#The_HR-XSL_Stylesheets">The HR-XSL Stylesheets</a></span></dt></dl></dd><dt><span class="chapter"><a href="#Installation">2. Installation</a></span></dt><dd><dl><dt><span class="sect1"><a href="#Quick_Install">Quick Install</a></span></dt><dt><span class="sect1"><a href="#Requirements">Requirements</a></span></dt></dl></dd><dt><span class="chapter"><a href="#Usage">3. Usage</a></span></dt><dd><dl><dt><span class="sect1"><a href="#Quick_Start">Quick Start</a></span></dt><dt><span class="sect1"><a href="#The_HR-XSL_Helper_Script">The HR-XSL Helper Script</a></span></dt><dt><span class="sect1"><a href="#Validating_your_CV_or_R%C3%A9sum%C3%A9">Validating your CV or Résumé</a></span></dt><dt><span class="sect1"><a href="#Extended_Characters">Extended Characters</a></span></dt></dl></dd><dt><span class="chapter"><a href="#Customization">4. Customization</a></span></dt><dd><dl><dt><span class="sect1"><a href="#HR-XSL_Customization">HR-XSL Customization</a></span></dt><dd><dl><dt><span class="sect2"><a href="#Stylesheet_Parameters">Stylesheet Parameters</a></span></dt><dt><span class="sect2"><a href="#Localized_Messages">Localized Messages</a></span></dt></dl></dd><dt><span class="sect1"><a href="#DocBook_Customization">DocBook Customization</a></span></dt><dd><dl><dt><span class="sect2"><a href="#DocBook_Customization.Stylesheet_Parameters">Stylesheet Parameters</a></span></dt><dt><span class="sect2"><a href="#DocBook_Customization.Cascading_Style_Sheets">Cascading Style Sheets</a></span></dt></dl></dd></dl></dd><dt><span class="chapter"><a href="#Examples">5. Examples</a></span></dt><dd><dl><dt><span class="sect1"><a href="#R%C3%A9sum%C3%A9">Résumé</a></span></dt><dt><span class="sect1"><a href="#Curriculum_Vitae">Curriculum Vitae</a></span></dt><dt><span class="sect1"><a href="#XML_Resume">XML Resume</a></span></dt></dl></dd><dt><span class="chapter"><a href="#Elements_of_HR-XML_Resume">6. The Elements of HR-XML Resume</a></span></dt><dd><dl><dt><span class="sect1"><a href="#ContactInfo">ContactInfo</a></span></dt><dd><dl><dt><span class="sect2"><a href="#PersonName">PersonName</a></span></dt><dt><span class="sect2"><a href="#ContactMethod">ContactMethod</a></span></dt></dl></dd><dt><span class="sect1"><a href="#ExecutiveSummary">ExecutiveSummary</a></span></dt><dd><dl><dt><span class="sect2"><a href="#ExecutiveSummary.Examples">Examples</a></span></dt><dt><span class="sect2"><a href="#ExecutiveSummary.HR-XSL_Output">HR-XSL Output</a></span></dt><dt><span class="sect2"><a href="#ExecutiveSummary.Notes">Notes</a></span></dt></dl></dd><dt><span class="sect1"><a href="#Objective">Objective</a></span></dt><dd><dl><dt><span class="sect2"><a href="#Objective.Examples">Examples</a></span></dt><dt><span class="sect2"><a href="#Objective.HR-XSL_Output">HR-XSL Output</a></span></dt><dt><span class="sect2"><a href="#Objective.Notes">Notes</a></span></dt></dl></dd><dt><span class="sect1"><a href="#EmploymentHistory">EmploymentHistory</a></span></dt><dd><dl><dt><span class="sect2"><a href="#EmploymentHistory.Examples">Examples</a></span></dt><dt><span class="sect2"><a href="#EmploymentHistory.HR-XSL_Output">HR-XSL Output</a></span></dt><dt><span class="sect2"><a href="#EmploymentHistory.Notes">Notes</a></span></dt></dl></dd><dt><span class="sect1"><a href="#EducationHistory">EducationHistory</a></span></dt><dd><dl><dt><span class="sect2"><a href="#EducationHistory.Examples">Examples</a></span></dt><dt><span class="sect2"><a href="#EducationHistory.HR-XSL_Output">HR-XSL Output</a></span></dt><dt><span class="sect2"><a href="#EducationHistory.Notes">Notes</a></span></dt></dl></dd><dt><span class="sect1"><a href="#LicensesAndCertifications">LicensesAndCertifications</a></span></dt><dt><span class="sect1"><a href="#MilitaryHistory">MilitaryHistory</a></span></dt><dt><span class="sect1"><a href="#PatentHistory">PatentHistory</a></span></dt><dt><span class="sect1"><a href="#PublicationHistory">PublicationHistory</a></span></dt><dd><dl><dt><span class="sect2"><a href="#PublicationHistory.Examples">Examples</a></span></dt><dt><span class="sect2"><a href="#PublicationHistory.HR-XSL_Output">HR-XSL Output</a></span></dt><dt><span class="sect2"><a href="#PublicationHistory.Notes">Notes</a></span></dt></dl></dd><dt><span class="sect1"><a href="#SpeakingEventsHistory">SpeakingEventsHistory</a></span></dt><dd><dl><dt><span class="sect2"><a href="#SpeakingEventsHistory.Examples">Examples</a></span></dt><dt><span class="sect2"><a href="#SpeakingEventsHistory.HR-XSL_Output">HR-XSL Output</a></span></dt><dt><span class="sect2"><a href="#SpeakingEventsHistory.Notes">Notes</a></span></dt></dl></dd><dt><span class="sect1"><a href="#Qualifications">Qualifications</a></span></dt><dd><dl><dt><span class="sect2"><a href="#Qualifications.Examples">Examples</a></span></dt><dt><span class="sect2"><a href="#Qualifications.HR-XSL_Output">HR-XSL Output</a></span></dt><dt><span class="sect2"><a href="#Qualifications.Notes">Notes</a></span></dt></dl></dd><dt><span class="sect1"><a href="#Languages">Languages</a></span></dt><dd><dl><dt><span class="sect2"><a href="#Languages.Examples">Examples</a></span></dt><dt><span class="sect2"><a href="#Languages.HR-XSL_Output">HR-XSL Output</a></span></dt><dt><span class="sect2"><a href="#Languages.Notes">Notes</a></span></dt></dl></dd><dt><span class="sect1"><a href="#Achievements">Achievements</a></span></dt><dd><dl><dt><span class="sect2"><a href="#Achievements.Examples">Examples</a></span></dt><dt><span class="sect2"><a href="#Achievements.HR-XSL_Output">HR-XSL Output</a></span></dt><dt><span class="sect2"><a href="#Achievements.Notes">Notes</a></span></dt></dl></dd><dt><span class="sect1"><a href="#Associations">Associations</a></span></dt><dd><dl><dt><span class="sect2"><a href="#Associations.Examples">Examples</a></span></dt><dt><span class="sect2"><a href="#Associations.HR-XSL_Output">HR-XSL Output</a></span></dt><dt><span class="sect2"><a href="#Associations.Notes">Notes</a></span></dt></dl></dd><dt><span class="sect1"><a href="#References">References</a></span></dt><dt><span class="sect1"><a href="#SecurityCredentials">SecurityCredentials</a></span></dt><dt><span class="sect1"><a href="#ResumeAdditionalItems">ResumeAdditionalItems</a></span></dt><dd><dl><dt><span class="sect2"><a href="#ResumeAdditionalItems.Examples">Examples</a></span></dt><dt><span class="sect2"><a href="#ResumeAdditionalItems.HR-XSL_Output">HR-XSL Output</a></span></dt><dt><span class="sect2"><a href="#ResumeAdditionalItems.Notes">Notes</a></span></dt></dl></dd><dt><span class="sect1"><a href="#SupportingMaterials">SupportingMaterials</a></span></dt><dt><span class="sect1"><a href="#Dates">Dates</a></span></dt></dl></dd><dt><span class="chapter"><a href="#Troubleshooting">7. Troubleshooting</a></span></dt><dt><span class="chapter"><a href="#Support">8. Support</a></span></dt><dt><span class="appendix"><a href="#XMLResume">A. XML Resume to HR-XML Resume Conversion</a></span></dt><dt><span class="appendix"><a href="#Copyright_License_and_Disclaimer">B. Copyright, License, and Disclaimer</a></span></dt></dl></div><div class="list-of-tables"><p><b>List of Tables</b></p><dl><dt>4.1. <a href="#hr-xsl.stylesheet.parameters">HR-XSL Stylesheet Parameters</a></dt><dt>4.2. <a href="#docbook.stylesheet.parameters">DocBook Stylesheet Parameters</a></dt></dl></div><div class="list-of-examples"><p><b>List of Examples</b></p><dl><dt>3.1. <a href="#helper.script.example">Using the Ant helper script</a></dt></dl></div><div class="chapter" lang="en"><div class="titlepage"><div><div><h2 class="title"><a name="Introduction"></a>Chapter&nbsp;1.&nbsp;Introduction</h2></div></div></div><div class="toc"><p><b>Table of Contents</b></p><dl><dt><span class="sect1"><a href="#The_HR-XML_Format">The HR-XML Format</a></span></dt><dt><span class="sect1"><a href="#The_HR-XSL_Stylesheets">The HR-XSL Stylesheets</a></span></dt></dl></div><p>
+			Keeping one's CV current is a tedious, never-ending process. One common problem is that several different versions of the same document have to be maintained. For example, job hunters these days typically have to maintain at least three separate forms of their CV or résumé:
+		</p><div class="itemizedlist"><ul type="disc"><li>An HTML version for posting to the web</li><li>A plain text one for sending via email</li><li>A nicely-formatted PDF version for printing</li></ul></div><p>
+			With all of these different versions, making changes to your CV or résumé can be tiresome and prone to error. Cutting and pasting can help, but a typo in one version will still propagate to all the others, and then you must correct each separate version. And, when deadlines are approaching, you might quickly make an important change to one version and forget to make that same change in all of the others.
+		</p><p>
+			A better approach is to put all of your CV or résumé content into a single &#8220;<span class="quote">master</span>&#8221; copy, then let your computer automatically generate and format different versions of the document from this master. The HR-XSL project provides the tools for exactly this purpose. All you need to do is create a CV in a special XML format. HR-XSL can then take this XML file as input and create a PDF, HTML, or plain text version as output.
+		</p><div class="sect1" lang="en"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a name="The_HR-XML_Format"></a>The HR-XML Format</h2></div></div></div><p>
+				HR-XSL can't work with just any XML data; it has to use a specific XML format so that it can understand the content of a CV or résumé. The question is: Which format should it use? Over the years, a variety of custom XML formats have been developed for CVs and résumés, but none of them has grown popular enough to become an industry standard. Meanwhile, the human resources industry saw the benefits of XML and formed an independent, non-profit group called <a href="http://www.hr-xml.org/" target="_top">The HR-XML Consortium</a>. Its key mission is to promote and standardize the use of XML in human resources.
+			</p><p>
+	        	One of the XML vocabularies published by HR-XML is the Resume specification. This specification defines a CV or résumé document in pure XML, allowing the content to be processed by machines and exchanged easily on the Internet. Like all of the HR-XML specifications, it is fully documented and freely available. The latest version can be downloaded by visiting the <a href="http://sourceforge.net/project/showfiles.php?group_id=50922&amp;package_id=196442" target="_top">File Releases</a> section of the HR-XSL project website.
+			</p><p>
+				Of course, no résumé specification can meet everyone's needs, and the HR-XML Resume spec is no exception. It does not allow tagging résumé content for a specific kind of job, for instance. Nevertheless, it is quite comprehensive and, more importantly, it is an industry standard. The more people use it, the easier it will be to look for a job. For example, instead of tediously re-entering all of your résumé data into a website form, you could simply upload an HR-XML Resume file.
+	    	</p><p>
+				For these reasons, HR-XSL is designed exclusively for the HR-XML Resume specification. You will therefore need to convert your CV or résumé to the HR-XML format in order to use HR-XSL.
+			</p></div><div class="sect1" lang="en"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a name="The_HR-XSL_Stylesheets"></a>The HR-XSL Stylesheets</h2></div></div></div><p>
+				HR-XML is only part of the solution. XML is easy for computers to understand, but most humans would rather not have to read raw XML data. More importantly, recruiters who have not yet adopted the HR-XML standard would probably reject your job application if you sent them a CV or résumé in XML form.
+			</p><p>
+				The purpose of the HR-XSL project, then, is to convert an HR-XML Resume file into a more attractive, human-readable form. It does this by providing a library of XSLT stylesheets that can convert any valid HR-XML Resume file into <a href="http://en.wikipedia.org/wiki/Docbook" target="_top">DocBook</a> XML format. DocBook was chosen because it is a generic format that can then be transformed into various presentation formats: HTML, PDF, plain text, and more.<sup>[<a name="d54e70" href="#ftn.d54e70">1</a>]</sup>
+	    	</p><p>
+				Of course, there is no single right way when it comes to formatting a CV or résumé. Some want their names formatted with bold text while others want their names in italics. It is therefore not the goal of this project to define a standard look and feel of a resume. Rather, the goal is to provide a reasonable starting point for end-users who write their CVs or résumés according to the HR-XML standard and want to present it in a human-readable format.
+	    	</p><p>
+				  Another benefit of HR-XSL is that it simplifies the writing process. By allowing the computer to handle the presentation of the data, you can focus on the specific content of your CV or résumé and avoid worrying about line spacing, indentation, and other formatting concerns. Updating the content is also easier because you can defer (or entirely ignore) decisions such as what font to use<sup>[<a name="d54e78" href="#ftn.d54e78">2</a>]</sup> or how to display a date (e.g., September 7, Sep. 7, or 9/7). The automation provided by the stylesheets also ensures consistency: When and if you decide to specify a font or date format, it will be used consistently throughout the document.
+			</p></div><div class="footnotes"><br><hr width="100" align="left"><div class="footnote"><p><sup>[<a name="ftn.d54e70" href="#d54e70">1</a>] </sup>You need not learn DocBook in order to use HR-XSL; it is only an intermediate representation. HR-XSL provides scripts for the full HTML/PDF/text conversion, allowing you to ignore DocBook completely if you wish.</p></div><div class="footnote"><p><sup>[<a name="ftn.d54e78" href="#d54e78">2</a>] </sup>HR-XSL itself does not provide explicit customization of appearance, such as font family or size. Instead, the output appearance can be changed through HTML stylesheets and DocBook parameters, as described in <a href="#DocBook_Customization" title="DocBook Customization">the section called &#8220;DocBook Customization&#8221;</a>.</p></div></div></div><div class="chapter" lang="en"><div class="titlepage"><div><div><h2 class="title"><a name="Installation"></a>Chapter&nbsp;2.&nbsp;Installation</h2></div></div></div><div class="toc"><p><b>Table of Contents</b></p><dl><dt><span class="sect1"><a href="#Quick_Install">Quick Install</a></span></dt><dt><span class="sect1"><a href="#Requirements">Requirements</a></span></dt></dl></div><div class="sect1" lang="en"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a name="Quick_Install"></a>Quick Install</h2></div></div></div><div class="orderedlist"><ol type="1"><li>
+						Download <a href="http://sourceforge.net/project/showfiles.php?group_id=50922&amp;package_id=44637" target="_top">HR-XSL</a> from the project website.
+					</li><li>
+						Unpack the distribution into a directory of your choice.
+					</li></ol></div></div><div class="sect1" lang="en"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a name="Requirements"></a>Requirements</h2></div></div></div><p>
+				HR-XSL comes bundled with a script and the recommended third-party libraries for XSLT and DocBook processing. Therefore, HR-XSL requires only three additional packages to get started:
+			</p><div class="itemizedlist"><ul type="disc"><li>
+						<span class="bold"><strong>
+							<a href="http://java.sun.com/javase/downloads/index.html" target="_top">Java</a>
+						</strong></span>
+
+						1.4 or higher
+					</li><li>
+						<span class="bold"><strong>
+							<a href="http://ant.apache.org/bindownload.cgi" target="_top">Ant</a>
+						</strong></span>
+
+						 1.6 or higher
+					</li><li>
+						<span class="bold"><strong>
+							<a href="http://lynx.browser.org/" target="_top">Lynx</a>
+						</strong></span>
+
+						Only required if you want to convert an HR-XML Resume to plain text
+					</li></ul></div><p>
+				Strictly speaking, however, HR-XSL requires none of the above. An <a href="http://en.wikipedia.org/wiki/Xslt" target="_top">XSLT 2.0</a>-compatible processor is all that is needed to convert an HR-XML Resume into DocBook format. You could then write some basic XSLT code to convert the DocBook file into any format you wish. In other words, the bundled script and libraries are certainly not required to use the HR-XSL stylesheets.
+			</p><p>
+				Realistically, though, HR-XSL has only been tested with the XSLT processors and DocBook stylesheets included in the <code class="filename">lib</code> directory of the distribution. In fact, <a href="http://saxon.sourceforge.net/" target="_top">Saxon-B</a> is probably the only open-source XSLT processor capable of handling the HR-XSL stylesheets properly. It is therefore recommended that you use only the bundled libraries (unless you have some compelling reason not to).
+			</p></div></div><div class="chapter" lang="en"><div class="titlepage"><div><div><h2 class="title"><a name="Usage"></a>Chapter&nbsp;3.&nbsp;Usage</h2></div></div></div><div class="toc"><p><b>Table of Contents</b></p><dl><dt><span class="sect1"><a href="#Quick_Start">Quick Start</a></span></dt><dt><span class="sect1"><a href="#The_HR-XSL_Helper_Script">The HR-XSL Helper Script</a></span></dt><dt><span class="sect1"><a href="#Validating_your_CV_or_R%C3%A9sum%C3%A9">Validating your CV or Résumé</a></span></dt><dt><span class="sect1"><a href="#Extended_Characters">Extended Characters</a></span></dt></dl></div><div class="sect1" lang="en"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a name="Quick_Start"></a>Quick Start</h2></div></div></div><div class="orderedlist"><ol type="1"><li>
+						Locate the directory where you unpacked HR-XSL and go to the <code class="filename">examples/resume</code> sub-directory
+					</li><li>
+						Open the file <code class="filename">resume.xml</code> and, using it as a template, edit as needed
+					</li><li>
+						On the command line, go to the <code class="filename">examples/resume</code> directory and type <strong class="userinput"><code>ant html</code></strong>. This will create an HTML version of the résumé. (For a PDF or plain text version, type <strong class="userinput"><code>ant pdf</code></strong> or <strong class="userinput"><code>ant text</code></strong>, respectively.)
+					</li></ol></div></div><div class="sect1" lang="en"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a name="The_HR-XSL_Helper_Script"></a>The HR-XSL Helper Script</h2></div></div></div><p>
+				HR-XSL supplies an Ant script that offers a convenient way of using the stylesheets. Located in the <code class="filename">util</code> directory, it is designed to be used in conjunction with your own Ant scripts. You simply import the <code class="filename">hr-xsl.xml</code> script and call the pre-defined macros, as shown in <a href="#helper.script.example" title="Example&nbsp;3.1.&nbsp;Using the Ant helper script">Example&nbsp;3.1, &#8220;Using the Ant helper script&#8221;</a>.
+			</p><div class="example"><a name="helper.script.example"></a><p class="title"><b>Example&nbsp;3.1.&nbsp;Using the Ant helper script</b></p><div class="example-contents"><pre class="programlisting">
+&lt;project default="all"&gt;
+
+    &lt;property file="build.properties"/&gt;
+    &lt;import file="../../util/hr-xsl.xml"/&gt;
+
+    &lt;target name="all" depends="html, pdf, text"/&gt;
+
+    &lt;target name="html"&gt;
+        &lt;resume-to-html in="cv.xml"/&gt;
+    &lt;/target&gt;
+
+    &lt;target name="pdf"&gt;
+        &lt;resume-to-pdf in="cv.xml"/&gt;
+    &lt;/target&gt;
+
+    &lt;target name="text"&gt;
+        &lt;resume-to-text in="cv.xml"/&gt;
+    &lt;/target&gt;
+
+&lt;/project&gt;
+				</pre></div></div><br class="example-break"></div><div class="sect1" lang="en"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a name="Validating_your_CV_or_R%C3%A9sum%C3%A9"></a>Validating your CV or Résumé</h2></div></div></div><p>
+				One of the major benefits of using XML for your CV or résumé is validation. An XML validation tool can scan through the document and look for errors. If, for example, you enter a date in your CV as <strong class="userinput"><code>2003-06-31</code></strong>, the tool will flag it as invalid.
+			</p><p>
+				One such tool is known as <span class="emphasis"><em>xmllint</em></span>. If you have this program installed, you can validate your CV or résumé by running the following command:
+			</p><div class="blockquote"><blockquote class="blockquote"><p>
+					<strong class="userinput"><code>xmllint --schema <em class="replaceable"><code>Resume.xsd</code></em> <em class="replaceable"><code>myresume.xml</code></em></code></strong>
+				</p></blockquote></div><p>
+				Here, <code class="filename">Resume.xsd</code> refers to the XML Schema Definition file for HR-XML Resume, which can be obtained by downloading the <a href="http://sourceforge.net/project/showfiles.php?group_id=50922&amp;package_id=196442" target="_top">HR-XML distribution</a>.
+			</p></div><div class="sect1" lang="en"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a name="Extended_Characters"></a>Extended Characters</h2></div></div></div><p>
+				Traditionally, non-ASCII characters have been an issue for XML formats like HR-XML Resume. Characters such as é, ß, or © required the user to type the special codes <strong class="userinput"><code>&amp;eacute;</code></strong>, <strong class="userinput"><code>&amp;eszlig;</code></strong>, and <strong class="userinput"><code>&amp;copy;</code></strong>, respectively.
+			</p><p>
+				These special codes are not necessary. As long as your editor supports Unicode and is able to save XML files in the UTF-8 encoding, you can simply enter the extended characters directly into your editor. They will show up correctly in the final CV or résumé.
+			</p></div></div><div class="chapter" lang="en"><div class="titlepage"><div><div><h2 class="title"><a name="Customization"></a>Chapter&nbsp;4.&nbsp;Customization</h2></div></div></div><div class="toc"><p><b>Table of Contents</b></p><dl><dt><span class="sect1"><a href="#HR-XSL_Customization">HR-XSL Customization</a></span></dt><dd><dl><dt><span class="sect2"><a href="#Stylesheet_Parameters">Stylesheet Parameters</a></span></dt><dt><span class="sect2"><a href="#Localized_Messages">Localized Messages</a></span></dt></dl></dd><dt><span class="sect1"><a href="#DocBook_Customization">DocBook Customization</a></span></dt><dd><dl><dt><span class="sect2"><a href="#DocBook_Customization.Stylesheet_Parameters">Stylesheet Parameters</a></span></dt><dt><span class="sect2"><a href="#DocBook_Customization.Cascading_Style_Sheets">Cascading Style Sheets</a></span></dt></dl></dd></dl></div><p>
+			Generating a CV or résumé with HR-XSL is a two-stage process: First, HR-XSL generates a DocBook version of the original file; next, this DocBook file is transformed into a PDF, HTML, or plain text version. Thus, to fully control the look of your CV or résumé, you need to customize the two stages individually, depending on the kind of customization you want. For content modifications (e.g., names of headings, date format, etc.), you would customize the HR-XSL transformation. For appearance modifications (e.g., font sizes, whether page numbers are displayed, etc.), you would customize the DocBook transformation.
+		</p><div class="sect1" lang="en"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a name="HR-XSL_Customization"></a>HR-XSL Customization</h2></div></div></div><p>
+				There are two ways to customize the output of HR-XSL: stylesheet parameters and localized messages.
+			</p><div class="sect2" lang="en"><div class="titlepage"><div><div><h3 class="title"><a name="Stylesheet_Parameters"></a>Stylesheet Parameters</h3></div></div></div><p>
+					XSL stylesheets can change their behavior based on user-specified parameters. For example, a parameter such as <strong class="userinput"><code>roman.headings=true</code></strong> might tell a stylesheet to use Roman numerals for chapter headings. <a href="#hr-xsl.stylesheet.parameters" title="Table&nbsp;4.1.&nbsp;HR-XSL Stylesheet Parameters">Table&nbsp;4.1, &#8220;HR-XSL Stylesheet Parameters&#8221;</a> lists the parameters that can be used in HR-XSL.<sup>[<a name="d54e266" href="#ftn.d54e266">3</a>]</sup>
+				</p><div class="table"><a name="hr-xsl.stylesheet.parameters"></a><p class="title"><b>Table&nbsp;4.1.&nbsp;HR-XSL Stylesheet Parameters</b></p><div class="table-contents"><table summary="HR-XSL Stylesheet Parameters" border="1"><colgroup><col><col><col></colgroup><thead><tr><th>Parameter</th><th>Description</th><th>Possible Values</th></tr></thead><tbody><tr><td><strong class="userinput"><code>month.format</code></strong></td><td>For date elements, this parameter indicates how the month should be displayed</td><td><strong class="userinput"><code>short</code></strong> an abbreviated month, such as &#8220;<span class="quote">Sep.</span>&#8221;; <strong class="userinput"><code>long</code></strong> the full month name</td></tr></tbody></table></div></div><br class="table-break"><p>
+		   			The method of specifying these parameters depends on how you use the stylesheets. If you are using the included HR-XSL helper script, a parameter would simply be specified in the <strong class="userinput"><code>hr-xsl.params</code></strong> property. (Refer to the <code class="filename">build.properties</code> files in the <code class="filename">examples</code> directory to see how this is done.) For other methods, you will need to refer to the documentation of your stylesheet processor.
+				</p></div><div class="sect2" lang="en"><div class="titlepage"><div><div><h3 class="title"><a name="Localized_Messages"></a>Localized Messages</h3></div></div></div><p>
+					All of the HR-XSL stylesheets have been <span class="emphasis"><em>localized</em></span>. Simply stated, this means you can easily change the output of HR-XSL to a different language. To do so, go to the <code class="filename">xsl/common/messages</code> directory and make a copy of the <code class="filename">en.xml</code> file, giving it a name that represents your language. For example, if you want to create a French localization, you should use the <a href="http://www.loc.gov/standards/iso639-2/langcodes.html" target="_top">two-letter language code</a> for French, <span class="emphasis"><em>fr</em></span>. You can then edit this new <code class="filename">fr.xml</code> file and translate all the English messages to their French equivalents.<sup>[<a name="d54e334" href="#ftn.d54e334">4</a>]</sup>
+				</p><p>
+					Once you have created a localized message file, you can tell HR-XSL to use it simply by setting the XSL parameter <strong class="userinput"><code>lang</code></strong> to the appropriate language code. Continuing with the French example above, if you are using the included Ant helper script, you would change the résumé example to French by adding the following string to the <strong class="userinput"><code>hr-xsl.params</code></strong> variable of the <code class="filename">build.properties</code> file:
+				</p><div class="blockquote"><blockquote class="blockquote"><p>
+						<strong class="userinput"><code>lang=fr</code></strong>
+					</p></blockquote></div></div></div><div class="sect1" lang="en"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a name="DocBook_Customization"></a>DocBook Customization</h2></div></div></div><p>
+				Most DocBook customization is accomplished with stylesheet parameters. For the HTML transformation, Cascading Style Sheets can also be used.
+			</p><div class="sect2" lang="en"><div class="titlepage"><div><div><h3 class="title"><a name="DocBook_Customization.Stylesheet_Parameters"></a>Stylesheet Parameters</h3></div></div></div><p>
+					XSL stylesheets can change their behavior based on user-specified parameters. For example, a parameter such as <strong class="userinput"><code>roman.headings=true</code></strong> might tell a stylesheet to use Roman numerals for chapter headings. <a href="#docbook.stylesheet.parameters" title="Table&nbsp;4.2.&nbsp;DocBook Stylesheet Parameters">Table&nbsp;4.2, &#8220;DocBook Stylesheet Parameters&#8221;</a> lists some DocBook-specific parameters that you might need when using HR-XSL. (Note that this is only a small subset of the available DocBook parameters; for a complete list, refer to <a href="http://www.sagehill.net/docbookxsl/" target="_top">DocBook XSL: The Complete Guide</a>.)
+				</p><div class="table"><a name="docbook.stylesheet.parameters"></a><p class="title"><b>Table&nbsp;4.2.&nbsp;DocBook Stylesheet Parameters</b></p><div class="table-contents"><table summary="DocBook Stylesheet Parameters" border="1"><colgroup><col><col><col></colgroup><thead><tr><th>Parameter</th><th>Description</th><th>Possible Values</th></tr></thead><tbody><tr><td><strong class="userinput"><code>generate.toc</code></strong></td><td>Whether to include a table of contents in the CV or résumé</td><td><strong class="userinput"><code>article toc</code></strong> generates a table of contents; <strong class="userinput"><code>article nop</code></strong> suppresses it.</td></tr><tr><td><strong class="userinput"><code>html.stylesheet</code></strong></td><td>The value of this HTML-only parameter specifies a name for the CSS file. If not specified, no CSS file will be used in the HTML output.</td><td>Any user-specified filename (e.g., <code class="filename">style.css</code>)</td></tr><tr><td><strong class="userinput"><code>ulink.show</code></strong></td><td>For HTML output, this option has no effect. For FO (e.g., PDF) output, this option controls whether the full URL should be printed after a hyperlink. (When the URL is identical to the hyperlink text, it is not printed, regardless of this setting.)</td><td>0 suppresses the display of URLs; 1 shows them</td></tr><tr><td><strong class="userinput"><code>paper.type</code></strong></td><td>For FO (e.g., PDF) output, this option controls the paper size conveniently.</td><td><strong class="userinput"><code>USletter</code></strong> (default), <strong class="userinput"><code>A4</code></strong>, and most of the standard A, B and C sizes. <a href="http://docbook.sourceforge.net/release/xsl/current/doc/fo/page.width.portrait.html" target="_top">Here</a> you can find the complete list.</td></tr><tr><td><strong class="userinput"><code>page.orientation</code></strong></td><td>For PDF output, this option controls whether the longest edge should be horizontal (landscape) or vertical (portrait).</td><td><strong class="userinput"><code>portrait</code></strong> (default) or <strong class="userinput"><code>landscape</code></strong></td></tr></tbody></table></div></div><br class="table-break"><p>
+		   			The method of specifying these parameters depends on how you use the stylesheets. If you are using the included HR-XSL helper script, a parameter would simply be specified in the <strong class="userinput"><code>docbook.params</code></strong> property. (Refer to the <code class="filename">build.properties</code> files in the <code class="filename">examples</code> directory to see how this is done.) For other methods, you will need to refer to the documentation of your stylesheet processor.
+				</p></div><div class="sect2" lang="en"><div class="titlepage"><div><div><h3 class="title"><a name="DocBook_Customization.Cascading_Style_Sheets"></a>Cascading Style Sheets</h3></div></div></div><p>
+					When generating an HTML version of the CV or résumé, <a href="http://en.wikipedia.org/wiki/Cascading_Style_Sheets/" target="_top">Cascading Style Sheets</a> can be used to customize its appearance. To do so:
+				</p><div class="orderedlist"><ol type="1"><li>
+							Specify a stylesheet file using the <strong class="userinput"><code>html.stylesheet</code></strong> parameter, as described in <a href="#docbook.stylesheet.parameters" title="Table&nbsp;4.2.&nbsp;DocBook Stylesheet Parameters">Table&nbsp;4.2, &#8220;DocBook Stylesheet Parameters&#8221;</a>.
+						</li><li>
+							Use HR-XSL to generate the HTML file.
+						</li><li>
+							Create a CSS file with the same name as the parameter you specified and place it in the same directory as the HTML file.
+						</li></ol></div><p>
+					Refer to the HR-XSL <code class="filename">examples</code> directory for examples of CSS files and how to specify them.
+				</p></div></div><div class="footnotes"><br><hr width="100" align="left"><div class="footnote"><p><sup>[<a name="ftn.d54e266" href="#d54e266">3</a>] </sup>Currently, there is only one parameter, but future versions of HR-XSL should offer more.</p></div><div class="footnote"><p><sup>[<a name="ftn.d54e334" href="#d54e334">4</a>] </sup>If you have created a localization file for your language, please consider submitting it to the <a href="mailto:trevor@vocaro.com" target="_top">HR-XSL maintainer</a> so that it can be included in the distribution for others to use.</p></div></div></div><div class="chapter" lang="en"><div class="titlepage"><div><div><h2 class="title"><a name="Examples"></a>Chapter&nbsp;5.&nbsp;Examples</h2></div></div></div><div class="toc"><p><b>Table of Contents</b></p><dl><dt><span class="sect1"><a href="#R%C3%A9sum%C3%A9">Résumé</a></span></dt><dt><span class="sect1"><a href="#Curriculum_Vitae">Curriculum Vitae</a></span></dt><dt><span class="sect1"><a href="#XML_Resume">XML Resume</a></span></dt></dl></div><p>
+			The HR-XSL distribution provides some sample HR-XML Resume documents that illustrate how the stylesheets can be used. They are located in the <code class="filename">examples</code> directory.
+		</p><div class="sect1" lang="en"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a name="R%C3%A9sum%C3%A9"></a>Résumé</h2></div></div></div><p>This is a simple résumé that can be used as a template for one of your own. Located in the <code class="filename">resume</code> sub-directory, it illustrates only a small subset of the capabilities of HR-XSL. To create a PDF, HTML, or plain text version of this example, go to the command line and type <strong class="userinput"><code>ant pdf</code></strong>, <strong class="userinput"><code>ant html</code></strong>, or <strong class="userinput"><code>ant text</code></strong>, respectively.
+			</p></div><div class="sect1" lang="en"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a name="Curriculum_Vitae"></a>Curriculum Vitae</h2></div></div></div><p>
+				The Curriculum Vitae example, located in the <code class="filename">cv</code> sub-directory, is a large, comprehensive document that illustrates most of HR-XSL's features. It is based on the actual CV of a university professor. To create a PDF, HTML, or plain text version of this example, go to the command line and type <strong class="userinput"><code>ant pdf</code></strong>, <strong class="userinput"><code>ant html</code></strong>, or <strong class="userinput"><code>ant text</code></strong>, respectively.
+			</p><p>
+				Some of the features demonstrated in this CV are:
+			</p><div class="itemizedlist"><ul type="disc"><li><p><b>Functional employment history.&nbsp;</b>
+							Employment histories are typically presented in one of two forms: chronological or functional. The former lists each job in order as a single group, while the latter separates the job descriptions into categories. HR-XSL supports both types, and the CV example given here shows the functional type. Notice how each job specifies an <code class="sgmltag-element">OrgIndustry/IndustryDescription</code> element, which is then used by HR-XSL to group the jobs into categories.
+						</p></li><li><p><b>Customized elements.&nbsp;</b>
+							The HR-XML Resume specification provides built-in categories for certain elements. For example, an Association is expected to be one of: Professional, Social, Community, Non-Profit, Religious, or Political. However, these categories are very broad, and some users may wish to be more specific. Luckily, the HR-XML Resume specification allows this; simply prefix the custom category name with the string <strong class="userinput"><code>x:</code></strong>. The CV example given here shows how this is done for the <code class="sgmltag-element">Associations</code> and <code class="sgmltag-element">ResumeAdditionalItems</code> elements.
+						</p></li><li><p><b>HR-XML &#8220;<span class="quote">hacks</span>&#8221;.&nbsp;</b>
+							Some users may have unusual requirements for their CV. The university professor in this example wanted to list the names of all the courses he has taught throughout his career. Although the HR-XML Resume specification has no element to contain such information, it is possible to include it by &#8220;<span class="quote">hacking</span>&#8221; the spec. Here, the course information is stored as a single employment position, even though multiple jobs are represented by each course. In addition, the <span class="emphasis"><em>Teaching</em></span> job category is used, and the <code class="sgmltag-element">EmployerOrgName</code> element is left empty. As a result, HR-XSL correctly formats the list of courses as the user desired. Although this kind of &#8220;<span class="quote">hack</span>&#8221; is not recommended when exchanging HR-XML data with others, it is useful when the user only wishes to create an HR-XML Resume document for internal use.
+							</p></li></ul></div></div><div class="sect1" lang="en"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a name="XML_Resume"></a>XML Resume</h2></div></div></div><p>
+				The HR-XSL project maintains a set of stylesheets, described in <a href="#XMLResume" title="Appendix&nbsp;A.&nbsp;XML Resume to HR-XML Resume Conversion">Appendix&nbsp;A, <i>XML Resume to HR-XML Resume Conversion</i></a>, that can translate an <a href="http://xmlresume.sourceforge.net/" target="_top">XML Resume</a> document directly to an HR-XML Resume document.
+			</p><p>
+				The examples in the <code class="filename">xmlresume</code> sub-directory demonstrate the use of these stylesheets on two example résumés taken directly from the XML Resume project website. Note that the translation is imperfect; some elements of the XML Resume specification have no equivalent in HR-XML and must be translated by the user. Such elements are indicated by comments in the output, as shown in the files <code class="filename">example1_HR-XML.xml</code> and <code class="filename">example2_HR-XML.xml</code>.
+			</p></div></div><div class="chapter" lang="en"><div class="titlepage"><div><div><h2 class="title"><a name="Elements_of_HR-XML_Resume"></a>Chapter&nbsp;6.&nbsp;The Elements of HR-XML Resume</h2></div></div></div><div class="toc"><p><b>Table of Contents</b></p><dl><dt><span class="sect1"><a href="#ContactInfo">ContactInfo</a></span></dt><dd><dl><dt><span class="sect2"><a href="#PersonName">PersonName</a></span></dt><dt><span class="sect2"><a href="#ContactMethod">ContactMethod</a></span></dt></dl></dd><dt><span class="sect1"><a href="#ExecutiveSummary">ExecutiveSummary</a></span></dt><dd><dl><dt><span class="sect2"><a href="#ExecutiveSummary.Examples">Examples</a></span></dt><dt><span class="sect2"><a href="#ExecutiveSummary.HR-XSL_Output">HR-XSL Output</a></span></dt><dt><span class="sect2"><a href="#ExecutiveSummary.Notes">Notes</a></span></dt></dl></dd><dt><span class="sect1"><a href="#Objective">Objective</a></span></dt><dd><dl><dt><span class="sect2"><a href="#Objective.Examples">Examples</a></span></dt><dt><span class="sect2"><a href="#Objective.HR-XSL_Output">HR-XSL Output</a></span></dt><dt><span class="sect2"><a href="#Objective.Notes">Notes</a></span></dt></dl></dd><dt><span class="sect1"><a href="#EmploymentHistory">EmploymentHistory</a></span></dt><dd><dl><dt><span class="sect2"><a href="#EmploymentHistory.Examples">Examples</a></span></dt><dt><span class="sect2"><a href="#EmploymentHistory.HR-XSL_Output">HR-XSL Output</a></span></dt><dt><span class="sect2"><a href="#EmploymentHistory.Notes">Notes</a></span></dt></dl></dd><dt><span class="sect1"><a href="#EducationHistory">EducationHistory</a></span></dt><dd><dl><dt><span class="sect2"><a href="#EducationHistory.Examples">Examples</a></span></dt><dt><span class="sect2"><a href="#EducationHistory.HR-XSL_Output">HR-XSL Output</a></span></dt><dt><span class="sect2"><a href="#EducationHistory.Notes">Notes</a></span></dt></dl></dd><dt><span class="sect1"><a href="#LicensesAndCertifications">LicensesAndCertifications</a></span></dt><dt><span class="sect1"><a href="#MilitaryHistory">MilitaryHistory</a></span></dt><dt><span class="sect1"><a href="#PatentHistory">PatentHistory</a></span></dt><dt><span class="sect1"><a href="#PublicationHistory">PublicationHistory</a></span></dt><dd><dl><dt><span class="sect2"><a href="#PublicationHistory.Examples">Examples</a></span></dt><dt><span class="sect2"><a href="#PublicationHistory.HR-XSL_Output">HR-XSL Output</a></span></dt><dt><span class="sect2"><a href="#PublicationHistory.Notes">Notes</a></span></dt></dl></dd><dt><span class="sect1"><a href="#SpeakingEventsHistory">SpeakingEventsHistory</a></span></dt><dd><dl><dt><span class="sect2"><a href="#SpeakingEventsHistory.Examples">Examples</a></span></dt><dt><span class="sect2"><a href="#SpeakingEventsHistory.HR-XSL_Output">HR-XSL Output</a></span></dt><dt><span class="sect2"><a href="#SpeakingEventsHistory.Notes">Notes</a></span></dt></dl></dd><dt><span class="sect1"><a href="#Qualifications">Qualifications</a></span></dt><dd><dl><dt><span class="sect2"><a href="#Qualifications.Examples">Examples</a></span></dt><dt><span class="sect2"><a href="#Qualifications.HR-XSL_Output">HR-XSL Output</a></span></dt><dt><span class="sect2"><a href="#Qualifications.Notes">Notes</a></span></dt></dl></dd><dt><span class="sect1"><a href="#Languages">Languages</a></span></dt><dd><dl><dt><span class="sect2"><a href="#Languages.Examples">Examples</a></span></dt><dt><span class="sect2"><a href="#Languages.HR-XSL_Output">HR-XSL Output</a></span></dt><dt><span class="sect2"><a href="#Languages.Notes">Notes</a></span></dt></dl></dd><dt><span class="sect1"><a href="#Achievements">Achievements</a></span></dt><dd><dl><dt><span class="sect2"><a href="#Achievements.Examples">Examples</a></span></dt><dt><span class="sect2"><a href="#Achievements.HR-XSL_Output">HR-XSL Output</a></span></dt><dt><span class="sect2"><a href="#Achievements.Notes">Notes</a></span></dt></dl></dd><dt><span class="sect1"><a href="#Associations">Associations</a></span></dt><dd><dl><dt><span class="sect2"><a href="#Associations.Examples">Examples</a></span></dt><dt><span class="sect2"><a href="#Associations.HR-XSL_Output">HR-XSL Output</a></span></dt><dt><span class="sect2"><a href="#Associations.Notes">Notes</a></span></dt></dl></dd><dt><span class="sect1"><a href="#References">References</a></span></dt><dt><span class="sect1"><a href="#SecurityCredentials">SecurityCredentials</a></span></dt><dt><span class="sect1"><a href="#ResumeAdditionalItems">ResumeAdditionalItems</a></span></dt><dd><dl><dt><span class="sect2"><a href="#ResumeAdditionalItems.Examples">Examples</a></span></dt><dt><span class="sect2"><a href="#ResumeAdditionalItems.HR-XSL_Output">HR-XSL Output</a></span></dt><dt><span class="sect2"><a href="#ResumeAdditionalItems.Notes">Notes</a></span></dt></dl></dd><dt><span class="sect1"><a href="#SupportingMaterials">SupportingMaterials</a></span></dt><dt><span class="sect1"><a href="#Dates">Dates</a></span></dt></dl></div><p>
+			This chapter describes the top-level elements of the HR-XML Resume specification. It provides at least one example, along with the corresponding HR-XSL output, for each element. Links to the full HR-XML documentation are also provided.
+		</p><p>
+			Note that all of the example output is the plain text version. Other versions will look slightly different, primarily in the use of bold and italic fonts.
+		</p><div class="sect1" lang="en"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a name="ContactInfo"></a>ContactInfo</h2></div></div></div><p>
+				The <code class="sgmltag-element">ContactInfo</code> element is simply a container for two other elements: <code class="sgmltag-element">PersonName</code> and <code class="sgmltag-element">ContactMethod</code>.
+			</p><div class="sect2" lang="en"><div class="titlepage"><div><div><h3 class="title"><a name="PersonName"></a>PersonName</h3></div></div></div><p>
+					<code class="sgmltag-element">PersonName</code> describes, as you might expect, a person's name.
+				</p><div class="sect3" lang="en"><div class="titlepage"><div><div><h4 class="title"><a name="PersonName.Examples"></a>Examples</h4></div></div></div><div class="informalexample"><pre class="programlisting">
+&lt;PersonName&gt;
+	&lt;GivenName&gt;John&lt;/GivenName&gt;
+	&lt;FamilyName&gt;Smith&lt;/FamilyName&gt;
+	&lt;Affix type="formOfAddress"&gt;Major&lt;/Affix&gt;
+&lt;/PersonName&gt;</pre></div><div class="informalexample"><pre class="programlisting">
+&lt;PersonName&gt;
+    &lt;GivenName&gt;Maria&lt;/GivenName&gt;
+    &lt;FamilyName primary="true"&gt;Garcia&lt;/FamilyName&gt;
+    &lt;FamilyName primary="false" prefix="de"&gt;Silva&lt;/FamilyName&gt;
+    &lt;Affix type="formOfAddress"&gt;Srta.&lt;/Affix&gt;
+&lt;/PersonName&gt;</pre></div></div><div class="sect3" lang="en"><div class="titlepage"><div><div><h4 class="title"><a name="PersonName.HR-XSL_Output"></a>HR-XSL Output</h4></div></div></div><p>
+						<code class="computeroutput">
+							Major John Smith
+						</code>
+					</p><p>
+						<code class="computeroutput">
+							Srta. Maria Garcia de Silva
+						</code>
+					</p></div><div class="sect3" lang="en"><div class="titlepage"><div><div><h4 class="title"><a name="PersonName.Notes"></a>Notes</h4></div></div></div><p>
+						If <code class="sgmltag-element">PreferredGivenName</code> is specified, it is used in place of <code class="sgmltag-element">GivenName</code>.
+					</p><p>
+						HR-XSL ignores <code class="sgmltag-element">LegalName</code>, <code class="sgmltag-element">AlternateScript</code>, and <code class="sgmltag-element">FamilyName/@primary</code>.
+					</p><p>
+						The HR-XML website has <a href="http://ns.hr-xml.org/2_4/HR-XML-2_4/CPO/PersonName.html" target="_top">more documentation</a>.
+					</p></div></div><div class="sect2" lang="en"><div class="titlepage"><div><div><h3 class="title"><a name="ContactMethod"></a>ContactMethod</h3></div></div></div><p>
+					<code class="sgmltag-element">ContactMethod</code> describes a person's telephone numbers, e-mail address, website, and postal address.
+				</p><div class="sect3" lang="en"><div class="titlepage"><div><div><h4 class="title"><a name="Telephone_numbers_e-mail_and_website"></a>Telephone numbers, e-mail, and website</h4></div></div></div><div class="sect4" lang="en"><div class="titlepage"><div><div><h5 class="title"><a name="Telephone_numbers_e-mail_and_website.Examples"></a>Examples</h5></div></div></div><pre class="programlisting">
+&lt;Telephone&gt;
+   &lt;FormattedNumber&gt;+1 (925) 598-5209&lt;/FormattedNumber&gt;
+&lt;/Telephone&gt;
+
+&lt;Mobile&gt;
+   &lt;InternationalCountryCode&gt;1&lt;/InternationalCountryCode&gt;
+   &lt;AreaCityCode&gt;925&lt;/AreaCityCode&gt;
+   &lt;SubscriberNumber&gt;598-5209&lt;/SubscriberNumber&gt;
+&lt;/Mobile&gt;
+
+&lt;Fax&gt;
+   &lt;InternationalCountryCode&gt;33&lt;/InternationalCountryCode&gt;
+   &lt;AreaCityCode&gt;1&lt;/AreaCityCode&gt;
+   &lt;SubscriberNumber&gt;40 20 50 50&lt;/SubscriberNumber&gt;
+&lt;/Fax&gt;
+
+&lt;Pager&gt;
+   &lt;InternationalCountryCode&gt;1&lt;/InternationalCountryCode&gt;
+   &lt;AreaCityCode&gt;925&lt;/AreaCityCode&gt;
+   &lt;SubscriberNumber&gt;5985200&lt;/SubscriberNumber&gt;
+   &lt;Extension&gt;5209&lt;/Extension&gt;
+&lt;/Pager&gt;
+
+&lt;InternetEmailAddress&gt;webmaster@hr-xml.org&lt;/InternetEmailAddress&gt;
+&lt;InternetWebAddress&gt;http://www.hr-xml.org&lt;/InternetWebAddress&gt;
+</pre></div><div class="sect4" lang="en"><div class="titlepage"><div><div><h5 class="title"><a name="Telephone_numbers_e-mail_and_website.HR-XSL_Output"></a>HR-XSL Output</h5></div></div></div><pre class="screen">
+Telephone +1 (925) 598-5209
+      Fax (1) 40 20 50 50
+    Pager (925) 5985200 ext. 5209
+   Mobile (925) 598-5209
+   E-mail webmaster@hr-xml.org
+  Website http://www.hr-xml.org</pre></div><div class="sect4" lang="en"><div class="titlepage"><div><div><h5 class="title"><a name="Telephone_numbers_e-mail_and_website.Notes"></a>Notes</h5></div></div></div><p>
+							The telephone, e-mail, and website portions of <code class="sgmltag-element">ContactMethod</code> are rendered in a tabular format, with labels in the left column and the content in the right column. The e-mail and website elements are rendered as links to themselves, if the output format supports it (e.g., HTML and PDF).
+						</p><p>
+							The HR-XML website has <a href="http://ns.hr-xml.org/2_4/HR-XML-2_4/CPO/ContactMethod.html" target="_top">more documentation</a>.
+						</p></div></div><div class="sect3" lang="en"><div class="titlepage"><div><div><h4 class="title"><a name="PostalAddress"></a>PostalAddress</h4></div></div></div><div class="sect4" lang="en"><div class="titlepage"><div><div><h5 class="title"><a name="PostalAddress.Examples"></a>Examples</h5></div></div></div><pre class="programlisting">
+&lt;PostalAddress&gt;
+    &lt;CountryCode&gt;US&lt;/CountryCode&gt;
+    &lt;PostalCode&gt;22153&lt;/PostalCode&gt;
+    &lt;Region&gt;VA&lt;/Region&gt;
+    &lt;Municipality&gt;Springfield&lt;/Municipality&gt;
+    &lt;DeliveryAddress&gt;
+        &lt;PostOfficeBox&gt;1243&lt;/PostOfficeBox&gt;
+    &lt;/DeliveryAddress&gt;
+&lt;/PostalAddress&gt;</pre><pre class="programlisting">
+&lt;PostalAddress&gt;
+    &lt;CountryCode&gt;US&lt;/CountryCode&gt; 
+    &lt;PostalCode&gt;80237 &lt;/PostalCode&gt;
+    &lt;Region&gt;CO&lt;/Region&gt;
+    &lt;Municipality&gt;Denver&lt;/Municipality&gt;
+    &lt;DeliveryAddress&gt;
+        &lt;AddressLine&gt;2455 University Blvd&lt;/AddressLine&gt;
+    &lt;/DeliveryAddress&gt;
+    &lt;Recipient&gt;
+        &lt;PersonName&gt;
+            &lt;FormattedName&gt;Karen Barber&lt;/FormattedName&gt;
+        &lt;/PersonName&gt;
+        &lt;AdditionalText&gt;Mailstop: B1-210&lt;/AdditionalText&gt;
+        &lt;OrganizationName&gt;Market Surveyors&lt;/OrganizationName&gt;
+    &lt;/Recipient&gt;
+&lt;/PostalAddress&gt;</pre><pre class="programlisting">
+&lt;PostalAddress&gt;
+    &lt;CountryCode&gt;US&lt;/CountryCode&gt;
+    &lt;PostalCode&gt;50493-1234&lt;/PostalCode&gt;
+    &lt;Region&gt;MN&lt;/Region&gt;
+    &lt;Municipality&gt;Minneapolis&lt;/Municipality&gt;
+    &lt;DeliveryAddress&gt;
+        &lt;StreetName&gt;E Beauregard Ave.&lt;/StreetName&gt;
+        &lt;BuildingNumber&gt;4982&lt;/BuildingNumber&gt;
+    &lt;/DeliveryAddress&gt;
+    &lt;Recipient&gt;
+        &lt;PersonName&gt;
+            &lt;GivenName&gt;Santhi&lt;/GivenName&gt;
+            &lt;FamilyName&gt;Mwanza&lt;/FamilyName&gt;
+        &lt;/PersonName&gt;
+        &lt;OrganizationName&gt;MinnBest Corp.&lt;/OrganizationName&gt;
+    &lt;/Recipient&gt;
+&lt;/PostalAddress&gt;</pre><pre class="programlisting">
+&lt;PostalAddress&gt;
+    &lt;CountryCode&gt;MX&lt;/CountryCode&gt;
+    &lt;PostalCode&gt;13355&lt;/PostalCode&gt;
+    &lt;Municipality&gt;Naucalpan de Juárez&lt;/Municipality&gt;
+    &lt;DeliveryAddress&gt;
+        &lt;AddressLine&gt;Hacienda de Corralejo No. 5&lt;/AddressLine&gt;
+        &lt;AddressLine&gt;Bosques de Echegaray&lt;/AddressLine&gt;
+    &lt;/DeliveryAddress&gt;
+&lt;/PostalAddress&gt;</pre></div><div class="sect4" lang="en"><div class="titlepage"><div><div><h5 class="title"><a name="PostalAddress.HR-XSL_Output"></a>HR-XSL Output</h5></div></div></div><pre class="screen">
+P.O. Box 1243
+Springfield, VA 22153
+United States			</pre><pre class="screen">
+Mailstop: B1-210
+Karen Barber
+Market Surveyors
+2455 University Blvd
+Denver, CO 80237
+United States			</pre><pre class="screen">
+Santhi Mwanza
+MinnBest Corp.
+4982 E Beauregard Ave.
+Minneapolis, MN 50493-1234
+United States			</pre><pre class="screen">
+Hacienda de Corralejo No. 5
+Bosques de Echegaray
+Naucalpan de Juárez, 13355
+Mexico					</pre></div><div class="sect4" lang="en"><div class="titlepage"><div><div><h5 class="title"><a name="PostalAddress.Notes"></a>Notes</h5></div></div></div><p>
+							In the last example, note that the country code was automatically translated into the proper English name. If you need to specify an address for a country other than the U.S., simply use the appropriate two-letter <a href="http://www.iso.ch/iso/en/prods-services/iso3166ma/02iso-3166-code-lists/list-en1.html" target="_top">ISO 3166 country code</a>.
+						</p><p>
+							If you need to change the translated names, you will have to create a new translation file as described in <a href="#Localized_Messages" title="Localized Messages">the section called &#8220;Localized Messages&#8221;</a>.
+						</p><p>
+							The HR-XML website has <a href="http://ns.hr-xml.org/2_4/HR-XML-2_4/CPO/PostalAddress.html" target="_top">more documentation</a>.
+						</p></div></div></div></div><div class="sect1" lang="en"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a name="ExecutiveSummary"></a>ExecutiveSummary</h2></div></div></div><p>
+				This element gives an overview of the person described in the CV or résumé.
+			</p><div class="sect2" lang="en"><div class="titlepage"><div><div><h3 class="title"><a name="ExecutiveSummary.Examples"></a>Examples</h3></div></div></div><pre class="programlisting">
+&lt;ExecutiveSummary&gt;
+    As more people in all sectors of society come online, it is important to consider
+    how we might help these groups work together in meaningful ways. My research focuses
+    on the design and management of online communities that bring together diverse
+    stakeholders, particularly underrepresented populations (kids, elders, minorities,
+    etc.), and support them in leveraging their strengths in a collaborative environment.
+    My thesis work, Palaver Tree Online, is an example of one such community.
+&lt;/ExecutiveSummary&gt;</pre></div><div class="sect2" lang="en"><div class="titlepage"><div><div><h3 class="title"><a name="ExecutiveSummary.HR-XSL_Output"></a>HR-XSL Output</h3></div></div></div><pre class="screen">
+Abstract
+
+As more people in all sectors of society come online, it is important
+to consider how we might help these groups work together in meaningful
+ways. My research focuses on the design and management of online
+communities that bring together diverse stakeholders, particularly
+underrepresented populations (kids, elders, minorities, etc.), and
+support them in leveraging their strengths in a collaborative
+environment. My thesis work, Palaver Tree Online, is an example of one
+such community.	</pre></div><div class="sect2" lang="en"><div class="titlepage"><div><div><h3 class="title"><a name="ExecutiveSummary.Notes"></a>Notes</h3></div></div></div><p>
+					As indicated in the example above, HR-XSL converts an <code class="sgmltag-element">ExecutiveSummary</code> into an abstract, placed at the beginning of the document.
+				</p><p>
+					The HR-XML website has <a href="http://ns.hr-xml.org/2_4/HR-XML-2_4/SEP/Resume.html#_Toc127541917" target="_top">more documentation</a>.
+				</p></div></div><div class="sect1" lang="en"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a name="Objective"></a>Objective</h2></div></div></div><p>
+				This element describes the position being sought or the desired career path or professional objectives.
+			</p><div class="sect2" lang="en"><div class="titlepage"><div><div><h3 class="title"><a name="Objective.Examples"></a>Examples</h3></div></div></div><pre class="programlisting">
+&lt;Objective&gt;
+    To find an opportunity that best fits my skills and experience.
+&lt;/Objective&gt;</pre></div><div class="sect2" lang="en"><div class="titlepage"><div><div><h3 class="title"><a name="Objective.HR-XSL_Output"></a>HR-XSL Output</h3></div></div></div><pre class="screen">
+Objective. To find an opportunity that best fits my skills and
+experience.		</pre></div><div class="sect2" lang="en"><div class="titlepage"><div><div><h3 class="title"><a name="Objective.Notes"></a>Notes</h3></div></div></div><p>
+					The Objective is rendered as a simple titled paragraph at the top of the document.
+				</p></div></div><div class="sect1" lang="en"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a name="EmploymentHistory"></a>EmploymentHistory</h2></div></div></div><p>
+				The <code class="sgmltag-element">EmploymentHistory</code> element is a list of past and present employment.
+			</p><div class="sect2" lang="en"><div class="titlepage"><div><div><h3 class="title"><a name="EmploymentHistory.Examples"></a>Examples</h3></div></div></div><pre class="programlisting">
+&lt;EmploymentHistory&gt;
+    &lt;EmployerOrg&gt;
+        &lt;EmployerOrgName&gt;General Electric&lt;/EmployerOrgName&gt;
+        &lt;PositionHistory&gt;
+            &lt;Title&gt;Vice-President&lt;/Title&gt;
+            &lt;OrgName&gt;
+                &lt;OrganizationName&gt;Aircraft Engines (GEAE)&lt;/OrganizationName&gt;
+            &lt;/OrgName&gt;
+            &lt;Description&gt;
+                Key Player in the GE growth initiative...
+                Ensured fundamental IT capabilities were present in...
+                Led several new market opportunity assessments...
+            &lt;/Description&gt;
+            &lt;StartDate&gt;
+                &lt;AnyDate&gt;2002-02-01&lt;/AnyDate&gt;
+            &lt;/StartDate&gt;
+        &lt;/PositionHistory&gt;
+        &lt;PositionHistory&gt;
+            &lt;Title&gt;E-Business Program Manager&lt;/Title&gt;
+            &lt;OrgName&gt;
+                &lt;OrganizationName&gt;Aircraft Engines (GEAE)&lt;/OrganizationName&gt;
+            &lt;/OrgName&gt;
+            &lt;Description&gt;
+                Led B2Bi initiative and interface that enabled...
+                Personally managed and Created Customer Relationships...
+                Led cross-functional team that led to...
+            &lt;/Description&gt;
+            &lt;StartDate&gt;
+                &lt;AnyDate&gt;1998-10-01&lt;/AnyDate&gt;
+            &lt;/StartDate&gt;
+            &lt;EndDate&gt;
+                &lt;AnyDate&gt;2002-02-01&lt;/AnyDate&gt;
+            &lt;/EndDate&gt;
+        &lt;/PositionHistory&gt;
+    &lt;/EmployerOrg&gt;
+&lt;/EmploymentHistory&gt;</pre></div><div class="sect2" lang="en"><div class="titlepage"><div><div><h3 class="title"><a name="EmploymentHistory.HR-XSL_Output"></a>HR-XSL Output</h3></div></div></div><pre class="screen">
+Work Experience
+
+   Vice-President, Aircraft Engines (GEAE). General Electric. February 1,
+   2002 - Present
+     * Key Player in the GE growth initiative...
+     * Ensured fundamental IT capabilities were present in...
+     * Led several new market opportunity assessments...
+
+   E-Business Program Manager, Aircraft Engines (GEAE). General Electric.
+   October 1, 1998 - February 1, 2002
+     * Led B2Bi initiative and interface that enabled...
+     * Personally managed and Created Customer Relationships...
+     * Led cross-functional team that led to...</pre></div><div class="sect2" lang="en"><div class="titlepage"><div><div><h3 class="title"><a name="EmploymentHistory.Notes"></a>Notes</h3></div></div></div><p>
+					To indicate present employment, simply leave out the <code class="sgmltag-element">EndDate</code>.
+				</p><p>
+					The HR-XML Resume specification is very limited in terms of describing a position. It offers only a single element called <code class="sgmltag-element">Description</code>. To expand the capabilities of HR-XML Resume, HR-XSL handles this element in a special way: If the text is all on a single line, it is rendered as a simple paragraph; otherwise, each line is rendered as a bullet point (as in the example above).
+				</p><p>
+					Normally, HR-XSL generates a work history in the order that each position appears in the XML file. You can alter this behavior so that HR-XSL groups the positions into categorizes. In other words, you can choose between a chronological or a functional employment history. To create a functional history, simply specify a category in the <code class="sgmltag-element">OrgIndustry/IndustryDescription</code> element of each <code class="sgmltag-element">PositionHistory</code> element. (Note that <span class="emphasis"><em>all</em></span> of the positions must specify this element.) Refer to the <code class="filename">examples/cv/cv.xml</code> file for an example.
+				</p><p>
+					The HR-XML website has <a href="http://ns.hr-xml.org/2_4/HR-XML-2_4/CPO/EmploymentHistory.html" target="_top">more documentation</a>.
+				</p></div></div><div class="sect1" lang="en"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a name="EducationHistory"></a>EducationHistory</h2></div></div></div><p>
+				This section is designed for listing academic degrees, but it also supports partial degree completion.
+			</p><div class="sect2" lang="en"><div class="titlepage"><div><div><h3 class="title"><a name="EducationHistory.Examples"></a>Examples</h3></div></div></div><pre class="programlisting">
+&lt;EducationHistory&gt;
+	&lt;SchoolOrInstitution schoolType="college"&gt;
+	    &lt;School type="prior"&gt;
+	        &lt;SchoolName&gt;Boston College&lt;/SchoolName&gt;
+	    &lt;/School&gt;
+	    &lt;OrganizationUnit organizationType="subSchool"&gt;Wallace E. Carroll School of Management&lt;/OrganizationUnit&gt;
+	    &lt;Degree degreeType="bachelors" examPassed="false" graduatingDegree="graduating"&gt;
+	        &lt;DegreeName&gt;Bachelors of Science&lt;/DegreeName&gt;
+	        &lt;DegreeDate&gt;
+	            &lt;Year&gt;2001&lt;/Year&gt;
+	        &lt;/DegreeDate&gt;
+	        &lt;DegreeMajor&gt;
+	            &lt;DegreeConcentration&gt;Management&lt;/DegreeConcentration&gt;
+	            &lt;Name&gt;Human Resource Management&lt;/Name&gt;
+	        &lt;/DegreeMajor&gt;
+	        &lt;DegreeMajor&gt;
+	            &lt;Name&gt;Marketing&lt;/Name&gt;
+	        &lt;/DegreeMajor&gt;
+	        &lt;DatesOfAttendance currentlyEnrolled="true"&gt;
+	            &lt;StartDate&gt;
+	                &lt;AnyDate&gt;1998-01-01&lt;/AnyDate&gt;
+	            &lt;/StartDate&gt;
+	        &lt;/DatesOfAttendance&gt;
+	    &lt;/Degree&gt;
+	&lt;/SchoolOrInstitution&gt;
+	&lt;SchoolOrInstitution schoolType="university"&gt;
+	    &lt;School type="prior"&gt;
+	        &lt;SchoolId&gt;
+	            &lt;IdValue&gt;MS1786534&lt;/IdValue&gt;
+	        &lt;/SchoolId&gt;
+	        &lt;SchoolName&gt;Harvard&lt;/SchoolName&gt;
+	    &lt;/School&gt;
+	    &lt;LocationSummary&gt;
+	        &lt;Municipality&gt;Fayette&lt;/Municipality&gt;
+	        &lt;Region&gt;MS&lt;/Region&gt;
+	        &lt;CountryCode&gt;US&lt;/CountryCode&gt;
+	    &lt;/LocationSummary&gt;
+	    &lt;OrganizationUnit organizationType="subSchool"&gt;Andover&lt;/OrganizationUnit&gt;
+	    &lt;Degree degreeType="bachelors" graduatingDegree="graduating"&gt;
+	        &lt;DegreeName&gt;Bachelors of Science&lt;/DegreeName&gt;
+	        &lt;DegreeDate&gt;
+	            &lt;AnyDate&gt;1987-01-02&lt;/AnyDate&gt;
+	        &lt;/DegreeDate&gt;
+	        &lt;DegreeMajor&gt;
+	            &lt;ProgramId&gt;
+	                &lt;IdValue&gt;173.24&lt;/IdValue&gt;
+	            &lt;/ProgramId&gt;
+	            &lt;DegreeConcentration&gt;Applied Math&lt;/DegreeConcentration&gt;
+	            &lt;Name&gt;Mathematics&lt;/Name&gt;
+	        &lt;/DegreeMajor&gt;
+	        &lt;DegreeMeasure&gt;
+	            &lt;EducationalMeasure&gt;
+	                &lt;MeasureSystem&gt;GPA&lt;/MeasureSystem&gt;
+	                &lt;MeasureValue&gt;
+	                    &lt;NumericValue&gt;3.9&lt;/NumericValue&gt;
+	                &lt;/MeasureValue&gt;
+	                &lt;GoodStudentIndicator&gt;true&lt;/GoodStudentIndicator&gt;
+	            &lt;/EducationalMeasure&gt;
+	            &lt;AcademicCreditCode&gt;A&lt;/AcademicCreditCode&gt;
+	            &lt;ClassRank numberOfStudents="100"&gt;78&lt;/ClassRank&gt;
+	        &lt;/DegreeMeasure&gt;
+	        &lt;DatesOfAttendance currentlyEnrolled="false"&gt;
+	            &lt;StartDate&gt;
+	                &lt;YearMonth&gt;1980-09&lt;/YearMonth&gt;
+	            &lt;/StartDate&gt;
+	            &lt;EndDate&gt;
+	                &lt;YearMonth&gt;1981-04&lt;/YearMonth&gt;
+	            &lt;/EndDate&gt;
+	        &lt;/DatesOfAttendance&gt;
+	        &lt;DatesOfAttendance currentlyEnrolled="false"&gt;
+	            &lt;StartDate&gt;
+	                &lt;YearMonth&gt;1984-09&lt;/YearMonth&gt;
+	            &lt;/StartDate&gt;
+	            &lt;EndDate&gt;
+	                &lt;YearMonth&gt;1987-04&lt;/YearMonth&gt;
+	            &lt;/EndDate&gt;
+	        &lt;/DatesOfAttendance&gt;
+	        &lt;Comments&gt;
+	            Due to financial reasons, it was necessary to withdraw after the first year.
+	        &lt;/Comments&gt;
+	    &lt;/Degree&gt;
+	&lt;/SchoolOrInstitution&gt;
+&lt;/EducationHistory&gt;</pre></div><div class="sect2" lang="en"><div class="titlepage"><div><div><h3 class="title"><a name="EducationHistory.HR-XSL_Output"></a>HR-XSL Output</h3></div></div></div><pre class="screen">
+Education
+
+   B.S., Human Resource Management Marketing, 2001, Boston College,
+   concentration in Management
+
+   B.S., Mathematics, January 2, 1987, Harvard, Cambridge, MA,
+   concentration in Applied Math
+
+     Due to financial reasons, it was necessary to withdraw after the
+     first year.</pre></div><div class="sect2" lang="en"><div class="titlepage"><div><div><h3 class="title"><a name="EducationHistory.Notes"></a>Notes</h3></div></div></div><p>
+					Use the <code class="sgmltag-attribute">degreeType</code> attribute to specify the type of degree. For instance, if you have a Master's degree, you can say <code class="code">degreeType="masters"</code>. By default, HR-XSL will then translate this attribute according to the messages file. (See <a href="#Localized_Messages" title="Localized Messages">the section called &#8220;Localized Messages&#8221;</a> for more information about the messages file.) If you need to specify a name for the degree that differs from the messages file, you can simply add a <code class="sgmltag-element">DegreeName</code> element, as shown in the example above. This element will then override the degree name stored in the messages file.
+				</p><p>
+					If you have not yet received a degree, but you know the date on which you expect to receive it, simply specify the expected date in the <code class="sgmltag-element">DegreeDate</code> element. If this date is in the future, HR-XSL will add the phrase &#8220;<span class="quote">(expected)</span>&#8221; to the date.
+				</p><p>
+					The <code class="sgmltag-element">EducationHistory</code> element is quite comprehensive and includes many details and HR-specific data that most people do not require for their CVs or résumés. HR-XSL ignores most of these but may support them in later versions.
+				</p><p>
+					The HR-XML website has <a href="http://ns.hr-xml.org/2_4/HR-XML-2_4/CPO/EducationHistory.html" target="_top">more documentation</a>.
+				</p></div></div><div class="sect1" lang="en"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a name="LicensesAndCertifications"></a>LicensesAndCertifications</h2></div></div></div><p>
+				This element is not supported by HR-XSL.
+			</p><p>
+				The HR-XML website has <a href="http://ns.hr-xml.org/2_4/HR-XML-2_4/SEP/Resume.html#_Toc127541926" target="_top">more documentation</a>.
+			</p></div><div class="sect1" lang="en"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a name="MilitaryHistory"></a>MilitaryHistory</h2></div></div></div><p>
+				This element is not supported by HR-XSL.
+			</p><p>
+				The HR-XML website has <a href="http://ns.hr-xml.org/2_4/HR-XML-2_4/CPO/MilitaryHistory.html" target="_top">more documentation</a>.
+			</p></div><div class="sect1" lang="en"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a name="PatentHistory"></a>PatentHistory</h2></div></div></div><p>
+				This element is not supported by HR-XSL.
+			</p><p>
+				The HR-XML website has <a href="http://ns.hr-xml.org/2_4/HR-XML-2_4/SEP/Resume.html#_Toc127541934" target="_top">more documentation</a>.
+			</p></div><div class="sect1" lang="en"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a name="PublicationHistory"></a>PublicationHistory</h2></div></div></div><p>
+				This element lists all types of published work.
+			</p><div class="sect2" lang="en"><div class="titlepage"><div><div><h3 class="title"><a name="PublicationHistory.Examples"></a>Examples</h3></div></div></div><pre class="programlisting">
+&lt;PublicationHistory&gt;
+    &lt;Article&gt;
+        &lt;Title&gt;Designing Interfaces for Youth Services Information Management&lt;/Title&gt;
+        &lt;Name role="author"&gt;
+            &lt;FormattedName&gt;John A. Example&lt;/FormattedName&gt;
+        &lt;/Name&gt;
+        &lt;PublicationDate&gt;
+            &lt;YearMonth&gt;1996-06&lt;/YearMonth&gt;
+        &lt;/PublicationDate&gt;
+        &lt;JournalOrSerialName&gt;
+            1996 Human-Computer Interaction Laboratory Video Reports
+        &lt;/JournalOrSerialName&gt;
+        &lt;Volume&gt;2&lt;/Volume&gt;
+        &lt;Issue&gt;3&lt;/Issue&gt;
+        &lt;PageNumber&gt;319-329&lt;/PageNumber&gt;
+        &lt;PublicationLanguage&gt;EN&lt;/PublicationLanguage&gt;
+    &lt;/Article&gt;
+    &lt;Book&gt;
+        &lt;Title&gt;XML in a Seashell&lt;/Title&gt;
+        &lt;Name role="author"&gt;
+            &lt;FormattedName&gt;John A. Example&lt;/FormattedName&gt;
+        &lt;/Name&gt;
+        &lt;PublicationDate&gt;
+            &lt;YearMonth&gt;2001-02&lt;/YearMonth&gt;
+        &lt;/PublicationDate&gt;
+        &lt;Abstract&gt;
+            A very readable introduction to XML.
+        &lt;/Abstract&gt;
+        &lt;Copyright&gt;
+            &lt;CopyrightDates&gt;
+                &lt;OriginalDate&gt;
+                    &lt;Year&gt;2001&lt;/Year&gt;
+                &lt;/OriginalDate&gt;
+            &lt;/CopyrightDates&gt;
+            &lt;CopyrightText&gt;Copyright 2nd edition&lt;/CopyrightText&gt;
+        &lt;/Copyright&gt;
+        &lt;Edition&gt;2nd Edition&lt;/Edition&gt;
+        &lt;ISBN&gt;0596000222&lt;/ISBN&gt;
+        &lt;PublisherName&gt;O'Malley Associates&lt;/PublisherName&gt;
+        &lt;PublisherLocation&gt;Garden City, NY, US&lt;/PublisherLocation&gt;
+    &lt;/Book&gt;
+    &lt;ConferencePaper&gt;
+        &lt;Title&gt;Trends in Employee Benefit Offerings&lt;/Title&gt;
+        &lt;Name role="author"&gt;
+            &lt;FormattedName&gt;Debra J. Cohen&lt;/FormattedName&gt;
+        &lt;/Name&gt;
+        &lt;EventName&gt;SHRM 55th Annual Conference and Exposition&lt;/EventName&gt;
+        &lt;ConferenceDate&gt;
+            &lt;AnyDate&gt;2003-06-10&lt;/AnyDate&gt;
+        &lt;/ConferenceDate&gt;
+        &lt;ConferenceLocation&gt;Orlando, FL&lt;/ConferenceLocation&gt;
+    &lt;/ConferencePaper&gt;
+    &lt;OtherPublication type="x:Software"&gt;
+        &lt;Title&gt;UCLA Tree-Repeater-Interconnect-Optimization (TRIO) Package&lt;/Title&gt;
+        &lt;Name role="x:developer"&gt;
+            &lt;FormattedName&gt;John A. Example&lt;/FormattedName&gt;
+        &lt;/Name&gt;
+        &lt;PublicationDate&gt;
+            &lt;Year&gt;2002&lt;/Year&gt;
+        &lt;/PublicationDate&gt;
+        &lt;Link&gt;http://ballade.cs.ucla.edu/~cong/slides/vlsi99.html&lt;/Link&gt;
+    &lt;/OtherPublication&gt;
+    &lt;OtherPublication type="Thesis"&gt;
+        &lt;Title&gt;Interconnect Synthesis and Planning for High-Performance IC Designs&lt;/Title&gt;
+        &lt;Name role="author"&gt;
+            &lt;FormattedName&gt;John A. Example&lt;/FormattedName&gt;
+        &lt;/Name&gt;
+        &lt;PublicationDate&gt;
+            &lt;Year&gt;2000&lt;/Year&gt;
+        &lt;/PublicationDate&gt;
+        &lt;Comments&gt;Ph.D., University of California&lt;/Comments&gt;
+        &lt;NumberOfPages&gt;158&lt;/NumberOfPages&gt;
+        &lt;PublisherLocation&gt;Los Angeles, CA, US&lt;/PublisherLocation&gt;
+    &lt;/OtherPublication&gt;
+&lt;/PublicationHistory&gt;</pre></div><div class="sect2" lang="en"><div class="titlepage"><div><div><h3 class="title"><a name="PublicationHistory.HR-XSL_Output"></a>HR-XSL Output</h3></div></div></div><pre class="screen">
+Publications
+
+Articles
+
+     * "Designing Interfaces for Youth Services Information Management".
+       John A. Example. 1996 Human-Computer Interaction Laboratory Video
+       Reports, June 1996, Volume 2, Issue 3, pg. 319-329.
+
+Books
+
+     * XML in a Seashell. John A. Example. O'Malley Associates, Garden
+       City, NY, US, February 2001.
+
+Conference Papers
+
+     * Trends in Employee Benefit Offerings. Debra J. Cohen. SHRM 55th
+       Annual Conference and Exposition, Orlando, FL, June 10, 2003.
+
+Other Publications
+
+     * UCLA Tree-Repeater-Interconnect-Optimization (TRIO) Package . John
+       A. Example. 2002.
+     * Interconnect Synthesis and Planning for High-Performance IC
+       Designs. John A. Example. 2000. Ph.D., University of California</pre></div><div class="sect2" lang="en"><div class="titlepage"><div><div><h3 class="title"><a name="PublicationHistory.Notes"></a>Notes</h3></div></div></div><p>
+					To specify a publication that does not fit into the categories of <code class="sgmltag-element">Article</code>, <code class="sgmltag-element">Book</code>, or <code class="sgmltag-element">ConferencePublication</code>, use the <code class="sgmltag-element">OtherPublication</code> element and specify a <code class="sgmltag-attribute">type</code> attribute prefixed with <strong class="userinput"><code>x:</code></strong>. Or, leave out the <strong class="userinput"><code>x:</code></strong> and use one of the built-in types: Thesis, Whitepaper, Report, TechnicalDocumentation, Study, Manual, or ResearchPaper.
+				</p><p>
+					For numbered elements, such as <code class="sgmltag-element">Volume</code>, <code class="sgmltag-element">Issue</code>, and <code class="sgmltag-element">PageNumber</code>, do not add a label. HR-XSL will automatically add a localized label for you. For example, <strong class="userinput"><code>12</code></strong>, not <strong class="userinput"><code>Issue 12</code></strong>.
+				</p><p>
+					The HR-XML website has <a href="http://ns.hr-xml.org/2_4/HR-XML-2_4/SEP/Resume.html#_Toc127541938" target="_top">more documentation</a>.
+				</p></div></div><div class="sect1" lang="en"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a name="SpeakingEventsHistory"></a>SpeakingEventsHistory</h2></div></div></div><p>
+				This element describes formal talks, panel discussions, and other speaking engagements.
+			</p><div class="sect2" lang="en"><div class="titlepage"><div><div><h3 class="title"><a name="SpeakingEventsHistory.Examples"></a>Examples</h3></div></div></div><pre class="programlisting">
+&lt;SpeakingEventsHistory&gt;
+    &lt;SpeakingEvent type="x:reviewer"&gt;
+        &lt;StartDate&gt;
+            &lt;Year&gt;1997&lt;/Year&gt;
+        &lt;/StartDate&gt;
+        &lt;EventName&gt;ACM/IEEE Design Automation Conference (DAC)&lt;/EventName&gt;
+        &lt;EventType&gt;conference&lt;/EventType&gt;
+    &lt;/SpeakingEvent&gt;
+    &lt;SpeakingEvent type="panel discussion"&gt;
+        &lt;Title&gt;Palaver Tree Online: A Community of Oral History&lt;/Title&gt;
+        &lt;StartDate&gt;
+            &lt;AnyDate&gt;2000-06-15&lt;/AnyDate&gt;
+        &lt;/StartDate&gt;
+        &lt;EventName&gt;International Conference of the Learning Sciences 2000&lt;/EventName&gt;
+        &lt;EventType&gt;conference&lt;/EventType&gt;
+        &lt;Location&gt;Ann Arbor, MI&lt;/Location&gt;
+        &lt;Link&gt;http://www.umich.edu/~icls/&lt;/Link&gt;
+    &lt;/SpeakingEvent&gt;
+    &lt;SpeakingEvent type="x:invited guest speaker"&gt;
+        &lt;Title&gt;Community Updated&lt;/Title&gt;
+        &lt;StartDate&gt;
+            &lt;AnyDate&gt;1999-03-07&lt;/AnyDate&gt;
+        &lt;/StartDate&gt;
+        &lt;EventName&gt;Cleveland Talk Radio 1490am&lt;/EventName&gt;
+        &lt;EventType&gt;radio show&lt;/EventType&gt;
+    &lt;/SpeakingEvent&gt;
+&lt;/SpeakingEventsHistory&gt;</pre></div><div class="sect2" lang="en"><div class="titlepage"><div><div><h3 class="title"><a name="SpeakingEventsHistory.HR-XSL_Output"></a>HR-XSL Output</h3></div></div></div><pre class="screen">
+Speaking Events
+
+     * ACM/IEEE Design Automation Conference (DAC), 1997.
+     * Palaver Tree Online: A Community of Oral History. International
+       Conference of the Learning Sciences 2000, June 15, 2000.
+     * Community Updated. Cleveland Talk Radio 1490am, March 7, 1999.</pre></div><div class="sect2" lang="en"><div class="titlepage"><div><div><h3 class="title"><a name="SpeakingEventsHistory.Notes"></a>Notes</h3></div></div></div><p>
+					The HR-XML website has <a href="http://ns.hr-xml.org/2_4/HR-XML-2_4/SEP/Resume.html#_Toc127541942" target="_top">more documentation</a>.
+				</p></div></div><div class="sect1" lang="en"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a name="Qualifications"></a>Qualifications</h2></div></div></div><p>
+				The <code class="sgmltag-element">Qualifications</code> element describes professional skills.
+			</p><div class="sect2" lang="en"><div class="titlepage"><div><div><h3 class="title"><a name="Qualifications.Examples"></a>Examples</h3></div></div></div><pre class="programlisting">
+&lt;Qualifications&gt;
+    &lt;Competency name="Theory"&gt;
+        &lt;Competency name="Gastronomy"/&gt;
+        &lt;Competency name="Culinary math"/&gt;
+        &lt;Competency name="Meat identification"/&gt;
+    &lt;/Competency&gt;
+    &lt;Competency name="Culinary Skills"&gt;
+        &lt;Competency name="Braise"/&gt;
+        &lt;Competency name="Sauté"/&gt;
+        &lt;Competency name="Reductions"/&gt;
+        &lt;Competency name="Sauces"/&gt;
+    &lt;/Competency&gt;
+    &lt;Competency name="Cuisines"&gt;
+        &lt;Competency name="American Regional"/&gt;
+        &lt;Competency name="Pâtisserie"/&gt;
+        &lt;Competency name="Modern French"/&gt;
+    &lt;/Competency&gt;
+&lt;/Qualifications&gt;</pre></div><div class="sect2" lang="en"><div class="titlepage"><div><div><h3 class="title"><a name="Qualifications.HR-XSL_Output"></a>HR-XSL Output</h3></div></div></div><pre class="screen">
+Qualifications
+
+     * Theory: Gastronomy, Culinary math, Meat identification
+     * Culinary Skills: Braise, Sauté, Reductions, Sauces
+     * Cuisines: American Regional, Pâtisserie, Modern French</pre></div><div class="sect2" lang="en"><div class="titlepage"><div><div><h3 class="title"><a name="Qualifications.Notes"></a>Notes</h3></div></div></div><p>
+					The <code class="sgmltag-element">Qualifications</code> element is simply a hierarchy of <code class="sgmltag-element">Competency</code> elements. HR-XML allows an unbounded number of levels in the hierarchy, but HR-XSL supports only two levels, as shown in the example above.
+				</p><p>
+					The <code class="sgmltag-element">Competency</code> element is complex and very detailed, as evidenced by the <a href="http://ns.hr-xml.org/2_4/HR-XML-2_4/CPO/Competencies.html" target="_top">documentation</a>, but HR-XSL ignores everything except for the <code class="sgmltag-attribute">name</code> attribute. A <code class="sgmltag-attribute">name</code> on the first level of competencies is assumed to be a skill category, and a <code class="sgmltag-attribute">name</code> on the second level is assumed to be a skill in this category.
+				</p><p>
+					The HR-XML website has <a href="http://ns.hr-xml.org/2_4/HR-XML-2_4/SEP/Resume.html#_Toc127541946" target="_top">more documentation</a>.
+				</p></div></div><div class="sect1" lang="en"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a name="Languages"></a>Languages</h2></div></div></div><p>
+				The <code class="sgmltag-element">Languages</code> element lists foreign language skills.
+			</p><div class="sect2" lang="en"><div class="titlepage"><div><div><h3 class="title"><a name="Languages.Examples"></a>Examples</h3></div></div></div><pre class="programlisting">
+&lt;Languages&gt;
+    &lt;Language&gt;
+        &lt;LanguageCode&gt;EN&lt;/LanguageCode&gt;
+        &lt;Read&gt;true&lt;/Read&gt;
+        &lt;Write&gt;true&lt;/Write&gt;
+        &lt;Speak&gt;true&lt;/Speak&gt;
+        &lt;Comments&gt;Learned as a second language.&lt;/Comments&gt;
+    &lt;/Language&gt;
+    &lt;Language&gt;
+        &lt;LanguageCode&gt;FR&lt;/LanguageCode&gt;
+        &lt;Read&gt;false&lt;/Read&gt;
+        &lt;Write&gt;false&lt;/Write&gt;
+        &lt;Speak&gt;true&lt;/Speak&gt;
+    &lt;/Language&gt;
+&lt;/Languages&gt;</pre></div><div class="sect2" lang="en"><div class="titlepage"><div><div><h3 class="title"><a name="Languages.HR-XSL_Output"></a>HR-XSL Output</h3></div></div></div><pre class="screen">
+Languages
+
+     * English: Ability to read, write, and speak. Learned as a second
+       language.
+     * French: Ability to read, write, and speak.</pre></div><div class="sect2" lang="en"><div class="titlepage"><div><div><h3 class="title"><a name="Languages.Notes"></a>Notes</h3></div></div></div><p>
+					To specify a language, use the appropriate <span class="emphasis"><em>two-letter</em></span> <a href="http://www.loc.gov/standards/iso639-2/langcodes.html" target="_top">ISO 639-1</a> code. HR-XML allows either a two- or three-letter code, but HR-XSL supports only the two-letter codes.
+				</p><p>
+					In HR-XSL, the actual values for the <code class="sgmltag-element">Read</code>, <code class="sgmltag-element">Write</code>, and <code class="sgmltag-element">Speak</code> elements are ignored. They are considered true if they are merely specified, as shown in the above example.
+				</p><p>
+					The HR-XML website has <a href="http://ns.hr-xml.org/2_4/HR-XML-2_4/SEP/Resume.html#_Toc127541947" target="_top">more documentation</a>.
+				</p></div></div><div class="sect1" lang="en"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a name="Achievements"></a>Achievements</h2></div></div></div><p>
+				This element provides a place to list honors and awards.
+			</p><div class="sect2" lang="en"><div class="titlepage"><div><div><h3 class="title"><a name="Achievements.Examples"></a>Examples</h3></div></div></div><pre class="programlisting">
+&lt;Achievements&gt;
+    &lt;Achievement&gt;
+        &lt;Date&gt;
+            &lt;StringDate&gt;2001-2002&lt;/StringDate&gt;
+        &lt;/Date&gt;
+        &lt;Description&gt;Graduate Fellowship&lt;/Description&gt;
+        &lt;IssuingAuthority&gt;Intel Foundation&lt;/IssuingAuthority&gt;
+    &lt;/Achievement&gt;
+&lt;/Achievements&gt;</pre></div><div class="sect2" lang="en"><div class="titlepage"><div><div><h3 class="title"><a name="Achievements.HR-XSL_Output"></a>HR-XSL Output</h3></div></div></div><pre class="screen">
+Achievements
+
+     * Graduate Fellowship. Intel Foundation, 2001-2002</pre></div><div class="sect2" lang="en"><div class="titlepage"><div><div><h3 class="title"><a name="Achievements.Notes"></a>Notes</h3></div></div></div><p>
+					The HR-XML website has <a href="http://ns.hr-xml.org/2_4/HR-XML-2_4/SEP/Resume.html#_Toc127541951" target="_top">more documentation</a>.
+				</p></div></div><div class="sect1" lang="en"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a name="Associations"></a>Associations</h2></div></div></div><p>
+				This element lists organizations (professional, social, etc.) to which the subject of the CV or résumé belongs.
+			</p><div class="sect2" lang="en"><div class="titlepage"><div><div><h3 class="title"><a name="Associations.Examples"></a>Examples</h3></div></div></div><pre class="programlisting">
+&lt;Associations&gt;
+    &lt;Association type="Professional"&gt;
+        &lt;Name&gt;HR-XML Consortium&lt;/Name&gt;
+        &lt;Link&gt;www.hr-xml.org&lt;/Link&gt;
+        &lt;StartDate&gt;
+            &lt;YearMonth&gt;2002-03&lt;/YearMonth&gt;
+        &lt;/StartDate&gt;
+        &lt;EndDate&gt;
+            &lt;YearMonth&gt;2003-07&lt;/YearMonth&gt;
+        &lt;/EndDate&gt;
+        &lt;Role&gt;
+            &lt;Name&gt;Recruiting and Staffing Project Lead&lt;/Name&gt;
+            &lt;Deliverable&gt;Resume 2.0 Specification&lt;/Deliverable&gt;
+        &lt;/Role&gt;
+    &lt;/Association&gt;
+&lt;/Associations&gt;</pre></div><div class="sect2" lang="en"><div class="titlepage"><div><div><h3 class="title"><a name="Associations.HR-XSL_Output"></a>HR-XSL Output</h3></div></div></div><pre class="screen">
+Associations
+
+Professional Associations
+
+     * Recruiting and Staffing Project Lead, HR-XML Consortium, March
+       2002 - July 2003</pre></div><div class="sect2" lang="en"><div class="titlepage"><div><div><h3 class="title"><a name="Associations.Notes"></a>Notes</h3></div></div></div><p>
+					The list of associations is broken up into subcategories. Associations with identical <code class="sgmltag-attribute">type</code> attributes are grouped together.
+				</p><p>
+					The built-in types (Professional, Social, Community, Non-Profit, Religious, and Political) are automatically localized. To specify a custom type, prefix the <code class="sgmltag-attribute">type</code> attribute with <strong class="userinput"><code>x:</code></strong>.
+				</p><p>
+					Unlike the <code class="sgmltag-element">EmploymentHistory</code> element, if no <code class="sgmltag-element">EndDate</code> is given, the date is <span class="emphasis"><em>not</em></span> assumed to be a time period ranging from <code class="sgmltag-element">StartDate</code> to the present. Instead, no additional text is added. This allows the user to specify discontiguous dates for association membership, such as <strong class="userinput"><code>1999, 2001, and 2002</code></strong>.
+				</p><p>
+					HR-XML allows multiple roles to be specified for each association. This is not supported in HR-XSL. If you want to list multiple roles, you will need to duplicate the association for each role. Also, the <code class="sgmltag-element">StartDate</code> and <code class="sgmltag-element">EndDate</code> of a <code class="sgmltag-element">Role</code> are ignored.
+				</p><p>
+					The HR-XML website has <a href="http://ns.hr-xml.org/2_4/HR-XML-2_4/SEP/Resume.html#_Toc127541951" target="_top">more documentation</a>.
+				</p></div></div><div class="sect1" lang="en"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a name="References"></a>References</h2></div></div></div><p>
+				This element is not supported by HR-XSL.
+			</p><p>
+				The HR-XML website has <a href="http://ns.hr-xml.org/2_4/HR-XML-2_4/SEP/Resume.html#_Toc127541959" target="_top">more documentation</a>.
+			</p></div><div class="sect1" lang="en"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a name="SecurityCredentials"></a>SecurityCredentials</h2></div></div></div><p>
+				This element is not supported by HR-XSL.
+			</p><p>
+				The HR-XML website has <a href="http://ns.hr-xml.org/2_4/HR-XML-2_4/SEP/Resume.html#_Toc127541930" target="_top">more documentation</a>.
+			</p></div><div class="sect1" lang="en"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a name="ResumeAdditionalItems"></a>ResumeAdditionalItems</h2></div></div></div><p>
+				This element provides a place to store supplemental information such as professional interests, hobbies, and volunteer activities.
+			</p><div class="sect2" lang="en"><div class="titlepage"><div><div><h3 class="title"><a name="ResumeAdditionalItems.Examples"></a>Examples</h3></div></div></div><pre class="programlisting">
+&lt;ResumeAdditionalItems&gt;
+    &lt;ResumeAdditionalItem type="Personal"&gt;
+        &lt;Description&gt;Married with 4 children&lt;/Description&gt;
+    &lt;/ResumeAdditionalItem&gt;
+    &lt;ResumeAdditionalItem type="Volunteer"&gt;
+        &lt;EffectiveDate&gt;
+            &lt;StartDate&gt;
+                &lt;Year&gt;1999&lt;/Year&gt;
+            &lt;/StartDate&gt;
+            &lt;EndDate&gt;
+                &lt;Year&gt;2001&lt;/Year&gt;
+            &lt;/EndDate&gt;
+        &lt;/EffectiveDate&gt;
+        &lt;Description&gt;Delivered Meals on Wheels to homebound elderly&lt;/Description&gt;
+    &lt;/ResumeAdditionalItem&gt;
+    &lt;ResumeAdditionalItem type="Hobbies"&gt;
+        &lt;EffectiveDate&gt;
+            &lt;StartDate&gt;
+                &lt;Year&gt;2000&lt;/Year&gt;
+            &lt;/StartDate&gt;
+        &lt;/EffectiveDate&gt;
+        &lt;Description&gt;Rock Climbing&lt;/Description&gt;
+    &lt;/ResumeAdditionalItem&gt;
+&lt;/ResumeAdditionalItems&gt;</pre></div><div class="sect2" lang="en"><div class="titlepage"><div><div><h3 class="title"><a name="ResumeAdditionalItems.HR-XSL_Output"></a>HR-XSL Output</h3></div></div></div><pre class="screen">
+Additional Items
+
+Personal
+
+     * Married with 4 children
+
+Volunteer
+
+     * 1999 - 2001: Delivered Meals on Wheels to homebound elderly
+
+Hobbies
+
+     * 2000: Rock Climbing</pre></div><div class="sect2" lang="en"><div class="titlepage"><div><div><h3 class="title"><a name="ResumeAdditionalItems.Notes"></a>Notes</h3></div></div></div><p>
+					The additional items are grouped into categories according to the <code class="sgmltag-attribute">type</code> attribute.
+				</p><p>
+					The HR-XML website has <a href="http://ns.hr-xml.org/2_4/HR-XML-2_4/SEP/Resume.html#_Toc127541963" target="_top">more documentation</a>.
+				</p></div></div><div class="sect1" lang="en"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a name="SupportingMaterials"></a>SupportingMaterials</h2></div></div></div><p>
+				This element is not supported by HR-XSL.
+			</p><p>
+				The HR-XML website has <a href="http://ns.hr-xml.org/2_4/HR-XML-2_4/CPO/SupportingMaterials.html" target="_top">more documentation</a>.
+			</p></div><div class="sect1" lang="en"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a name="Dates"></a>Dates</h2></div></div></div><p>
+				There is no top-level element for dates; however, the date type deserves its own section because almost every top-level element specifies dates, and HR-XSL always formats them the same way.
+			</p><p>
+				HR-XSL supports the following date elements:
+			</p><div class="itemizedlist"><ul type="disc"><li><p><b>StringDate.&nbsp;</b>
+							Formatted as-is.
+						</p></li><li><p><b>YearMonth.&nbsp;</b>
+                    		The YYYY-MM pattern is converted to <code class="computeroutput"><em class="replaceable"><code>month</code></em> <em class="replaceable"><code>year</code></em></code>, where <code class="computeroutput"><em class="replaceable"><code>month</code></em></code> is a month name taken from the message file for the specified language. If the parameter <em class="parameter"><code>month.format</code></em> is equal to <strong class="userinput"><code>long</code></strong>, full month names are used. Otherwise, abbreviated month names are used.
+						</p></li><li><p><b>AnyDate.&nbsp;</b>
+							If the value matches the pattern YYYY-MM-DD, it is formatted like the <code class="sgmltag-element">YearMonth</code> type, except that the value for DD is inserted. (For example, <strong class="userinput"><code>2003-10-23</code></strong> becomes <code class="computeroutput">Oct. 23, 2003</code>.) HR-XSL also recognizes the pre-defined values <strong class="userinput"><code>notApplicable</code></strong> and <strong class="userinput"><code>notKnown</code></strong> and localizes them accordingly. Otherwise, the value is formatted as-is.
+						</p></li></ul></div><p>
+				The HR-XML website has <a href="http://ns.hr-xml.org/2_4/HR-XML-2_4/CPO/DateTimeDataTypes.html" target="_top">more documentation</a>.
+			</p></div></div><div class="chapter" lang="en"><div class="titlepage"><div><div><h2 class="title"><a name="Troubleshooting"></a>Chapter&nbsp;7.&nbsp;Troubleshooting</h2></div></div></div><p>
+			If you use the provided Ant tasks to generate a PDF from an HR-XML document, you may encounter the following error:
+		</p><p>
+			<span class="errortext">java.lang.IllegalStateException: FOTreeBuilder (and the Fop class) cannot be reused. Please instantiate a new instance.</span>
+		</p><p>
+			The probable cause is that the Saxon library is already on your CLASSPATH. To fix this problem, remove all Saxon references from your CLASSPATH.
+		</p></div><div class="chapter" lang="en"><div class="titlepage"><div><div><h2 class="title"><a name="Support"></a>Chapter&nbsp;8.&nbsp;Support</h2></div></div></div><p>
+			To report a bug, request a new feature, or discuss this project with other users, visit the <a href="http://sourceforge.net/projects/hr-xsl/" target="_top">HR-XSL project page</a>.
+		</p><p>
+			HR-XSL is maintained by <a href="mailto:trevor@vocaro.com" target="_top">Trevor Harmon</a>.
+		</p></div><div class="appendix" lang="en"><div class="titlepage"><div><div><h2 class="title"><a name="XMLResume"></a>Appendix&nbsp;A.&nbsp;XML Resume to HR-XML Resume Conversion</h2></div></div></div><p>
+			The <a href="http://xmlresume.sourceforge.net/" target="_top">XML Resume</a> project defines an XML format similar to HR-XML Resume. Originated by volunteers in 2001, the project has apparently been abandoned since mid-2004. As a result, the format appears to be somewhat unfinished. For example, it is missing elements to describe:
+		</p><div class="itemizedlist"><ul type="disc"><li>Certifications</li><li>Various details about job history, such as the department of the company</li><li>Important data about a publication, such as its ISBN number</li></ul></div><p>
+			 Still, the project remains somewhat popular, and a number of users have converted their unstructured résumés to the XML Resume specification. Some of these users may now wish to convert their CV or résumé content to the HR-XML standard. To support these users, the HR-XSL project maintains a set of stylesheets that can translate an <a href="http://xmlresume.sourceforge.net/" target="_top">XML Resume</a> document directly to an HR-XML Resume document.
+		</p><p>
+			Note that the translation is imperfect; some elements of the XML Resume specification have no equivalent in HR-XML and must be translated by the end-user. In most cases, when the stylesheets encounter such unsupported elements, comments are inserted into the output. The user must then decide how best to translate the missing XML Resume data into HR-XML Resume format. Despite this issue, these stylesheets should be able to convert at least 90% of an XML Resume file to the HR-XML format.
+		</p><p>
+			The XML Resume stylesheets can be found in the <code class="filename">xsl/xmlresume</code> directory. More details about the unsupported elements can be found in the comments of the XSL files. For examples of how to use these stylesheets, refer to the examples in the <code class="filename">examples/xmlresume</code> directory.		
+		</p></div><div class="appendix" lang="en"><div class="titlepage"><div><div><h2 class="title"><a name="Copyright_License_and_Disclaimer"></a>Appendix&nbsp;B.&nbsp;Copyright, License, and Disclaimer</h2></div></div></div><p>
+			Copyright © 2002 Charles Chan
+		</p><p>
+			Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the &#8220;<span class="quote">Software</span>&#8221;), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
+		</p><p>
+			</p><div class="orderedlist"><ol type="1"><li>
+						The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
+					</li><li>
+						Except as contained in this notice, the names of individuals credited with contribution to this software shall not be used in advertising or otherwise to promote the sale, use or other dealings in this Software without prior written authorization from the individuals in question.
+					</li><li>
+						Any stylesheet derived from this Software that is publicly distributed will be identified with a different name and the version strings in any derived Software will be changed so that no possibility of confusion between the derived package and this Software will exist.
+					</li></ol></div><p>
+		</p><p>
+			THE SOFTWARE IS PROVIDED &#8220;<span class="quote">AS IS</span>&#8221;, WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL CHARLES CHAN OR ANY OTHER CONTRIBUTOR BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+		</p></div></div></body></html>
