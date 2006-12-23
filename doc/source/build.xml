@@ -2,20 +2,21 @@
 
 <project default="html-chunked">
 
+	<property name="docbook.params" value="html.stylesheet=style.css"/>
 	<import file="../../util/hr-xsl.xml"/>
 
 	<target name="html-chunked" depends="validate">
 
 		<!-- Only delete the files; don't wipe out the entire directory to avoid erasing .svn -->
 		<delete> 
-			<fileset dir="../html" includes="*"/> 
+			<fileset dir="../html" includes="*.html"/> 
 		</delete> 
 
 		<!-- Can't get this to work... -->
 		<!-- <docbook-to in="documentation.xml" out="../html/" format="html" stylesheet="chunk.xsl"/> -->
 		<!-- ...so I use xsltproc instead. -->
 		<exec executable="xsltproc" failOnError="true">   
-			<arg line="-o ../html/ ../../lib/docbook-xsl-1.71.1/html/chunk.xsl documentation.xml"/>   
+			<arg line="--stringparam html.stylesheet style.css -o ../html/ ../../lib/docbook-xsl-1.71.1/html/chunk.xsl documentation.xml"/>   
 		</exec>   
 
 	</target>
