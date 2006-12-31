@@ -2,32 +2,34 @@
 
 <project default="html-chunked">
 
-	<property name="docbook.params" value="html.stylesheet=style.css"/>
 	<import file="../../util/hr-xsl.xml"/>
+
+	<property name="chunked.html.dir" value="../multi-page"/>
+	<property name="no-chunked.html.dir" value="../single-page"/>
 
 	<target name="html-chunked" depends="validate">
 
 		<!-- Only delete the files; don't wipe out the entire directory to avoid erasing .svn -->
 		<delete> 
-			<fileset dir="../html" includes="*.html"/> 
+			<fileset dir="${chunked.html.dir}" includes="*.html"/> 
 		</delete> 
 
 		<!-- Can't get this to work... -->
 		<!-- <docbook-to in="documentation.xml" out="../html/" format="html" stylesheet="chunk.xsl"/> -->
 		<!-- ...so I use xsltproc instead. -->
 		<exec executable="xsltproc" failOnError="true">   
-			<arg line="--stringparam html.stylesheet style.css -o ../html/ ../../lib/docbook-xsl-1.71.1/html/chunk.xsl documentation.xml"/>   
+			<arg line="--stringparam html.stylesheet style.css -o ${chunked.html.dir}/ ${docbook.xsl.dir}/html/chunk.xsl documentation.xml"/>   
 		</exec>   
 
 	</target>
 
 	<target name="html-nochunks" depends="validate">
-		<docbook-to in="documentation.xml" out="../documentation.html" format="html"/>
+		<docbook-to in="documentation.xml" out="${no-chunked.html.dir}/documentation.html" format="html"/>
 	</target>
 	
 	<target name="validate">
 		<exec executable="xmllint" failOnError="true">
-			<arg line="--noout --dtdvalid ../../lib/docbook-xml-4.5/docbookx.dtd documentation.xml"/>
+			<arg line="--noout --dtdvalid ${docbook.xml.dir}/docbookx.dtd documentation.xml"/>
 		</exec>
 	</target>
 

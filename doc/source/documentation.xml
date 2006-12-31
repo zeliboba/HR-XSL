@@ -333,7 +333,12 @@
 				<title>Stylesheet Parameters</title>
 
 				<para>
-					XSL stylesheets can change their behavior based on user-specified parameters. For example, a parameter such as <userinput>roman.headings=true</userinput> might tell a stylesheet to use Roman numerals for chapter headings. <xref linkend="docbook.stylesheet.parameters"/> lists some DocBook-specific parameters that you might need when using HR-XSL. (Note that this is only a small subset of the available DocBook parameters; for a complete list, refer to <ulink url="http://www.sagehill.net/docbookxsl/">DocBook XSL: The Complete Guide</ulink>.)
+					XSL stylesheets can change their behavior based on user-specified parameters. For example, a parameter such as <userinput>ulink.footnotes=true</userinput> would tell the stylesheet to display the URL of every link as a footnote.
+					
+				</para>
+				
+				<para>
+				 	<xref linkend="docbook.stylesheet.parameters"/> lists some typical DocBook parameters you might need when using HR-XSL. Note that this is only a small subset of the available DocBook parameters; for a complete list, refer to the <ulink url="http://docbook.sourceforge.net/release/xsl/current/doc/html/index.html">HTML Parameter Reference</ulink> or, for PDF output, the <ulink url="http://docbook.sourceforge.net/release/xsl/current/doc/fo/index.html">FO Parameter Reference</ulink>.
 				</para>
 		
 				<table id="docbook.stylesheet.parameters">
