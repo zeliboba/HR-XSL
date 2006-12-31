@@ -2,7 +2,6 @@
 
 <project default="all">
 
-	<property file="build.properties"/>
 	<import file="../../util/hr-xsl.xml"/>
 
 	<target name="all" depends="html, pdf, text"/>

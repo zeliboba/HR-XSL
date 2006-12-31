@@ -11,12 +11,10 @@ Author: Trevor Harmon
 	<dirname property="hr-xsl.basedir" file="${ant.file.hr-xsl}/.."/>
 
 	<!-- Location of the DocBook XSL stylesheets -->
-	<property name="docbook.xsl" value="${hr-xsl.basedir}/lib/docbook-xsl-1.71.1"/> 
+	<property name="docbook.xsl.dir" value="${hr-xsl.basedir}/lib/docbook-xsl-1.71.1"/> 
 
-	<!-- Make sure the parameters have been initialized so that the -->
-	<!-- macros don't fail if the user doesn't specify them. -->
-	<property name="docbook.params" value=""/>
-	<property name="hr-xsl.params" value=""/>
+	<!-- Location of the DocBook DTD -->
+	<property name="docbook.xml.dir" value="${hr-xsl.basedir}/lib/docbook-xml-4.5"/> 
 
 	<path id="saxon.classpath">   
 		<fileset dir="${hr-xsl.basedir}/lib/saxon-b-8.8">   
@@ -75,21 +73,14 @@ Author: Trevor Harmon
 	</macrodef>
 	
 	<!-- Performs an XSL translation of an XML file using the Saxon processor. -->
-	<macrodef name="saxon">
-		<attribute name="in" description="An XML file"/>
-		<attribute name="xsl" description="A stylesheet for translating the XML file"/>
-		<attribute name="out" description="A file to receive the output of the translation"/>
-		<attribute name="params" description="The XSL parameters to be passed to the stylesheet" default=""/>
-		<sequential>
-			<echo level="info" message="Translating '@{in}' to '@{out}'..."/>
-			<!-- Theoretically, we should be able to use the built-in xslt Ant task here, but there doesn't-->
-			<!-- seem to be any way of forcing the task to use an external processor, such as Saxon, even -->
-			<!-- when a classpath is specified. Instead, we call Saxon directly. -->
-			<java classname="net.sf.saxon.Transform" classpathref="saxon.classpath" fork="true" failOnError="true">  
-				<arg line="-o '@{out}' '@{in}' '@{xsl}' @{params}"/>  
-			</java>  
-		</sequential>
-	</macrodef>
+	<presetdef name="saxon">
+		<xslt classpathref="saxon.classpath">
+		    <factory name="net.sf.saxon.TransformerFactoryImpl"/>
+			<xmlcatalog>
+				<entity publicId="parameters" location="${basedir}/parameters.xsl"/>
+			</xmlcatalog>
+		</xslt>
+	</presetdef>
 
 	<!-- Converts an HR-XML resume file into DocBook format -->
 	<macrodef name="resume-to-docbook">
@@ -98,9 +89,11 @@ Author: Trevor Harmon
 			<dirname property="in.dir" file="@{in}"/>
 			<basename property="in.filename" file="@{in}" suffix=".xml"/> 
 			<property name="in" value="${in.dir}/${in.filename}"/>
-			<saxon in="@{in}" out="${in}-docbook.xml"
-				xsl="${hr-xsl.basedir}/xsl/docbook/hr-xsl.xsl"
-				params="${hr-xsl.params}"/>
+			<saxon in="@{in}" out="${in}-docbook.xml" style="${hr-xsl.basedir}/util/customization-layer.xsl">
+				<xmlcatalog>
+					<entity publicId="stylesheet" location="${hr-xsl.basedir}/xsl/docbook/hr-xsl.xsl"/>
+				</xmlcatalog>
+			</saxon>
 		</sequential>
 	</macrodef>
 
@@ -108,14 +101,13 @@ Author: Trevor Harmon
 	<macrodef name="docbook-to"> 
 		<attribute name="in" description="The DocBook file"/>
 		<attribute name="out" description="The output file"/>
-		<attribute name="format" description="The format of the output; must be a DocBook XSL sub-directory"/>
-		<attribute name="stylesheet" description="The filename of the root stylesheet to use" default="docbook.xsl"/>
+		<attribute name="format" description="The format of the output ('fo' or 'html')"/>
 		<sequential> 
-			<saxon
-				in="@{in}"
-				out="@{out}"
-				xsl="${docbook.xsl}/@{format}/@{stylesheet}"
-				params="${docbook.params}"/>
+			<saxon in="@{in}" out="@{out}" style="${hr-xsl.basedir}/util/customization-layer.xsl">
+				<xmlcatalog>
+					<entity publicId="stylesheet" location="${docbook.xsl.dir}/@{format}/docbook.xsl"/>
+				</xmlcatalog>
+			</saxon>
 		</sequential> 
 	</macrodef>
 
