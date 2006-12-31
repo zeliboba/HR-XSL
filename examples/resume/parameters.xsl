@@ -10,6 +10,8 @@
 
 
 	<!-- DocBook parameters -->
+	<!-- HTML parameter reference: http://docbook.sourceforge.net/release/xsl/current/doc/html/index.html -->
+	<!-- PDF parameter reference:  http://docbook.sourceforge.net/release/xsl/current/doc/fo/index.html -->
 
 	<!-- Generate table of contents? 'article toc'=yes (default), 'article nop'=no -->
 	<xsl:param name="generate.toc" select="'article nop'"/> 
@@ -25,5 +27,19 @@
 	
 	<!-- Paper orientation: 'portrait' (default), 'landscape' -->
 	<!-- <xsl:param name="page.orientation" select="'landscape'"/>  -->
+	
+	<!-- Change the font size of the section headers (PDF output only)-->
+	<xsl:attribute-set name="section.title.level1.properties">
+		<xsl:attribute name="font-size">
+			<xsl:value-of select="14"/>
+			<xsl:text>pt</xsl:text>
+		</xsl:attribute>
+	</xsl:attribute-set>
+	<xsl:attribute-set name="section.title.level2.properties">
+		<xsl:attribute name="font-size">
+			<xsl:value-of select="12"/>
+			<xsl:text>pt</xsl:text>
+		</xsl:attribute>
+	</xsl:attribute-set>
 
 </xsl:stylesheet>

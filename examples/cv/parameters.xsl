@@ -26,4 +26,18 @@
 	<!-- Paper orientation: 'portrait' (default), 'landscape' -->
 	<!-- <xsl:param name="page.orientation" select="'landscape'"/>  -->
 
+	<!-- Change the font size of the section headers (PDF output only)-->
+	<xsl:attribute-set name="section.title.level1.properties">
+		<xsl:attribute name="font-size">
+			<xsl:value-of select="14"/>
+			<xsl:text>pt</xsl:text>
+		</xsl:attribute>
+	</xsl:attribute-set>
+	<xsl:attribute-set name="section.title.level2.properties">
+		<xsl:attribute name="font-size">
+			<xsl:value-of select="12"/>
+			<xsl:text>pt</xsl:text>
+		</xsl:attribute>
+	</xsl:attribute-set>
+
 </xsl:stylesheet>
