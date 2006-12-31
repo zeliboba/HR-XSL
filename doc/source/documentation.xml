@@ -259,21 +259,35 @@
 		<title>Customization</title>
 
 		<para>
-			Generating a CV or résumé with HR-XSL is a two-stage process: First, HR-XSL generates a DocBook version of the original file; next, this DocBook file is transformed into a PDF, HTML, or plain text version. Thus, to fully control the look of your CV or résumé, you need to customize the two stages individually, depending on the kind of customization you want. For content modifications (e.g., names of headings, date format, etc.), you would customize the HR-XSL transformation. For appearance modifications (e.g., font sizes, whether page numbers are displayed, etc.), you would customize the DocBook transformation.
+			Generating a CV or résumé with HR-XSL is, internally, a two-stage process. First, HR-XSL generates a DocBook version of your original file; second, this DocBook file is transformed into a PDF, HTML, or plain text version. Thus, to fully control the look of your CV or résumé, you must change two different sets of parameters. For content modifications (e.g., names of headings, date format, etc.), you would customize the HR-XSL transformation. For appearance modifications (e.g., font sizes, whether page numbers are displayed, etc.), you would customize the DocBook transformation. The following sections describe these two customizations in detail.
 		</para>
 
 		<sect1 id="HR-XSL_Customization">
 			<title>HR-XSL Customization</title>
 
 			<para>
-				There are two ways to customize the output of HR-XSL: stylesheet parameters and localized messages.
+				There are two ways to customize the HR-XSL transformation: stylesheet parameters and localized messages.
 			</para>
 
-			<sect2 id="Stylesheet_Parameters">
+			<sect2 id="HR-XSL_Customization.Stylesheet_Parameters">
 				<title>Stylesheet Parameters</title>
 		
 				<para>
-					XSL stylesheets can change their behavior based on user-specified parameters. For example, a parameter such as <userinput>roman.headings=true</userinput> might tell a stylesheet to use Roman numerals for chapter headings. <xref linkend="hr-xsl.stylesheet.parameters"/> lists the parameters that can be used in HR-XSL.<footnote><para>Currently, there is only one parameter, but future versions of HR-XSL should offer more.</para></footnote>
+					XSL stylesheets can change their behavior based on user-specified parameters. For example, a parameter such as <userinput>ulink.footnotes</userinput>, when set to true, would tell the stylesheet to display the URL of every link as a footnote.
+				</para>
+				
+				<para>
+		   			To specify a parameter, use the <code><ulink url="http://www.w3schools.com/xsl/el_param.asp">&lt;xsl:param&gt;</ulink></code> element. For example:
+				</para>
+				
+				<programlisting>&lt;xsl:param name="ulink.footnotes" select="true"/&gt;</programlisting>
+				
+				<para>
+					If you are using the included HR-XSL helper script (<filename>util/hr-xsl.xml</filename>), you simply add these elements to a file called <filename>parameters.xsl</filename>, then place this file in the same directory as your build script. Refer to the examples in the HR-XSL distribution (in the <filename class="directory">examples</filename> directory) to see how this is done.<footnote><para>If for some reason you are not using the included helper script, you will need to create a <ulink url="http://www.sagehill.net/docbookxsl/CustomMethods.html#CustomizationLayer">customization layer</ulink> and add your parameters there. See the <filename>customization-layer.xsl</filename> file in the <filename class="directory">util</filename> directory for an example.</para></footnote>
+				</para>					
+			
+				<para>					
+<xref linkend="hr-xsl.stylesheet.parameters"/> lists the parameters that can be used in HR-XSL. (Currently, there is only one parameter, but future versions of HR-XSL should offer more.)
 				</para>
 		
 				<table id="hr-xsl.stylesheet.parameters">
@@ -296,45 +310,41 @@
 					</tgroup>
 				</table>
 			
+			</sect2>
+
+			<sect2 id="HR-XSL_Customization.Localized_Messages">
+				<title>Localized Messages</title>
+			
 				<para>
-		   			The method of specifying these parameters depends on how you use the stylesheets. If you are using the included HR-XSL helper script, a parameter would simply be specified in the <userinput>hr-xsl.params</userinput> property. (Refer to the <filename>build.properties</filename> files in the <filename class="directory">examples</filename> directory to see how this is done.) For other methods, you will need to refer to the documentation of your stylesheet processor.
+					All of the HR-XSL stylesheets have been <emphasis>localized</emphasis>. Simply stated, this means you can easily change the output of HR-XSL to a different language.
+				</para>
+				
+				<para>
+					HR-XSL currently provides translations for English and Italian. To change the output language to one of these translations, set the <varname>lang</varname> parameter so that it matches one of the filenames in the <filename class="directory">xsl/common/messages</filename> directory of the HR-XSL distribution. For example, to change to Italian, add the following line to your <filename>parameters.xsl</filename> file:
+				</para>
+				
+				<programlisting>&lt;xsl:param name="lang" select="it"/&gt;</programlisting>
+
+				<para>
+					For languages that HR-XSL does not provide, you can create your own. To do so, go to the <filename class="directory">xsl/common/messages</filename> directory and make a copy of the <filename>en.xml</filename> file, giving it a name that represents your language. For example, if you want to create a French localization, you should use the <ulink url="http://www.loc.gov/standards/iso639-2/php/code_list.php">two-letter language code</ulink> for French (<quote>fr</quote>). You can then edit this new <filename>fr.xml</filename> file and translate each English message to its French equivalent. Finally, you can tell HR-XSL to use this translation by setting the <varname>lang</varname> parameter as shown above.<footnote><para>If you have created a localization file for your language, please consider submitting it to the <ulink url="mailto:trevor@vocaro.com">HR-XSL maintainer</ulink> so that it can be included in the distribution for others to use.</para></footnote>
 				</para>
 			
 			</sect2>
 
-			<sect2 id="Localized_Messages">
-				<title>Localized Messages</title>
-			
-				<para>
-					All of the HR-XSL stylesheets have been <emphasis>localized</emphasis>. Simply stated, this means you can easily change the output of HR-XSL to a different language. To do so, go to the <filename class="directory">xsl/common/messages</filename> directory and make a copy of the <filename>en.xml</filename> file, giving it a name that represents your language. For example, if you want to create a French localization, you should use the <ulink url="http://www.loc.gov/standards/iso639-2/langcodes.html">two-letter language code</ulink> for French, <emphasis>fr</emphasis>. You can then edit this new <filename>fr.xml</filename> file and translate all the English messages to their French equivalents.<footnote><para>If you have created a localization file for your language, please consider submitting it to the <ulink url="mailto:trevor@vocaro.com">HR-XSL maintainer</ulink> so that it can be included in the distribution for others to use.</para></footnote>
-				</para>
-			
-				<para>
-					Once you have created a localized message file, you can tell HR-XSL to use it simply by setting the XSL parameter <userinput>lang</userinput> to the appropriate language code. Continuing with the French example above, if you are using the included Ant helper script, you would change the résumé example to French by adding the following string to the <userinput>hr-xsl.params</userinput> variable of the <filename>build.properties</filename> file:
-				</para>
-			
-				<blockquote>
-					<para>
-						<userinput>lang=fr</userinput>
-					</para>
-				</blockquote>
-			
-			</sect2>
 		</sect1> 
 				
 		<sect1 id="DocBook_Customization">
 			<title>DocBook Customization</title>
 
 			<para>
-				Most DocBook customization is accomplished with stylesheet parameters. For the HTML transformation, Cascading Style Sheets can also be used.
+				The DocBook transformation is customized mostly by means of stylesheet parameters. <ulink url="http://en.wikipedia.org/wiki/Cascading_Style_Sheets">Cascading Style Sheets</ulink> can also be used to customize the DocBook transformation to HTML.
 			</para>
 
 			<sect2 id="DocBook_Customization.Stylesheet_Parameters">
 				<title>Stylesheet Parameters</title>
 
 				<para>
-					XSL stylesheets can change their behavior based on user-specified parameters. For example, a parameter such as <userinput>ulink.footnotes=true</userinput> would tell the stylesheet to display the URL of every link as a footnote.
-					
+					Parameters for the DocBook transformation are specified in the same way as the HR-XSL parameters described in <xref linkend="HR-XSL_Customization.Stylesheet_Parameters"/>.
 				</para>
 				
 				<para>
@@ -370,7 +380,7 @@
 							<row>
 								<entry><userinput>paper.type</userinput></entry>
 								<entry>For FO (e.g., PDF) output, this option controls the paper size conveniently.</entry>
-								<entry><userinput>USletter</userinput> (default), <userinput>A4</userinput>, and most of the standard A, B and C sizes. <ulink url="http://docbook.sourceforge.net/release/xsl/current/doc/fo/page.width.portrait.html">Here</ulink> you can find the complete list.</entry>
+								<entry><userinput>USletter</userinput> (default), <userinput>A4</userinput>, and most of the standard A, B and C sizes. For a complete list, see the <ulink url="http://docbook.sourceforge.net/release/xsl/current/doc/fo/page.width.portrait.html">page.width.portrait documentation</ulink>.</entry>
 							</row>
 							<row>
 								<entry><userinput>page.orientation</userinput></entry>
@@ -382,8 +392,16 @@
 				</table>
 
 				<para>
-		   			The method of specifying these parameters depends on how you use the stylesheets. If you are using the included HR-XSL helper script, a parameter would simply be specified in the <userinput>docbook.params</userinput> property. (Refer to the <filename>build.properties</filename> files in the <filename class="directory">examples</filename> directory to see how this is done.) For other methods, you will need to refer to the documentation of your stylesheet processor.
+					Note that some DocBook parameters are complex and cannot be specified with the <code>&lt;xsl:param&gt;</code> element. Instead, you must specify them using the <code><ulink url="http://www.w3schools.com/xsl/el_attributeset.asp">&lt;xsl:attribute-set&gt;</ulink></code> element. For example, to change the font size of all Section 1 titles in PDF output, you would specify an attribute set for <ulink url="http://docbook.sourceforge.net/release/xsl/current/doc/fo/section.title.level1.properties.html"><varname>section.title.level1.properties</varname></ulink>:
 				</para>
+				
+				<programlisting>
+<![CDATA[<xsl:attribute-set name="section.title.level1.properties">
+    <xsl:attribute name="font-size">
+        <xsl:value-of select="14"/>
+        <xsl:text>pt</xsl:text>
+    </xsl:attribute>
+</xsl:attribute-set>]]></programlisting>
 
 			</sect2>
 
@@ -521,9 +539,9 @@
 					<informalexample>
 						<programlisting>
 <![CDATA[<PersonName>
-	<GivenName>John</GivenName>
-	<FamilyName>Smith</FamilyName>
-	<Affix type="formOfAddress">Major</Affix>
+    <GivenName>John</GivenName>
+    <FamilyName>Smith</FamilyName>
+    <Affix type="formOfAddress">Major</Affix>
 </PersonName>]]></programlisting>
 					</informalexample>
 
@@ -750,7 +768,7 @@ Mexico					</screen>
 						</para>
 						
 						<para>
-							If you need to change the translated names, you will have to create a new translation file as described in <xref linkend="Localized_Messages"/>.
+							If you need to change the translated names, you will have to create a new translation file as described in <xref linkend="HR-XSL_Customization.Localized_Messages"/>.
 						</para>
 
 						<para>
@@ -1065,7 +1083,7 @@ Education
 				<title>Notes</title>
 				
 				<para>
-					Use the <sgmltag class="attribute">degreeType</sgmltag> attribute to specify the type of degree. For instance, if you have a Master's degree, you can say <code>degreeType="masters"</code>. By default, HR-XSL will then translate this attribute according to the messages file. (See <xref linkend="Localized_Messages"/> for more information about the messages file.) If you need to specify a name for the degree that differs from the messages file, you can simply add a <sgmltag>DegreeName</sgmltag> element, as shown in the example above. This element will then override the degree name stored in the messages file.
+					Use the <sgmltag class="attribute">degreeType</sgmltag> attribute to specify the type of degree. For instance, if you have a Master's degree, you can say <code>degreeType="masters"</code>. By default, HR-XSL will then translate this attribute according to the messages file. (See <xref linkend="HR-XSL_Customization.Localized_Messages"/> for more information about the messages file.) If you need to specify a name for the degree that differs from the messages file, you can simply add a <sgmltag>DegreeName</sgmltag> element, as shown in the example above. This element will then override the degree name stored in the messages file.
 				</para>
 				    				
 				<para>
