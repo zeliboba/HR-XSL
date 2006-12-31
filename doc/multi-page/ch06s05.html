@@ -1,0 +1,104 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1"><title>EducationHistory</title><link rel="stylesheet" href="style.css" type="text/css"><meta name="generator" content="DocBook XSL Stylesheets V1.71.1"><link rel="start" href="index.html" title="HR-XSL Documentation"><link rel="up" href="ch06.html" title="Chapter 6. The Elements of HR-XML Resume"><link rel="prev" href="ch06s04.html" title="EmploymentHistory"><link rel="next" href="ch06s06.html" title="LicensesAndCertifications"></head><body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF"><div class="navheader"><table width="100%" summary="Navigation header"><tr><th colspan="3" align="center">EducationHistory</th></tr><tr><td width="20%" align="left"><a accesskey="p" href="ch06s04.html">Prev</a> </td><th width="60%" align="center">Chapter 6. The Elements of HR-XML Resume</th><td width="20%" align="right"> <a accesskey="n" href="ch06s06.html">Next</a></td></tr></table><hr></div><div class="sect1" lang="en"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a name="EducationHistory"></a>EducationHistory</h2></div></div></div><p>
+				This section is designed for listing academic degrees, but it also supports partial degree completion.
+			</p><div class="sect2" lang="en"><div class="titlepage"><div><div><h3 class="title"><a name="EducationHistory.Examples"></a>Examples</h3></div></div></div><pre class="programlisting">
+&lt;EducationHistory&gt;
+	&lt;SchoolOrInstitution schoolType="college"&gt;
+	    &lt;School type="prior"&gt;
+	        &lt;SchoolName&gt;Boston College&lt;/SchoolName&gt;
+	    &lt;/School&gt;
+	    &lt;OrganizationUnit organizationType="subSchool"&gt;Wallace E. Carroll School of Management&lt;/OrganizationUnit&gt;
+	    &lt;Degree degreeType="bachelors" examPassed="false" graduatingDegree="graduating"&gt;
+	        &lt;DegreeName&gt;Bachelors of Science&lt;/DegreeName&gt;
+	        &lt;DegreeDate&gt;
+	            &lt;Year&gt;2001&lt;/Year&gt;
+	        &lt;/DegreeDate&gt;
+	        &lt;DegreeMajor&gt;
+	            &lt;DegreeConcentration&gt;Management&lt;/DegreeConcentration&gt;
+	            &lt;Name&gt;Human Resource Management&lt;/Name&gt;
+	        &lt;/DegreeMajor&gt;
+	        &lt;DegreeMajor&gt;
+	            &lt;Name&gt;Marketing&lt;/Name&gt;
+	        &lt;/DegreeMajor&gt;
+	        &lt;DatesOfAttendance currentlyEnrolled="true"&gt;
+	            &lt;StartDate&gt;
+	                &lt;AnyDate&gt;1998-01-01&lt;/AnyDate&gt;
+	            &lt;/StartDate&gt;
+	        &lt;/DatesOfAttendance&gt;
+	    &lt;/Degree&gt;
+	&lt;/SchoolOrInstitution&gt;
+	&lt;SchoolOrInstitution schoolType="university"&gt;
+	    &lt;School type="prior"&gt;
+	        &lt;SchoolId&gt;
+	            &lt;IdValue&gt;MS1786534&lt;/IdValue&gt;
+	        &lt;/SchoolId&gt;
+	        &lt;SchoolName&gt;Harvard&lt;/SchoolName&gt;
+	    &lt;/School&gt;
+	    &lt;LocationSummary&gt;
+	        &lt;Municipality&gt;Fayette&lt;/Municipality&gt;
+	        &lt;Region&gt;MS&lt;/Region&gt;
+	        &lt;CountryCode&gt;US&lt;/CountryCode&gt;
+	    &lt;/LocationSummary&gt;
+	    &lt;OrganizationUnit organizationType="subSchool"&gt;Andover&lt;/OrganizationUnit&gt;
+	    &lt;Degree degreeType="bachelors" graduatingDegree="graduating"&gt;
+	        &lt;DegreeName&gt;Bachelors of Science&lt;/DegreeName&gt;
+	        &lt;DegreeDate&gt;
+	            &lt;AnyDate&gt;1987-01-02&lt;/AnyDate&gt;
+	        &lt;/DegreeDate&gt;
+	        &lt;DegreeMajor&gt;
+	            &lt;ProgramId&gt;
+	                &lt;IdValue&gt;173.24&lt;/IdValue&gt;
+	            &lt;/ProgramId&gt;
+	            &lt;DegreeConcentration&gt;Applied Math&lt;/DegreeConcentration&gt;
+	            &lt;Name&gt;Mathematics&lt;/Name&gt;
+	        &lt;/DegreeMajor&gt;
+	        &lt;DegreeMeasure&gt;
+	            &lt;EducationalMeasure&gt;
+	                &lt;MeasureSystem&gt;GPA&lt;/MeasureSystem&gt;
+	                &lt;MeasureValue&gt;
+	                    &lt;NumericValue&gt;3.9&lt;/NumericValue&gt;
+	                &lt;/MeasureValue&gt;
+	                &lt;GoodStudentIndicator&gt;true&lt;/GoodStudentIndicator&gt;
+	            &lt;/EducationalMeasure&gt;
+	            &lt;AcademicCreditCode&gt;A&lt;/AcademicCreditCode&gt;
+	            &lt;ClassRank numberOfStudents="100"&gt;78&lt;/ClassRank&gt;
+	        &lt;/DegreeMeasure&gt;
+	        &lt;DatesOfAttendance currentlyEnrolled="false"&gt;
+	            &lt;StartDate&gt;
+	                &lt;YearMonth&gt;1980-09&lt;/YearMonth&gt;
+	            &lt;/StartDate&gt;
+	            &lt;EndDate&gt;
+	                &lt;YearMonth&gt;1981-04&lt;/YearMonth&gt;
+	            &lt;/EndDate&gt;
+	        &lt;/DatesOfAttendance&gt;
+	        &lt;DatesOfAttendance currentlyEnrolled="false"&gt;
+	            &lt;StartDate&gt;
+	                &lt;YearMonth&gt;1984-09&lt;/YearMonth&gt;
+	            &lt;/StartDate&gt;
+	            &lt;EndDate&gt;
+	                &lt;YearMonth&gt;1987-04&lt;/YearMonth&gt;
+	            &lt;/EndDate&gt;
+	        &lt;/DatesOfAttendance&gt;
+	        &lt;Comments&gt;
+	            Due to financial reasons, it was necessary to withdraw after the first year.
+	        &lt;/Comments&gt;
+	    &lt;/Degree&gt;
+	&lt;/SchoolOrInstitution&gt;
+&lt;/EducationHistory&gt;</pre></div><div class="sect2" lang="en"><div class="titlepage"><div><div><h3 class="title"><a name="EducationHistory.HR-XSL_Output"></a>HR-XSL Output</h3></div></div></div><pre class="screen">
+Education
+
+   B.S., Human Resource Management Marketing, 2001, Boston College,
+   concentration in Management
+
+   B.S., Mathematics, January 2, 1987, Harvard, Cambridge, MA,
+   concentration in Applied Math
+
+     Due to financial reasons, it was necessary to withdraw after the
+     first year.</pre></div><div class="sect2" lang="en"><div class="titlepage"><div><div><h3 class="title"><a name="EducationHistory.Notes"></a>Notes</h3></div></div></div><p>
+					Use the <code class="sgmltag-attribute">degreeType</code> attribute to specify the type of degree. For instance, if you have a Master's degree, you can say <code class="code">degreeType="masters"</code>. By default, HR-XSL will then translate this attribute according to the messages file. (See <a href="ch04.html#Localized_Messages" title="Localized Messages">the section called &#8220;Localized Messages&#8221;</a> for more information about the messages file.) If you need to specify a name for the degree that differs from the messages file, you can simply add a <code class="sgmltag-element">DegreeName</code> element, as shown in the example above. This element will then override the degree name stored in the messages file.
+				</p><p>
+					If you have not yet received a degree, but you know the date on which you expect to receive it, simply specify the expected date in the <code class="sgmltag-element">DegreeDate</code> element. If this date is in the future, HR-XSL will add the phrase &#8220;<span class="quote">(expected)</span>&#8221; to the date.
+				</p><p>
+					The <code class="sgmltag-element">EducationHistory</code> element is quite comprehensive and includes many details and HR-specific data that most people do not require for their CVs or résumés. HR-XSL ignores most of these but may support them in later versions.
+				</p><p>
+					The HR-XML website has <a href="http://ns.hr-xml.org/2_4/HR-XML-2_4/CPO/EducationHistory.html" target="_top">more documentation</a>.
+				</p></div></div><div class="navfooter"><hr><table width="100%" summary="Navigation footer"><tr><td width="40%" align="left"><a accesskey="p" href="ch06s04.html">Prev</a> </td><td width="20%" align="center"><a accesskey="u" href="ch06.html">Up</a></td><td width="40%" align="right"> <a accesskey="n" href="ch06s06.html">Next</a></td></tr><tr><td width="40%" align="left" valign="top">EmploymentHistory </td><td width="20%" align="center"><a accesskey="h" href="index.html">Home</a></td><td width="40%" align="right" valign="top"> LicensesAndCertifications</td></tr></table></div></body></html>
