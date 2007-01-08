@@ -27,8 +27,8 @@ Author: Trevor Harmon
 		<classpath>
 			<fileset dir="${hr-xsl.basedir}/lib/fop-trunk-r475989">
 				<include name="fop.jar"/>
-				<include name="lib/*.jar"/>
-			</fileset>   
+				<include name="lib/*.jar"/> 
+			</fileset>
 		</classpath>
 	</taskdef>
 	
@@ -74,8 +74,9 @@ Author: Trevor Harmon
 	
 	<!-- Performs an XSL translation of an XML file using the Saxon processor. -->
 	<presetdef name="saxon">
-		<xslt classpathref="saxon.classpath">
-		    <factory name="net.sf.saxon.TransformerFactoryImpl"/>
+		<!-- The processor=SaxonLiaison setting causes our custom XSLTLiaison class to be used. -->
+		<!-- This works around bug #41314: http://issues.apache.org/bugzilla/show_bug.cgi?id=41314 -->
+		<xslt classpath="${hr-xsl.basedir}/lib/saxon-b-8.8/saxon8.jar:${hr-xsl.basedir}/util" processor="SaxonLiaison">
 			<xmlcatalog>
 				<entity publicId="parameters" location="${basedir}/parameters.xsl"/>
 			</xmlcatalog>
@@ -104,9 +105,9 @@ Author: Trevor Harmon
 		<attribute name="format" description="The format of the output ('fo' or 'html')"/>
 		<sequential> 
 			<saxon in="@{in}" out="@{out}" style="${hr-xsl.basedir}/util/customization-layer.xsl">
-				<xmlcatalog>
-					<entity publicId="stylesheet" location="${docbook.xsl.dir}/@{format}/docbook.xsl"/>
-				</xmlcatalog>
+				<xmlcatalog> 
+					<entity publicId="stylesheet" location="${docbook.xsl.dir}/@{format}/docbook.xsl"/> 
+				</xmlcatalog> 
 			</saxon>
 		</sequential> 
 	</macrodef>
@@ -177,31 +178,31 @@ Author: Trevor Harmon
 			</outofdate>
 
 			<!-- Convert the DocBook to FO -->
-			<outofdate>
-				<sourcefiles>
-					<pathelement path="${in}-docbook.xml"/>
-				</sourcefiles>
-				<targetfiles>
-					<pathelement path="${in}.fo"/>
-				</targetfiles>
-				<sequential>
-					<docbook-to format="fo" in="${in}-docbook.xml" out="${in}.fo"/> 
-					<tidy-xml in="${in}.fo"/>
-				</sequential>
-			</outofdate>
+			<outofdate> 
+				<sourcefiles> 
+					<pathelement path="${in}-docbook.xml"/> 
+				</sourcefiles> 
+				<targetfiles> 
+					<pathelement path="${in}.fo"/> 
+				</targetfiles> 
+				<sequential> 
+					<docbook-to format="fo" in="${in}-docbook.xml" out="${in}.fo"/>  
+					<tidy-xml in="${in}.fo"/> 
+				</sequential> 
+			</outofdate> 
 
 			<!-- Convert the FO to PDF -->
-			<outofdate>
-				<sourcefiles>
-					<pathelement path="${in}.fo"/>
-				</sourcefiles>
-				<targetfiles>
-					<pathelement path="${in}.pdf"/>
-				</targetfiles>
-				<sequential>
-					<fop fofile="${in}.fo" outfile="${in}.pdf" format="application/pdf"/>
-				</sequential>
-			</outofdate>
+			<outofdate> 
+				<sourcefiles> 
+					<pathelement path="${in}.fo"/> 
+				</sourcefiles> 
+				<targetfiles> 
+					<pathelement path="${in}.pdf"/> 
+				</targetfiles> 
+				<sequential> 
+					<fop fofile="${in}.fo" outfile="${in}.pdf" format="application/pdf"/> 
+				</sequential> 
+			</outofdate> 
 
 		</sequential> 
 	</macrodef> 
