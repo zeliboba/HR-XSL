@@ -1,3 +1,11 @@
+0.10 (2007-01-07) Trevor Harmon
+
+Stylesheets
+	- The parameter (customization) system has been completely overhauled. Now, instead of supplying HR-XSL and DocBook parameters as Ant properties, you must supply them as an XSL stylesheet. This has two advantages: 1) Certain DocBook parameters that must be specified as attribute-sets (such as formal.title.properties) can now be used; and 2) parameters no longer must be specified on a single line (which became awkward when many parameters were needed).
+Documentation
+	- Added documentation on the new parameter system
+	- Directory locations have been changed for clearer separation between single- and multi-page versions
+	
 0.9.1 (2006-12-27) Trevor Harmon
 Documentation
 	- Cosmetic improvements
