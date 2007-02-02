@@ -32,7 +32,10 @@
 		</xsl:variable>
 
 		<sect1>
+
+			<!-- Generate a section ID from the title -->
 			<xsl:attribute name="id">
+				<!-- Remove spaces from the title because IDs can't have them -->
 				<xsl:value-of select="translate($title, ' ', '')"/>
 			</xsl:attribute>
 
@@ -49,7 +52,10 @@
 				</xsl:variable>
 
 				<sect2>
+
+					<!-- Generate a section ID from the title -->
 					<xsl:attribute name="id">
+						<!-- Remove spaces from the title because IDs can't have them -->
 						<xsl:value-of select="translate($title2, ' ', '')"/>
 					</xsl:attribute>
 
@@ -60,7 +66,9 @@
 					<itemizedlist>
 						<xsl:apply-templates select="sep:Article"/>
 					</itemizedlist>
+
 				</sect2>
+
 			</xsl:if>		
 
 			<xsl:if test="sep:Book">
@@ -72,7 +80,10 @@
 				</xsl:variable>
 
 				<sect2>
+
+					<!-- Generate a section ID from the title -->
 					<xsl:attribute name="id">
+						<!-- Remove spaces from the title because IDs can't have them -->
 						<xsl:value-of select="translate($title2, ' ', '')"/>
 					</xsl:attribute>
 
@@ -95,9 +106,13 @@
 				</xsl:variable>
 				
 				<sect2>
+
+					<!-- Generate a section ID from the title -->
 					<xsl:attribute name="id">
+						<!-- Remove spaces from the title because IDs can't have them -->
 						<xsl:value-of select="translate($title2, ' ', '')"/>
 					</xsl:attribute>
+
 					<title>					
 						<xsl:value-of select="$title2"/>
 					</title>
@@ -117,7 +132,10 @@
 				</xsl:variable>
 
 				<sect2>
+
+					<!-- Generate a section ID from the title -->
 					<xsl:attribute name="id">
+						<!-- Remove spaces from the title because IDs can't have them -->
 						<xsl:value-of select="translate($title2, ' ', '')"/>
 					</xsl:attribute>
 

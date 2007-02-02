@@ -44,8 +44,9 @@
 
 				<sect1>
 
-					<!-- Add an ID attribute to the section element. All spaces have to be removed according to the DocBook spec. -->
+					<!-- Generate a section ID from the title -->
 					<xsl:attribute name="id">
+						<!-- Remove spaces from the title because IDs can't have them -->
 						<xsl:value-of select="translate($title, ' ', '')"/>
 					</xsl:attribute>
 
@@ -62,8 +63,9 @@
 								<xsl:value-of select="current-grouping-key()"/>
 							</xsl:variable>
 
-							<!-- Add an ID attribute to the section element. All spaces have to be removed according to the DocBook spec. -->
+							<!-- Generate a section ID from the title -->
 							<xsl:attribute name="id">
+								<!-- Remove spaces from the title because IDs can't have them -->
 								<xsl:value-of select="translate($subTitle, ' ', '')"/>
 							</xsl:attribute>
 
@@ -86,8 +88,9 @@
 				
 				<sect1>
 
-					<!-- Add an ID attribute to the section element. All spaces have to be removed according to the DocBook spec. -->
+					<!-- Generate a section ID from the title -->
 					<xsl:attribute name="id">
+						<!-- Remove spaces from the title because IDs can't have them -->
 						<xsl:value-of select="translate($title, ' ', '')"/>
 					</xsl:attribute>
 					
