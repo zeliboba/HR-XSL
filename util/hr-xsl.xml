@@ -75,7 +75,7 @@ Author: Trevor Harmon
 
 			<!-- Make sure xmllint can be found -->
 			<if>
-				<available file="xmllint2" filepath="${env.PATH}"/>
+				<available file="xmllint" filepath="${env.PATH}"/>
 				<then>
 
 					<tempfile property="temp.file"/>   
