@@ -7,7 +7,10 @@ Author: Trevor Harmon
 
 <project name="hr-xsl" default="all">
 
-	<!-- Grab the directory of this build file (instead of the directory of whatever includes this file)-->
+	<!-- Handle to the environment properties -->
+	<property environment="env"/>
+
+	<!-- Directory of this build file (instead of the directory of whatever includes this file)-->
 	<dirname property="hr-xsl.basedir" file="${ant.file.hr-xsl}/.."/>
 
 	<!-- Location of the DocBook XSL stylesheets -->
@@ -52,23 +55,41 @@ Author: Trevor Harmon
 		<sequential>
 			<tempfile property="temp.file"/> 
 			<tidy srcfile="@{in}" destfile="${temp.file}" failonerror="true"> 
-				<parameter name="indent" value="auto"/> 
+				<parameter name="indent" value="auto"/>  
+				<parameter name="wrap" value="0"/>   <!-- Turn off line wrapping -->
 			</tidy> 
 			<move file="${temp.file}" tofile="@{in}"/>  
 		</sequential>
 	</macrodef>
 	
-	<!-- Tidy up an XML file -->
+	<!-- Tidy up an XML file. -->
+	<!-- It would be possible to use the <tidy> task for this macro, but it does not correctly -->
+	<!-- handle spaces in some situations. See: http://lists.w3.org/Archives/Public/html-tidy/2007JanMar/0027.html -->
+	<!-- Instead, we use the xmllint utility, which does not have the whitespace problem. This utility -->
+	<!-- is not Java-based, however, and some users do not have it installed. On the other hand, tidying -->
+	<!-- the intermediate DocBook representation of the resume file is unimportant for most users. -->
+	<!-- Therefore, we use xmllint if it's available and silently fail if not. -->
 	<macrodef name="tidy-xml">
 		<attribute name="in" description="The XML file to tidy up"/>
 		<sequential>
-			<tempfile property="temp.file"/> 
-			<tidy srcfile="@{in}" destfile="${temp.file}" failonerror="true"> 
-				<parameter name="indent" value="auto"/> 
-				<parameter name="input-xml" value="yes"/> 
-				<parameter name="char-encoding" value="UTF-8"/> 
-			</tidy> 
-			<move file="${temp.file}" tofile="@{in}"/>  
+
+			<!-- Make sure xmllint can be found -->
+			<if>
+				<available file="xmllint2" filepath="${env.PATH}"/>
+				<then>
+
+					<tempfile property="temp.file"/>   
+
+					<!-- Use xmllint to tidy up the file -->
+					<exec executable="xmllint" failonerror="true">
+						<arg line="--output ${temp.file} --format @{in}"/>
+					</exec>
+
+					<move file="${temp.file}" tofile="@{in}"/>    
+
+				</then>
+			</if>
+			
 		</sequential>
 	</macrodef>
 	
@@ -231,7 +252,6 @@ Author: Trevor Harmon
 				<sequential>
 					
 					<!-- Make sure the lynx command is available -->
-					<property environment="env"/>
 					<available file="lynx" filepath="${env.PATH}" property="lynx-available"/>
 					<fail unless="lynx-available" message="Could not create plain-text version of resume because lynx was not found on the path (${env.PATH}). Please install Lynx (http://lynx.isc.org/)."/>
 					
