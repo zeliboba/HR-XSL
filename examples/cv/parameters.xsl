@@ -10,6 +10,8 @@
 
 
 	<!-- DocBook parameters -->
+	<!-- HTML parameter reference: http://docbook.sourceforge.net/release/xsl/current/doc/html/index.html -->
+	<!-- PDF parameter reference:  http://docbook.sourceforge.net/release/xsl/current/doc/fo/index.html -->
 
 	<!-- Generate table of contents? 'article toc'=yes (default), 'article nop'=no -->
 	<!-- <xsl:param name="generate.toc" select="'article nop'"/>  -->

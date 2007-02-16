@@ -3,7 +3,7 @@
 	<!-- HR-XSL parameters -->
 	
 	<!-- Month format options: short (default), long -->
-	<xsl:param name="month.format" select="long"/> 
+	<xsl:param name="month.format" select="'long'"/> 
 
 	<!-- Example of localization -->
 	<!-- <xsl:param name="lang" select="it"/>  -->
