@@ -76,11 +76,17 @@
 				<xsl:text> </xsl:text>
 
 				<xsl:value-of select="sep:EventName"/> 
-				<xsl:text>, </xsl:text> 
+				
+				<xsl:if test="sep:AffiliatedOrganization">
+					<xsl:text>, </xsl:text>
+					<xsl:value-of select="sep:AffiliatedOrganization"/>
+				</xsl:if>
+				
+				<xsl:text>. </xsl:text> 
 				
 				<xsl:if test="sep:Location">
 					<xsl:value-of select="sep:Location"/>
-					<xsl:text>, </xsl:text>
+					<xsl:text>. </xsl:text>
 				</xsl:if>
 				
 				<xsl:apply-templates select="sep:StartDate"/>
