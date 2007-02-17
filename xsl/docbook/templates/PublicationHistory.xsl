@@ -205,6 +205,7 @@
 				</xsl:if>
 
 				<xsl:if test="sep:Issue">
+					<!-- FIXME: If the sep:Issue content is non-numeric, do not output this message. -->
 					<xsl:call-template name="message">
 						<xsl:with-param name="name">publicationHistory.issue</xsl:with-param>
 					</xsl:call-template>
