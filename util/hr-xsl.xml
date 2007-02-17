@@ -62,37 +62,6 @@ Author: Trevor Harmon
 		</sequential>
 	</macrodef>
 	
-	<!-- Tidy up an XML file. -->
-	<!-- It would be possible to use the <tidy> task for this macro, but it does not correctly -->
-	<!-- handle spaces in some situations. See: http://lists.w3.org/Archives/Public/html-tidy/2007JanMar/0027.html -->
-	<!-- Instead, we use the xmllint utility, which does not have the whitespace problem. This utility -->
-	<!-- is not Java-based, however, and some users do not have it installed. On the other hand, tidying -->
-	<!-- the intermediate DocBook representation of the resume file is unimportant for most users. -->
-	<!-- Therefore, we use xmllint if it's available and silently fail if not. -->
-	<macrodef name="tidy-xml">
-		<attribute name="in" description="The XML file to tidy up"/>
-		<sequential>
-
-			<!-- Make sure xmllint can be found -->
-			<if>
-				<available file="xmllint" filepath="${env.PATH}"/>
-				<then>
-
-					<tempfile property="temp.file"/>   
-
-					<!-- Use xmllint to tidy up the file -->
-					<exec executable="xmllint" failonerror="true">
-						<arg line="--output ${temp.file} --format @{in}"/>
-					</exec>
-
-					<move file="${temp.file}" tofile="@{in}"/>    
-
-				</then>
-			</if>
-			
-		</sequential>
-	</macrodef>
-	
 	<!-- Performs an XSL translation of an XML file using the Saxon processor. -->
 	<presetdef name="saxon">
 		<!-- The processor=SaxonLiaison setting causes our custom XSLTLiaison class to be used. -->
@@ -153,7 +122,8 @@ Author: Trevor Harmon
 				</targetfiles>
 				<sequential>
 					<resume-to-docbook in="@{in}"/> 
-					<tidy-xml in="${in}-docbook.xml"/>
+					<!-- Do not tidy the XML output. Both jTidy and xmllint are unable to preserve spaces properly when tidying. -->
+					<!-- <tidy-xml in="${in}-docbook.xml"/> -->
 				</sequential>
 			</outofdate>
 
@@ -194,7 +164,8 @@ Author: Trevor Harmon
 				</targetfiles>
 				<sequential>
 					<resume-to-docbook in="@{in}"/> 
-					<tidy-xml in="${in}-docbook.xml"/>
+					<!-- Do not tidy the XML output. Both jTidy and xmllint are unable to preserve spaces properly when tidying. -->
+					<!-- <tidy-xml in="${in}-docbook.xml"/> -->
 				</sequential>
 			</outofdate>
 
@@ -208,7 +179,8 @@ Author: Trevor Harmon
 				</targetfiles> 
 				<sequential> 
 					<docbook-to format="fo" in="${in}-docbook.xml" out="${in}.fo"/>  
-					<tidy-xml in="${in}.fo"/> 
+					<!-- Do not tidy the XML output. Both jTidy and xmllint are unable to preserve spaces properly when tidying. -->
+					<!-- <tidy-xml in="${in}.fo"/>  -->
 				</sequential> 
 			</outofdate> 
 
