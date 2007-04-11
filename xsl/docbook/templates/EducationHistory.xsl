@@ -54,6 +54,7 @@
 							<row>
 								
 								<entry>
+
 									<emphasis role="bold">
 
 										<!-- If the DegreeName element is specified, use it. Otherwise, generate the degree name -->
@@ -78,6 +79,14 @@
 										</xsl:if>
 									
 									</emphasis>
+									
+									<!-- Academic honors -->
+									<xsl:if test="sep:DegreeName/@academicHonors">
+										<xsl:text> (</xsl:text>
+										<xsl:value-of select="sep:DegreeName/@academicHonors"/>
+										<xsl:text>)</xsl:text>
+									</xsl:if>
+
 								</entry>
 								
 								<!-- Degree date -->
