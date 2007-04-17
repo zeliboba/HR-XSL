@@ -209,6 +209,12 @@
 				</xsl:otherwise>
 			</xsl:choose>
 		</xsl:if>
+		
+		<xsl:if test="sep:Competency">
+			<itemizedlist>
+				<xsl:apply-templates select="sep:Competency"/>
+			</itemizedlist>
+		</xsl:if>
 
 	</xsl:template>
 
