@@ -20,7 +20,7 @@ Author: Trevor Harmon
 	<property name="docbook.xml.dir" value="${hr-xsl.basedir}/lib/docbook-xml-4.5"/> 
 
 	<path id="saxon.classpath">   
-		<fileset dir="${hr-xsl.basedir}/lib/saxon-b-8.8">   
+		<fileset dir="${hr-xsl.basedir}/lib/saxon-b-8.9">   
 			<include name="**/*.jar"/>   
 		</fileset>   
 	</path>   
