@@ -14,7 +14,7 @@ Author: Trevor Harmon
 	<dirname property="hr-xsl.basedir" file="${ant.file.hr-xsl}/.."/>
 
 	<!-- Location of the DocBook XSL stylesheets -->
-	<property name="docbook.xsl.dir" value="${hr-xsl.basedir}/lib/docbook-xsl-1.71.1"/> 
+	<property name="docbook.xsl.dir" value="${hr-xsl.basedir}/lib/docbook-xsl-1.72.0"/> 
 
 	<!-- Location of the DocBook DTD -->
 	<property name="docbook.xml.dir" value="${hr-xsl.basedir}/lib/docbook-xml-4.5"/> 
