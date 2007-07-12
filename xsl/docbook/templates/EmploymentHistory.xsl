@@ -177,8 +177,30 @@
 										<xsl:if test="string-length(sep:OrgName/sep:OrganizationName) != 0">
 											<xsl:text>, </xsl:text>
 										</xsl:if>
-										<xsl:value-of select="../sep:EmployerOrgName"/>
+										<xsl:choose>
+											<!-- If WebSite is specified, put a link to it around the EmployerOrgName. -->
+											<xsl:when test="sep:OrgInfo/sep:WebSite">
+												<ulink>
+													<xsl:attribute name="url">
+														<xsl:value-of select="sep:OrgInfo/sep:WebSite"/>
+													</xsl:attribute>
+													<xsl:value-of select="../sep:EmployerOrgName"/>
+												</ulink>
+											</xsl:when>
+											<!-- Otherwise, just output the EmployerOrgName as-is. -->
+											<xsl:otherwise>
+												<xsl:value-of select="../sep:EmployerOrgName"/>
+											</xsl:otherwise>
+										</xsl:choose>
+
+										<xsl:if test="sep:OrgInfo/sep:LocationSummary">
+											<xsl:text> (</xsl:text>
+											<xsl:apply-templates select="sep:OrgInfo/sep:LocationSummary"/>
+											<xsl:text>)</xsl:text>
+										</xsl:if>
+
 									</xsl:if>
+
 								</emphasis>
 						
 							</entry>

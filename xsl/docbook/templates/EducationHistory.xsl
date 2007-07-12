@@ -122,8 +122,9 @@
 									<emphasis>
 										<xsl:value-of select="../sep:School/sep:SchoolName"/>
 										<xsl:if test="../sep:LocationSummary">
-											<xsl:text>, </xsl:text>
+											<xsl:text> (</xsl:text>
 											<xsl:apply-templates select="../sep:LocationSummary"/>
+											<xsl:text>)</xsl:text>
 										</xsl:if>
 									</emphasis>
 								</entry>
