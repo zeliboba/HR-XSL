@@ -28,7 +28,7 @@
 	<!-- Paper orientation: 'portrait' (default), 'landscape' -->
 	<!-- <xsl:param name="page.orientation" select="'landscape'"/>  -->
 	
-	<!-- Change the font size of the section headers (PDF output only)-->
+	<!-- Change the font size of the section headers (PDF output only) -->
 	<xsl:attribute-set name="section.title.level1.properties">
 		<xsl:attribute name="font-size">
 			<xsl:value-of select="14"/>
@@ -42,4 +42,14 @@
 		</xsl:attribute>
 	</xsl:attribute-set>
 
+	<!-- Give links a color to make them stand out (PDF output only) -->
+	<xsl:attribute-set name="xref.properties">
+		<xsl:attribute name="color">
+			<xsl:choose>
+				<xsl:when test="self::ulink">blue</xsl:when>
+				<xsl:otherwise>inherit</xsl:otherwise>
+			</xsl:choose>
+		</xsl:attribute>
+	</xsl:attribute-set>
+	
 </xsl:stylesheet>
