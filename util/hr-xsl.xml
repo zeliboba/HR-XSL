@@ -28,7 +28,7 @@ Author: Trevor Harmon
 	<!-- Load the FOP task -->
     <taskdef name="fop" classname="org.apache.fop.tools.anttasks.Fop">
 		<classpath>
-			<fileset dir="${hr-xsl.basedir}/lib/fop-trunk-r475989">
+			<fileset dir="${hr-xsl.basedir}/lib/fop-0.93">
 				<include name="fop.jar"/>
 				<include name="lib/*.jar"/> 
 			</fileset>
