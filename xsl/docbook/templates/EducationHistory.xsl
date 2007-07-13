@@ -174,7 +174,7 @@
 				</informaltable>
 
 				<!-- Ugly hack to add some vertical space between the entries so they're not squished together -->
-				<para></para>				
+				<para/>
 
 			</xsl:for-each> 
 			

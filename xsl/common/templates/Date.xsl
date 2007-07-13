@@ -34,7 +34,7 @@
 		<xsl:value-of select="substring-before(., '-')"/>
 	</xsl:template>
 	
-	<xsl:template match="sep:AnyDate">
+	<xsl:template match="sep:AnyDate | sep:RevisionDate">
 		
 		<xsl:choose>
 

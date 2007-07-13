@@ -48,7 +48,9 @@
 	<xsl:include href="templates/ResumeAdditionalItems.xsl"/>
 
 	<xsl:template match="/sep:Resume/sep:StructuredXMLResume">
+		
 		<article>
+
 			<xsl:apply-templates select="sep:ContactInfo"/> 
 			
 			<xsl:if test="sep:ExecutiveSummary">
@@ -81,7 +83,24 @@
 			<xsl:apply-templates select="sep:Achievements"/>  
 			<xsl:apply-templates select="sep:Associations"/>  
 			<xsl:apply-templates select="sep:ResumeAdditionalItems"/>   
+
+			<xsl:if test="sep:RevisionDate">
+				<sect1 role="NotInToc" id="revisionDate">
+					<title/>
+					<para>
+						<emphasis>
+							<xsl:call-template name="message">
+								<xsl:with-param name="name">revisionDate</xsl:with-param>
+							</xsl:call-template>
+							<xsl:text>: </xsl:text>
+							<xsl:apply-templates select="sep:RevisionDate"/>
+						</emphasis>
+					</para>
+				</sect1>
+			</xsl:if>
+
 		</article>
+		
     </xsl:template>
 
 </xsl:stylesheet>

@@ -52,4 +52,7 @@
 		</xsl:attribute>
 	</xsl:attribute-set>
 	
+	<!-- Keep certain sections out of the table of contents (necessary for PDF output of RevisionDate) -->
+	<xsl:template match="sect1[@role = 'NotInToc']"  mode="toc"/>
+
 </xsl:stylesheet>
