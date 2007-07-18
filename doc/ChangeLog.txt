@@ -1,3 +1,22 @@
+0.11 (2007-07-18) Trevor Harmon
+
+Examples
+	- Turned off tidying of XML output. Neither jTidy nor xmllint are able to preserve spaces properly when tidying an XML file. HTML tidying is still being done.
+	- Links in the PDF output are now colorized to make their existence obvious
+Stylesheets
+	- Reworked SpeakingEventsHistory so that AffiliatedOrganization content is included
+	- Added support for the academicHonors attribute of DegreeName. Thanks to Nick Chalko for the patch!
+	- Added support for Competency (skill) elements in the EmploymentHistory/PositionHistory element. Thanks to Nick Chalko for the patch!
+	- Added support for EmploymentHistory/EmployerOrg/PositionHistory/OrgInfo/WebSite. Thanks to Guido De Rosa for the patch!
+	- Employer and educational institution locations are now separated by parentheses instead of a comma.
+	- Added support for RevisionDate. Thanks to Guido De Rosa for the patch!
+Libraries
+	- Upgraded FOP from repository snapshot to final release of 0.93
+	- Upgraded DocBook XSL to 1.72.0
+	- Updated namespace to HR-XML 2.5 release
+Documentation
+	- External links to HR-XML documents now target the 2.5 release
+
 0.10.1 (2007-02-03) Trevor Harmon
 
 Stylesheets
@@ -5,6 +24,7 @@ Stylesheets
 	- A few additional code comments
 Documentation
 	- Minor fixes
+	Libraries
 	
 0.10 (2007-01-07) Trevor Harmon
 
