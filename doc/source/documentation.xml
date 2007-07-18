@@ -124,7 +124,7 @@
 				<listitem>
 					<simpara>
 						<emphasis role="bold">
-							<ulink url="http://java.sun.com/javase/downloads/index.html">Java</ulink>
+							<ulink url="http://java.sun.com/javase/downloads/index.jsp">Java</ulink>
 						</emphasis>
 
 						5.0 (also known as 1.5) or higher
@@ -586,7 +586,7 @@
 					</para>
 					
 					<para>
-						The HR-XML website has <ulink url="http://ns.hr-xml.org/2_4/HR-XML-2_4/CPO/PersonName.html">more documentation</ulink>.
+						The HR-XML website has <ulink url="http://ns.hr-xml.org/2_5/HR-XML-2_5/CPO/PersonName.html">more documentation</ulink>.
 					</para>
 				</sect3>
 
@@ -656,7 +656,7 @@ Telephone +1 (925) 598-5209
 						</para>
 
 						<para>
-							The HR-XML website has <ulink url="http://ns.hr-xml.org/2_4/HR-XML-2_4/CPO/ContactMethod.html">more documentation</ulink>.
+							The HR-XML website has <ulink url="http://ns.hr-xml.org/2_5/HR-XML-2_5/CPO/ContactMethod.html">more documentation</ulink>.
 						</para>
 					</sect4>
 					
@@ -772,7 +772,7 @@ Mexico					</screen>
 						</para>
 
 						<para>
-							The HR-XML website has <ulink url="http://ns.hr-xml.org/2_4/HR-XML-2_4/CPO/PostalAddress.html">more documentation</ulink>.
+							The HR-XML website has <ulink url="http://ns.hr-xml.org/2_5/HR-XML-2_5/CPO/PostalAddress.html">more documentation</ulink>.
 						</para>
 					</sect4>
 
@@ -829,7 +829,7 @@ such community.	</screen>
 				</para>
 				
 				<para>
-					The HR-XML website has <ulink url="http://ns.hr-xml.org/2_4/HR-XML-2_4/SEP/Resume.html#_Toc127541917">more documentation</ulink>.
+					The HR-XML website has <ulink url="http://ns.hr-xml.org/2_5/HR-XML-2_5/SEP/Resume.html#_Toc127541917">more documentation</ulink>.
 				</para>
 			</sect2>
 			
@@ -959,7 +959,7 @@ Work Experience
 				</para>
 
 				<para>
-					The HR-XML website has <ulink url="http://ns.hr-xml.org/2_4/HR-XML-2_4/CPO/EmploymentHistory.html">more documentation</ulink>.
+					The HR-XML website has <ulink url="http://ns.hr-xml.org/2_5/HR-XML-2_5/CPO/EmploymentHistory.html">more documentation</ulink>.
 				</para>
 			</sect2>
 
@@ -1095,7 +1095,7 @@ Education
 				</para>
 				
 				<para>
-					The HR-XML website has <ulink url="http://ns.hr-xml.org/2_4/HR-XML-2_4/CPO/EducationHistory.html">more documentation</ulink>.
+					The HR-XML website has <ulink url="http://ns.hr-xml.org/2_5/HR-XML-2_5/CPO/EducationHistory.html">more documentation</ulink>.
 				</para>
 			</sect2>
 
@@ -1109,7 +1109,7 @@ Education
 			</para>
 
 			<para>
-				The HR-XML website has <ulink url="http://ns.hr-xml.org/2_4/HR-XML-2_4/SEP/Resume.html#_Toc127541926">more documentation</ulink>.
+				The HR-XML website has <ulink url="http://ns.hr-xml.org/2_5/HR-XML-2_5/SEP/Resume.html#_Toc127541926">more documentation</ulink>.
 			</para>
 		</sect1>
 
@@ -1121,7 +1121,7 @@ Education
 			</para>
 
 			<para>
-				The HR-XML website has <ulink url="http://ns.hr-xml.org/2_4/HR-XML-2_4/CPO/MilitaryHistory.html">more documentation</ulink>.
+				The HR-XML website has <ulink url="http://ns.hr-xml.org/2_5/HR-XML-2_5/CPO/MilitaryHistory.html">more documentation</ulink>.
 			</para>
 		</sect1>
 
@@ -1133,7 +1133,7 @@ Education
 			</para>
 
 			<para>
-				The HR-XML website has <ulink url="http://ns.hr-xml.org/2_4/HR-XML-2_4/SEP/Resume.html#_Toc127541934">more documentation</ulink>.
+				The HR-XML website has <ulink url="http://ns.hr-xml.org/2_5/HR-XML-2_5/SEP/Resume.html#_Toc127541934">more documentation</ulink>.
 			</para>
 		</sect1>
 
@@ -1269,7 +1269,7 @@ Other Publications
 				</para>
 
 				<para>
-					The HR-XML website has <ulink url="http://ns.hr-xml.org/2_4/HR-XML-2_4/SEP/Resume.html#_Toc127541938">more documentation</ulink>.
+					The HR-XML website has <ulink url="http://ns.hr-xml.org/2_5/HR-XML-2_5/SEP/Resume.html#_Toc127541938">more documentation</ulink>.
 				</para>
 			</sect2>
 
@@ -1333,7 +1333,7 @@ Speaking Events
 				<title>Notes</title>
 
 				<para>
-					The HR-XML website has <ulink url="http://ns.hr-xml.org/2_4/HR-XML-2_4/SEP/Resume.html#_Toc127541942">more documentation</ulink>.
+					The HR-XML website has <ulink url="http://ns.hr-xml.org/2_5/HR-XML-2_5/SEP/Resume.html#_Toc127541942">more documentation</ulink>.
 				</para>
 			</sect2>
 
@@ -1391,11 +1391,11 @@ Qualifications
 				</para>
 				
 				<para>
-					The <sgmltag>Competency</sgmltag> element is complex and very detailed, as evidenced by the <ulink url="http://ns.hr-xml.org/2_4/HR-XML-2_4/CPO/Competencies.html">documentation</ulink>, but HR-XSL ignores everything except for the <sgmltag class="attribute">name</sgmltag> attribute. A <sgmltag class="attribute">name</sgmltag> on the first level of competencies is assumed to be a skill category, and a <sgmltag class="attribute">name</sgmltag> on the second level is assumed to be a skill in this category.
+					The <sgmltag>Competency</sgmltag> element is complex and very detailed, as evidenced by the <ulink url="http://ns.hr-xml.org/2_5/HR-XML-2_5/CPO/Competencies.html">documentation</ulink>, but HR-XSL ignores everything except for the <sgmltag class="attribute">name</sgmltag> attribute. A <sgmltag class="attribute">name</sgmltag> on the first level of competencies is assumed to be a skill category, and a <sgmltag class="attribute">name</sgmltag> on the second level is assumed to be a skill in this category.
 				</para>
 
 				<para>
-					The HR-XML website has <ulink url="http://ns.hr-xml.org/2_4/HR-XML-2_4/SEP/Resume.html#_Toc127541946">more documentation</ulink>.
+					The HR-XML website has <ulink url="http://ns.hr-xml.org/2_5/HR-XML-2_5/SEP/Resume.html#_Toc127541946">more documentation</ulink>.
 				</para>
 
 			</sect2>
@@ -1455,7 +1455,7 @@ Languages
 				</para>
 
 				<para>
-					The HR-XML website has <ulink url="http://ns.hr-xml.org/2_4/HR-XML-2_4/SEP/Resume.html#_Toc127541947">more documentation</ulink>.
+					The HR-XML website has <ulink url="http://ns.hr-xml.org/2_5/HR-XML-2_5/SEP/Resume.html#_Toc127541947">more documentation</ulink>.
 				</para>
 
 			</sect2>
@@ -1499,7 +1499,7 @@ Achievements
 				<title>Notes</title>
 
 				<para>
-					The HR-XML website has <ulink url="http://ns.hr-xml.org/2_4/HR-XML-2_4/SEP/Resume.html#_Toc127541951">more documentation</ulink>.
+					The HR-XML website has <ulink url="http://ns.hr-xml.org/2_5/HR-XML-2_5/SEP/Resume.html#_Toc127541951">more documentation</ulink>.
 				</para>
 
 			</sect2>
@@ -1569,7 +1569,7 @@ Professional Associations
 				</para>
 
 				<para>
-					The HR-XML website has <ulink url="http://ns.hr-xml.org/2_4/HR-XML-2_4/SEP/Resume.html#_Toc127541951">more documentation</ulink>.
+					The HR-XML website has <ulink url="http://ns.hr-xml.org/2_5/HR-XML-2_5/SEP/Resume.html#_Toc127541951">more documentation</ulink>.
 				</para>
 
 			</sect2>
@@ -1584,7 +1584,7 @@ Professional Associations
 			</para>
 
 			<para>
-				The HR-XML website has <ulink url="http://ns.hr-xml.org/2_4/HR-XML-2_4/SEP/Resume.html#_Toc127541959">more documentation</ulink>.
+				The HR-XML website has <ulink url="http://ns.hr-xml.org/2_5/HR-XML-2_5/SEP/Resume.html#_Toc127541959">more documentation</ulink>.
 			</para>
 
 		</sect1>
@@ -1597,7 +1597,7 @@ Professional Associations
 			</para>
 
 			<para>
-				The HR-XML website has <ulink url="http://ns.hr-xml.org/2_4/HR-XML-2_4/SEP/Resume.html#_Toc127541930">more documentation</ulink>.
+				The HR-XML website has <ulink url="http://ns.hr-xml.org/2_5/HR-XML-2_5/SEP/Resume.html#_Toc127541930">more documentation</ulink>.
 			</para>
 		</sect1>
 
@@ -1667,7 +1667,7 @@ Hobbies
 				</para>
 
 				<para>
-					The HR-XML website has <ulink url="http://ns.hr-xml.org/2_4/HR-XML-2_4/SEP/Resume.html#_Toc127541963">more documentation</ulink>.
+					The HR-XML website has <ulink url="http://ns.hr-xml.org/2_5/HR-XML-2_5/SEP/Resume.html#_Toc127541963">more documentation</ulink>.
 				</para>
 
 			</sect2>
@@ -1682,7 +1682,7 @@ Hobbies
 			</para>
 
 			<para>
-				The HR-XML website has <ulink url="http://ns.hr-xml.org/2_4/HR-XML-2_4/CPO/SupportingMaterials.html">more documentation</ulink>.
+				The HR-XML website has <ulink url="http://ns.hr-xml.org/2_5/HR-XML-2_5/CPO/SupportingMaterials.html">more documentation</ulink>.
 			</para>
 		</sect1>
 
@@ -1725,7 +1725,7 @@ Hobbies
 			</itemizedlist>
 
 			<para>
-				The HR-XML website has <ulink url="http://ns.hr-xml.org/2_4/HR-XML-2_4/CPO/DateTimeDataTypes.html">more documentation</ulink>.
+				The HR-XML website has <ulink url="http://ns.hr-xml.org/2_5/HR-XML-2_5/CPO/DateTimeDataTypes.html">more documentation</ulink>.
 			</para>
 			
 		</sect1>
