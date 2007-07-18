@@ -20,7 +20,7 @@
 
 <xsl:stylesheet version="2.0"
 	xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
-	xmlns:sep="http://ns.hr-xml.org/2006-02-28"
+	xmlns:sep="http://ns.hr-xml.org/2007-04-15"
 	exclude-result-prefixes="sep">
 
 	<xsl:template match="sep:EducationHistory">

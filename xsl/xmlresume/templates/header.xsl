@@ -19,7 +19,7 @@
 -->
 
 <xsl:stylesheet version="2.0"
-	xmlns="http://ns.hr-xml.org/2006-02-28" 
+	xmlns="http://ns.hr-xml.org/2007-04-15" 
 	xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
 	xmlns:res="http://xmlresume.sourceforge.net/resume/0.0"
 	exclude-result-prefixes="res">
