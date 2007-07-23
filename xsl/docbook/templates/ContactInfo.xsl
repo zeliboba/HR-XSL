@@ -145,13 +145,9 @@
 								</emphasis>
 							</entry>
 							<entry>
-								<ulink>
-									<xsl:attribute name="url">
-										<xsl:text>mailto:</xsl:text>
-										<xsl:value-of select="normalize-space(sep:InternetEmailAddress)"/>
-									</xsl:attribute>
+								<email>
 									<xsl:value-of select="normalize-space(sep:InternetEmailAddress)"/>
-								</ulink>
+								</email>
 							</entry>
 						</row>
 					</xsl:if>
