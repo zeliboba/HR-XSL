@@ -46,6 +46,9 @@
 	<xsl:include href="templates/Achievements.xsl"/>
 	<xsl:include href="templates/Associations.xsl"/>
 	<xsl:include href="templates/ResumeAdditionalItems.xsl"/>
+	
+	<!-- Ignore the ResumeId tag (if it is present) -->
+	<xsl:template match="/sep:Resume/sep:ResumeId"/>
 
 	<xsl:template match="/sep:Resume/sep:StructuredXMLResume">
 		
