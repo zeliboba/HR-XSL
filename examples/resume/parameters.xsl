@@ -6,7 +6,7 @@
 	<xsl:param name="month.format" select="'long'"/> 
 
 	<!-- Example of localization -->
-	<!-- <xsl:param name="lang" select="it"/>  -->
+	<!-- <xsl:param name="lang" select="'it'"/>  -->
 
 
 	<!-- DocBook parameters -->

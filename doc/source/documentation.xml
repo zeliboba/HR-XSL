@@ -323,7 +323,7 @@
 					HR-XSL currently provides translations for English and Italian. To change the output language to one of these translations, set the <varname>lang</varname> parameter so that it matches one of the filenames in the <filename class="directory">xsl/common/messages</filename> directory of the HR-XSL distribution. For example, to change to Italian, add the following line to your <filename>parameters.xsl</filename> file:
 				</para>
 				
-				<programlisting>&lt;xsl:param name="lang" select="it"/&gt;</programlisting>
+				<programlisting>&lt;xsl:param name="lang" select="'it'"/&gt;</programlisting>
 
 				<para>
 					For languages that HR-XSL does not provide, you can create your own. To do so, go to the <filename class="directory">xsl/common/messages</filename> directory and make a copy of the <filename>en.xml</filename> file, giving it a name that represents your language. For example, if you want to create a French localization, you should use the <ulink url="http://www.loc.gov/standards/iso639-2/php/code_list.php">two-letter language code</ulink> for French (<quote>fr</quote>). You can then edit this new <filename>fr.xml</filename> file and translate each English message to its French equivalent. Finally, you can tell HR-XSL to use this translation by setting the <varname>lang</varname> parameter as shown above.<footnote><para>If you have created a localization file for your language, please consider submitting it to the <ulink url="mailto:trevor@vocaro.com">HR-XSL maintainer</ulink> so that it can be included in the distribution for others to use.</para></footnote>
