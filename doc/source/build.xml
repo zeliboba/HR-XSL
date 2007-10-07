@@ -1,11 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<project default="html-chunked">
+<project default="all">
 
 	<import file="../../util/hr-xsl.xml"/>
 
 	<property name="chunked.html.dir" value="../multi-page"/>
 	<property name="no-chunked.html.dir" value="../single-page"/>
+	
+	<target name="all" depends="html-chunked,html-nochunks"/>
 
 	<target name="html-chunked" depends="validate">
 
