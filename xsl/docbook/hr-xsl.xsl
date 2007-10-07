@@ -39,10 +39,11 @@
 	<xsl:include href="templates/ContactInfo.xsl"/>
 	<xsl:include href="templates/EmploymentHistory.xsl"/>
 	<xsl:include href="templates/EducationHistory.xsl"/>
+	<xsl:include href="templates/LicensesAndCertifications.xsl"/>
 	<xsl:include href="templates/PublicationHistory.xsl"/>
 	<xsl:include href="templates/SpeakingEventsHistory.xsl"/>
-	<xsl:include href="templates/Languages.xsl"/>
 	<xsl:include href="templates/Qualifications.xsl"/>
+	<xsl:include href="templates/Languages.xsl"/>
 	<xsl:include href="templates/Achievements.xsl"/>
 	<xsl:include href="templates/Associations.xsl"/>
 	<xsl:include href="templates/ResumeAdditionalItems.xsl"/>
@@ -79,10 +80,11 @@
 			
 			<xsl:apply-templates select="sep:EmploymentHistory"/>  
 			<xsl:apply-templates select="sep:EducationHistory"/>  
+			<xsl:apply-templates select="sep:LicensesAndCertifications"/>  
 			<xsl:apply-templates select="sep:PublicationHistory"/>  
 			<xsl:apply-templates select="sep:SpeakingEventsHistory"/>  
-			<xsl:apply-templates select="sep:Languages"/>  
 			<xsl:apply-templates select="sep:Qualifications"/>  
+			<xsl:apply-templates select="sep:Languages"/>  
 			<xsl:apply-templates select="sep:Achievements"/>  
 			<xsl:apply-templates select="sep:Associations"/>  
 			<xsl:apply-templates select="sep:ResumeAdditionalItems"/>   
