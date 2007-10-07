@@ -71,7 +71,8 @@
 
 					<emphasis>
 						
-						<xsl:text> (</xsl:text>
+						<!-- The #160 code (non-breaking space) is used to force a space to appear. If a simple space is used, it is lost for some reason during the DocBook XSL translation. -->
+						<xsl:text>&#160;(</xsl:text>
 				
 						<xsl:if test="sep:EffectiveDate/sep:ValidFrom">
 							<xsl:call-template name="message">
