@@ -1,3 +1,17 @@
+0.12 (2007-10-07) Trevor Harmon
+Stylesheets
+	- Email in ContactInfo now uses DocBook's <email> tag instead of <ulink> for better output formatting. Thanks to Guido De Rosa for the patch!
+	- The ResumeId tag is now ignored because it was causing a stylesheet error if present. This allows HR-XML files that happen to use ResumeId to be processed with HR-XSL.
+	- Added Dutch translation. Thanks to Hilbert Schraal for the patch!
+	- Fulfilled feature request #1740790: Support the LicensesAndCertifications element
+Libraries
+	- HR-XML 2.5 is now bundled with the HR-XSL distribution. Although this greatly increases the size of the distribution, it avoids the confusion of having two separate downloads on SourceForge, and it allows HR-XSL helper scripts to perform validation of HR-XML files.
+Documentation
+	- Fixed bug #1720859: "Languages" documentation is incorrect
+	- Fixed bug #1719013: Documentation for localization features is incorrect
+Examples
+	- Added validate task to helper script (requires xmllint) and added usage examples to the example build scripts
+
 0.11 (2007-07-18) Trevor Harmon
 
 Examples
