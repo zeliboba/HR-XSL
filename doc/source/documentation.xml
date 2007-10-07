@@ -1105,12 +1105,76 @@ Education
 			<title>LicensesAndCertifications</title>
 			
 			<para>
-				This element is not supported by HR-XSL.
+				This section stores information about licenses, certifications, and other accreditations.
 			</para>
 
-			<para>
-				The HR-XML website has <ulink url="http://ns.hr-xml.org/2_5/HR-XML-2_5/SEP/Resume.html#_Toc127541926">more documentation</ulink>.
-			</para>
+			<sect2 id="LicensesAndCertifications.Examples">
+				<title>Examples</title>
+
+				<programlisting>
+<![CDATA[<LicensesAndCertifications>
+    <LicenseOrCertification>
+        <Name>Drivers License</Name>
+        <IssuingAuthority>Department of Motor Vehicles</IssuingAuthority>
+        <Description>CO 277614</Description>
+        <EffectiveDate>
+            <ValidFrom>
+                <AnyDate>1999-03-04</AnyDate>
+            </ValidFrom>
+            <ValidTo>
+                <AnyDate>2004-03-04</AnyDate>
+            </ValidTo>
+        </EffectiveDate>
+    </LicenseOrCertification>
+    <LicenseOrCertification>
+        <Name>Microsoft Certified Solution Developer (MCSD)</Name>
+        <IssuingAuthority>Microsoft Corporation</IssuingAuthority>
+        <Description>The Microsoft Certified Solution Developer (MCSD) for Microsoft .NET credential is the top-level certification for advanced developers who design and develop leading-edge enterprise solutions, using Microsoft development tools and technologies as well as the Microsoft .NET Framework. Windows Operating System Architecture (WOSA) I, WOSA II, Access 97, VB 5, VB 6 Desktop, VB 6 Distributed, Visual Interdev 6.0, Front Page</Description>
+        <EffectiveDate>
+            <ValidFrom>
+                <AnyDate>2002-09-01</AnyDate>
+            </ValidFrom>
+            <ValidTo>
+                <AnyDate>2004-09-01</AnyDate>
+            </ValidTo>
+            <FirstIssuedDate>
+                <YearMonth>2002-09</YearMonth>
+            </FirstIssuedDate>
+        </EffectiveDate>
+    </LicenseOrCertification>
+</LicensesAndCertifications>]]></programlisting>
+
+			</sect2>
+
+			<sect2 id="LicensesAndCertifications.HR-XSL_Output">
+				<title>HR-XSL Output</title>
+
+				<screen>
+Licenses and Certifications
+
+     * Drivers License, Department of Motor Vehicles (Validity: March 4,
+       1999 - March 4, 2004): CO 277614
+     * Microsoft Certified Solution Developer (MCSD), Microsoft
+       Corporation (Validity: September 1, 2002 - September 1, 2004,
+       First issued: September 2002): The Microsoft Certified Solution
+       Developer (MCSD) for Microsoft .NET credential is the top-level
+       certification for advanced developers who design and develop
+       leading-edge enterprise solutions, using Microsoft development
+       tools and technologies as well as the Microsoft .NET Framework.
+       Windows Operating System Architecture (WOSA) I, WOSA II, Access
+       97, VB 5, VB 6 Desktop, VB 6 Distributed, Visual Interdev 6.0,
+       Front Page</screen>					
+
+			</sect2>
+
+			<sect2 id="LicensesAndCertifications.Notes">
+				<title>Notes</title>
+				
+				<para>
+					The HR-XML website has <ulink url="http://ns.hr-xml.org/2_5/HR-XML-2_5/SEP/Resume.html#_Toc127541926">more documentation</ulink>.
+				</para>
+			</sect2>
+
 		</sect1>
 
 		<sect1 id="MilitaryHistory">
