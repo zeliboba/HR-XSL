@@ -1,0 +1,503 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+    License information for this file is provided in LICENSE.TXT
+    For support, more information, or to report implementation bugs, 
+    please contact the Open Applications Group at xml@openapplications.org 
+     
+    ** Revision: 8.0 **
+    ** Date: 05 April 2002 **
+    Open Applications Group XSD
+    Copyright 1998-2002, All Rights Reserved
+    
+    Name: Nouns/SupplyChainExecution.xsd
+-->
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns="http://www.openapplications.org/oagis" targetNamespace="http://www.openapplications.org/oagis" elementFormDefault="qualified" attributeFormDefault="unqualified">
+        <xs:include schemaLocation="../MfgComponents.xsd"/>
+<!---->
+<!---->
+        <xs:complexType name="SCEHeader">
+                <xs:sequence>
+                        <xs:element name="DocumentId" type="DocumentIdType" minOccurs="0">
+                                <xs:annotation>
+                                        <xs:documentation source="http://www.openapplications.org/oagis">Is a general identifier of a document number.</xs:documentation>
+                                </xs:annotation>
+                        </xs:element>
+                        <xs:element name="AlternateDocumentIds" type="DocumentIds" minOccurs="0">
+                                <xs:annotation>
+                                        <xs:documentation source="http://www.openapplications.org/oagis">Other document identifiers this document maybe known as. This provides a cross-reference to the other parties identifiers for this document.</xs:documentation>
+                                </xs:annotation>
+                        </xs:element>
+                        <xs:element name="ActualFreightTotalCost" type="Amount" minOccurs="0">
+                                <xs:annotation>
+                                        <xs:documentation source="http://www.openapplications.org/oagis">Is used to report the total price charged to the customer for transporting the items or products being sold, produced or purchased.   This amount is determined by the shipping partner and/or reported by the carrier partner upon shipment or delivery of the product.</xs:documentation>
+                                </xs:annotation>
+                        </xs:element>
+                        <xs:element name="DocumentDate" type="DateTime" minOccurs="0">
+                                <xs:annotation>
+                                        <xs:documentation source="http://www.openapplications.org/oagis">Is the timestamp that the document was created in the sending system.</xs:documentation>
+                                </xs:annotation>
+                        </xs:element>
+                        <xs:element name="LastModificationDateTime" type="DateTime" minOccurs="0">
+                                <xs:annotation>
+                                        <xs:documentation source="http://www.openapplications.org/oagis">Is the date of the last update to this document.</xs:documentation>
+                                </xs:annotation>
+                        </xs:element>
+                        <xs:element name="EarliestShipDateTime" type="DateTime" minOccurs="0">
+                                <xs:annotation>
+                                        <xs:documentation source="http://www.openapplications.org/oagis">This identifies the earliest possible date at which a shipment can be made.  This may be used in conjunction with the ShipPriorToDueDateInd which indicates that the item, shipping unit or delivery may be shipped early.</xs:documentation>
+                                </xs:annotation>
+                        </xs:element>
+                        <xs:element name="Warehouse" type="Warehouse" minOccurs="0">
+                                <xs:annotation>
+                                        <xs:documentation source="http://www.openapplications.org/oagis">Is the storage facility for inventory.</xs:documentation>
+                                </xs:annotation>
+                        </xs:element>
+                        <xs:element name="TotalFreightCost" type="Amount" minOccurs="0">
+                                <xs:annotation>
+                                        <xs:documentation source="http://www.openapplications.org/oagis">MDV: How is this different to ActualFreightTotalAmount?</xs:documentation>
+                                </xs:annotation>
+                        </xs:element>
+                        <xs:element name="PartialShipmentInd" type="Indicator" minOccurs="0">
+                                <xs:annotation>
+                                        <xs:documentation source="http://www.openapplications.org/oagis">Identifies when a partial shipment to a customer is allowed. Valid values are '0' for partial shipment not allowed.</xs:documentation>
+                                </xs:annotation>
+                        </xs:element>
+                        <xs:element name="Priority" type="Priority" minOccurs="0">
+                                <xs:annotation>
+                                        <xs:documentation source="http://www.openapplications.org/oagis">Priority of a document, task, or activity.  Could be used for production orders, sales orders, purchase orders, etc.</xs:documentation>
+                                </xs:annotation>
+                        </xs:element>
+                        <xs:element name="ShipUnitQuantity" type="Quantity" minOccurs="0">
+                                <xs:annotation>
+                                        <xs:documentation source="http://www.openapplications.org/oagis">Contains the quantity of units or things shipped. This represents the container(s), not the product shipped.  An example of this is "4 truck loads" or "2 wooden crates".</xs:documentation>
+                                </xs:annotation>
+                        </xs:element>
+                        <xs:group ref="CarrierRoute" minOccurs="0"/>
+                        <xs:element name="OriginationCountry" type="Country" minOccurs="0">
+                                <xs:annotation>
+                                        <xs:documentation source="http://www.openapplications.org/oagis">Represents the identifier of the country of origin.  The list of valid codes can be found in ISO Standard number 3166.</xs:documentation>
+                                </xs:annotation>
+                        </xs:element>
+                        <xs:group ref="ShippingWeights" minOccurs="0"/>
+                        <xs:element name="Description" type="Description" minOccurs="0" maxOccurs="unbounded">
+                                <xs:annotation>
+                                        <xs:documentation source="http://www.openapplications.org/oagis">Is a free-form description of the transaction or any portion of the transaction.</xs:documentation>
+                                </xs:annotation>
+                        </xs:element>
+                        <xs:group ref="Notes" minOccurs="0"/>
+                        <xs:group ref="Transportation" minOccurs="0"/>
+                        <xs:group ref="Temperatures" minOccurs="0"/>
+                        <xs:element ref="Charges" minOccurs="0"/>
+                        <xs:group ref="References" minOccurs="0"/>
+                </xs:sequence>
+        </xs:complexType>
+        <xs:complexType name="SCEUnit">
+                <xs:complexContent>
+                        <xs:extension base="Noun">
+                                <xs:sequence>
+                                        <xs:element name="ContainerId" type="Id" minOccurs="0">
+                                                <xs:annotation>
+                                                        <xs:documentation source="http://www.openapplications.org/oagis">Is the identifier of a container.</xs:documentation>
+                                                </xs:annotation>
+                                        </xs:element>
+                                        <xs:element name="ContainerSealId" type="Id" minOccurs="0">
+                                                <xs:annotation>
+                                                        <xs:documentation source="http://www.openapplications.org/oagis">Identifies the tamper-proof seal placed on a shipping container to prevent pilfering of the contents.</xs:documentation>
+                                                </xs:annotation>
+                                        </xs:element>
+                                        <xs:element name="ContainerType" type="Type" minOccurs="0">
+                                                <xs:annotation>
+                                                        <xs:documentation source="http://www.openapplications.org/oagis">Is a classification of containers.</xs:documentation>
+                                                </xs:annotation>
+                                        </xs:element>
+                                        <xs:element name="FreightItemNumber" type="Code" minOccurs="0">
+                                                <xs:annotation>
+                                                        <xs:documentation source="http://www.openapplications.org/oagis">Identifies the item number assigned to the type of goods for the purposes of freight classification and cost calculation.</xs:documentation>
+                                                </xs:annotation>
+                                        </xs:element>
+                                        <xs:element name="ShippersCost" type="AmountPerQuantity" minOccurs="0">
+                                                <xs:annotation>
+                                                        <xs:documentation source="http://www.openapplications.org/oagis">Is used to describe the shipper's total cost of transporting the items or products being sold, produced or purchased, if it is different that the freight amount being charged to the customer.  (Certain businesses may want to track the internal cost of a free shipping promotion or utilize their shipping operations as a profit center.) To report the total freight charge the customer is to pay, use FreightAmount.</xs:documentation>
+                                                </xs:annotation>
+                                        </xs:element>
+                                        <xs:element name="ShippingTrackingId" type="Id" minOccurs="0">
+                                                <xs:annotation>
+                                                        <xs:documentation source="http://www.openapplications.org/oagis">Is a unique identifier for the purpose of tracking an individual package or shipment.
+
+Examples of valid TrackingIds are:
+- An express parcel tracking nmber at typicall assigned by UPS, DHL, Federal Express or other similar carriers.
+- A UCC (Uniform Code Council) Serialized Shipping Container (SCC-18) identifier, as assigned by the shipper.
+- A "Pro Number" (Progressive Number), as assigned by an LTL (less-than-truckload) freight carrier. Since the same Pro Number can be assigned to multiple shipping units within an LTL shipment the ShipUnitSequence and ShipUnitTotal identifiers may be used to identify the individual pieces.
+- The unique identifier of a motor freight trailer or railroad box or tank car, ocean freight container or other transportation vessel.</xs:documentation>
+                                                </xs:annotation>
+                                        </xs:element>
+                                        <xs:element ref="ShippingMaterial" minOccurs="0">
+                                                <xs:annotation>
+                                                        <xs:documentation source="http://www.openapplications.org/oagis">Is an identifier is the part number of a shipping container or material.</xs:documentation>
+                                                </xs:annotation>
+                                        </xs:element>
+                                        <xs:element name="ShipUnitSequence" type="SequenceCode" minOccurs="0">
+                                                <xs:annotation>
+                                                        <xs:documentation source="http://www.openapplications.org/oagis">In a set of similar shipping units for a delivery, ShipUnitSequenceId represents a particular unit out of the total set.  When used in conjunction with ShipUnitTotalId and printed on a shipping unit label or packing list, the receiving partner can easily ascertain whether or not the delivery was complete.</xs:documentation>
+                                                </xs:annotation>
+                                        </xs:element>
+                                        <xs:element name="ShipUnitTotalId" type="Id" minOccurs="0">
+                                                <xs:annotation>
+                                                        <xs:documentation source="http://www.openapplications.org/oagis">In a set of similar shipping units for a delivery, ShipUnitTotalId represents the total or final unit in the set.  When used in conjunction with ShipUnitSequenceId and printed on a shipping unit label or packing list, the receiving partner can easily ascertain whether or not the delivery was complete.</xs:documentation>
+                                                </xs:annotation>
+                                        </xs:element>
+                                        <xs:element ref="Disposition" minOccurs="0">
+                                                <xs:annotation>
+                                                        <xs:documentation source="http://www.openapplications.org/oagis">Used to indicate that a particular shipping unit has been received</xs:documentation>
+                                                </xs:annotation>
+                                        </xs:element>
+                                        <xs:element name="TotalWeight" type="Quantity" minOccurs="0">
+                                                <xs:annotation>
+                                                        <xs:documentation source="http://www.openapplications.org/oagis">Quantifies the weight, or heaviness, of an item, container or shipment.</xs:documentation>
+                                                </xs:annotation>
+                                        </xs:element>
+                                        <xs:element name="TotalVolume" type="Quantity" minOccurs="0">
+                                                <xs:annotation>
+                                                        <xs:documentation source="http://www.openapplications.org/oagis">Quantifies the volume, or amount of space, that is occupied by an item, container or shipment.</xs:documentation>
+                                                </xs:annotation>
+                                        </xs:element>
+                                        <xs:group ref="Temperatures" minOccurs="0"/>
+                                        <xs:element name="Description" type="Description" minOccurs="0" maxOccurs="unbounded"/>
+                                        <xs:group ref="Notes" minOccurs="0"/>
+                                        <xs:element ref="Charges" minOccurs="0"/>
+                                        <xs:group ref="References" minOccurs="0"/>
+                                </xs:sequence>
+                        </xs:extension>
+                </xs:complexContent>
+        </xs:complexType>
+        <xs:complexType name="SCEItem">
+                <xs:sequence>
+                        <xs:element ref="Item" minOccurs="0"/>
+                        <xs:element ref="LotSerial" minOccurs="0"/>
+                        <xs:element ref="HazardousMaterial" minOccurs="0"/>
+                        <xs:element ref="OwnershipCode" minOccurs="0"/>
+                        <xs:element ref="OriginationCountry" minOccurs="0"/>
+                        <xs:element ref="FreightClass" minOccurs="0"/>
+                        <xs:element ref="RoutingDisposition" minOccurs="0"/>
+                        <xs:element ref="NetWeight" minOccurs="0"/>
+                        <xs:element ref="CatchWeightQuantity" minOccurs="0"/>
+                        <xs:element ref="CatchWeightConversionFactor" minOccurs="0"/>
+                        <xs:group ref="Notes" minOccurs="0"/>
+                        <xs:element ref="Charges" minOccurs="0" maxOccurs="unbounded"/>
+                        <xs:group ref="References" minOccurs="0"/>
+                </xs:sequence>
+        </xs:complexType>
+<!---->
+<!--InventoryDetail-->
+        <xs:element name="InventoryDetail" type="LotSerial">
+                <xs:annotation>
+                        <xs:documentation source="http://www.openapplications.org/oagis">Provides additional inventory attribute information for an inventory item, such as lot numbers, quality/disposition, serial numbers, or other characteristics that may not be specified on the order documentation.</xs:documentation>
+                </xs:annotation>
+        </xs:element>
+<!---->
+        <xs:complexType name="ShipmentDocumentReference">
+                <xs:annotation>
+                        <xs:documentation source="http://www.openapplications.org/oagis">Is a reference to a Shipment document.</xs:documentation>
+                </xs:annotation>
+                <xs:complexContent>
+                        <xs:extension base="DocumentReference">
+                                <xs:sequence>
+                                        <xs:element ref="DocumentIds" minOccurs="0"/>
+                                        <xs:element name="DocumentDate" type="DateTimeAny" minOccurs="0">
+                                                <xs:annotation>
+                                                        <xs:documentation source="http://www.openapplications.org/oagis">The Datetime of the referenced document.</xs:documentation>
+                                                </xs:annotation>
+                                        </xs:element>
+                                        <xs:group ref="CommonReference" minOccurs="0"/>
+                                        <xs:element ref="ShipUnitReference" minOccurs="0"/>
+                                        <xs:element ref="UserArea" minOccurs="0"/>
+                                </xs:sequence>
+                        </xs:extension>
+                </xs:complexContent>
+        </xs:complexType>
+        <xs:complexType name="ShipUnitReference">
+                <xs:sequence>
+                        <xs:element name="ContainerId" type="Id" minOccurs="0">
+                                <xs:annotation>
+                                        <xs:documentation source="http://www.openapplications.org/oagis">Is the identifier of a container.</xs:documentation>
+                                </xs:annotation>
+                        </xs:element>
+                        <xs:element name="ContainerSealId" type="Id" minOccurs="0">
+                                <xs:annotation>
+                                        <xs:documentation source="http://www.openapplications.org/oagis">Identifies the tamper-proof seal placed on a shipping container to prevent pilfering of the contents.</xs:documentation>
+                                </xs:annotation>
+                        </xs:element>
+                        <xs:element name="ContainerType" type="Type" minOccurs="0">
+                                <xs:annotation>
+                                        <xs:documentation source="http://www.openapplications.org/oagis">Is a classification of containers.</xs:documentation>
+                                </xs:annotation>
+                        </xs:element>
+                        <xs:element name="FreightItemNumber" type="Code" minOccurs="0">
+                                <xs:annotation>
+                                        <xs:documentation source="http://www.openapplications.org/oagis">Identifies the item number assigned to the type of goods for the purposes of freight classification and cost calculation.</xs:documentation>
+                                </xs:annotation>
+                        </xs:element>
+                        <xs:element name="ShippingTrackingId" type="Id" minOccurs="0">
+                                <xs:annotation>
+                                        <xs:documentation source="http://www.openapplications.org/oagis">Is a unique identifier for the purpose of tracking an individual package or shipment.</xs:documentation>
+                                </xs:annotation>
+                        </xs:element>
+                        <xs:element ref="UserArea" minOccurs="0"/>
+                </xs:sequence>
+        </xs:complexType>
+        <xs:element name="ShipmentDocumentReference" type="ShipmentDocumentReference" substitutionGroup="DocumentReference">
+                <xs:annotation>
+                        <xs:documentation source="http://www.openapplications.org/oagis">Is a reference to a Shipment.</xs:documentation>
+                </xs:annotation>
+        </xs:element>
+<!--Common-->
+        <xs:group name="CommonShipInformation">
+                <xs:sequence>
+                        <xs:element ref="Status" minOccurs="0"/>
+                        <xs:element name="ShipmentServiceLevel" type="ServiceLevel" minOccurs="0">
+                                <xs:annotation>
+                                        <xs:documentation source="http://www.openapplications.org/oagis">Is a generic code that specifies a particular type or quality of carrier delivery service to be used for transporting goods.  A generic service level code is often established by shippers to consolidate various equivalent, but differently named, carrier service levels for comparison when "rate shopping" for the lowest cost transportation provider.  See CarrierServiceLevel for specifying the carrier's actual service level code.</xs:documentation>
+                                </xs:annotation>
+                        </xs:element>
+                        <xs:element name="CarrierServiceLevel" type="ServiceLevel" minOccurs="0">
+                                <xs:annotation>
+                                        <xs:documentation source="http://www.openapplications.org/oagis">The carrier's code or marketing term for specifying a particular type or quality of delivery service to be used for transporting goods.  Use ShipmentServiceLevel when specifying a shipper-assigned code for generic delivery service level that is not specific to a carrier.</xs:documentation>
+                                </xs:annotation>
+                        </xs:element>
+                        <xs:element name="DestinationCountry" type="Country" minOccurs="0">
+                                <xs:annotation>
+                                        <xs:documentation source="http://www.openapplications.org/oagis">Represents the identifier of the country of origin.  The list of valid codes can be found in ISO Standard number 3166.</xs:documentation>
+                                </xs:annotation>
+                        </xs:element>
+                        <xs:group ref="ShippingAmounts" minOccurs="0"/>
+                        <xs:group ref="ShippingDates" minOccurs="0"/>
+                        <xs:element name="ImportLicenseRequired" type="Indicator" minOccurs="0">
+                                <xs:annotation>
+                                        <xs:documentation source="http://www.openapplications.org/oagis">Communicates the need for an import license on a good or service. Valid values are '0' for no license required, and '1' for license required.</xs:documentation>
+                                </xs:annotation>
+                        </xs:element>
+                        <xs:element name="ExportLicenseRequired" type="Indicator" minOccurs="0">
+                                <xs:annotation>
+                                        <xs:documentation source="http://www.openapplications.org/oagis">Communicates the need for an export license on a good or service. Valid values are '0' for no license required, and '1' for license required.</xs:documentation>
+                                </xs:annotation>
+                        </xs:element>
+                        <xs:element ref="HazardousMaterial" minOccurs="0"/>
+                        <xs:element name="ShipPriorToDueDateInd" type="Indicator" minOccurs="0">
+                                <xs:annotation>
+                                        <xs:documentation source="http://www.openapplications.org/oagis">Communicates if it is permitted to ship a good or service prior to the date it is due. Valid values are '0' for no, and '1' for yes.</xs:documentation>
+                                </xs:annotation>
+                        </xs:element>
+                        <xs:element name="PointOfLoadingCode" type="LocationCode" minOccurs="0">
+                                <xs:annotation>
+                                        <xs:documentation source="http://www.openapplications.org/oagis">Identifies the location shipped goods are to be loaded.</xs:documentation>
+                                </xs:annotation>
+                        </xs:element>
+                        <xs:element name="PointOfShipmentCode" type="LocationCode" minOccurs="0">
+                                <xs:annotation>
+                                        <xs:documentation source="http://www.openapplications.org/oagis">Identifies the location the goods are to be shipped.</xs:documentation>
+                                </xs:annotation>
+                        </xs:element>
+                        <xs:element name="PointOfStagingCode" type="LocationCode" minOccurs="0">
+                                <xs:annotation>
+                                        <xs:documentation source="http://www.openapplications.org/oagis">Identifies the location goods are to be placed prior to loading for shipment.</xs:documentation>
+                                </xs:annotation>
+                        </xs:element>
+                </xs:sequence>
+        </xs:group>
+        <xs:group name="ShippingWeights">
+                <xs:sequence>
+                        <xs:element name="EstimatedWeight" type="Quantity" minOccurs="0">
+                                <xs:annotation>
+                                        <xs:documentation source="http://www.openapplications.org/oagis">The estimated weight of an item or container.  An estimate is provided as a processing alternative when the actual weight of an item is not known or cannot be calculated exactly.</xs:documentation>
+                                </xs:annotation>
+                        </xs:element>
+                        <xs:element name="LoadingWeight" type="Quantity" minOccurs="0">
+                                <xs:annotation>
+                                        <xs:documentation source="http://www.openapplications.org/oagis">This is the net weight at loading time of the container in which the materials are being shipped.</xs:documentation>
+                                </xs:annotation>
+                        </xs:element>
+                        <xs:element name="NetWeight" type="Quantity" minOccurs="0">
+                                <xs:annotation>
+                                        <xs:documentation source="http://www.openapplications.org/oagis">This is the net weight of the goods or materials being shipped.</xs:documentation>
+                                </xs:annotation>
+                        </xs:element>
+                        <xs:element name="TotalWeight" type="Quantity" minOccurs="0">
+                                <xs:annotation>
+                                        <xs:documentation source="http://www.openapplications.org/oagis">Quantifies the weight, or heaviness, of an item, container or shipment.</xs:documentation>
+                                </xs:annotation>
+                        </xs:element>
+                        <xs:element name="TotalVolume" type="Quantity" minOccurs="0">
+                                <xs:annotation>
+                                        <xs:documentation source="http://www.openapplications.org/oagis">Quantifies the volume, or amount of space, that is occupied by an item, container or shipment.</xs:documentation>
+                                </xs:annotation>
+                        </xs:element>
+                </xs:sequence>
+        </xs:group>
+        <xs:group name="SCEReferences">
+                <xs:sequence>
+                        <xs:element ref="Parties" minOccurs="0"/>
+                        <xs:group ref="References" minOccurs="0"/>
+                </xs:sequence>
+        </xs:group>
+        <xs:group name="Transportation">
+                <xs:sequence>
+                        <xs:element name="FreightClass" type="FreightClass" minOccurs="0">
+                                <xs:annotation>
+                                        <xs:documentation source="http://www.openapplications.org/oagis">Qualifies goods for purposes of freight cost calculation. An example would the qualifications used by National Motor Freight Carriers.</xs:documentation>
+                                </xs:annotation>
+                        </xs:element>
+                        <xs:element name="TransportationMethod" type="TransportationMethod" minOccurs="0">
+                                <xs:annotation>
+                                        <xs:documentation source="http://www.openapplications.org/oagis">Identifies the general type of carrier transportation used to deliver goods.</xs:documentation>
+                                </xs:annotation>
+                        </xs:element>
+                        <xs:element ref="TransportationTerm" minOccurs="0">
+                                <xs:annotation>
+                                        <xs:documentation source="http://www.openapplications.org/oagis">Is a contractual code used to describe the point where delivery occurs (goods ownership is transferred) in a contract of sale.  It identifies the rights and obligations of each partner  (supplier, carrier and customer) in the transaction and may specify the requirements to assume ownership (i.e. paying for the cost of the goods and/or transportation). The United Nations Trade Facilitation Information Exchange (UN/TraFIX) has established the following codes (INCOTERMS 1990) for use in international trade to Europe, Asia and the Pacific.  (See http://www.unece.org/trade/rec/rec05en.htm).  These terms may also be found in the United States Uniform Commercial Code (UCC).</xs:documentation>
+                                </xs:annotation>
+                        </xs:element>
+                </xs:sequence>
+        </xs:group>
+        <xs:group name="ShippingDates">
+                <xs:sequence>
+                        <xs:element name="LoadingDateTime" type="DateTime" minOccurs="0">
+                                <xs:annotation>
+                                        <xs:documentation source="http://www.openapplications.org/oagis">Is the date that is used to mark the date and time a shipment loading process is complete.</xs:documentation>
+                                </xs:annotation>
+                        </xs:element>
+                        <xs:element name="NeedDeliveryDateTime" type="DateTime" minOccurs="0">
+                                <xs:annotation>
+                                        <xs:documentation source="http://www.openapplications.org/oagis">Is the date that the business partner is requesting delivery of goods to arrive.</xs:documentation>
+                                </xs:annotation>
+                        </xs:element>
+                        <xs:element name="PromisedDeliveryDateTime" type="DateTime" minOccurs="0">
+                                <xs:annotation>
+                                        <xs:documentation source="http://www.openapplications.org/oagis">Is the date that the business partner is supplying goods promises delivery of goods to arrive.</xs:documentation>
+                                </xs:annotation>
+                        </xs:element>
+                        <xs:element name="PromisedShipDateTime" type="DateTime" minOccurs="0">
+                                <xs:annotation>
+                                        <xs:documentation source="http://www.openapplications.org/oagis">Is the date the business partner supplying goods is promising goods to be shipped.</xs:documentation>
+                                </xs:annotation>
+                        </xs:element>
+                        <xs:element name="ActualShippedDateTime" type="DateTime" minOccurs="0">
+                                <xs:annotation>
+                                        <xs:documentation source="http://www.openapplications.org/oagis">Is the date that is used to identify the actual date and time a shipment occurs.</xs:documentation>
+                                </xs:annotation>
+                        </xs:element>
+                        <xs:element name="ScheduledShipDateTime" type="DateTime" minOccurs="0">
+                                <xs:annotation>
+                                        <xs:documentation source="http://www.openapplications.org/oagis">Identifies the date on which the goods are scheduled to be shipped.</xs:documentation>
+                                </xs:annotation>
+                        </xs:element>
+                </xs:sequence>
+        </xs:group>
+        <xs:group name="ShippingAmounts">
+                <xs:sequence>
+                        <xs:element name="DeclaredValue" type="Amount" minOccurs="0">
+                                <xs:annotation>
+                                        <xs:documentation source="http://www.openapplications.org/oagis">Is the declared monetary value of the contents of a shipping unit or a delivery for insurance purposes.</xs:documentation>
+                                </xs:annotation>
+                        </xs:element>
+                        <xs:element name="EstimatedFreightCost" type="Amount" minOccurs="0">
+                                <xs:annotation>
+                                        <xs:documentation source="http://www.openapplications.org/oagis">Is used to describe the estimated cost of transporting the items or products being sold, produced or purchased.   This amount is usually determined at the time the sales order is created and is quoted to the customer, before the actual shipping method, weight or number of units is known.  This is also customarily known as a general “Shipping and Handling” charge.</xs:documentation>
+                                </xs:annotation>
+                        </xs:element>
+                        <xs:element name="TotalAmount" type="Amount" minOccurs="0">
+                                <xs:annotation>
+                                        <xs:documentation source="http://www.openapplications.org/oagis">Represents a summary sub-total or grand-total amount associated with a business document or line item entity.  It may be a cost, it may be an expense, or it may be a price.  The meaning is based on the context in the instance of the BOD.</xs:documentation>
+                                </xs:annotation>
+                        </xs:element>
+                        <xs:element name="FreightCost" type="Amount" minOccurs="0">
+                                <xs:annotation>
+                                        <xs:documentation source="http://www.openapplications.org/oagis">Is used to report the total price charged to the customer for transporting the items or products being sold, produced or purchased.   This amount is determined by the shipping partner and/or reported by the carrier partner upon shipment or delivery of the product. The shipper's total operational freight cost (which may be different the price charged) can be reported using FreightOperationalAmount.</xs:documentation>
+                                </xs:annotation>
+                        </xs:element>
+                </xs:sequence>
+        </xs:group>
+        <xs:group name="ReceiptIdReferences">
+                <xs:sequence>
+                        <xs:element name="ContainerId" type="Id" minOccurs="0">
+                                <xs:annotation>
+                                        <xs:documentation source="http://www.openapplications.org/oagis">Is the Container id of the delivery being received.</xs:documentation>
+                                </xs:annotation>
+                        </xs:element>
+                        <xs:element name="ContainerType" type="Type" minOccurs="0">
+                                <xs:annotation>
+                                        <xs:documentation source="http://www.openapplications.org/oagis">Indicates the type of container being received.</xs:documentation>
+                                </xs:annotation>
+                        </xs:element>
+                        <xs:element name="ContainerSealId" type="Id" minOccurs="0">
+                                <xs:annotation>
+                                        <xs:documentation source="http://www.openapplications.org/oagis">Indentifies the Seal on the container being received for the Delivery Receipt.</xs:documentation>
+                                </xs:annotation>
+                        </xs:element>
+                        <xs:element name="TrackingId" type="Id" minOccurs="0">
+                                <xs:annotation>
+                                        <xs:documentation source="http://www.openapplications.org/oagis">Is the tracking identifier for the container. This tracjking identifer is assigned by the carrier in order to track the package as it is being shipped.</xs:documentation>
+                                </xs:annotation>
+                        </xs:element>
+                        <xs:element name="BillOfLadingId" type="Id" minOccurs="0">
+                                <xs:annotation>
+                                        <xs:documentation source="http://www.openapplications.org/oagis">Identifies the bill of lading document that this container is on.</xs:documentation>
+                                </xs:annotation>
+                        </xs:element>
+                </xs:sequence>
+        </xs:group>
+        <xs:group name="CarrierRoute">
+                <xs:sequence>
+                        <xs:element name="Route" type="RouteCode" minOccurs="0">
+                                <xs:annotation>
+                                        <xs:documentation source="http://www.openapplications.org/oagis">Is the route identifier for the route that the carrier used to deliver the container. This Route defines the stops that the carrier makes in the delivery run.</xs:documentation>
+                                </xs:annotation>
+                        </xs:element>
+                        <xs:element name="RouteType" type="Type" minOccurs="0">
+                                <xs:annotation>
+                                        <xs:documentation source="http://www.openapplications.org/oagis">Identifies the type of carrier route.
+
+Route and RouteType may be used to identify and classify a commonly traveled shipping route, if this delivery was part of a routed shipment.</xs:documentation>
+                                </xs:annotation>
+                        </xs:element>
+                </xs:sequence>
+        </xs:group>
+<!---->
+<!---->
+        <xs:element name="OwnershipCode" type="OwnershipCode">
+                <xs:annotation>
+                        <xs:documentation source="http://www.openapplications.org/oagis">is used to identify who or which organization owns the item or part. The content of this Field is user defined based on a specific Customer or Supplier.
+
+SYNONYMS:  Vendor Consignment ID, Supplier Consignment ID</xs:documentation>
+                </xs:annotation>
+        </xs:element>
+        <xs:element name="FreightClass" type="FreightClass">
+                <xs:annotation>
+                        <xs:documentation source="http://www.openapplications.org/oagis">Qualifies goods for purposes of freight cost calculation. An example would the qualifications used by National Motor Freight Carriers.</xs:documentation>
+                </xs:annotation>
+        </xs:element>
+        <xs:element name="CatchWeightQuantity" type="Quantity">
+                <xs:annotation>
+                        <xs:documentation source="http://www.openapplications.org/oagis">This is the actual weight of the ReceivedQuantity for the Item, if the NetWeightQuantity cannot be calculated precisely via arithmetic because the goods do not have a consistent per unit weight</xs:documentation>
+                </xs:annotation>
+        </xs:element>
+        <xs:element name="CatchWeightConversionFactor" type="Factor">
+                <xs:annotation>
+                        <xs:documentation source="http://www.openapplications.org/oagis">The catch weight conversion factor is a stock keeping conversion factor for inventory goods.  This is a special conversion factor for when the units of measure can not be converted using arithmetic.  This conversion factor is used with the CatchWeightQuantity.
+
+Examples of the use of this factor include:	
+-  Number of Chickens to a Box
+-  Number of units of a chemical in a barrel</xs:documentation>
+                </xs:annotation>
+        </xs:element>
+        <xs:element name="NetWeight" type="Quantity">
+                <xs:annotation>
+                        <xs:documentation source="http://www.openapplications.org/oagis">This is the total net weight of the ReceivedQuantity for the Item, if the ReceivedQuantity is not in weight units. This is the weight of the goods received, disregarding any container or shipping packaging</xs:documentation>
+                </xs:annotation>
+        </xs:element>
+        <xs:element name="OriginationCountry" type="Country">
+                <xs:annotation>
+                        <xs:documentation source="http://www.openapplications.org/oagis">Is the country in which the Shipment originated.</xs:documentation>
+                </xs:annotation>
+        </xs:element>
+        <xs:element name="ShipUnitReference" type="ShipUnitReference"/>
+</xs:schema>

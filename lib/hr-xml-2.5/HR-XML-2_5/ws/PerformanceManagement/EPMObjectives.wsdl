@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- This example WSDL is offered as a template for implementing web services using HR-XML. The target namespace is intended to be replaced with one belonging to the implementer. WSDL faults are included as placeholders. These could be used as is, removed, or replaced with those appropriate for the implementation -->
+<wsdl:definitions xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:soapbind="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:hrxml="http://ns.hr-xml.org/2007-04-15" xmlns="http://replace-with-yours/ns" targetNamespace="http://replace-with-yours/ns">
+	<wsdl:types>
+		<xs:schema elementFormDefault="qualified" targetNamespace="http://ns.hr-xml.org/2007-04-15/ws">
+			<xs:import namespace="http://ns.hr-xml.org/2007-04-15" schemaLocation="CreateEPMObjectivesPlan.xsd"/>
+			<xs:import namespace="http://ns.hr-xml.org/2007-04-15" schemaLocation="UpdateEPMObjectivesPlan.xsd"/>
+			<xs:import namespace="http://ns.hr-xml.org/2007-04-15" schemaLocation="CancelEPMObjectivesPlan.xsd"/>
+			<xs:import namespace="http://ns.hr-xml.org/2007-04-15" schemaLocation="ProcessEPMObjectivesResult.xsd"/>
+			<xs:import namespace="http://ns.hr-xml.org/2007-04-15" schemaLocation="../Common/Faults.xsd"/>
+			<xs:import namespace="http://ns.hr-xml.org/2007-04-15" schemaLocation="../Common/Acknowledge.xsd"/>
+		</xs:schema>
+	</wsdl:types>
+	<wsdl:message name="Acknowledge">
+		<wsdl:part name="Message" element="hrxml:Acknowledge"/>
+	</wsdl:message>
+	<wsdl:message name="CreateEPMObjectivesPlan">
+		<wsdl:part name="Message" element="hrxml:CreateEPMObjectivesPlan"/>
+	</wsdl:message>
+	<wsdl:message name="UpdateEPMObjectivesPlan">
+		<wsdl:part name="Message" element="hrxml:UpdateEPMObjectivesPlan"/>
+	</wsdl:message>
+	<wsdl:message name="CancelEPMObjectivesPlan">
+		<wsdl:part name="Message" element="hrxml:CancelEPMObjectivesPlan"/>
+	</wsdl:message>
+	<wsdl:message name="ProcessEPMObjectivesResult">
+		<wsdl:part name="Message" element="hrxml:ProcessEPMObjectivesResult"/>
+	</wsdl:message>
+	<wsdl:message name="CreateEPMObjectivesPlanFault">
+		<wsdl:part name="SOAPFault_Part" element="hrxml:FaultExtensible"/>
+	</wsdl:message>
+	<wsdl:message name="UpdateEPMObjectivesPlanFault">
+		<wsdl:part name="SOAPFault_Part" element="hrxml:FaultExtensible"/>
+	</wsdl:message>
+	<wsdl:message name="CancelEPMObjectivesPlanFault">
+		<wsdl:part name="SOAPFault_Part" element="hrxml:FaultExtensible"/>
+	</wsdl:message>
+	<wsdl:message name="ProcessEPMObjectivesResultFault">
+		<wsdl:part name="SOAPFault_Part" element="hrxml:FaultExtensible"/>
+	</wsdl:message>
+	<wsdl:portType name="EPMObjectivesPlan_PortType">
+		<wsdl:operation name="CreateEPMObjectivesPlan">
+			<wsdl:input message="CreateEPMObjectivesPlan"/>
+			<wsdl:output message="Acknowledge"/>
+			<wsdl:fault name="CreateEPMObjectivesPlanFault" message="CreateEPMObjectivesPlanFault"/>
+		</wsdl:operation>
+		<wsdl:operation name="UpdateEPMObjectivesPlan">
+			<wsdl:input message="UpdateEPMObjectivesPlan"/>
+			<wsdl:output message="Acknowledge"/>
+			<wsdl:fault name="UpdateEPMObjectivesPlanFault" message="UpdateEPMObjectivesPlanFault"/>
+		</wsdl:operation>
+		<wsdl:operation name="CancelEPMObjectivesPlan">
+			<wsdl:input message="CancelEPMObjectivesPlan"/>
+			<wsdl:output message="Acknowledge"/>
+			<wsdl:fault name="CancelEPMObjectivesPlanFault" message="CancelEPMObjectivesPlanFault"/>
+		</wsdl:operation>
+	</wsdl:portType>
+	<wsdl:portType name="EPMObjectivesResult_PortType">
+		<wsdl:operation name="ProcessEPMObjectivesResult">
+			<wsdl:input message="ProcessEPMObjectivesResult"/>
+			<wsdl:output message="Acknowledge"/>
+			<wsdl:fault name="ProcessEPMObjectivesResultFault" message="ProcessEPMObjectivesResultFault"/>
+		</wsdl:operation>
+	</wsdl:portType>
+	<wsdl:binding name="EPMObjectivesPlan_Binding" type="EPMObjectivesPlan_PortType">
+		<soapbind:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+		<wsdl:operation name="CreateEPMObjectivesPlan">
+			<soapbind:operation style="document"/>
+			<wsdl:input>
+				<soapbind:body use="literal"/>
+			</wsdl:input>
+			<wsdl:output>
+				<soapbind:body use="literal"/>
+			</wsdl:output>
+			<wsdl:fault name="CreateEPMObjectivesPlanFault">
+				<soapbind:fault name="CreateEPMObjectivesPlanFault" use="literal"/>
+			</wsdl:fault>
+		</wsdl:operation>
+		<wsdl:operation name="UpdateEPMObjectivesPlan">
+			<soapbind:operation style="document"/>
+			<wsdl:input>
+				<soapbind:body use="literal"/>
+			</wsdl:input>
+			<wsdl:output>
+				<soapbind:body use="literal"/>
+			</wsdl:output>
+			<wsdl:fault name="UpdateEPMObjectivesPlanFault">
+				<soapbind:fault name="UpdateEPMObjectivesPlanFault" use="literal"/>
+			</wsdl:fault>
+		</wsdl:operation>
+		<wsdl:operation name="CancelEPMObjectivesPlan">
+			<soapbind:operation style="document"/>
+			<wsdl:input>
+				<soapbind:body use="literal"/>
+			</wsdl:input>
+			<wsdl:output>
+				<soapbind:body use="literal"/>
+			</wsdl:output>
+			<wsdl:fault name="CancelEPMObjectivesPlanFault">
+				<soapbind:fault name="CancelEPMObjectivesPlanFault" use="literal"/>
+			</wsdl:fault>
+		</wsdl:operation>
+	</wsdl:binding>
+	<wsdl:binding name="EPMObjectivesResult_Binding" type="EPMObjectivesResult_PortType">
+		<soapbind:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+		<wsdl:operation name="ProcessEPMObjectivesResult">
+			<soapbind:operation style="document"/>
+			<wsdl:input>
+				<soapbind:body use="literal"/>
+			</wsdl:input>
+			<wsdl:output>
+				<soapbind:body use="literal"/>
+			</wsdl:output>
+			<wsdl:fault name="ProcessEPMObjectivesResultFault">
+				<soapbind:fault name="ProcessEPMObjectivesResultFault" use="literal"/>
+			</wsdl:fault>
+		</wsdl:operation>
+	</wsdl:binding>
+	<wsdl:service name="EPMObjectivesPlan_Service">
+		<wsdl:port name="EPMObjectivesPlan_Port" binding="EPMObjectivesPlan_Binding">
+			<soapbind:address location="http://www.replace-with-yours.com/ws/EPMObjectivesPlan"/>
+		</wsdl:port>
+	</wsdl:service>
+	<wsdl:service name="EPMObjectivesResult_Service">
+		<wsdl:port name="EPMObjectivesResult_Port" binding="EPMObjectivesResult_Binding">
+			<soapbind:address location="http://www.replace-with-yours.com/ws/EPMObjectivesResult"/>
+		</wsdl:port>
+	</wsdl:service>
+</wsdl:definitions>

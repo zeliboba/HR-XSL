@@ -1,0 +1,418 @@
+<?xml version="1.0" encoding="utf-8"?>
+<html>
+   <head>
+      <style type="text/css"> .SectionHeader { font-size: 14pt; font-weight: bold; color: #000000; }</style>
+   </head>
+   <body>
+      <p/>
+      <table border="1" cellpadding="3" cellspacing="0" width="100%">
+         <tr>
+            <td bgcolor="#FFFF99">
+               <span class="SectionHeader">WIPRecover</span>
+               <a href="../../OAGIS/Resources/Nouns/WIPRecover.xsd">schema</a>
+            </td>
+         </tr>
+      </table>
+      <a name="WIPRecover_element"/>
+      <p/>
+      <table border="1" cellpadding="3" cellspacing="0" width="100%">
+         <tr bgcolor="#e0e0e0" valign="top">
+            <td width="10%" colspan="2">
+               <b>WIPRecover</b> type: <a href="#WIPRecover_type" target="body">
+                  <b>
+                     <i>WIPRecover</i>
+                  </b>
+               </a>
+            </td>
+         </tr>
+         <tr bgcolor="#e0e0e0" valign="top">
+            <td colspan="2">
+               <p style="margin-top: 3; margin-bottom: 3">WIPRecover is used to notify a Manufacturing Application of the creation of usable production materials from material previously considered unsuitable for production use. This is most often likely to represent a return to production of scrap material.</p>
+            </td>
+         </tr>
+      </table>
+      <a name="Header_element"/>
+      <p/>
+      <table border="1" cellpadding="3" cellspacing="0" width="100%">
+         <tr bgcolor="#e0e0e0" valign="top">
+            <td width="10%" colspan="2">
+               <b>Header</b> type: <a href="#WIPRecoverHeader_type" target="body">
+                  <b>
+                     <i>WIPRecoverHeader</i>
+                  </b>
+               </a>
+            </td>
+         </tr>
+         <tr bgcolor="#e0e0e0" valign="top">
+            <td colspan="2">
+               <p style="margin-top: 3; margin-bottom: 3">Information describing the recovered production order in the WIP Recovery/Bonus event.</p>
+            </td>
+         </tr>
+      </table>
+      <a name="Line_element"/>
+      <p/>
+      <table border="1" cellpadding="3" cellspacing="0" width="100%">
+         <tr bgcolor="#e0e0e0" valign="top">
+            <td width="10%" colspan="2">
+               <b>Line</b> type: <a href="#WIPRecoverLine_type" target="body">
+                  <b>
+                     <i>WIPRecoverLine</i>
+                  </b>
+               </a>
+            </td>
+         </tr>
+         <tr bgcolor="#e0e0e0" valign="top">
+            <td colspan="2">
+               <p style="margin-top: 3; margin-bottom: 3">Information describing the specific WIP Recovery/Bonus transaction to be processed.</p>
+            </td>
+         </tr>
+      </table>
+      <a name="WIPRecover_type"/>
+      <p/>
+      <table border="1" cellpadding="3" cellspacing="0" width="100%">
+         <tr bgcolor="#e0e0e0" valign="top">
+            <td width="10%" colspan="2">
+               <b>
+                  <i>WIPRecover</i>
+               </b> extends: <a href="../OAGIS.html#Noun_type" target="body">
+                  <b>
+                     <i>Noun</i>
+                  </b>
+               </a>
+            </td>
+         </tr>
+         <tr bgcolor="#e0e0e0" valign="top">
+            <td colspan="2">
+               <i/>
+            </td>
+         </tr>
+         <tr>
+            <td width="10%" align="right" valign="top">Structure:</td>
+            <td>
+               <img src="../Diagrams/WIPRecover.png"/>
+            </td>
+         </tr>
+         <tr>
+            <td width="10%" align="right" valign="top">Elements:</td>
+            <td>
+               <table>
+                  <tr>
+                     <td align="left" valign="top">
+                        <font size="-1">
+                           <b>Name</b>
+                        </font>
+                     </td>
+                     <td align="left" valign="top">
+                        <font size="-1">
+                           <b>Type</b>
+                        </font>
+                     </td>
+                     <td align="left" valign="top">
+                        <font size="-1">
+                           <b>Description</b>
+                        </font>
+                     </td>
+                  </tr>
+                  <tr valign="top">
+                     <td>
+                        <font size="-1">
+                           <b>Distribution</b>
+                        </font>
+                     </td>
+                     <td>
+                        <font size="-1">
+                           <a href="../OAGIS.html#Distribution_element" target="body">reference</a>
+                        </font>
+                     </td>
+                     <td>
+                        <font size="-1">
+                           <div/>
+                           <i>
+                              <p style="margin-top: 3; margin-bottom: 3">A distribution identifies how monetary amounts are distributed accross an organization.</p>
+                           </i>
+                        </font>
+                     </td>
+                  </tr>
+                  <tr valign="top">
+                     <td>
+                        <font size="-1">
+                           <b>Header</b>
+                        </font>
+                     </td>
+                     <td>
+                        <font size="-1">
+                           <a href="#Header_element" target="body">reference</a>
+                        </font>
+                     </td>
+                     <td>
+                        <font size="-1">
+                           <div/>
+                           <i/>
+                        </font>
+                     </td>
+                  </tr>
+                  <tr valign="top">
+                     <td>
+                        <font size="-1">
+                           <b>Line</b>
+                        </font>
+                     </td>
+                     <td>
+                        <font size="-1">
+                           <a href="#Line_element" target="body">reference</a>
+                        </font>
+                     </td>
+                     <td>
+                        <font size="-1">
+                           <div/>
+                           <i/>
+                        </font>
+                     </td>
+                  </tr>
+               </table>
+            </td>
+         </tr>
+      </table>
+      <a name="WIPRecoverHeader_type"/>
+      <p/>
+      <table border="1" cellpadding="3" cellspacing="0" width="100%">
+         <tr bgcolor="#e0e0e0" valign="top">
+            <td width="10%" colspan="2">
+               <b>
+                  <i>WIPRecoverHeader</i>
+               </b>
+            </td>
+         </tr>
+         <tr bgcolor="#e0e0e0" valign="top">
+            <td colspan="2">
+               <i/>
+            </td>
+         </tr>
+         <tr>
+            <td width="10%" align="right" valign="top">Structure:</td>
+            <td>
+               <img src="../Diagrams/WIPRecoverHeader.png"/>
+            </td>
+         </tr>
+         <tr>
+            <td width="10%" align="right" valign="top">Elements:</td>
+            <td>
+               <table>
+                  <tr>
+                     <td align="left" valign="top">
+                        <font size="-1">
+                           <b>Name</b>
+                        </font>
+                     </td>
+                     <td align="left" valign="top">
+                        <font size="-1">
+                           <b>Type</b>
+                        </font>
+                     </td>
+                     <td align="left" valign="top">
+                        <font size="-1">
+                           <b>Description</b>
+                        </font>
+                     </td>
+                  </tr>
+                  <tr valign="top">
+                     <td>
+                        <font size="-1">
+                           <b>DocumentDateTime</b>
+                        </font>
+                     </td>
+                     <td>
+                        <font size="-1">
+                           <a href="../OAGIS.html#DateTime_type" target="body">
+                              <b>
+                                 <i>DateTime</i>
+                              </b>
+                           </a>
+                        </font>
+                     </td>
+                     <td>
+                        <font size="-1">
+                           <p style="margin-top: 3; margin-bottom: 3">Is the datetime stamp that indicates when the WIPRecover document was originally created within the integrated environment.</p>
+                           <div/>
+                           <i/>
+                        </font>
+                     </td>
+                  </tr>
+                  <tr valign="top">
+                     <td>
+                        <font size="-1">
+                           <b>ProductionOrderReference</b>
+                        </font>
+                     </td>
+                     <td>
+                        <font size="-1">
+                           <a href="#ProductionOrderReference_element" target="body">reference</a>
+                        </font>
+                     </td>
+                     <td>
+                        <font size="-1">
+                           <div/>
+                           <i/>
+                        </font>
+                     </td>
+                  </tr>
+                  <tr valign="top">
+                     <td>
+                        <font size="-1">
+                           <b>UserArea</b>
+                        </font>
+                     </td>
+                     <td>
+                        <font size="-1">
+                           <a href="../OAGIS.html#UserArea_element" target="body">reference</a>
+                        </font>
+                     </td>
+                     <td>
+                        <font size="-1">
+                           <div/>
+                           <i/>
+                        </font>
+                     </td>
+                  </tr>
+               </table>
+            </td>
+         </tr>
+      </table>
+      <a name="WIPRecoverLine_type"/>
+      <p/>
+      <table border="1" cellpadding="3" cellspacing="0" width="100%">
+         <tr bgcolor="#e0e0e0" valign="top">
+            <td width="10%" colspan="2">
+               <b>
+                  <i>WIPRecoverLine</i>
+               </b>
+            </td>
+         </tr>
+         <tr bgcolor="#e0e0e0" valign="top">
+            <td colspan="2">
+               <i/>
+            </td>
+         </tr>
+         <tr>
+            <td width="10%" align="right" valign="top">Structure:</td>
+            <td>
+               <img src="../Diagrams/WIPRecoverLine.png"/>
+            </td>
+         </tr>
+         <tr>
+            <td width="10%" align="right" valign="top">Elements:</td>
+            <td>
+               <table>
+                  <tr>
+                     <td align="left" valign="top">
+                        <font size="-1">
+                           <b>Name</b>
+                        </font>
+                     </td>
+                     <td align="left" valign="top">
+                        <font size="-1">
+                           <b>Type</b>
+                        </font>
+                     </td>
+                     <td align="left" valign="top">
+                        <font size="-1">
+                           <b>Description</b>
+                        </font>
+                     </td>
+                  </tr>
+                  <tr valign="top">
+                     <td>
+                        <font size="-1">
+                           <b>ItemQuantity</b>
+                        </font>
+                     </td>
+                     <td>
+                        <font size="-1">
+                           <a href="../OAGIS.html#Quantity_type" target="body">
+                              <b>
+                                 <i>Quantity</i>
+                              </b>
+                           </a>
+                        </font>
+                     </td>
+                     <td>
+                        <font size="-1">
+                           <p style="margin-top: 3; margin-bottom: 3">Is the number of Items in the WIPRecover document.</p>
+                           <div/>
+                           <i>
+                              <p style="margin-top: 3; margin-bottom: 3">A decimal value.</p>
+                           </i>
+                        </font>
+                     </td>
+                  </tr>
+                  <tr valign="top">
+                     <td>
+                        <font size="-1">
+                           <b>OperationReference</b>
+                        </font>
+                     </td>
+                     <td>
+                        <font size="-1">
+                           <a href="#OperationReference_element" target="body">reference</a>
+                        </font>
+                     </td>
+                     <td>
+                        <font size="-1">
+                           <p style="margin-top: 3; margin-bottom: 3">Is a reference to the Operation in which the items are being recovered.</p>
+                           <div/>
+                           <i/>
+                        </font>
+                     </td>
+                  </tr>
+                  <tr valign="top">
+                     <td>
+                        <font size="-1">
+                           <b>Site</b>
+                        </font>
+                     </td>
+                     <td>
+                        <font size="-1">
+                           <a href="#Site_element" target="body">reference</a>
+                        </font>
+                     </td>
+                     <td>
+                        <font size="-1">
+                           <p style="margin-top: 3; margin-bottom: 3">Identifies the location that the WIPRecover is intended.</p>
+                           <div/>
+                           <i/>
+                        </font>
+                     </td>
+                  </tr>
+                  <tr valign="top">
+                     <td>
+                        <font size="-1">
+                           <b>UserArea</b>
+                        </font>
+                     </td>
+                     <td>
+                        <font size="-1">
+                           <a href="../OAGIS.html#UserArea_element" target="body">reference</a>
+                        </font>
+                     </td>
+                     <td>
+                        <font size="-1">
+                           <div/>
+                           <i/>
+                        </font>
+                     </td>
+                  </tr>
+               </table>
+            </td>
+         </tr>
+      </table>
+      <p/>
+      <table border="1" cellpadding="3" cellspacing="0" width="100%">
+         <tr>
+            <td bgcolor="#FFFF99">
+               <span class="SectionHeader">Noun Common Files</span>
+            </td>
+         </tr>
+      </table>
+      <div/>
+   </body>
+</html>

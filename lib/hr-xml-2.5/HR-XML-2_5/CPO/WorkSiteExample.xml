@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<WorkSite xmlns="http://ns.hr-xml.org/2007-04-15" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://ns.hr-xml.org/2007-04-15
+WorkSite.xsd">
+	<WorkSiteName>Research Facility</WorkSiteName>
+	<WorkSiteId idOwner="Staffing Company">
+		<IdValue>RF21</IdValue>
+	</WorkSiteId>
+	<Details type="Report to Permanently">2nd floor of Research Wing</Details>
+	<PostalAddress>
+		<CountryCode>US</CountryCode>
+		<PostalCode>60187</PostalCode>
+		<Region>IL</Region>
+		<Municipality>Wheaton</Municipality>
+		<DeliveryAddress>
+			<AddressLine>455</AddressLine>
+			<StreetName>Meadow Parkway</StreetName>
+		</DeliveryAddress>
+	</PostalAddress>
+	<TravelDirections>Take Interstate 405 to Interstate 5. Take exit 6 south. Go to 2nd traffic light and make a left turn onto Meadow Parkway. First building on right side.</TravelDirections>
+	<ParkingInstructions>Park in lot south of building.</ParkingInstructions>
+	<WorkSiteEnvironment>
+		<EnvironmentName>Laboratory</EnvironmentName>
+		<EnvironmentId idOwner="Staffing Company">
+			<IdValue>LA21</IdValue>
+		</EnvironmentId>
+		<Description>Clean Room</Description>
+		<Considerations>
+			<General>Lunch Room Facilities</General>
+			<Physical>Wheelchair Accessible</Physical>
+			<SafetyEquipment suppliedByOrganization="true">Protective clothing required in Clean Room</SafetyEquipment>
+			<DressCode suppliedByOrganization="false">Business Casual</DressCode>
+		</Considerations>
+	</WorkSiteEnvironment>
+</WorkSite>

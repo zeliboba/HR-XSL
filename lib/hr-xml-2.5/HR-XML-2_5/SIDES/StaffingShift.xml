@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- edited with XMLSpy v2006 rel. 3 sp1 (http://www.altova.com) by Chuck Allen (HR-XML Consortium, Inc.) -->
+<StaffingShift xmlns="http://ns.hr-xml.org/2007-04-15" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://ns.hr-xml.org/2007-04-15 StaffingShift.xsd" shiftPeriod="monthly">
+	<Id validFrom="2004-01-01" validTo="2004-12-31">
+		<IdValue>Regular</IdValue>
+	</Id>
+	<Name> First</Name>
+	<Hours>37</Hours>
+	<StartTime>07:00:00</StartTime>
+	<EndTime>14:00:00</EndTime>
+	<TypeHours> Regular</TypeHours>
+	<Comment>String</Comment>
+	<ExternalStaffingShiftSetId>
+		<IdValue>37291</IdValue>
+	</ExternalStaffingShiftSetId>
+</StaffingShift>

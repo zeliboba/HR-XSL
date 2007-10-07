@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<JobHeader xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://ns.hr-xml.org/2007-04-15" xsi:schemaLocation="http://ns.hr-xml.org/2007-04-15 JobHeader.xsd" validFrom="2001-12-15" validTo="2002-02-15">
+	<JobId>
+		<Id>Programmer</Id>
+		<Domain>
+			<IdIssuer>ABC Company</IdIssuer>
+			<IdType>Id</IdType>
+		</Domain>
+	</JobId>
+	<JobTitle>Associate Programmer</JobTitle>
+	<JobDescription>Program according to design documents. Conduct unit testing on all work. Document changes made to programs.</JobDescription>
+	<JobStatus>
+		<Code>1</Code>
+		<Description>Active</Description>
+	</JobStatus>
+	<JobLevel type="Family">
+		<Code>Salaried</Code>
+		<Description>Salaried, Non-executive Job Family</Description>
+		<JobLevel type="Type">
+			<Code>PROG</Code>
+			<Description>Programmer</Description>
+			<JobLevel type="Step">
+				<Code>1</Code>
+				<Description>Programmer 1</Description>
+			</JobLevel>
+		</JobLevel>
+	</JobLevel>
+	<JobCategory type="HighTech">
+		<Code>Technical</Code>
+		<Description>High Tech Employee</Description>
+	</JobCategory>
+</JobHeader>

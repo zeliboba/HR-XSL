@@ -1,0 +1,705 @@
+<?xml version="1.0" encoding="utf-8"?>
+<html>
+   <head>
+      <style type="text/css"> .SectionHeader { font-size: 14pt; font-weight: bold; color: #000000; }</style>
+   </head>
+   <body>
+      <p/>
+      <table border="1" cellpadding="3" cellspacing="0" width="100%">
+         <tr>
+            <td bgcolor="#FFFF99">
+               <span class="SectionHeader">WIPMove</span>
+               <a href="../../OAGIS/Resources/Nouns/WIPMove.xsd">schema</a>
+            </td>
+         </tr>
+      </table>
+      <a name="WIPMove_element"/>
+      <p/>
+      <table border="1" cellpadding="3" cellspacing="0" width="100%">
+         <tr bgcolor="#e0e0e0" valign="top">
+            <td width="10%" colspan="2">
+               <b>WIPMove</b> type: <a href="#WIPMove_type" target="body">
+                  <b>
+                     <i>WIPMove</i>
+                  </b>
+               </a>
+            </td>
+         </tr>
+         <tr bgcolor="#e0e0e0" valign="top">
+            <td colspan="2">
+               <p style="margin-top: 3; margin-bottom: 3">WIPMOVE is used to communicate which processing step the product is coming from and which step it is being moved to, along with the quantity moving and the time this event occurred.</p>
+            </td>
+         </tr>
+      </table>
+      <a name="Header_element"/>
+      <p/>
+      <table border="1" cellpadding="3" cellspacing="0" width="100%">
+         <tr bgcolor="#e0e0e0" valign="top">
+            <td width="10%" colspan="2">
+               <b>Header</b> type: <a href="#WIPMoveHeader_type" target="body">
+                  <b>
+                     <i>WIPMoveHeader</i>
+                  </b>
+               </a>
+            </td>
+         </tr>
+         <tr bgcolor="#e0e0e0" valign="top">
+            <td colspan="2"/>
+         </tr>
+      </table>
+      <a name="Line_element"/>
+      <p/>
+      <table border="1" cellpadding="3" cellspacing="0" width="100%">
+         <tr bgcolor="#e0e0e0" valign="top">
+            <td width="10%" colspan="2">
+               <b>Line</b> type: <a href="#WIPMoveLine_type" target="body">
+                  <b>
+                     <i>WIPMoveLine</i>
+                  </b>
+               </a>
+            </td>
+         </tr>
+         <tr bgcolor="#e0e0e0" valign="top">
+            <td colspan="2"/>
+         </tr>
+      </table>
+      <a name="MoveFromOperation_element"/>
+      <p/>
+      <table border="1" cellpadding="3" cellspacing="0" width="100%">
+         <tr bgcolor="#e0e0e0" valign="top">
+            <td width="10%" colspan="2">
+               <b>MoveFromOperation</b> type: <a href="#MoveFromOperation_type" target="body">
+                  <b>
+                     <i>MoveFromOperation</i>
+                  </b>
+               </a>
+            </td>
+         </tr>
+         <tr bgcolor="#e0e0e0" valign="top">
+            <td colspan="2">
+               <p style="margin-top: 3; margin-bottom: 3">Indicates the Work-In-Process Operation in which the items are being moved from.</p>
+            </td>
+         </tr>
+      </table>
+      <a name="MoveToOperation_element"/>
+      <p/>
+      <table border="1" cellpadding="3" cellspacing="0" width="100%">
+         <tr bgcolor="#e0e0e0" valign="top">
+            <td width="10%" colspan="2">
+               <b>MoveToOperation</b> type: <a href="#MoveToOperation_type" target="body">
+                  <b>
+                     <i>MoveToOperation</i>
+                  </b>
+               </a>
+            </td>
+         </tr>
+         <tr bgcolor="#e0e0e0" valign="top">
+            <td colspan="2">
+               <p style="margin-top: 3; margin-bottom: 3">Indicates the Work-In-Process Operation in which the items are being moved to.</p>
+            </td>
+         </tr>
+      </table>
+      <a name="MoveFromOperation_type"/>
+      <p/>
+      <table border="1" cellpadding="3" cellspacing="0" width="100%">
+         <tr bgcolor="#e0e0e0" valign="top">
+            <td width="10%" colspan="2">
+               <b>
+                  <i>MoveFromOperation</i>
+               </b>
+            </td>
+         </tr>
+         <tr bgcolor="#e0e0e0" valign="top">
+            <td colspan="2">
+               <i/>
+            </td>
+         </tr>
+         <tr>
+            <td width="10%" align="right" valign="top">Structure:</td>
+            <td>
+               <img src="../Diagrams/MoveFromOperation.png"/>
+            </td>
+         </tr>
+         <tr>
+            <td width="10%" align="right" valign="top">Elements:</td>
+            <td>
+               <table>
+                  <tr>
+                     <td align="left" valign="top">
+                        <font size="-1">
+                           <b>Name</b>
+                        </font>
+                     </td>
+                     <td align="left" valign="top">
+                        <font size="-1">
+                           <b>Type</b>
+                        </font>
+                     </td>
+                     <td align="left" valign="top">
+                        <font size="-1">
+                           <b>Description</b>
+                        </font>
+                     </td>
+                  </tr>
+                  <tr valign="top">
+                     <td>
+                        <font size="-1">
+                           <b>OperationReference</b>
+                        </font>
+                     </td>
+                     <td>
+                        <font size="-1">
+                           <a href="#OperationReference_element" target="body">reference</a>
+                        </font>
+                     </td>
+                     <td>
+                        <font size="-1">
+                           <div/>
+                           <i/>
+                        </font>
+                     </td>
+                  </tr>
+                  <tr valign="top">
+                     <td>
+                        <font size="-1">
+                           <b>UserArea</b>
+                        </font>
+                     </td>
+                     <td>
+                        <font size="-1">
+                           <a href="../OAGIS.html#UserArea_element" target="body">reference</a>
+                        </font>
+                     </td>
+                     <td>
+                        <font size="-1">
+                           <div/>
+                           <i/>
+                        </font>
+                     </td>
+                  </tr>
+               </table>
+            </td>
+         </tr>
+      </table>
+      <a name="MoveToOperation_type"/>
+      <p/>
+      <table border="1" cellpadding="3" cellspacing="0" width="100%">
+         <tr bgcolor="#e0e0e0" valign="top">
+            <td width="10%" colspan="2">
+               <b>
+                  <i>MoveToOperation</i>
+               </b>
+            </td>
+         </tr>
+         <tr bgcolor="#e0e0e0" valign="top">
+            <td colspan="2">
+               <i/>
+            </td>
+         </tr>
+         <tr>
+            <td width="10%" align="right" valign="top">Structure:</td>
+            <td>
+               <img src="../Diagrams/MoveToOperation.png"/>
+            </td>
+         </tr>
+         <tr>
+            <td width="10%" align="right" valign="top">Elements:</td>
+            <td>
+               <table>
+                  <tr>
+                     <td align="left" valign="top">
+                        <font size="-1">
+                           <b>Name</b>
+                        </font>
+                     </td>
+                     <td align="left" valign="top">
+                        <font size="-1">
+                           <b>Type</b>
+                        </font>
+                     </td>
+                     <td align="left" valign="top">
+                        <font size="-1">
+                           <b>Description</b>
+                        </font>
+                     </td>
+                  </tr>
+                  <tr valign="top">
+                     <td>
+                        <font size="-1">
+                           <b>Operation</b>
+                        </font>
+                     </td>
+                     <td>
+                        <font size="-1">
+                           <a href="../OAGIS.html#Operation_element" target="body">reference</a>
+                        </font>
+                     </td>
+                     <td>
+                        <font size="-1">
+                           <div/>
+                           <i/>
+                        </font>
+                     </td>
+                  </tr>
+                  <tr valign="top">
+                     <td>
+                        <font size="-1">
+                           <b>OperationReference</b>
+                        </font>
+                     </td>
+                     <td>
+                        <font size="-1">
+                           <a href="#OperationReference_element" target="body">reference</a>
+                        </font>
+                     </td>
+                     <td>
+                        <font size="-1">
+                           <div/>
+                           <i/>
+                        </font>
+                     </td>
+                  </tr>
+                  <tr valign="top">
+                     <td>
+                        <font size="-1">
+                           <b>UserArea</b>
+                        </font>
+                     </td>
+                     <td>
+                        <font size="-1">
+                           <a href="../OAGIS.html#UserArea_element" target="body">reference</a>
+                        </font>
+                     </td>
+                     <td>
+                        <font size="-1">
+                           <div/>
+                           <i/>
+                        </font>
+                     </td>
+                  </tr>
+               </table>
+            </td>
+         </tr>
+      </table>
+      <a name="WIPMove_type"/>
+      <p/>
+      <table border="1" cellpadding="3" cellspacing="0" width="100%">
+         <tr bgcolor="#e0e0e0" valign="top">
+            <td width="10%" colspan="2">
+               <b>
+                  <i>WIPMove</i>
+               </b> extends: <a href="../OAGIS.html#Noun_type" target="body">
+                  <b>
+                     <i>Noun</i>
+                  </b>
+               </a>
+            </td>
+         </tr>
+         <tr bgcolor="#e0e0e0" valign="top">
+            <td colspan="2">
+               <i/>
+            </td>
+         </tr>
+         <tr>
+            <td width="10%" align="right" valign="top">Structure:</td>
+            <td>
+               <img src="../Diagrams/WIPMove.png"/>
+            </td>
+         </tr>
+         <tr>
+            <td width="10%" align="right" valign="top">Elements:</td>
+            <td>
+               <table>
+                  <tr>
+                     <td align="left" valign="top">
+                        <font size="-1">
+                           <b>Name</b>
+                        </font>
+                     </td>
+                     <td align="left" valign="top">
+                        <font size="-1">
+                           <b>Type</b>
+                        </font>
+                     </td>
+                     <td align="left" valign="top">
+                        <font size="-1">
+                           <b>Description</b>
+                        </font>
+                     </td>
+                  </tr>
+                  <tr valign="top">
+                     <td>
+                        <font size="-1">
+                           <b>Distribution</b>
+                        </font>
+                     </td>
+                     <td>
+                        <font size="-1">
+                           <a href="../OAGIS.html#Distribution_element" target="body">reference</a>
+                        </font>
+                     </td>
+                     <td>
+                        <font size="-1">
+                           <div/>
+                           <i>
+                              <p style="margin-top: 3; margin-bottom: 3">A distribution identifies how monetary amounts are distributed accross an organization.</p>
+                           </i>
+                        </font>
+                     </td>
+                  </tr>
+                  <tr valign="top">
+                     <td>
+                        <font size="-1">
+                           <b>Header</b>
+                        </font>
+                     </td>
+                     <td>
+                        <font size="-1">
+                           <a href="#Header_element" target="body">reference</a>
+                        </font>
+                     </td>
+                     <td>
+                        <font size="-1">
+                           <div/>
+                           <i/>
+                        </font>
+                     </td>
+                  </tr>
+                  <tr valign="top">
+                     <td>
+                        <font size="-1">
+                           <b>Line</b>
+                        </font>
+                     </td>
+                     <td>
+                        <font size="-1">
+                           <a href="#Line_element" target="body">reference</a>
+                        </font>
+                     </td>
+                     <td>
+                        <font size="-1">
+                           <div/>
+                           <i/>
+                        </font>
+                     </td>
+                  </tr>
+               </table>
+            </td>
+         </tr>
+      </table>
+      <a name="WIPMoveHeader_type"/>
+      <p/>
+      <table border="1" cellpadding="3" cellspacing="0" width="100%">
+         <tr bgcolor="#e0e0e0" valign="top">
+            <td width="10%" colspan="2">
+               <b>
+                  <i>WIPMoveHeader</i>
+               </b>
+            </td>
+         </tr>
+         <tr bgcolor="#e0e0e0" valign="top">
+            <td colspan="2">
+               <i/>
+            </td>
+         </tr>
+         <tr>
+            <td width="10%" align="right" valign="top">Structure:</td>
+            <td>
+               <img src="../Diagrams/WIPMoveHeader.png"/>
+            </td>
+         </tr>
+         <tr>
+            <td width="10%" align="right" valign="top">Elements:</td>
+            <td>
+               <table>
+                  <tr>
+                     <td align="left" valign="top">
+                        <font size="-1">
+                           <b>Name</b>
+                        </font>
+                     </td>
+                     <td align="left" valign="top">
+                        <font size="-1">
+                           <b>Type</b>
+                        </font>
+                     </td>
+                     <td align="left" valign="top">
+                        <font size="-1">
+                           <b>Description</b>
+                        </font>
+                     </td>
+                  </tr>
+                  <tr valign="top">
+                     <td>
+                        <font size="-1">
+                           <b>DocumentDateTime</b>
+                        </font>
+                     </td>
+                     <td>
+                        <font size="-1">
+                           <a href="../OAGIS.html#DateTime_type" target="body">
+                              <b>
+                                 <i>DateTime</i>
+                              </b>
+                           </a>
+                        </font>
+                     </td>
+                     <td>
+                        <font size="-1">
+                           <p style="margin-top: 3; margin-bottom: 3">Is the timestamp that indicates when the WIPMove document was created on in the integrated envitonment.</p>
+                           <div/>
+                           <i/>
+                        </font>
+                     </td>
+                  </tr>
+                  <tr valign="top">
+                     <td>
+                        <font size="-1">
+                           <b>ProductionOrderReference</b>
+                        </font>
+                     </td>
+                     <td>
+                        <font size="-1">
+                           <a href="#ProductionOrderReference_element" target="body">reference</a>
+                        </font>
+                     </td>
+                     <td>
+                        <font size="-1">
+                           <div/>
+                           <i/>
+                        </font>
+                     </td>
+                  </tr>
+                  <tr valign="top">
+                     <td>
+                        <font size="-1">
+                           <b>ReasonCode</b>
+                        </font>
+                     </td>
+                     <td>
+                        <font size="-1">
+                           <a href="../OAGIS.html#ReasonCode_type" target="body">
+                              <b>
+                                 <i>ReasonCode</i>
+                              </b>
+                           </a>
+                        </font>
+                     </td>
+                     <td>
+                        <font size="-1">
+                           <p style="margin-top: 3; margin-bottom: 3">Is the reason code that caused the WIP Move event to happen.</p>
+                           <div/>
+                           <i>
+                              <p style="margin-top: 3; margin-bottom: 3">Used as a reason indicator for any type of business event or activity.</p>
+                           </i>
+                        </font>
+                     </td>
+                  </tr>
+                  <tr valign="top">
+                     <td>
+                        <font size="-1">
+                           <b>UserArea</b>
+                        </font>
+                     </td>
+                     <td>
+                        <font size="-1">
+                           <a href="../OAGIS.html#UserArea_element" target="body">reference</a>
+                        </font>
+                     </td>
+                     <td>
+                        <font size="-1">
+                           <div/>
+                           <i/>
+                        </font>
+                     </td>
+                  </tr>
+               </table>
+            </td>
+         </tr>
+      </table>
+      <a name="WIPMoveLine_type"/>
+      <p/>
+      <table border="1" cellpadding="3" cellspacing="0" width="100%">
+         <tr bgcolor="#e0e0e0" valign="top">
+            <td width="10%" colspan="2">
+               <b>
+                  <i>WIPMoveLine</i>
+               </b>
+            </td>
+         </tr>
+         <tr bgcolor="#e0e0e0" valign="top">
+            <td colspan="2">
+               <i/>
+            </td>
+         </tr>
+         <tr>
+            <td width="10%" align="right" valign="top">Structure:</td>
+            <td>
+               <img src="../Diagrams/WIPMoveLine.png"/>
+            </td>
+         </tr>
+         <tr>
+            <td width="10%" align="right" valign="top">Elements:</td>
+            <td>
+               <table>
+                  <tr>
+                     <td align="left" valign="top">
+                        <font size="-1">
+                           <b>Name</b>
+                        </font>
+                     </td>
+                     <td align="left" valign="top">
+                        <font size="-1">
+                           <b>Type</b>
+                        </font>
+                     </td>
+                     <td align="left" valign="top">
+                        <font size="-1">
+                           <b>Description</b>
+                        </font>
+                     </td>
+                  </tr>
+                  <tr valign="top">
+                     <td>
+                        <font size="-1">
+                           <b>MoveFromOperation</b>
+                        </font>
+                     </td>
+                     <td>
+                        <font size="-1">
+                           <a href="#MoveFromOperation_element" target="body">reference</a>
+                        </font>
+                     </td>
+                     <td>
+                        <font size="-1">
+                           <div/>
+                           <i/>
+                        </font>
+                     </td>
+                  </tr>
+                  <tr valign="top">
+                     <td>
+                        <font size="-1">
+                           <b>MoveToOperation</b>
+                        </font>
+                     </td>
+                     <td>
+                        <font size="-1">
+                           <a href="#MoveToOperation_element" target="body">reference</a>
+                        </font>
+                     </td>
+                     <td>
+                        <font size="-1">
+                           <div/>
+                           <i/>
+                        </font>
+                     </td>
+                  </tr>
+                  <tr valign="top">
+                     <td>
+                        <font size="-1">
+                           <b>RejectedQuantity</b>
+                        </font>
+                     </td>
+                     <td>
+                        <font size="-1">
+                           <a href="../OAGIS.html#Quantity_type" target="body">
+                              <b>
+                                 <i>Quantity</i>
+                              </b>
+                           </a>
+                        </font>
+                     </td>
+                     <td>
+                        <font size="-1">
+                           <p style="margin-top: 3; margin-bottom: 3">Indicates the quantity rejected.</p>
+                           <div/>
+                           <i>
+                              <p style="margin-top: 3; margin-bottom: 3">A decimal value.</p>
+                           </i>
+                        </font>
+                     </td>
+                  </tr>
+                  <tr valign="top">
+                     <td>
+                        <font size="-1">
+                           <b>ScrapQuantity</b>
+                        </font>
+                     </td>
+                     <td>
+                        <font size="-1">
+                           <a href="../OAGIS.html#Quantity_type" target="body">
+                              <b>
+                                 <i>Quantity</i>
+                              </b>
+                           </a>
+                        </font>
+                     </td>
+                     <td>
+                        <font size="-1">
+                           <p style="margin-top: 3; margin-bottom: 3">Indicates the quantity scrapped.</p>
+                           <div/>
+                           <i>
+                              <p style="margin-top: 3; margin-bottom: 3">A decimal value.</p>
+                           </i>
+                        </font>
+                     </td>
+                  </tr>
+                  <tr valign="top">
+                     <td>
+                        <font size="-1">
+                           <b>UserArea</b>
+                        </font>
+                     </td>
+                     <td>
+                        <font size="-1">
+                           <a href="../OAGIS.html#UserArea_element" target="body">reference</a>
+                        </font>
+                     </td>
+                     <td>
+                        <font size="-1">
+                           <div/>
+                           <i/>
+                        </font>
+                     </td>
+                  </tr>
+                  <tr valign="top">
+                     <td>
+                        <font size="-1">
+                           <b>WIPMoveQuantity</b>
+                        </font>
+                     </td>
+                     <td>
+                        <font size="-1">
+                           <a href="../OAGIS.html#Quantity_type" target="body">
+                              <b>
+                                 <i>Quantity</i>
+                              </b>
+                           </a>
+                        </font>
+                     </td>
+                     <td>
+                        <font size="-1">
+                           <p style="margin-top: 3; margin-bottom: 3">Indicates the quantity moved.</p>
+                           <div/>
+                           <i>
+                              <p style="margin-top: 3; margin-bottom: 3">A decimal value.</p>
+                           </i>
+                        </font>
+                     </td>
+                  </tr>
+               </table>
+            </td>
+         </tr>
+      </table>
+      <p/>
+      <table border="1" cellpadding="3" cellspacing="0" width="100%">
+         <tr>
+            <td bgcolor="#FFFF99">
+               <span class="SectionHeader">Noun Common Files</span>
+            </td>
+         </tr>
+      </table>
+      <div/>
+   </body>
+</html>

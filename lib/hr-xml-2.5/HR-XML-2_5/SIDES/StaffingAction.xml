@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- edited with XMLSpy v2006 rel. 3 sp1 (http://www.altova.com) by Chuck Allen (HR-XML Consortium, Inc.) -->
+<StaffingAction xmlns="http://ns.hr-xml.org/2007-04-15" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://ns.hr-xml.org/2007-04-15 StaffingAction.xsd">
+	<StaffingActionId validFrom="2002-01-26" validTo="2002-01-30" idOwner="IBM">
+		<IdValue>SA1235</IdValue>
+	</StaffingActionId>
+	<StaffingActionInfo>
+		<ActionType>request info</ActionType>
+		<ActionReason>
+			<ActionReasonCode>x:Interview</ActionReasonCode>
+			<ActionSubject>Position</ActionSubject>
+		</ActionReason>
+	</StaffingActionInfo>
+	<ReferenceInformation>
+		<HumanResourceId idOwner="Kelly">
+			<IdValue>hr3456</IdValue>
+		</HumanResourceId>
+		<PositionId idOwner="IBM">
+			<IdValue>p2345</IdValue>
+		</PositionId>
+	</ReferenceInformation>
+	<StaffingActionContact contactType="created by">
+		<EntityContactInfo>
+			<EntityName>IBM</EntityName>
+			<PersonName>
+				<LegalName>Rick Carter</LegalName>
+			</PersonName>
+			<ContactMethod>
+				<Telephone>
+					<FormattedNumber>7709865437</FormattedNumber>
+				</Telephone>
+			</ContactMethod>
+		</EntityContactInfo>
+	</StaffingActionContact>
+	<ActionSchedule>
+		<ContactPerson>
+			<PersonName>
+				<LegalName>Tina Tuner</LegalName>
+			</PersonName>
+			<ContactMethod>
+				<Telephone>
+					<FormattedNumber>2143213452</FormattedNumber>
+				</Telephone>
+			</ContactMethod>
+		</ContactPerson>
+		<SpecialRequirements>Bring in Cadidate for an interview between 01-27 and 01-30</SpecialRequirements>
+	</ActionSchedule>
+</StaffingAction>

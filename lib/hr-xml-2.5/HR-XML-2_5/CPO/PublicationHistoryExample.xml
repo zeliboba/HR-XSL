@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<PublicationHistory xmlns="http://ns.hr-xml.org/2007-04-15" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://ns.hr-xml.org/2007-04-15
+PublicationHistory.xsd">
+	<Article>
+		<Title>Designing Interfaces for Youth Services Information Management.</Title>
+		<Name role="author">
+			<FormattedName>John A. Example</FormattedName>
+		</Name>
+		<PublicationDate>
+			<YearMonth>1996-06</YearMonth>
+		</PublicationDate>
+		<JournalOrSerialName>1996 Human-Computer Interaction Laboratory Video Reports, K. Pleasant, Ed., </JournalOrSerialName>
+		<Volume>vol. 2</Volume>
+		<Issue>no. 3</Issue>
+		<PageNumber>pp.319-329</PageNumber>
+		<PublicationLanguage>EN</PublicationLanguage>
+	</Article>
+	<Book>
+		<Title>XML in a Seashell</Title>
+		<Name role="author">
+			<FormattedName>John A. Example</FormattedName>
+		</Name>
+		<PublicationDate>
+			<YearMonth>2001-02</YearMonth>
+		</PublicationDate>
+		<Abstract>A very readable introduction to XML for readers with existing knowledge of markup and Web technologies. </Abstract>
+		<Copyright>
+			<CopyrightDates>
+				<OriginalDate>
+					<Year>2001</Year>
+				</OriginalDate>
+			</CopyrightDates>
+			<CopyrightText>Copyright 2nd edition</CopyrightText>
+		</Copyright>
+		<Edition>2nd Edition</Edition>
+		<ISBN>0596000222</ISBN>
+		<PublisherName>O'Malley Associates</PublisherName>
+		<PublisherLocation> Garden City, NY, US	</PublisherLocation>
+	</Book>
+	<ConferencePaper>
+		<Title>Trends in Employee Benefit Offerings</Title>
+		<Name role="author">
+			<FormattedName>Debra J. Cohen</FormattedName>
+		</Name>
+		<EventName>SHRM 55th Annual Conference and Exposition</EventName>
+		<ConferenceDate>
+			<AnyDate>2003-06-10</AnyDate>
+		</ConferenceDate>
+		<ConferenceLocation>Orlando, FL</ConferenceLocation>
+	</ConferencePaper>
+	<OtherPublication type="x:Software">
+		<Title>UCLA Tree-Repeater-Interconnect-Optimization (TRIO) Package</Title>
+		<Name role="x:developer">
+			<FormattedName>John A. Example</FormattedName>
+		</Name>
+		<PublicationDate>
+			<Year>2002</Year>
+		</PublicationDate>
+		<Link>http://ballade.cs.ucla.edu/~cong/slides/vlsi99.pdf</Link>
+	</OtherPublication>
+	<OtherPublication type="Thesis">
+		<Title>Interconnect Synthesis and Planning for High-Performance IC Designs</Title>
+		<Name role="author">
+			<FormattedName>John A. Example</FormattedName>
+		</Name>
+		<PublicationDate>
+			<Year>2000</Year>
+		</PublicationDate>
+		<Comments>Ph. D, University of California</Comments>
+		<NumberOfPages>158</NumberOfPages>
+		<PublisherLocation>Los Angeles, CA, US	</PublisherLocation>
+	</OtherPublication>
+</PublicationHistory>

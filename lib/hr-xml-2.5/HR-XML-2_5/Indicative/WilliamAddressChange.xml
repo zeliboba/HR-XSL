@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--This record contains the personal address change information for William when he moved from Canada to the US.-->
+<IndicativeData xmlns="http://ns.hr-xml.org/2007-04-15" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://ns.hr-xml.org/2007-04-15  IndicativeData.xsd">
+	<Employer>
+		<OrganizationName>Widgets Manufacturing</OrganizationName>
+		<OrganizationId idOwner="Dunn &amp; Bradstreet">
+			<IdValue name="DUNNS">12345</IdValue>
+		</OrganizationId>
+		<TaxId validFrom="1975-01-01" validTo="notKnown" idOwner="US IRS">
+			<IdValue name="EIN">67890</IdValue>
+		</TaxId>
+		<LegalId validFrom="1975-01-01" validTo="notKnown" idOwner="US IRS">
+			<IdValue name="EIN">67890</IdValue>
+		</LegalId>
+	</Employer>
+	<Employee changeType="Update">
+		<PersonInfo>
+			<PersonLegalId idOwner="US SSA">
+				<IdValue name="SSN">456-11-1111</IdValue>
+			</PersonLegalId>
+			<PersonId idOwner="Widget Manufacturing">
+				<IdValue name="Person Unique Id">12440</IdValue>
+			</PersonId>
+			<PersonName>
+				<GivenName>William</GivenName>
+				<FamilyName>Jones</FamilyName>
+			</PersonName>
+			<!-- Contact Info includes personal address change to the US-->
+			<ContactInfo precedence="Primary" validFrom="1998-06-06">
+				<Location>home</Location>
+				<WhenAvailable>evenings, weekends</WhenAvailable>
+				<Telephone>
+					<FormattedNumber>1 212 555 1212</FormattedNumber>
+				</Telephone>
+				<PostalAddress>
+					<CountryCode>US</CountryCode>
+					<PostalCode>11217</PostalCode>
+					<Region>NY</Region>
+					<Municipality>Brooklyn</Municipality>
+					<DeliveryAddress>
+						<AddressLine>4100 Abiline Avenue</AddressLine>
+						<Unit>15A</Unit>
+					</DeliveryAddress>
+				</PostalAddress>
+			</ContactInfo>
+		</PersonInfo>
+		<EmployeeInfo>
+			<EmployeeId idOwner="Widget Manufacturing">
+				<IdValue name="EE Id">320</IdValue>
+			</EmployeeId>
+		</EmployeeInfo>
+	</Employee>
+</IndicativeData>

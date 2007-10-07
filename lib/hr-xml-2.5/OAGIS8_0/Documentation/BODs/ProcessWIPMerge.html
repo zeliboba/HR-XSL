@@ -1,0 +1,1433 @@
+<?xml version="1.0" encoding="utf-8"?>
+<html>
+   <head>
+      <style type="text/css"> .SectionHeader { font-size: 14pt; font-weight: bold; color: #000000; }</style>
+   </head>
+   <body>
+      <p/>
+      <table border="1" cellpadding="3" cellspacing="0" width="100%">
+         <tr>
+            <td bgcolor="#FFFF99">
+               <span class="SectionHeader">ProcessWIPMerge</span>
+               <a href="../../OAGIS/BODs/ProcessWIPMerge.xsd">schema</a>, <a href="../../OAGIS/BODExamples/ProcessWIPMerge.xml">example</a>, <a href="../../OAGIS/BODConstraints/Rules/ProcessWIPMerge.xml">validation rules</a>, <a href="../../OAGIS/BODConstraints/Generated/ProcessWIPMerge.xsl">validation stylesheet</a>
+            </td>
+         </tr>
+      </table>
+      <a name="ProcessWIPMerge_element"/>
+      <p/>
+      <table border="1" cellpadding="3" cellspacing="0" width="100%">
+         <tr bgcolor="#e0e0e0" valign="top">
+            <td width="10%" colspan="2">
+               <b>ProcessWIPMerge</b> type: <a href="#ProcessWIPMerge_type" target="body">
+                  <b>
+                     <i>ProcessWIPMerge</i>
+                  </b>
+               </a>
+            </td>
+         </tr>
+         <tr bgcolor="#e0e0e0" valign="top">
+            <td colspan="2">
+               <p style="margin-top: 3; margin-bottom: 3">The purpose of the ProcessWIPMerge BOD is to notify a Manufacturing Application of the creation of a single production lot from multiple production lots of a product being made on a production order. The business environment most likely to require this capability is a lot based discrete manufacturing scenario.
+
+This BOD communicates the originating lots, the resulting lot, lot quantities, and the processing step at which this event occurred, along with the time at which this event occurred.
+</p>
+            </td>
+         </tr>
+      </table>
+      <a name="ProcessWIPMerge_type"/>
+      <p/>
+      <table border="1" cellpadding="3" cellspacing="0" width="100%">
+         <tr bgcolor="#e0e0e0" valign="top">
+            <td width="10%" colspan="2">
+               <b>
+                  <i>ProcessWIPMerge</i>
+               </b> extends: <a href="../OAGIS.html#BusinessObjectDocument_type" target="body">
+                  <b>
+                     <i>BusinessObjectDocument</i>
+                  </b>
+               </a>
+            </td>
+         </tr>
+         <tr bgcolor="#e0e0e0" valign="top">
+            <td colspan="2">
+               <i/>
+            </td>
+         </tr>
+         <tr>
+            <td width="10%" align="right" valign="top">Structure:</td>
+            <td>
+               <img src="../Diagrams/ProcessWIPMerge.png"/>
+            </td>
+         </tr>
+         <tr>
+            <td width="10%" align="right" valign="top">Elements:</td>
+            <td>
+               <table>
+                  <tr>
+                     <td align="left" valign="top">
+                        <font size="-1">
+                           <b>Name</b>
+                        </font>
+                     </td>
+                     <td align="left" valign="top">
+                        <font size="-1">
+                           <b>Type</b>
+                        </font>
+                     </td>
+                     <td align="left" valign="top">
+                        <font size="-1">
+                           <b>Description</b>
+                        </font>
+                     </td>
+                  </tr>
+                  <tr valign="top">
+                     <td>
+                        <font size="-1">
+                           <b>DataArea</b>
+                        </font>
+                     </td>
+                     <td>
+                        <font size="-1">
+                           <a href="#ProcessWIPMergeDataArea_type" target="body">
+                              <b>
+                                 <i>ProcessWIPMergeDataArea</i>
+                              </b>
+                           </a>
+                        </font>
+                     </td>
+                     <td>
+                        <font size="-1">
+                           <p style="margin-top: 3; margin-bottom: 3">Is where the information that the BOD message carries is provided, in this case ProcessWIPMerge. The information consists of a Verb and one or more Nouns. The verb (Process) indicates the action to be performed on the Noun (WIPMerge).</p>
+                           <div/>
+                           <i/>
+                        </font>
+                     </td>
+                  </tr>
+               </table>
+            </td>
+         </tr>
+      </table>
+      <a name="ProcessWIPMergeDataArea_type"/>
+      <p/>
+      <table border="1" cellpadding="3" cellspacing="0" width="100%">
+         <tr bgcolor="#e0e0e0" valign="top">
+            <td width="10%" colspan="2">
+               <b>
+                  <i>ProcessWIPMergeDataArea</i>
+               </b> extends: <a href="../OAGIS.html#DataArea_type" target="body">
+                  <b>
+                     <i>DataArea</i>
+                  </b>
+               </a>
+            </td>
+         </tr>
+         <tr bgcolor="#e0e0e0" valign="top">
+            <td colspan="2">
+               <i/>
+            </td>
+         </tr>
+         <tr>
+            <td width="10%" align="right" valign="top">Structure:</td>
+            <td>
+               <img src="../Diagrams/ProcessWIPMergeDataArea.png"/>
+            </td>
+         </tr>
+         <tr>
+            <td width="10%" align="right" valign="top">Elements:</td>
+            <td>
+               <table>
+                  <tr>
+                     <td align="left" valign="top">
+                        <font size="-1">
+                           <b>Name</b>
+                        </font>
+                     </td>
+                     <td align="left" valign="top">
+                        <font size="-1">
+                           <b>Type</b>
+                        </font>
+                     </td>
+                     <td align="left" valign="top">
+                        <font size="-1">
+                           <b>Description</b>
+                        </font>
+                     </td>
+                  </tr>
+                  <tr valign="top">
+                     <td>
+                        <font size="-1">
+                           <b>Process</b>
+                        </font>
+                     </td>
+                     <td>
+                        <font size="-1">
+                           <a href="#Process_element" target="body">reference</a>
+                        </font>
+                     </td>
+                     <td>
+                        <font size="-1">
+                           <div/>
+                           <i/>
+                        </font>
+                     </td>
+                  </tr>
+                  <tr valign="top">
+                     <td>
+                        <font size="-1">
+                           <b>WIPMerge</b>
+                        </font>
+                     </td>
+                     <td>
+                        <font size="-1">
+                           <a href="#WIPMerge_element" target="body">reference</a>
+                        </font>
+                     </td>
+                     <td>
+                        <font size="-1">
+                           <div/>
+                           <i/>
+                        </font>
+                     </td>
+                  </tr>
+               </table>
+            </td>
+         </tr>
+      </table>
+      <p/>
+      <table border="1" cellpadding="3" cellspacing="0" width="100%">
+         <tr>
+            <td bgcolor="#FFFF99">
+               <span class="SectionHeader">ProcessWIPMerge Scenario Diagram</span>
+            </td>
+         </tr>
+      </table>
+      <div>
+         <img src="../Scenarios/S2_Scenarios_files/image127.png"/>
+      </div>
+      <p/>
+      <table border="1" cellpadding="3" cellspacing="0" width="100%">
+         <tr>
+            <td bgcolor="#FFFF99">
+               <span class="SectionHeader">Process</span>
+               <a href="../../OAGIS/Resources/Verbs/Process.xsd">schema</a>
+            </td>
+         </tr>
+      </table>
+      <a name="Process_element"/>
+      <p/>
+      <table border="1" cellpadding="3" cellspacing="0" width="100%">
+         <tr bgcolor="#e0e0e0" valign="top">
+            <td width="10%" colspan="2">
+               <b>Process</b> type: <a href="#Process_type" target="body">
+                  <b>
+                     <i>Process</i>
+                  </b>
+               </a>
+            </td>
+         </tr>
+         <tr bgcolor="#e0e0e0" valign="top">
+            <td colspan="2">
+               <p style="margin-top: 3; margin-bottom: 3">The Process verb is used to request processing of the associated noun by the receiving application or business to party. In a typical external exchange scenario a Process BOD is considered to be a legally binding message. For example, if a customer sends a ProcessPurchaseOrder BOD to a supplier and the supplier acknowlegdes with a positive AcknowledgePurchaseOrder, then the customer is obligated to fullfil the agreement, unless of course other BODs are allowed to cancel or change the original order.</p>
+            </td>
+         </tr>
+      </table>
+      <a name="Process_type"/>
+      <p/>
+      <table border="1" cellpadding="3" cellspacing="0" width="100%">
+         <tr bgcolor="#e0e0e0" valign="top">
+            <td width="10%" colspan="2">
+               <b>
+                  <i>Process</i>
+               </b> extends: <a href="#AcknowledgableVerb_type" target="body">
+                  <b>
+                     <i>AcknowledgableVerb</i>
+                  </b>
+               </a>
+            </td>
+         </tr>
+         <tr bgcolor="#e0e0e0" valign="top">
+            <td colspan="2">
+               <i/>
+            </td>
+         </tr>
+         <tr>
+            <td width="10%" align="right" valign="top">Structure:</td>
+            <td>
+               <img src="../Diagrams/Process.png"/>
+            </td>
+         </tr>
+      </table>
+      <p/>
+      <table border="1" cellpadding="3" cellspacing="0" width="100%">
+         <tr>
+            <td bgcolor="#FFFF99">
+               <span class="SectionHeader">WIPMerge</span>
+               <a href="../../OAGIS/Resources/Nouns/WIPMerge.xsd">schema</a>
+            </td>
+         </tr>
+      </table>
+      <a name="WIPMerge_element"/>
+      <p/>
+      <table border="1" cellpadding="3" cellspacing="0" width="100%">
+         <tr bgcolor="#e0e0e0" valign="top">
+            <td width="10%" colspan="2">
+               <b>WIPMerge</b> type: <a href="#WIPMerge_type" target="body">
+                  <b>
+                     <i>WIPMerge</i>
+                  </b>
+               </a>
+            </td>
+         </tr>
+         <tr bgcolor="#e0e0e0" valign="top">
+            <td colspan="2">
+               <p style="margin-top: 3; margin-bottom: 3">WIPMerge is used to notify a Manufacturing Application of the creation of a single production lot from multiple production lots of a product being made on a production order.</p>
+            </td>
+         </tr>
+      </table>
+      <a name="Header_element"/>
+      <p/>
+      <table border="1" cellpadding="3" cellspacing="0" width="100%">
+         <tr bgcolor="#e0e0e0" valign="top">
+            <td width="10%" colspan="2">
+               <b>Header</b> type: <a href="#WIPMergeHeader_type" target="body">
+                  <b>
+                     <i>WIPMergeHeader</i>
+                  </b>
+               </a>
+            </td>
+         </tr>
+         <tr bgcolor="#e0e0e0" valign="top">
+            <td colspan="2">
+               <p style="margin-top: 3; margin-bottom: 3">Information describing the WIP Merge event</p>
+            </td>
+         </tr>
+      </table>
+      <a name="Line_element"/>
+      <p/>
+      <table border="1" cellpadding="3" cellspacing="0" width="100%">
+         <tr bgcolor="#e0e0e0" valign="top">
+            <td width="10%" colspan="2">
+               <b>Line</b> type: <a href="#WIPMergeLine_type" target="body">
+                  <b>
+                     <i>WIPMergeLine</i>
+                  </b>
+               </a>
+            </td>
+         </tr>
+         <tr bgcolor="#e0e0e0" valign="top">
+            <td colspan="2"/>
+         </tr>
+      </table>
+      <a name="Source_element"/>
+      <p/>
+      <table border="1" cellpadding="3" cellspacing="0" width="100%">
+         <tr bgcolor="#e0e0e0" valign="top">
+            <td width="10%" colspan="2">
+               <b>Source</b> type: <a href="#WIPMergeSource_type" target="body">
+                  <b>
+                     <i>WIPMergeSource</i>
+                  </b>
+               </a>
+            </td>
+         </tr>
+         <tr bgcolor="#e0e0e0" valign="top">
+            <td colspan="2">
+               <p style="margin-top: 3; margin-bottom: 3">Identifies the Source Orders to be merged.</p>
+               <p style="margin-top: 3; margin-bottom: 3">Information concerning the specific production order in the WIP Merge transaction to be processed.  Instances of this Component are the source (children) production orders from which to perform the merge transaction.  The resulting merged production order (specified in the WIPMergeDestination Component must also be specified as an instance of the WIPMergeDestination Component unless it is not an existing production order.  Note that all source production orders are assumed to be at the same standard operation sequence, intraoperation steps and departments for the merge transaction to be processed successfully.  This Component is mandatory and at least one occurrence of this Component is required for each WIPMergeLine Component.</p>
+            </td>
+         </tr>
+      </table>
+      <a name="Destination_element"/>
+      <p/>
+      <table border="1" cellpadding="3" cellspacing="0" width="100%">
+         <tr bgcolor="#e0e0e0" valign="top">
+            <td width="10%" colspan="2">
+               <b>Destination</b> type: <a href="#WIPMergeDestination_type" target="body">
+                  <b>
+                     <i>WIPMergeDestination</i>
+                  </b>
+               </a>
+            </td>
+         </tr>
+         <tr bgcolor="#e0e0e0" valign="top">
+            <td colspan="2">
+               <p style="margin-top: 3; margin-bottom: 3">Identifies the Destination Order in which the Merger creates.</p>
+               <p style="margin-top: 3; margin-bottom: 3">Information concerning the specific production order in the WIP Merge transaction to be processed.  This Component specifies the end resulting production order (the target) to which to process the merge transaction.   This Component is mandatory for each occurrence of the WIPMergeLine for all BODs except the Request BODs (Get and GetList).</p>
+            </td>
+         </tr>
+      </table>
+      <a name="WIPMerge_type"/>
+      <p/>
+      <table border="1" cellpadding="3" cellspacing="0" width="100%">
+         <tr bgcolor="#e0e0e0" valign="top">
+            <td width="10%" colspan="2">
+               <b>
+                  <i>WIPMerge</i>
+               </b> extends: <a href="../OAGIS.html#Noun_type" target="body">
+                  <b>
+                     <i>Noun</i>
+                  </b>
+               </a>
+            </td>
+         </tr>
+         <tr bgcolor="#e0e0e0" valign="top">
+            <td colspan="2">
+               <i/>
+            </td>
+         </tr>
+         <tr>
+            <td width="10%" align="right" valign="top">Structure:</td>
+            <td>
+               <img src="../Diagrams/WIPMerge.png"/>
+            </td>
+         </tr>
+         <tr>
+            <td width="10%" align="right" valign="top">Elements:</td>
+            <td>
+               <table>
+                  <tr>
+                     <td align="left" valign="top">
+                        <font size="-1">
+                           <b>Name</b>
+                        </font>
+                     </td>
+                     <td align="left" valign="top">
+                        <font size="-1">
+                           <b>Type</b>
+                        </font>
+                     </td>
+                     <td align="left" valign="top">
+                        <font size="-1">
+                           <b>Description</b>
+                        </font>
+                     </td>
+                  </tr>
+                  <tr valign="top">
+                     <td>
+                        <font size="-1">
+                           <b>Header</b>
+                        </font>
+                     </td>
+                     <td>
+                        <font size="-1">
+                           <a href="#Header_element" target="body">reference</a>
+                        </font>
+                     </td>
+                     <td>
+                        <font size="-1">
+                           <div/>
+                           <i/>
+                        </font>
+                     </td>
+                  </tr>
+                  <tr valign="top">
+                     <td>
+                        <font size="-1">
+                           <b>Line</b>
+                        </font>
+                     </td>
+                     <td>
+                        <font size="-1">
+                           <a href="#Line_element" target="body">reference</a>
+                        </font>
+                     </td>
+                     <td>
+                        <font size="-1">
+                           <div/>
+                           <i/>
+                        </font>
+                     </td>
+                  </tr>
+               </table>
+            </td>
+         </tr>
+      </table>
+      <a name="WIPMergeDestination_type"/>
+      <p/>
+      <table border="1" cellpadding="3" cellspacing="0" width="100%">
+         <tr bgcolor="#e0e0e0" valign="top">
+            <td width="10%" colspan="2">
+               <b>
+                  <i>WIPMergeDestination</i>
+               </b>
+            </td>
+         </tr>
+         <tr bgcolor="#e0e0e0" valign="top">
+            <td colspan="2">
+               <i/>
+            </td>
+         </tr>
+         <tr>
+            <td width="10%" align="right" valign="top">Structure:</td>
+            <td>
+               <img src="../Diagrams/WIPMergeDestination.png"/>
+            </td>
+         </tr>
+         <tr>
+            <td width="10%" align="right" valign="top">Elements:</td>
+            <td>
+               <table>
+                  <tr>
+                     <td align="left" valign="top">
+                        <font size="-1">
+                           <b>Name</b>
+                        </font>
+                     </td>
+                     <td align="left" valign="top">
+                        <font size="-1">
+                           <b>Type</b>
+                        </font>
+                     </td>
+                     <td align="left" valign="top">
+                        <font size="-1">
+                           <b>Description</b>
+                        </font>
+                     </td>
+                  </tr>
+                  <tr valign="top">
+                     <td>
+                        <font size="-1">
+                           <b>ItemQuantity</b>
+                        </font>
+                     </td>
+                     <td>
+                        <font size="-1">
+                           <a href="../OAGIS.html#Quantity_type" target="body">
+                              <b>
+                                 <i>Quantity</i>
+                              </b>
+                           </a>
+                        </font>
+                     </td>
+                     <td>
+                        <font size="-1">
+                           <p style="margin-top: 3; margin-bottom: 3">The quantity of the item to be merged</p>
+                           <div/>
+                           <i>
+                              <p style="margin-top: 3; margin-bottom: 3">A decimal value.</p>
+                           </i>
+                        </font>
+                     </td>
+                  </tr>
+                  <tr valign="top">
+                     <td>
+                        <font size="-1">
+                           <b>OperationReference</b>
+                        </font>
+                     </td>
+                     <td>
+                        <font size="-1">
+                           <a href="#OperationReference_element" target="body">reference</a>
+                        </font>
+                     </td>
+                     <td>
+                        <font size="-1">
+                           <div/>
+                           <i/>
+                        </font>
+                     </td>
+                  </tr>
+                  <tr valign="top">
+                     <td>
+                        <font size="-1">
+                           <b>ProductionOrderReference</b>
+                        </font>
+                     </td>
+                     <td>
+                        <font size="-1">
+                           <a href="#ProductionOrderReference_element" target="body">reference</a>
+                        </font>
+                     </td>
+                     <td>
+                        <font size="-1">
+                           <div/>
+                           <i/>
+                        </font>
+                     </td>
+                  </tr>
+                  <tr valign="top">
+                     <td>
+                        <font size="-1">
+                           <b>UserArea</b>
+                        </font>
+                     </td>
+                     <td>
+                        <font size="-1">
+                           <a href="../OAGIS.html#UserArea_element" target="body">reference</a>
+                        </font>
+                     </td>
+                     <td>
+                        <font size="-1">
+                           <div/>
+                           <i/>
+                        </font>
+                     </td>
+                  </tr>
+               </table>
+            </td>
+         </tr>
+      </table>
+      <a name="WIPMergeHeader_type"/>
+      <p/>
+      <table border="1" cellpadding="3" cellspacing="0" width="100%">
+         <tr bgcolor="#e0e0e0" valign="top">
+            <td width="10%" colspan="2">
+               <b>
+                  <i>WIPMergeHeader</i>
+               </b>
+            </td>
+         </tr>
+         <tr bgcolor="#e0e0e0" valign="top">
+            <td colspan="2">
+               <i/>
+            </td>
+         </tr>
+         <tr>
+            <td width="10%" align="right" valign="top">Structure:</td>
+            <td>
+               <img src="../Diagrams/WIPMergeHeader.png"/>
+            </td>
+         </tr>
+         <tr>
+            <td width="10%" align="right" valign="top">Elements:</td>
+            <td>
+               <table>
+                  <tr>
+                     <td align="left" valign="top">
+                        <font size="-1">
+                           <b>Name</b>
+                        </font>
+                     </td>
+                     <td align="left" valign="top">
+                        <font size="-1">
+                           <b>Type</b>
+                        </font>
+                     </td>
+                     <td align="left" valign="top">
+                        <font size="-1">
+                           <b>Description</b>
+                        </font>
+                     </td>
+                  </tr>
+                  <tr valign="top">
+                     <td>
+                        <font size="-1">
+                           <b>DocumentDateTime</b>
+                        </font>
+                     </td>
+                     <td>
+                        <font size="-1">
+                           <a href="../OAGIS.html#DateTime_type" target="body">
+                              <b>
+                                 <i>DateTime</i>
+                              </b>
+                           </a>
+                        </font>
+                     </td>
+                     <td>
+                        <font size="-1">
+                           <p style="margin-top: 3; margin-bottom: 3">Is the timestamp that indicates when the WIPMerge document was created on in the integrated envitonment.</p>
+                           <div/>
+                           <i/>
+                        </font>
+                     </td>
+                  </tr>
+                  <tr valign="top">
+                     <td>
+                        <font size="-1">
+                           <b>ProductionOrderReference</b>
+                        </font>
+                     </td>
+                     <td>
+                        <font size="-1">
+                           <a href="#ProductionOrderReference_element" target="body">reference</a>
+                        </font>
+                     </td>
+                     <td>
+                        <font size="-1">
+                           <div/>
+                           <i/>
+                        </font>
+                     </td>
+                  </tr>
+                  <tr valign="top">
+                     <td>
+                        <font size="-1">
+                           <b>ReasonCode</b>
+                        </font>
+                     </td>
+                     <td>
+                        <font size="-1">
+                           <a href="../OAGIS.html#ReasonCode_type" target="body">
+                              <b>
+                                 <i>ReasonCode</i>
+                              </b>
+                           </a>
+                        </font>
+                     </td>
+                     <td>
+                        <font size="-1">
+                           <p style="margin-top: 3; margin-bottom: 3">Is the reason code that caused the WIP Merge event to happen.</p>
+                           <div/>
+                           <i>
+                              <p style="margin-top: 3; margin-bottom: 3">Used as a reason indicator for any type of business event or activity.</p>
+                           </i>
+                        </font>
+                     </td>
+                  </tr>
+                  <tr valign="top">
+                     <td>
+                        <font size="-1">
+                           <b>UserArea</b>
+                        </font>
+                     </td>
+                     <td>
+                        <font size="-1">
+                           <a href="../OAGIS.html#UserArea_element" target="body">reference</a>
+                        </font>
+                     </td>
+                     <td>
+                        <font size="-1">
+                           <div/>
+                           <i/>
+                        </font>
+                     </td>
+                  </tr>
+               </table>
+            </td>
+         </tr>
+      </table>
+      <a name="WIPMergeLine_type"/>
+      <p/>
+      <table border="1" cellpadding="3" cellspacing="0" width="100%">
+         <tr bgcolor="#e0e0e0" valign="top">
+            <td width="10%" colspan="2">
+               <b>
+                  <i>WIPMergeLine</i>
+               </b>
+            </td>
+         </tr>
+         <tr bgcolor="#e0e0e0" valign="top">
+            <td colspan="2">
+               <i/>
+            </td>
+         </tr>
+         <tr>
+            <td width="10%" align="right" valign="top">Structure:</td>
+            <td>
+               <img src="../Diagrams/WIPMergeLine.png"/>
+            </td>
+         </tr>
+         <tr>
+            <td width="10%" align="right" valign="top">Elements:</td>
+            <td>
+               <table>
+                  <tr>
+                     <td align="left" valign="top">
+                        <font size="-1">
+                           <b>Name</b>
+                        </font>
+                     </td>
+                     <td align="left" valign="top">
+                        <font size="-1">
+                           <b>Type</b>
+                        </font>
+                     </td>
+                     <td align="left" valign="top">
+                        <font size="-1">
+                           <b>Description</b>
+                        </font>
+                     </td>
+                  </tr>
+                  <tr valign="top">
+                     <td>
+                        <font size="-1">
+                           <b>Destination</b>
+                        </font>
+                     </td>
+                     <td>
+                        <font size="-1">
+                           <a href="#Destination_element" target="body">reference</a>
+                        </font>
+                     </td>
+                     <td>
+                        <font size="-1">
+                           <div/>
+                           <i/>
+                        </font>
+                     </td>
+                  </tr>
+                  <tr valign="top">
+                     <td>
+                        <font size="-1">
+                           <b>Source</b>
+                        </font>
+                     </td>
+                     <td>
+                        <font size="-1">
+                           <a href="#Source_element" target="body">reference</a>
+                        </font>
+                     </td>
+                     <td>
+                        <font size="-1">
+                           <div/>
+                           <i/>
+                        </font>
+                     </td>
+                  </tr>
+                  <tr valign="top">
+                     <td>
+                        <font size="-1">
+                           <b>UserArea</b>
+                        </font>
+                     </td>
+                     <td>
+                        <font size="-1">
+                           <a href="../OAGIS.html#UserArea_element" target="body">reference</a>
+                        </font>
+                     </td>
+                     <td>
+                        <font size="-1">
+                           <div/>
+                           <i/>
+                        </font>
+                     </td>
+                  </tr>
+               </table>
+            </td>
+         </tr>
+      </table>
+      <a name="WIPMergeSource_type"/>
+      <p/>
+      <table border="1" cellpadding="3" cellspacing="0" width="100%">
+         <tr bgcolor="#e0e0e0" valign="top">
+            <td width="10%" colspan="2">
+               <b>
+                  <i>WIPMergeSource</i>
+               </b>
+            </td>
+         </tr>
+         <tr bgcolor="#e0e0e0" valign="top">
+            <td colspan="2">
+               <i/>
+            </td>
+         </tr>
+         <tr>
+            <td width="10%" align="right" valign="top">Structure:</td>
+            <td>
+               <img src="../Diagrams/WIPMergeSource.png"/>
+            </td>
+         </tr>
+         <tr>
+            <td width="10%" align="right" valign="top">Elements:</td>
+            <td>
+               <table>
+                  <tr>
+                     <td align="left" valign="top">
+                        <font size="-1">
+                           <b>Name</b>
+                        </font>
+                     </td>
+                     <td align="left" valign="top">
+                        <font size="-1">
+                           <b>Type</b>
+                        </font>
+                     </td>
+                     <td align="left" valign="top">
+                        <font size="-1">
+                           <b>Description</b>
+                        </font>
+                     </td>
+                  </tr>
+                  <tr valign="top">
+                     <td>
+                        <font size="-1">
+                           <b>ProductionOrderReference</b>
+                        </font>
+                     </td>
+                     <td>
+                        <font size="-1">
+                           <a href="#ProductionOrderReference_element" target="body">reference</a>
+                        </font>
+                     </td>
+                     <td>
+                        <font size="-1">
+                           <div/>
+                           <i/>
+                        </font>
+                     </td>
+                  </tr>
+                  <tr valign="top">
+                     <td>
+                        <font size="-1">
+                           <b>UserArea</b>
+                        </font>
+                     </td>
+                     <td>
+                        <font size="-1">
+                           <a href="../OAGIS.html#UserArea_element" target="body">reference</a>
+                        </font>
+                     </td>
+                     <td>
+                        <font size="-1">
+                           <div/>
+                           <i/>
+                        </font>
+                     </td>
+                  </tr>
+               </table>
+            </td>
+         </tr>
+      </table>
+      <p/>
+      <table border="1" cellpadding="3" cellspacing="0" width="100%">
+         <tr>
+            <td bgcolor="#FFFF99">
+               <span class="SectionHeader">Verb Common Files</span>
+            </td>
+         </tr>
+      </table>
+      <div/>
+      <p/>
+      <table border="1" cellpadding="3" cellspacing="0" width="100%">
+         <tr>
+            <td bgcolor="#FFFF99">
+               <span class="SectionHeader">Verb.xsd</span>
+               <a href="../../OAGIS/Resources/Verbs/Verb.xsd">schema</a>
+            </td>
+         </tr>
+      </table>
+      <a name="AcknowledgableVerb_type"/>
+      <p/>
+      <table border="1" cellpadding="3" cellspacing="0" width="100%">
+         <tr bgcolor="#e0e0e0" valign="top">
+            <td width="10%" colspan="2">
+               <b>
+                  <i>AcknowledgableVerb</i>
+               </b> extends: <a href="#ConfirmableVerb_type" target="body">
+                  <b>
+                     <i>ConfirmableVerb</i>
+                  </b>
+               </a>
+            </td>
+         </tr>
+         <tr bgcolor="#e0e0e0" valign="top">
+            <td colspan="2">
+               <i/>
+            </td>
+         </tr>
+         <tr>
+            <td width="10%" align="right" valign="top">Structure:</td>
+            <td>
+               <img src="../Diagrams/AcknowledgableVerb.png"/>
+            </td>
+         </tr>
+         <tr>
+            <td width="10%" align="right" valign="top">Attributes:</td>
+            <td>
+               <table border="0">
+                  <tr>
+                     <td align="left" valign="top">
+                        <font size="-1">
+                           <b>Name</b>
+                        </font>
+                     </td>
+                     <td align="left" valign="top">
+                        <font size="-1">
+                           <b>Type</b>
+                        </font>
+                     </td>
+                     <td align="left" valign="top">
+                        <font size="-1">
+                           <b>Usage</b>
+                        </font>
+                     </td>
+                     <td align="left" valign="top">
+                        <font size="-1">
+                           <b>Description</b>
+                        </font>
+                     </td>
+                  </tr>
+                  <tr valign="top">
+                     <td>
+                        <font size="-1">
+                           <b>acknowledge</b>
+                        </font>
+                     </td>
+                     <td>
+                        <font size="-1">
+                           <a href="#AcknowledgementType_type" target="body">
+                              <b>
+                                 <i>AcknowledgementType</i>
+                              </b>
+                           </a>
+                        </font>
+                     </td>
+                     <td>
+                        <font size="-1"/>
+                     </td>
+                     <td>
+                        <font size="-1"/>
+                     </td>
+                  </tr>
+               </table>
+            </td>
+         </tr>
+      </table>
+      <a name="AcknowledgementType_type"/>
+      <p/>
+      <table border="1" cellpadding="3" cellspacing="0" width="100%">
+         <tr bgcolor="#e0e0e0" valign="top">
+            <td width="10%" colspan="2">
+               <b>
+                  <i>AcknowledgementType</i>
+               </b> restricts: <a href="http://www.w3.org/TR/xmlschema-2/#NMTOKEN">
+                  <b>
+                     <i>xs:NMTOKEN</i>
+                  </b>
+               </a>
+            </td>
+         </tr>
+         <tr bgcolor="#e0e0e0" valign="top">
+            <td colspan="2">
+               <i/>
+            </td>
+         </tr>
+         <tr>
+            <td width="10%" align="right" valign="top">Enumerations:</td>
+            <td>
+               <table border="0">
+                  <tr valign="top">
+                     <td>
+                        <font size="-1">
+                           <b>Always</b>
+                        </font>
+                     </td>
+                     <td>
+                        <font size="-1"/>
+                     </td>
+                  </tr>
+                  <tr valign="top">
+                     <td>
+                        <font size="-1">
+                           <b>Never</b>
+                        </font>
+                     </td>
+                     <td>
+                        <font size="-1"/>
+                     </td>
+                  </tr>
+                  <tr valign="top">
+                     <td>
+                        <font size="-1">
+                           <b>OnChange</b>
+                        </font>
+                     </td>
+                     <td>
+                        <font size="-1"/>
+                     </td>
+                  </tr>
+               </table>
+            </td>
+         </tr>
+      </table>
+      <a name="ConfirmableVerb_type"/>
+      <p/>
+      <table border="1" cellpadding="3" cellspacing="0" width="100%">
+         <tr bgcolor="#e0e0e0" valign="top">
+            <td width="10%" colspan="2">
+               <b>
+                  <i>ConfirmableVerb</i>
+               </b> extends: <a href="#Verb_type" target="body">
+                  <b>
+                     <i>Verb</i>
+                  </b>
+               </a>
+            </td>
+         </tr>
+         <tr bgcolor="#e0e0e0" valign="top">
+            <td colspan="2">
+               <i/>
+            </td>
+         </tr>
+         <tr>
+            <td width="10%" align="right" valign="top">Structure:</td>
+            <td>
+               <img src="../Diagrams/ConfirmableVerb.png"/>
+            </td>
+         </tr>
+         <tr>
+            <td width="10%" align="right" valign="top">Attributes:</td>
+            <td>
+               <table border="0">
+                  <tr>
+                     <td align="left" valign="top">
+                        <font size="-1">
+                           <b>Name</b>
+                        </font>
+                     </td>
+                     <td align="left" valign="top">
+                        <font size="-1">
+                           <b>Type</b>
+                        </font>
+                     </td>
+                     <td align="left" valign="top">
+                        <font size="-1">
+                           <b>Usage</b>
+                        </font>
+                     </td>
+                     <td align="left" valign="top">
+                        <font size="-1">
+                           <b>Description</b>
+                        </font>
+                     </td>
+                  </tr>
+                  <tr valign="top">
+                     <td>
+                        <font size="-1">
+                           <b>confirm</b>
+                        </font>
+                     </td>
+                     <td>
+                        <font size="-1">
+                           <a href="#ConfirmType_type" target="body">
+                              <b>
+                                 <i>ConfirmType</i>
+                              </b>
+                           </a>
+                        </font>
+                     </td>
+                     <td>
+                        <font size="-1"/>
+                     </td>
+                     <td>
+                        <font size="-1"/>
+                     </td>
+                  </tr>
+               </table>
+            </td>
+         </tr>
+      </table>
+      <a name="ConfirmType_type"/>
+      <p/>
+      <table border="1" cellpadding="3" cellspacing="0" width="100%">
+         <tr bgcolor="#e0e0e0" valign="top">
+            <td width="10%" colspan="2">
+               <b>
+                  <i>ConfirmType</i>
+               </b> restricts: <a href="http://www.w3.org/TR/xmlschema-2/#NMTOKEN">
+                  <b>
+                     <i>xs:NMTOKEN</i>
+                  </b>
+               </a>
+            </td>
+         </tr>
+         <tr bgcolor="#e0e0e0" valign="top">
+            <td colspan="2">
+               <i/>
+            </td>
+         </tr>
+         <tr>
+            <td width="10%" align="right" valign="top">Enumerations:</td>
+            <td>
+               <table border="0">
+                  <tr valign="top">
+                     <td>
+                        <font size="-1">
+                           <b>Always</b>
+                        </font>
+                     </td>
+                     <td>
+                        <font size="-1"/>
+                     </td>
+                  </tr>
+                  <tr valign="top">
+                     <td>
+                        <font size="-1">
+                           <b>Never</b>
+                        </font>
+                     </td>
+                     <td>
+                        <font size="-1"/>
+                     </td>
+                  </tr>
+                  <tr valign="top">
+                     <td>
+                        <font size="-1">
+                           <b>OnChange</b>
+                        </font>
+                     </td>
+                     <td>
+                        <font size="-1"/>
+                     </td>
+                  </tr>
+               </table>
+            </td>
+         </tr>
+      </table>
+      <a name="Expression_type"/>
+      <p/>
+      <table border="1" cellpadding="3" cellspacing="0" width="100%">
+         <tr bgcolor="#e0e0e0" valign="top">
+            <td width="10%" colspan="2">
+               <b>
+                  <i>Expression</i>
+               </b> restricts: <a href="http://www.w3.org/TR/xmlschema-2/#string">
+                  <b>
+                     <i>xs:string</i>
+                  </b>
+               </a>
+            </td>
+         </tr>
+         <tr bgcolor="#e0e0e0" valign="top">
+            <td colspan="2">
+               <i/>
+            </td>
+         </tr>
+      </table>
+      <a name="ExpressionCriteria_type"/>
+      <p/>
+      <table border="1" cellpadding="3" cellspacing="0" width="100%">
+         <tr bgcolor="#e0e0e0" valign="top">
+            <td width="10%" colspan="2">
+               <b>
+                  <i>ExpressionCriteria</i>
+               </b>
+            </td>
+         </tr>
+         <tr bgcolor="#e0e0e0" valign="top">
+            <td colspan="2">
+               <i/>
+            </td>
+         </tr>
+         <tr>
+            <td width="10%" align="right" valign="top">Structure:</td>
+            <td>
+               <img src="../Diagrams/ExpressionCriteria.png"/>
+            </td>
+         </tr>
+         <tr>
+            <td width="10%" align="right" valign="top">Elements:</td>
+            <td>
+               <table>
+                  <tr>
+                     <td align="left" valign="top">
+                        <font size="-1">
+                           <b>Name</b>
+                        </font>
+                     </td>
+                     <td align="left" valign="top">
+                        <font size="-1">
+                           <b>Type</b>
+                        </font>
+                     </td>
+                     <td align="left" valign="top">
+                        <font size="-1">
+                           <b>Description</b>
+                        </font>
+                     </td>
+                  </tr>
+                  <tr valign="top">
+                     <td>
+                        <font size="-1">
+                           <b>SelectExpression</b>
+                        </font>
+                     </td>
+                     <td>
+                        <font size="-1">
+                           <a href="#Expression_type" target="body">
+                              <b>
+                                 <i>Expression</i>
+                              </b>
+                           </a>
+                        </font>
+                     </td>
+                     <td>
+                        <font size="-1">
+                           <p style="margin-top: 3; margin-bottom: 3">Allows the 1-n number of selection expressions for the information to be returned.</p>
+                           <div/>
+                           <i/>
+                        </font>
+                     </td>
+                  </tr>
+               </table>
+            </td>
+         </tr>
+         <tr>
+            <td width="10%" align="right" valign="top">Attributes:</td>
+            <td>
+               <table border="0">
+                  <tr>
+                     <td align="left" valign="top">
+                        <font size="-1">
+                           <b>Name</b>
+                        </font>
+                     </td>
+                     <td align="left" valign="top">
+                        <font size="-1">
+                           <b>Type</b>
+                        </font>
+                     </td>
+                     <td align="left" valign="top">
+                        <font size="-1">
+                           <b>Usage</b>
+                        </font>
+                     </td>
+                     <td align="left" valign="top">
+                        <font size="-1">
+                           <b>Description</b>
+                        </font>
+                     </td>
+                  </tr>
+                  <tr valign="top">
+                     <td>
+                        <font size="-1">
+                           <b>expressionLanguage</b>
+                        </font>
+                     </td>
+                     <td>
+                        <font size="-1">
+                           <a href="http://www.w3.org/TR/xmlschema-2/#string">
+                              <b>
+                                 <i>xs:string</i>
+                              </b>
+                           </a>
+                        </font>
+                     </td>
+                     <td>
+                        <font size="-1">optional</font>
+                     </td>
+                     <td>
+                        <font size="-1"/>
+                     </td>
+                  </tr>
+               </table>
+            </td>
+         </tr>
+      </table>
+      <a name="RequestVerb_type"/>
+      <p/>
+      <table border="1" cellpadding="3" cellspacing="0" width="100%">
+         <tr bgcolor="#e0e0e0" valign="top">
+            <td width="10%" colspan="2">
+               <b>
+                  <i>RequestVerb</i>
+               </b> extends: <a href="#ConfirmableVerb_type" target="body">
+                  <b>
+                     <i>ConfirmableVerb</i>
+                  </b>
+               </a>
+            </td>
+         </tr>
+         <tr bgcolor="#e0e0e0" valign="top">
+            <td colspan="2">
+               <i/>
+            </td>
+         </tr>
+         <tr>
+            <td width="10%" align="right" valign="top">Structure:</td>
+            <td>
+               <img src="../Diagrams/RequestVerb.png"/>
+            </td>
+         </tr>
+         <tr>
+            <td width="10%" align="right" valign="top">Elements:</td>
+            <td>
+               <table>
+                  <tr>
+                     <td align="left" valign="top">
+                        <font size="-1">
+                           <b>Name</b>
+                        </font>
+                     </td>
+                     <td align="left" valign="top">
+                        <font size="-1">
+                           <b>Type</b>
+                        </font>
+                     </td>
+                     <td align="left" valign="top">
+                        <font size="-1">
+                           <b>Description</b>
+                        </font>
+                     </td>
+                  </tr>
+                  <tr valign="top">
+                     <td>
+                        <font size="-1">
+                           <b>ReturnCriteria</b>
+                        </font>
+                     </td>
+                     <td>
+                        <font size="-1"/>
+                     </td>
+                     <td>
+                        <font size="-1">
+                           <p style="margin-top: 3; margin-bottom: 3">Allows the initator of the BOD to indicate the information (down to the field level) that is requested to be returned. The expressionLanguage indicates the expression language being used.</p>
+                           <div/>
+                           <i/>
+                        </font>
+                     </td>
+                  </tr>
+               </table>
+            </td>
+         </tr>
+      </table>
+      <div/>
+      <p/>
+      <table border="1" cellpadding="3" cellspacing="0" width="100%">
+         <tr>
+            <td bgcolor="#FFFF99">
+               <span class="SectionHeader">VerbBase.xsd</span>
+               <a href="../../OAGIS/Resources/Verbs/VerbBase.xsd">schema</a>
+            </td>
+         </tr>
+      </table>
+      <a name="Verb_element"/>
+      <p/>
+      <table border="1" cellpadding="3" cellspacing="0" width="100%">
+         <tr bgcolor="#e0e0e0" valign="top">
+            <td width="10%" colspan="2">
+               <b>Verb</b> type: <a href="#Verb_type" target="body">
+                  <b>
+                     <i>Verb</i>
+                  </b>
+               </a>
+            </td>
+         </tr>
+         <tr bgcolor="#e0e0e0" valign="top">
+            <td colspan="2"/>
+         </tr>
+      </table>
+      <a name="Verb_type"/>
+      <p/>
+      <table border="1" cellpadding="3" cellspacing="0" width="100%">
+         <tr bgcolor="#e0e0e0" valign="top">
+            <td width="10%" colspan="2">
+               <b>
+                  <i>Verb</i>
+               </b>
+            </td>
+         </tr>
+         <tr bgcolor="#e0e0e0" valign="top">
+            <td colspan="2">
+               <i/>
+            </td>
+         </tr>
+         <tr>
+            <td width="10%" align="right" valign="top">Structure:</td>
+            <td>
+               <img src="../Diagrams/Verb.png"/>
+            </td>
+         </tr>
+      </table>
+      <p/>
+      <table border="1" cellpadding="3" cellspacing="0" width="100%">
+         <tr>
+            <td bgcolor="#FFFF99">
+               <span class="SectionHeader">Noun Common Files</span>
+            </td>
+         </tr>
+      </table>
+      <div/>
+   </body>
+</html>

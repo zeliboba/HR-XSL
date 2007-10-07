@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomerReportingRequirements xmlns="http://ns.hr-xml.org/2007-04-15" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://ns.hr-xml.org/2007-04-15 CustomerReportingRequirements.xsd">
+	<ManagerName>Marion Miller</ManagerName>
+	<SupervisorName>Bob Anzac</SupervisorName>
+	<ContactName>Bob Anzac</ContactName>
+	<PurchaseOrderNumber>String</PurchaseOrderNumber>
+	<DepartmentCode> 31</DepartmentCode>
+	<DepartmentName>Procurement</DepartmentName>
+	<LocationCode>String</LocationCode>
+	<LocationName>Headquarters</LocationName>
+	<CostCenterCode>String</CostCenterCode>
+	<CostCenterName>String</CostCenterName>
+	<CustomerJobCode>String</CustomerJobCode>
+	<CustomerJobDescription>String</CustomerJobDescription>
+	<AccountCode>String</AccountCode>
+	<ProjectCode>String</ProjectCode>
+	<ExternalOrderNumber>String</ExternalOrderNumber>
+	<ExternalReqNumber>String</ExternalReqNumber>
+	<Entity>String</Entity>
+	<SubEntity>String</SubEntity>
+	<Shift>String</Shift>
+	<CustomerReferenceNumber>String</CustomerReferenceNumber>
+	<AdditionalRequirement requirementTitle="String">String</AdditionalRequirement>
+	<PurchaseOrderLineItem>Payrolled</PurchaseOrderLineItem>
+</CustomerReportingRequirements>

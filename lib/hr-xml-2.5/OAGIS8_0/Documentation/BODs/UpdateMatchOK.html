@@ -1,0 +1,2402 @@
+<?xml version="1.0" encoding="utf-8"?>
+<html>
+   <head>
+      <style type="text/css"> .SectionHeader { font-size: 14pt; font-weight: bold; color: #000000; }</style>
+   </head>
+   <body>
+      <p/>
+      <table border="1" cellpadding="3" cellspacing="0" width="100%">
+         <tr>
+            <td bgcolor="#FFFF99">
+               <span class="SectionHeader">UpdateMatchOK</span>
+               <a href="../../OAGIS/BODs/UpdateMatchOK.xsd">schema</a>, <a href="../../OAGIS/BODExamples/UpdateMatchOK.xml">example</a>, <a href="../../OAGIS/BODConstraints/Rules/UpdateMatchOK.xml">validation rules</a>, <a href="../../OAGIS/BODConstraints/Generated/UpdateMatchOK.xsl">validation stylesheet</a>
+            </td>
+         </tr>
+      </table>
+      <a name="UpdateMatchOk_element"/>
+      <p/>
+      <table border="1" cellpadding="3" cellspacing="0" width="100%">
+         <tr bgcolor="#e0e0e0" valign="top">
+            <td width="10%" colspan="2">
+               <b>UpdateMatchOk</b> type: <a href="#UpdateMatchOk_type" target="body">
+                  <b>
+                     <i>UpdateMatchOk</i>
+                  </b>
+               </a>
+            </td>
+         </tr>
+         <tr bgcolor="#e0e0e0" valign="top">
+            <td colspan="2">
+               <p style="margin-top: 3; margin-bottom: 3">In certain application suites, purchase order / invoice matching functionality exists in the purchasing application, while in other suites this functionality exists in the accounts payable application.
+The invoice matching process may include several document types, including the following:
+·	Two way match - Purchase Order and the Invoice
+·	Three way match - Purchase Order, Invoice, and the Receipt
+·	Four way match – Purchase Order, Invoice, Receipt, and Inspection results
+
+Note:  For the four way match, it is assumed that inspection results have been updated on the Purchase Order for visibility in matching.
+When matching takes place in the purchasing application, the accounts payable application may have to inform the purchasing application of the supplier invoice to which purchasing transactions (purchase orders, goods receiving notes and inspection tickets) are to be matched if the invoice is initially entered into the accounts payable application. Note that in some situations, invoices are entered directly into the purchase order application or are created by the purchase order application when using evaluated receipt settlement (ERS) and in this instance, it is not necessary to perform the separate integration described in these chapters.
+
+When matching takes place in the accounts payable application, the purchasing application must inform the accounts payable application of the purchasing transactions (purchase orders, goods receiving notes and inspection tickets) to which the invoice (in accounts payable) is to be matched.  
+These integration scenarios have been developed for document matching to occur at the line level within the PO document and the Invoice document.  This may be a one to one relationship, or it may be a many to one relationship from Invoice to PO or from the PO to the Invoice.  Charges not associated with a specific Invoice line match be matched individually.
+ The UpdateMatchOk is used for the accounts payable application to send successful matching notification to a purchasing application.  
+
+The LoadMatchDocument is discussed in another chapter.  The LoadMatchDocument is used to keep invoice, purchase order, goods receipt note and inspection ticket information current. 
+
+In the model below, invoice matching functionality exists in the accounts payable application, the invoice is entered into accounts payable, and purchasing publishes matching document information to which accounts payable subscribes.
+</p>
+            </td>
+         </tr>
+      </table>
+      <a name="UpdateMatchOk_type"/>
+      <p/>
+      <table border="1" cellpadding="3" cellspacing="0" width="100%">
+         <tr bgcolor="#e0e0e0" valign="top">
+            <td width="10%" colspan="2">
+               <b>
+                  <i>UpdateMatchOk</i>
+               </b> extends: <a href="../OAGIS.html#BusinessObjectDocument_type" target="body">
+                  <b>
+                     <i>BusinessObjectDocument</i>
+                  </b>
+               </a>
+            </td>
+         </tr>
+         <tr bgcolor="#e0e0e0" valign="top">
+            <td colspan="2">
+               <i/>
+            </td>
+         </tr>
+         <tr>
+            <td width="10%" align="right" valign="top">Structure:</td>
+            <td>
+               <img src="../Diagrams/UpdateMatchOk.png"/>
+            </td>
+         </tr>
+         <tr>
+            <td width="10%" align="right" valign="top">Elements:</td>
+            <td>
+               <table>
+                  <tr>
+                     <td align="left" valign="top">
+                        <font size="-1">
+                           <b>Name</b>
+                        </font>
+                     </td>
+                     <td align="left" valign="top">
+                        <font size="-1">
+                           <b>Type</b>
+                        </font>
+                     </td>
+                     <td align="left" valign="top">
+                        <font size="-1">
+                           <b>Description</b>
+                        </font>
+                     </td>
+                  </tr>
+                  <tr valign="top">
+                     <td>
+                        <font size="-1">
+                           <b>DataArea</b>
+                        </font>
+                     </td>
+                     <td>
+                        <font size="-1">
+                           <a href="#UpdateMatchOkDataArea_type" target="body">
+                              <b>
+                                 <i>UpdateMatchOkDataArea</i>
+                              </b>
+                           </a>
+                        </font>
+                     </td>
+                     <td>
+                        <font size="-1">
+                           <p style="margin-top: 3; margin-bottom: 3">Is where the information that the BOD message carries is provided, in this case UpdateMatchOK. The information consists of a Verb and one or more Nouns. The verb (Update) indicates the action to be performed on the Noun (MatchOK).</p>
+                           <div/>
+                           <i/>
+                        </font>
+                     </td>
+                  </tr>
+               </table>
+            </td>
+         </tr>
+      </table>
+      <a name="UpdateMatchOkDataArea_type"/>
+      <p/>
+      <table border="1" cellpadding="3" cellspacing="0" width="100%">
+         <tr bgcolor="#e0e0e0" valign="top">
+            <td width="10%" colspan="2">
+               <b>
+                  <i>UpdateMatchOkDataArea</i>
+               </b> extends: <a href="../OAGIS.html#DataArea_type" target="body">
+                  <b>
+                     <i>DataArea</i>
+                  </b>
+               </a>
+            </td>
+         </tr>
+         <tr bgcolor="#e0e0e0" valign="top">
+            <td colspan="2">
+               <i/>
+            </td>
+         </tr>
+         <tr>
+            <td width="10%" align="right" valign="top">Structure:</td>
+            <td>
+               <img src="../Diagrams/UpdateMatchOkDataArea.png"/>
+            </td>
+         </tr>
+         <tr>
+            <td width="10%" align="right" valign="top">Elements:</td>
+            <td>
+               <table>
+                  <tr>
+                     <td align="left" valign="top">
+                        <font size="-1">
+                           <b>Name</b>
+                        </font>
+                     </td>
+                     <td align="left" valign="top">
+                        <font size="-1">
+                           <b>Type</b>
+                        </font>
+                     </td>
+                     <td align="left" valign="top">
+                        <font size="-1">
+                           <b>Description</b>
+                        </font>
+                     </td>
+                  </tr>
+                  <tr valign="top">
+                     <td>
+                        <font size="-1">
+                           <b>MatchOk</b>
+                        </font>
+                     </td>
+                     <td>
+                        <font size="-1">
+                           <a href="#MatchOk_element" target="body">reference</a>
+                        </font>
+                     </td>
+                     <td>
+                        <font size="-1">
+                           <div/>
+                           <i/>
+                        </font>
+                     </td>
+                  </tr>
+                  <tr valign="top">
+                     <td>
+                        <font size="-1">
+                           <b>Update</b>
+                        </font>
+                     </td>
+                     <td>
+                        <font size="-1">
+                           <a href="#Update_element" target="body">reference</a>
+                        </font>
+                     </td>
+                     <td>
+                        <font size="-1">
+                           <div/>
+                           <i/>
+                        </font>
+                     </td>
+                  </tr>
+               </table>
+            </td>
+         </tr>
+      </table>
+      <p/>
+      <table border="1" cellpadding="3" cellspacing="0" width="100%">
+         <tr>
+            <td bgcolor="#FFFF99">
+               <span class="SectionHeader">UpdateMatchOK Scenario Diagram</span>
+            </td>
+         </tr>
+      </table>
+      <div>
+         <img src="../Scenarios/S2_Scenarios_files/image068.png"/>
+      </div>
+      <p/>
+      <table border="1" cellpadding="3" cellspacing="0" width="100%">
+         <tr>
+            <td bgcolor="#FFFF99">
+               <span class="SectionHeader">Update</span>
+               <a href="../../OAGIS/Resources/Verbs/Update.xsd">schema</a>
+            </td>
+         </tr>
+      </table>
+      <a name="Update_element"/>
+      <p/>
+      <table border="1" cellpadding="3" cellspacing="0" width="100%">
+         <tr bgcolor="#e0e0e0" valign="top">
+            <td width="10%" colspan="2">
+               <b>Update</b> type: <a href="#Update_type" target="body">
+                  <b>
+                     <i>Update</i>
+                  </b>
+               </a>
+            </td>
+         </tr>
+         <tr bgcolor="#e0e0e0" valign="top">
+            <td colspan="2">
+               <p style="margin-top: 3; margin-bottom: 3">The Update verb is used to describe specific processing in a more fine-grained manner beyond add, change or delete processing.  An example is the update of inspection information from one business application to another.  The event is not adding a document, or changing fields per se, it is communicating the occurrence of an event as well as the corresponding data that accompanies the event.</p>
+            </td>
+         </tr>
+      </table>
+      <a name="Update_type"/>
+      <p/>
+      <table border="1" cellpadding="3" cellspacing="0" width="100%">
+         <tr bgcolor="#e0e0e0" valign="top">
+            <td width="10%" colspan="2">
+               <b>
+                  <i>Update</i>
+               </b> extends: <a href="#Verb_type" target="body">
+                  <b>
+                     <i>Verb</i>
+                  </b>
+               </a>
+            </td>
+         </tr>
+         <tr bgcolor="#e0e0e0" valign="top">
+            <td colspan="2">
+               <i/>
+            </td>
+         </tr>
+         <tr>
+            <td width="10%" align="right" valign="top">Structure:</td>
+            <td>
+               <img src="../Diagrams/Update.png"/>
+            </td>
+         </tr>
+         <tr>
+            <td width="10%" align="right" valign="top">Elements:</td>
+            <td>
+               <table>
+                  <tr>
+                     <td align="left" valign="top">
+                        <font size="-1">
+                           <b>Name</b>
+                        </font>
+                     </td>
+                     <td align="left" valign="top">
+                        <font size="-1">
+                           <b>Type</b>
+                        </font>
+                     </td>
+                     <td align="left" valign="top">
+                        <font size="-1">
+                           <b>Description</b>
+                        </font>
+                     </td>
+                  </tr>
+                  <tr valign="top">
+                     <td>
+                        <font size="-1">
+                           <b>UpdateCriteria</b>
+                        </font>
+                     </td>
+                     <td>
+                        <font size="-1">
+                           <a href="#UpdateExpressionCriteria_type" target="body">
+                              <b>
+                                 <i>UpdateExpressionCriteria</i>
+                              </b>
+                           </a>
+                        </font>
+                     </td>
+                     <td>
+                        <font size="-1">
+                           <div/>
+                           <i/>
+                        </font>
+                     </td>
+                  </tr>
+               </table>
+            </td>
+         </tr>
+      </table>
+      <a name="UpdateExpressionCriteria_type"/>
+      <p/>
+      <table border="1" cellpadding="3" cellspacing="0" width="100%">
+         <tr bgcolor="#e0e0e0" valign="top">
+            <td width="10%" colspan="2">
+               <b>
+                  <i>UpdateExpressionCriteria</i>
+               </b>
+            </td>
+         </tr>
+         <tr bgcolor="#e0e0e0" valign="top">
+            <td colspan="2">
+               <i/>
+            </td>
+         </tr>
+         <tr>
+            <td width="10%" align="right" valign="top">Structure:</td>
+            <td>
+               <img src="../Diagrams/UpdateExpressionCriteria.png"/>
+            </td>
+         </tr>
+         <tr>
+            <td width="10%" align="right" valign="top">Elements:</td>
+            <td>
+               <table>
+                  <tr>
+                     <td align="left" valign="top">
+                        <font size="-1">
+                           <b>Name</b>
+                        </font>
+                     </td>
+                     <td align="left" valign="top">
+                        <font size="-1">
+                           <b>Type</b>
+                        </font>
+                     </td>
+                     <td align="left" valign="top">
+                        <font size="-1">
+                           <b>Description</b>
+                        </font>
+                     </td>
+                  </tr>
+                  <tr valign="top">
+                     <td>
+                        <font size="-1">
+                           <b>Expression</b>
+                        </font>
+                     </td>
+                     <td>
+                        <font size="-1"/>
+                     </td>
+                     <td>
+                        <font size="-1">
+                           <div/>
+                           <i/>
+                        </font>
+                     </td>
+                  </tr>
+               </table>
+            </td>
+         </tr>
+         <tr>
+            <td width="10%" align="right" valign="top">Attributes:</td>
+            <td>
+               <table border="0">
+                  <tr>
+                     <td align="left" valign="top">
+                        <font size="-1">
+                           <b>Name</b>
+                        </font>
+                     </td>
+                     <td align="left" valign="top">
+                        <font size="-1">
+                           <b>Type</b>
+                        </font>
+                     </td>
+                     <td align="left" valign="top">
+                        <font size="-1">
+                           <b>Usage</b>
+                        </font>
+                     </td>
+                     <td align="left" valign="top">
+                        <font size="-1">
+                           <b>Description</b>
+                        </font>
+                     </td>
+                  </tr>
+                  <tr valign="top">
+                     <td>
+                        <font size="-1">
+                           <b>action</b>
+                        </font>
+                     </td>
+                     <td>
+                        <font size="-1"/>
+                     </td>
+                     <td>
+                        <font size="-1">required</font>
+                     </td>
+                     <td>
+                        <font size="-1"/>
+                     </td>
+                  </tr>
+                  <tr valign="top">
+                     <td>
+                        <font size="-1">
+                           <b>expressionLanguage</b>
+                        </font>
+                     </td>
+                     <td>
+                        <font size="-1"/>
+                     </td>
+                     <td>
+                        <font size="-1"/>
+                     </td>
+                     <td>
+                        <font size="-1"/>
+                     </td>
+                  </tr>
+                  <tr valign="top">
+                     <td>
+                        <font size="-1">
+                           <b>lock</b>
+                        </font>
+                     </td>
+                     <td>
+                        <font size="-1">
+                           <a href="http://www.w3.org/TR/xmlschema-2/#boolean">
+                              <b>
+                                 <i>xs:boolean</i>
+                              </b>
+                           </a>
+                        </font>
+                     </td>
+                     <td>
+                        <font size="-1"/>
+                     </td>
+                     <td>
+                        <font size="-1"/>
+                     </td>
+                  </tr>
+               </table>
+            </td>
+         </tr>
+         <tr>
+            <td width="10%" align="right" valign="top">Enumerations:</td>
+            <td>
+               <table border="0">
+                  <tr valign="top">
+                     <td>
+                        <font size="-1">
+                           <b>Add</b>
+                        </font>
+                     </td>
+                     <td>
+                        <font size="-1"/>
+                     </td>
+                  </tr>
+                  <tr valign="top">
+                     <td>
+                        <font size="-1">
+                           <b>Change</b>
+                        </font>
+                     </td>
+                     <td>
+                        <font size="-1"/>
+                     </td>
+                  </tr>
+                  <tr valign="top">
+                     <td>
+                        <font size="-1">
+                           <b>Delete</b>
+                        </font>
+                     </td>
+                     <td>
+                        <font size="-1"/>
+                     </td>
+                  </tr>
+                  <tr valign="top">
+                     <td>
+                        <font size="-1">
+                           <b>Replace</b>
+                        </font>
+                     </td>
+                     <td>
+                        <font size="-1"/>
+                     </td>
+                  </tr>
+               </table>
+            </td>
+         </tr>
+      </table>
+      <p/>
+      <table border="1" cellpadding="3" cellspacing="0" width="100%">
+         <tr>
+            <td bgcolor="#FFFF99">
+               <span class="SectionHeader">MatchOK</span>
+               <a href="../../OAGIS/Resources/Nouns/MatchOK.xsd">schema</a>
+            </td>
+         </tr>
+      </table>
+      <a name="MatchOk_element"/>
+      <p/>
+      <table border="1" cellpadding="3" cellspacing="0" width="100%">
+         <tr bgcolor="#e0e0e0" valign="top">
+            <td width="10%" colspan="2">
+               <b>MatchOk</b> type: <a href="#MatchDocument_type" target="body">
+                  <b>
+                     <i>MatchDocument</i>
+                  </b>
+               </a>
+            </td>
+         </tr>
+         <tr bgcolor="#e0e0e0" valign="top">
+            <td colspan="2">
+               <p style="margin-top: 3; margin-bottom: 3">Match OK represents notification that purchasing lines were successfully matched to a vendor invoice.  The matching of a purchase order to an invoice is used to determine the amount paid to the vendor.</p>
+            </td>
+         </tr>
+      </table>
+      <p/>
+      <table border="1" cellpadding="3" cellspacing="0" width="100%">
+         <tr>
+            <td bgcolor="#FFFF99">
+               <span class="SectionHeader">Verb Common Files</span>
+            </td>
+         </tr>
+      </table>
+      <div/>
+      <p/>
+      <table border="1" cellpadding="3" cellspacing="0" width="100%">
+         <tr>
+            <td bgcolor="#FFFF99">
+               <span class="SectionHeader">Verb.xsd</span>
+               <a href="../../OAGIS/Resources/Verbs/Verb.xsd">schema</a>
+            </td>
+         </tr>
+      </table>
+      <a name="AcknowledgableVerb_type"/>
+      <p/>
+      <table border="1" cellpadding="3" cellspacing="0" width="100%">
+         <tr bgcolor="#e0e0e0" valign="top">
+            <td width="10%" colspan="2">
+               <b>
+                  <i>AcknowledgableVerb</i>
+               </b> extends: <a href="#ConfirmableVerb_type" target="body">
+                  <b>
+                     <i>ConfirmableVerb</i>
+                  </b>
+               </a>
+            </td>
+         </tr>
+         <tr bgcolor="#e0e0e0" valign="top">
+            <td colspan="2">
+               <i/>
+            </td>
+         </tr>
+         <tr>
+            <td width="10%" align="right" valign="top">Structure:</td>
+            <td>
+               <img src="../Diagrams/AcknowledgableVerb.png"/>
+            </td>
+         </tr>
+         <tr>
+            <td width="10%" align="right" valign="top">Attributes:</td>
+            <td>
+               <table border="0">
+                  <tr>
+                     <td align="left" valign="top">
+                        <font size="-1">
+                           <b>Name</b>
+                        </font>
+                     </td>
+                     <td align="left" valign="top">
+                        <font size="-1">
+                           <b>Type</b>
+                        </font>
+                     </td>
+                     <td align="left" valign="top">
+                        <font size="-1">
+                           <b>Usage</b>
+                        </font>
+                     </td>
+                     <td align="left" valign="top">
+                        <font size="-1">
+                           <b>Description</b>
+                        </font>
+                     </td>
+                  </tr>
+                  <tr valign="top">
+                     <td>
+                        <font size="-1">
+                           <b>acknowledge</b>
+                        </font>
+                     </td>
+                     <td>
+                        <font size="-1">
+                           <a href="#AcknowledgementType_type" target="body">
+                              <b>
+                                 <i>AcknowledgementType</i>
+                              </b>
+                           </a>
+                        </font>
+                     </td>
+                     <td>
+                        <font size="-1"/>
+                     </td>
+                     <td>
+                        <font size="-1"/>
+                     </td>
+                  </tr>
+               </table>
+            </td>
+         </tr>
+      </table>
+      <a name="AcknowledgementType_type"/>
+      <p/>
+      <table border="1" cellpadding="3" cellspacing="0" width="100%">
+         <tr bgcolor="#e0e0e0" valign="top">
+            <td width="10%" colspan="2">
+               <b>
+                  <i>AcknowledgementType</i>
+               </b> restricts: <a href="http://www.w3.org/TR/xmlschema-2/#NMTOKEN">
+                  <b>
+                     <i>xs:NMTOKEN</i>
+                  </b>
+               </a>
+            </td>
+         </tr>
+         <tr bgcolor="#e0e0e0" valign="top">
+            <td colspan="2">
+               <i/>
+            </td>
+         </tr>
+         <tr>
+            <td width="10%" align="right" valign="top">Enumerations:</td>
+            <td>
+               <table border="0">
+                  <tr valign="top">
+                     <td>
+                        <font size="-1">
+                           <b>Always</b>
+                        </font>
+                     </td>
+                     <td>
+                        <font size="-1"/>
+                     </td>
+                  </tr>
+                  <tr valign="top">
+                     <td>
+                        <font size="-1">
+                           <b>Never</b>
+                        </font>
+                     </td>
+                     <td>
+                        <font size="-1"/>
+                     </td>
+                  </tr>
+                  <tr valign="top">
+                     <td>
+                        <font size="-1">
+                           <b>OnChange</b>
+                        </font>
+                     </td>
+                     <td>
+                        <font size="-1"/>
+                     </td>
+                  </tr>
+               </table>
+            </td>
+         </tr>
+      </table>
+      <a name="ConfirmableVerb_type"/>
+      <p/>
+      <table border="1" cellpadding="3" cellspacing="0" width="100%">
+         <tr bgcolor="#e0e0e0" valign="top">
+            <td width="10%" colspan="2">
+               <b>
+                  <i>ConfirmableVerb</i>
+               </b> extends: <a href="#Verb_type" target="body">
+                  <b>
+                     <i>Verb</i>
+                  </b>
+               </a>
+            </td>
+         </tr>
+         <tr bgcolor="#e0e0e0" valign="top">
+            <td colspan="2">
+               <i/>
+            </td>
+         </tr>
+         <tr>
+            <td width="10%" align="right" valign="top">Structure:</td>
+            <td>
+               <img src="../Diagrams/ConfirmableVerb.png"/>
+            </td>
+         </tr>
+         <tr>
+            <td width="10%" align="right" valign="top">Attributes:</td>
+            <td>
+               <table border="0">
+                  <tr>
+                     <td align="left" valign="top">
+                        <font size="-1">
+                           <b>Name</b>
+                        </font>
+                     </td>
+                     <td align="left" valign="top">
+                        <font size="-1">
+                           <b>Type</b>
+                        </font>
+                     </td>
+                     <td align="left" valign="top">
+                        <font size="-1">
+                           <b>Usage</b>
+                        </font>
+                     </td>
+                     <td align="left" valign="top">
+                        <font size="-1">
+                           <b>Description</b>
+                        </font>
+                     </td>
+                  </tr>
+                  <tr valign="top">
+                     <td>
+                        <font size="-1">
+                           <b>confirm</b>
+                        </font>
+                     </td>
+                     <td>
+                        <font size="-1">
+                           <a href="#ConfirmType_type" target="body">
+                              <b>
+                                 <i>ConfirmType</i>
+                              </b>
+                           </a>
+                        </font>
+                     </td>
+                     <td>
+                        <font size="-1"/>
+                     </td>
+                     <td>
+                        <font size="-1"/>
+                     </td>
+                  </tr>
+               </table>
+            </td>
+         </tr>
+      </table>
+      <a name="ConfirmType_type"/>
+      <p/>
+      <table border="1" cellpadding="3" cellspacing="0" width="100%">
+         <tr bgcolor="#e0e0e0" valign="top">
+            <td width="10%" colspan="2">
+               <b>
+                  <i>ConfirmType</i>
+               </b> restricts: <a href="http://www.w3.org/TR/xmlschema-2/#NMTOKEN">
+                  <b>
+                     <i>xs:NMTOKEN</i>
+                  </b>
+               </a>
+            </td>
+         </tr>
+         <tr bgcolor="#e0e0e0" valign="top">
+            <td colspan="2">
+               <i/>
+            </td>
+         </tr>
+         <tr>
+            <td width="10%" align="right" valign="top">Enumerations:</td>
+            <td>
+               <table border="0">
+                  <tr valign="top">
+                     <td>
+                        <font size="-1">
+                           <b>Always</b>
+                        </font>
+                     </td>
+                     <td>
+                        <font size="-1"/>
+                     </td>
+                  </tr>
+                  <tr valign="top">
+                     <td>
+                        <font size="-1">
+                           <b>Never</b>
+                        </font>
+                     </td>
+                     <td>
+                        <font size="-1"/>
+                     </td>
+                  </tr>
+                  <tr valign="top">
+                     <td>
+                        <font size="-1">
+                           <b>OnChange</b>
+                        </font>
+                     </td>
+                     <td>
+                        <font size="-1"/>
+                     </td>
+                  </tr>
+               </table>
+            </td>
+         </tr>
+      </table>
+      <a name="Expression_type"/>
+      <p/>
+      <table border="1" cellpadding="3" cellspacing="0" width="100%">
+         <tr bgcolor="#e0e0e0" valign="top">
+            <td width="10%" colspan="2">
+               <b>
+                  <i>Expression</i>
+               </b> restricts: <a href="http://www.w3.org/TR/xmlschema-2/#string">
+                  <b>
+                     <i>xs:string</i>
+                  </b>
+               </a>
+            </td>
+         </tr>
+         <tr bgcolor="#e0e0e0" valign="top">
+            <td colspan="2">
+               <i/>
+            </td>
+         </tr>
+      </table>
+      <a name="ExpressionCriteria_type"/>
+      <p/>
+      <table border="1" cellpadding="3" cellspacing="0" width="100%">
+         <tr bgcolor="#e0e0e0" valign="top">
+            <td width="10%" colspan="2">
+               <b>
+                  <i>ExpressionCriteria</i>
+               </b>
+            </td>
+         </tr>
+         <tr bgcolor="#e0e0e0" valign="top">
+            <td colspan="2">
+               <i/>
+            </td>
+         </tr>
+         <tr>
+            <td width="10%" align="right" valign="top">Structure:</td>
+            <td>
+               <img src="../Diagrams/ExpressionCriteria.png"/>
+            </td>
+         </tr>
+         <tr>
+            <td width="10%" align="right" valign="top">Elements:</td>
+            <td>
+               <table>
+                  <tr>
+                     <td align="left" valign="top">
+                        <font size="-1">
+                           <b>Name</b>
+                        </font>
+                     </td>
+                     <td align="left" valign="top">
+                        <font size="-1">
+                           <b>Type</b>
+                        </font>
+                     </td>
+                     <td align="left" valign="top">
+                        <font size="-1">
+                           <b>Description</b>
+                        </font>
+                     </td>
+                  </tr>
+                  <tr valign="top">
+                     <td>
+                        <font size="-1">
+                           <b>SelectExpression</b>
+                        </font>
+                     </td>
+                     <td>
+                        <font size="-1">
+                           <a href="#Expression_type" target="body">
+                              <b>
+                                 <i>Expression</i>
+                              </b>
+                           </a>
+                        </font>
+                     </td>
+                     <td>
+                        <font size="-1">
+                           <p style="margin-top: 3; margin-bottom: 3">Allows the 1-n number of selection expressions for the information to be returned.</p>
+                           <div/>
+                           <i/>
+                        </font>
+                     </td>
+                  </tr>
+               </table>
+            </td>
+         </tr>
+         <tr>
+            <td width="10%" align="right" valign="top">Attributes:</td>
+            <td>
+               <table border="0">
+                  <tr>
+                     <td align="left" valign="top">
+                        <font size="-1">
+                           <b>Name</b>
+                        </font>
+                     </td>
+                     <td align="left" valign="top">
+                        <font size="-1">
+                           <b>Type</b>
+                        </font>
+                     </td>
+                     <td align="left" valign="top">
+                        <font size="-1">
+                           <b>Usage</b>
+                        </font>
+                     </td>
+                     <td align="left" valign="top">
+                        <font size="-1">
+                           <b>Description</b>
+                        </font>
+                     </td>
+                  </tr>
+                  <tr valign="top">
+                     <td>
+                        <font size="-1">
+                           <b>expressionLanguage</b>
+                        </font>
+                     </td>
+                     <td>
+                        <font size="-1">
+                           <a href="http://www.w3.org/TR/xmlschema-2/#string">
+                              <b>
+                                 <i>xs:string</i>
+                              </b>
+                           </a>
+                        </font>
+                     </td>
+                     <td>
+                        <font size="-1">optional</font>
+                     </td>
+                     <td>
+                        <font size="-1"/>
+                     </td>
+                  </tr>
+               </table>
+            </td>
+         </tr>
+      </table>
+      <a name="RequestVerb_type"/>
+      <p/>
+      <table border="1" cellpadding="3" cellspacing="0" width="100%">
+         <tr bgcolor="#e0e0e0" valign="top">
+            <td width="10%" colspan="2">
+               <b>
+                  <i>RequestVerb</i>
+               </b> extends: <a href="#ConfirmableVerb_type" target="body">
+                  <b>
+                     <i>ConfirmableVerb</i>
+                  </b>
+               </a>
+            </td>
+         </tr>
+         <tr bgcolor="#e0e0e0" valign="top">
+            <td colspan="2">
+               <i/>
+            </td>
+         </tr>
+         <tr>
+            <td width="10%" align="right" valign="top">Structure:</td>
+            <td>
+               <img src="../Diagrams/RequestVerb.png"/>
+            </td>
+         </tr>
+         <tr>
+            <td width="10%" align="right" valign="top">Elements:</td>
+            <td>
+               <table>
+                  <tr>
+                     <td align="left" valign="top">
+                        <font size="-1">
+                           <b>Name</b>
+                        </font>
+                     </td>
+                     <td align="left" valign="top">
+                        <font size="-1">
+                           <b>Type</b>
+                        </font>
+                     </td>
+                     <td align="left" valign="top">
+                        <font size="-1">
+                           <b>Description</b>
+                        </font>
+                     </td>
+                  </tr>
+                  <tr valign="top">
+                     <td>
+                        <font size="-1">
+                           <b>ReturnCriteria</b>
+                        </font>
+                     </td>
+                     <td>
+                        <font size="-1"/>
+                     </td>
+                     <td>
+                        <font size="-1">
+                           <p style="margin-top: 3; margin-bottom: 3">Allows the initator of the BOD to indicate the information (down to the field level) that is requested to be returned. The expressionLanguage indicates the expression language being used.</p>
+                           <div/>
+                           <i/>
+                        </font>
+                     </td>
+                  </tr>
+               </table>
+            </td>
+         </tr>
+      </table>
+      <div/>
+      <p/>
+      <table border="1" cellpadding="3" cellspacing="0" width="100%">
+         <tr>
+            <td bgcolor="#FFFF99">
+               <span class="SectionHeader">VerbBase.xsd</span>
+               <a href="../../OAGIS/Resources/Verbs/VerbBase.xsd">schema</a>
+            </td>
+         </tr>
+      </table>
+      <a name="Verb_element"/>
+      <p/>
+      <table border="1" cellpadding="3" cellspacing="0" width="100%">
+         <tr bgcolor="#e0e0e0" valign="top">
+            <td width="10%" colspan="2">
+               <b>Verb</b> type: <a href="#Verb_type" target="body">
+                  <b>
+                     <i>Verb</i>
+                  </b>
+               </a>
+            </td>
+         </tr>
+         <tr bgcolor="#e0e0e0" valign="top">
+            <td colspan="2"/>
+         </tr>
+      </table>
+      <a name="Verb_type"/>
+      <p/>
+      <table border="1" cellpadding="3" cellspacing="0" width="100%">
+         <tr bgcolor="#e0e0e0" valign="top">
+            <td width="10%" colspan="2">
+               <b>
+                  <i>Verb</i>
+               </b>
+            </td>
+         </tr>
+         <tr bgcolor="#e0e0e0" valign="top">
+            <td colspan="2">
+               <i/>
+            </td>
+         </tr>
+         <tr>
+            <td width="10%" align="right" valign="top">Structure:</td>
+            <td>
+               <img src="../Diagrams/Verb.png"/>
+            </td>
+         </tr>
+      </table>
+      <p/>
+      <table border="1" cellpadding="3" cellspacing="0" width="100%">
+         <tr>
+            <td bgcolor="#FFFF99">
+               <span class="SectionHeader">Noun Common Files</span>
+            </td>
+         </tr>
+      </table>
+      <div/>
+      <p/>
+      <table border="1" cellpadding="3" cellspacing="0" width="100%">
+         <tr>
+            <td bgcolor="#FFFF99">
+               <span class="SectionHeader">MatchDocument.xsd</span>
+               <a href="../../OAGIS/Resources/Nouns/MatchDocument.xsd">schema</a>
+            </td>
+         </tr>
+      </table>
+      <a name="MatchDocument_element"/>
+      <p/>
+      <table border="1" cellpadding="3" cellspacing="0" width="100%">
+         <tr bgcolor="#e0e0e0" valign="top">
+            <td width="10%" colspan="2">
+               <b>MatchDocument</b> type: <a href="#MatchDocument_type" target="body">
+                  <b>
+                     <i>MatchDocument</i>
+                  </b>
+               </a>
+            </td>
+         </tr>
+         <tr bgcolor="#e0e0e0" valign="top">
+            <td colspan="2">
+               <p style="margin-top: 3; margin-bottom: 3">Identifies an internal document containing matching information. Essential it holds cross reference information among the customer Purchase Order and the Suppier Invoice. It supports N-way matching.</p>
+            </td>
+         </tr>
+      </table>
+      <a name="Header_element"/>
+      <p/>
+      <table border="1" cellpadding="3" cellspacing="0" width="100%">
+         <tr bgcolor="#e0e0e0" valign="top">
+            <td width="10%" colspan="2">
+               <b>Header</b> type: <a href="#MatchDocumentHeader_type" target="body">
+                  <b>
+                     <i>MatchDocumentHeader</i>
+                  </b>
+               </a>
+            </td>
+         </tr>
+         <tr bgcolor="#e0e0e0" valign="top">
+            <td colspan="2">
+               <p style="margin-top: 3; margin-bottom: 3">Header information for the matching document instance.</p>
+            </td>
+         </tr>
+      </table>
+      <a name="Line_element"/>
+      <p/>
+      <table border="1" cellpadding="3" cellspacing="0" width="100%">
+         <tr bgcolor="#e0e0e0" valign="top">
+            <td width="10%" colspan="2">
+               <b>Line</b> type: <a href="#MatchDocumentLine_type" target="body">
+                  <b>
+                     <i>MatchDocumentLine</i>
+                  </b>
+               </a>
+            </td>
+         </tr>
+         <tr bgcolor="#e0e0e0" valign="top">
+            <td colspan="2">
+               <p style="margin-top: 3; margin-bottom: 3">Line level infoi\rmatoin for the matching doucment.</p>
+            </td>
+         </tr>
+      </table>
+      <a name="MatchPoint_element"/>
+      <p/>
+      <table border="1" cellpadding="3" cellspacing="0" width="100%">
+         <tr bgcolor="#e0e0e0" valign="top">
+            <td width="10%" colspan="2">
+               <b>MatchPoint</b> type: <a href="#MatchPoint_type" target="body">
+                  <b>
+                     <i>MatchPoint</i>
+                  </b>
+               </a>
+            </td>
+         </tr>
+         <tr bgcolor="#e0e0e0" valign="top">
+            <td colspan="2">
+               <p style="margin-top: 3; margin-bottom: 3">A Match Line (like geometric lines) must consist of at least 2 Match Points. A Match Point can match different lines in documents identified in other Match Points. It is not required that LineNumbers are the same.</p>
+            </td>
+         </tr>
+      </table>
+      <a name="MatchCriteria_element"/>
+      <p/>
+      <table border="1" cellpadding="3" cellspacing="0" width="100%">
+         <tr bgcolor="#e0e0e0" valign="top">
+            <td width="10%" colspan="2">
+               <b>MatchCriteria</b> type: <a href="#MatchCriteria_type" target="body">
+                  <b>
+                     <i>MatchCriteria</i>
+                  </b>
+               </a>
+            </td>
+         </tr>
+         <tr bgcolor="#e0e0e0" valign="top">
+            <td colspan="2">
+               <p style="margin-top: 3; margin-bottom: 3">The Match Criteria is included in the match document to identify the type of information being matched. It identifies the information for the associated matching document.</p>
+            </td>
+         </tr>
+      </table>
+      <a name="MatchCriteria_type"/>
+      <p/>
+      <table border="1" cellpadding="3" cellspacing="0" width="100%">
+         <tr bgcolor="#e0e0e0" valign="top">
+            <td width="10%" colspan="2">
+               <b>
+                  <i>MatchCriteria</i>
+               </b>
+            </td>
+         </tr>
+         <tr bgcolor="#e0e0e0" valign="top">
+            <td colspan="2">
+               <i>
+                  <p style="margin-top: 3; margin-bottom: 3">Match Criteria identifies the detailed information that is being matched. Typically this is the unit price, unit quantity the the extended amount.</p>
+               </i>
+            </td>
+         </tr>
+         <tr>
+            <td width="10%" align="right" valign="top">Structure:</td>
+            <td>
+               <img src="../Diagrams/MatchCriteria.png"/>
+            </td>
+         </tr>
+         <tr>
+            <td width="10%" align="right" valign="top">Elements:</td>
+            <td>
+               <table>
+                  <tr>
+                     <td align="left" valign="top">
+                        <font size="-1">
+                           <b>Name</b>
+                        </font>
+                     </td>
+                     <td align="left" valign="top">
+                        <font size="-1">
+                           <b>Type</b>
+                        </font>
+                     </td>
+                     <td align="left" valign="top">
+                        <font size="-1">
+                           <b>Description</b>
+                        </font>
+                     </td>
+                  </tr>
+                  <tr valign="top">
+                     <td>
+                        <font size="-1">
+                           <b>Description</b>
+                        </font>
+                     </td>
+                     <td>
+                        <font size="-1">
+                           <a href="../OAGIS.html#Description_type" target="body">
+                              <b>
+                                 <i>Description</i>
+                              </b>
+                           </a>
+                        </font>
+                     </td>
+                     <td>
+                        <font size="-1">
+                           <p style="margin-top: 3; margin-bottom: 3">Is a free form description of the line.</p>
+                           <div/>
+                           <i>
+                              <p style="margin-top: 3; margin-bottom: 3">Free-form text description of the Noun or Componenet in which the description occurs. The lang attribute indicates the language the description is in. Owner inidcates the user or entity that provided teh description..</p>
+                           </i>
+                        </font>
+                     </td>
+                  </tr>
+                  <tr valign="top">
+                     <td>
+                        <font size="-1">
+                           <b>OrderItem</b>
+                        </font>
+                     </td>
+                     <td>
+                        <font size="-1">
+                           <a href="../OAGIS.html#OrderItem_element" target="body">reference</a>
+                        </font>
+                     </td>
+                     <td>
+                        <font size="-1">
+                           <div/>
+                           <i>
+                              <p style="margin-top: 3; margin-bottom: 3">Provides information on the Orderable Item. When associated with an order like a Purchase Order, it identifies the item being ordered at the associated Line.</p>
+                           </i>
+                        </font>
+                     </td>
+                  </tr>
+                  <tr valign="top">
+                     <td>
+                        <font size="-1">
+                           <b>OrderQuantity</b>
+                        </font>
+                     </td>
+                     <td>
+                        <font size="-1">
+                           <a href="../OAGIS.html#Quantity_type" target="body">
+                              <b>
+                                 <i>Quantity</i>
+                              </b>
+                           </a>
+                        </font>
+                     </td>
+                     <td>
+                        <font size="-1">
+                           <p style="margin-top: 3; margin-bottom: 3">Indicates the number of ordered items for the given line..</p>
+                           <div/>
+                           <i>
+                              <p style="margin-top: 3; margin-bottom: 3">A decimal value.</p>
+                           </i>
+                        </font>
+                     </td>
+                  </tr>
+                  <tr valign="top">
+                     <td>
+                        <font size="-1">
+                           <b>TotalAmount</b>
+                        </font>
+                     </td>
+                     <td>
+                        <font size="-1">
+                           <a href="../OAGIS.html#Amounts_type" target="body">
+                              <b>
+                                 <i>Amounts</i>
+                              </b>
+                           </a>
+                        </font>
+                     </td>
+                     <td>
+                        <font size="-1">
+                           <p style="margin-top: 3; margin-bottom: 3">Indicates the accumulated cost of the ordered items for this line. It is OrderedQuantity multiplied by the UnitPrce.</p>
+                           <div/>
+                           <i/>
+                        </font>
+                     </td>
+                  </tr>
+                  <tr valign="top">
+                     <td>
+                        <font size="-1">
+                           <b>UnitPrice</b>
+                        </font>
+                     </td>
+                     <td>
+                        <font size="-1">
+                           <a href="../OAGIS.html#AmountPerQuantity_type" target="body">
+                              <b>
+                                 <i>AmountPerQuantity</i>
+                              </b>
+                           </a>
+                        </font>
+                     </td>
+                     <td>
+                        <font size="-1">
+                           <p style="margin-top: 3; margin-bottom: 3">Indicates the price per unit of the items ordered.</p>
+                           <div/>
+                           <i>
+                              <p style="margin-top: 3; margin-bottom: 3">Indicates the cost or price of something represented as a value per a number of units. The price of eggs for example would be 1.29 per 1 dozen.</p>
+                           </i>
+                        </font>
+                     </td>
+                  </tr>
+                  <tr valign="top">
+                     <td>
+                        <font size="-1">
+                           <b>UserArea</b>
+                        </font>
+                     </td>
+                     <td>
+                        <font size="-1">
+                           <a href="../OAGIS.html#UserArea_element" target="body">reference</a>
+                        </font>
+                     </td>
+                     <td>
+                        <font size="-1">
+                           <div/>
+                           <i/>
+                        </font>
+                     </td>
+                  </tr>
+               </table>
+            </td>
+         </tr>
+      </table>
+      <a name="MatchDocument_type"/>
+      <p/>
+      <table border="1" cellpadding="3" cellspacing="0" width="100%">
+         <tr bgcolor="#e0e0e0" valign="top">
+            <td width="10%" colspan="2">
+               <b>
+                  <i>MatchDocument</i>
+               </b> extends: <a href="#Document_type" target="body">
+                  <b>
+                     <i>Document</i>
+                  </b>
+               </a>
+            </td>
+         </tr>
+         <tr bgcolor="#e0e0e0" valign="top">
+            <td colspan="2">
+               <i/>
+            </td>
+         </tr>
+         <tr>
+            <td width="10%" align="right" valign="top">Structure:</td>
+            <td>
+               <img src="../Diagrams/MatchDocument.png"/>
+            </td>
+         </tr>
+      </table>
+      <a name="MatchDocumentHeader_type"/>
+      <p/>
+      <table border="1" cellpadding="3" cellspacing="0" width="100%">
+         <tr bgcolor="#e0e0e0" valign="top">
+            <td width="10%" colspan="2">
+               <b>
+                  <i>MatchDocumentHeader</i>
+               </b> extends: <a href="#DocumentHeader_type" target="body">
+                  <b>
+                     <i>DocumentHeader</i>
+                  </b>
+               </a>
+            </td>
+         </tr>
+         <tr bgcolor="#e0e0e0" valign="top">
+            <td colspan="2">
+               <i>
+                  <p style="margin-top: 3; margin-bottom: 3">A Matching Document is a document in and of itself. It may exist in an ERP application, just like a Sales Order. The Matching Document essentially holds a cross reference among the documents being matched. The header contains general and financial information. The document references used in the Header are for all of the doucments being matched in addition to documents that are not explicitly part of the matching process, but still need to be referenced, such as a Quote. However, since matching is essentiall N-way, even a Quote could be matched.
+
+Note that the Status on the MatchDocument indicates whether the Match was successful or was a failure.</p>
+               </i>
+            </td>
+         </tr>
+         <tr>
+            <td width="10%" align="right" valign="top">Structure:</td>
+            <td>
+               <img src="../Diagrams/MatchDocumentHeader.png"/>
+            </td>
+         </tr>
+         <tr>
+            <td width="10%" align="right" valign="top">Elements:</td>
+            <td>
+               <table>
+                  <tr>
+                     <td align="left" valign="top">
+                        <font size="-1">
+                           <b>Name</b>
+                        </font>
+                     </td>
+                     <td align="left" valign="top">
+                        <font size="-1">
+                           <b>Type</b>
+                        </font>
+                     </td>
+                     <td align="left" valign="top">
+                        <font size="-1">
+                           <b>Description</b>
+                        </font>
+                     </td>
+                  </tr>
+                  <tr valign="top">
+                     <td>
+                        <font size="-1">
+                           <b>Distribution</b>
+                        </font>
+                     </td>
+                     <td>
+                        <font size="-1">
+                           <a href="../OAGIS.html#Distribution_element" target="body">reference</a>
+                        </font>
+                     </td>
+                     <td>
+                        <font size="-1">
+                           <p style="margin-top: 3; margin-bottom: 3">Indicates the Financial Entities involved in the transaction.</p>
+                           <div/>
+                           <i>
+                              <p style="margin-top: 3; margin-bottom: 3">A distribution identifies how monetary amounts are distributed accross an organization.</p>
+                           </i>
+                        </font>
+                     </td>
+                  </tr>
+                  <tr valign="top">
+                     <td>
+                        <font size="-1">
+                           <b>InvoiceDate</b>
+                        </font>
+                     </td>
+                     <td>
+                        <font size="-1">
+                           <a href="../OAGIS.html#DateTimeAny_type" target="body">
+                              <b>
+                                 <i>DateTimeAny</i>
+                              </b>
+                           </a>
+                        </font>
+                     </td>
+                     <td>
+                        <font size="-1">
+                           <p style="margin-top: 3; margin-bottom: 3">The date on which the original invoice document was issued</p>
+                           <div/>
+                           <i/>
+                        </font>
+                     </td>
+                  </tr>
+                  <tr valign="top">
+                     <td>
+                        <font size="-1">
+                           <b>MatchingDate</b>
+                        </font>
+                     </td>
+                     <td>
+                        <font size="-1">
+                           <a href="../OAGIS.html#DateTimeAny_type" target="body">
+                              <b>
+                                 <i>DateTimeAny</i>
+                              </b>
+                           </a>
+                        </font>
+                     </td>
+                     <td>
+                        <font size="-1">
+                           <p style="margin-top: 3; margin-bottom: 3">The date on which the associated document was matched</p>
+                           <div/>
+                           <i/>
+                        </font>
+                     </td>
+                  </tr>
+                  <tr valign="top">
+                     <td>
+                        <font size="-1">
+                           <b>MatchType</b>
+                        </font>
+                     </td>
+                     <td>
+                        <font size="-1">
+                           <a href="../OAGIS.html#Type_type" target="body">
+                              <b>
+                                 <i>Type</i>
+                              </b>
+                           </a>
+                        </font>
+                     </td>
+                     <td>
+                        <font size="-1">
+                           <p style="margin-top: 3; margin-bottom: 3">contains the information that determines the type of invoice document matching process.  Suggested values associated with this field are:
+2 Way: Invoice is matched to the Purchase Order
+3 Way: Invoice is matched with the Purchase Order, and Receipt
+4 Way: Invoice is matched with the Purchase Order, Receipt, and Inspection results.</p>
+                           <div/>
+                           <i/>
+                        </font>
+                     </td>
+                  </tr>
+                  <tr valign="top">
+                     <td>
+                        <font size="-1">
+                           <b>Parties</b>
+                        </font>
+                     </td>
+                     <td>
+                        <font size="-1">
+                           <a href="../OAGIS.html#Parties_element" target="body">reference</a>
+                        </font>
+                     </td>
+                     <td>
+                        <font size="-1">
+                           <div/>
+                           <i/>
+                        </font>
+                     </td>
+                  </tr>
+                  <tr valign="top">
+                     <td>
+                        <font size="-1">
+                           <b>Remittance</b>
+                        </font>
+                     </td>
+                     <td>
+                        <font size="-1">
+                           <a href="../OAGIS.html#Remittance_type" target="body">
+                              <b>
+                                 <i>Remittance</i>
+                              </b>
+                           </a>
+                        </font>
+                     </td>
+                     <td>
+                        <font size="-1">
+                           <p style="margin-top: 3; margin-bottom: 3">Remittance refers to a reference identifier to print on a remittance advice, for example, supplier invoice number.
+When a RemittanceAdvice BOD exists this could be a DocumentReference name RemittanceReference. </p>
+                           <div/>
+                           <i>
+                              <p style="margin-top: 3; margin-bottom: 3">A reference identifier to print on remittance advice, for example, supplier invoice number.</p>
+                           </i>
+                        </font>
+                     </td>
+                  </tr>
+                  <tr valign="top">
+                     <td>
+                        <font size="-1">
+                           <b>UserArea</b>
+                        </font>
+                     </td>
+                     <td>
+                        <font size="-1">
+                           <a href="../OAGIS.html#UserArea_element" target="body">reference</a>
+                        </font>
+                     </td>
+                     <td>
+                        <font size="-1">
+                           <div/>
+                           <i/>
+                        </font>
+                     </td>
+                  </tr>
+               </table>
+            </td>
+         </tr>
+      </table>
+      <a name="MatchDocumentLine_type"/>
+      <p/>
+      <table border="1" cellpadding="3" cellspacing="0" width="100%">
+         <tr bgcolor="#e0e0e0" valign="top">
+            <td width="10%" colspan="2">
+               <b>
+                  <i>MatchDocumentLine</i>
+               </b> extends: <a href="#DocumentLine_type" target="body">
+                  <b>
+                     <i>DocumentLine</i>
+                  </b>
+               </a>
+            </td>
+         </tr>
+         <tr bgcolor="#e0e0e0" valign="top">
+            <td colspan="2">
+               <i>
+                  <p style="margin-top: 3; margin-bottom: 3">A Match Line contains the information for the matching cross reference among the documents being matched. Each Match Line contains 2 or more Match Points. A Match Point represents the document being matched and the matching critieria.</p>
+               </i>
+            </td>
+         </tr>
+         <tr>
+            <td width="10%" align="right" valign="top">Structure:</td>
+            <td>
+               <img src="../Diagrams/MatchDocumentLine.png"/>
+            </td>
+         </tr>
+         <tr>
+            <td width="10%" align="right" valign="top">Elements:</td>
+            <td>
+               <table>
+                  <tr>
+                     <td align="left" valign="top">
+                        <font size="-1">
+                           <b>Name</b>
+                        </font>
+                     </td>
+                     <td align="left" valign="top">
+                        <font size="-1">
+                           <b>Type</b>
+                        </font>
+                     </td>
+                     <td align="left" valign="top">
+                        <font size="-1">
+                           <b>Description</b>
+                        </font>
+                     </td>
+                  </tr>
+                  <tr valign="top">
+                     <td>
+                        <font size="-1">
+                           <b>MatchPoint</b>
+                        </font>
+                     </td>
+                     <td>
+                        <font size="-1">
+                           <a href="#MatchPoint_element" target="body">reference</a>
+                        </font>
+                     </td>
+                     <td>
+                        <font size="-1">
+                           <div/>
+                           <i/>
+                        </font>
+                     </td>
+                  </tr>
+                  <tr valign="top">
+                     <td>
+                        <font size="-1">
+                           <b>Status</b>
+                        </font>
+                     </td>
+                     <td>
+                        <font size="-1">
+                           <a href="../OAGIS.html#Status_element" target="body">reference</a>
+                        </font>
+                     </td>
+                     <td>
+                        <font size="-1">
+                           <p style="margin-top: 3; margin-bottom: 3">mlr - Couldn't this be an attribute? </p>
+                           <div/>
+                           <i/>
+                        </font>
+                     </td>
+                  </tr>
+                  <tr valign="top">
+                     <td>
+                        <font size="-1">
+                           <b>UserArea</b>
+                        </font>
+                     </td>
+                     <td>
+                        <font size="-1">
+                           <a href="../OAGIS.html#UserArea_element" target="body">reference</a>
+                        </font>
+                     </td>
+                     <td>
+                        <font size="-1">
+                           <div/>
+                           <i/>
+                        </font>
+                     </td>
+                  </tr>
+               </table>
+            </td>
+         </tr>
+      </table>
+      <a name="MatchPoint_type"/>
+      <p/>
+      <table border="1" cellpadding="3" cellspacing="0" width="100%">
+         <tr bgcolor="#e0e0e0" valign="top">
+            <td width="10%" colspan="2">
+               <b>
+                  <i>MatchPoint</i>
+               </b>
+            </td>
+         </tr>
+         <tr bgcolor="#e0e0e0" valign="top">
+            <td colspan="2">
+               <i>
+                  <p style="margin-top: 3; margin-bottom: 3">A Match Point identifies a document and the matching critier that is matched with other Match Points. The DocumentReference must be mutually exclusive of the other Match Point Document References for the Match Line.</p>
+               </i>
+            </td>
+         </tr>
+         <tr>
+            <td width="10%" align="right" valign="top">Structure:</td>
+            <td>
+               <img src="../Diagrams/MatchPoint.png"/>
+            </td>
+         </tr>
+         <tr>
+            <td width="10%" align="right" valign="top">Elements:</td>
+            <td>
+               <table>
+                  <tr>
+                     <td align="left" valign="top">
+                        <font size="-1">
+                           <b>Name</b>
+                        </font>
+                     </td>
+                     <td align="left" valign="top">
+                        <font size="-1">
+                           <b>Type</b>
+                        </font>
+                     </td>
+                     <td align="left" valign="top">
+                        <font size="-1">
+                           <b>Description</b>
+                        </font>
+                     </td>
+                  </tr>
+                  <tr valign="top">
+                     <td>
+                        <font size="-1">
+                           <b>DocumentReferences</b>
+                        </font>
+                     </td>
+                     <td>
+                        <font size="-1">
+                           <a href="../OAGIS.html#DocumentReferences_element" target="body">reference</a>
+                        </font>
+                     </td>
+                     <td>
+                        <font size="-1">
+                           <div/>
+                           <i/>
+                        </font>
+                     </td>
+                  </tr>
+                  <tr valign="top">
+                     <td>
+                        <font size="-1">
+                           <b>MatchCriteria</b>
+                        </font>
+                     </td>
+                     <td>
+                        <font size="-1">
+                           <a href="#MatchCriteria_element" target="body">reference</a>
+                        </font>
+                     </td>
+                     <td>
+                        <font size="-1">
+                           <div/>
+                           <i/>
+                        </font>
+                     </td>
+                  </tr>
+                  <tr valign="top">
+                     <td>
+                        <font size="-1">
+                           <b>UserArea</b>
+                        </font>
+                     </td>
+                     <td>
+                        <font size="-1">
+                           <a href="../OAGIS.html#UserArea_element" target="body">reference</a>
+                        </font>
+                     </td>
+                     <td>
+                        <font size="-1">
+                           <div/>
+                           <i/>
+                        </font>
+                     </td>
+                  </tr>
+               </table>
+            </td>
+         </tr>
+      </table>
+      <div/>
+      <p/>
+      <table border="1" cellpadding="3" cellspacing="0" width="100%">
+         <tr>
+            <td bgcolor="#FFFF99">
+               <span class="SectionHeader">Document.xsd</span>
+               <a href="../../OAGIS/Resources/Nouns/Document.xsd">schema</a>
+            </td>
+         </tr>
+      </table>
+      <a name="Document_type"/>
+      <p/>
+      <table border="1" cellpadding="3" cellspacing="0" width="100%">
+         <tr bgcolor="#e0e0e0" valign="top">
+            <td width="10%" colspan="2">
+               <b>
+                  <i>Document</i>
+               </b> extends: <a href="../OAGIS.html#Noun_type" target="body">
+                  <b>
+                     <i>Noun</i>
+                  </b>
+               </a>
+            </td>
+         </tr>
+         <tr bgcolor="#e0e0e0" valign="top">
+            <td colspan="2">
+               <i/>
+            </td>
+         </tr>
+         <tr>
+            <td width="10%" align="right" valign="top">Structure:</td>
+            <td>
+               <img src="../Diagrams/Document.png"/>
+            </td>
+         </tr>
+         <tr>
+            <td width="10%" align="right" valign="top">Elements:</td>
+            <td>
+               <table>
+                  <tr>
+                     <td align="left" valign="top">
+                        <font size="-1">
+                           <b>Name</b>
+                        </font>
+                     </td>
+                     <td align="left" valign="top">
+                        <font size="-1">
+                           <b>Type</b>
+                        </font>
+                     </td>
+                     <td align="left" valign="top">
+                        <font size="-1">
+                           <b>Description</b>
+                        </font>
+                     </td>
+                  </tr>
+                  <tr valign="top">
+                     <td>
+                        <font size="-1">
+                           <b>Header</b>
+                        </font>
+                     </td>
+                     <td>
+                        <font size="-1">
+                           <a href="#Header_element" target="body">reference</a>
+                        </font>
+                     </td>
+                     <td>
+                        <font size="-1">
+                           <div/>
+                           <i/>
+                        </font>
+                     </td>
+                  </tr>
+                  <tr valign="top">
+                     <td>
+                        <font size="-1">
+                           <b>Line</b>
+                        </font>
+                     </td>
+                     <td>
+                        <font size="-1">
+                           <a href="#Line_element" target="body">reference</a>
+                        </font>
+                     </td>
+                     <td>
+                        <font size="-1">
+                           <div/>
+                           <i/>
+                        </font>
+                     </td>
+                  </tr>
+               </table>
+            </td>
+         </tr>
+      </table>
+      <a name="DocumentHeader_type"/>
+      <p/>
+      <table border="1" cellpadding="3" cellspacing="0" width="100%">
+         <tr bgcolor="#e0e0e0" valign="top">
+            <td width="10%" colspan="2">
+               <b>
+                  <i>DocumentHeader</i>
+               </b>
+            </td>
+         </tr>
+         <tr bgcolor="#e0e0e0" valign="top">
+            <td colspan="2">
+               <i/>
+            </td>
+         </tr>
+         <tr>
+            <td width="10%" align="right" valign="top">Structure:</td>
+            <td>
+               <img src="../Diagrams/DocumentHeader.png"/>
+            </td>
+         </tr>
+         <tr>
+            <td width="10%" align="right" valign="top">Elements:</td>
+            <td>
+               <table>
+                  <tr>
+                     <td align="left" valign="top">
+                        <font size="-1">
+                           <b>Name</b>
+                        </font>
+                     </td>
+                     <td align="left" valign="top">
+                        <font size="-1">
+                           <b>Type</b>
+                        </font>
+                     </td>
+                     <td align="left" valign="top">
+                        <font size="-1">
+                           <b>Description</b>
+                        </font>
+                     </td>
+                  </tr>
+                  <tr valign="top">
+                     <td>
+                        <font size="-1">
+                           <b>Attachments</b>
+                        </font>
+                     </td>
+                     <td>
+                        <font size="-1">
+                           <a href="../OAGIS.html#Attachments_element" target="body">reference</a>
+                        </font>
+                     </td>
+                     <td>
+                        <font size="-1">
+                           <div/>
+                           <i/>
+                        </font>
+                     </td>
+                  </tr>
+                  <tr valign="top">
+                     <td>
+                        <font size="-1">
+                           <b>Description</b>
+                        </font>
+                     </td>
+                     <td>
+                        <font size="-1">
+                           <a href="../OAGIS.html#Description_type" target="body">
+                              <b>
+                                 <i>Description</i>
+                              </b>
+                           </a>
+                        </font>
+                     </td>
+                     <td>
+                        <font size="-1">
+                           <p style="margin-top: 3; margin-bottom: 3">Is a description of the document.</p>
+                           <div/>
+                           <i>
+                              <p style="margin-top: 3; margin-bottom: 3">Free-form text description of the Noun or Componenet in which the description occurs. The lang attribute indicates the language the description is in. Owner inidcates the user or entity that provided teh description..</p>
+                           </i>
+                        </font>
+                     </td>
+                  </tr>
+                  <tr valign="top">
+                     <td>
+                        <font size="-1">
+                           <b>DocumentDateTime</b>
+                        </font>
+                     </td>
+                     <td>
+                        <font size="-1">
+                           <a href="../OAGIS.html#DateTime_type" target="body">
+                              <b>
+                                 <i>DateTime</i>
+                              </b>
+                           </a>
+                        </font>
+                     </td>
+                     <td>
+                        <font size="-1">
+                           <p style="margin-top: 3; margin-bottom: 3">Is the date and time the document was last created. This is not the date and time that the BOD message instance was created.</p>
+                           <div/>
+                           <i/>
+                        </font>
+                     </td>
+                  </tr>
+                  <tr valign="top">
+                     <td>
+                        <font size="-1">
+                           <b>DocumentIds</b>
+                        </font>
+                     </td>
+                     <td>
+                        <font size="-1">
+                           <a href="../OAGIS.html#DocumentIds_element" target="body">reference</a>
+                        </font>
+                     </td>
+                     <td>
+                        <font size="-1">
+                           <p style="margin-top: 3; margin-bottom: 3">Is the identifier for the document. It is possible to carry the document identifier for the other Parties. These DocumentIds are referenced by sematic names.</p>
+                           <p style="margin-top: 3; margin-bottom: 3">Is the identifier for the document. It is possible to carry the document identifier for the other Parties. These DocumentIds are referenced by sematic names.</p>
+                           <div/>
+                           <i/>
+                        </font>
+                     </td>
+                  </tr>
+                  <tr valign="top">
+                     <td>
+                        <font size="-1">
+                           <b>DocumentReferences</b>
+                        </font>
+                     </td>
+                     <td>
+                        <font size="-1">
+                           <a href="../OAGIS.html#DocumentReferences_element" target="body">reference</a>
+                        </font>
+                     </td>
+                     <td>
+                        <font size="-1">
+                           <div/>
+                           <i/>
+                        </font>
+                     </td>
+                  </tr>
+                  <tr valign="top">
+                     <td>
+                        <font size="-1">
+                           <b>LastModificationDateTime</b>
+                        </font>
+                     </td>
+                     <td>
+                        <font size="-1">
+                           <a href="../OAGIS.html#DateTime_type" target="body">
+                              <b>
+                                 <i>DateTime</i>
+                              </b>
+                           </a>
+                        </font>
+                     </td>
+                     <td>
+                        <font size="-1">
+                           <p style="margin-top: 3; margin-bottom: 3">Is the date and time the document was last modified. This is not the date and time that the BOD message was sent.</p>
+                           <div/>
+                           <i/>
+                        </font>
+                     </td>
+                  </tr>
+                  <tr valign="top">
+                     <td>
+                        <font size="-1">
+                           <b>Note</b>
+                        </font>
+                     </td>
+                     <td>
+                        <font size="-1">
+                           <a href="../OAGIS.html#Note_type" target="body">
+                              <b>
+                                 <i>Note</i>
+                              </b>
+                           </a>
+                        </font>
+                     </td>
+                     <td>
+                        <font size="-1">
+                           <p style="margin-top: 3; margin-bottom: 3">Is Note for the document in which it is contained.</p>
+                           <div/>
+                           <i>
+                              <p style="margin-top: 3; margin-bottom: 3">A free form note. The lang attribute identifies the language that the note is in. The author identifies the author of the note. The enrtyDate indicates the date the note was entered or last modified.</p>
+                           </i>
+                        </font>
+                     </td>
+                  </tr>
+                  <tr valign="top">
+                     <td>
+                        <font size="-1">
+                           <b>Status</b>
+                        </font>
+                     </td>
+                     <td>
+                        <font size="-1">
+                           <a href="../OAGIS.html#Status_element" target="body">reference</a>
+                        </font>
+                     </td>
+                     <td>
+                        <font size="-1">
+                           <div/>
+                           <i/>
+                        </font>
+                     </td>
+                  </tr>
+               </table>
+            </td>
+         </tr>
+      </table>
+      <a name="DocumentLine_type"/>
+      <p/>
+      <table border="1" cellpadding="3" cellspacing="0" width="100%">
+         <tr bgcolor="#e0e0e0" valign="top">
+            <td width="10%" colspan="2">
+               <b>
+                  <i>DocumentLine</i>
+               </b>
+            </td>
+         </tr>
+         <tr bgcolor="#e0e0e0" valign="top">
+            <td colspan="2">
+               <i/>
+            </td>
+         </tr>
+         <tr>
+            <td width="10%" align="right" valign="top">Structure:</td>
+            <td>
+               <img src="../Diagrams/DocumentLine.png"/>
+            </td>
+         </tr>
+         <tr>
+            <td width="10%" align="right" valign="top">Elements:</td>
+            <td>
+               <table>
+                  <tr>
+                     <td align="left" valign="top">
+                        <font size="-1">
+                           <b>Name</b>
+                        </font>
+                     </td>
+                     <td align="left" valign="top">
+                        <font size="-1">
+                           <b>Type</b>
+                        </font>
+                     </td>
+                     <td align="left" valign="top">
+                        <font size="-1">
+                           <b>Description</b>
+                        </font>
+                     </td>
+                  </tr>
+                  <tr valign="top">
+                     <td>
+                        <font size="-1">
+                           <b>LineNumber</b>
+                        </font>
+                     </td>
+                     <td>
+                        <font size="-1">
+                           <a href="../OAGIS.html#LineNumber_type" target="body">
+                              <b>
+                                 <i>LineNumber</i>
+                              </b>
+                           </a>
+                        </font>
+                     </td>
+                     <td>
+                        <font size="-1">
+                           <p style="margin-top: 3; margin-bottom: 3">Is the Line Number of the given Line Coponent within the document. LineNumbers are assigned by the sending system.</p>
+                           <div/>
+                           <i>
+                              <p style="margin-top: 3; margin-bottom: 3">Identifies the instance of a Line within a given document.</p>
+                           </i>
+                        </font>
+                     </td>
+                  </tr>
+               </table>
+            </td>
+         </tr>
+      </table>
+      <a name="DocumentOrderHeader_type"/>
+      <p/>
+      <table border="1" cellpadding="3" cellspacing="0" width="100%">
+         <tr bgcolor="#e0e0e0" valign="top">
+            <td width="10%" colspan="2">
+               <b>
+                  <i>DocumentOrderHeader</i>
+               </b> restricts: <a href="#DocumentHeader_type" target="body">
+                  <b>
+                     <i>DocumentHeader</i>
+                  </b>
+               </a>
+            </td>
+         </tr>
+         <tr bgcolor="#e0e0e0" valign="top">
+            <td colspan="2">
+               <i/>
+            </td>
+         </tr>
+         <tr>
+            <td width="10%" align="right" valign="top">Structure:</td>
+            <td>
+               <img src="../Diagrams/DocumentOrderHeader.png"/>
+            </td>
+         </tr>
+         <tr>
+            <td width="10%" align="right" valign="top">Elements:</td>
+            <td>
+               <table>
+                  <tr>
+                     <td align="left" valign="top">
+                        <font size="-1">
+                           <b>Name</b>
+                        </font>
+                     </td>
+                     <td align="left" valign="top">
+                        <font size="-1">
+                           <b>Type</b>
+                        </font>
+                     </td>
+                     <td align="left" valign="top">
+                        <font size="-1">
+                           <b>Description</b>
+                        </font>
+                     </td>
+                  </tr>
+                  <tr valign="top">
+                     <td>
+                        <font size="-1">
+                           <b>Attachments</b>
+                        </font>
+                     </td>
+                     <td>
+                        <font size="-1">
+                           <a href="../OAGIS.html#Attachments_element" target="body">reference</a>
+                        </font>
+                     </td>
+                     <td>
+                        <font size="-1">
+                           <div/>
+                           <i/>
+                        </font>
+                     </td>
+                  </tr>
+                  <tr valign="top">
+                     <td>
+                        <font size="-1">
+                           <b>Description</b>
+                        </font>
+                     </td>
+                     <td>
+                        <font size="-1">
+                           <a href="../OAGIS.html#Description_type" target="body">
+                              <b>
+                                 <i>Description</i>
+                              </b>
+                           </a>
+                        </font>
+                     </td>
+                     <td>
+                        <font size="-1">
+                           <p style="margin-top: 3; margin-bottom: 3">Is a description of the document.</p>
+                           <div/>
+                           <i>
+                              <p style="margin-top: 3; margin-bottom: 3">Free-form text description of the Noun or Componenet in which the description occurs. The lang attribute indicates the language the description is in. Owner inidcates the user or entity that provided teh description..</p>
+                           </i>
+                        </font>
+                     </td>
+                  </tr>
+                  <tr valign="top">
+                     <td>
+                        <font size="-1">
+                           <b>DocumentDateTime</b>
+                        </font>
+                     </td>
+                     <td>
+                        <font size="-1">
+                           <a href="../OAGIS.html#DateTime_type" target="body">
+                              <b>
+                                 <i>DateTime</i>
+                              </b>
+                           </a>
+                        </font>
+                     </td>
+                     <td>
+                        <font size="-1">
+                           <p style="margin-top: 3; margin-bottom: 3">Is the date and time the document was last created. This is not the date and time that the BOD message instance was created.</p>
+                           <div/>
+                           <i/>
+                        </font>
+                     </td>
+                  </tr>
+                  <tr valign="top">
+                     <td>
+                        <font size="-1">
+                           <b>DocumentIds</b>
+                        </font>
+                     </td>
+                     <td>
+                        <font size="-1">
+                           <a href="../OAGIS.html#DocumentIds_element" target="body">reference</a>
+                        </font>
+                     </td>
+                     <td>
+                        <font size="-1">
+                           <p style="margin-top: 3; margin-bottom: 3">Is the identifier for the document. It is possible to carry the document identifier for the other Parties. These DocumentIds are referenced by sematic names.</p>
+                           <p style="margin-top: 3; margin-bottom: 3">Is the identifier for the document. It is possible to carry the document identifier for the other Parties. These DocumentIds are referenced by sematic names.</p>
+                           <div/>
+                           <i/>
+                        </font>
+                     </td>
+                  </tr>
+                  <tr valign="top">
+                     <td>
+                        <font size="-1">
+                           <b>DocumentReferences</b>
+                        </font>
+                     </td>
+                     <td>
+                        <font size="-1">
+                           <a href="../OAGIS.html#DocumentReferences_element" target="body">reference</a>
+                        </font>
+                     </td>
+                     <td>
+                        <font size="-1">
+                           <div/>
+                           <i/>
+                        </font>
+                     </td>
+                  </tr>
+                  <tr valign="top">
+                     <td>
+                        <font size="-1">
+                           <b>LastModificationDateTime</b>
+                        </font>
+                     </td>
+                     <td>
+                        <font size="-1">
+                           <a href="../OAGIS.html#DateTime_type" target="body">
+                              <b>
+                                 <i>DateTime</i>
+                              </b>
+                           </a>
+                        </font>
+                     </td>
+                     <td>
+                        <font size="-1">
+                           <p style="margin-top: 3; margin-bottom: 3">Is the date and time the document was last modified. This is not the date and time that the BOD message was sent.</p>
+                           <div/>
+                           <i/>
+                        </font>
+                     </td>
+                  </tr>
+                  <tr valign="top">
+                     <td>
+                        <font size="-1">
+                           <b>Note</b>
+                        </font>
+                     </td>
+                     <td>
+                        <font size="-1">
+                           <a href="../OAGIS.html#Note_type" target="body">
+                              <b>
+                                 <i>Note</i>
+                              </b>
+                           </a>
+                        </font>
+                     </td>
+                     <td>
+                        <font size="-1">
+                           <p style="margin-top: 3; margin-bottom: 3">Is Note for the document in which it is contained.</p>
+                           <div/>
+                           <i>
+                              <p style="margin-top: 3; margin-bottom: 3">A free form note. The lang attribute identifies the language that the note is in. The author identifies the author of the note. The enrtyDate indicates the date the note was entered or last modified.</p>
+                           </i>
+                        </font>
+                     </td>
+                  </tr>
+               </table>
+            </td>
+         </tr>
+      </table>
+      <div/>
+   </body>
+</html>

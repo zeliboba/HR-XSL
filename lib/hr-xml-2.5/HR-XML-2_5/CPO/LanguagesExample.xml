@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<StructuredXMLResume xmlns="http://ns.hr-xml.org/2007-04-15" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://ns.hr-xml.org/2007-04-15
+../SEP/Resume.xsd">
+	<Languages>
+		<Language>
+			<LanguageCode>EN</LanguageCode>
+			<Read>true</Read>
+			<Write>true</Write>
+			<Speak>true</Speak>
+		</Language>
+		<Language>
+			<LanguageCode>FR</LanguageCode>
+			<Read>false</Read>
+			<Write>false</Write>
+			<Speak>true</Speak>
+		</Language>
+	</Languages>
+</StructuredXMLResume>

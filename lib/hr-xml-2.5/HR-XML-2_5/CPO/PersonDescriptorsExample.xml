@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<PersonDescriptors xmlns="http://ns.hr-xml.org/2007-04-15" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://ns.hr-xml.org/2007-04-15 PersonDescriptors.xsd">
+	<LegalIdentifiers>
+		<PersonLegalId validFrom="1928-01-01" countryCode="CA">
+			<IdValue name="SIN">123456789</IdValue>
+		</PersonLegalId>
+		<PersonLegalId validFrom="2000-01-01" validTo="2005-01-01" idOwner="Ministry of Transportation" countryCode="CA" issuingRegion="Greater Toronto Area">
+			<IdValue name="Driver's License">CA711546</IdValue>
+		</PersonLegalId>
+		<MilitaryStatus>Retired</MilitaryStatus>
+		<MilitaryStatus type="Veteran">WWII</MilitaryStatus>
+		<VisaStatus countryCode="FR" validFrom="2000-01-01" validTo="2005-01-01">Active</VisaStatus>
+		<Citizenship>CA</Citizenship>
+		<Residency>FR</Residency>
+		<UserArea/>
+	</LegalIdentifiers>
+	<DemographicDescriptors>
+		<Race>Asian</Race>
+		<Ethnicity>Malaysian</Ethnicity>
+		<Nationality>CA</Nationality>
+		<PrimaryLanguage>EN</PrimaryLanguage>
+		<PrimaryLanguage>FR</PrimaryLanguage>
+		<BirthPlace>Toronto, Canada</BirthPlace>
+		<Religion>Druid</Religion>
+		<MaritalStatus>Widowed</MaritalStatus>
+		<ChildrenInfo>
+			<NumberOfChildren>2</NumberOfChildren>
+			<Comments>Both children are adult non-dependents.</Comments>
+		</ChildrenInfo>
+		<UserArea/>
+	</DemographicDescriptors>
+	<BiologicalDescriptors>
+		<DateOfBirth>1928-01-01</DateOfBirth>
+		<Age>75</Age>
+		<GenderCode>1</GenderCode>
+		<EyeColor>Brown</EyeColor>
+		<HairColor>Gray</HairColor>
+		<Height unitOfMeasure="inches">61</Height>
+		<Weight unitOfMeasure="pounds">130</Weight>
+		<IdentifyingMarks>Tattoo of a sailing ship on right arm</IdentifyingMarks>
+		<DisabilityInfo>
+			<LevelOfDisability>Mild</LevelOfDisability>
+			<Percentage>35</Percentage>
+			<Type>Vision Impairment</Type>
+			<AccommodationsNeeded>false</AccommodationsNeeded>
+		</DisabilityInfo>
+		<UserArea/>
+	</BiologicalDescriptors>
+	<SupportingMaterials>
+		<AttachmentReference mimeType="application/msword">VeteranReport.doc</AttachmentReference>
+		<Description>Report of Veteran Status in Microsoft Word</Description>
+	</SupportingMaterials>
+	<OtherDescriptors>
+		<Name>Home Owner</Name>
+		<Applicable>true</Applicable>
+	</OtherDescriptors>
+	<OtherDescriptors>
+		<Name>Credit Rating</Name>
+		<Value>Excellent</Value>
+	</OtherDescriptors>
+	<OtherDescriptors>
+		<Name>Tabacco User</Name>
+		<List>
+			<Item>Cigarettes</Item>
+			<Item>Pipe</Item>
+		</List>
+	</OtherDescriptors>
+	<UserArea/>
+</PersonDescriptors>

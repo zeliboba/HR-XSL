@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Associations xmlns="http://ns.hr-xml.org/2007-04-15" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://ns.hr-xml.org/2007-04-15
+SharedStaffingModules.xsd">
+	<Association type="Professional">
+		<Name>HR-XML Consortium</Name>
+		<Link>www.hr-xml.org</Link>
+		<StartDate>
+				<YearMonth>2000-01</YearMonth>
+		</StartDate>
+		<Role>
+			<Name>Recruiting and Staffing Project Lead</Name>
+			<Deliverable>Resume 2.0 Specification</Deliverable>
+			<StartDate>
+				<YearMonth>2002-03</YearMonth>
+			</StartDate>
+			<EndDate>
+				<YearMonth>2003-07</YearMonth>
+			</EndDate>
+		</Role>
+		<Role>
+			<Name>Cross Process Object team member</Name>
+			<StartDate>
+				<YearMonth>2001-05</YearMonth>
+			</StartDate>
+			<Comments>Review other workgroup specifications</Comments>
+		</Role>
+		<Comments>Membership through current employer.</Comments>
+	</Association>
+</Associations>

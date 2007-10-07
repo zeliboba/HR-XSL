@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema targetNamespace="http://ns.hr-xml.org/2007-04-15" xmlns="http://ns.hr-xml.org/2007-04-15" xmlns:xsd="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" version="2007-04-15">
+	<xsd:annotation>
+		<xsd:documentation>
+"Copyright  The HR-XML Consortium. All Rights Reserved. http://www.hr-xml.org"
+Name: USBenefitDeductionCategoryType.xsd
+Status: Recommendation
+Date this version: 2007-04-15
+Purpose: Defines data specific to US benefit deduction category types.
+Author(s): Jason Brown, Payroll workgroup
+Documentation: PayrollInstructions.html
+
+Terms of license can be found in license.txt.
+
+</xsd:documentation>
+	</xsd:annotation>
+	<!-- Basic Category Types -->
+	<xsd:simpleType name="USBenefitDeductionCategoryType">
+		<xsd:restriction base="xsd:string">
+			<xsd:enumeration value="Before-Tax Deferral"/>
+			<xsd:enumeration value="After-Tax Deferral"/>
+			<xsd:enumeration value="Garnishment"/>
+			<xsd:enumeration value="Loan"/>
+			<xsd:enumeration value="Health Care FSA"/>
+			<xsd:enumeration value="Dependent Care FSA"/>
+			<xsd:enumeration value="Medical"/>
+			<xsd:enumeration value="Medical Credit"/>
+			<xsd:enumeration value="Medical Imputed Income"/>
+			<xsd:enumeration value="Dental"/>
+			<xsd:enumeration value="Dental Credit"/>
+			<xsd:enumeration value="Dental Imputed Income"/>
+			<xsd:enumeration value="Employee Life"/>
+			<xsd:enumeration value="Employee Life Credit"/>
+			<xsd:enumeration value="Employee Life Imputed Income"/>
+			<xsd:enumeration value="Accident"/>
+			<xsd:enumeration value="Accident Credit"/>
+			<xsd:enumeration value="Accident Imputed Income"/>
+			<xsd:enumeration value="LTD"/>
+			<xsd:enumeration value="LTD Credit"/>
+			<xsd:enumeration value="LTD Imputed Income"/>
+			<xsd:enumeration value="STD"/>
+			<xsd:enumeration value="STD Credit"/>
+			<xsd:enumeration value="STD Imputed Income"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+</xsd:schema>

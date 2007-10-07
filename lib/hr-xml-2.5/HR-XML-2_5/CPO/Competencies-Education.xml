@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Competency xmlns="http://ns.hr-xml.org/2007-04-15" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://ns.hr-xml.org/2007-04-15  Competencies.xsd" description="College Degree" name="College Degree">            
+	<CompetencyId description="Competency id is based on Acme internal taxonomy" id="233" idOwner="Acme Company"/>             
+	<TaxonomyId description="My ids are based on Acme Company Taxonomy" idOwner="Acme Company" id="1"/>             
+	<CompetencyEvidence dateOfIncident="1992-05-21" name="Degree" typeDescription="College Degree" typeId="231">                           
+		<EvidenceId description="Bachelor's degree from accredited school" id="100" idOwner="University of Wisconsin"/>                           
+		<NumericValue description="Scale of 0 or 1" maxValue="1" minValue="0">1</NumericValue>              
+	</CompetencyEvidence>              
+	<CompetencyEvidence dateOfIncident="1992-05-21" name="GPA" typeDescription="Grade Point Average for Degree" typeId="101">                          
+		<EvidenceId description="GPA" id="101" idOwner="University of Wisconsin"/>                          
+		<NumericValue description="Scale of 0 or 4" maxValue="4" minValue="0">3.76</NumericValue>              
+	</CompetencyEvidence>
+</Competency>

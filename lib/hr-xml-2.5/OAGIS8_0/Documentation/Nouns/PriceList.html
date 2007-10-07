@@ -1,0 +1,1217 @@
+<?xml version="1.0" encoding="utf-8"?>
+<html>
+   <head>
+      <style type="text/css"> .SectionHeader { font-size: 14pt; font-weight: bold; color: #000000; }</style>
+   </head>
+   <body>
+      <p/>
+      <table border="1" cellpadding="3" cellspacing="0" width="100%">
+         <tr>
+            <td bgcolor="#FFFF99">
+               <span class="SectionHeader">PriceList</span>
+               <a href="../../OAGIS/Resources/Nouns/PriceList.xsd">schema</a>
+            </td>
+         </tr>
+      </table>
+      <a name="PriceList_element"/>
+      <p/>
+      <table border="1" cellpadding="3" cellspacing="0" width="100%">
+         <tr bgcolor="#e0e0e0" valign="top">
+            <td width="10%" colspan="2">
+               <b>PriceList</b> type: <a href="#PriceList_type" target="body">
+                  <b>
+                     <i>PriceList</i>
+                  </b>
+               </a>
+            </td>
+         </tr>
+         <tr bgcolor="#e0e0e0" valign="top">
+            <td colspan="2">
+               <p style="margin-top: 3; margin-bottom: 3">Defines a list of items with their base price, price breaks, discounts and qualifiers. For each item, price breaks can be defined, above which certain discounts or overriding prices might apply. Price breaks can be defined in volume or in dollar amount. Price list qualifiers specify for which catalog, customer and/or effective dates this price list applies.</p>
+            </td>
+         </tr>
+      </table>
+      <a name="Header_element"/>
+      <p/>
+      <table border="1" cellpadding="3" cellspacing="0" width="100%">
+         <tr bgcolor="#e0e0e0" valign="top">
+            <td width="10%" colspan="2">
+               <b>Header</b> type: <a href="#PriceListHeader_type" target="body">
+                  <b>
+                     <i>PriceListHeader</i>
+                  </b>
+               </a>
+            </td>
+         </tr>
+         <tr bgcolor="#e0e0e0" valign="top">
+            <td colspan="2"/>
+         </tr>
+      </table>
+      <a name="Line_element"/>
+      <p/>
+      <table border="1" cellpadding="3" cellspacing="0" width="100%">
+         <tr bgcolor="#e0e0e0" valign="top">
+            <td width="10%" colspan="2">
+               <b>Line</b> type: <a href="#PriceListLine_type" target="body">
+                  <b>
+                     <i>PriceListLine</i>
+                  </b>
+               </a>
+            </td>
+         </tr>
+         <tr bgcolor="#e0e0e0" valign="top">
+            <td colspan="2"/>
+         </tr>
+      </table>
+      <a name="ListPriceBreak_element"/>
+      <p/>
+      <table border="1" cellpadding="3" cellspacing="0" width="100%">
+         <tr bgcolor="#e0e0e0" valign="top">
+            <td width="10%" colspan="2">
+               <b>ListPriceBreak</b> type: <a href="#ListPriceBreak_type" target="body">
+                  <b>
+                     <i>ListPriceBreak</i>
+                  </b>
+               </a>
+            </td>
+         </tr>
+         <tr bgcolor="#e0e0e0" valign="top">
+            <td colspan="2"/>
+         </tr>
+      </table>
+      <a name="PriceListQualifier_element"/>
+      <p/>
+      <table border="1" cellpadding="3" cellspacing="0" width="100%">
+         <tr bgcolor="#e0e0e0" valign="top">
+            <td width="10%" colspan="2">
+               <b>PriceListQualifier</b> type: <a href="#PriceListQualifier_type" target="body">
+                  <b>
+                     <i>PriceListQualifier</i>
+                  </b>
+               </a>
+            </td>
+         </tr>
+         <tr bgcolor="#e0e0e0" valign="top">
+            <td colspan="2">
+               <p style="margin-top: 3; margin-bottom: 3">This qualifies the intended audience or group of users of a Price List  Qualifications for a given price list include, (but are not limited to):
+· Suppliers, Customers or Manufacturers
+· Specific Customer Site
+· Suppliers, Customers or Manufacturers
+· Catalogs</p>
+            </td>
+         </tr>
+      </table>
+      <a name="LinePriceBreak_element"/>
+      <p/>
+      <table border="1" cellpadding="3" cellspacing="0" width="100%">
+         <tr bgcolor="#e0e0e0" valign="top">
+            <td width="10%" colspan="2">
+               <b>LinePriceBreak</b> type: <a href="#LinePriceBreak_type" target="body">
+                  <b>
+                     <i>LinePriceBreak</i>
+                  </b>
+               </a>
+            </td>
+         </tr>
+         <tr bgcolor="#e0e0e0" valign="top">
+            <td colspan="2">
+               <p style="margin-top: 3; margin-bottom: 3">This defines the prices and modifiers to the price for buying a given quantity or value of an item or item category on a price list line. For Price List Lines that specify Items the price breaks can be specified in terms of quantity or amount. For Price list lines that specify commodity, price breaks can only be specified in terms of currency amount</p>
+            </td>
+         </tr>
+      </table>
+      <a name="LinePriceBreak_type"/>
+      <p/>
+      <table border="1" cellpadding="3" cellspacing="0" width="100%">
+         <tr bgcolor="#e0e0e0" valign="top">
+            <td width="10%" colspan="2">
+               <b>
+                  <i>LinePriceBreak</i>
+               </b>
+            </td>
+         </tr>
+         <tr bgcolor="#e0e0e0" valign="top">
+            <td colspan="2">
+               <i/>
+            </td>
+         </tr>
+         <tr>
+            <td width="10%" align="right" valign="top">Structure:</td>
+            <td>
+               <img src="../Diagrams/LinePriceBreak.png"/>
+            </td>
+         </tr>
+         <tr>
+            <td width="10%" align="right" valign="top">Elements:</td>
+            <td>
+               <table>
+                  <tr>
+                     <td align="left" valign="top">
+                        <font size="-1">
+                           <b>Name</b>
+                        </font>
+                     </td>
+                     <td align="left" valign="top">
+                        <font size="-1">
+                           <b>Type</b>
+                        </font>
+                     </td>
+                     <td align="left" valign="top">
+                        <font size="-1">
+                           <b>Description</b>
+                        </font>
+                     </td>
+                  </tr>
+                  <tr valign="top">
+                     <td>
+                        <font size="-1">
+                           <b>Description</b>
+                        </font>
+                     </td>
+                     <td>
+                        <font size="-1">
+                           <a href="../OAGIS.html#Description_type" target="body">
+                              <b>
+                                 <i>Description</i>
+                              </b>
+                           </a>
+                        </font>
+                     </td>
+                     <td>
+                        <font size="-1">
+                           <p style="margin-top: 3; margin-bottom: 3">Description of the PriceBreak.</p>
+                           <div/>
+                           <i>
+                              <p style="margin-top: 3; margin-bottom: 3">Free-form text description of the Noun or Componenet in which the description occurs. The lang attribute indicates the language the description is in. Owner inidcates the user or entity that provided teh description..</p>
+                           </i>
+                        </font>
+                     </td>
+                  </tr>
+                  <tr valign="top">
+                     <td>
+                        <font size="-1">
+                           <b>DiscountPercent</b>
+                        </font>
+                     </td>
+                     <td>
+                        <font size="-1">
+                           <a href="../OAGIS.html#Percent_type" target="body">
+                              <b>
+                                 <i>Percent</i>
+                              </b>
+                           </a>
+                        </font>
+                     </td>
+                     <td>
+                        <font size="-1">
+                           <p style="margin-top: 3; margin-bottom: 3">Indicates the percentage of the PriceBreak.</p>
+                           <div/>
+                           <i>
+                              <p style="margin-top: 3; margin-bottom: 3">Indicates the percentage.</p>
+                           </i>
+                        </font>
+                     </td>
+                  </tr>
+                  <tr valign="top">
+                     <td>
+                        <font size="-1">
+                           <b>DiscountValue</b>
+                        </font>
+                     </td>
+                     <td>
+                        <font size="-1">
+                           <a href="../OAGIS.html#Amount_type" target="body">
+                              <b>
+                                 <i>Amount</i>
+                              </b>
+                           </a>
+                        </font>
+                     </td>
+                     <td>
+                        <font size="-1">
+                           <p style="margin-top: 3; margin-bottom: 3">Allows a flat amount to be discounted per item.</p>
+                           <div/>
+                           <i>
+                              <p style="margin-top: 3; margin-bottom: 3">Simple content with the currency as an attrbute</p>
+                           </i>
+                        </font>
+                     </td>
+                  </tr>
+                  <tr valign="top">
+                     <td>
+                        <font size="-1">
+                           <b>OverRidePrice</b>
+                        </font>
+                     </td>
+                     <td>
+                        <font size="-1">
+                           <a href="../OAGIS.html#AmountPerQuantity_type" target="body">
+                              <b>
+                                 <i>AmountPerQuantity</i>
+                              </b>
+                           </a>
+                        </font>
+                     </td>
+                     <td>
+                        <font size="-1">
+                           <p style="margin-top: 3; margin-bottom: 3">This is the price that overrides the list price when a given price break requirement is reached. For example, if a customer orders over 50,000 dollars worth of computer equipment, he may qualify for an overriding price.  The list price of $800 per will be modified to $700 per</p>
+                           <div/>
+                           <i>
+                              <p style="margin-top: 3; margin-bottom: 3">Indicates the cost or price of something represented as a value per a number of units. The price of eggs for example would be 1.29 per 1 dozen.</p>
+                           </i>
+                        </font>
+                     </td>
+                  </tr>
+                  <tr valign="top">
+                     <td>
+                        <font size="-1">
+                           <b>PriceBreakAmount</b>
+                        </font>
+                     </td>
+                     <td>
+                        <font size="-1">
+                           <a href="../OAGIS.html#Amount_type" target="body">
+                              <b>
+                                 <i>Amount</i>
+                              </b>
+                           </a>
+                        </font>
+                     </td>
+                     <td>
+                        <font size="-1">
+                           <p style="margin-top: 3; margin-bottom: 3">The monetary amount that must be spent on a given price list line before the benefit or until the detriment of a given price break line will apply.  For example, if a customer orders up to 5000 dollars worth of flour, they will get a price of $8:00 a case.  If the customer buys 5500 dollars worth of flour they will get a price of $7.50 a case</p>
+                           <div/>
+                           <i>
+                              <p style="margin-top: 3; margin-bottom: 3">Simple content with the currency as an attrbute</p>
+                           </i>
+                        </font>
+                     </td>
+                  </tr>
+                  <tr valign="top">
+                     <td>
+                        <font size="-1">
+                           <b>PriceBreakQuantity</b>
+                        </font>
+                     </td>
+                     <td>
+                        <font size="-1">
+                           <a href="../OAGIS.html#Quantity_type" target="body">
+                              <b>
+                                 <i>Quantity</i>
+                              </b>
+                           </a>
+                        </font>
+                     </td>
+                     <td>
+                        <font size="-1">
+                           <p style="margin-top: 3; margin-bottom: 3">The quantity that must be purchased of the item or commodity on a given price list line before the benefit, or until the detriment of a given price break line will apply.  For example, if a customer orders up to 5000 units of flour, they will get a price of $8:00 a case.  If the customer buys 5500 units of flour they will get a price of $7.50 a case</p>
+                           <div/>
+                           <i>
+                              <p style="margin-top: 3; margin-bottom: 3">A decimal value.</p>
+                           </i>
+                        </font>
+                     </td>
+                  </tr>
+                  <tr valign="top">
+                     <td>
+                        <font size="-1">
+                           <b>UserArea</b>
+                        </font>
+                     </td>
+                     <td>
+                        <font size="-1">
+                           <a href="../OAGIS.html#UserArea_element" target="body">reference</a>
+                        </font>
+                     </td>
+                     <td>
+                        <font size="-1">
+                           <div/>
+                           <i/>
+                        </font>
+                     </td>
+                  </tr>
+               </table>
+            </td>
+         </tr>
+      </table>
+      <a name="ListPriceBreak_type"/>
+      <p/>
+      <table border="1" cellpadding="3" cellspacing="0" width="100%">
+         <tr bgcolor="#e0e0e0" valign="top">
+            <td width="10%" colspan="2">
+               <b>
+                  <i>ListPriceBreak</i>
+               </b>
+            </td>
+         </tr>
+         <tr bgcolor="#e0e0e0" valign="top">
+            <td colspan="2">
+               <i/>
+            </td>
+         </tr>
+         <tr>
+            <td width="10%" align="right" valign="top">Structure:</td>
+            <td>
+               <img src="../Diagrams/ListPriceBreak.png"/>
+            </td>
+         </tr>
+         <tr>
+            <td width="10%" align="right" valign="top">Elements:</td>
+            <td>
+               <table>
+                  <tr>
+                     <td align="left" valign="top">
+                        <font size="-1">
+                           <b>Name</b>
+                        </font>
+                     </td>
+                     <td align="left" valign="top">
+                        <font size="-1">
+                           <b>Type</b>
+                        </font>
+                     </td>
+                     <td align="left" valign="top">
+                        <font size="-1">
+                           <b>Description</b>
+                        </font>
+                     </td>
+                  </tr>
+                  <tr valign="top">
+                     <td>
+                        <font size="-1">
+                           <b>Description</b>
+                        </font>
+                     </td>
+                     <td>
+                        <font size="-1">
+                           <a href="../OAGIS.html#Description_type" target="body">
+                              <b>
+                                 <i>Description</i>
+                              </b>
+                           </a>
+                        </font>
+                     </td>
+                     <td>
+                        <font size="-1">
+                           <p style="margin-top: 3; margin-bottom: 3">Description of the PriceBreak.</p>
+                           <div/>
+                           <i>
+                              <p style="margin-top: 3; margin-bottom: 3">Free-form text description of the Noun or Componenet in which the description occurs. The lang attribute indicates the language the description is in. Owner inidcates the user or entity that provided teh description..</p>
+                           </i>
+                        </font>
+                     </td>
+                  </tr>
+                  <tr valign="top">
+                     <td>
+                        <font size="-1">
+                           <b>DiscountPercent</b>
+                        </font>
+                     </td>
+                     <td>
+                        <font size="-1">
+                           <a href="../OAGIS.html#Percent_type" target="body">
+                              <b>
+                                 <i>Percent</i>
+                              </b>
+                           </a>
+                        </font>
+                     </td>
+                     <td>
+                        <font size="-1">
+                           <p style="margin-top: 3; margin-bottom: 3">Indicates the percentage of the PriceBreak.</p>
+                           <div/>
+                           <i>
+                              <p style="margin-top: 3; margin-bottom: 3">Indicates the percentage.</p>
+                           </i>
+                        </font>
+                     </td>
+                  </tr>
+                  <tr valign="top">
+                     <td>
+                        <font size="-1">
+                           <b>DiscountValue</b>
+                        </font>
+                     </td>
+                     <td>
+                        <font size="-1">
+                           <a href="../OAGIS.html#Amount_type" target="body">
+                              <b>
+                                 <i>Amount</i>
+                              </b>
+                           </a>
+                        </font>
+                     </td>
+                     <td>
+                        <font size="-1">
+                           <p style="margin-top: 3; margin-bottom: 3">Allows a flat amount to be discounted per item.</p>
+                           <div/>
+                           <i>
+                              <p style="margin-top: 3; margin-bottom: 3">Simple content with the currency as an attrbute</p>
+                           </i>
+                        </font>
+                     </td>
+                  </tr>
+                  <tr valign="top">
+                     <td>
+                        <font size="-1">
+                           <b>PriceBreakAmount</b>
+                        </font>
+                     </td>
+                     <td>
+                        <font size="-1">
+                           <a href="../OAGIS.html#Amount_type" target="body">
+                              <b>
+                                 <i>Amount</i>
+                              </b>
+                           </a>
+                        </font>
+                     </td>
+                     <td>
+                        <font size="-1">
+                           <p style="margin-top: 3; margin-bottom: 3">Is the amount of the PriceBreak.</p>
+                           <div/>
+                           <i>
+                              <p style="margin-top: 3; margin-bottom: 3">Simple content with the currency as an attrbute</p>
+                           </i>
+                        </font>
+                     </td>
+                  </tr>
+                  <tr valign="top">
+                     <td>
+                        <font size="-1">
+                           <b>UserArea</b>
+                        </font>
+                     </td>
+                     <td>
+                        <font size="-1">
+                           <a href="../OAGIS.html#UserArea_element" target="body">reference</a>
+                        </font>
+                     </td>
+                     <td>
+                        <font size="-1">
+                           <div/>
+                           <i/>
+                        </font>
+                     </td>
+                  </tr>
+               </table>
+            </td>
+         </tr>
+      </table>
+      <a name="PriceList_type"/>
+      <p/>
+      <table border="1" cellpadding="3" cellspacing="0" width="100%">
+         <tr bgcolor="#e0e0e0" valign="top">
+            <td width="10%" colspan="2">
+               <b>
+                  <i>PriceList</i>
+               </b> extends: <a href="../OAGIS.html#Noun_type" target="body">
+                  <b>
+                     <i>Noun</i>
+                  </b>
+               </a>
+            </td>
+         </tr>
+         <tr bgcolor="#e0e0e0" valign="top">
+            <td colspan="2">
+               <i/>
+            </td>
+         </tr>
+         <tr>
+            <td width="10%" align="right" valign="top">Structure:</td>
+            <td>
+               <img src="../Diagrams/PriceList.png"/>
+            </td>
+         </tr>
+         <tr>
+            <td width="10%" align="right" valign="top">Elements:</td>
+            <td>
+               <table>
+                  <tr>
+                     <td align="left" valign="top">
+                        <font size="-1">
+                           <b>Name</b>
+                        </font>
+                     </td>
+                     <td align="left" valign="top">
+                        <font size="-1">
+                           <b>Type</b>
+                        </font>
+                     </td>
+                     <td align="left" valign="top">
+                        <font size="-1">
+                           <b>Description</b>
+                        </font>
+                     </td>
+                  </tr>
+                  <tr valign="top">
+                     <td>
+                        <font size="-1">
+                           <b>Header</b>
+                        </font>
+                     </td>
+                     <td>
+                        <font size="-1">
+                           <a href="#Header_element" target="body">reference</a>
+                        </font>
+                     </td>
+                     <td>
+                        <font size="-1">
+                           <div/>
+                           <i/>
+                        </font>
+                     </td>
+                  </tr>
+                  <tr valign="top">
+                     <td>
+                        <font size="-1">
+                           <b>Line</b>
+                        </font>
+                     </td>
+                     <td>
+                        <font size="-1">
+                           <a href="#Line_element" target="body">reference</a>
+                        </font>
+                     </td>
+                     <td>
+                        <font size="-1">
+                           <div/>
+                           <i/>
+                        </font>
+                     </td>
+                  </tr>
+               </table>
+            </td>
+         </tr>
+      </table>
+      <a name="PriceListHeader_type"/>
+      <p/>
+      <table border="1" cellpadding="3" cellspacing="0" width="100%">
+         <tr bgcolor="#e0e0e0" valign="top">
+            <td width="10%" colspan="2">
+               <b>
+                  <i>PriceListHeader</i>
+               </b>
+            </td>
+         </tr>
+         <tr bgcolor="#e0e0e0" valign="top">
+            <td colspan="2">
+               <i>
+                  <p style="margin-top: 3; margin-bottom: 3">The Price list may be issued by either a company within your Enterprise, represented by a GLEntity, a division of the company (represented by Business) or by any entity identified as a Catalog Party. A Party may be a supplier.  The supplier may be a supplier to many companies within the enterprise</p>
+               </i>
+            </td>
+         </tr>
+         <tr>
+            <td width="10%" align="right" valign="top">Structure:</td>
+            <td>
+               <img src="../Diagrams/PriceListHeader.png"/>
+            </td>
+         </tr>
+         <tr>
+            <td width="10%" align="right" valign="top">Elements:</td>
+            <td>
+               <table>
+                  <tr>
+                     <td align="left" valign="top">
+                        <font size="-1">
+                           <b>Name</b>
+                        </font>
+                     </td>
+                     <td align="left" valign="top">
+                        <font size="-1">
+                           <b>Type</b>
+                        </font>
+                     </td>
+                     <td align="left" valign="top">
+                        <font size="-1">
+                           <b>Description</b>
+                        </font>
+                     </td>
+                  </tr>
+                  <tr valign="top">
+                     <td>
+                        <font size="-1">
+                           <b>Business</b>
+                        </font>
+                     </td>
+                     <td>
+                        <font size="-1">
+                           <a href="#Business_element" target="body">reference</a>
+                        </font>
+                     </td>
+                     <td>
+                        <font size="-1">
+                           <div/>
+                           <i/>
+                        </font>
+                     </td>
+                  </tr>
+                  <tr valign="top">
+                     <td>
+                        <font size="-1">
+                           <b>Currency</b>
+                        </font>
+                     </td>
+                     <td>
+                        <font size="-1">
+                           <a href="../OAGIS.html#Currency_type" target="body">
+                              <b>
+                                 <i>Currency</i>
+                              </b>
+                           </a>
+                        </font>
+                     </td>
+                     <td>
+                        <font size="-1">
+                           <p style="margin-top: 3; margin-bottom: 3">Is the default currency of the PriceList.</p>
+                           <div/>
+                           <i/>
+                        </font>
+                     </td>
+                  </tr>
+                  <tr valign="top">
+                     <td>
+                        <font size="-1">
+                           <b>Description</b>
+                        </font>
+                     </td>
+                     <td>
+                        <font size="-1">
+                           <a href="../OAGIS.html#Description_type" target="body">
+                              <b>
+                                 <i>Description</i>
+                              </b>
+                           </a>
+                        </font>
+                     </td>
+                     <td>
+                        <font size="-1">
+                           <p style="margin-top: 3; margin-bottom: 3">Is a description of the PriceList.</p>
+                           <div/>
+                           <i>
+                              <p style="margin-top: 3; margin-bottom: 3">Free-form text description of the Noun or Componenet in which the description occurs. The lang attribute indicates the language the description is in. Owner inidcates the user or entity that provided teh description..</p>
+                           </i>
+                        </font>
+                     </td>
+                  </tr>
+                  <tr valign="top">
+                     <td>
+                        <font size="-1">
+                           <b>DocumentId</b>
+                        </font>
+                     </td>
+                     <td>
+                        <font size="-1">
+                           <a href="../OAGIS.html#PartyDocumentId_type" target="body">
+                              <b>
+                                 <i>PartyDocumentId</i>
+                              </b>
+                           </a>
+                        </font>
+                     </td>
+                     <td>
+                        <font size="-1">
+                           <div/>
+                           <i>
+                              <p style="margin-top: 3; margin-bottom: 3">Document specific identifier type.</p>
+                           </i>
+                        </font>
+                     </td>
+                  </tr>
+                  <tr valign="top">
+                     <td>
+                        <font size="-1">
+                           <b>EffectivePeriod</b>
+                        </font>
+                     </td>
+                     <td>
+                        <font size="-1">
+                           <a href="../OAGIS.html#TimePeriod_type" target="body">
+                              <b>
+                                 <i>TimePeriod</i>
+                              </b>
+                           </a>
+                        </font>
+                     </td>
+                     <td>
+                        <font size="-1">
+                           <p style="margin-top: 3; margin-bottom: 3">Indicates the effective period of the PriceList.</p>
+                           <div/>
+                           <i/>
+                        </font>
+                     </td>
+                  </tr>
+                  <tr valign="top">
+                     <td>
+                        <font size="-1">
+                           <b>ListPriceBreak</b>
+                        </font>
+                     </td>
+                     <td>
+                        <font size="-1">
+                           <a href="#ListPriceBreak_element" target="body">reference</a>
+                        </font>
+                     </td>
+                     <td>
+                        <font size="-1">
+                           <div/>
+                           <i/>
+                        </font>
+                     </td>
+                  </tr>
+                  <tr valign="top">
+                     <td>
+                        <font size="-1">
+                           <b>PriceListQualifier</b>
+                        </font>
+                     </td>
+                     <td>
+                        <font size="-1">
+                           <a href="#PriceListQualifier_element" target="body">reference</a>
+                        </font>
+                     </td>
+                     <td>
+                        <font size="-1">
+                           <div/>
+                           <i/>
+                        </font>
+                     </td>
+                  </tr>
+                  <tr valign="top">
+                     <td>
+                        <font size="-1">
+                           <b>PublisherParty</b>
+                        </font>
+                     </td>
+                     <td>
+                        <font size="-1">
+                           <a href="#PublisherParty_element" target="body">reference</a>
+                        </font>
+                     </td>
+                     <td>
+                        <font size="-1">
+                           <div/>
+                           <i/>
+                        </font>
+                     </td>
+                  </tr>
+                  <tr valign="top">
+                     <td>
+                        <font size="-1">
+                           <b>Site</b>
+                        </font>
+                     </td>
+                     <td>
+                        <font size="-1">
+                           <a href="#Site_element" target="body">reference</a>
+                        </font>
+                     </td>
+                     <td>
+                        <font size="-1">
+                           <p style="margin-top: 3; margin-bottom: 3">Is the GLEntity that is issuing the catalog</p>
+                           <div/>
+                           <i/>
+                        </font>
+                     </td>
+                  </tr>
+                  <tr valign="top">
+                     <td>
+                        <font size="-1">
+                           <b>UserArea</b>
+                        </font>
+                     </td>
+                     <td>
+                        <font size="-1">
+                           <a href="../OAGIS.html#UserArea_element" target="body">reference</a>
+                        </font>
+                     </td>
+                     <td>
+                        <font size="-1">
+                           <div/>
+                           <i/>
+                        </font>
+                     </td>
+                  </tr>
+               </table>
+            </td>
+         </tr>
+      </table>
+      <a name="PriceListLine_type"/>
+      <p/>
+      <table border="1" cellpadding="3" cellspacing="0" width="100%">
+         <tr bgcolor="#e0e0e0" valign="top">
+            <td width="10%" colspan="2">
+               <b>
+                  <i>PriceListLine</i>
+               </b>
+            </td>
+         </tr>
+         <tr bgcolor="#e0e0e0" valign="top">
+            <td colspan="2">
+               <i/>
+            </td>
+         </tr>
+         <tr>
+            <td width="10%" align="right" valign="top">Structure:</td>
+            <td>
+               <img src="../Diagrams/PriceListLine.png"/>
+            </td>
+         </tr>
+         <tr>
+            <td width="10%" align="right" valign="top">Elements:</td>
+            <td>
+               <table>
+                  <tr>
+                     <td align="left" valign="top">
+                        <font size="-1">
+                           <b>Name</b>
+                        </font>
+                     </td>
+                     <td align="left" valign="top">
+                        <font size="-1">
+                           <b>Type</b>
+                        </font>
+                     </td>
+                     <td align="left" valign="top">
+                        <font size="-1">
+                           <b>Description</b>
+                        </font>
+                     </td>
+                  </tr>
+                  <tr valign="top">
+                     <td>
+                        <font size="-1">
+                           <b>CommodityCode</b>
+                        </font>
+                     </td>
+                     <td>
+                        <font size="-1">
+                           <a href="../OAGIS.html#Commodity_type" target="body">
+                              <b>
+                                 <i>Commodity</i>
+                              </b>
+                           </a>
+                        </font>
+                     </td>
+                     <td>
+                        <font size="-1">
+                           <p style="margin-top: 3; margin-bottom: 3">Is the Commodity for which the price is being specified</p>
+                           <div/>
+                           <i>
+                              <p style="margin-top: 3; margin-bottom: 3">Are codes that identify user-defined groupings of items.</p>
+                           </i>
+                        </font>
+                     </td>
+                  </tr>
+                  <tr valign="top">
+                     <td>
+                        <font size="-1">
+                           <b>Description</b>
+                        </font>
+                     </td>
+                     <td>
+                        <font size="-1">
+                           <a href="../OAGIS.html#Description_type" target="body">
+                              <b>
+                                 <i>Description</i>
+                              </b>
+                           </a>
+                        </font>
+                     </td>
+                     <td>
+                        <font size="-1">
+                           <p style="margin-top: 3; margin-bottom: 3">Description of the PriceListLine.</p>
+                           <div/>
+                           <i>
+                              <p style="margin-top: 3; margin-bottom: 3">Free-form text description of the Noun or Componenet in which the description occurs. The lang attribute indicates the language the description is in. Owner inidcates the user or entity that provided teh description..</p>
+                           </i>
+                        </font>
+                     </td>
+                  </tr>
+                  <tr valign="top">
+                     <td>
+                        <font size="-1">
+                           <b>ItemId</b>
+                        </font>
+                     </td>
+                     <td>
+                        <font size="-1">
+                           <a href="../OAGIS.html#PartyAssignedItemId_type" target="body">
+                              <b>
+                                 <i>PartyAssignedItemId</i>
+                              </b>
+                           </a>
+                        </font>
+                     </td>
+                     <td>
+                        <font size="-1">
+                           <p style="margin-top: 3; margin-bottom: 3">Is the ItemId for which the price is being specified</p>
+                           <div/>
+                           <i>
+                              <p style="margin-top: 3; margin-bottom: 3">Identifies an Items identifier that has been assigned by another Party.</p>
+                           </i>
+                        </font>
+                     </td>
+                  </tr>
+                  <tr valign="top">
+                     <td>
+                        <font size="-1">
+                           <b>LineNumber</b>
+                        </font>
+                     </td>
+                     <td>
+                        <font size="-1">
+                           <a href="../OAGIS.html#LineNumber_type" target="body">
+                              <b>
+                                 <i>LineNumber</i>
+                              </b>
+                           </a>
+                        </font>
+                     </td>
+                     <td>
+                        <font size="-1">
+                           <p style="margin-top: 3; margin-bottom: 3">PriceList LineNumber</p>
+                           <div/>
+                           <i>
+                              <p style="margin-top: 3; margin-bottom: 3">Identifies the instance of a Line within a given document.</p>
+                           </i>
+                        </font>
+                     </td>
+                  </tr>
+                  <tr valign="top">
+                     <td>
+                        <font size="-1">
+                           <b>LinePriceBreak</b>
+                        </font>
+                     </td>
+                     <td>
+                        <font size="-1">
+                           <a href="#LinePriceBreak_element" target="body">reference</a>
+                        </font>
+                     </td>
+                     <td>
+                        <font size="-1">
+                           <div/>
+                           <i/>
+                        </font>
+                     </td>
+                  </tr>
+                  <tr valign="top">
+                     <td>
+                        <font size="-1">
+                           <b>UnitPrice</b>
+                        </font>
+                     </td>
+                     <td>
+                        <font size="-1">
+                           <a href="../OAGIS.html#AmountPerQuantity_type" target="body">
+                              <b>
+                                 <i>AmountPerQuantity</i>
+                              </b>
+                           </a>
+                        </font>
+                     </td>
+                     <td>
+                        <font size="-1">
+                           <p style="margin-top: 3; margin-bottom: 3">Price per unit.</p>
+                           <div/>
+                           <i>
+                              <p style="margin-top: 3; margin-bottom: 3">Indicates the cost or price of something represented as a value per a number of units. The price of eggs for example would be 1.29 per 1 dozen.</p>
+                           </i>
+                        </font>
+                     </td>
+                  </tr>
+                  <tr valign="top">
+                     <td>
+                        <font size="-1">
+                           <b>UserArea</b>
+                        </font>
+                     </td>
+                     <td>
+                        <font size="-1">
+                           <a href="../OAGIS.html#UserArea_element" target="body">reference</a>
+                        </font>
+                     </td>
+                     <td>
+                        <font size="-1">
+                           <div/>
+                           <i/>
+                        </font>
+                     </td>
+                  </tr>
+               </table>
+            </td>
+         </tr>
+      </table>
+      <a name="PriceListQualifier_type"/>
+      <p/>
+      <table border="1" cellpadding="3" cellspacing="0" width="100%">
+         <tr bgcolor="#e0e0e0" valign="top">
+            <td width="10%" colspan="2">
+               <b>
+                  <i>PriceListQualifier</i>
+               </b>
+            </td>
+         </tr>
+         <tr bgcolor="#e0e0e0" valign="top">
+            <td colspan="2">
+               <i/>
+            </td>
+         </tr>
+         <tr>
+            <td width="10%" align="right" valign="top">Structure:</td>
+            <td>
+               <img src="../Diagrams/PriceListQualifier.png"/>
+            </td>
+         </tr>
+         <tr>
+            <td width="10%" align="right" valign="top">Elements:</td>
+            <td>
+               <table>
+                  <tr>
+                     <td align="left" valign="top">
+                        <font size="-1">
+                           <b>Name</b>
+                        </font>
+                     </td>
+                     <td align="left" valign="top">
+                        <font size="-1">
+                           <b>Type</b>
+                        </font>
+                     </td>
+                     <td align="left" valign="top">
+                        <font size="-1">
+                           <b>Description</b>
+                        </font>
+                     </td>
+                  </tr>
+                  <tr valign="top">
+                     <td>
+                        <font size="-1">
+                           <b>Business</b>
+                        </font>
+                     </td>
+                     <td>
+                        <font size="-1">
+                           <a href="#Business_element" target="body">reference</a>
+                        </font>
+                     </td>
+                     <td>
+                        <font size="-1">
+                           <div/>
+                           <i/>
+                        </font>
+                     </td>
+                  </tr>
+                  <tr valign="top">
+                     <td>
+                        <font size="-1">
+                           <b>CatalogDocumentReference</b>
+                        </font>
+                     </td>
+                     <td>
+                        <font size="-1">
+                           <a href="#CatalogDocumentReference_element" target="body">reference</a>
+                        </font>
+                     </td>
+                     <td>
+                        <font size="-1">
+                           <p style="margin-top: 3; margin-bottom: 3">Reference to the Catalog in which the PriceList applies.</p>
+                           <div/>
+                           <i/>
+                        </font>
+                     </td>
+                  </tr>
+                  <tr valign="top">
+                     <td>
+                        <font size="-1">
+                           <b>Description</b>
+                        </font>
+                     </td>
+                     <td>
+                        <font size="-1">
+                           <a href="../OAGIS.html#Description_type" target="body">
+                              <b>
+                                 <i>Description</i>
+                              </b>
+                           </a>
+                        </font>
+                     </td>
+                     <td>
+                        <font size="-1">
+                           <p style="margin-top: 3; margin-bottom: 3">Description of the PriceList.</p>
+                           <div/>
+                           <i>
+                              <p style="margin-top: 3; margin-bottom: 3">Free-form text description of the Noun or Componenet in which the description occurs. The lang attribute indicates the language the description is in. Owner inidcates the user or entity that provided teh description..</p>
+                           </i>
+                        </font>
+                     </td>
+                  </tr>
+                  <tr valign="top">
+                     <td>
+                        <font size="-1">
+                           <b>Parties</b>
+                        </font>
+                     </td>
+                     <td>
+                        <font size="-1">
+                           <a href="../OAGIS.html#Parties_element" target="body">reference</a>
+                        </font>
+                     </td>
+                     <td>
+                        <font size="-1">
+                           <div/>
+                           <i/>
+                        </font>
+                     </td>
+                  </tr>
+                  <tr valign="top">
+                     <td>
+                        <font size="-1">
+                           <b>Site</b>
+                        </font>
+                     </td>
+                     <td>
+                        <font size="-1">
+                           <a href="#Site_element" target="body">reference</a>
+                        </font>
+                     </td>
+                     <td>
+                        <font size="-1">
+                           <div/>
+                           <i/>
+                        </font>
+                     </td>
+                  </tr>
+                  <tr valign="top">
+                     <td>
+                        <font size="-1">
+                           <b>UserArea</b>
+                        </font>
+                     </td>
+                     <td>
+                        <font size="-1">
+                           <a href="../OAGIS.html#UserArea_element" target="body">reference</a>
+                        </font>
+                     </td>
+                     <td>
+                        <font size="-1">
+                           <div/>
+                           <i/>
+                        </font>
+                     </td>
+                  </tr>
+               </table>
+            </td>
+         </tr>
+      </table>
+      <p/>
+      <table border="1" cellpadding="3" cellspacing="0" width="100%">
+         <tr>
+            <td bgcolor="#FFFF99">
+               <span class="SectionHeader">Noun Common Files</span>
+            </td>
+         </tr>
+      </table>
+      <div/>
+   </body>
+</html>

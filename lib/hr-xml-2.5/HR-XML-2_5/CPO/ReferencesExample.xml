@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<References xmlns="http://ns.hr-xml.org/2007-04-15" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://ns.hr-xml.org/2007-04-15
+SharedStaffingModules.xsd">
+	<Reference type="Professional">
+		<PersonName>
+			<FormattedName>Dr. Amy R. Breck</FormattedName>
+		</PersonName>
+		<PositionTitle>Advisor</PositionTitle>
+		<ContactMethod>
+			<Telephone>
+				<FormattedNumber>1 404 1224567</FormattedNumber>
+			</Telephone>
+			<InternetEmailAddress>arbreck@cc.gatech.edu</InternetEmailAddress>
+			<PostalAddress>
+				<CountryCode>US</CountryCode>
+				<PostalCode>12345-1234</PostalCode>
+				<Region>GA</Region>
+				<Municipality>Atlantla</Municipality>
+			</PostalAddress>
+		</ContactMethod>
+		<Comments>College of Computing, Georgia Institute of Technology</Comments>
+	</Reference>
+</References>

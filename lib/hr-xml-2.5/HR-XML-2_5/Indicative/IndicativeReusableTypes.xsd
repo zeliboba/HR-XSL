@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema xmlns="http://ns.hr-xml.org/2007-04-15" xmlns:xsd="http://www.w3.org/2001/XMLSchema" targetNamespace="http://ns.hr-xml.org/2007-04-15" elementFormDefault="qualified" attributeFormDefault="unqualified">
+
+	<xsd:include schemaLocation="../CPO/IdentifierTypes.xsd"/>
+	<xsd:include schemaLocation="../CPO/ContactMethod.xsd"/>
+
+	<xsd:complexType name="LocalDateCertifiedType">
+		<xsd:simpleContent>
+			<xsd:extension base="LocalDateType">
+				<xsd:attribute name="certifiedDate" type="LocalDateType" use="optional"/>
+			</xsd:extension>
+		</xsd:simpleContent>
+	</xsd:complexType>
+
+	<xsd:complexType name="EffectiveDatedContactMethodWithPrecedenceType">
+		<xsd:complexContent>
+			<xsd:extension base="ContactMethodType">
+				<xsd:attribute name="precedence" type="ContactMethodPrecedenceEnumType"/>
+				<xsd:attribute name="validFrom" type="LocalDateType"/>
+				<xsd:attribute name="validTo" type="LocalDateType"/>
+			</xsd:extension>
+		</xsd:complexContent>
+	</xsd:complexType>
+
+	<xsd:simpleType name="ContactMethodPrecedenceEnumType">
+		<xsd:restriction base="xsd:string">
+			<xsd:enumeration value="Primary"/>
+			<xsd:enumeration value="Secondary"/>
+			<xsd:enumeration value="Tertiary"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+</xsd:schema>

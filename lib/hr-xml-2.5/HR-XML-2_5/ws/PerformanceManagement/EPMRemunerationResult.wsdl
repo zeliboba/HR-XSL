@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- This example WSDL is offered as a template for implementing web services using HR-XML. The target namespace is intended to be replaced with one belonging to the implementer. WSDL faults are included as placeholders. These could be used as is, removed, or replaced with those appropriate for the implementation -->
+<wsdl:definitions xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:hrxml="http://ns.hr-xml.org/2007-04-15" xmlns="http://replace-with-yours/ns" targetNamespace="http://replace-with-yours/ns">
+	<wsdl:types>
+		<xs:schema elementFormDefault="qualified" targetNamespace="http://ns.hr-xml.org/2007-04-15/ws">
+			<xs:import namespace="http://ns.hr-xml.org/2007-04-15" schemaLocation="ProcessEPMRemunerationResult.xsd"/>
+			<xs:import namespace="http://ns.hr-xml.org/2007-04-15" schemaLocation="../Common/Faults.xsd"/>
+			<xs:import namespace="http://ns.hr-xml.org/2007-04-15" schemaLocation="../Common/Acknowledge.xsd"/>
+		</xs:schema>
+	</wsdl:types>
+	<wsdl:message name="ProcessEPMRemunerationResult">
+		<wsdl:part name="Message" element="hrxml:ProcessEPMRemunerationResult"/>
+	</wsdl:message>
+	<wsdl:message name="Acknowledge">
+		<wsdl:part name="Message" element="hrxml:Acknowledge"/>
+	</wsdl:message>
+	<wsdl:message name="ProcessEPMRemunerationResultFault">
+		<wsdl:part name="SOAPFault_Part" element="hrxml:FaultExtensible"/>
+	</wsdl:message>
+	<wsdl:portType name="EPMRemunerationResult_PortType">
+		<wsdl:operation name="ProcessEPMRemunerationResult">
+			<wsdl:input message="ProcessEPMRemunerationResult"/>
+			<wsdl:output message="Acknowledge"/>
+			<wsdl:fault name="ProcessEPMRemunerationResultFault" message="ProcessEPMRemunerationResultFault"/>
+		</wsdl:operation>
+	</wsdl:portType>
+	<wsdl:binding name="EPMRemunerationResult_Binding" type="EPMRemunerationResult_PortType">
+		<soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+		<wsdl:operation name="ProcessEPMRemunerationResult">
+			<soap:operation style="document"/>
+			<wsdl:input>
+				<soap:body use="literal"/>
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal"/>
+			</wsdl:output>
+			<wsdl:fault name="ProcessEPMRemunerationResultFault">
+				<soap:fault name="ProcessEPMRemunerationResultFault" use="literal"/>
+			</wsdl:fault>
+		</wsdl:operation>
+	</wsdl:binding>
+	<wsdl:service name="EPMRemunerationResult_Service">
+		<wsdl:port name="EPMRemunerationResult_Port" binding="EPMRemunerationResult_Binding">
+			<soap:address location="http://www.replace-with-yours.com/ws/EPMRemunerationResult"/>
+		</wsdl:port>
+	</wsdl:service>
+</wsdl:definitions>

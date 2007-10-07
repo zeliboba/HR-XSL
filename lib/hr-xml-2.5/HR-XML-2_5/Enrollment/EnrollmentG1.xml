@@ -1,0 +1,42 @@
+<Enrollment xmlns="http://ns.hr-xml.org/2007-04-15" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://ns.hr-xml.org/2007-04-15
+Enrollment.xsd" creationDate="2004-04-01T13:20:00-05:00">
+	<Organization organizationName="Example Corporation">
+		<Subscriber>
+			<SubscriberType>
+				<SubscriberTypeCode>Employment</SubscriberTypeCode>
+			</SubscriberType>
+			<Person>
+				<IdentificationCode>
+					<IdValue name="Social Security Number">999-67-8899</IdValue>
+				</IdentificationCode>
+				<PersonName>
+					<GivenName>Alexander</GivenName>
+					<MiddleName>Yuri</MiddleName>
+					<FamilyName>Petrinski</FamilyName>
+				</PersonName>
+				<Gender>1</Gender>
+				<DateOfBirth>1952-08-21</DateOfBirth>
+				<PostalAddress>
+					<CountryCode>US</CountryCode>
+					<PostalCode>37022</PostalCode>
+					<Region>TN</Region>
+					<Municipality>Marcyton</Municipality>
+					<DeliveryAddress>
+						<AddressLine>7645 Sapphire Lane</AddressLine>
+					</DeliveryAddress>
+				</PostalAddress>
+			</Person>
+			<Coverage>
+				<TierCoverage type="Health Maintenance Organization">
+					<GroupNumber>42751674</GroupNumber>
+					<COBRAStatus>non-COBRA</COBRAStatus>
+					<StartDate>2003-01-01</StartDate>
+					<CoverageLevel>
+						<CoverageLevelCode>Employee Only</CoverageLevelCode>
+						<StartDate>2003-01-01</StartDate>
+					</CoverageLevel>
+				</TierCoverage>
+			</Coverage>
+		</Subscriber>
+	</Organization>
+</Enrollment>

@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+    License information for this file is provided in LICENSE.TXT
+    For support, more information, or to report implementation bugs, 
+    please contact the Open Applications Group at xml@openapplications.org 
+     
+    ** Revision: 8.0 **
+    ** Date: 05 April 2002 **
+    Open Applications Group XSD IndustryA Overlay Example
+    Copyright 1998-2002, All Rights Reserved
+    
+    Name: IndustryA ProcessTimeCard.xsd
+-->
+<xs:schema targetNamespace="http://www.oagi.net/oagis/ia" xmlns:oa="http://www.openapplications.org/oagis" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:ia="http://www.oagi.net/oagis/ia" elementFormDefault="qualified" attributeFormDefault="unqualified">
+	<xs:import namespace="http://www.openapplications.org/oagis" schemaLocation="../Resources/ProcessMeta.xsd"/>
+	<xs:include schemaLocation="../Resources/Nouns/TimeCard.xsd"/>
+	<xs:complexType name="ProcessTimeCard">
+		<xs:complexContent>
+			<xs:extension base="oa:BusinessObjectDocument">
+				<xs:sequence>
+					<xs:element name="DataArea" type="ia:ProcessTimeCardDataArea"/>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:element name="ProcessTimeCard" type="ia:ProcessTimeCard"/>
+	<xs:complexType name="ProcessTimeCardDataArea">
+		<xs:complexContent>
+			<xs:extension base="oa:DataArea">
+				<xs:sequence>
+					<xs:element ref="oa:Process"/>
+					<xs:element ref="ia:TimeCard" maxOccurs="unbounded"/>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+</xs:schema>

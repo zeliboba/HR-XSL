@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--William returned to work June 20. -->
+<IndicativeData xmlns="http://ns.hr-xml.org/2007-04-15" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://ns.hr-xml.org/2007-04-15  IndicativeData.xsd">
+	<Employer>
+		<OrganizationName>Widget Manufacturing</OrganizationName>
+		<OrganizationId idOwner="Dunn &amp; Bradstreet">
+			<IdValue name="DUNNS">72241</IdValue>
+		</OrganizationId>
+	</Employer>
+	<Employee changeType="Update">
+		<PersonInfo>
+			<PersonLegalId idOwner="US SSA" validFrom="2000-05-12">
+				<IdValue name="SSN">456-11-1111</IdValue>
+			</PersonLegalId>
+			<PersonId idOwner="Widget">
+				<IdValue name="Person Unique Id">12440</IdValue>
+			</PersonId>
+			<PersonName>
+				<GivenName>William</GivenName>
+				<FamilyName>Jones</FamilyName>
+			</PersonName>
+		</PersonInfo>
+		<EmployeeInfo>
+			<EmployeeId validFrom="1987-01-01"  idOwner="Widget Manufacturing">
+				<IdValue name="EE Id">320</IdValue>
+			</EmployeeId>
+		</EmployeeInfo>
+		<EmploymentInfo>
+			<IsEmployed>true</IsEmployed>
+			<Employment>
+				<IsOnLeave>false</IsOnLeave>
+				<LeaveInfo>
+					<LeaveDate>1999-03-21</LeaveDate>
+					<ReturnedToWorkDate>1999-06-20</ReturnedToWorkDate>
+				</LeaveInfo>
+				<IsTerminated>false</IsTerminated>
+			</Employment>
+		</EmploymentInfo>
+	</Employee>
+</IndicativeData>

@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<SupportingMaterials xmlns="http://ns.hr-xml.org/2007-04-15" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:ds="http://www.w3.org/2000/09/xmldsig#" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://ns.hr-xml.org/2007-04-15 SupportingMaterials.xsd">
+	<Id idOwner="Sterling Testing Systems">
+		<IdValue name="OrderNumber">1380001</IdValue>
+	</Id>
+	<Id idOwner="ABC Company">
+		<IdValue name="CandidateId">123456789</IdValue>
+	</Id>
+	<EffectiveDate>
+		<StartDate>2004-05-04</StartDate>
+		<EndDate>2004-06-04</EndDate>
+	</EffectiveDate>
+	<dc:title>123456789.tif</dc:title>
+	<dc:format>image/tiff</dc:format>
+	<ExtendedMetadata>
+		<dc:creator>Sterling Testing Systems</dc:creator>
+		<dc:subject>Consent and Disclosure Form for Mark Smith</dc:subject>
+		<dc:date>2004-05-04</dc:date>
+	</ExtendedMetadata>
+	<AttachmentInfo>
+		<AttachmentId>
+			<IdValue>1</IdValue>
+		</AttachmentId>
+		<OriginalFileName>123456789.tif</OriginalFileName>
+	</AttachmentInfo>
+	<UsageRestrictions>This Consent and Disclosure form is only to be used for the candidate withtin this transaction</UsageRestrictions>
+	<Comments>Consent and Disclosure form required for Education Verification</Comments>
+</SupportingMaterials>

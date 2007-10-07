@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EPMObjectivesResult xmlns="http://ns.hr-xml.org/2007-04-15" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://ns.hr-xml.org/2007-04-15
+ EPMObjectivesResult.xsd">
+	<ResultDate>2006-09-01</ResultDate>
+	<AppraisalPeriod>
+		<StartDate>2005-08-17</StartDate>
+		<EndDate>2006-08-17</EndDate>
+	</AppraisalPeriod>
+	<ObjectivePlanId>
+		<IdValue>3001</IdValue>
+	</ObjectivePlanId>
+	<PreparedBy>
+		<PersonName>
+			<GivenName>Bob</GivenName>
+			<FamilyName>Mangler</FamilyName>
+		</PersonName>
+	</PreparedBy>
+	<AppraisalSubject>
+		<PersonName>
+			<GivenName>Sam</GivenName>
+			<FamilyName>Smith</FamilyName>
+		</PersonName>
+	</AppraisalSubject>
+	<ReasonCode>
+		<StandardValue>scheduled</StandardValue>
+	</ReasonCode>
+	<ScheduleType>
+		<StandardValue>annual</StandardValue>
+	</ScheduleType>
+	<ObjectivesSection>
+		<SectionSummaryResult>
+			<Score>
+				<NumericValue maxValue="5">4.5</NumericValue>
+			</Score>
+		</SectionSummaryResult>
+		<ObjectiveGroupResult>
+			<ObjectiveGroupId>
+				<IdValue>3001.1</IdValue>
+			</ObjectiveGroupId>
+			<ObjectiveGroupName>Hong Kong Sales Office</ObjectiveGroupName>
+			<ObjectiveGroupDescription>Establish sales office and make it productive.</ObjectiveGroupDescription>
+			<Weight>25</Weight>
+			<ObjectiveGroupStatus>complete</ObjectiveGroupStatus>
+			<ObjectiveGroupStatusDate>2006-08-17</ObjectiveGroupStatusDate>
+			<Score>
+				<NumericValue maxValue="5">4.75</NumericValue>
+			</Score>
+			<Comments>Great job. Office is off to a good start. Lease and hiring costs came in over budget.  Need to work to controll costs.</Comments>
+			<ObjectiveSingleResult>
+				<ObjectiveId>
+					<IdValue>3001.2</IdValue>
+				</ObjectiveId>
+				<ObjectiveName>Locate and Lease Office</ObjectiveName>
+				<ObjectiveDescription>Work develop requirements for location, size, etc. Work with appropriate corporate resources (legal, finance, marketing) and local resources to secure office space. Work within established budget. </ObjectiveDescription>
+				<Weight description="percent">15</Weight>
+				<TargetDate>2006-01-01</TargetDate>
+				<ObjectiveStatus>
+					<StandardValue>complete</StandardValue>
+				</ObjectiveStatus>
+				<ObjectiveStatusDate>2006-01-01</ObjectiveStatusDate>
+				<Score>
+					<NumericValue maxValue="5">3.8</NumericValue>
+				</Score>
+				<Comments>Lease, broker costs came in considerably over budget.</Comments>
+			</ObjectiveSingleResult>
+			<ObjectiveSingleResult>
+				<ObjectiveId>
+					<IdValue>3001.3</IdValue>
+				</ObjectiveId>
+				<ObjectiveName>Staff Office</ObjectiveName>
+				<ObjectiveDescription>Hire Sales Mgr., Admin, and First Rep.</ObjectiveDescription>
+				<Weight description="percent">15</Weight>
+				<TargetDate>2006-02-01</TargetDate>
+				<ObjectiveStatus>
+					<StandardValue>complete</StandardValue>
+				</ObjectiveStatus>
+				<ObjectiveStatusDate>2006-02-01</ObjectiveStatusDate>
+				<Score>
+					<NumericValue maxValue="5">4.5</NumericValue>
+				</Score>
+				<Comments>Good job. Sales manager was a great find, though the negotiated pay package put you over budget.</Comments>
+			</ObjectiveSingleResult>
+			<ObjectiveSingleResult>
+				<ObjectiveId>
+					<IdValue>3001.4</IdValue>
+				</ObjectiveId>
+				<ObjectiveName>Hong Kong Office Sales Target</ObjectiveName>
+				<ObjectiveDescription>Work with local office to ensure they meet their partial-year sales target.</ObjectiveDescription>
+				<Weight description="percent">70</Weight>
+				<TargetDate>2006-08-17</TargetDate>
+	<ObjectiveMetric>
+					<MeasureName>Revenue from Hong Kong Office Sales</MeasureName>
+					<MeasureValue>
+						<NumericValue description="USD">1250000</NumericValue>
+					</MeasureValue>
+				</ObjectiveMetric>			
+				<ObjectiveStatus>
+					<StandardValue>complete</StandardValue>
+				</ObjectiveStatus>
+				<ObjectiveStatusDate>2006-08-17</ObjectiveStatusDate>
+				<ObjectiveResultAgainstMetric>
+					<MeasureName>Revenue from Hong Kong Office Sales</MeasureName>
+					<MeasureValue>
+						<NumericValue description="USD">1954000</NumericValue>
+					</MeasureValue>
+				</ObjectiveResultAgainstMetric>
+				<Score>
+					<NumericValue maxValue="5">5.0</NumericValue>
+				</Score>
+				<Comments>Congratulations for making your number!  The Hong Kong office is off to a great start!</Comments>
+			</ObjectiveSingleResult>
+		</ObjectiveGroupResult>
+		<ObjectiveSingleResult>
+			<ObjectiveId>
+				<IdValue>3001.5</IdValue>
+			</ObjectiveId>
+			<ObjectiveName>Asia-Pacific Region Sales</ObjectiveName>
+			<ObjectiveDescription>Manage Asia-Pacific sales operations to meet regional sales target.</ObjectiveDescription>
+			<Weight description="percent">75</Weight>
+			<TargetDate>2006-08-17</TargetDate>
+			<ObjectiveMetric>
+				<MeasureName>Revenue form Asia-Pacific Region Sales</MeasureName>
+				<MeasureValue>
+					<NumericValue description="USD">45000000</NumericValue>
+				</MeasureValue>
+			</ObjectiveMetric>
+			<ObjectiveStatus>
+				<StandardValue>complete</StandardValue>
+			</ObjectiveStatus>
+			<ObjectiveStatusDate>2006-08-17</ObjectiveStatusDate>
+			<ObjectiveResultAgainstMetric>
+				<MeasureName>Revenue form Asia-Pacific Region Sales</MeasureName>
+				<MeasureValue>
+					<NumericValue description="USD">49131000</NumericValue>
+				</MeasureValue>
+			</ObjectiveResultAgainstMetric>
+			<Score>
+				<NumericValue maxValue="5">5.0</NumericValue>
+			</Score>
+			<Comments>Congratulations to you and the Asia-Pacific Region team!</Comments>
+		</ObjectiveSingleResult>
+	</ObjectivesSection>
+</EPMObjectivesResult>

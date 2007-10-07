@@ -1,0 +1,878 @@
+<?xml version="1.0"?>
+<!-- edited with XMLSpy v2006 rel. 3 sp1 (http://www.altova.com) by Chuck Allen (HR-XML Consortium, Inc.) -->
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="http://ns.hr-xml.org/2007-04-15" xmlns:oa="http://www.openapplications.org/oagis" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:ds="http://www.w3.org/2000/09/xmldsig#" targetNamespace="http://ns.hr-xml.org/2007-04-15" elementFormDefault="qualified" version="2007-04-15">
+	<xsd:annotation>
+		<xsd:documentation>"Copyright  The HR-XML Consortium. All Rights Reserved. http://www.hr-xml.org"
+
+Terms of license can be found in license.txt.
+</xsd:documentation>
+		<xsd:documentation>Stand alone (but non-normative) version of schema, with all "includes" inserted explicitly.  This file is auto-generated.  It should be considered a "convenience" alternative to the normative versions.</xsd:documentation>
+		<xsd:documentation>After merging all includes, the result is passed through a stylesheet which deletes any duplicative global components as well as any unused global types.  Finally, it sorts by component name.  Be sure to check the Xml Namespaces to ensure this result is what you requested.</xsd:documentation>
+	</xsd:annotation>
+	<xsd:import namespace="http://www.w3.org/XML/1998/namespace" schemaLocation="xml.xsd"/>
+	<xsd:element name="MetricsInterchange" type="MetricsInterchangeType"/>
+	<xsd:simpleType name="AnyDateTimeNkNaType">
+		<xsd:union memberTypes="LocalDateType DateType LocalDateTimeType DateTimeType NotKnownLiteral NotApplicableLiteral"/>
+	</xsd:simpleType>
+	<xsd:simpleType name="BasicHierarchicalRoleType">
+		<xsd:restriction base="xsd:string">
+			<xsd:enumeration value="Functional"/>
+			<xsd:enumeration value="Logical"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="BasicOrganizationalUnitRelationshipType">
+		<xsd:restriction base="xsd:string">
+			<xsd:enumeration value="Child"/>
+			<xsd:enumeration value="Sibling"/>
+			<xsd:enumeration value="Parent"/>
+			<xsd:enumeration value="Ultimate Parent"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="BasicOrganizationalUnitStructureType">
+		<xsd:restriction base="xsd:string">
+			<xsd:enumeration value="Reporting"/>
+			<xsd:enumeration value="Legal"/>
+			<xsd:enumeration value="Fiduciary"/>
+			<xsd:enumeration value="Structural"/>
+			<xsd:enumeration value="Project"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="BasicOrganizationContactPurposeType">
+		<xsd:restriction base="xsd:string">
+			<xsd:enumeration value="Headquarters"/>
+			<xsd:enumeration value="Sales"/>
+			<xsd:enumeration value="Support"/>
+			<xsd:enumeration value="Billing"/>
+			<xsd:enumeration value="Legal"/>
+			<xsd:enumeration value="Human Resources"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="BasicOrganizationLegalOwnershipType">
+		<xsd:restriction base="xsd:string">
+			<xsd:enumeration value="Public"/>
+			<xsd:enumeration value="Private"/>
+			<xsd:enumeration value="Government"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="BasicOrganizationRelationshipType">
+		<xsd:restriction base="xsd:string">
+			<xsd:enumeration value="Child"/>
+			<xsd:enumeration value="Parent"/>
+			<xsd:enumeration value="Ultimate Parent"/>
+			<xsd:enumeration value="Domestic Parent"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="contactMethodLocationPatternExtensionType">
+		<xsd:union memberTypes="contactMethodLocationType xStringPatternExtensionType"/>
+	</xsd:simpleType>
+	<xsd:simpleType name="contactMethodLocationType">
+		<xsd:restriction base="xsd:string">
+			<xsd:enumeration value="office"/>
+			<xsd:enumeration value="vehicle"/>
+			<xsd:enumeration value="onPerson"/>
+			<xsd:enumeration value="home"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="contactMethodUsePatternExtensionType">
+		<xsd:union memberTypes="contactMethodUseType xStringPatternExtensionType"/>
+	</xsd:simpleType>
+	<xsd:simpleType name="contactMethodUseType">
+		<xsd:restriction base="xsd:string">
+			<xsd:enumeration value="business"/>
+			<xsd:enumeration value="businessDirect"/>
+			<xsd:enumeration value="personal"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="contactMethodWhenAvailableType">
+		<xsd:restriction base="xsd:string"/>
+	</xsd:simpleType>
+	<xsd:simpleType name="CountryCodeType">
+		<xsd:annotation>
+			<xsd:documentation>Must conform to ISO 3166 Representation of Countries.</xsd:documentation>
+		</xsd:annotation>
+		<xsd:restriction base="xsd:string">
+			<xsd:pattern value="[A-Z][A-Z]"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="CurrencyCodeType">
+		<xsd:annotation>
+			<xsd:documentation>Must conform to ISO 4217 - Representation of Currency and Funds</xsd:documentation>
+		</xsd:annotation>
+		<xsd:restriction base="xsd:string">
+			<xsd:pattern value="[A-Z][A-Z][A-Z]"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="DateTimeType">
+		<xsd:restriction base="xsd:dateTime">
+			<xsd:pattern value="\d\d\d\d-\d\d-\d\dT\d\d:\d\d:\d\d(Z|(\+|-)\d\d:\d\d)"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="DateType">
+		<xsd:restriction base="xsd:date">
+			<xsd:pattern value="\d\d\d\d-\d\d-\d\d(Z|(\+|-)\d\d:\d\d)"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="DressCodeContentType">
+		<xsd:restriction base="xsd:string">
+			<xsd:enumeration value="Professional"/>
+			<xsd:enumeration value="Business"/>
+			<xsd:enumeration value="Business Casual"/>
+			<xsd:enumeration value="Uniform"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="DressCodeContentTypes">
+		<xsd:union memberTypes="DressCodeContentType xStringPatternExtensionType"/>
+	</xsd:simpleType>
+	<xsd:simpleType name="DunsNumberBaseType">
+		<xsd:restriction base="xsd:integer">
+			<xsd:pattern value="\d{9}"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="GenderCodeType">
+		<xsd:annotation>
+			<xsd:documentation>Must conform to ISO 5218 - Representation of Human Sexes (0 - Not Known; 1 - Male; 2 - Female; 9 - Not specified)</xsd:documentation>
+		</xsd:annotation>
+		<xsd:restriction base="xsd:integer">
+			<xsd:pattern value="[0129]"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="HierarchicalRoleType">
+		<xsd:union memberTypes="BasicHierarchicalRoleType xStringPatternExtensionType"/>
+	</xsd:simpleType>
+	<xsd:simpleType name="InternetEmailAddressType">
+		<xsd:restriction base="xsd:string"/>
+	</xsd:simpleType>
+	<xsd:simpleType name="InternetWebAddressType">
+		<xsd:restriction base="xsd:string"/>
+	</xsd:simpleType>
+	<xsd:simpleType name="LanguageCodeType">
+		<xsd:annotation>
+			<xsd:documentation>ISO 639-1 two character code is preferred, but not required.</xsd:documentation>
+		</xsd:annotation>
+		<xsd:restriction base="xsd:language"/>
+	</xsd:simpleType>
+	<xsd:simpleType name="LatitudeType">
+		<xsd:annotation>
+			<xsd:documentation>Negative numbers are degrees South Latitude, and positive numbers are degrees North Latitude.</xsd:documentation>
+		</xsd:annotation>
+		<xsd:restriction base="xsd:decimal">
+			<xsd:minInclusive value="-90.0"/>
+			<xsd:maxInclusive value="90.0"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="LocalDateNkNaType">
+		<xsd:union memberTypes="LocalDateType NotKnownLiteral NotApplicableLiteral"/>
+	</xsd:simpleType>
+	<xsd:simpleType name="LocalDateTimeType">
+		<xsd:restriction base="xsd:dateTime">
+			<xsd:pattern value="\d\d\d\d-\d\d-\d\dT\d\d:\d\d:\d\d"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="LocalDateType">
+		<xsd:restriction base="xsd:date">
+			<xsd:pattern value="\d\d\d\d-\d\d-\d\d"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="LocalTimeType">
+		<xsd:restriction base="xsd:time">
+			<xsd:pattern value="\d\d:\d\d:\d\d"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="LocationAreaTypeType">
+		<xsd:restriction base="xsd:string">
+			<xsd:enumeration value="municipality"/>
+			<xsd:enumeration value="postalcode"/>
+			<xsd:enumeration value="countrycode"/>
+			<xsd:enumeration value="region"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="LongitudeType">
+		<xsd:annotation>
+			<xsd:documentation>Negative numbers are degrees West Longitude, and positive numbers are degrees East Longitude.</xsd:documentation>
+		</xsd:annotation>
+		<xsd:restriction base="xsd:decimal">
+			<xsd:minInclusive value="-180.0"/>
+			<xsd:maxInclusive value="180.0"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="NonNegativeDecimal">
+		<xsd:restriction base="xsd:decimal">
+			<xsd:minInclusive value="0"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="NotApplicableLiteral">
+		<xsd:restriction base="xsd:string">
+			<xsd:enumeration value="notApplicable"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="NotKnownLiteral">
+		<xsd:restriction base="xsd:string">
+			<xsd:enumeration value="notKnown"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="OrganizationalUnitRelationshipType">
+		<xsd:union memberTypes="BasicOrganizationalUnitRelationshipType xStringPatternExtensionType"/>
+	</xsd:simpleType>
+	<xsd:simpleType name="OrganizationalUnitStructureType">
+		<xsd:union memberTypes="BasicOrganizationalUnitStructureType xStringPatternExtensionType"/>
+	</xsd:simpleType>
+	<xsd:simpleType name="OrganizationContactPurposeType">
+		<xsd:union memberTypes="BasicOrganizationContactPurposeType xStringPatternExtensionType"/>
+	</xsd:simpleType>
+	<xsd:simpleType name="OrganizationLegalOwnershipType">
+		<xsd:union memberTypes="BasicOrganizationLegalOwnershipType xStringPatternExtensionType"/>
+	</xsd:simpleType>
+	<xsd:simpleType name="OrganizationRelationshipType">
+		<xsd:union memberTypes="BasicOrganizationRelationshipType xStringPatternExtensionType"/>
+	</xsd:simpleType>
+	<xsd:simpleType name="TimeType">
+		<xsd:restriction base="xsd:time">
+			<xsd:pattern value="\d\d:\d\d:\d\d(Z|(\+|-)\d\d:\d\d)"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="xStringPatternExtensionType">
+		<xsd:restriction base="xsd:string">
+			<xsd:pattern value="x:\S.*"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:complexType name="AccountingCodeType">
+		<xsd:simpleContent>
+			<xsd:extension base="xsd:string">
+				<xsd:attribute name="description" type="xsd:string" use="optional"/>
+			</xsd:extension>
+		</xsd:simpleContent>
+	</xsd:complexType>
+	<xsd:complexType name="ContactMethodType">
+		<xsd:sequence>
+			<xsd:element ref="Use" minOccurs="0"/>
+			<xsd:element ref="Location" minOccurs="0"/>
+			<xsd:element ref="WhenAvailable" minOccurs="0"/>
+			<xsd:element ref="Telephone" minOccurs="0"/>
+			<xsd:element ref="Mobile" minOccurs="0"/>
+			<xsd:element ref="Fax" minOccurs="0"/>
+			<xsd:element ref="Pager" minOccurs="0"/>
+			<xsd:element ref="TTYTDD" minOccurs="0"/>
+			<xsd:element ref="InternetEmailAddress" minOccurs="0"/>
+			<xsd:element ref="InternetWebAddress" minOccurs="0"/>
+			<xsd:element ref="PostalAddress" minOccurs="0"/>
+		</xsd:sequence>
+	</xsd:complexType>
+	<xsd:complexType name="DataElementType">
+		<xsd:sequence>
+			<xsd:element name="Id" type="EntityIdType" minOccurs="0"/>
+			<xsd:element name="Description" type="xsd:string" minOccurs="0"/>
+			<xsd:choice>
+				<xsd:element name="MonetaryValue" type="MonetaryValueType"/>
+				<xsd:element name="DataValue" type="xsd:string"/>
+			</xsd:choice>
+			<xsd:element name="DataElementSubType" type="DataElementType" minOccurs="0" maxOccurs="unbounded"/>
+		</xsd:sequence>
+		<xsd:attribute name="type" type="xsd:string"/>
+	</xsd:complexType>
+	<xsd:complexType name="DressCodeType">
+		<xsd:simpleContent>
+			<xsd:extension base="DressCodeContentTypes">
+				<xsd:attribute name="suppliedByOrganization" type="xsd:boolean"/>
+			</xsd:extension>
+		</xsd:simpleContent>
+	</xsd:complexType>
+	<xsd:complexType name="DunsNumberDataType">
+		<xsd:simpleContent>
+			<xsd:extension base="DunsNumberBaseType">
+				<xsd:attribute name="dunsNumberType" use="required">
+					<xsd:simpleType>
+						<xsd:restriction base="xsd:string">
+							<xsd:enumeration value="standard Duns"/>
+							<xsd:enumeration value="global ultimate"/>
+							<xsd:enumeration value="domestic ultimate"/>
+						</xsd:restriction>
+					</xsd:simpleType>
+				</xsd:attribute>
+			</xsd:extension>
+		</xsd:simpleContent>
+	</xsd:complexType>
+	<xsd:complexType name="EntityIdType">
+		<xsd:sequence>
+			<xsd:element name="IdValue" maxOccurs="unbounded">
+				<xsd:complexType>
+					<xsd:simpleContent>
+						<xsd:extension base="xsd:string">
+							<xsd:attribute name="name" type="xsd:string" use="optional"/>
+						</xsd:extension>
+					</xsd:simpleContent>
+				</xsd:complexType>
+			</xsd:element>
+		</xsd:sequence>
+		<xsd:attribute name="validFrom" type="AnyDateTimeNkNaType" use="optional"/>
+		<xsd:attribute name="validTo" type="AnyDateTimeNkNaType" use="optional"/>
+		<xsd:attribute name="idOwner" type="xsd:string" use="optional"/>
+	</xsd:complexType>
+	<xsd:complexType name="IndustryCodeType">
+		<xsd:simpleContent>
+			<xsd:extension base="xsd:string">
+				<xsd:attribute name="primaryIndicator" type="xsd:boolean" use="optional"/>
+				<xsd:attribute name="classificationName" type="xsd:string" use="optional"/>
+			</xsd:extension>
+		</xsd:simpleContent>
+	</xsd:complexType>
+	<xsd:complexType name="InternetDomainNameType">
+		<xsd:simpleContent>
+			<xsd:extension base="xsd:string">
+				<xsd:attribute name="primaryIndicator" type="xsd:boolean" use="optional"/>
+			</xsd:extension>
+		</xsd:simpleContent>
+	</xsd:complexType>
+	<xsd:complexType name="LanguageDependentTextType">
+		<xsd:simpleContent>
+			<xsd:extension base="xsd:string">
+				<xsd:attribute ref="xml:lang">
+					<xsd:annotation>
+						<xsd:documentation>ISO 639-1 two character code is preferred, but not required.</xsd:documentation>
+					</xsd:annotation>
+				</xsd:attribute>
+			</xsd:extension>
+		</xsd:simpleContent>
+	</xsd:complexType>
+	<xsd:complexType name="LocationAreaType">
+		<xsd:sequence>
+			<xsd:element name="Description" type="xsd:string"/>
+			<xsd:element name="Area" type="LocationAreaType" minOccurs="0" maxOccurs="unbounded"/>
+		</xsd:sequence>
+		<xsd:attribute name="type">
+			<xsd:simpleType>
+				<xsd:union memberTypes="LocationAreaTypeType xStringPatternExtensionType"/>
+			</xsd:simpleType>
+		</xsd:attribute>
+	</xsd:complexType>
+	<xsd:complexType name="MetricsAdditionalDataType">
+		<xsd:simpleContent>
+			<xsd:extension base="xsd:string">
+				<xsd:attribute name="type" type="xsd:string"/>
+			</xsd:extension>
+		</xsd:simpleContent>
+	</xsd:complexType>
+	<xsd:complexType name="MetricsInterchangeType">
+		<xsd:sequence>
+			<xsd:element name="ReportingPeriod" type="ReportingPeriodType"/>
+			<xsd:element name="ReportDescription">
+				<xsd:complexType>
+					<xsd:sequence>
+						<xsd:element name="Name" type="xsd:string" minOccurs="0"/>
+						<xsd:element name="Description" type="xsd:string" minOccurs="0"/>
+					</xsd:sequence>
+				</xsd:complexType>
+			</xsd:element>
+			<xsd:element name="PrincipalRespondentOrganization">
+				<xsd:complexType>
+					<xsd:sequence>
+						<xsd:element ref="Organization"/>
+						<xsd:element name="AdditionalData" type="MetricsAdditionalDataType" minOccurs="0" maxOccurs="unbounded"/>
+					</xsd:sequence>
+				</xsd:complexType>
+			</xsd:element>
+			<xsd:element name="ReportedMetrics" type="ReportedMetricsType" minOccurs="0" maxOccurs="unbounded"/>
+		</xsd:sequence>
+		<xsd:attribute ref="xml:lang"/>
+	</xsd:complexType>
+	<xsd:complexType name="MetricsOrganizationDescriptorsType">
+		<xsd:sequence>
+			<xsd:element name="GeographicalScope" type="LocationAreaType" minOccurs="0"/>
+			<xsd:element name="OrganizationSize" minOccurs="0">
+				<xsd:complexType>
+					<xsd:sequence>
+						<xsd:element name="Headcount" type="xsd:string" minOccurs="0"/>
+						<xsd:element name="FiscalSize" minOccurs="0" maxOccurs="unbounded">
+							<xsd:complexType>
+								<xsd:simpleContent>
+									<xsd:extension base="xsd:string">
+										<xsd:attribute name="type" type="xsd:string"/>
+									</xsd:extension>
+								</xsd:simpleContent>
+							</xsd:complexType>
+						</xsd:element>
+					</xsd:sequence>
+				</xsd:complexType>
+			</xsd:element>
+			<xsd:element ref="IndustryCode" minOccurs="0" maxOccurs="unbounded"/>
+			<xsd:element name="DataElement" type="DataElementType" minOccurs="0" maxOccurs="unbounded"/>
+		</xsd:sequence>
+	</xsd:complexType>
+	<xsd:complexType name="MobileTelcomNumberType">
+		<xsd:complexContent>
+			<xsd:extension base="TelcomNumberType">
+				<xsd:attribute name="smsEnabled" type="xsd:boolean" use="optional"/>
+			</xsd:extension>
+		</xsd:complexContent>
+	</xsd:complexType>
+	<xsd:complexType name="MonetaryValueType">
+		<xsd:simpleContent>
+			<xsd:extension base="xsd:decimal">
+				<xsd:attribute name="currencyCode" type="CurrencyCodeType"/>
+			</xsd:extension>
+		</xsd:simpleContent>
+	</xsd:complexType>
+	<xsd:complexType name="OrganizationalUnitPersonMemberRoleType">
+		<xsd:sequence>
+			<xsd:element name="RoleName" type="xsd:string" minOccurs="0"/>
+			<xsd:element name="RoleId" type="EntityIdType" minOccurs="0"/>
+			<xsd:element name="Description" type="xsd:string" minOccurs="0"/>
+		</xsd:sequence>
+		<xsd:attribute name="leader" type="xsd:boolean"/>
+	</xsd:complexType>
+	<xsd:complexType name="OrganizationalUnitPersonMemberType">
+		<xsd:sequence>
+			<xsd:element name="PersonName" type="PersonNameType" minOccurs="0"/>
+			<xsd:element name="PersonId" type="EntityIdType" minOccurs="0" maxOccurs="unbounded"/>
+			<xsd:element name="PersonRole" type="OrganizationalUnitPersonMemberRoleType" minOccurs="0" maxOccurs="unbounded"/>
+			<xsd:element name="ContactMethod" type="ContactMethodType" minOccurs="0" maxOccurs="unbounded"/>
+		</xsd:sequence>
+	</xsd:complexType>
+	<xsd:complexType name="OrganizationalUnitType">
+		<xsd:sequence>
+			<xsd:element name="OrganizationalUnitName" type="xsd:string" minOccurs="0"/>
+			<xsd:element name="OrganizationalUnitId" type="EntityIdType" minOccurs="0" maxOccurs="unbounded"/>
+			<xsd:element name="OrganizationId" type="EntityIdType" minOccurs="0"/>
+			<xsd:element name="Description" type="xsd:string" minOccurs="0"/>
+			<xsd:element name="IndustryCode" type="IndustryCodeType" minOccurs="0" maxOccurs="unbounded"/>
+			<xsd:element name="AccountingCode" type="AccountingCodeType" minOccurs="0" maxOccurs="unbounded"/>
+			<xsd:element name="WorkSite" type="WorkSiteType" minOccurs="0" maxOccurs="unbounded"/>
+			<xsd:element name="RelatedOrganizationalUnit" type="RelatedOrganizationalUnitType" minOccurs="0" maxOccurs="unbounded"/>
+			<xsd:element name="PersonMember" type="OrganizationalUnitPersonMemberType" minOccurs="0" maxOccurs="unbounded"/>
+			<xsd:element name="UserArea" type="UserAreaType" minOccurs="0"/>
+		</xsd:sequence>
+		<xsd:attribute name="typeOfGroup" type="xsd:string"/>
+		<xsd:attribute name="hierarchicalRole" type="HierarchicalRoleType" use="optional"/>
+	</xsd:complexType>
+	<xsd:complexType name="OrganizationContactType">
+		<xsd:sequence>
+			<xsd:element name="ContactName" type="PersonNameType" minOccurs="0"/>
+			<xsd:element name="ContactId" type="EntityIdType" minOccurs="0"/>
+			<xsd:element name="ContactMethod" type="ContactMethodType" minOccurs="0"/>
+		</xsd:sequence>
+		<xsd:attribute name="purpose" type="OrganizationContactPurposeType"/>
+	</xsd:complexType>
+	<xsd:complexType name="OrganizationLegalClassificationType">
+		<xsd:simpleContent>
+			<xsd:extension base="xsd:string">
+				<xsd:attribute name="countryCode" type="CountryCodeType" use="required"/>
+				<xsd:attribute name="ownership" type="OrganizationLegalOwnershipType" use="optional"/>
+			</xsd:extension>
+		</xsd:simpleContent>
+	</xsd:complexType>
+	<xsd:complexType name="OrganizationType">
+		<xsd:sequence>
+			<xsd:element name="OrganizationName" type="xsd:string" minOccurs="0"/>
+			<xsd:element name="OrganizationId" type="EntityIdType" minOccurs="0" maxOccurs="unbounded"/>
+			<xsd:element name="TaxId" type="EntityIdType" minOccurs="0" maxOccurs="unbounded"/>
+			<xsd:element name="LegalId" type="EntityIdType" minOccurs="0" maxOccurs="unbounded"/>
+			<xsd:element name="DunsNumber" type="DunsNumberDataType" minOccurs="0" maxOccurs="unbounded"/>
+			<xsd:element name="IsPublicCompany" type="xsd:boolean" minOccurs="0"/>
+			<xsd:element name="Stock" type="StockType" minOccurs="0" maxOccurs="unbounded"/>
+			<xsd:element name="MissionStatement" type="xsd:string" minOccurs="0"/>
+			<xsd:element name="ValueStatement" type="xsd:string" minOccurs="0"/>
+			<xsd:element name="InternetDomainName" type="InternetDomainNameType" minOccurs="0" maxOccurs="unbounded"/>
+			<xsd:element name="DoingBusinessAs" type="LanguageDependentTextType" minOccurs="0" maxOccurs="unbounded"/>
+			<xsd:element name="LegalClassification" type="OrganizationLegalClassificationType" minOccurs="0" maxOccurs="unbounded"/>
+			<xsd:element name="IndustryCode" type="IndustryCodeType" minOccurs="0" maxOccurs="unbounded"/>
+			<xsd:element name="Headcount" type="xsd:nonNegativeInteger" minOccurs="0"/>
+			<xsd:element name="Description" type="xsd:string" minOccurs="0"/>
+			<xsd:element name="WorkSite" type="WorkSiteType" minOccurs="0" maxOccurs="unbounded"/>
+			<xsd:element name="ContactInfo" type="OrganizationContactType" minOccurs="0" maxOccurs="unbounded"/>
+			<xsd:element name="RelatedOrganization" type="RelatedOrganizationType" minOccurs="0" maxOccurs="unbounded"/>
+			<xsd:element name="OrganizationalUnit" type="OrganizationalUnitType" minOccurs="0" maxOccurs="unbounded"/>
+			<xsd:element name="UserArea" type="UserAreaType" minOccurs="0"/>
+		</xsd:sequence>
+	</xsd:complexType>
+	<xsd:complexType name="PersonNameType">
+		<xsd:sequence>
+			<xsd:element name="FormattedName" type="xsd:string" minOccurs="0"/>
+			<xsd:element name="LegalName" type="xsd:string" minOccurs="0"/>
+			<xsd:element name="GivenName" type="xsd:string" minOccurs="0" maxOccurs="unbounded"/>
+			<xsd:element name="PreferredGivenName" type="xsd:string" minOccurs="0"/>
+			<xsd:element name="MiddleName" type="xsd:string" minOccurs="0"/>
+			<xsd:element name="FamilyName" minOccurs="0" maxOccurs="unbounded">
+				<xsd:complexType>
+					<xsd:simpleContent>
+						<xsd:extension base="xsd:string">
+							<xsd:attribute name="primary">
+								<xsd:simpleType>
+									<xsd:restriction base="xsd:string">
+										<xsd:enumeration value="true"/>
+										<xsd:enumeration value="false"/>
+										<xsd:enumeration value="undefined"/>
+									</xsd:restriction>
+								</xsd:simpleType>
+							</xsd:attribute>
+							<xsd:attribute name="prefix" type="xsd:string"/>
+						</xsd:extension>
+					</xsd:simpleContent>
+				</xsd:complexType>
+			</xsd:element>
+			<xsd:element name="Affix" minOccurs="0" maxOccurs="unbounded">
+				<xsd:complexType>
+					<xsd:simpleContent>
+						<xsd:extension base="xsd:string">
+							<xsd:attribute name="type" use="required">
+								<xsd:simpleType>
+									<xsd:restriction base="xsd:string">
+										<xsd:enumeration value="aristocraticTitle"/>
+										<xsd:enumeration value="formOfAddress"/>
+										<xsd:enumeration value="generation"/>
+										<xsd:enumeration value="qualification"/>
+									</xsd:restriction>
+								</xsd:simpleType>
+							</xsd:attribute>
+						</xsd:extension>
+					</xsd:simpleContent>
+				</xsd:complexType>
+			</xsd:element>
+			<xsd:element name="AlternateScript" minOccurs="0" maxOccurs="unbounded">
+				<xsd:complexType>
+					<xsd:sequence>
+						<xsd:element name="FormattedName" type="xsd:string" minOccurs="0"/>
+						<xsd:element name="LegalName" type="xsd:string" minOccurs="0"/>
+						<xsd:element name="GivenName" type="xsd:string" minOccurs="0" maxOccurs="unbounded"/>
+						<xsd:element name="PreferredGivenName" type="xsd:string" minOccurs="0"/>
+						<xsd:element name="MiddleName" type="xsd:string" minOccurs="0"/>
+						<xsd:element name="FamilyName" minOccurs="0" maxOccurs="unbounded">
+							<xsd:complexType>
+								<xsd:simpleContent>
+									<xsd:extension base="xsd:string">
+										<xsd:attribute name="primary">
+											<xsd:simpleType>
+												<xsd:restriction base="xsd:string">
+													<xsd:enumeration value="true"/>
+													<xsd:enumeration value="false"/>
+													<xsd:enumeration value="undefined"/>
+												</xsd:restriction>
+											</xsd:simpleType>
+										</xsd:attribute>
+										<xsd:attribute name="prefix" type="xsd:string"/>
+									</xsd:extension>
+								</xsd:simpleContent>
+							</xsd:complexType>
+						</xsd:element>
+						<xsd:element name="Affix" minOccurs="0" maxOccurs="unbounded">
+							<xsd:complexType>
+								<xsd:simpleContent>
+									<xsd:extension base="xsd:string">
+										<xsd:attribute name="type" use="required">
+											<xsd:simpleType>
+												<xsd:restriction base="xsd:string">
+													<xsd:enumeration value="aristocraticTitle"/>
+													<xsd:enumeration value="formOfAddress"/>
+													<xsd:enumeration value="generation"/>
+													<xsd:enumeration value="qualification"/>
+												</xsd:restriction>
+											</xsd:simpleType>
+										</xsd:attribute>
+									</xsd:extension>
+								</xsd:simpleContent>
+							</xsd:complexType>
+						</xsd:element>
+					</xsd:sequence>
+					<xsd:attribute name="script" type="xsd:string"/>
+				</xsd:complexType>
+			</xsd:element>
+		</xsd:sequence>
+		<xsd:attribute name="script" type="xsd:string"/>
+	</xsd:complexType>
+	<xsd:complexType name="PhysicalLocationType">
+		<xsd:sequence>
+			<xsd:element name="Id" type="EntityIdType" minOccurs="0"/>
+			<xsd:element name="Name" type="xsd:string" minOccurs="0"/>
+			<xsd:element name="EffectiveDate" minOccurs="0">
+				<xsd:complexType>
+					<xsd:sequence>
+						<xsd:element name="StartDate" type="LocalDateNkNaType" minOccurs="0"/>
+						<xsd:element name="EndDate" type="LocalDateNkNaType" minOccurs="0"/>
+					</xsd:sequence>
+				</xsd:complexType>
+			</xsd:element>
+			<xsd:element ref="SpatialLocation" minOccurs="0"/>
+			<xsd:element name="TravelDirections" type="xsd:string" minOccurs="0" maxOccurs="unbounded"/>
+			<xsd:element ref="PostalAddress" minOccurs="0"/>
+			<xsd:element name="Area" type="LocationAreaType" minOccurs="0" maxOccurs="unbounded"/>
+			<xsd:element name="Comments" type="xsd:string" minOccurs="0"/>
+		</xsd:sequence>
+	</xsd:complexType>
+	<xsd:complexType name="PostalAddressType">
+		<xsd:sequence>
+			<xsd:element name="CountryCode">
+				<xsd:simpleType>
+					<xsd:restriction base="xsd:string">
+						<xsd:pattern value="[A-Z]{2}"/>
+					</xsd:restriction>
+				</xsd:simpleType>
+			</xsd:element>
+			<xsd:element name="PostalCode" type="xsd:string" minOccurs="0"/>
+			<xsd:element name="Region" type="xsd:string" minOccurs="0" maxOccurs="unbounded"/>
+			<xsd:element name="Municipality" type="xsd:string" minOccurs="0"/>
+			<xsd:element name="DeliveryAddress" minOccurs="0">
+				<xsd:complexType>
+					<xsd:sequence>
+						<xsd:element name="AddressLine" type="xsd:string" minOccurs="0" maxOccurs="unbounded"/>
+						<xsd:element name="StreetName" type="xsd:string" minOccurs="0"/>
+						<xsd:element name="BuildingNumber" type="xsd:string" minOccurs="0"/>
+						<xsd:element name="Unit" type="xsd:string" minOccurs="0"/>
+						<xsd:element name="PostOfficeBox" type="xsd:string" minOccurs="0"/>
+					</xsd:sequence>
+				</xsd:complexType>
+			</xsd:element>
+			<xsd:element name="Recipient" minOccurs="0" maxOccurs="unbounded">
+				<xsd:complexType>
+					<xsd:sequence>
+						<xsd:element name="PersonName" type="PersonNameType" minOccurs="0"/>
+						<xsd:element name="AdditionalText" type="xsd:string" minOccurs="0" maxOccurs="unbounded"/>
+						<xsd:element name="Organization" type="xsd:string" minOccurs="0">
+							<xsd:annotation>
+								<xsd:documentation>Deprecated in favor of OrganizationName element.</xsd:documentation>
+							</xsd:annotation>
+						</xsd:element>
+						<xsd:element name="OrganizationName" type="xsd:string" minOccurs="0"/>
+					</xsd:sequence>
+				</xsd:complexType>
+			</xsd:element>
+		</xsd:sequence>
+		<xsd:attribute name="type">
+			<xsd:simpleType>
+				<xsd:restriction base="xsd:string">
+					<xsd:enumeration value="postOfficeBoxAddress"/>
+					<xsd:enumeration value="streetAddress"/>
+					<xsd:enumeration value="militaryAddress"/>
+					<xsd:enumeration value="undefined"/>
+				</xsd:restriction>
+			</xsd:simpleType>
+		</xsd:attribute>
+	</xsd:complexType>
+	<xsd:complexType name="RelatedOrganizationalUnitType">
+		<xsd:complexContent>
+			<xsd:extension base="OrganizationalUnitType">
+				<xsd:attribute name="relationship" type="OrganizationalUnitRelationshipType"/>
+				<xsd:attribute name="natureOfRelationship" type="OrganizationalUnitStructureType"/>
+			</xsd:extension>
+		</xsd:complexContent>
+	</xsd:complexType>
+	<xsd:complexType name="RelatedOrganizationType">
+		<xsd:complexContent>
+			<xsd:extension base="OrganizationType">
+				<xsd:attribute name="relationship" type="OrganizationRelationshipType"/>
+			</xsd:extension>
+		</xsd:complexContent>
+	</xsd:complexType>
+	<xsd:complexType name="RelatedReportedOrganizationType">
+		<xsd:sequence>
+			<xsd:element name="OrganizationName" type="xsd:string" minOccurs="0"/>
+			<xsd:element name="OrganizationId" type="EntityIdType" minOccurs="0"/>
+		</xsd:sequence>
+		<xsd:attribute name="relationship" type="OrganizationRelationshipType"/>
+	</xsd:complexType>
+	<xsd:complexType name="ReportedMetricsType">
+		<xsd:choice>
+			<xsd:element name="ReportedOrganization" maxOccurs="unbounded">
+				<xsd:complexType>
+					<xsd:sequence>
+						<xsd:element name="OrganizationName" type="xsd:string" minOccurs="0"/>
+						<xsd:element name="OrganizationId" type="EntityIdType" minOccurs="0"/>
+						<xsd:element name="RelatedReportedOrganization" type="RelatedReportedOrganizationType" minOccurs="0"/>
+						<xsd:choice>
+							<xsd:element name="IsRespondentOrganization" type="xsd:string" fixed="true"/>
+							<xsd:element name="RelationshipToRespondent" type="xsd:string"/>
+						</xsd:choice>
+						<xsd:element name="ContactInfo" type="OrganizationContactType" minOccurs="0" maxOccurs="unbounded"/>
+						<xsd:element name="OrganizationDescriptors" type="MetricsOrganizationDescriptorsType"/>
+						<xsd:element ref="ReportingData" maxOccurs="unbounded"/>
+					</xsd:sequence>
+				</xsd:complexType>
+			</xsd:element>
+			<xsd:element name="ReportedPerson" maxOccurs="unbounded">
+				<xsd:complexType>
+					<xsd:sequence>
+						<xsd:element name="ReportedPersonDetail" minOccurs="0">
+							<xsd:complexType>
+								<xsd:sequence>
+									<xsd:element ref="PersonName" minOccurs="0"/>
+									<xsd:element name="PersonId" type="EntityIdType" minOccurs="0"/>
+									<xsd:element name="ContactInfo" type="ContactMethodType" minOccurs="0" maxOccurs="unbounded"/>
+									<xsd:element name="DataElement" type="DataElementType" minOccurs="0" maxOccurs="unbounded"/>
+								</xsd:sequence>
+							</xsd:complexType>
+						</xsd:element>
+						<xsd:element ref="ReportingData" maxOccurs="unbounded"/>
+					</xsd:sequence>
+				</xsd:complexType>
+			</xsd:element>
+		</xsd:choice>
+	</xsd:complexType>
+	<xsd:complexType name="ReportingDataType">
+		<xsd:sequence>
+			<xsd:element name="ReportingCategory" type="xsd:string" minOccurs="0"/>
+			<xsd:element name="Description" type="xsd:string" minOccurs="0"/>
+			<xsd:element name="ReportingPeriod" type="ReportingPeriodType" minOccurs="0"/>
+			<xsd:element name="DataElement" type="DataElementType" maxOccurs="unbounded"/>
+		</xsd:sequence>
+	</xsd:complexType>
+	<xsd:complexType name="ReportingPeriodType">
+		<xsd:sequence>
+			<xsd:element name="StartDate" type="LocalDateType" minOccurs="0"/>
+			<xsd:element name="EndDate" type="LocalDateType" minOccurs="0"/>
+		</xsd:sequence>
+	</xsd:complexType>
+	<xsd:complexType name="SafetyEquipmentType">
+		<xsd:simpleContent>
+			<xsd:extension base="xsd:string">
+				<xsd:attribute name="suppliedByOrganization" type="xsd:boolean"/>
+			</xsd:extension>
+		</xsd:simpleContent>
+	</xsd:complexType>
+	<xsd:complexType name="SpatialLocationType">
+		<xsd:sequence>
+			<xsd:element name="Latitude" type="LatitudeType"/>
+			<xsd:element name="Longitude" type="LongitudeType"/>
+			<xsd:choice>
+				<xsd:element name="Altitude" type="xsd:decimal" minOccurs="0">
+					<xsd:annotation>
+						<xsd:documentation>[(+)|-]x.f meter from WGS-84 datum reference ellipsoid, + above, - below, decimal fraction f in arbitrary length (ex. +12 )</xsd:documentation>
+					</xsd:annotation>
+				</xsd:element>
+				<xsd:element name="AltitudeMeanSeaLevel" type="xsd:decimal" minOccurs="0">
+					<xsd:annotation>
+						<xsd:documentation>[(+)|-]x.f meter from mean sea level, + above, - below, decimal fraction f in arbitrary length (ex. +10 )</xsd:documentation>
+					</xsd:annotation>
+				</xsd:element>
+			</xsd:choice>
+			<xsd:element name="HorizontalAccuracy" type="NonNegativeDecimal" minOccurs="0">
+				<xsd:annotation>
+					<xsd:documentation>by circle of radius from the positioned point in (+)x.f meter, decimal fraction f in arbitrary length (ex. 50.0)</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+			<xsd:element name="VerticalAccuracy" type="NonNegativeDecimal" minOccurs="0">
+				<xsd:annotation>
+					<xsd:documentation>in (+)x.f meter, decimal fraction f in arbitrary length (ex. 2.5)</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+		</xsd:sequence>
+	</xsd:complexType>
+	<xsd:complexType name="StockType">
+		<xsd:sequence>
+			<xsd:element name="Id" type="EntityIdType" minOccurs="0"/>
+			<xsd:element name="Symbol" type="xsd:string" minOccurs="0"/>
+			<xsd:element name="Exchange" type="xsd:string" minOccurs="0"/>
+		</xsd:sequence>
+	</xsd:complexType>
+	<xsd:complexType name="TelcomNumberType">
+		<xsd:choice>
+			<xsd:element ref="FormattedNumber"/>
+			<xsd:group ref="TelcomNumberGroup"/>
+		</xsd:choice>
+	</xsd:complexType>
+	<xsd:complexType name="UserAreaType">
+		<xsd:sequence minOccurs="0" maxOccurs="unbounded">
+			<xsd:annotation>
+				<xsd:documentation>In order to prevent a possible "ambiguous content model" errors in an instance, unbounded sequences were either eliminated from or deprecated in all HR-XML schemas. Removing unbounded sequences ensures that ambiguous errors are not found in an instance.  The unbounded sequence here is officially deprecated and will be changed to a single sequence.</xsd:documentation>
+			</xsd:annotation>
+			<xsd:any namespace="##any" minOccurs="0" maxOccurs="unbounded"/>
+		</xsd:sequence>
+	</xsd:complexType>
+	<xsd:complexType name="WorkSiteEnvironmentType">
+		<xsd:sequence>
+			<xsd:element name="EnvironmentName" type="xsd:string" minOccurs="0"/>
+			<xsd:element name="EnvironmentId" type="EntityIdType" minOccurs="0"/>
+			<xsd:element name="WorkSiteId" type="EntityIdType" minOccurs="0"/>
+			<xsd:element name="Description" minOccurs="0">
+				<xsd:complexType>
+					<xsd:simpleContent>
+						<xsd:extension base="xsd:string">
+							<xsd:attribute ref="xml:lang"/>
+						</xsd:extension>
+					</xsd:simpleContent>
+				</xsd:complexType>
+			</xsd:element>
+			<xsd:element name="Considerations" minOccurs="0" maxOccurs="unbounded">
+				<xsd:complexType>
+					<xsd:sequence>
+						<xsd:element name="General" type="xsd:string" minOccurs="0" maxOccurs="unbounded"/>
+						<xsd:element name="Physical" type="xsd:string" minOccurs="0" maxOccurs="unbounded"/>
+						<xsd:element name="SafetyEquipment" type="SafetyEquipmentType" minOccurs="0" maxOccurs="unbounded"/>
+						<xsd:element name="DressCode" type="DressCodeType" minOccurs="0" maxOccurs="unbounded"/>
+						<xsd:element ref="UserArea" minOccurs="0"/>
+					</xsd:sequence>
+					<xsd:attribute ref="xml:lang"/>
+				</xsd:complexType>
+			</xsd:element>
+			<xsd:element ref="UserArea" minOccurs="0"/>
+		</xsd:sequence>
+	</xsd:complexType>
+	<xsd:complexType name="WorkSiteType">
+		<xsd:sequence>
+			<xsd:element name="WorkSiteName" type="xsd:string" minOccurs="0"/>
+			<xsd:element name="WorkSiteId" type="EntityIdType" minOccurs="0"/>
+			<xsd:element name="Details" minOccurs="0" maxOccurs="unbounded">
+				<xsd:complexType>
+					<xsd:simpleContent>
+						<xsd:extension base="LanguageDependentTextType">
+							<xsd:attribute name="type" type="xsd:string"/>
+						</xsd:extension>
+					</xsd:simpleContent>
+				</xsd:complexType>
+			</xsd:element>
+			<xsd:element name="PostalAddress" type="PostalAddressType" minOccurs="0"/>
+			<xsd:element name="TravelDirections" type="LanguageDependentTextType" minOccurs="0" maxOccurs="unbounded"/>
+			<xsd:element name="ParkingInstructions" type="LanguageDependentTextType" minOccurs="0" maxOccurs="unbounded"/>
+			<xsd:element ref="WorkSiteEnvironment" minOccurs="0" maxOccurs="unbounded"/>
+			<xsd:element ref="UserArea" minOccurs="0"/>
+		</xsd:sequence>
+	</xsd:complexType>
+	<xsd:element name="AreaCityCode" type="xsd:string"/>
+	<xsd:element name="CountryCode" type="CountryCodeType"/>
+	<xsd:element name="CurrencyCode" type="CurrencyCodeType"/>
+	<xsd:element name="DunsNumber" type="DunsNumberDataType"/>
+	<xsd:element name="Extension" type="xsd:string"/>
+	<xsd:element name="Fax" type="TelcomNumberType"/>
+	<xsd:element name="FormattedNumber" type="xsd:string"/>
+	<xsd:element name="GenderCode" type="GenderCodeType"/>
+	<xsd:element name="IndustryCode" type="IndustryCodeType"/>
+	<xsd:element name="InternationalCountryCode" type="xsd:string"/>
+	<xsd:element name="InternetDomainName" type="InternetDomainNameType"/>
+	<xsd:element name="InternetEmailAddress" type="InternetEmailAddressType"/>
+	<xsd:element name="InternetWebAddress" type="InternetWebAddressType"/>
+	<xsd:element name="LanguageCode" type="LanguageCodeType"/>
+	<xsd:element name="Location" type="contactMethodLocationPatternExtensionType"/>
+	<xsd:element name="Mobile" type="MobileTelcomNumberType"/>
+	<xsd:element name="NationalNumber" type="xsd:string"/>
+	<xsd:element name="Organization">
+		<xsd:complexType>
+			<xsd:complexContent>
+				<xsd:extension base="OrganizationType"/>
+			</xsd:complexContent>
+		</xsd:complexType>
+	</xsd:element>
+	<xsd:element name="OrganizationalUnit" type="OrganizationalUnitType"/>
+	<xsd:element name="Pager" type="TelcomNumberType"/>
+	<xsd:element name="PersonName" type="PersonNameType"/>
+	<xsd:element name="PhysicalLocation" type="PhysicalLocationType"/>
+	<xsd:element name="PostalAddress" type="PostalAddressType"/>
+	<xsd:element name="ReportingData" type="ReportingDataType"/>
+	<xsd:element name="SpatialLocation" type="SpatialLocationType"/>
+	<xsd:element name="SubscriberNumber" type="xsd:string"/>
+	<xsd:element name="Telephone" type="TelcomNumberType"/>
+	<xsd:element name="TTYTDD" type="TelcomNumberType"/>
+	<xsd:element name="Use" type="contactMethodUsePatternExtensionType"/>
+	<xsd:element name="UserArea" type="UserAreaType">
+		<xsd:annotation>
+			<xsd:documentation>HR-XML Technical Steering Committee endorsed extension element.</xsd:documentation>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="WhenAvailable" type="contactMethodWhenAvailableType"/>
+	<xsd:element name="WorkSite" type="WorkSiteType"/>
+	<xsd:element name="WorkSiteEnvironment" type="WorkSiteEnvironmentType"/>
+	<xsd:group name="TelcomNumberGroup">
+		<xsd:sequence>
+			<xsd:element ref="InternationalCountryCode" minOccurs="0"/>
+			<xsd:element ref="NationalNumber" minOccurs="0"/>
+			<xsd:element ref="AreaCityCode" minOccurs="0"/>
+			<xsd:element ref="SubscriberNumber"/>
+			<xsd:element ref="Extension" minOccurs="0"/>
+		</xsd:sequence>
+	</xsd:group>
+</xsd:schema>

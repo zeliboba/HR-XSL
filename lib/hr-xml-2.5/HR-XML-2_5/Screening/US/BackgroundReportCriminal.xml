@@ -1,0 +1,565 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<BackgroundReports xmlns="http://ns.hr-xml.org/2007-04-15" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://ns.hr-xml.org/2007-04-15  BackgroundReports.xsd" userId="FAATS" password="XXX" account="" location="" version="2007-04-15" xml:lang="en">
+	<!--
+Sample XML depicting the text and parsed results of a Criminal Search. First sample has a ResultStatus = Review, second sample has a ResultsStatus = Clear.
+-->
+	<BackgroundReportPackage type="report">
+		<ProcessingInformation>
+			<AccessCredential type="UserName">CCorner</AccessCredential>
+			<AccessCredential type="Password">HR-XML</AccessCredential>
+			<AccessCredential type="Account">900123</AccessCredential>
+		</ProcessingInformation>
+		<ClientReferenceId>
+			<IdValue>bec61f0f-aaa9-4211-8e49-18d603c76cd0</IdValue>
+		</ClientReferenceId>
+		<PackageId>
+			<IdValue>DRIVER</IdValue>
+		</PackageId>
+		<CopyToApplicant>true</CopyToApplicant>
+		<ScreeningsSummary>
+			<Organization type="Vendor">
+				<OrganizationName>First Advantage</OrganizationName>
+				<ContactMethod>
+					<Use>business</Use>
+					<Location>office</Location>
+					<Telephone>
+						<FormattedNumber>1-800-321-4473</FormattedNumber>
+					</Telephone>
+				</ContactMethod>
+			</Organization>
+			<PersonalData type="Current">
+				<PersonName type="Subject">
+					<GivenName>Demitri</GivenName>
+					<MiddleName>J</MiddleName>
+					<FamilyName>Doe</FamilyName>
+				</PersonName>
+				<!--  Home Address -->
+				<PostalAddress type="streetAddress" validFrom="2001-04-01">
+					<CountryCode>US</CountryCode>
+					<PostalCode>20170</PostalCode>
+					<Region>VA</Region>
+					<Municipality>HERNDON</Municipality>
+					<DeliveryAddress>
+						<AddressLine>15555 GARBERRY CT</AddressLine>
+					</DeliveryAddress>
+				</PostalAddress>
+				<ContactMethod>
+					<Use>personal</Use>
+					<Location>home</Location>
+					<Telephone>
+						<FormattedNumber>555-123-4567</FormattedNumber>
+					</Telephone>
+					<!--  Mailing Address -->
+					<PostalAddress type="postOfficeBoxAddress">
+						<CountryCode>US</CountryCode>
+						<PostalCode>20171</PostalCode>
+						<Region>VA</Region>
+						<Municipality>Oak Hill</Municipality>
+						<DeliveryAddress>
+							<PostOfficeBox>50</PostOfficeBox>
+						</DeliveryAddress>
+					</PostalAddress>
+				</ContactMethod>
+				<DemographicDetail>
+					<GovernmentId countryCode="US" issuingAuthority="SSN">555-44-5555</GovernmentId>
+					<DateOfBirth>1961-04-13</DateOfBirth>
+					<Race>W</Race>
+					<GenderCode>1</GenderCode>
+				</DemographicDetail>
+			</PersonalData>
+			<PersonalData type="Prior">
+				<PersonName type="Subject">
+					<GivenName>Demitri</GivenName>
+					<MiddleName>J</MiddleName>
+					<FamilyName>DOUGHNUT</FamilyName>
+				</PersonName>
+				<!--  Home Address -->
+				<PostalAddress type="streetAddress" validFrom="2000-04-01" validTo="2001-04-01">
+					<CountryCode>US</CountryCode>
+					<PostalCode>20878</PostalCode>
+					<Region>VA</Region>
+					<Municipality>North Potomac</Municipality>
+				</PostalAddress>
+				<PostalAddress type="streetAddress" validFrom="1996-11-01" validTo="2000-04-01">
+					<CountryCode>US</CountryCode>
+					<PostalCode>20737</PostalCode>
+					<Region>VA</Region>
+					<Municipality>Riverdale</Municipality>
+				</PostalAddress>
+			</PersonalData>
+			<ClientReferences>
+				<IdValue name="BillingCode">176-345</IdValue>
+			</ClientReferences>
+		</ScreeningsSummary>
+		<PackageCost>
+			<BaseCost currency="USD">175.50</BaseCost>
+			<AdditionalCost currency="USD" type="CourtFee">25.00</AdditionalCost>
+			<TotalCost currency="USD">200.50</TotalCost>
+		</PackageCost>
+		<Screenings>
+			<Screening type="criminal" qualifier="county">
+				<ProviderReferenceId>
+					<IdValue>6069481</IdValue>
+				</ProviderReferenceId>
+				<ClientReferenceId>
+					<IdValue>B0019474MV</IdValue>
+				</ClientReferenceId>
+				<ScreeningStatus>
+					<OrderStatus>Completed</OrderStatus>
+					<ResultStatus>Review</ResultStatus>
+					<DateOrderReceived>2003-01-21</DateOrderReceived>
+				</ScreeningStatus>
+				<CountryCode>US</CountryCode>
+				<Region>AZ</Region>
+				<County>MARICOPA</County>
+				<Municipality></Municipality>
+				<PostalCode></PostalCode>
+				<CourtType type="felony"></CourtType>
+				<CourtJurisdiction></CourtJurisdiction>
+				<LegalText type="Disclaimer" fontSize="16" fontColor="Red">
+					<Text>
+                                DISCLAIMER
+
+     Information contained herein should not be the sole determination in 
+     evaluation of this individual.  All other factors, references and 
+     current situations should be considered.  Human error in compiling 
+     this information is possible.  The FCRA requires certain actions if 
+     you take adverse action based in whole or in part on this report.
+     See your Help File, the FCRA or call for procedures.</Text>
+				</LegalText>
+				<ResultDetails>
+					<YearsSearched>
+						<StartDate>
+							<AnyDate>1991-01-16</AnyDate>
+						</StartDate>
+						<EndDate>
+							<AnyDate>2003-01-14</AnyDate>
+						</EndDate>
+					</YearsSearched>
+					<CourtName>MARICOPA SUPERIOR/JUSTICE-(F&amp;M)</CourtName>
+					<RecordsSearched>FELONY &amp; MISDEMEANOR</RecordsSearched>
+				</ResultDetails>
+				<ScreeningResults type="results" mediaType="txt" resultType="report">
+					<Text>                                 DISCLAIMER
+
+     Information contained herein should not be the sole determination in 
+     evaluation of this individual.  All other factors, references and 
+     current situations should be considered.  Human error in compiling 
+     this information is possible.  The FCRA requires certain actions if 
+     you take adverse action based in whole or in part on this report.
+     See your Help File, the FCRA or call for procedures.
+
+
+                          COUNTY COURT RECORDS SEARCH
+
+--------------------------------------------------------------------------------
+Name.....................:   Demitri Doe
+County &amp; State...........:   MARICOPA, ARIZONA
+Court Searched...........:   MARICOPA SUPERIOR/JUSTICE-(F&amp;M)
+Records Searched.........:   FELONY &amp; MISDEMEANOR
+Years Checked............:   01/16/1991-01/14/2003
+Reference Number.........:   6031565
+--------------------------------------------------------------------------------
+
+Result...................:   HIT
+
+--------------------------------------------------------------------------------
+         Case Number.....:   CR99-01459A-MI
+         File Date.......:   10/08/1999
+
+            Information Provided                      Information On 
+               By Customer              Match           Court File
+         --------------------------     -----    -------------------------
+Name..:  Demitri Doe                      YES     Demitri Doe                    
+DOB...:  01/12/1973                      YES     01/12/1973                    
+SSN...:  555-44-5555                     NO      NOT ON COURT FILE             
+Sex...:  M                               NO      NOT ON COURT FILE             
+Race..:  B                               NO      NOT ON COURT FILE             
+
+Other ID:  NOT PROVIDED
+
+         Offense Date....:   N/A
+         Arrest Date.....:   N/A
+         Charge..........:   ASSAULT
+         Type............:   MISDEMEANOR
+         Disposition.....:   GUILTY
+         Disposition Date:   02/01/2000
+         Sentence........:   COMMUNITY SERVICE: 8 HOURS
+         Sentence Date...:   N/A
+
+
+********************************************************************************
+
+         Case Number.....:   CR02-00933A-MI
+         File Date.......:   08/09/2002
+
+            Information Provided                      Information On 
+               By Customer              Match           Court File
+         --------------------------     -----    -------------------------
+Name..:  Demitri Doe                      YES     Demitri Doe                    
+DOB...:  01/12/1973                      YES     01/12/1973                    
+SSN...:  555-44-5555                     NO      NOT ON COURT FILE             
+Sex...:  M                               NO      NOT ON COURT FILE             
+Race..:  B                               NO      NOT ON COURT FILE             
+
+Other ID:  NOT PROVIDED
+
+         Offense Date....:   N/A
+         Arrest Date.....:   N/A
+         Charge..........:   DISORDERLY CONDUCT / ABUSIVE/ OFFENSE LANGUAGE OR 
+                             GESTURE
+         Type............:   MISDEMEANOR
+         Disposition.....:   DISMISSED
+         Disposition Date:   01/25/2002
+         Sentence........:   
+         Sentence Date...:   N/A
+         
+         Case Number.....:   1996 CF 000382 NC
+         File Date.......:   01/11/1996
+
+            Information Provided                      Information On 
+               By Customer              Match           Court File
+         --------------------------     -----    -------------------------
+Name..:  Demitri Doe                      YES     Demitri Doe                    
+DOB...:  01/12/1973                      YES     01/12/1973                    
+SSN...:  555-44-5555                     NO      NOT ON COURT FILE             
+Sex...:  M                               NO      NOT ON COURT FILE             
+Race..:  B                               NO      NOT ON COURT FILE             
+
+Other ID:  Begin Other ID                                    
+            ADDRESS: 2130 CORDES ST
+           CITY: SARASOTA 
+           STATE: FL
+           ZIP: 34229
+           DL STATE: FL
+           DL NUM: M600064754680
+           OTHER: NOTE: REFER TO CASE1996 MM 010700NC FOR 
+           ADDITIONAL IDENTIFIERS
+
+         Offense Date....:   01/09/1996
+         Arrest Date.....:   N/A
+         Charge..........:   DEALING IN STOLEN PROPERTY
+         Type............:   FELONY
+         Disposition.....:   GUILTY
+         Disposition Date:   08/27/1996
+         Sentence........:   JAIL: 11 MONTHS AND 29 DAYS
+                             PROBATION: 4 YEARS
+                             RESTITUTION 
+                             COSTS: 255.00
+         Sentence Date...:   N/A
+
+         Offense Date....:   01/09/1996
+         Arrest Date.....:   N/A
+         Charge..........:   ARMED BURGLARY OF A CONVEYENCE
+         Type............:   FELONY
+         Disposition.....:   DROPPED / ABANDONED
+         Disposition Date:   03/25/1996
+         Sentence........:   
+         Sentence Date...:   N/A
+         
+         
+</Text>
+				</ScreeningResults>
+				<ScreeningCost>
+					<!--  Ala Carte search not included in Package Price or this could be the individual cost  for this search -->
+					<BaseCost currency="USD">24.50</BaseCost>
+					<AdditionalCost currency="USD" type="CourtFee">4.50</AdditionalCost>
+					<TotalCost currency="USD">29.00</TotalCost>
+				</ScreeningCost>
+				<CriminalReport qualifier="county">
+					<CriminalCase>
+						<AgencyReference type="Case">
+							<IdValue name="">CR99-01459A-MI</IdValue>
+						</AgencyReference>
+						<ArrestingAgency></ArrestingAgency>
+						<CourtName> MARICOPA SUPERIOR/JUSTICE-(F&amp;M)</CourtName>
+						<CourtType type="felonyMisdemeanor"></CourtType>
+						<CourtJurisdiction>regional</CourtJurisdiction>
+						<CaseFileDate>
+							<AnyDate>1999-10-08</AnyDate>
+						</CaseFileDate>
+						<SubjectConfirmation>
+							<ConfirmByProvidedName>true</ConfirmByProvidedName>
+							<ConfirmByDateOfBirth>true</ConfirmByDateOfBirth>
+							<ConfirmByGovernmentId>false</ConfirmByGovernmentId>
+							<ConfirmBySex>false</ConfirmBySex>
+							<ConfirmByRace>false</ConfirmByRace>
+						</SubjectConfirmation>
+						<!--
+For illustrative purposes only.  The alias was not part of the text report.
+-->
+						<SubjectIdentification type="Alias">
+							<PersonName type="Subject" validFrom="notApplicable" validTo="notApplicable">
+								<FormattedName>Lou Demitri</FormattedName>
+							</PersonName>
+						</SubjectIdentification>
+						<Charge>
+							<ChargeOrComplaint>ASSAULT</ChargeOrComplaint>
+							<ChargeTypeClassification>misdemeanor</ChargeTypeClassification>
+							<Sentence>COMMUNITY SERVICE: 8 HOURS</Sentence>
+							<Disposition>Guilty</Disposition>
+							<DispositionDate>
+								<AnyDate>2000-02-01</AnyDate>
+							</DispositionDate>
+							<ProbationStatus></ProbationStatus>
+						</Charge>
+					</CriminalCase>
+					<CriminalCase>
+						<AgencyReference type="Case">
+							<IdValue name="">CR02-00933A-MI</IdValue>
+						</AgencyReference>
+						<ArrestingAgency></ArrestingAgency>
+						<CourtName> MARICOPA SUPERIOR/JUSTICE-(F&amp;M)</CourtName>
+						<CourtType type="felonyMisdemeanor"></CourtType>
+						<CourtJurisdiction>regional</CourtJurisdiction>
+						<CaseFileDate>
+							<AnyDate>2002-08-09</AnyDate>
+						</CaseFileDate>
+						<SubjectConfirmation>
+							<ConfirmByProvidedName>true</ConfirmByProvidedName>
+							<ConfirmByDateOfBirth>true</ConfirmByDateOfBirth>
+							<ConfirmByGovernmentId>false</ConfirmByGovernmentId>
+							<ConfirmBySex>false</ConfirmBySex>
+							<ConfirmByRace>false</ConfirmByRace>
+						</SubjectConfirmation>
+						<!--
+For illustrative purposes only.  The alias was not part of the text report.
+-->
+						<SubjectIdentification type="Alias">
+							<PersonName type="Subject" validFrom="notApplicable" validTo="notApplicable">
+								<FormattedName>Lou Demitri</FormattedName>
+							</PersonName>
+						</SubjectIdentification>
+						<Charge>
+							<ChargeOrComplaint>DISORDERLY CONDUCT / ABUSIVE/ OFFENSE LANGUAGE OR GESTURE</ChargeOrComplaint>
+							<ChargeTypeClassification>misdemeanor</ChargeTypeClassification>
+							<Sentence>COMMUNITY SERVICE: 8 HOURS</Sentence>
+							<Disposition>Dismissed</Disposition>
+							<DispositionDate>
+								<AnyDate>2002-01-25</AnyDate>
+							</DispositionDate>
+							<ProbationStatus></ProbationStatus>
+						</Charge>
+					</CriminalCase>
+					<CriminalCase>
+						<AgencyReference type="Case">
+							<IdValue name="">1996 CF 000382 NC</IdValue>
+						</AgencyReference>
+						<ArrestingAgency></ArrestingAgency>
+						<CourtName> MARICOPA SUPERIOR/JUSTICE-(F&amp;M)</CourtName>
+						<CourtType type="felonyMisdemeanor"></CourtType>
+						<CourtJurisdiction>regional</CourtJurisdiction>
+						<CaseFileDate>
+							<AnyDate>1996-01-11</AnyDate>
+						</CaseFileDate>
+						<SubjectConfirmation>
+							<ConfirmByProvidedName>true</ConfirmByProvidedName>
+							<ConfirmByDateOfBirth>true</ConfirmByDateOfBirth>
+							<ConfirmByGovernmentId>false</ConfirmByGovernmentId>
+							<ConfirmBySex>false</ConfirmBySex>
+							<ConfirmByRace>false</ConfirmByRace>
+						</SubjectConfirmation>
+						<SubjectIdentification type="Other">
+							<PostalAddress type="undefined">
+								<CountryCode>US</CountryCode>
+								<PostalCode>34229</PostalCode>
+								<Region>FL</Region>
+								<Municipality>SARASOTA</Municipality>
+								<DeliveryAddress>
+									<AddressLine>5550 CORDES ST</AddressLine>
+								</DeliveryAddress>
+							</PostalAddress>
+							<License>
+								<CountryCode>US</CountryCode>
+								<LicenseNumber>M607777754680</LicenseNumber>
+								<LicensingAgency>FL</LicensingAgency>
+							</License>
+							<AdditionalItems type="Unknown">
+								<Text>REFER TO CASE1996 MM 010700NC FOR ADDITIONAL IDENTIFIERS</Text>
+							</AdditionalItems>
+						</SubjectIdentification>
+						<Charge>
+							<ChargeOrComplaint>DEALING IN STOLEN PROPERTY</ChargeOrComplaint>
+							<ChargeTypeClassification>felony</ChargeTypeClassification>
+							<OffenseDate>
+								<AnyDate>1996-01-09</AnyDate>
+							</OffenseDate>
+							<Sentence>JAIL: 11 MONTHS AND 29 DAYS PROBATION: 4 YEARS RESTITUTION COSTS: 255.00</Sentence>
+							<Disposition>Guilty</Disposition>
+							<DispositionDate>
+								<AnyDate>1996-08-27</AnyDate>
+							</DispositionDate>
+						</Charge>
+						<Charge>
+							<ChargeOrComplaint>ARMED BURGLARY OF A CONVEYENCE</ChargeOrComplaint>
+							<ChargeTypeClassification>felony</ChargeTypeClassification>
+							<OffenseDate>
+								<AnyDate>1996-01-09</AnyDate>
+							</OffenseDate>
+							<Sentence>JAIL: 11 MONTHS AND 29 DAYS PROBATION: 4 YEARS RESTITUTION COSTS: 255.00</Sentence>
+							<Disposition>x:DROPPED / ABANDONED</Disposition>
+							<DispositionDate>
+								<AnyDate>1996-03-25</AnyDate>
+							</DispositionDate>
+						</Charge>
+					</CriminalCase>
+				</CriminalReport>
+			</Screening>
+		</Screenings>
+	</BackgroundReportPackage>
+	<BackgroundReportPackage type="report">
+		<ClientReferenceId>
+			<IdValue>bec61f0f-aaa9-4211-8e49-18d603c76cd0</IdValue>
+		</ClientReferenceId>
+		<PackageId validFrom="notKnown" validTo="notKnown" idOwner="">
+			<IdValue>99482632-80d8-40fc-8e49-2dcccce5856f</IdValue>
+		</PackageId>
+		<CopyToApplicant>true</CopyToApplicant>
+		<ScreeningsSummary>
+			<Organization type="Vendor">
+				<OrganizationName>First Advantage</OrganizationName>
+				<ContactMethod>
+					<Use>business</Use>
+					<Location>office</Location>
+					<Telephone>
+						<FormattedNumber>1-800-321-4473</FormattedNumber>
+					</Telephone>
+				</ContactMethod>
+			</Organization>
+			<PersonalData type="Current">
+				<PersonName type="Subject">
+					<GivenName>Demitri</GivenName>
+					<MiddleName>J</MiddleName>
+					<FamilyName>Doe</FamilyName>
+				</PersonName>
+				<!--  Home Address -->
+				<PostalAddress type="streetAddress" validFrom="2001-04-01">
+					<CountryCode>US</CountryCode>
+					<PostalCode>20170</PostalCode>
+					<Region>VA</Region>
+					<Municipality>HERNDON</Municipality>
+					<DeliveryAddress>
+						<AddressLine>15555 GARBERRY CT</AddressLine>
+					</DeliveryAddress>
+				</PostalAddress>
+				<ContactMethod>
+					<Use>personal</Use>
+					<Location>home</Location>
+					<Telephone>
+						<FormattedNumber>555-123-4567</FormattedNumber>
+					</Telephone>
+					<!--  Mailing Address -->
+					<PostalAddress type="postOfficeBoxAddress">
+						<CountryCode>US</CountryCode>
+						<PostalCode>20171</PostalCode>
+						<Region>VA</Region>
+						<Municipality>Oak Hill</Municipality>
+						<DeliveryAddress>
+							<PostOfficeBox>50</PostOfficeBox>
+						</DeliveryAddress>
+					</PostalAddress>
+				</ContactMethod>
+				<DemographicDetail>
+					<GovernmentId countryCode="US" issuingAuthority="SSN">555-44-5555</GovernmentId>
+					<DateOfBirth>1961-04-13</DateOfBirth>
+					<Race>W</Race>
+					<GenderCode>1</GenderCode>
+				</DemographicDetail>
+			</PersonalData>
+			<PersonalData type="Prior">
+				<PersonName type="Subject">
+					<GivenName>Demitri</GivenName>
+					<MiddleName>J</MiddleName>
+					<FamilyName>DOUGHNUT</FamilyName>
+				</PersonName>
+				<!--  Home Address -->
+				<PostalAddress type="streetAddress" validFrom="2000-04-01" validTo="2001-04-01">
+					<CountryCode>US</CountryCode>
+					<PostalCode>20878</PostalCode>
+					<Region>VA</Region>
+					<Municipality>North Potomac</Municipality>
+				</PostalAddress>
+				<PostalAddress type="streetAddress" validFrom="1996-11-01" validTo="2000-04-01">
+					<CountryCode>US</CountryCode>
+					<PostalCode>20737</PostalCode>
+					<Region>VA</Region>
+					<Municipality>Riverdale</Municipality>
+				</PostalAddress>
+			</PersonalData>
+			<ClientReferences>
+				<IdValue name="BillingCode">176-345</IdValue>
+			</ClientReferences>
+		</ScreeningsSummary>
+		<Screenings>
+			<Screening type="criminal" qualifier="county">
+				<ProviderReferenceId>
+					<IdValue>6069481</IdValue>
+				</ProviderReferenceId>
+				<ClientReferenceId>
+					<IdValue>B0019474MV</IdValue>
+				</ClientReferenceId>
+				<ScreeningStatus>
+					<OrderStatus>Completed</OrderStatus>
+					<ResultStatus>Clear</ResultStatus>
+					<DateOrderReceived>2003-01-21</DateOrderReceived>
+				</ScreeningStatus>
+				<CountryCode>US</CountryCode>
+				<Region>AZ</Region>
+				<County>MARICOPA</County>
+				<CourtType type="felony"></CourtType>
+				<LegalText type="Disclaimer" fontSize="16" fontColor="Red">
+					<Text>
+                                DISCLAIMER
+
+     Information contained herein should not be the sole determination in 
+     evaluation of this individual.  All other factors, references and 
+     current situations should be considered.  Human error in compiling 
+     this information is possible.  The FCRA requires certain actions if 
+     you take adverse action based in whole or in part on this report.
+     See your Help File, the FCRA or call for procedures.</Text>
+				</LegalText>
+				<ResultDetails>
+					<YearsSearched>
+						<StartDate>
+							<AnyDate>1996-01-10</AnyDate>
+						</StartDate>
+						<EndDate>
+							<AnyDate>2003-01-08</AnyDate>
+						</EndDate>
+					</YearsSearched>
+					<CourtName>MARICOPA SUPERIOR/JUSTICE-(F&amp;M)</CourtName>
+					<RecordsSearched>FELONY &amp; MISDEMEANOR</RecordsSearched>
+				</ResultDetails>
+				<ScreeningResults type="results" mediaType="txt" resultType="report">
+					<Text>                                 DISCLAIMER
+
+     Information contained herein should not be the sole determination in 
+     evaluation of this individual.  All other factors, references and 
+     current situations should be considered.  Human error in compiling 
+     this information is possible.  The FCRA requires certain actions if 
+     you take adverse action based in whole or in part on this report.
+     See your Help File, the FCRA or call for procedures.
+
+
+                          COUNTY COURT RECORDS SEARCH
+
+--------------------------------------------------------------------------------
+Name.....................:   Demitri Doe
+County &amp; State...........:   MARICOPA, ARIZONA
+Court Searched...........:   MARICOPA SUPERIOR/JUSTICE-(F&amp;M)
+Records Searched.........:   FELONY &amp; MISDEMEANOR
+Years Checked............:   01/16/1991-01/14/2003
+Reference Number.........:   6031565
+--------------------------------------------------------------------------------
+
+Result...................:   CLEAR
+
+--------------------------------------------------------------------------------
+
+         
+</Text>
+				</ScreeningResults>
+			</Screening>
+		</Screenings>
+	</BackgroundReportPackage>
+</BackgroundReports>

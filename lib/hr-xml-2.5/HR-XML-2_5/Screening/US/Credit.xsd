@@ -1,0 +1,1479 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:ds="http://www.w3.org/2000/09/xmldsig#" xmlns="http://ns.hr-xml.org/2007-04-15" targetNamespace="http://ns.hr-xml.org/2007-04-15" elementFormDefault="qualified" version="2007-04-15">
+	<xsd:annotation>
+		<xsd:documentation>
+"Copyright  The HR-XML Consortium. All Rights Reserved. http://www.hr-xml.org"
+Status: Recommendation
+Date this version: 2007-04-15
+Purpose: Defines Credit related schema components.
+Author(s): Screening Workgroup
+Documentation: CreditReport.html
+
+2004-07-06: An optional attribute xml:lang was added to the root element(s).
+
+2004-Jun-24:  Moved CurrencyAmountType and CurrencyType to ScreeningTypes.xsd
+
+2005-01-13
+- Deleted unused data type LiabilityTypes and its extended type.  It will no longer be confused with the attribute liabilityType.
+
+Terms of license can be found in license.txt.
+
+</xsd:documentation>
+	</xsd:annotation>
+	<xsd:import namespace="http://www.w3.org/XML/1998/namespace" schemaLocation="../../../W3C/xml.xsd"/>
+	<xsd:include schemaLocation="../US/ScreeningTypes.xsd"/>
+	<xsd:element name="CreditReport" type="CreditReportType"/>
+	<xsd:element name="SSNReport" type="SSNReportType"/>
+	<xsd:complexType name="AccountOwnershipTypeType">
+		<xsd:sequence>
+			<xsd:element name="Value" type="AccountOwnershipTypes" minOccurs="0">
+				<xsd:annotation>
+					<xsd:documentation>Summarized description of the account ownership.</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+			<xsd:element name="RepositoryCode" type="xsd:string" minOccurs="0">
+				<xsd:annotation>
+					<xsd:documentation>The type code assigned by the repository.</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+			<xsd:element name="RepositoryValue" type="xsd:string" minOccurs="0">
+				<xsd:annotation>
+					<xsd:documentation>Description as provided by the repository.</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+		</xsd:sequence>
+	</xsd:complexType>
+	<xsd:simpleType name="AccountOwnershipTypes">
+		<xsd:union memberTypes="AccountOwnershipTypeQualifiers xStringPatternExtensionType"/>
+	</xsd:simpleType>
+	<xsd:simpleType name="AccountOwnershipTypeQualifiers">
+		<xsd:restriction base="xsd:string">
+			<xsd:enumeration value="AuthorizedUser"/>
+			<xsd:enumeration value="Comaker"/>
+			<xsd:enumeration value="Individual"/>
+			<xsd:enumeration value="JointContractualLiability"/>
+			<xsd:enumeration value="JointParticipating"/>
+			<xsd:enumeration value="Maker"/>
+			<xsd:enumeration value="OnBehalfOf"/>
+			<xsd:enumeration value="Terminated"/>
+			<xsd:enumeration value="Undesignated"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:complexType name="AccountStatusTypeType">
+		<xsd:sequence>
+			<xsd:element name="Value" type="AccountStatusTypes" minOccurs="0">
+				<xsd:annotation>
+					<xsd:documentation>Summarized description of the account status.</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+			<xsd:element name="RepositoryCode" type="xsd:string" minOccurs="0">
+				<xsd:annotation>
+					<xsd:documentation>The type code assigned by the repository.</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+			<xsd:element name="RepositoryValue" type="xsd:string" minOccurs="0">
+				<xsd:annotation>
+					<xsd:documentation>Description as provided by the repository.</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+		</xsd:sequence>
+	</xsd:complexType>
+	<xsd:simpleType name="AccountStatusTypes">
+		<xsd:union memberTypes="AccountStatusQualifiers xStringPatternExtensionType"/>
+	</xsd:simpleType>
+	<xsd:simpleType name="AccountStatusQualifiers">
+		<xsd:restriction base="xsd:string">
+			<xsd:enumeration value="Closed"/>
+			<xsd:enumeration value="Frozen"/>
+			<xsd:enumeration value="Open"/>
+			<xsd:enumeration value="Paid"/>
+			<xsd:enumeration value="Refinanced"/>
+			<xsd:enumeration value="Transferred"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:complexType name="AccountTypeType">
+		<xsd:sequence>
+			<xsd:element name="Value" type="AccountTypeTypes" minOccurs="0">
+				<xsd:annotation>
+					<xsd:documentation>Summarized description of the account.</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+			<xsd:element name="RepositoryCode" type="xsd:string" minOccurs="0">
+				<xsd:annotation>
+					<xsd:documentation>The type code assigned by the repository.</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+			<xsd:element name="RepositoryValue" type="xsd:string" minOccurs="0">
+				<xsd:annotation>
+					<xsd:documentation>Description as provided by the repository.</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+		</xsd:sequence>
+	</xsd:complexType>
+	<xsd:simpleType name="AccountTypeTypes">
+		<xsd:union memberTypes="AccountTypeQualifiers xStringPatternExtensionType"/>
+	</xsd:simpleType>
+	<xsd:simpleType name="AccountTypeQualifiers">
+		<xsd:restriction base="xsd:string">
+			<xsd:enumeration value="CreditLine"/>
+			<xsd:enumeration value="Installment"/>
+			<xsd:enumeration value="Mortgage"/>
+			<xsd:enumeration value="Open"/>
+			<xsd:enumeration value="Revolving"/>
+			<xsd:enumeration value="Unknown"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="AlertSourceTypes">
+		<xsd:restriction base="xsd:string">
+			<xsd:enumeration value="EquifaxSAFESCAN"/>
+			<xsd:enumeration value="EquifaxSSNVerified"/>
+			<xsd:enumeration value="ExperianFACSPlus"/>
+			<xsd:enumeration value="TransUnionHAWKAlert"/>
+			<xsd:enumeration value="TransUnionTransAlert"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="BankruptcyTypeType">
+		<xsd:union memberTypes="BankruptcyTypeQualifiers xStringPatternExtensionType"/>
+	</xsd:simpleType>
+	<xsd:simpleType name="BankruptcyTypeQualifiers">
+		<xsd:restriction base="xsd:string">
+			<xsd:enumeration value="Business"/>
+			<xsd:enumeration value="Individual"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="BankruptcyFilingMethodType">
+		<xsd:union memberTypes="BankruptcyFilingMethodQualifiers xStringPatternExtensionType"/>
+	</xsd:simpleType>
+	<xsd:simpleType name="BankruptcyFilingMethodQualifiers">
+		<xsd:restriction base="xsd:string">
+			<xsd:enumeration value="Individual"/>
+			<xsd:enumeration value="Joint"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="CommentSourceTypes">
+		<xsd:restriction base="xsd:string">
+			<xsd:enumeration value="Borrower"/>
+			<xsd:enumeration value="CreditBureau"/>
+			<xsd:enumeration value="Equifax"/>
+			<xsd:enumeration value="Experian"/>
+			<xsd:enumeration value="Lender"/>
+			<xsd:enumeration value="RepositoryBureau"/>
+			<xsd:enumeration value="TransUnion"/>
+			<xsd:enumeration value="Unknown"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="CreditBusinessTypeQualifiers">
+		<xsd:restriction base="xsd:string">
+			<xsd:enumeration value="Advertising"/>
+			<xsd:enumeration value="Automotive"/>
+			<xsd:enumeration value="Banking"/>
+			<xsd:enumeration value="Clothing"/>
+			<xsd:enumeration value="CollectionServices"/>
+			<xsd:enumeration value="Contractors"/>
+			<xsd:enumeration value="CreditCard"/>
+			<xsd:enumeration value="DepartmentAndMailOrder"/>
+			<xsd:enumeration value="Employment"/>
+			<xsd:enumeration value="FarmAndGardenSupplies"/>
+			<xsd:enumeration value="Finance"/>
+			<xsd:enumeration value="Government"/>
+			<xsd:enumeration value="Grocery"/>
+			<xsd:enumeration value="HomeFurnishing"/>
+			<xsd:enumeration value="Insurance"/>
+			<xsd:enumeration value="JewelryAndCamera"/>
+			<xsd:enumeration value="LumberAndHardware"/>
+			<xsd:enumeration value="MedicalAndHealth"/>
+			<xsd:enumeration value="MiscellaneousAndPublicRecord"/>
+			<xsd:enumeration value="OilAndNationalCreditCards"/>
+			<xsd:enumeration value="PersonalServicesNotMedical"/>
+			<xsd:enumeration value="RealEstateAndPublicAccommodation"/>
+			<xsd:enumeration value="SportingGoods"/>
+			<xsd:enumeration value="UtilitiesAndFuel"/>
+			<xsd:enumeration value="Wholesale"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:complexType name="CreditBusinessTypeType">
+		<xsd:annotation>
+			<xsd:documentation>The credit repository bureaus can identify the type of business of the liability holder or the entity requesting a credit report as listed in a credit inquiry record. This information is needed for an automated scoring application. This data is available for liability and inquiry records from Equifax, Experian and Trans Union.</xsd:documentation>
+		</xsd:annotation>
+		<xsd:sequence>
+			<xsd:element name="Value" type="CreditBusinessTypeQualifiers" minOccurs="0">
+				<xsd:annotation>
+					<xsd:documentation>Summarized description of the type this value is defining.</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+			<xsd:element name="RepositoryCode" type="xsd:string" minOccurs="0">
+				<xsd:annotation>
+					<xsd:documentation>The type code assigned by the repository.</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+			<xsd:element name="RepositoryValue" type="xsd:string" minOccurs="0">
+				<xsd:annotation>
+					<xsd:documentation>Description as provided by the repository.</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+		</xsd:sequence>
+	</xsd:complexType>
+	<xsd:complexType name="CreditConsumerReferralType">
+		<xsd:complexContent>
+			<xsd:extension base="ReferralType">
+				<xsd:sequence>
+					<xsd:element name="CreditBusinessType" type="CreditBusinessTypeType" minOccurs="0"/>
+				</xsd:sequence>
+				<xsd:attribute name="qualifier" type="CreditConsumerReferralTypeType" use="optional"/>
+			</xsd:extension>
+		</xsd:complexContent>
+	</xsd:complexType>
+	<xsd:simpleType name="CreditConsumerReferralTypeType">
+		<xsd:union memberTypes="CreditConsumerReferralTypes xStringPatternExtensionType"/>
+	</xsd:simpleType>
+	<xsd:simpleType name="CreditConsumerReferralTypes">
+		<xsd:restriction base="xsd:string">
+			<xsd:enumeration value="Equifax"/>
+			<xsd:enumeration value="Experian"/>
+			<xsd:enumeration value="File"/>
+			<xsd:enumeration value="TransUnion"/>
+			<xsd:enumeration value="Vendor"/>
+			<xsd:enumeration value="Other"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:complexType name="CreditContactType">
+		<xsd:sequence>
+			<xsd:element name="OrganizationName" type="xsd:string">
+				<xsd:annotation>
+					<xsd:documentation>Organization name of credit grantor or organization requesting the credit report.</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+			<xsd:element name="OriginalOrganizationName" type="xsd:string" minOccurs="0">
+				<xsd:annotation>
+					<xsd:documentation>When a liability account has been transferred or is being handled by a collection agency, this element indicates the name of original creditor.</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+			<xsd:element name="OrganizationId" type="EntityIdType" minOccurs="0">
+				<xsd:annotation>
+					<xsd:documentation>Organization number of credit grantor or organization requesting the credit report.</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+			<xsd:element name="CreditBusinessType" type="CreditBusinessTypeType" minOccurs="0"/>
+			<xsd:element name="ContactMethod" type="ContactMethodType" minOccurs="0"/>
+		</xsd:sequence>
+	</xsd:complexType>
+	<xsd:simpleType name="CreditDispositionQualifiers">
+		<xsd:restriction base="xsd:string">
+			<xsd:enumeration value="Adjudicated"/>
+			<xsd:enumeration value="Appealed"/>
+			<xsd:enumeration value="Cancelled"/>
+			<xsd:enumeration value="Completed"/>
+			<xsd:enumeration value="Converted"/>
+			<xsd:enumeration value="Discharged"/>
+			<xsd:enumeration value="Dismissed"/>
+			<xsd:enumeration value="Distributed"/>
+			<xsd:enumeration value="Filed"/>
+			<xsd:enumeration value="Granted"/>
+			<xsd:enumeration value="InvoluntarilyDischarged"/>
+			<xsd:enumeration value="Nonadjudicated"/>
+			<xsd:enumeration value="Other"/>
+			<xsd:enumeration value="Paid"/>
+			<xsd:enumeration value="PaidNotSatisfied"/>
+			<xsd:enumeration value="Pending"/>
+			<xsd:enumeration value="RealEstateSold"/>
+			<xsd:enumeration value="Released"/>
+			<xsd:enumeration value="Rescinded"/>
+			<xsd:enumeration value="Satisfied"/>
+			<xsd:enumeration value="Settled"/>
+			<xsd:enumeration value="Unknown"/>
+			<xsd:enumeration value="Unreleased"/>
+			<xsd:enumeration value="Unsatisfied"/>
+			<xsd:enumeration value="Vacated"/>
+			<xsd:enumeration value="VoluntarilyDischarged"/>
+			<xsd:enumeration value="Withdrawn"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="CreditDispositionType">
+		<xsd:union memberTypes="CreditDispositionTypes xStringPatternExtensionType"/>
+	</xsd:simpleType>
+	<xsd:simpleType name="CreditDispositionTypes">
+		<xsd:restriction base="xsd:string">
+			<xsd:enumeration value="Adjudicated"/>
+			<xsd:enumeration value="Appealed"/>
+			<xsd:enumeration value="Cancelled"/>
+			<xsd:enumeration value="Completed"/>
+			<xsd:enumeration value="Converted"/>
+			<xsd:enumeration value="Discharged"/>
+			<xsd:enumeration value="Dismissed"/>
+			<xsd:enumeration value="Distributed"/>
+			<xsd:enumeration value="Filed"/>
+			<xsd:enumeration value="Granted"/>
+			<xsd:enumeration value="InvoluntarilyDischarged"/>
+			<xsd:enumeration value="Nonadjudicated"/>
+			<xsd:enumeration value="Other"/>
+			<xsd:enumeration value="Paid"/>
+			<xsd:enumeration value="PaidNotSatisfied"/>
+			<xsd:enumeration value="Pending"/>
+			<xsd:enumeration value="RealEstateSold"/>
+			<xsd:enumeration value="Released"/>
+			<xsd:enumeration value="Rescinded"/>
+			<xsd:enumeration value="Satisfied"/>
+			<xsd:enumeration value="Settled"/>
+			<xsd:enumeration value="Unknown"/>
+			<xsd:enumeration value="Unreleased"/>
+			<xsd:enumeration value="Unsatisfied"/>
+			<xsd:enumeration value="Vacated"/>
+			<xsd:enumeration value="VoluntarilyDischarged"/>
+			<xsd:enumeration value="Withdrawn"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:complexType name="CreditLoanTypeType">
+		<xsd:sequence>
+			<xsd:element name="Value" type="CreditLoanTypeTypes" minOccurs="0">
+				<xsd:annotation>
+					<xsd:documentation>Summarized description of the loan type.</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+			<xsd:element name="RepositoryCode" type="xsd:string" minOccurs="0">
+				<xsd:annotation>
+					<xsd:documentation>The type code assigned by the repository.</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+			<xsd:element name="RepositoryValue" type="xsd:string" minOccurs="0">
+				<xsd:annotation>
+					<xsd:documentation>Description as provided by the repository.</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+		</xsd:sequence>
+	</xsd:complexType>
+	<xsd:simpleType name="CreditLoanTypeTypes">
+		<xsd:union memberTypes="CreditLoanTypeQualifiers xStringPatternExtensionType"/>
+	</xsd:simpleType>
+	<xsd:simpleType name="CreditLoanTypeQualifiers">
+		<xsd:restriction base="xsd:string">
+			<xsd:enumeration value="Agriculture"/>
+			<xsd:enumeration value="Airplane"/>
+			<xsd:enumeration value="ApplianceOrFurniture"/>
+			<xsd:enumeration value="AttorneyFees"/>
+			<xsd:enumeration value="AutoLease"/>
+			<xsd:enumeration value="AutoLoanEquityTransfer"/>
+			<xsd:enumeration value="Automobile"/>
+			<xsd:enumeration value="AutoRefinance"/>
+			<xsd:enumeration value="Boat"/>
+			<xsd:enumeration value="Business"/>
+			<xsd:enumeration value="BusinessCreditCard"/>
+			<xsd:enumeration value="ChargeAccount"/>
+			<xsd:enumeration value="CheckCreditOrLineOfCredit"/>
+			<xsd:enumeration value="ChildSupport"/>
+			<xsd:enumeration value="Collection"/>
+			<xsd:enumeration value="CollectionAttorney"/>
+			<xsd:enumeration value="Comaker"/>
+			<xsd:enumeration value="CombinedCreditPlan"/>
+			<xsd:enumeration value="CommercialCreditObligation"/>
+			<xsd:enumeration value="CommercialLineOfCredit"/>
+			<xsd:enumeration value="CommercialMortgage"/>
+			<xsd:enumeration value="ConditionalSalesContract"/>
+			<xsd:enumeration value="Consolidation"/>
+			<xsd:enumeration value="ConventionalRealEstateMortgage"/>
+			<xsd:enumeration value="CreditCard"/>
+			<xsd:enumeration value="CreditLineSecured"/>
+			<xsd:enumeration value="DebitCard"/>
+			<xsd:enumeration value="DebtCounselingService"/>
+			<xsd:enumeration value="DepositRelated"/>
+			<xsd:enumeration value="Educational"/>
+			<xsd:enumeration value="Employment"/>
+			<xsd:enumeration value="FactoringCompanyAccount"/>
+			<xsd:enumeration value="FamilySupport"/>
+			<xsd:enumeration value="FarmersHomeAdministrationFHMA"/>
+			<xsd:enumeration value="FederalConsolidatedLoan"/>
+			<xsd:enumeration value="FHAComakerNotBorrower"/>
+			<xsd:enumeration value="FHAHomeImprovement"/>
+			<xsd:enumeration value="FHARealEstateMortgage"/>
+			<xsd:enumeration value="FinanceStatement"/>
+			<xsd:enumeration value="GovernmentBenefit"/>
+			<xsd:enumeration value="GovernmentEmployeeAdvance"/>
+			<xsd:enumeration value="GovernmentFeeForService"/>
+			<xsd:enumeration value="GovernmentFine"/>
+			<xsd:enumeration value="GovernmentGrant"/>
+			<xsd:enumeration value="GovernmentMiscellaneousDebt"/>
+			<xsd:enumeration value="GovernmentOverpayment"/>
+			<xsd:enumeration value="GovernmentSecuredDirectLoan"/>
+			<xsd:enumeration value="GovernmentSecuredGuaranteeLoan"/>
+			<xsd:enumeration value="GovernmentUnsecuredDirectLoan"/>
+			<xsd:enumeration value="GovernmentUnsecuredGuaranteeLoan"/>
+			<xsd:enumeration value="HomeEquityLineOfCredit"/>
+			<xsd:enumeration value="HomeImprovement"/>
+			<xsd:enumeration value="HouseholdGoods"/>
+			<xsd:enumeration value="HouseholdGoodsAndOtherCollateralAuto"/>
+			<xsd:enumeration value="HouseholdGoodsSecured"/>
+			<xsd:enumeration value="InstallmentLoan"/>
+			<xsd:enumeration value="InstallmentSalesContract"/>
+			<xsd:enumeration value="InsuranceClaims"/>
+			<xsd:enumeration value="Lease"/>
+			<xsd:enumeration value="LenderPlacedInsurance"/>
+			<xsd:enumeration value="ManualMortgage"/>
+			<xsd:enumeration value="MedicalDebt"/>
+			<xsd:enumeration value="MobileHome"/>
+			<xsd:enumeration value="Mortgage"/>
+			<xsd:enumeration value="NoteLoan"/>
+			<xsd:enumeration value="NoteLoanWithComaker"/>
+			<xsd:enumeration value="Other"/>
+			<xsd:enumeration value="PartiallySecured"/>
+			<xsd:enumeration value="PersonalLoan"/>
+			<xsd:enumeration value="RealEstateJuniorLiens"/>
+			<xsd:enumeration value="RealEstateLoanEquityTransfer"/>
+			<xsd:enumeration value="RealEstateMortgageWithoutOtherCollateral"/>
+			<xsd:enumeration value="RealEstateSpecificTypeUnknown"/>
+			<xsd:enumeration value="Recreational"/>
+			<xsd:enumeration value="RecreationalVehicle"/>
+			<xsd:enumeration value="Refinance"/>
+			<xsd:enumeration value="RefundAnticipationLoan"/>
+			<xsd:enumeration value="RentalAgreement"/>
+			<xsd:enumeration value="ResidentialLoan"/>
+			<xsd:enumeration value="ReturnedCheck"/>
+			<xsd:enumeration value="RevolvingBusinessLines"/>
+			<xsd:enumeration value="Secured"/>
+			<xsd:enumeration value="SecuredByCosigner"/>
+			<xsd:enumeration value="SecuredCreditCard"/>
+			<xsd:enumeration value="SecuredHomeImprovement"/>
+			<xsd:enumeration value="SinglePaymentLoan"/>
+			<xsd:enumeration value="SpouseSupport"/>
+			<xsd:enumeration value="SummaryOfAccountsWithSameStatus"/>
+			<xsd:enumeration value="TimeSharedLoan"/>
+			<xsd:enumeration value="Title1Loan"/>
+			<xsd:enumeration value="UnknownLoanType"/>
+			<xsd:enumeration value="Unsecured"/>
+			<xsd:enumeration value="VeteransAdministrationLoan"/>
+			<xsd:enumeration value="VeteransAdministrationRealEstateMortgage"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:complexType name="CreditPersonalDataType">
+		<xsd:sequence>
+			<xsd:element name="EffectiveDate" type="EffectiveDateType" minOccurs="0"/>
+			<xsd:element name="PersonName" minOccurs="0" maxOccurs="unbounded">
+				<xsd:complexType>
+					<xsd:complexContent>
+						<xsd:extension base="PersonNameType">
+							<xsd:attribute name="type" type="PersonNameTypeType" use="optional"/>
+						</xsd:extension>
+					</xsd:complexContent>
+				</xsd:complexType>
+			</xsd:element>
+			<xsd:element name="PostalAddress" type="CreditPostalAddressType" minOccurs="0" maxOccurs="unbounded"/>
+			<xsd:element name="ContactMethod" type="ContactMethodType" minOccurs="0" maxOccurs="unbounded"/>
+			<xsd:element name="DemographicDetail" type="DemographicDetailType" minOccurs="0"/>
+			<xsd:element name="ReportedDate" type="ReportedDateType" minOccurs="0"/>
+			<xsd:element name="LastReportedBy" type="xsd:string" minOccurs="0"/>
+			<xsd:element ref="UserArea" minOccurs="0"/>
+		</xsd:sequence>
+		<xsd:attribute name="type" use="optional">
+			<xsd:simpleType>
+				<xsd:restriction base="xsd:string">
+					<xsd:enumeration value="Alias"/>
+					<xsd:enumeration value="Other"/>
+					<xsd:enumeration value="Current"/>
+					<xsd:enumeration value="Prior"/>
+					<xsd:enumeration value="NotSpecified"/>
+				</xsd:restriction>
+			</xsd:simpleType>
+		</xsd:attribute>
+		<xsd:attribute name="idReference" type="xsd:string" use="optional"/>
+		<xsd:attribute name="idSource" type="xsd:string" use="optional"/>
+		<xsd:attribute name="enteredOnInquiry" type="xsd:boolean" use="optional"/>
+		<xsd:attribute name="sequence" type="xsd:positiveInteger" use="optional"/>
+	</xsd:complexType>
+	<xsd:complexType name="CreditPostalAddressType">
+		<xsd:complexContent>
+			<xsd:extension base="PostalAddressType">
+				<xsd:sequence>
+					<xsd:element name="ReportedDate" type="ReportedDateType" minOccurs="0"/>
+					<xsd:element name="LastReportedBy" type="xsd:string" minOccurs="0"/>
+				</xsd:sequence>
+				<xsd:attribute name="current" type="xsd:boolean" use="optional"/>
+				<xsd:attribute name="enteredOnInquiry" type="xsd:boolean" use="optional"/>
+				<xsd:attribute name="timesReported" type="xsd:string" use="optional"/>
+				<xsd:attribute name="validFrom" type="AnyDateTimeNaType" use="optional"/>
+				<xsd:attribute name="validTo" type="AnyDateTimeNaType" use="optional"/>
+			</xsd:extension>
+		</xsd:complexContent>
+	</xsd:complexType>
+	<xsd:complexType name="CreditRatingType">
+		<xsd:sequence>
+			<xsd:element name="Code" type="xsd:string" minOccurs="0">
+				<xsd:annotation>
+					<xsd:documentation>This is the accounts Manner Of Payment (MOP) rating code for the associated Delinquency. </xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+			<xsd:element name="Type" type="MOPTypeType" minOccurs="0">
+				<xsd:annotation>
+					<xsd:documentation>This is the accounts Manner Of Payment rating type for the associated  Delinquency.</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+			<xsd:element name="Amount" type="CurrencyAmountType" minOccurs="0"/>
+			<xsd:element name="Date" type="FlexibleDatesType" minOccurs="0">
+				<xsd:annotation>
+					<xsd:documentation>Lists the date (month and year) that the borrower was late on payments.</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+		</xsd:sequence>
+	</xsd:complexType>
+	<xsd:complexType name="CreditReportType">
+		<xsd:sequence>
+			<xsd:element name="ProcessedDate" type="FlexibleDatesType" minOccurs="0"/>
+			<xsd:element name="CreditFile" type="CreditSSNVerifiedType" minOccurs="0" maxOccurs="unbounded">
+				<xsd:annotation>
+					<xsd:documentation>Personal data related to the Search Subject that the search(s) was performed upon. </xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+			<xsd:element name="CreditConsumerReferral" type="CreditConsumerReferralType" minOccurs="0" maxOccurs="unbounded">
+				<xsd:annotation>
+					<xsd:documentation>Contains contact information for the credit bureau(s) and/or other organization responsible for reporting the information contained in this credit report.</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+			<xsd:element name="CreditLiability" type="CreditLiabilityType" minOccurs="0" maxOccurs="unbounded"/>
+			<xsd:element name="PublicRecord" type="PublicRecordsType" minOccurs="0" maxOccurs="unbounded"/>
+			<xsd:element name="CreditInquiry" type="InquiryType" minOccurs="0" maxOccurs="unbounded"/>
+			<xsd:element name="CreditSummary" type="SummaryType" minOccurs="0" maxOccurs="unbounded"/>
+			<xsd:element name="CreditScore" type="ScoreType" minOccurs="0" maxOccurs="unbounded"/>
+			<xsd:element name="AdditionalItems" type="FlexibleDetailType" minOccurs="0" maxOccurs="unbounded">
+				<xsd:annotation>
+					<xsd:documentation>Contains the individual unparsed lines of credit information. </xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+			<xsd:element name="InformationalMessage" type="MessagesType" minOccurs="0" maxOccurs="unbounded">
+				<xsd:annotation>
+					<xsd:documentation>Informational messages provided by the organization granting the credit or the repository.</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+			<xsd:element ref="UserArea" minOccurs="0"/>
+		</xsd:sequence>
+		<xsd:attribute name="vendor" type="VendorType" use="optional"/>
+		<xsd:attribute ref="xml:lang"/>
+	</xsd:complexType>
+	<xsd:complexType name="CreditSSNReportedType">
+		<xsd:sequence>
+			<xsd:element name="PersonalData" type="CreditPersonalDataType" maxOccurs="unbounded"/>
+		</xsd:sequence>
+	</xsd:complexType>
+	<xsd:complexType name="CreditSSNVerifiedType">
+		<xsd:sequence>
+			<xsd:element name="FileDate" type="FlexibleDatesType" minOccurs="0">
+				<xsd:annotation>
+					<xsd:documentation>Date that credit file was established.</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+			<xsd:element name="LastActivityDate" type="FlexibleDatesType" minOccurs="0">
+				<xsd:annotation>
+					<xsd:documentation>Date of credit file's last activity.</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+			<xsd:element name="FileReference" type="EntityIdType" minOccurs="0">
+				<xsd:annotation>
+					<xsd:documentation>File reference number as assigned by Credit Bureau.</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+			<xsd:element name="PersonalData" type="CreditPersonalDataType" maxOccurs="unbounded"/>
+			<xsd:element name="EmploymentInformation" minOccurs="0" maxOccurs="unbounded">
+				<xsd:complexType>
+					<xsd:sequence>
+						<xsd:element name="OrganizationName" type="xsd:string"/>
+						<xsd:element name="Title" type="xsd:string" minOccurs="0"/>
+						<xsd:element name="PostalAddress" type="CreditPostalAddressType" minOccurs="0"/>
+						<xsd:element name="Telephone" minOccurs="0" maxOccurs="unbounded">
+							<xsd:complexType>
+								<xsd:complexContent>
+									<xsd:extension base="TelcomNumberType">
+										<xsd:attribute name="type" type="xsd:string"/>
+									</xsd:extension>
+								</xsd:complexContent>
+							</xsd:complexType>
+						</xsd:element>
+						<xsd:element name="ReportedDate" type="ReportedDateType" minOccurs="0"/>
+						<xsd:element name="VerifiedDate" type="FlexibleDatesType" minOccurs="0"/>
+						<xsd:element name="EmploymentDate" type="EffectiveDateType" minOccurs="0"/>
+						<xsd:element name="Compensation" type="PositionCompensationType" minOccurs="0" maxOccurs="unbounded"/>
+						<!--									<xsd:element name="Compensation" minOccurs="0" maxOccurs="2"> -->
+					</xsd:sequence>
+					<xsd:attribute name="type" use="required">
+						<xsd:simpleType>
+							<xsd:restriction base="xsd:string">
+								<xsd:enumeration value="Current"/>
+								<xsd:enumeration value="Prior"/>
+								<xsd:enumeration value="Spouse"/>
+								<xsd:enumeration value="Other"/>
+								<xsd:enumeration value="Unknown"/>
+							</xsd:restriction>
+						</xsd:simpleType>
+					</xsd:attribute>
+				</xsd:complexType>
+			</xsd:element>
+			<xsd:element name="ReportedAliases" type="CreditPersonalDataType" minOccurs="0" maxOccurs="unbounded">
+				<xsd:annotation>
+					<xsd:documentation>Identifies other or prior names and identifiers.</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+		</xsd:sequence>
+		<xsd:attribute name="vendor" type="VendorType" use="optional"/>
+	</xsd:complexType>
+	<xsd:complexType name="CreditSummaryAmountType">
+		<xsd:sequence>
+			<xsd:element name="TotalAmount" type="CurrencyAmountType" minOccurs="0">
+				<xsd:annotation>
+					<xsd:documentation>Dollar amount of revolving tradelines. </xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+			<xsd:element name="InstallmentAmount" type="CurrencyAmountType" minOccurs="0">
+				<xsd:annotation>
+					<xsd:documentation>Dollar amount of revolving tradelines. </xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+			<xsd:element name="RevolvingAmount" type="CurrencyAmountType" minOccurs="0">
+				<xsd:annotation>
+					<xsd:documentation>Dollar amount of revolving tradelines. </xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+			<xsd:element name="ClosedWithBalanceAmount" type="CurrencyAmountType" minOccurs="0">
+				<xsd:annotation>
+					<xsd:documentation>Dollar amount of closed tradelines that still contain a balance. </xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+		</xsd:sequence>
+	</xsd:complexType>
+	<xsd:simpleType name="DeferredLoanTermsType">
+		<xsd:union memberTypes="ExperianLoanTermsTypes xStringPatternExtensionType"/>
+	</xsd:simpleType>
+	<xsd:simpleType name="DispositionTypeType">
+		<xsd:union memberTypes="CreditDispositionQualifiers xStringPatternExtensionType"/>
+	</xsd:simpleType>
+	<xsd:simpleType name="ExperianLoanTermsTypes">
+		<xsd:restriction base="xsd:string">
+			<xsd:enumeration value="D"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="InquiryResultTypeType">
+		<xsd:union memberTypes="InquiryResultTypeQualifiers xStringPatternExtensionType"/>
+	</xsd:simpleType>
+	<xsd:simpleType name="InquiryResultTypeQualifiers">
+		<xsd:restriction base="xsd:string">
+			<xsd:enumeration value="AccountClosed"/>
+			<xsd:enumeration value="ApplicationPending"/>
+			<xsd:enumeration value="Declined"/>
+			<xsd:enumeration value="DidNotInquire"/>
+			<xsd:enumeration value="NoOpenAccount"/>
+			<xsd:enumeration value="NotALender"/>
+			<xsd:enumeration value="OpenAccountNumberNotIssued"/>
+			<xsd:enumeration value="OpenDiscovered"/>
+			<xsd:enumeration value="OpenPrimaryAccount"/>
+			<xsd:enumeration value="ReportingAgencyInquiry"/>
+			<xsd:enumeration value="Unknown"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:complexType name="InquiryType">
+		<xsd:sequence>
+			<xsd:element name="InquiryDate" type="FlexibleDatesType" minOccurs="0">
+				<xsd:annotation>
+					<xsd:documentation>Date of inquiry.</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+			<xsd:element name="InquiringOrganization" type="CreditContactType" minOccurs="0">
+				<xsd:annotation>
+					<xsd:documentation>Inquiring organization's name inquiring on consumer.</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+			<xsd:element name="CreditLoanType" type="CreditLoanTypeType" minOccurs="0">
+				<xsd:annotation>
+					<xsd:documentation>This element contains an enumerated list of common loan types. If the loan type is Other, then preceed the description with x:.</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+			<xsd:element name="TermsDescription" type="xsd:string" minOccurs="0">
+				<xsd:annotation>
+					<xsd:documentation>A text description for the loan terms (for example, 360 months at $820 per month).</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+			<xsd:element name="InquiryResultType" type="InquiryResultTypeType" minOccurs="0">
+				<xsd:annotation>
+					<xsd:documentation>The result from a credit inquiry - did the lender offer credit, refuse credit, etc.</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+			<xsd:element name="AdditionalItems" type="FlexibleDetailType" minOccurs="0" maxOccurs="unbounded">
+				<xsd:annotation>
+					<xsd:documentation>Contains the individual unparsed lines of credit information. </xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+			<xsd:element name="InformationalMessage" type="MessagesType" minOccurs="0" maxOccurs="unbounded">
+				<xsd:annotation>
+					<xsd:documentation>Informational messages provided by the vendor of the credit report.</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+		</xsd:sequence>
+		<xsd:attribute name="vendor" type="VendorType" use="optional"/>
+	</xsd:complexType>
+	<xsd:simpleType name="MessageType">
+		<xsd:union memberTypes="CommentSourceTypes AlertSourceTypes xStringPatternExtensionType"/>
+	</xsd:simpleType>
+	<xsd:simpleType name="MessageSourceType">
+		<xsd:restriction base="xsd:string">
+			<xsd:enumeration value="Alert"/>
+			<xsd:enumeration value="Comment"/>
+			<xsd:enumeration value="Unknown"/>
+			<xsd:enumeration value="Other"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:complexType name="MessagesType">
+		<xsd:sequence>
+			<xsd:element name="MessageClassification" type="MessageType" minOccurs="0">
+				<xsd:annotation>
+					<xsd:documentation>Additional identification of the message or alert source. i.e. EquifaxSAFESCAN, Lender, RepositoryBureau, etc.</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+			<xsd:element name="EffectiveDate" type="EffectiveDateType" minOccurs="0"/>
+			<xsd:element name="Text" type="xsd:string" maxOccurs="unbounded">
+				<xsd:annotation>
+					<xsd:documentation>The credit data repository bureaus sometimes send alert messages with a credit file. This data element may also hold comment text data that can appear in various locations on a credit report. The Classification describes the source of the comment and the type attribute of the parent element identifies the message as an alret, comment, etc.
+
+</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+			<xsd:element name="RepositoryCode" type="xsd:string" minOccurs="0"/>
+		</xsd:sequence>
+		<xsd:attribute name="type" type="MessageSourceType" use="required"/>
+		<xsd:attribute name="vendor" type="VendorType" use="optional"/>
+	</xsd:complexType>
+	<xsd:simpleType name="MOPTypeType">
+		<xsd:union memberTypes="MOPTypes xStringPatternExtensionType"/>
+	</xsd:simpleType>
+	<xsd:simpleType name="MOPTypes">
+		<xsd:restriction base="xsd:string">
+			<xsd:enumeration value="AsAgreed"/>
+			<xsd:enumeration value="ChargeOff"/>
+			<xsd:enumeration value="Collection"/>
+			<xsd:enumeration value="Foreclosure"/>
+			<xsd:enumeration value="Late30Days"/>
+			<xsd:enumeration value="Late60Days"/>
+			<xsd:enumeration value="Late90Days"/>
+			<xsd:enumeration value="LateOver120Days"/>
+			<xsd:enumeration value="NoDataAvailable"/>
+			<xsd:enumeration value="Repossession"/>
+			<xsd:enumeration value="TooNew"/>
+			<xsd:enumeration value="WageEarnerPlan"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="PaymentFrequencyTypeType">
+		<xsd:union memberTypes="PaymentFrequencyQualifiers xStringPatternExtensionType"/>
+	</xsd:simpleType>
+	<xsd:simpleType name="PaymentFrequencyQualifiers">
+		<xsd:restriction base="xsd:string">
+			<xsd:enumeration value="Biweekly"/>
+			<xsd:enumeration value="LumpSum"/>
+			<xsd:enumeration value="Monthly"/>
+			<xsd:enumeration value="Weekly"/>
+			<xsd:enumeration value="SemiMonthly"/>
+			<xsd:enumeration value="Daily"/>
+			<xsd:enumeration value="TwiceWeekly"/>
+			<xsd:enumeration value="FourWeeks"/>
+			<xsd:enumeration value="Quarterly"/>
+			<xsd:enumeration value="Annually"/>
+			<xsd:enumeration value="Other"/>
+			<xsd:enumeration value="Unknown"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:complexType name="PaymentPatternType">
+		<xsd:sequence>
+			<xsd:element name="Data" type="xsd:string">
+				<xsd:annotation>
+					<xsd:documentation>The date of the beginning of the data in the Credit Liability Payment Pattern Data.</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+			<xsd:element name="StartDate" type="FlexibleDatesType" minOccurs="0">
+				<xsd:annotation>
+					<xsd:documentation>The date of the beginning of the data in the Credit Liability Payment Pattern Data.</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+		</xsd:sequence>
+	</xsd:complexType>
+	<xsd:complexType name="PublicRecordsType">
+		<xsd:sequence>
+			<xsd:element name="FurtherReviewRequired" type="xsd:boolean" minOccurs="0">
+				<xsd:annotation>
+					<xsd:documentation>Information may need further review.</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+			<xsd:element name="AccountOwnershipType" type="AccountOwnershipTypeType" minOccurs="0">
+				<xsd:annotation>
+					<xsd:documentation>Describes the ownership relation of the borrower(s) to the liability account (i.e. are they solely responsible, jointly responsible, a co-signer on the account, etc.) Also refered to as ECOA Code.</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+			<xsd:element name="AgencyReference" type="AgencyReferenceType" minOccurs="0">
+				<xsd:annotation>
+					<xsd:documentation>The Docket Number or Case Number assigned to the Public Record by the court.</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+			<xsd:element name="AttorneyName" type="xsd:string" minOccurs="0">
+				<xsd:annotation>
+					<xsd:documentation>The name of the attorney (normally the plaintiff) reported in the public record.</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+			<xsd:element name="BankruptcyAssetsAmount" type="CurrencyAmountType" minOccurs="0">
+				<xsd:annotation>
+					<xsd:documentation>The amount of the defendants declared assets at the time of bankruptcy.</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+			<xsd:element name="BankruptcyLiabilitiesAmount" type="CurrencyAmountType" minOccurs="0">
+				<xsd:annotation>
+					<xsd:documentation>The amount of the defendants declared liabilities at the time of bankruptcy.</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+			<xsd:element name="BankruptcyType" type="BankruptcyTypeType" minOccurs="0"/>
+			<xsd:element name="BankruptcyFilingMethod" type="BankruptcyFilingMethodType" minOccurs="0"/>
+			<xsd:element name="CourtName" type="xsd:string" minOccurs="0">
+				<xsd:annotation>
+					<xsd:documentation>The name of the court reporting the public record.</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+			<xsd:element name="CourtNumber" type="xsd:string" minOccurs="0">
+				<xsd:annotation>
+					<xsd:documentation>Reporting court's number.</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+			<xsd:element name="ConsumerDisputeIndicator" type="xsd:boolean" minOccurs="0">
+				<xsd:annotation>
+					<xsd:documentation>This element indicates whether or not the consumer (borrower) disputes information reported for this public record and has filed a FCRA dispute form.</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+			<xsd:element name="Creditor" type="CreditContactType" minOccurs="0">
+				<xsd:annotation>
+					<xsd:documentation>Organization name of the original credit grantor if different then the Plaintiff name.</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+			<xsd:element name="FilingDate" type="FlexibleDatesType" minOccurs="0">
+				<xsd:annotation>
+					<xsd:documentation>The date that the public record was filed by the court.</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+			<xsd:element name="DefendantName" type="xsd:string" minOccurs="0">
+				<xsd:annotation>
+					<xsd:documentation>The name of the defendant in a public record.</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+			<xsd:element name="DerogatoryDataIndicator" type="xsd:boolean" minOccurs="0">
+				<xsd:annotation>
+					<xsd:documentation>This element indicates whether or not the public record contains adverse or derogatory information.</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+			<xsd:element name="DispositionDate" type="FlexibleDatesType" minOccurs="0">
+				<xsd:annotation>
+					<xsd:documentation>This element provides the date that the Public Record Disposition Type first became effective.</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+			<xsd:element name="DispositionType" type="CreditDispositionType" minOccurs="0">
+				<xsd:annotation>
+					<xsd:documentation>This element contains an enumerated list of disposition types. If the disposition  type is Other, then preceed the description with x:.</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+			<xsd:element name="LegalObligationAmount" type="CurrencyAmountType" minOccurs="0">
+				<xsd:annotation>
+					<xsd:documentation>This is the amount listed in the public record that the defendant is obligated to pay.</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+			<xsd:element name="ManualUpdateIndicator" type="xsd:boolean" minOccurs="0">
+				<xsd:annotation>
+					<xsd:documentation>This element indicates whether or not the data in the public record has been manually updated by the credit bureau based on an investigation.</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+			<xsd:element name="MaturityDate" type="FlexibleDatesType" minOccurs="0">
+				<xsd:annotation>
+					<xsd:documentation>The maturity date of a guaranteed loan filed through a court of public record.</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+			<xsd:element name="PaidDate" type="FlexibleDatesType" minOccurs="0">
+				<xsd:annotation>
+					<xsd:documentation>The date that the Legal Obligation Amount was paid to zero.</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+			<xsd:element name="PaymentFrequencyType" type="PaymentFrequencyTypeType" minOccurs="0">
+				<xsd:annotation>
+					<xsd:documentation>This element indicates the frequency of payments allowed for the Legal Obligation Amount.</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+			<xsd:element name="PlaintiffName" type="xsd:string" minOccurs="0">
+				<xsd:annotation>
+					<xsd:documentation>The name of the plaintiff in a public record. Typically the name of the attorney or credit grantor.</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+			<xsd:element name="PublicRecordType" type="PublicRecordTypeType" minOccurs="0">
+				<xsd:annotation>
+					<xsd:documentation>This is the enumerated type of public record reported by the credit bureau. If the type does not fit one of the enumerated categories, prefix the type with x:.</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+			<xsd:element name="ReportedDate" type="FlexibleDatesType" minOccurs="0">
+				<xsd:annotation>
+					<xsd:documentation>The date that the public record data was last reported by the court to the credit repository bureau.</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+			<xsd:element name="SettledDate" type="FlexibleDatesType" minOccurs="0">
+				<xsd:annotation>
+					<xsd:documentation>The date that the public record case was settled.</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+			<xsd:element name="StatusDate" type="FlexibleDatesType" minOccurs="0">
+				<xsd:annotation>
+					<xsd:documentation>if status is satisfied, released, vacated, discharged or dismissed.</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+			<xsd:element name="VoluntaryIndicator" type="xsd:boolean" minOccurs="0">
+				<xsd:annotation>
+					<xsd:documentation>True if consumer voluntarily dismissed bankruptcy.</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+			<xsd:element name="AdditionalItems" type="FlexibleDetailType" minOccurs="0" maxOccurs="unbounded">
+				<xsd:annotation>
+					<xsd:documentation>Contains the individual unparsed lines of credit information. </xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+			<xsd:element name="InformationalMessage" type="MessagesType" minOccurs="0" maxOccurs="unbounded">
+				<xsd:annotation>
+					<xsd:documentation>Informational messages provided by the organization granting the credit.</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+			<xsd:element ref="UserArea" minOccurs="0"/>
+		</xsd:sequence>
+		<xsd:attribute name="vendor" type="VendorType" use="optional"/>
+	</xsd:complexType>
+	<xsd:simpleType name="PublicRecordTypeType">
+		<xsd:union memberTypes="PublicRecordTypes xStringPatternExtensionType"/>
+	</xsd:simpleType>
+	<xsd:simpleType name="PublicRecordTypes">
+		<xsd:restriction base="xsd:string">
+			<xsd:enumeration value="Annulment"/>
+			<xsd:enumeration value="Attachment"/>
+			<xsd:enumeration value="BankruptcyChapter11"/>
+			<xsd:enumeration value="BankruptcyChapter12"/>
+			<xsd:enumeration value="BankruptcyChapter13"/>
+			<xsd:enumeration value="BankruptcyChapter7"/>
+			<xsd:enumeration value="BankruptcyChapter7Involuntary"/>
+			<xsd:enumeration value="BankruptcyChapter7Voluntary"/>
+			<xsd:enumeration value="BankruptcyTypeUnknown"/>
+			<xsd:enumeration value="Collection"/>
+			<xsd:enumeration value="CustodyAgreement"/>
+			<xsd:enumeration value="DivorceDecree"/>
+			<xsd:enumeration value="FicticiousName"/>
+			<xsd:enumeration value="FinancialCounseling"/>
+			<xsd:enumeration value="FinancingStatement"/>
+			<xsd:enumeration value="ForcibleDetainer"/>
+			<xsd:enumeration value="Foreclosure"/>
+			<xsd:enumeration value="Garnishment"/>
+			<xsd:enumeration value="Judgment"/>
+			<xsd:enumeration value="LawSuit"/>
+			<xsd:enumeration value="Lien"/>
+			<xsd:enumeration value="NonResponsibility"/>
+			<xsd:enumeration value="NoticeOfDefault"/>
+			<xsd:enumeration value="Other"/>
+			<xsd:enumeration value="PublicSale"/>
+			<xsd:enumeration value="RealEstateRecording"/>
+			<xsd:enumeration value="Repossession"/>
+			<xsd:enumeration value="SupportDebt"/>
+			<xsd:enumeration value="TaxLienCity"/>
+			<xsd:enumeration value="TaxLienCounty"/>
+			<xsd:enumeration value="TaxLienFederal"/>
+			<xsd:enumeration value="TaxLienOther"/>
+			<xsd:enumeration value="TaxLienState"/>
+			<xsd:enumeration value="Trusteeship"/>
+			<xsd:enumeration value="Unknown"/>
+			<xsd:enumeration value="UnlawfulDetainer"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:complexType name="ScoreType">
+		<xsd:sequence>
+			<xsd:element name="ScoreModel" type="xsd:string" minOccurs="0">
+				<xsd:annotation>
+					<xsd:documentation>Identifies the score algorithm model name used to produce the referenced credit risk score.</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+			<xsd:element name="ScoreValue" type="xsd:integer">
+				<xsd:annotation>
+					<xsd:documentation>Numeric credit score resulting from credit evaluation model.</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+			<xsd:element name="Alert" type="xsd:boolean" minOccurs="0">
+				<xsd:annotation>
+					<xsd:documentation>Can be generated if a negative public record or collection is present or in the case of Trans Union, when a MOP 07 or higher condition exists. </xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+			<xsd:element name="Factor" maxOccurs="unbounded">
+				<xsd:annotation>
+					<xsd:documentation>Factors of the borrowers credit which give context to the referenced credit score.</xsd:documentation>
+				</xsd:annotation>
+				<xsd:complexType>
+					<xsd:sequence>
+						<xsd:element name="Code" type="xsd:string" minOccurs="0">
+							<xsd:annotation>
+								<xsd:documentation>The factor code is normally a numeric code.</xsd:documentation>
+							</xsd:annotation>
+						</xsd:element>
+						<xsd:element name="Description" type="xsd:string" minOccurs="0"/>
+					</xsd:sequence>
+				</xsd:complexType>
+			</xsd:element>
+			<xsd:element name="AdditionalItems" type="FlexibleDetailType" minOccurs="0" maxOccurs="unbounded">
+				<xsd:annotation>
+					<xsd:documentation>Contains the individual unparsed lines of credit information. </xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+			<xsd:element name="InformationalMessage" type="MessagesType" minOccurs="0" maxOccurs="unbounded">
+				<xsd:annotation>
+					<xsd:documentation>Informational messages provided by the organization granting the credit.</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+			<!-- <xsd:element name="Factor" maxOccurs="4"> -->
+		</xsd:sequence>
+		<xsd:attribute name="vendor" type="VendorType" use="optional"/>
+	</xsd:complexType>
+	<xsd:complexType name="SSNReportType">
+		<xsd:sequence>
+			<xsd:element name="ProcessedDate" type="FlexibleDatesType" minOccurs="0"/>
+			<xsd:element name="CreditFile" type="CreditSSNVerifiedType" minOccurs="0" maxOccurs="unbounded">
+				<xsd:annotation>
+					<xsd:documentation>Personal data related to the Search Subject that the search(s) was performed upon. </xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+			<xsd:element name="CreditConsumerReferral" type="CreditConsumerReferralType" minOccurs="0" maxOccurs="unbounded">
+				<xsd:annotation>
+					<xsd:documentation>Contains contact information for the credit bureau(s) and/or other organization responsible for reporting the information contained in this credit report.</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+			<xsd:element name="AdditionalItems" type="FlexibleDetailType" minOccurs="0" maxOccurs="unbounded">
+				<xsd:annotation>
+					<xsd:documentation>Contains the individual unparsed lines of credit information. </xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+			<xsd:element name="InformationalMessage" type="MessagesType" minOccurs="0" maxOccurs="unbounded">
+				<xsd:annotation>
+					<xsd:documentation>Informational messages provided by the organization granting the credit or the repository.</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+		</xsd:sequence>
+		<xsd:attribute name="vendor" type="VendorType" use="optional"/>
+		<xsd:attribute ref="xml:lang"/>
+	</xsd:complexType>
+	<xsd:complexType name="SummaryType">
+		<xsd:sequence>
+			<xsd:element name="BalanceAmount" type="CreditSummaryAmountType" minOccurs="0">
+				<xsd:annotation>
+					<xsd:documentation>Dollar amount of installment loans.</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+			<xsd:element name="ClosedAccounts" type="xsd:integer" minOccurs="0"/>
+			<xsd:element name="CollectionCount" type="xsd:integer" minOccurs="0">
+				<xsd:annotation>
+					<xsd:documentation>Total number of collection accounts.</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+			<xsd:element name="CollectionsTransferred" type="xsd:integer" minOccurs="0">
+				<xsd:annotation>
+					<xsd:documentation>Total number of collection accounts transferred to third party collection agency.</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+			<xsd:element name="DelinquencyCounters" minOccurs="0">
+				<xsd:annotation>
+					<xsd:documentation>Delinquency Counters</xsd:documentation>
+				</xsd:annotation>
+				<xsd:complexType>
+					<xsd:sequence>
+						<xsd:element name="DelinquentCount" type="LateDelinquentCountType" minOccurs="0" maxOccurs="unbounded">
+							<xsd:annotation>
+								<xsd:documentation>The number of times the liability account was reported  delinquent by the liability holder.  This count will typically cover 30, 60 and 90 days.</xsd:documentation>
+							</xsd:annotation>
+						</xsd:element>
+						<xsd:element name="Derogatory" type="xsd:integer" minOccurs="0">
+							<xsd:annotation>
+								<xsd:documentation>Number of times derogatory.</xsd:documentation>
+							</xsd:annotation>
+						</xsd:element>
+						<xsd:element name="CurrentNegativeCount" type="xsd:integer" minOccurs="0"/>
+						<xsd:element name="PreviousNegativeCount" type="xsd:integer" minOccurs="0"/>
+						<xsd:element name="PreviousTimesNegativeCount" type="xsd:integer" minOccurs="0"/>
+					</xsd:sequence>
+				</xsd:complexType>
+			</xsd:element>
+			<xsd:element name="EmploymentInquiriesCount" type="xsd:integer" minOccurs="0">
+				<xsd:annotation>
+					<xsd:documentation>Number of inquiries in file.</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+			<xsd:element name="ForeignBureauInfo" type="xsd:boolean" minOccurs="0">
+				<xsd:annotation>
+					<xsd:documentation>Indicates if file contains foreign bureau information.</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+			<xsd:element name="HighCreditAmount" type="CreditSummaryAmountType" minOccurs="0">
+				<xsd:annotation>
+					<xsd:documentation>Dollar amount of revolving tradelines. </xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+			<xsd:element name="InquiriesCount" type="xsd:integer" minOccurs="0">
+				<xsd:annotation>
+					<xsd:documentation>Number of inquiries in file.</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+			<xsd:element name="InstallmentAccounts" type="xsd:integer" minOccurs="0">
+				<xsd:annotation>
+					<xsd:documentation>Total number of Installment accounts.</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+			<xsd:element name="MortgageAccounts" type="xsd:integer" minOccurs="0">
+				<xsd:annotation>
+					<xsd:documentation>Total number of Mortgage accounts.</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+			<xsd:element name="MostRecentTradeDate" type="FlexibleDatesType" minOccurs="0">
+				<xsd:annotation>
+					<xsd:documentation>Most recent Date of trade.</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+			<xsd:element name="NowDelinquentOrDerogatory" type="xsd:integer" minOccurs="0">
+				<xsd:annotation>
+					<xsd:documentation>Number of tradelines with derogatory status codes.</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+			<xsd:element name="OldestTradeDate" type="FlexibleDatesType" minOccurs="0">
+				<xsd:annotation>
+					<xsd:documentation>Oldest Date of trade.</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+			<xsd:element name="OpenAccounts" type="xsd:integer" minOccurs="0">
+				<xsd:annotation>
+					<xsd:documentation>Total number of open accounts.</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+			<xsd:element name="PaidAccounts" type="xsd:integer" minOccurs="0"/>
+			<xsd:element name="PastDueBalance" type="CreditSummaryAmountType" minOccurs="0">
+				<xsd:annotation>
+					<xsd:documentation>Dollar amount past due.</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+			<xsd:element name="PaymentAmount" type="CreditSummaryAmountType" minOccurs="0">
+				<xsd:annotation>
+					<xsd:documentation>Dollar amount of monthly payments.</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+			<xsd:element name="PeriodInquiries" type="xsd:integer" minOccurs="0">
+				<xsd:annotation>
+					<xsd:documentation>Number of inquiries during period supported by vendor of credit information. i.e. Experian's time frame is last 6 months.</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+			<xsd:element name="PublicRecords" type="xsd:integer" minOccurs="0">
+				<xsd:annotation>
+					<xsd:documentation>Indicates the number of Public Record items on the Profile.</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+			<xsd:element name="RealEstateBalance" type="CurrencyAmountType" minOccurs="0">
+				<xsd:annotation>
+					<xsd:documentation>Dollar amount of Real Estate Balance.</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+			<xsd:element name="RealEstatePaymentAmount" type="CurrencyAmountType" minOccurs="0">
+				<xsd:annotation>
+					<xsd:documentation>Dollar amount of real estate payments</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+			<xsd:element name="RevolvingAccounts" type="xsd:integer" minOccurs="0">
+				<xsd:annotation>
+					<xsd:documentation>Total number of Revolving accounts.</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+			<xsd:element name="RevolvingAvailablePercent" type="xsd:decimal" minOccurs="0">
+				<xsd:annotation>
+					<xsd:documentation>Whole percentage amount from 0 - 100, showing the percent of revolving credit available.</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+			<xsd:element name="TotalCreditLimit" type="CreditSummaryAmountType" minOccurs="0"/>
+			<xsd:element name="TradesOrOther" type="xsd:integer" minOccurs="0">
+				<xsd:annotation>
+					<xsd:documentation>Number of trades or other items in file.</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+			<xsd:element name="TradeRatings" minOccurs="0">
+				<xsd:complexType>
+					<xsd:sequence>
+						<xsd:element name="TradeRating" minOccurs="0" maxOccurs="unbounded">
+							<xsd:complexType>
+								<xsd:simpleContent>
+									<xsd:extension base="xsd:positiveInteger">
+										<xsd:attribute name="ratingType" type="xsd:string" use="required"/>
+									</xsd:extension>
+								</xsd:simpleContent>
+							</xsd:complexType>
+						</xsd:element>
+					</xsd:sequence>
+				</xsd:complexType>
+			</xsd:element>
+			<xsd:element name="WasDelinquentOrDerogatory" type="xsd:integer" minOccurs="0">
+				<xsd:annotation>
+					<xsd:documentation>Number of tradelines with past derogatory status codes</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+			<xsd:element name="AdditionalItems" type="FlexibleDetailType" minOccurs="0" maxOccurs="unbounded">
+				<xsd:annotation>
+					<xsd:documentation>Contains the individual unparsed lines of credit information. </xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+			<xsd:element name="InformationalMessage" type="MessagesType" minOccurs="0" maxOccurs="unbounded">
+				<xsd:annotation>
+					<xsd:documentation>Informational messages provided by the organization granting the credit.</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+			<xsd:element ref="UserArea" minOccurs="0"/>
+		</xsd:sequence>
+		<xsd:attribute name="vendor" type="VendorType" use="optional"/>
+	</xsd:complexType>
+	<xsd:complexType name="CreditLiabilityType">
+		<xsd:sequence>
+			<xsd:element name="FurtherReviewRequired" type="xsd:boolean" minOccurs="0">
+				<xsd:annotation>
+					<xsd:documentation>Information may need further review.</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+			<xsd:element name="Creditor" type="CreditContactType" minOccurs="0">
+				<xsd:annotation>
+					<xsd:documentation>Organization name of credit grantor</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+			<xsd:element name="AccountClosedDate" type="FlexibleDatesType" minOccurs="0">
+				<xsd:annotation>
+					<xsd:documentation>The date that the credit liability account was closed by the liability holder (by either the borrower or the liability holder).</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+			<xsd:element name="AccountIdentifier" type="xsd:string" minOccurs="0">
+				<xsd:annotation>
+					<xsd:documentation>The account number assigned to the liability account as provided by the credit repository bureau.</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+			<xsd:element name="AccountOpenedDate" type="FlexibleDatesType" minOccurs="0">
+				<xsd:annotation>
+					<xsd:documentation>Date the account was opened.</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+			<xsd:element name="AccountOwnershipType" type="AccountOwnershipTypeType" minOccurs="0">
+				<xsd:annotation>
+					<xsd:documentation>Describes the ownership relation of the borrower(s) to the liability account (i.e. are they solely responsible, jointly responsible, a co-signer on the account, etc.) Also refered to as ECOA Code.</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+			<xsd:element name="AccountPaidDate" type="FlexibleDatesType" minOccurs="0">
+				<xsd:annotation>
+					<xsd:documentation>The date that the credit liability was reported paid to zero by the liability holder.</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+			<xsd:element name="AccountReportedDate" type="FlexibleDatesType" minOccurs="0">
+				<xsd:annotation>
+					<xsd:documentation>The date that the credit liability data was reported by the liability holder.</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+			<xsd:element name="AccountStatusType" type="AccountStatusTypeType" minOccurs="0">
+				<xsd:annotation>
+					<xsd:documentation>Status for an account as of the Account Status Date.</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+			<xsd:element name="AccountStatusDate" type="FlexibleDatesType" minOccurs="0">
+				<xsd:annotation>
+					<xsd:documentation>The Status Date is the date that the accounts Current Rating was CHANGED to that status by the liability holder. If the Current Rating status is Bankruptcy, for example, the Status Date would be when the account first went into bankkruptcy.</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+			<xsd:element name="AccountType" type="AccountTypeType" minOccurs="0">
+				<xsd:annotation>
+					<xsd:documentation>This describes the type of account established with the Liability Account Holder - credit line, installment, mortgage, open, revolving).</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+			<xsd:element name="BalanceDate" type="FlexibleDatesType" minOccurs="0">
+				<xsd:annotation>
+					<xsd:documentation>Balance owed as of date.</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+			<xsd:element name="BalloonPaymentAmount" type="CurrencyAmountType" minOccurs="0">
+				<xsd:annotation>
+					<xsd:documentation>Credit Liability Balloon Payment Amount.</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+			<xsd:element name="CreditLimitAmount" type="CurrencyAmountType" minOccurs="0">
+				<xsd:annotation>
+					<xsd:documentation>The current credit limit for the account as reported by the liability holder.</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+			<xsd:element name="CreditLoanType" type="CreditLoanTypeType" minOccurs="0">
+				<xsd:annotation>
+					<xsd:documentation>This element contains an enumerated list of common loan types. If the loan type is Other, then preceed the description with x:.</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+			<xsd:element name="ChargeOffAmount" type="CurrencyAmountType" minOccurs="0">
+				<xsd:annotation>
+					<xsd:documentation>The amount charged off by a liability holder, usually for an account in collection.</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+			<xsd:element name="CollateralDescription" type="xsd:string" minOccurs="0">
+				<xsd:annotation>
+					<xsd:documentation>A description of any collateral for the loan (for example, 97 Corvette).</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+			<xsd:element name="ConsumerDisputeIndicator" type="xsd:boolean" minOccurs="0">
+				<xsd:annotation>
+					<xsd:documentation>This element indicates whether or not the consumer (borrower) disputes information reported for this account and has filed a FCRA dispute form.</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+			<xsd:element name="CurrentRating" type="CreditRatingType" minOccurs="0">
+				<xsd:annotation>
+					<xsd:documentation>The liability accounts current rating (as of Date Reported) for how timely the borrower has been making payments on this account.</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+			<xsd:element name="DerogatoryDataIndicator" type="xsd:boolean" minOccurs="0">
+				<xsd:annotation>
+					<xsd:documentation>This element indicates whether or not the liability account contains adverse or derogatory information.
+</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+			<xsd:element name="DeferredAccountTerms" minOccurs="0">
+				<xsd:complexType>
+					<xsd:simpleContent>
+						<xsd:extension base="xsd:string">
+							<xsd:attribute name="type" type="DeferredLoanTermsType" use="optional"/>
+						</xsd:extension>
+					</xsd:simpleContent>
+				</xsd:complexType>
+			</xsd:element>
+			<xsd:element name="HighBalanceAmount" type="CurrencyAmountType" minOccurs="0">
+				<xsd:annotation>
+					<xsd:documentation>The highest balance recorded for the account by the liability holder.</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+			<xsd:element name="HighCreditAmount" type="CurrencyAmountType" minOccurs="0">
+				<xsd:annotation>
+					<xsd:documentation>The highest credit limit established for the account by the liability holder. It could be higher than the current credit limit.</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+			<xsd:element name="LastActivityDate" type="FlexibleDatesType" minOccurs="0">
+				<xsd:annotation>
+					<xsd:documentation>The date of last account activity (such as last charge or last payment)reported by the liability holder.</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+			<xsd:element name="MannerOfPayment" type="xsd:string" minOccurs="0">
+				<xsd:annotation>
+					<xsd:documentation>Current Manner of Payment</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+			<xsd:element name="HighestAdverseRating" type="CreditRatingType" minOccurs="0">
+				<xsd:annotation>
+					<xsd:documentation>The most recent date and payment history code of the worst status beyond the current payment history element's contents.</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+			<xsd:element name="LateCount" type="LateDelinquentCountType" minOccurs="0" maxOccurs="unbounded">
+				<xsd:annotation>
+					<xsd:documentation>The number of times the liability account was reported  late by the liability holder. This count will typically cover 30, 60, 90 and 120 days.</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+			<xsd:element name="MostRecentAdverseRating" type="CreditRatingType" minOccurs="0">
+				<xsd:annotation>
+					<xsd:documentation>The most recent amount that the borrower was reported delinquent by the liability holder.</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+			<xsd:element name="OriginalLoanAmount" type="CurrencyAmountType" minOccurs="0">
+				<xsd:annotation>
+					<xsd:documentation>The original amount of the loan.</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+			<xsd:element name="PaymentPattern" type="PaymentPatternType" minOccurs="0">
+				<xsd:annotation>
+					<xsd:documentation>This is a set of previous monthly payment ratings beginning with the Payment Pattern Start Date. </xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+			<xsd:element name="PriorAdverseRating" type="CreditRatingType" minOccurs="0" maxOccurs="unbounded"/>
+			<xsd:element name="ActualPaymentAmount" type="CurrencyAmountType" minOccurs="0">
+				<xsd:annotation>
+					<xsd:documentation>The monthly amount the consumer has paid or is scheduled to pay.</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+			<xsd:element name="EstimatedPaymentAmount" type="CurrencyAmountType" minOccurs="0">
+				<xsd:annotation>
+					<xsd:documentation>The estimated monthly amount the consumer will pay or is scheduled to pay.</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+			<xsd:element name="ScheduledPaymentAmount" type="CurrencyAmountType" minOccurs="0">
+				<xsd:annotation>
+					<xsd:documentation>The monthly amount the consumer  is scheduled to pay.</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+			<xsd:element name="MonthsReviewedCount" type="xsd:integer" minOccurs="0">
+				<xsd:annotation>
+					<xsd:documentation>The number of months of account history reported by the liability holder. This is the period over which Late Counts are accumulated.</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+			<xsd:element name="PastDueAmount" type="CurrencyAmountType" minOccurs="0">
+				<xsd:annotation>
+					<xsd:documentation>The amount that the borrower is currently past due as reported by the liability holder.</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+			<xsd:element name="PaymentLevelDate" type="FlexibleDatesType" minOccurs="0">
+				<xsd:annotation>
+					<xsd:documentation>The date the account first reached the present status level.</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+			<xsd:element name="PaymentStatus" minOccurs="0">
+				<xsd:annotation>
+					<xsd:documentation>Comments reflecting the payment history of the account as of the balance date.</xsd:documentation>
+				</xsd:annotation>
+				<xsd:complexType>
+					<xsd:sequence>
+						<xsd:element name="Description" type="xsd:string" minOccurs="0">
+							<xsd:annotation>
+								<xsd:documentation>Comments reflecting the payment history of the account as of the balance date.</xsd:documentation>
+							</xsd:annotation>
+						</xsd:element>
+						<xsd:element name="Code" type="xsd:string" minOccurs="0">
+							<xsd:annotation>
+								<xsd:documentation>Repository code identifying the payment history of the account as of the balance date.</xsd:documentation>
+							</xsd:annotation>
+						</xsd:element>
+					</xsd:sequence>
+				</xsd:complexType>
+			</xsd:element>
+			<xsd:element name="TermsDescription" type="xsd:string" minOccurs="0">
+				<xsd:annotation>
+					<xsd:documentation>A text description for the loan terms (for example, 360 months at $820 per month).</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+			<xsd:element name="TermsMonthsCount" type="xsd:positiveInteger" minOccurs="0">
+				<xsd:annotation>
+					<xsd:documentation>The total number of months established as terms for repayment of a loan.</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+			<xsd:element name="TermsSourceType" minOccurs="0">
+				<xsd:annotation>
+					<xsd:documentation>Indicates whether the monthly payment terms amount was provided by the repository bureau, or calculated by the credit bureau.</xsd:documentation>
+				</xsd:annotation>
+				<xsd:simpleType>
+					<xsd:restriction base="xsd:string">
+						<xsd:enumeration value="Calculated"/>
+						<xsd:enumeration value="Provided"/>
+					</xsd:restriction>
+				</xsd:simpleType>
+			</xsd:element>
+			<xsd:element name="UnpaidBalanceAmount" type="CurrencyAmountType" minOccurs="0">
+				<xsd:annotation>
+					<xsd:documentation>The balance owed on a liability account as of the Date Reported by a repository bureau or credit bureau.</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+			<xsd:element name="AdditionalItems" type="FlexibleDetailType" minOccurs="0" maxOccurs="unbounded">
+				<xsd:annotation>
+					<xsd:documentation>Contains the individual unparsed lines of credit information. </xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+			<xsd:element name="InformationalMessage" type="MessagesType" minOccurs="0" maxOccurs="unbounded">
+				<xsd:annotation>
+					<xsd:documentation>Informational messages provided by the organization granting the credit.</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+			<!-- <xsd:element name="CreditAmount" maxOccurs="2"> -->
+		</xsd:sequence>
+		<xsd:attribute name="liabilityType" type="xsd:string" use="optional"/>
+		<xsd:attribute name="vendor" type="VendorType" use="optional"/>
+	</xsd:complexType>
+	<xsd:complexType name="LateDelinquentCountType">
+		<xsd:simpleContent>
+			<xsd:extension base="xsd:nonNegativeInteger">
+				<xsd:attribute name="duration" type="xsd:duration" use="required"/>
+			</xsd:extension>
+		</xsd:simpleContent>
+	</xsd:complexType>
+</xsd:schema>

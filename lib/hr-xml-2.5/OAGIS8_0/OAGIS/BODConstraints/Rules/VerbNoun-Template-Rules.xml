@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sch:schema xmlns="http://www.ascc.net/xml/schematron" xmlns:oa="http://www.openapplications.org/oagis" xmlns:sch="http://www.ascc.net/xml/schematron" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.ascc.net/xml/schematron ../../../Utility/Schematron/schematron1-5.xsd">
+	<sch:title>Schematron Validator for OAGI Constraints</sch:title>
+	<sch:ns prefix="oa" uri="http://www.openapplications.org/oagis"/>
+	<sch:pattern name="Update InventoryBalance">
+		<sch:rule context="oa:InventoryBalance">
+			<sch:assert test="oa:Header">Must have a Header component.</sch:assert>
+			<sch:assert test="oa:Detail">Must have at least one Detail component.</sch:assert>
+		</sch:rule>
+	</sch:pattern>
+</sch:schema>

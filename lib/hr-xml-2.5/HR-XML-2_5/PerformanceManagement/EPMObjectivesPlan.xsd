@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- edited with XMLSpy v2006 rel. 3 sp1 (http://www.altova.com) by Chuck Allen (HR-XML Consortium, Inc.) -->
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="http://ns.hr-xml.org/2007-04-15" targetNamespace="http://ns.hr-xml.org/2007-04-15" elementFormDefault="qualified" version="2007-04-15">
+	<xsd:annotation>
+		<xsd:documentation>
+"Copyright  The HR-XML Consortium. All Rights Reserved. http://www.hr-xml.org"
+Name: EPMResult.xsd
+Status: Draft
+Date this version: 2007-04-15
+Author(s): Performance Management Work Group
+Documentation: 
+
+Terms of license can be found in license.txt.
+
+		
+		</xsd:documentation>
+	</xsd:annotation>
+	<xsd:import namespace="http://www.w3.org/XML/1998/namespace" schemaLocation="../../W3C/xml.xsd"/>
+	<xsd:include schemaLocation="../PerformanceManagement/RaterPanelInfo.xsd"/>
+	<xsd:include schemaLocation="../PerformanceManagement/EPMTypes.xsd"/>
+	<xsd:element name="EPMObjectivesPlan" type="EPMObjectivesPlanType"/>
+</xsd:schema>

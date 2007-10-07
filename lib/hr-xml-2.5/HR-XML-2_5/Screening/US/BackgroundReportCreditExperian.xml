@@ -1,0 +1,607 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<BackgroundReports xmlns="http://ns.hr-xml.org/2007-04-15" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://ns.hr-xml.org/2007-04-15  BackgroundReports.xsd" userId="" password="" account="" location="" version="2007-04-15" xml:lang="en">
+	<ProviderReferenceId idOwner="Hirecheck">
+		<IdValue>0178567</IdValue>
+	</ProviderReferenceId>
+	<!--
+Sample XML depicting the text and parsed results of a Experian Credit Search. 
+-->
+	<BackgroundReportPackage type="report">
+		<ClientReferenceId>
+			<IdValue>bec61f0f-aaa9-4211-8e49-18d603c76cd0</IdValue>
+		</ClientReferenceId>
+		<CopyToApplicant>true</CopyToApplicant>
+		<ScreeningsSummary>
+			<Organization type="Vendor">
+				<OrganizationName>First Advantage</OrganizationName>
+				<ContactMethod>
+					<Use>business</Use>
+					<Location>office</Location>
+					<Telephone>
+						<FormattedNumber>1-800-321-4473</FormattedNumber>
+					</Telephone>
+				</ContactMethod>
+			</Organization>
+			<PersonalData type="Current">
+				<PersonName type="Subject">
+					<GivenName>JOHN</GivenName>
+					<MiddleName>C</MiddleName>
+					<FamilyName primary="undefined" prefix="">DOE</FamilyName>
+				</PersonName>
+				<PostalAddress type="undefined">
+					<CountryCode>US</CountryCode>
+					<PostalCode>21216-5370</PostalCode>
+					<Region>MD</Region>
+					<Municipality>BALTIMORE</Municipality>
+					<DeliveryAddress>
+						<StreetName>9001 CRENS AVE</StreetName>
+						<Unit>APT B</Unit>
+					</DeliveryAddress>
+				</PostalAddress>
+				<DemographicDetail>
+					<GovernmentId countryCode="US" issuingAuthority="SSN">515-77-5222</GovernmentId>
+				</DemographicDetail>
+			</PersonalData>
+			<ClientReferences>
+				<IdValue name="BillingCode">176-345</IdValue>
+			</ClientReferences>
+		</ScreeningsSummary>
+		<Screenings>
+			<Screening type="credit">
+				<ProviderReferenceId>
+					<IdValue>900XXX0C0</IdValue>
+				</ProviderReferenceId>
+				<ClientReferenceId>
+					<IdValue>B0019474MV</IdValue>
+				</ClientReferenceId>
+				<ScreeningStatus>
+					<OrderStatus>Completed</OrderStatus>
+					<ResultStatus>Fail</ResultStatus>
+					<DateOrderReceived>2002-07-26</DateOrderReceived>
+				</ScreeningStatus>
+				<CountryCode>US</CountryCode>
+				<Region>VA</Region>
+				<Vendor>experian</Vendor>
+				<ScreeningResults type="results" mediaType="txt" resultType="report">
+					<Text>DISCLAIMER
+
+     Information contained herein should not be the sole determination in 
+     evaluation of this individual.  All other factors, references and 
+     current situations should be considered.  Human error in compiling 
+     this information is possible.  The FCRA requires certain actions if 
+     you take adverse action based in whole or in part on this report.
+     See your Help File, the FCRA or call for procedures.
+
+
+                       CREDIT BUREAU  SEARCH - EXPERIAN
+
+PAGE 1   DATE 12-03-2001  TIME 11:44:04  P@FEP  V701  TNC1
+
+*JOHN C DOE                           SS: 515-77-5222 E: SUSSE CHALET
+*9001 CRENS AVE APT B                 577-11-4444*    RPTD: 2-98 I
+ BALTIMORE MD 21216-5370
+ RPTD: 1-99 TO 4-01 U 1X                              E: THE BALTIMORE
+ LAST SUB: 1983405                                    205 W MADISON ST
+                                                      BALTIMORE MD
+*4211 BERG AVE APT A                                  RPTD: 10-95 I
+ BALTIMORE MD 27216-3640
+ RPTD: 9-99 U 1X
+
+*PO BOX 19999
+ BALTIMORE MD 27206-0599
+ RPTD: 6-99 U 1X
+
+*DOE JOHN, JAKE CAMPBELL
+
+ ------------------------------ PROFILE SUMMARY -------------------------------
+                                                                CNT 12/05/02/30
+ PUBLIC RECORDS-------3  PAST DUE AMT----$4,494  INQUIRIES---3  SATIS ACCTS---3
+ INSTALL BAL----$17,616  SCH/EST PAY---------$0+ INQS/6 MO---1  NOW DEL/DRG---7
+ R ESTATE BAL-------N/A  R ESTATE PAY-------N/A  TRADELINE---10 WAS DEL/DRG---1
+ TOT REV BAL-------$393  TOT REV AVAIL-----100%  PAID ACCT---2  OLD TRADE-11-95
+
+ ------------------------------- PUBLIC RECORDS -------------------------------
+*BALTIMORE CO DISTRICT     7-31-01            1010573     $7,848    CIV CL JUDG
+ D#: 1999990                  0   PLAINTIFF: USAA PROPERTY &amp; CASUALTY INS CO
+
+*US BKPT CT CO DENVER     12-17-01   4-09-02  3001009               BK 7-DISCHG
+ D#: 0128116DEC               2                                           
+
+*US BKPT CT IL CHICAGO    10-28-02            2001000   $355,498-L  BK 13-PETIT
+ D#: 02B42234                 1                         $301,850-A        
+
+ ----------------------------------- TRADES -----------------------------------
+ SUBSCRIBER                 OPEN    AMT-TYP1    AMT-TYP2 ACCTCOND   PYMT STATUS
+ SUB#   KOB TYP TRM ECOA BALDATE     BALANCE   PYMT LEVEL MOS REV  PYMT HISTORY
+                         LAST PD   MONTH PAY    PAST DUE  MAXIMUM    BY MONTH
+
+*WORLD BOOK FINANCE INC     4-97    $1,905-L    $1,905-C CHARGOFF    DELINQ 120
+ 2394090 ZR C/C LOC   1 11-30-99                 12-97       (31) LLLLLLLLLLLLL
+                                                $2,221             LLLLLLLLLLL4
+
+*AT&amp;T WIRELESS SERVICES    10-99      $393-H      $393-C CHARGOFF    30 2 TIMES
+ 1995676 UW CEL   1   1 11-15-00      $393       11-00       (10) L1100000-0
+                            6-00                  $393
+
+*CREDIT MANAGEMENT INC      9-01      $258-O                           COLLACCT
+ 3980798 YC COL   1   1 11-09-01      $258       11-01       (1)  G
+                                                  $258
+ ORIGINAL CREDITOR: TIME WARNER CABLE
+
+ +++++ MORE
+
+
+
+
+
+
+
+
+PAGE 2   DATE 12-03-2001  TIME 11:44:04  P@FEP  V701  TNC1
+
+ SUBSCRIBER                 OPEN    AMT-TYP1    AMT-TYP2 ACCTCOND   PYMT STATUS
+ SUB#   KOB TYP TRM ECOA BALDATE     BALANCE   PYMT LEVEL MOS REV  PYMT HISTORY
+                         LAST PD   MONTH PAY    PAST DUE  MAXIMUM    BY MONTH
+
+*CORNERSTONE CREDIT COR     2-99      $161-O                           COLLACCT
+ 1983405 YC COL   1   1  2-28-01      $161        2-01       (1)  G
+
+ ORIGINAL CREDITOR: STORAGE USA ESSEX
+
+*CREDIT MANAGEMENT INC       UNK      $405-O                           COLLACCT
+ 3980798 YC COL  10   1 10-31-99      $255        8-99       (3)  G-G
+                            5-99                  $255
+ ORIGINAL CREDITOR: TCI COMMUNICATIONS OF BALTIMOR
+ ** Account payments being managed by credit counsel service **
+
+*DAIMLERCHRYSLERLLC         2-98   $15,849-O             REPOSESS   60 4+ TIMES
+ 1630283 FA AUT  60   2  5-31-99   $16,942        5-99       (17) K221221111111
+                            2-99                $1,261             CCCC
+
+ STUDENT LOAN MKT ASSN     11-95    $1,750-O                 PAID     CURR ACCT
+ 9994280 EL EDU UNK   1 12-31-97                 12-97       (26) B000000000000
+                                                                   0000------0C
+
+ STUDENT LOAN MKT ASSN     11-95    $2,667-O                 PAID     CURR ACCT
+ 9994280 EL EDU UNK   1 12-31-97                 12-97       (26) B000000000000
+                                                                   0000-----0CC
+
+*AT&amp;T WIRELESS SERVICE      6-00      $311-H                 OPEN    30 DAY DEL
+ 1940401 UW CEL   1   1 10-15-00                 10-00       (2)  10
+                                                  $106
+
+ PROVIDIAN FINANCIAL        2-00      $100-L      $184-H   CLOSED    CUR WAS 90
+ 3206440 BC SCC REV   1  5-31-02                  5-02       (28) B000000000000
+                                                                   000000000C32
+ ** ACCOUNT CLOSED AT CONSUMER'S REQUEST **
+
+ --------------------------------- INQUIRIES ----------------------------------
+ MARRIOTT EMP FCU        7-11-01  1770369 FC        UNK     
+ BANK OF AMERICA        10-23-00  1195361 BB                
+ BANK OF AMERICA         3-07-00  1181024 BB                
+ FAC/CPS                 4-15-02  0604280 FA        UNK AUT 
+
+
+                               END-OF-REPORT</Text>
+				</ScreeningResults>
+				<CreditReport>
+					<ProcessedDate>
+						<AnyDate>2001-12-03T11:44:04</AnyDate>
+					</ProcessedDate>
+					<CreditFile vendor="experian">
+						<PersonalData type="Current" idSource="1220855" enteredOnInquiry="false">
+							<PersonName type="Subject">
+								<GivenName>JOHN</GivenName>
+								<MiddleName>C</MiddleName>
+								<FamilyName primary="undefined" prefix="">DOE</FamilyName>
+							</PersonName>
+							<PostalAddress type="undefined" current="true" enteredOnInquiry="false">
+								<CountryCode>US</CountryCode>
+								<PostalCode>21216-5370</PostalCode>
+								<Region>MD</Region>
+								<Municipality>BALTIMORE</Municipality>
+								<DeliveryAddress>
+									<StreetName>9001 CRENS AVE</StreetName>
+									<Unit>APT B</Unit>
+								</DeliveryAddress>
+								<ReportedDate type="Update" timesReported="1X">
+									<EffectiveDate>
+										<StartDate>
+											<YearMonth>1999-01</YearMonth>
+										</StartDate>
+										<EndDate>
+											<YearMonth>2001-04</YearMonth>
+										</EndDate>
+									</EffectiveDate>
+								</ReportedDate>
+								<LastReportedBy>1983405</LastReportedBy>
+							</PostalAddress>
+							<PostalAddress type="undefined" current="false" enteredOnInquiry="false">
+								<CountryCode>US</CountryCode>
+								<PostalCode>27216-3640</PostalCode>
+								<Region>MD</Region>
+								<Municipality>BALTIMORE</Municipality>
+								<DeliveryAddress>
+									<StreetName>4211 BERG AVE</StreetName>
+									<Unit>APT A</Unit>
+								</DeliveryAddress>
+								<ReportedDate type="Update" timesReported="1X">
+									<EffectiveDate>
+										<StartDate>
+											<YearMonth>1999-09</YearMonth>
+										</StartDate>
+									</EffectiveDate>
+								</ReportedDate>
+							</PostalAddress>
+							<PostalAddress type="undefined" current="false" enteredOnInquiry="false">
+								<CountryCode>US</CountryCode>
+								<PostalCode>27206-0599</PostalCode>
+								<Region>MD</Region>
+								<Municipality>BALTIMORE</Municipality>
+								<DeliveryAddress>
+									<PostOfficeBox>19999</PostOfficeBox>
+								</DeliveryAddress>
+								<ReportedDate type="Update" timesReported="1X">
+									<EffectiveDate>
+										<StartDate>
+											<YearMonth>1999-09</YearMonth>
+										</StartDate>
+									</EffectiveDate>
+								</ReportedDate>
+							</PostalAddress>
+							<DemographicDetail>
+								<GovernmentId countryCode="US" issuingAuthority="SSN">515-77-5222</GovernmentId>
+								<OtherId countryCode="US" issuingAuthority="SSN" type="*">577-11-4444</OtherId>
+							</DemographicDetail>
+						</PersonalData>
+						<EmploymentInformation type="Unknown">
+							<OrganizationName>SUSSE CHALET</OrganizationName>
+							<PostalAddress type="undefined">
+								<CountryCode>US</CountryCode>
+								<ReportedDate type="Inquiry">
+									<EffectiveDate>
+										<StartDate>
+											<YearMonth>1998-02</YearMonth>
+										</StartDate>
+									</EffectiveDate>
+								</ReportedDate>
+							</PostalAddress>
+						</EmploymentInformation>
+						<EmploymentInformation type="Unknown">
+							<OrganizationName>THE BALTIMORE</OrganizationName>
+							<PostalAddress type="undefined">
+								<CountryCode>US</CountryCode>
+								<Region>MD</Region>
+								<Municipality>BALTIMORE</Municipality>
+								<DeliveryAddress>
+									<StreetName>205 W MADISON ST</StreetName>
+								</DeliveryAddress>
+								<ReportedDate type="Inquiry">
+									<EffectiveDate>
+										<StartDate>
+											<YearMonth>1995-10</YearMonth>
+										</StartDate>
+									</EffectiveDate>
+								</ReportedDate>
+							</PostalAddress>
+						</EmploymentInformation>
+						<ReportedAliases>
+							<PersonName type="Alias">
+								<FormattedName>DOE JOHN</FormattedName>
+							</PersonName>
+							<PersonName type="Alias">
+								<FormattedName>JAKE CAMPBELL</FormattedName>
+							</PersonName>
+						</ReportedAliases>
+					</CreditFile>
+					<!--
+For brevity,  all Liabilities were not included.  
+-->
+					<CreditLiability vendor="experian">
+						<FurtherReviewRequired>true</FurtherReviewRequired>
+						<Creditor>
+							<OrganizationName>WORLD BOOK FINANCE INC</OrganizationName>
+							<OrganizationId idOwner="experian">
+								<IdValue>2394090</IdValue>
+							</OrganizationId>
+							<CreditBusinessType>
+								<RepositoryCode>ZR</RepositoryCode>
+								<RepositoryValue>Retail, Not Elsewhere Classified</RepositoryValue>
+							</CreditBusinessType>
+						</Creditor>
+						<AccountOpenedDate>
+							<YearMonth>1997-04</YearMonth>
+						</AccountOpenedDate>
+						<AccountOwnershipType>
+							<Value>Individual</Value>
+							<RepositoryCode>1</RepositoryCode>
+							<RepositoryValue>Individual</RepositoryValue>
+						</AccountOwnershipType>
+						<AccountType>
+							<Value>CreditLine</Value>
+							<RepositoryCode>C/C</RepositoryCode>
+							<RepositoryValue>Check Credit Or Line Of Credit</RepositoryValue>
+						</AccountType>
+						<BalanceDate>
+							<AnyDate>1999-11-30</AnyDate>
+						</BalanceDate>
+						<CreditLimitAmount currency="USD">1905</CreditLimitAmount>
+						<ChargeOffAmount currency="USD">1905</ChargeOffAmount>
+						<CurrentRating>
+							<Code>97</Code>
+							<Type>ChargeOff</Type>
+							<Amount currency="USD">1905</Amount>
+						</CurrentRating>
+						<PaymentPattern>
+							<Data>LLLLLLLLLLLLLLLLLLLLLLLL4</Data>
+						</PaymentPattern>
+						<MonthsReviewedCount>31</MonthsReviewedCount>
+						<PastDueAmount currency="USD">2221</PastDueAmount>
+						<PaymentLevelDate>
+							<YearMonth>1997-12</YearMonth>
+						</PaymentLevelDate>
+						<PaymentStatus>
+							<Description>DELINQ 120</Description>
+						</PaymentStatus>
+						<TermsDescription>LOC</TermsDescription>
+					</CreditLiability>
+					<CreditLiability vendor="experian">
+						<FurtherReviewRequired>true</FurtherReviewRequired>
+						<Creditor>
+							<OrganizationName>AT&amp;T WIRELESS SERVICES</OrganizationName>
+							<OrganizationId idOwner="experian">
+								<IdValue>1995676</IdValue>
+							</OrganizationId>
+							<CreditBusinessType>
+								<RepositoryCode>UW</RepositoryCode>
+								<RepositoryValue>Wireless telephone svc</RepositoryValue>
+							</CreditBusinessType>
+						</Creditor>
+						<AccountOpenedDate>
+							<YearMonth>1999-10</YearMonth>
+						</AccountOpenedDate>
+						<AccountOwnershipType>
+							<Value>Individual</Value>
+							<RepositoryCode>1</RepositoryCode>
+							<RepositoryValue>Individual</RepositoryValue>
+						</AccountOwnershipType>
+						<AccountType>
+							<RepositoryCode>CEL</RepositoryCode>
+							<RepositoryValue>Cellular</RepositoryValue>
+						</AccountType>
+						<BalanceDate>
+							<AnyDate>2000-11-15</AnyDate>
+						</BalanceDate>
+						<ChargeOffAmount currency="USD">393</ChargeOffAmount>
+						<CurrentRating>
+							<Code>97</Code>
+							<Type>ChargeOff</Type>
+							<Amount currency="USD">393</Amount>
+						</CurrentRating>
+						<HighCreditAmount currency="USD">393</HighCreditAmount>
+						<LastActivityDate>
+							<YearMonth>2000-06</YearMonth>
+						</LastActivityDate>
+						<PaymentPattern>
+							<Data>L1100000-0</Data>
+						</PaymentPattern>
+						<MonthsReviewedCount>10</MonthsReviewedCount>
+						<PastDueAmount currency="USD">393</PastDueAmount>
+						<PaymentLevelDate>
+							<YearMonth>2000-11</YearMonth>
+						</PaymentLevelDate>
+						<PaymentStatus>
+							<Description>30 2 TIMES</Description>
+						</PaymentStatus>
+						<TermsDescription>1</TermsDescription>
+						<UnpaidBalanceAmount currency="USD">393</UnpaidBalanceAmount>
+					</CreditLiability>
+					<CreditLiability vendor="experian">
+						<FurtherReviewRequired>true</FurtherReviewRequired>
+						<Creditor>
+							<OrganizationName>CORNERSTONE CREDIT COR</OrganizationName>
+							<OriginalOrganizationName>STORAGE USA ESSEX</OriginalOrganizationName>
+							<OrganizationId idOwner="experian">
+								<IdValue>1983405</IdValue>
+							</OrganizationId>
+							<CreditBusinessType>
+								<Value>CollectionServices</Value>
+								<RepositoryCode>YC</RepositoryCode>
+								<RepositoryValue>Other collection agencies</RepositoryValue>
+							</CreditBusinessType>
+						</Creditor>
+						<AccountOpenedDate>
+							<YearMonth>1999-02</YearMonth>
+						</AccountOpenedDate>
+						<AccountOwnershipType>
+							<Value>Individual</Value>
+							<RepositoryCode>1</RepositoryCode>
+							<RepositoryValue>Individual</RepositoryValue>
+						</AccountOwnershipType>
+						<AccountType>
+							<RepositoryCode>COL</RepositoryCode>
+							<RepositoryValue>Collection Department/Agency/Attorney</RepositoryValue>
+						</AccountType>
+						<BalanceDate>
+							<AnyDate>2000-02-28</AnyDate>
+						</BalanceDate>
+						<OriginalLoanAmount currency="USD">161</OriginalLoanAmount>
+						<PaymentPattern>
+							<Data>G</Data>
+						</PaymentPattern>
+						<MonthsReviewedCount>1</MonthsReviewedCount>
+						<PaymentLevelDate>
+							<YearMonth>2001-02</YearMonth>
+						</PaymentLevelDate>
+						<PaymentStatus>
+							<Description>COLLACCT</Description>
+						</PaymentStatus>
+						<TermsDescription>1</TermsDescription>
+						<UnpaidBalanceAmount currency="USD">161</UnpaidBalanceAmount>
+						<InformationalMessage type="Comment" vendor="experian">
+							<MessageClassification>CreditBureau</MessageClassification>
+							<Text>Account payments being managed by credit counsel service</Text>
+							<RepositoryCode>11</RepositoryCode>
+						</InformationalMessage>
+					</CreditLiability>
+					<CreditLiability vendor="experian">
+						<FurtherReviewRequired>true</FurtherReviewRequired>
+						<Creditor>
+							<OrganizationName>CREDIT MANAGEMENT INC</OrganizationName>
+							<OriginalOrganizationName>TCI COMMUNICATIONS OF BALTIMOR</OriginalOrganizationName>
+							<OrganizationId idOwner="experian">
+								<IdValue>3980798</IdValue>
+							</OrganizationId>
+							<CreditBusinessType>
+								<Value>CollectionServices</Value>
+								<RepositoryCode>YC</RepositoryCode>
+								<RepositoryValue>Other collection agencies</RepositoryValue>
+							</CreditBusinessType>
+						</Creditor>
+						<AccountOpenedDate>
+							<AnyDate>notKnown</AnyDate>
+						</AccountOpenedDate>
+						<AccountOwnershipType>
+							<Value>Individual</Value>
+							<RepositoryCode>1</RepositoryCode>
+							<RepositoryValue>Individual</RepositoryValue>
+						</AccountOwnershipType>
+						<AccountType>
+							<RepositoryCode>COL</RepositoryCode>
+							<RepositoryValue>Collection Department/Agency/Attorney</RepositoryValue>
+						</AccountType>
+						<BalanceDate>
+							<AnyDate>1999-10-31</AnyDate>
+						</BalanceDate>
+						<LastActivityDate>
+							<YearMonth>1999-05</YearMonth>
+						</LastActivityDate>
+						<OriginalLoanAmount currency="USD">405</OriginalLoanAmount>
+						<PaymentPattern>
+							<Data>G-G</Data>
+						</PaymentPattern>
+						<MonthsReviewedCount>3</MonthsReviewedCount>
+						<PastDueAmount currency="USD">255</PastDueAmount>
+						<PaymentLevelDate>
+							<YearMonth>1999-08</YearMonth>
+						</PaymentLevelDate>
+						<PaymentStatus>
+							<Description>COLLACCT</Description>
+						</PaymentStatus>
+						<TermsDescription>10</TermsDescription>
+						<UnpaidBalanceAmount currency="USD">255</UnpaidBalanceAmount>
+					</CreditLiability>
+					<PublicRecord vendor="experian">
+						<FurtherReviewRequired>true</FurtherReviewRequired>
+						<AccountOwnershipType>
+							<Value>Undesignated</Value>
+							<RepositoryCode>0</RepositoryCode>
+							<RepositoryValue>Undesignated: Reported by Experian only.</RepositoryValue>
+						</AccountOwnershipType>
+						<AgencyReference type="Docket">
+							<IdValue name="">1999990</IdValue>
+						</AgencyReference>
+						<CourtName>BALTIMORE CO DISTRICT</CourtName>
+						<CourtNumber>1010573</CourtNumber>
+						<FilingDate>
+							<AnyDate>2001-07-31</AnyDate>
+						</FilingDate>
+						<LegalObligationAmount currency="USD">7848</LegalObligationAmount>
+						<PlaintiffName>USAA PROPERTY &amp; CASUALTY INS CO</PlaintiffName>
+						<PublicRecordType>x:CIV CL JUDG</PublicRecordType>
+					</PublicRecord>
+					<PublicRecord vendor="experian">
+						<FurtherReviewRequired>true</FurtherReviewRequired>
+						<AccountOwnershipType>
+							<Value>JointContractualLiability</Value>
+							<RepositoryCode>2</RepositoryCode>
+							<RepositoryValue>Joint Account</RepositoryValue>
+						</AccountOwnershipType>
+						<AgencyReference type="Docket">
+							<IdValue name="">0128116DEC</IdValue>
+						</AgencyReference>
+						<CourtName>US BKPT CT CO DENVER</CourtName>
+						<CourtNumber>3001009</CourtNumber>
+						<FilingDate>
+							<AnyDate>2001-12-17</AnyDate>
+						</FilingDate>
+						<PublicRecordType>BankruptcyChapter7</PublicRecordType>
+						<StatusDate>
+							<AnyDate>2002-04-09</AnyDate>
+						</StatusDate>
+					</PublicRecord>
+					<PublicRecord vendor="experian">
+						<FurtherReviewRequired>true</FurtherReviewRequired>
+						<AccountOwnershipType>
+							<Value>Individual</Value>
+							<RepositoryCode>1</RepositoryCode>
+							<RepositoryValue>Individual</RepositoryValue>
+						</AccountOwnershipType>
+						<AgencyReference type="Docket">
+							<IdValue name="">02B42234</IdValue>
+						</AgencyReference>
+						<BankruptcyAssetsAmount currency="USD">301850</BankruptcyAssetsAmount>
+						<BankruptcyLiabilitiesAmount currency="USD">355498</BankruptcyLiabilitiesAmount>
+						<CourtName>US BKPT CT IL CHICAGO</CourtName>
+						<CourtNumber>1010573</CourtNumber>
+						<FilingDate>
+							<AnyDate>2002-10-28</AnyDate>
+						</FilingDate>
+						<PublicRecordType>x:BK 13-PETIT</PublicRecordType>
+					</PublicRecord>
+					<!--
+For brevity,  all Inquiries were not included.  
+-->
+					<CreditInquiry vendor="experian">
+						<InquiryDate>
+							<AnyDate>2001-07-11</AnyDate>
+						</InquiryDate>
+						<InquiringOrganization>
+							<OrganizationName>MARRIOTT EMP FCU</OrganizationName>
+							<OrganizationId idOwner="experian">
+								<IdValue>1770369</IdValue>
+							</OrganizationId>
+							<CreditBusinessType>
+								<Value>Banking</Value>
+								<RepositoryCode>FC</RepositoryCode>
+								<RepositoryValue>Credit unions</RepositoryValue>
+							</CreditBusinessType>
+						</InquiringOrganization>
+					</CreditInquiry>
+					<CreditSummary vendor="experian">
+						<BalanceAmount>
+							<TotalAmount currency="USD">17616</TotalAmount>
+							<RevolvingAmount currency="USD">393</RevolvingAmount>
+						</BalanceAmount>
+						<ClosedAccounts>3</ClosedAccounts>
+						<DelinquencyCounters>
+							<DelinquentCount duration="P30D">12</DelinquentCount>
+							<DelinquentCount duration="P60D">5</DelinquentCount>
+							<DelinquentCount duration="P90D">2</DelinquentCount>
+							<DelinquentCount duration="P120D">30</DelinquentCount>
+							<CurrentNegativeCount>7</CurrentNegativeCount>
+							<PreviousNegativeCount>1</PreviousNegativeCount>
+						</DelinquencyCounters>
+						<InquiriesCount>3</InquiriesCount>
+						<OldestTradeDate>
+							<YearMonth>1995-11</YearMonth>
+						</OldestTradeDate>
+						<PaidAccounts>2</PaidAccounts>
+						<PastDueBalance>
+							<TotalAmount currency="USD">4494</TotalAmount>
+						</PastDueBalance>
+						<PaymentAmount>
+							<TotalAmount currency="USD">0</TotalAmount>
+						</PaymentAmount>
+						<PeriodInquiries>1</PeriodInquiries>
+						<PublicRecords>3</PublicRecords>
+						<RealEstateBalance currency="USD">0</RealEstateBalance>
+						<RealEstatePaymentAmount currency="USD">0</RealEstatePaymentAmount>
+						<RevolvingAvailablePercent>100</RevolvingAvailablePercent>
+						<TradesOrOther>10</TradesOrOther>
+					</CreditSummary>
+				</CreditReport>
+			</Screening>
+		</Screenings>
+	</BackgroundReportPackage>
+</BackgroundReports>

@@ -1,0 +1,182 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Enrollment xmlns="http://ns.hr-xml.org/2007-04-15" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://ns.hr-xml.org/2007-04-15 Enrollment.xsd" transactionType="Change" creationDate="2004-02-03T17:45:40-05:00" originatorId="382235791" originatorName="Hewitt Associates LLC" baselineDate="2004-02-03" recipientId="411289245 ">
+	<Organization organizationName="5977 ">
+		<BenefitsAdministrativeAffiliate>
+			<OrganizationName>Hewitt Associates LLC</OrganizationName>
+			<EntityRole>Third Party Administrator</EntityRole>
+			<IdentificationCode>
+				<IdValue name="Mutually Defined">382235791</IdValue>
+			</IdentificationCode>
+		</BenefitsAdministrativeAffiliate>
+		<Subscriber>
+			<SubscriberType>
+				<SubscriberTypeCode>Employment</SubscriberTypeCode>
+				<StartDate>2004-01-01</StartDate>
+			</SubscriberType>
+			<Person>
+				<IdentificationCode>
+					<IdValue name="SocialSecurityNumber">536403123</IdValue>
+				</IdentificationCode>
+				<PersonName>
+					<GivenName>JOE</GivenName>
+					<MiddleName/>
+					<FamilyName>THOMPSON</FamilyName>
+				</PersonName>
+				<Gender>1</Gender>
+				<DateOfBirth>1970-06-22</DateOfBirth>
+				<ContactInformation>
+					<Use>personal</Use>
+					<PostalAddress type="streetAddress">
+						<CountryCode>US</CountryCode>
+						<PostalCode>61043</PostalCode>
+						<Region>IL</Region>
+						<Municipality>OAKWOOD</Municipality>
+						<DeliveryAddress>
+							<AddressLine>143 MAIN ST.</AddressLine>
+							<AddressLine/>
+							<AddressLine/>
+						</DeliveryAddress>
+					</PostalAddress>
+				</ContactInformation>
+			</Person>
+			<Coverage>
+				<TierCoverage type="Health">
+					<TransactionCode>Change</TransactionCode>
+					<ElectedPlanCode>11</ElectedPlanCode>
+					<GroupNumber>022574900320032TTXX</GroupNumber>
+					<COBRAStatus>non-COBRA</COBRAStatus>
+					<StartDate>2004-01-01</StartDate>
+					<CoverageLevel>
+						<CoverageLevelCode>Family</CoverageLevelCode>
+						<StartDate>2004-02-01</StartDate>
+					</CoverageLevel>
+					<EligibilityPostalCode>61043</EligibilityPostalCode>
+				</TierCoverage>
+			</Coverage>
+			<Employment employeeId="428408">
+				<EmploymentStatus>
+					<EmploymentStatusCode>Active</EmploymentStatusCode>
+					<StartDate>2004-01-01</StartDate>
+				</EmploymentStatus>
+				<HireDate>2004-01-01</HireDate>
+			</Employment>
+			<BenefitReportingInformation>
+				<BenefitReportingType>Reporting Field 1</BenefitReportingType>
+				<BenefitReportingValue>0032</BenefitReportingValue>
+				<StartDate>2004-01-01</StartDate>
+			</BenefitReportingInformation>
+			<BenefitReportingInformation>
+				<BenefitReportingType>Reporting Field 2</BenefitReportingType>
+				<BenefitReportingValue>001278</BenefitReportingValue>
+				<StartDate>2004-01-01</StartDate>
+			</BenefitReportingInformation>
+			<BenefitReportingInformation>
+				<BenefitReportingType>Reporting Field 3</BenefitReportingType>
+				<BenefitReportingValue>TF1</BenefitReportingValue>
+				<StartDate>2004-01-01</StartDate>
+			</BenefitReportingInformation>
+			<BenefitReportingInformation>
+				<BenefitReportingType>Reporting Field 4</BenefitReportingType>
+				<BenefitReportingValue>428408</BenefitReportingValue>
+				<StartDate>2004-01-01</StartDate>
+			</BenefitReportingInformation>
+			<BenefitReportingInformation>
+				<BenefitReportingType>Reporting Field 5</BenefitReportingType>
+				<BenefitReportingValue>A4310</BenefitReportingValue>
+				<StartDate>2004-01-01</StartDate>
+			</BenefitReportingInformation>
+			<BenefitReportingInformation>
+				<BenefitReportingType>Reporting Field 6</BenefitReportingType>
+				<BenefitReportingValue>TSOP042</BenefitReportingValue>
+				<StartDate>2004-01-01</StartDate>
+			</BenefitReportingInformation>
+			<Dependent relationshipCode="Child" fullTimeStudent="false">
+				<Person>
+					<IdentificationCode>
+						<IdValue name="SocialSecurityNumber">518595872</IdValue>
+					</IdentificationCode>
+					<PersonName>
+						<GivenName>SAHRIYA</GivenName>
+						<MiddleName/>
+						<FamilyName>THOMPSON</FamilyName>
+					</PersonName>
+					<Gender>2</Gender>
+					<DateOfBirth>2000-05-04</DateOfBirth>
+					<ContactInformation>
+						<Use>personal</Use>
+						<PostalAddress type="streetAddress">
+							<CountryCode>US</CountryCode>
+							<PostalCode>61043</PostalCode>
+							<Region>IL</Region>
+							<Municipality>OAKWOOD</Municipality>
+							<DeliveryAddress>
+								<AddressLine>143 MAIN ST.</AddressLine>
+								<AddressLine/>
+								<AddressLine/>
+							</DeliveryAddress>
+						</PostalAddress>
+					</ContactInformation>
+				</Person>
+				<Coverage>
+					<TierCoverage type="Health">
+						<TransactionCode>Add</TransactionCode>
+						<ElectedPlanCode>11</ElectedPlanCode>
+						<GroupNumber>022574900320032TTXX</GroupNumber>
+						<COBRAStatus>non-COBRA</COBRAStatus>
+						<StartDate>2004-02-01</StartDate>
+						<CoverageLevel>
+							<CoverageLevelCode>Family</CoverageLevelCode>
+							<StartDate>2004-02-01</StartDate>
+						</CoverageLevel>
+						<EligibilityPostalCode/>
+					</TierCoverage>
+				</Coverage>
+			</Dependent>
+			<Dependent relationshipCode="Spouse">
+				<Person>
+					<IdentificationCode>
+						<IdValue name="SocialSecurityNumber">444403123</IdValue>
+					</IdentificationCode>
+					<PersonName>
+						<GivenName>MARY</GivenName>
+						<MiddleName/>
+						<FamilyName>THOMPSON</FamilyName>
+					</PersonName>
+					<Gender>2</Gender>
+					<DateOfBirth>1972-03-22</DateOfBirth>
+					<ContactInformation>
+						<Use>personal</Use>
+						<PostalAddress type="streetAddress">
+							<CountryCode>US</CountryCode>
+							<PostalCode>61043</PostalCode>
+							<Region>IL</Region>
+							<Municipality>OAKWOOD</Municipality>
+							<DeliveryAddress>
+								<AddressLine>143 MAIN ST.</AddressLine>
+								<AddressLine/>
+								<AddressLine/>
+							</DeliveryAddress>
+						</PostalAddress>
+					</ContactInformation>
+				</Person>
+				<Coverage>
+					<TierCoverage type="Health">
+						<TransactionCode>Add</TransactionCode>
+						<ElectedPlanCode>11</ElectedPlanCode>
+						<GroupNumber>022574900320032TTXX</GroupNumber>
+						<COBRAStatus>non-COBRA</COBRAStatus>
+						<StartDate>2004-02-01</StartDate>
+						<CoverageLevel>
+							<CoverageLevelCode>Family</CoverageLevelCode>
+							<StartDate>2004-02-01</StartDate>
+						</CoverageLevel>
+						<EligibilityPostalCode/>
+					</TierCoverage>
+				</Coverage>
+			</Dependent>
+		</Subscriber>
+		<OrganizationId>
+			<IdValue>COMP</IdValue>
+		</OrganizationId>
+	</Organization>
+</Enrollment>

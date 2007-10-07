@@ -1,0 +1,159 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema targetNamespace="http://ns.hr-xml.org/2007-04-15" xmlns="http://ns.hr-xml.org/2007-04-15" xmlns:xsd="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" version="2007-04-15">
+	<xsd:annotation>
+		<xsd:documentation>
+"Copyright  The HR-XML Consortium. All Rights Reserved. http://www.hr-xml.org"
+Name: StockPurchasePlanCoverage.xsd
+Status: Recommendation
+Date this version: 2007-04-15
+Author(s): Andreas Bold - SAP, Stock Work Group
+Documentation: StockPurchasePlanCoverage.doc
+
+Terms of license can be found in license.txt.
+
+2003-02-24 Andreas
+- changed Issuance to optional
+- wrapped Broker in BrokerInfo and added Account
+- changed the structure of issuance to have two subelements:
+  PersonOrOrganization and an optional Nominee of Type Organization
+  PersonOrOrganization has a choice of a Person or an Organisation subelement
+  Organization is of type Organization
+  Person has an element Name of type PersonName and Address of type PostalAddress
+
+2003-31-03 Andreas
+- rename Percentage and Amount to ContributionPercentage and ContributionAmount
+- changed type of MaximumPurchaseValue to decimal
+- Rename Restriction elements that contain the word Value to Amounts to keep consistent
+
+2003-22-04 Andreas
+- moved BrokerInfo into issuance
+- added allowed values for Issuance type: IssueCertificate, StockDeposit, SellOnDeposit
+
+2003-17-06 Chuck Allen
+- Renamed StrawmanEnrollment to StockPurchasePlanCoverage.xsd
+- Created model previously within EmployeeStockPurchasePlan into StockPurchasePlanCoverageType
+- Made StockPurchasePlanCoverage.xsd an include within Enrollment.xsd
+- StockPurchasePlanCoverage is a child of the Coverage element with Enrollment.xsd
+
+2004-28-04 Kim Bartkus
+- Renamed Person element to PersonInfo and Name to PersonName
+- Change Issuance enumerations to be extensible
+- Change PersonInfo to multiple occurence
+- Removed MinimumPurchaseAmount and MinimumPurchaseQuantity
+
+
+
+		</xsd:documentation>
+	</xsd:annotation>
+	<xsd:import namespace="http://www.w3.org/XML/1998/namespace" schemaLocation="../../W3C/xml.xsd"/>
+	<xsd:include schemaLocation="../CPO/IdentifierTypes.xsd"/>
+	<xsd:include schemaLocation="../CPO/Organization.xsd"/>
+	<xsd:element name="StockPurchasePlanCoverage" type="StockPurchasePlanCoverageType"/>
+	<xsd:complexType name="StockPurchasePlanCoverageType">
+		<xsd:sequence>
+			<xsd:element name="TransactionCode" type="xsd:string"/>
+			<xsd:element name="EnrollmentDate" type="LocalDateType" minOccurs="0"/>
+			<xsd:element name="ElectedPlanId" type="EntityIdType"/>
+			<xsd:element name="OfferingPeriod">
+				<xsd:complexType>
+					<xsd:sequence>
+						<xsd:element name="StartDate" type="LocalDateType"/>
+						<xsd:element name="EndDate" type="LocalDateType"/>
+					</xsd:sequence>
+				</xsd:complexType>
+			</xsd:element>
+			<xsd:element name="ShareIssuance" minOccurs="0">
+				<xsd:complexType>
+					<xsd:sequence>
+						<xsd:element name="BrokerInfo">
+							<xsd:complexType>
+								<xsd:sequence>
+									<xsd:element name="Broker" type="OrganizationType" minOccurs="0"/>
+									<xsd:element name="AccountIdentifier" type="EntityIdType" minOccurs="0"/>
+								</xsd:sequence>
+							</xsd:complexType>
+						</xsd:element>
+						<xsd:element name="ShareRegistrationInfo" minOccurs="0">
+							<xsd:complexType>
+								<xsd:choice>
+									<xsd:element name="PersonInfo" maxOccurs="unbounded">
+										<xsd:complexType>
+											<xsd:sequence>
+												<xsd:element name="PersonName" type="PersonNameType"/>
+												<xsd:element name="PostalAddress" type="PostalAddressType" minOccurs="0"/>
+											</xsd:sequence>
+										</xsd:complexType>
+									</xsd:element>
+									<xsd:sequence>
+										<xsd:element ref="Organization"/>
+										<xsd:element name="AccountIdentifier" type="EntityIdType" minOccurs="0"/>
+									</xsd:sequence>
+								</xsd:choice>
+							</xsd:complexType>
+						</xsd:element>
+					</xsd:sequence>
+					<xsd:attribute name="type" type="ShareIssuanceType"/>
+				</xsd:complexType>
+			</xsd:element>
+			<xsd:element name="SharePurchaseRestrictions" minOccurs="0">
+				<xsd:complexType>
+					<xsd:sequence>
+						<xsd:element name="MaximumPurchaseQuantity" type="xsd:decimal" minOccurs="0"/>
+						<xsd:element name="MaximumPurchaseAmount" minOccurs="0">
+							<xsd:complexType>
+								<xsd:simpleContent>
+									<xsd:extension base="xsd:decimal">
+										<xsd:attribute name="currencyCode" type="CurrencyCodeType" use="required"/>
+									</xsd:extension>
+								</xsd:simpleContent>
+							</xsd:complexType>
+						</xsd:element>
+						<!-- Removed these elements. There doesn't appear to be a business reason to keep these elements. 
+						<xsd:element name="MinimumPurchaseQuantity" type="xsd:decimal" minOccurs="0"/>
+						<xsd:element name="MinimumPurchaseAmount" minOccurs="0">
+							<xsd:complexType>
+								<xsd:simpleContent>
+									<xsd:extension base="xsd:decimal">
+										<xsd:attribute name="currencyCode" type="CurrencyCodeType" use="required"/>
+									</xsd:extension>
+								</xsd:simpleContent>
+							</xsd:complexType>
+						</xsd:element>
+						-->
+					</xsd:sequence>
+				</xsd:complexType>
+			</xsd:element>
+			<xsd:choice>
+				<xsd:element name="ContributionPercentage">
+					<xsd:simpleType>
+						<xsd:restriction base="xsd:decimal">
+							<xsd:maxInclusive value="100"/>
+							<xsd:minInclusive value="0"/>
+						</xsd:restriction>
+					</xsd:simpleType>
+				</xsd:element>
+				<xsd:element name="ContributionAmount">
+					<xsd:complexType>
+						<xsd:simpleContent>
+							<xsd:extension base="xsd:decimal">
+								<xsd:attribute name="currencyCode" type="CurrencyCodeType" use="required"/>
+							</xsd:extension>
+						</xsd:simpleContent>
+					</xsd:complexType>
+				</xsd:element>
+			</xsd:choice>
+			<xsd:element name="UserArea" type="UserAreaType" minOccurs="0"/>
+		</xsd:sequence>
+		<!-- share issuance type -->
+	</xsd:complexType>
+	<xsd:simpleType name="ShareIssuanceType">
+		<xsd:union memberTypes="BasicShareIssuanceTypes xStringPatternExtensionType"/>
+	</xsd:simpleType>
+	<xsd:simpleType name="BasicShareIssuanceTypes">
+		<xsd:restriction base="xsd:string">
+			<xsd:enumeration value="IssueCertificate"/>
+			<xsd:enumeration value="StockDeposit"/>
+			<xsd:enumeration value="SellOnDeposit"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+</xsd:schema>

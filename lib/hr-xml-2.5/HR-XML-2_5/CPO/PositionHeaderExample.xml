@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<PositionHeader xmlns="http://ns.hr-xml.org/2007-04-15" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://ns.hr-xml.org/2007-04-15 PositionHeader.xsd" validFrom="2001-12-21" validTo="2002-01-15">
+	<PositionId>
+		<Id>Programmer1</Id>
+		<Domain>
+			<IdIssuer>ABC Company</IdIssuer>
+			<IdType>Id</IdType>
+		</Domain>
+	</PositionId>
+	<JobId>
+		<Id>Programmer</Id>
+	</JobId>
+	<PositionTitle>Associate Programmer - Financial Group</PositionTitle>
+	<PositionType>Permanent Placement</PositionType>
+	<PositionDescription>Program according to design documents. Conduct unit testing of all work. Document changes made to programs. Specific duties include General Ledger, Accounts Payable, and Accounts Receivable.</PositionDescription>
+	<PositionStatus>
+		<Code>1</Code>
+		<Description>Active</Description>
+	</PositionStatus>
+	<ReportToPositionId>
+		<Id>Manager1</Id>
+	</ReportToPositionId>
+	<SpecialInstructions>Report to main lobby on first day of work.</SpecialInstructions>
+	<TypeOfHours>Fulltime</TypeOfHours>
+	<Quantity>1</Quantity>
+	<RequestedPerson>
+		<PersonName>
+			<FormattedName>Jacob Peterson</FormattedName>
+		</PersonName>
+		<Supplier>
+			<Name>Elliot Smitte</Name>
+		</Supplier>
+	</RequestedPerson>
+	<PositionSpecificCondition>
+		<ConditionCode>ES541</ConditionCode>
+		<ConditionDescription>Low risk exposure</ConditionDescription>
+		<ConditionValue>Eye Strain</ConditionValue>
+	</PositionSpecificCondition>
+</PositionHeader>

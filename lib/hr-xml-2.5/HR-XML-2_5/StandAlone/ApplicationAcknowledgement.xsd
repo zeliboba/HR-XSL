@@ -1,0 +1,555 @@
+<?xml version="1.0"?>
+<!-- edited with XMLSpy v2006 rel. 3 sp1 (http://www.altova.com) by Chuck Allen (HR-XML Consortium, Inc.) -->
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="http://ns.hr-xml.org/2007-04-15" xmlns:oa="http://www.openapplications.org/oagis" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:ds="http://www.w3.org/2000/09/xmldsig#" targetNamespace="http://ns.hr-xml.org/2007-04-15" elementFormDefault="qualified" version="2007-04-15">
+	<xsd:annotation>
+		<xsd:documentation>"Copyright  The HR-XML Consortium. All Rights Reserved. http://www.hr-xml.org"
+
+Terms of license can be found in license.txt.
+</xsd:documentation>
+		<xsd:documentation>Stand alone (but non-normative) version of schema, with all "includes" inserted explicitly.  This file is auto-generated.  It should be considered a "convenience" alternative to the normative versions.</xsd:documentation>
+		<xsd:documentation>After merging all includes, the result is passed through a stylesheet which deletes any duplicative global components as well as any unused global types.  Finally, it sorts by component name.  Be sure to check the Xml Namespaces to ensure this result is what you requested.</xsd:documentation>
+	</xsd:annotation>
+	<xsd:import namespace="http://www.w3.org/XML/1998/namespace" schemaLocation="xml.xsd"/>
+	<xsd:element name="ApplicationAcknowledgement" type="AcknowledgeType"/>
+	<xsd:simpleType name="AnyDateTimeNkNaType">
+		<xsd:union memberTypes="LocalDateType DateType LocalDateTimeType DateTimeType NotKnownLiteral NotApplicableLiteral"/>
+	</xsd:simpleType>
+	<xsd:simpleType name="contactMethodLocationPatternExtensionType">
+		<xsd:union memberTypes="contactMethodLocationType xStringPatternExtensionType"/>
+	</xsd:simpleType>
+	<xsd:simpleType name="contactMethodLocationType">
+		<xsd:restriction base="xsd:string">
+			<xsd:enumeration value="office"/>
+			<xsd:enumeration value="vehicle"/>
+			<xsd:enumeration value="onPerson"/>
+			<xsd:enumeration value="home"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="contactMethodUsePatternExtensionType">
+		<xsd:union memberTypes="contactMethodUseType xStringPatternExtensionType"/>
+	</xsd:simpleType>
+	<xsd:simpleType name="contactMethodUseType">
+		<xsd:restriction base="xsd:string">
+			<xsd:enumeration value="business"/>
+			<xsd:enumeration value="businessDirect"/>
+			<xsd:enumeration value="personal"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="contactMethodWhenAvailableType">
+		<xsd:restriction base="xsd:string"/>
+	</xsd:simpleType>
+	<xsd:simpleType name="DateTimeType">
+		<xsd:restriction base="xsd:dateTime">
+			<xsd:pattern value="\d\d\d\d-\d\d-\d\dT\d\d:\d\d:\d\d(Z|(\+|-)\d\d:\d\d)"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="DateType">
+		<xsd:restriction base="xsd:date">
+			<xsd:pattern value="\d\d\d\d-\d\d-\d\d(Z|(\+|-)\d\d:\d\d)"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="InternetEmailAddressType">
+		<xsd:restriction base="xsd:string"/>
+	</xsd:simpleType>
+	<xsd:simpleType name="InternetWebAddressType">
+		<xsd:restriction base="xsd:string"/>
+	</xsd:simpleType>
+	<xsd:simpleType name="LocalDateTimeType">
+		<xsd:restriction base="xsd:dateTime">
+			<xsd:pattern value="\d\d\d\d-\d\d-\d\dT\d\d:\d\d:\d\d"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="LocalDateType">
+		<xsd:restriction base="xsd:date">
+			<xsd:pattern value="\d\d\d\d-\d\d-\d\d"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="LocalTimeType">
+		<xsd:restriction base="xsd:time">
+			<xsd:pattern value="\d\d:\d\d:\d\d"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="NotApplicableLiteral">
+		<xsd:restriction base="xsd:string">
+			<xsd:enumeration value="notApplicable"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="NotKnownLiteral">
+		<xsd:restriction base="xsd:string">
+			<xsd:enumeration value="notKnown"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="TimeType">
+		<xsd:restriction base="xsd:time">
+			<xsd:pattern value="\d\d:\d\d:\d\d(Z|(\+|-)\d\d:\d\d)"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="xStringPatternExtensionType">
+		<xsd:restriction base="xsd:string">
+			<xsd:pattern value="x:\S.*"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:complexType name="AcknowledgeType">
+		<xsd:sequence>
+			<xsd:element name="PayloadResponseSummary" type="PayloadResponseSummaryType"/>
+			<xsd:element name="PayloadDisposition" type="PayloadDispositionType" minOccurs="0">
+				<xsd:annotation>
+					<xsd:documentation> Should the detail be optional?  Or should this be a choice between the element as it is now and a "no-op" element that indicates total success of the transaction.</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+			<xsd:element ref="UserArea" minOccurs="0"/>
+		</xsd:sequence>
+		<xsd:attribute ref="xml:lang"/>
+	</xsd:complexType>
+	<xsd:complexType name="ContactMethodType">
+		<xsd:sequence>
+			<xsd:element ref="Use" minOccurs="0"/>
+			<xsd:element ref="Location" minOccurs="0"/>
+			<xsd:element ref="WhenAvailable" minOccurs="0"/>
+			<xsd:element ref="Telephone" minOccurs="0"/>
+			<xsd:element ref="Mobile" minOccurs="0"/>
+			<xsd:element ref="Fax" minOccurs="0"/>
+			<xsd:element ref="Pager" minOccurs="0"/>
+			<xsd:element ref="TTYTDD" minOccurs="0"/>
+			<xsd:element ref="InternetEmailAddress" minOccurs="0"/>
+			<xsd:element ref="InternetWebAddress" minOccurs="0"/>
+			<xsd:element ref="PostalAddress" minOccurs="0"/>
+		</xsd:sequence>
+	</xsd:complexType>
+	<xsd:complexType name="EntityExceptionType">
+		<xsd:sequence>
+			<xsd:element name="EntityXMLFragment" type="xsd:anyType" minOccurs="0">
+				<xsd:annotation>
+					<xsd:documentation>XML fragment beginning with the element pointed to by the EntityInstanceXPath above.</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+			<xsd:element name="Exception" type="ExceptionType" maxOccurs="unbounded">
+				<xsd:annotation>
+					<xsd:documentation>Business level exceptions regarding the specified entity.  This would not include enveloping or xml related exceptions.</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+		</xsd:sequence>
+	</xsd:complexType>
+	<xsd:complexType name="EntityIdType">
+		<xsd:sequence>
+			<xsd:element name="IdValue" maxOccurs="unbounded">
+				<xsd:complexType>
+					<xsd:simpleContent>
+						<xsd:extension base="xsd:string">
+							<xsd:attribute name="name" type="xsd:string" use="optional"/>
+						</xsd:extension>
+					</xsd:simpleContent>
+				</xsd:complexType>
+			</xsd:element>
+		</xsd:sequence>
+		<xsd:attribute name="validFrom" type="AnyDateTimeNkNaType" use="optional"/>
+		<xsd:attribute name="validTo" type="AnyDateTimeNkNaType" use="optional"/>
+		<xsd:attribute name="idOwner" type="xsd:string" use="optional"/>
+	</xsd:complexType>
+	<xsd:complexType name="ExceptionType">
+		<xsd:sequence>
+			<xsd:element name="ExceptionIdentifier" type="xsd:string" minOccurs="0">
+				<xsd:annotation>
+					<xsd:documentation>This is an ID (or code) used by the organization generating the acknowledgement to identify the specific exception.</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+			<xsd:element name="ExceptionSeverity">
+				<xsd:annotation>
+					<xsd:documentation>How severe the exception is.  Fatal means system processed nothing.  Warning means system processed something, but perhaps incompletely.  Information means system processed everything, but a problem *may* occur that needs notification.</xsd:documentation>
+				</xsd:annotation>
+				<xsd:simpleType>
+					<xsd:restriction base="xsd:string">
+						<xsd:enumeration value="Fatal">
+							<xsd:annotation>
+								<xsd:documentation>Fatal means system processed nothing.  </xsd:documentation>
+							</xsd:annotation>
+						</xsd:enumeration>
+						<xsd:enumeration value="Warning">
+							<xsd:annotation>
+								<xsd:documentation> Warning means system processed something, but perhaps incompletely.  </xsd:documentation>
+							</xsd:annotation>
+						</xsd:enumeration>
+						<xsd:enumeration value="Information">
+							<xsd:annotation>
+								<xsd:documentation>Information means system processed everything, but a problem *may* occur that needs notification.</xsd:documentation>
+							</xsd:annotation>
+						</xsd:enumeration>
+					</xsd:restriction>
+				</xsd:simpleType>
+			</xsd:element>
+			<xsd:element name="ExceptionMessage" type="xsd:string">
+				<xsd:annotation>
+					<xsd:documentation>The exception content message.</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+			<xsd:element name="ExceptionScopeSchemaXPath" type="xsd:string" minOccurs="0">
+				<xsd:annotation>
+					<xsd:documentation>The leve at which processing stops (within the entity).   If fatal severity, this will  match the EntitySchemaXPath.  If a warning severity, then this will be the point at which processing stops within entity.</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+			<xsd:element name="SubordinateEntityXPath" type="xsd:string" minOccurs="0" maxOccurs="unbounded">
+				<xsd:annotation>
+					<xsd:documentation>The offending element(s) or attributes (inside the scope of ExceptionScopeSchemaXPath, which in turn is in the scope of the EntityDisposition.  </xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+			<xsd:element name="Followup" minOccurs="0">
+				<xsd:annotation>
+					<xsd:documentation>Indicates who is responsibile for correcting the exception.</xsd:documentation>
+				</xsd:annotation>
+				<xsd:complexType>
+					<xsd:sequence>
+						<xsd:element name="OrganizationId" type="EntityIdType" minOccurs="0"/>
+						<xsd:element name="OrganizationName" type="xsd:string" minOccurs="0"/>
+						<xsd:element name="PersonName" type="PersonNameType" minOccurs="0"/>
+						<xsd:element name="ContactInfo" type="ContactMethodType" minOccurs="0" maxOccurs="unbounded"/>
+					</xsd:sequence>
+					<xsd:attribute name="responsibleForFollowup">
+						<xsd:simpleType>
+							<xsd:restriction base="xsd:string">
+								<xsd:enumeration value="No Followup Needed"/>
+								<xsd:enumeration value="Payload Source Organization"/>
+								<xsd:enumeration value="Acknowledgement Source Organization"/>
+							</xsd:restriction>
+						</xsd:simpleType>
+					</xsd:attribute>
+				</xsd:complexType>
+			</xsd:element>
+			<xsd:element name="AdditionalData" minOccurs="0" maxOccurs="unbounded">
+				<xsd:annotation>
+					<xsd:documentation>Additional information (in a name-value pair format).</xsd:documentation>
+				</xsd:annotation>
+				<xsd:complexType>
+					<xsd:sequence>
+						<xsd:element name="Description" type="xsd:string"/>
+						<xsd:element name="Value" type="xsd:string"/>
+					</xsd:sequence>
+				</xsd:complexType>
+			</xsd:element>
+		</xsd:sequence>
+	</xsd:complexType>
+	<xsd:complexType name="MobileTelcomNumberType">
+		<xsd:complexContent>
+			<xsd:extension base="TelcomNumberType">
+				<xsd:attribute name="smsEnabled" type="xsd:boolean" use="optional"/>
+			</xsd:extension>
+		</xsd:complexContent>
+	</xsd:complexType>
+	<xsd:complexType name="PayloadDispositionType">
+		<xsd:sequence>
+			<xsd:element name="EntityDisposition" minOccurs="0" maxOccurs="unbounded">
+				<xsd:annotation>
+					<xsd:documentation>Dispostion for a single entity.  Repetable for batched entities.  For example, representing a Subscriber in Enrollment.</xsd:documentation>
+				</xsd:annotation>
+				<xsd:complexType>
+					<xsd:sequence>
+						<xsd:element name="EntityIdentifier" type="EntityIdType" minOccurs="0">
+							<xsd:annotation>
+								<xsd:documentation>The identifier for the component disposition, for example SubscriberId</xsd:documentation>
+							</xsd:annotation>
+						</xsd:element>
+						<xsd:element name="EntityShortName" type="xsd:string" minOccurs="0">
+							<xsd:annotation>
+								<xsd:documentation>The Entity disposition name,.  Example is "Subscriber".</xsd:documentation>
+							</xsd:annotation>
+						</xsd:element>
+						<xsd:element name="EntitySchemaXPath" type="xsd:string" minOccurs="0">
+							<xsd:annotation>
+								<xsd:documentation>This will define the "root" level at which the exception applies by reference to the schema.  This is an XPath not for the XML payload instance, but the XML document that is the schema itself.</xsd:documentation>
+							</xsd:annotation>
+						</xsd:element>
+						<xsd:element name="EntityInstanceXPath" type="xsd:string">
+							<xsd:annotation>
+								<xsd:documentation>XPath to the entity in the payload.  This is the full XPath and not simply pointing to the axis in general.  For example in Enrollment, this value would  be an XPath to the Subscriber element (including the occurrence of the Subscriber in the instance - such as Enrollment/Organization/Subscriber[position()=2]).</xsd:documentation>
+							</xsd:annotation>
+						</xsd:element>
+						<xsd:choice>
+							<xsd:element name="EntityNoException">
+								<xsd:annotation>
+									<xsd:documentation>Entities successfully accepted in the payload transaction.</xsd:documentation>
+								</xsd:annotation>
+								<xsd:simpleType>
+									<xsd:restriction base="xsd:string">
+										<xsd:enumeration value="true"/>
+									</xsd:restriction>
+								</xsd:simpleType>
+							</xsd:element>
+							<xsd:element name="EntityException" type="EntityExceptionType">
+								<xsd:annotation>
+									<xsd:documentation>This is the main resuable that can be incorporated into SOAP fault scenario.!!!!</xsd:documentation>
+								</xsd:annotation>
+							</xsd:element>
+						</xsd:choice>
+					</xsd:sequence>
+				</xsd:complexType>
+			</xsd:element>
+		</xsd:sequence>
+	</xsd:complexType>
+	<xsd:complexType name="PayloadResponseSummaryType">
+		<xsd:sequence>
+			<xsd:element name="ReferenceId" type="EntityIdType" minOccurs="0" maxOccurs="unbounded">
+				<xsd:annotation>
+					<xsd:documentation>An identifer passed back for referencing the transation. For example, an order number or confirmation code.</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+			<xsd:element name="TransportMessageId" minOccurs="0">
+				<xsd:annotation>
+					<xsd:documentation>The message identifier of the enrollment transaction for which application acknowledgement is being returned.  Matches the transport layer id.</xsd:documentation>
+				</xsd:annotation>
+				<xsd:complexType>
+					<xsd:sequence>
+						<xsd:element name="MessageIdType" type="xsd:string" minOccurs="0"/>
+						<xsd:element name="MessageId" type="EntityIdType"/>
+					</xsd:sequence>
+				</xsd:complexType>
+			</xsd:element>
+			<xsd:element name="UniquePayloadTrackingId" type="EntityIdType" minOccurs="0">
+				<xsd:annotation>
+					<xsd:documentation>The sender in a trading partnership agreeing to use the enrollment acknowledgement will provide this value in the attribute of the same name on the "Enrollment" element; the value will be repeated in this elemnt to produce an acknowledgement of a specific enrollment payload.  Matches the Enrollment Id.</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+			<xsd:element name="TransactionReceiptTimestamp" type="DateTimeType" minOccurs="0">
+				<xsd:annotation>
+					<xsd:documentation>The date and time at which the message containing the payload here acknowledged was received.</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+			<xsd:element name="ProcessingTimestamp" minOccurs="0" maxOccurs="unbounded">
+				<xsd:annotation>
+					<xsd:documentation>The date and time at which a particular processing action was performed on the payload.  The description attribute will contain text meaningful to both parties in the exchange.  For example, an acknolwegment sender could provide date/times such as "Medical Coverages Processed" or "Claims Ready".  Value applies to non-exception cases.</xsd:documentation>
+				</xsd:annotation>
+				<xsd:complexType>
+					<xsd:simpleContent>
+						<xsd:extension base="DateTimeType">
+							<xsd:attribute name="description" type="xsd:string"/>
+						</xsd:extension>
+					</xsd:simpleContent>
+				</xsd:complexType>
+			</xsd:element>
+			<xsd:element name="AcknowledgementCreationTimestamp" type="DateTimeType" minOccurs="0">
+				<xsd:annotation>
+					<xsd:documentation>The date and time at which this acknowledgement was created.  It is recommended to use the time at which the acknowledgement payload was completed.</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+			<xsd:element name="ReceivedPayloadSummary" minOccurs="0">
+				<xsd:complexType>
+					<xsd:sequence>
+						<xsd:element name="ReceivedPayloadSchemaURI" type="xsd:anyURI" minOccurs="0">
+							<xsd:annotation>
+								<xsd:documentation>A URI indicating where the schema used to create the enrolment payload being acknowledged can be found.</xsd:documentation>
+							</xsd:annotation>
+						</xsd:element>
+						<xsd:element name="EntityInfo" minOccurs="0" maxOccurs="unbounded">
+							<xsd:complexType>
+								<xsd:sequence>
+									<xsd:element name="EntityInstanceAxisXPath" type="xsd:string" minOccurs="0">
+										<xsd:annotation>
+											<xsd:documentation>An XPath to the entity level in the xml instance.  It does not indicate which occurrence of the entity, only the axis.  For example, it may be Enrollment/Organization/Subscriber - not indicating which Subscriber occurrence. The instance is located by ReceivedPayloadSchemaURI.</xsd:documentation>
+										</xsd:annotation>
+									</xsd:element>
+									<xsd:element name="Count" type="xsd:nonNegativeInteger">
+										<xsd:annotation>
+											<xsd:documentation>The number of items referreed to in the EntitySchemaXPath element.</xsd:documentation>
+										</xsd:annotation>
+									</xsd:element>
+									<xsd:element name="EntityShortName" type="xsd:string" minOccurs="0">
+										<xsd:annotation>
+											<xsd:documentation>A non-standard or shorter name for the entities identified by the EntityXPath  (e.g. "Families with Medical Coverage" or "Life Insurance Coverages with Total Volume Over 2 million dollars".</xsd:documentation>
+										</xsd:annotation>
+									</xsd:element>
+								</xsd:sequence>
+							</xsd:complexType>
+						</xsd:element>
+					</xsd:sequence>
+				</xsd:complexType>
+			</xsd:element>
+		</xsd:sequence>
+	</xsd:complexType>
+	<xsd:complexType name="PersonNameType">
+		<xsd:sequence>
+			<xsd:element name="FormattedName" type="xsd:string" minOccurs="0"/>
+			<xsd:element name="LegalName" type="xsd:string" minOccurs="0"/>
+			<xsd:element name="GivenName" type="xsd:string" minOccurs="0" maxOccurs="unbounded"/>
+			<xsd:element name="PreferredGivenName" type="xsd:string" minOccurs="0"/>
+			<xsd:element name="MiddleName" type="xsd:string" minOccurs="0"/>
+			<xsd:element name="FamilyName" minOccurs="0" maxOccurs="unbounded">
+				<xsd:complexType>
+					<xsd:simpleContent>
+						<xsd:extension base="xsd:string">
+							<xsd:attribute name="primary">
+								<xsd:simpleType>
+									<xsd:restriction base="xsd:string">
+										<xsd:enumeration value="true"/>
+										<xsd:enumeration value="false"/>
+										<xsd:enumeration value="undefined"/>
+									</xsd:restriction>
+								</xsd:simpleType>
+							</xsd:attribute>
+							<xsd:attribute name="prefix" type="xsd:string"/>
+						</xsd:extension>
+					</xsd:simpleContent>
+				</xsd:complexType>
+			</xsd:element>
+			<xsd:element name="Affix" minOccurs="0" maxOccurs="unbounded">
+				<xsd:complexType>
+					<xsd:simpleContent>
+						<xsd:extension base="xsd:string">
+							<xsd:attribute name="type" use="required">
+								<xsd:simpleType>
+									<xsd:restriction base="xsd:string">
+										<xsd:enumeration value="aristocraticTitle"/>
+										<xsd:enumeration value="formOfAddress"/>
+										<xsd:enumeration value="generation"/>
+										<xsd:enumeration value="qualification"/>
+									</xsd:restriction>
+								</xsd:simpleType>
+							</xsd:attribute>
+						</xsd:extension>
+					</xsd:simpleContent>
+				</xsd:complexType>
+			</xsd:element>
+			<xsd:element name="AlternateScript" minOccurs="0" maxOccurs="unbounded">
+				<xsd:complexType>
+					<xsd:sequence>
+						<xsd:element name="FormattedName" type="xsd:string" minOccurs="0"/>
+						<xsd:element name="LegalName" type="xsd:string" minOccurs="0"/>
+						<xsd:element name="GivenName" type="xsd:string" minOccurs="0" maxOccurs="unbounded"/>
+						<xsd:element name="PreferredGivenName" type="xsd:string" minOccurs="0"/>
+						<xsd:element name="MiddleName" type="xsd:string" minOccurs="0"/>
+						<xsd:element name="FamilyName" minOccurs="0" maxOccurs="unbounded">
+							<xsd:complexType>
+								<xsd:simpleContent>
+									<xsd:extension base="xsd:string">
+										<xsd:attribute name="primary">
+											<xsd:simpleType>
+												<xsd:restriction base="xsd:string">
+													<xsd:enumeration value="true"/>
+													<xsd:enumeration value="false"/>
+													<xsd:enumeration value="undefined"/>
+												</xsd:restriction>
+											</xsd:simpleType>
+										</xsd:attribute>
+										<xsd:attribute name="prefix" type="xsd:string"/>
+									</xsd:extension>
+								</xsd:simpleContent>
+							</xsd:complexType>
+						</xsd:element>
+						<xsd:element name="Affix" minOccurs="0" maxOccurs="unbounded">
+							<xsd:complexType>
+								<xsd:simpleContent>
+									<xsd:extension base="xsd:string">
+										<xsd:attribute name="type" use="required">
+											<xsd:simpleType>
+												<xsd:restriction base="xsd:string">
+													<xsd:enumeration value="aristocraticTitle"/>
+													<xsd:enumeration value="formOfAddress"/>
+													<xsd:enumeration value="generation"/>
+													<xsd:enumeration value="qualification"/>
+												</xsd:restriction>
+											</xsd:simpleType>
+										</xsd:attribute>
+									</xsd:extension>
+								</xsd:simpleContent>
+							</xsd:complexType>
+						</xsd:element>
+					</xsd:sequence>
+					<xsd:attribute name="script" type="xsd:string"/>
+				</xsd:complexType>
+			</xsd:element>
+		</xsd:sequence>
+		<xsd:attribute name="script" type="xsd:string"/>
+	</xsd:complexType>
+	<xsd:complexType name="PostalAddressType">
+		<xsd:sequence>
+			<xsd:element name="CountryCode">
+				<xsd:simpleType>
+					<xsd:restriction base="xsd:string">
+						<xsd:pattern value="[A-Z]{2}"/>
+					</xsd:restriction>
+				</xsd:simpleType>
+			</xsd:element>
+			<xsd:element name="PostalCode" type="xsd:string" minOccurs="0"/>
+			<xsd:element name="Region" type="xsd:string" minOccurs="0" maxOccurs="unbounded"/>
+			<xsd:element name="Municipality" type="xsd:string" minOccurs="0"/>
+			<xsd:element name="DeliveryAddress" minOccurs="0">
+				<xsd:complexType>
+					<xsd:sequence>
+						<xsd:element name="AddressLine" type="xsd:string" minOccurs="0" maxOccurs="unbounded"/>
+						<xsd:element name="StreetName" type="xsd:string" minOccurs="0"/>
+						<xsd:element name="BuildingNumber" type="xsd:string" minOccurs="0"/>
+						<xsd:element name="Unit" type="xsd:string" minOccurs="0"/>
+						<xsd:element name="PostOfficeBox" type="xsd:string" minOccurs="0"/>
+					</xsd:sequence>
+				</xsd:complexType>
+			</xsd:element>
+			<xsd:element name="Recipient" minOccurs="0" maxOccurs="unbounded">
+				<xsd:complexType>
+					<xsd:sequence>
+						<xsd:element name="PersonName" type="PersonNameType" minOccurs="0"/>
+						<xsd:element name="AdditionalText" type="xsd:string" minOccurs="0" maxOccurs="unbounded"/>
+						<xsd:element name="Organization" type="xsd:string" minOccurs="0">
+							<xsd:annotation>
+								<xsd:documentation>Deprecated in favor of OrganizationName element.</xsd:documentation>
+							</xsd:annotation>
+						</xsd:element>
+						<xsd:element name="OrganizationName" type="xsd:string" minOccurs="0"/>
+					</xsd:sequence>
+				</xsd:complexType>
+			</xsd:element>
+		</xsd:sequence>
+		<xsd:attribute name="type">
+			<xsd:simpleType>
+				<xsd:restriction base="xsd:string">
+					<xsd:enumeration value="postOfficeBoxAddress"/>
+					<xsd:enumeration value="streetAddress"/>
+					<xsd:enumeration value="militaryAddress"/>
+					<xsd:enumeration value="undefined"/>
+				</xsd:restriction>
+			</xsd:simpleType>
+		</xsd:attribute>
+	</xsd:complexType>
+	<xsd:complexType name="TelcomNumberType">
+		<xsd:choice>
+			<xsd:element ref="FormattedNumber"/>
+			<xsd:group ref="TelcomNumberGroup"/>
+		</xsd:choice>
+	</xsd:complexType>
+	<xsd:complexType name="UserAreaType">
+		<xsd:sequence minOccurs="0" maxOccurs="unbounded">
+			<xsd:annotation>
+				<xsd:documentation>In order to prevent a possible "ambiguous content model" errors in an instance, unbounded sequences were either eliminated from or deprecated in all HR-XML schemas. Removing unbounded sequences ensures that ambiguous errors are not found in an instance.  The unbounded sequence here is officially deprecated and will be changed to a single sequence.</xsd:documentation>
+			</xsd:annotation>
+			<xsd:any namespace="##any" minOccurs="0" maxOccurs="unbounded"/>
+		</xsd:sequence>
+	</xsd:complexType>
+	<xsd:element name="AreaCityCode" type="xsd:string"/>
+	<xsd:element name="Extension" type="xsd:string"/>
+	<xsd:element name="Fax" type="TelcomNumberType"/>
+	<xsd:element name="FormattedNumber" type="xsd:string"/>
+	<xsd:element name="InternationalCountryCode" type="xsd:string"/>
+	<xsd:element name="InternetEmailAddress" type="InternetEmailAddressType"/>
+	<xsd:element name="InternetWebAddress" type="InternetWebAddressType"/>
+	<xsd:element name="Location" type="contactMethodLocationPatternExtensionType"/>
+	<xsd:element name="Mobile" type="MobileTelcomNumberType"/>
+	<xsd:element name="NationalNumber" type="xsd:string"/>
+	<xsd:element name="Pager" type="TelcomNumberType"/>
+	<xsd:element name="PersonName" type="PersonNameType"/>
+	<xsd:element name="PostalAddress" type="PostalAddressType"/>
+	<xsd:element name="SubscriberNumber" type="xsd:string"/>
+	<xsd:element name="Telephone" type="TelcomNumberType"/>
+	<xsd:element name="TTYTDD" type="TelcomNumberType"/>
+	<xsd:element name="Use" type="contactMethodUsePatternExtensionType"/>
+	<xsd:element name="UserArea" type="UserAreaType">
+		<xsd:annotation>
+			<xsd:documentation>HR-XML Technical Steering Committee endorsed extension element.</xsd:documentation>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="WhenAvailable" type="contactMethodWhenAvailableType"/>
+	<xsd:group name="TelcomNumberGroup">
+		<xsd:sequence>
+			<xsd:element ref="InternationalCountryCode" minOccurs="0"/>
+			<xsd:element ref="NationalNumber" minOccurs="0"/>
+			<xsd:element ref="AreaCityCode" minOccurs="0"/>
+			<xsd:element ref="SubscriberNumber"/>
+			<xsd:element ref="Extension" minOccurs="0"/>
+		</xsd:sequence>
+	</xsd:group>
+</xsd:schema>

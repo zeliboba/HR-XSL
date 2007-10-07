@@ -1,0 +1,3581 @@
+<?xml version="1.0"?>
+<!-- edited with XMLSpy v2006 rel. 3 sp1 (http://www.altova.com) by Chuck Allen (HR-XML Consortium, Inc.) -->
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="http://ns.hr-xml.org/2007-04-15" xmlns:oa="http://www.openapplications.org/oagis" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:ds="http://www.w3.org/2000/09/xmldsig#" targetNamespace="http://ns.hr-xml.org/2007-04-15" elementFormDefault="qualified" version="2007-04-15">
+	<xsd:annotation>
+		<xsd:documentation>"Copyright  The HR-XML Consortium. All Rights Reserved. http://www.hr-xml.org"
+
+Terms of license can be found in license.txt.
+</xsd:documentation>
+		<xsd:documentation>Stand alone (but non-normative) version of schema, with all "includes" inserted explicitly.  This file is auto-generated.  It should be considered a "convenience" alternative to the normative versions.</xsd:documentation>
+		<xsd:documentation>After merging all includes, the result is passed through a stylesheet which deletes any duplicative global components as well as any unused global types.  Finally, it sorts by component name.  Be sure to check the Xml Namespaces to ensure this result is what you requested.</xsd:documentation>
+	</xsd:annotation>
+	<xsd:import namespace="http://www.w3.org/XML/1998/namespace" schemaLocation="xml.xsd"/>
+	<xsd:element name="Candidate" type="CandidateType"/>
+	<xsd:simpleType name="AcademicCreditCodeType">
+		<xsd:restriction base="xsd:string">
+			<xsd:enumeration value="A">
+				<xsd:annotation>
+					<xsd:documentation>Adult Credits</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="C">
+				<xsd:annotation>
+					<xsd:documentation>Continuing Education Unit</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="G">
+				<xsd:annotation>
+					<xsd:documentation>Carnegie Units</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="N">
+				<xsd:annotation>
+					<xsd:documentation>No Credit</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="Q">
+				<xsd:annotation>
+					<xsd:documentation>Quarter Hour Credit</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="S">
+				<xsd:annotation>
+					<xsd:documentation>Semester Hour Credit</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="U">
+				<xsd:annotation>
+					<xsd:documentation>Units</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="V">
+				<xsd:annotation>
+					<xsd:documentation>Vocational Credits</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="X">
+				<xsd:annotation>
+					<xsd:documentation>Other Type of Credit</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="AnyDateTimeNaType">
+		<xsd:union memberTypes="LocalDateType DateType LocalDateTimeType DateTimeType NotApplicableLiteral"/>
+	</xsd:simpleType>
+	<xsd:simpleType name="AnyDateTimeNkNaType">
+		<xsd:union memberTypes="LocalDateType DateType LocalDateTimeType DateTimeType NotKnownLiteral NotApplicableLiteral"/>
+	</xsd:simpleType>
+	<xsd:simpleType name="AnyDateTimeNkType">
+		<xsd:union memberTypes="LocalDateType DateType LocalDateTimeType DateTimeType NotKnownLiteral"/>
+	</xsd:simpleType>
+	<xsd:simpleType name="AnyDateTimeType">
+		<xsd:union memberTypes="LocalDateType DateType LocalDateTimeType DateTimeType"/>
+	</xsd:simpleType>
+	<xsd:simpleType name="AnyLocalDateYearMonthDayType">
+		<xsd:restriction base="xsd:date"/>
+	</xsd:simpleType>
+	<xsd:simpleType name="AnyLocalDateYearMonthType">
+		<xsd:restriction base="xsd:gYearMonth"/>
+	</xsd:simpleType>
+	<xsd:simpleType name="AnyLocalDateYearType">
+		<xsd:restriction base="xsd:gYear"/>
+	</xsd:simpleType>
+	<xsd:simpleType name="AreaTypeType">
+		<xsd:restriction base="xsd:string">
+			<xsd:enumeration value="municipality"/>
+			<xsd:enumeration value="postalcode"/>
+			<xsd:enumeration value="countrycode"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="AssociationTypeType">
+		<xsd:restriction base="xsd:string">
+			<xsd:enumeration value="Professional"/>
+			<xsd:enumeration value="Social"/>
+			<xsd:enumeration value="Community"/>
+			<xsd:enumeration value="Non-Profit"/>
+			<xsd:enumeration value="Religious"/>
+			<xsd:enumeration value="Political"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="BasicExpatriateBenefitTypeTypes">
+		<xsd:restriction base="xsd:string">
+			<xsd:enumeration value="Relocation Package"/>
+			<xsd:enumeration value="School Fees"/>
+			<xsd:enumeration value="Vehicle"/>
+			<xsd:enumeration value="Professional Service Fees"/>
+			<xsd:enumeration value="Language Instruction"/>
+			<xsd:enumeration value="Club Membership"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="BasicFrequencyType">
+		<xsd:restriction base="xsd:string">
+			<xsd:enumeration value="Hourly"/>
+			<xsd:enumeration value="Daily"/>
+			<xsd:enumeration value="Weekly"/>
+			<xsd:enumeration value="Bi-Weekly"/>
+			<xsd:enumeration value="Semi-Monthly"/>
+			<xsd:enumeration value="Monthly"/>
+			<xsd:enumeration value="Month-Week-1"/>
+			<xsd:enumeration value="Month-Week-2"/>
+			<xsd:enumeration value="Month-Week-3"/>
+			<xsd:enumeration value="Month-Week-4"/>
+			<xsd:enumeration value="Month-Week-5"/>
+			<xsd:enumeration value="Month-Week-Last"/>
+			<xsd:enumeration value="Bi-Monthly"/>
+			<xsd:enumeration value="Quarterly"/>
+			<xsd:enumeration value="Semi-Annually"/>
+			<xsd:enumeration value="Annually"/>
+			<xsd:enumeration value="Once"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="BasicHierarchicalRoleType">
+		<xsd:restriction base="xsd:string">
+			<xsd:enumeration value="Functional"/>
+			<xsd:enumeration value="Logical"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="BasicHoursTypes">
+		<xsd:restriction base="xsd:string">
+			<xsd:enumeration value="Regular"/>
+			<xsd:enumeration value="Overtime"/>
+			<xsd:enumeration value="TimeHalf"/>
+			<xsd:enumeration value="DoubleTime"/>
+			<xsd:enumeration value="Special"/>
+			<xsd:enumeration value="Premium"/>
+			<xsd:enumeration value="Per Diem"/>
+			<xsd:enumeration value="On Call"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="BasicInsuranceTypes">
+		<xsd:restriction base="xsd:string">
+			<xsd:enumeration value="Medical"/>
+			<xsd:enumeration value="Dental"/>
+			<xsd:enumeration value="Vision"/>
+			<xsd:enumeration value="Life"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="BasicNoticeFrequencyType">
+		<xsd:restriction base="xsd:string">
+			<xsd:enumeration value="Hour"/>
+			<xsd:enumeration value="Day"/>
+			<xsd:enumeration value="Week"/>
+			<xsd:enumeration value="Month"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="BasicOrganizationalUnitRelationshipType">
+		<xsd:restriction base="xsd:string">
+			<xsd:enumeration value="Child"/>
+			<xsd:enumeration value="Sibling"/>
+			<xsd:enumeration value="Parent"/>
+			<xsd:enumeration value="Ultimate Parent"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="BasicOrganizationalUnitStructureType">
+		<xsd:restriction base="xsd:string">
+			<xsd:enumeration value="Reporting"/>
+			<xsd:enumeration value="Legal"/>
+			<xsd:enumeration value="Fiduciary"/>
+			<xsd:enumeration value="Structural"/>
+			<xsd:enumeration value="Project"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="BasicOrganizationContactPurposeType">
+		<xsd:restriction base="xsd:string">
+			<xsd:enumeration value="Headquarters"/>
+			<xsd:enumeration value="Sales"/>
+			<xsd:enumeration value="Support"/>
+			<xsd:enumeration value="Billing"/>
+			<xsd:enumeration value="Legal"/>
+			<xsd:enumeration value="Human Resources"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="BasicOrganizationLegalOwnershipType">
+		<xsd:restriction base="xsd:string">
+			<xsd:enumeration value="Public"/>
+			<xsd:enumeration value="Private"/>
+			<xsd:enumeration value="Government"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="BasicOrganizationRelationshipType">
+		<xsd:restriction base="xsd:string">
+			<xsd:enumeration value="Child"/>
+			<xsd:enumeration value="Parent"/>
+			<xsd:enumeration value="Ultimate Parent"/>
+			<xsd:enumeration value="Domestic Parent"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="BasicOtherPayTypeTypes">
+		<xsd:restriction base="xsd:string">
+			<xsd:enumeration value="Bonus"/>
+			<xsd:enumeration value="Commission"/>
+			<xsd:enumeration value="Incentive"/>
+			<xsd:enumeration value="Sliding Commission"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="BasicPositionClassification">
+		<xsd:restriction base="xsd:string">
+			<xsd:enumeration value="Direct Hire"/>
+			<xsd:enumeration value="Temp to Hire"/>
+			<xsd:enumeration value="Contract to Hire"/>
+			<xsd:enumeration value="Contract"/>
+			<xsd:enumeration value="Temporary"/>
+			<xsd:enumeration value="Volunteer"/>
+			<xsd:enumeration value="Internship"/>
+			<xsd:enumeration value="Apprenticeship"/>
+			<xsd:enumeration value="On Call"/>
+			<xsd:enumeration value="Remote"/>
+			<xsd:enumeration value="Any"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="BasicReferenceType">
+		<xsd:restriction base="xsd:string">
+			<xsd:enumeration value="Professional"/>
+			<xsd:enumeration value="Personal"/>
+			<xsd:enumeration value="Verification"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="BasicScaleTypes">
+		<xsd:restriction base="xsd:string">
+			<xsd:enumeration value="Global"/>
+			<xsd:enumeration value="National"/>
+			<xsd:enumeration value="Regional"/>
+			<xsd:enumeration value="Local"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="BasicScheduleTypes">
+		<xsd:restriction base="xsd:string">
+			<xsd:enumeration value="Full Time"/>
+			<xsd:enumeration value="Part Time"/>
+			<xsd:enumeration value="Flex Time"/>
+			<xsd:enumeration value="Seasonal"/>
+			<xsd:enumeration value="Any"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="BasicShiftPeriodTypes">
+		<xsd:annotation>
+			<xsd:documentation>1 = Monday, 2 = Tuesday, 3 = Wednesday, 4 = Thursday, 5 = Friday, 6 = Saturday, 7 = Sunday</xsd:documentation>
+		</xsd:annotation>
+		<xsd:restriction base="xsd:string">
+			<xsd:enumeration value="On Call"/>
+			<xsd:enumeration value="Annual"/>
+			<xsd:enumeration value="Rostered"/>
+			<xsd:enumeration value="Variable"/>
+			<xsd:enumeration value="Monthly"/>
+			<xsd:enumeration value="Weekly"/>
+			<xsd:enumeration value="Daily"/>
+			<xsd:enumeration value="1"/>
+			<xsd:enumeration value="2"/>
+			<xsd:enumeration value="3"/>
+			<xsd:enumeration value="4"/>
+			<xsd:enumeration value="5"/>
+			<xsd:enumeration value="6"/>
+			<xsd:enumeration value="7"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="BasicStatusType">
+		<xsd:restriction base="xsd:string">
+			<xsd:enumeration value="Active"/>
+			<xsd:enumeration value="Inactive"/>
+			<xsd:enumeration value="Pending"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="BasicTimeOffTypes">
+		<xsd:restriction base="xsd:string">
+			<xsd:enumeration value="PaidHoliday"/>
+			<xsd:enumeration value="UnpaidHoliday"/>
+			<xsd:enumeration value="PaidVacation"/>
+			<xsd:enumeration value="PaidLeave"/>
+			<xsd:enumeration value="UnpaidLeave"/>
+			<xsd:enumeration value="PersonalDays"/>
+			<xsd:enumeration value="HealthDays"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="BasicWorkStyleTypes">
+		<xsd:restriction base="xsd:string">
+			<xsd:enumeration value="Independent"/>
+			<xsd:enumeration value="Team"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="CompetencyWeightType">
+		<xsd:restriction base="xsd:string">
+			<xsd:enumeration value="levelOfInterest"/>
+			<xsd:enumeration value="skillLevel"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="contactMethodLocationPatternExtensionType">
+		<xsd:union memberTypes="contactMethodLocationType xStringPatternExtensionType"/>
+	</xsd:simpleType>
+	<xsd:simpleType name="contactMethodLocationType">
+		<xsd:restriction base="xsd:string">
+			<xsd:enumeration value="office"/>
+			<xsd:enumeration value="vehicle"/>
+			<xsd:enumeration value="onPerson"/>
+			<xsd:enumeration value="home"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="contactMethodUsePatternExtensionType">
+		<xsd:union memberTypes="contactMethodUseType xStringPatternExtensionType"/>
+	</xsd:simpleType>
+	<xsd:simpleType name="contactMethodUseType">
+		<xsd:restriction base="xsd:string">
+			<xsd:enumeration value="business"/>
+			<xsd:enumeration value="businessDirect"/>
+			<xsd:enumeration value="personal"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="contactMethodWhenAvailableType">
+		<xsd:restriction base="xsd:string"/>
+	</xsd:simpleType>
+	<xsd:simpleType name="contactTypes">
+		<xsd:restriction base="xsd:string">
+			<xsd:enumeration value="recruiter"/>
+			<xsd:enumeration value="HRRep"/>
+			<xsd:enumeration value="directSupervisor"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="ContactTypeStringExtensionType">
+		<xsd:union memberTypes="contactTypes xsd:string"/>
+	</xsd:simpleType>
+	<xsd:simpleType name="CountryCodeType">
+		<xsd:annotation>
+			<xsd:documentation>Must conform to ISO 3166 Representation of Countries.</xsd:documentation>
+		</xsd:annotation>
+		<xsd:restriction base="xsd:string">
+			<xsd:pattern value="[A-Z][A-Z]"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="CourseLevelCodeType">
+		<xsd:restriction base="xsd:string">
+			<xsd:enumeration value="1">
+				<xsd:annotation>
+					<xsd:documentation>Remedial</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="2">
+				<xsd:annotation>
+					<xsd:documentation>Basic</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="3">
+				<xsd:annotation>
+					<xsd:documentation>Teacher's Aide</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="4">
+				<xsd:annotation>
+					<xsd:documentation>General</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="5">
+				<xsd:annotation>
+					<xsd:documentation>Applied</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="6">
+				<xsd:annotation>
+					<xsd:documentation>Survey</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="7">
+				<xsd:annotation>
+					<xsd:documentation>Regular</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="8">
+				<xsd:annotation>
+					<xsd:documentation>Specialized Topics</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="9">
+				<xsd:annotation>
+					<xsd:documentation>Advanced</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="10">
+				<xsd:annotation>
+					<xsd:documentation>Honors</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="11">
+				<xsd:annotation>
+					<xsd:documentation>Gifted and Talented</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="12">
+				<xsd:annotation>
+					<xsd:documentation>Advanced Placement</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="13">
+				<xsd:annotation>
+					<xsd:documentation>Special Education</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="14">
+				<xsd:annotation>
+					<xsd:documentation>Vocational Education</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="15">
+				<xsd:annotation>
+					<xsd:documentation>Independent Study</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="16">
+				<xsd:annotation>
+					<xsd:documentation>Work Experience</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="17">
+				<xsd:annotation>
+					<xsd:documentation>Adult Basic</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="18">
+				<xsd:annotation>
+					<xsd:documentation>Adult Secondary</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="19">
+				<xsd:annotation>
+					<xsd:documentation>International Baccalaureate</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="A">
+				<xsd:annotation>
+					<xsd:documentation>Summary of all courses taken at all institutions</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="AR">
+				<xsd:annotation>
+					<xsd:documentation>Academic Renewal</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="B">
+				<xsd:annotation>
+					<xsd:documentation>Summary of all courses taken at sending institution</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="D">
+				<xsd:annotation>
+					<xsd:documentation>Dual Level (Upper Division and Graduate)</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="DL">
+				<xsd:annotation>
+					<xsd:documentation>Dual Level (Graduate and Professional)</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="E">
+				<xsd:annotation>
+					<xsd:documentation>Summary of All Courses Taken at All Institutions, excluding Repeated and/or Forgiven Courses</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="F">
+				<xsd:annotation>
+					<xsd:documentation>Summary of All Courses Taken at the Sending Institution, Excluding Repeated and/or Forgiven Courses</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="G">
+				<xsd:annotation>
+					<xsd:documentation>Graduate (postsecondary)</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="H">
+				<xsd:annotation>
+					<xsd:documentation>Higher or Upper division (postsecondary)</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="I">
+				<xsd:annotation>
+					<xsd:documentation>Institutional Credit</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="L">
+				<xsd:annotation>
+					<xsd:documentation>Lower division (postsecondary)</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="M">
+				<xsd:annotation>
+					<xsd:documentation>Work in the Major or Program</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="P">
+				<xsd:annotation>
+					<xsd:documentation>Professional</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="R">
+				<xsd:annotation>
+					<xsd:documentation>Remedial (postsecondary)</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="T">
+				<xsd:annotation>
+					<xsd:documentation>Summary of Transfer Work Only</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="U">
+				<xsd:annotation>
+					<xsd:documentation>Undergraduate (postsecondary)</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="V">
+				<xsd:annotation>
+					<xsd:documentation>Summary of Transfer Work Only, Excluding Repeated and/or Forgiven Courses</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="CurrencyCodeType">
+		<xsd:annotation>
+			<xsd:documentation>Must conform to ISO 4217 - Representation of Currency and Funds</xsd:documentation>
+		</xsd:annotation>
+		<xsd:restriction base="xsd:string">
+			<xsd:pattern value="[A-Z][A-Z][A-Z]"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="DateTimeType">
+		<xsd:restriction base="xsd:dateTime">
+			<xsd:pattern value="\d\d\d\d-\d\d-\d\dT\d\d:\d\d:\d\d(Z|(\+|-)\d\d:\d\d)"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="DateType">
+		<xsd:restriction base="xsd:date">
+			<xsd:pattern value="\d\d\d\d-\d\d-\d\d(Z|(\+|-)\d\d:\d\d)"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="degreeCodeTypes">
+		<xsd:restriction base="xsd:string">
+			<xsd:enumeration value="B17">
+				<xsd:annotation>
+					<xsd:documentation>Did not complete secondary school</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="B18">
+				<xsd:annotation>
+					<xsd:documentation>Standard high school diploma</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="B19">
+				<xsd:annotation>
+					<xsd:documentation>Advanced or honors diploma</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="B20">
+				<xsd:annotation>
+					<xsd:documentation>Vocational diploma</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="B21">
+				<xsd:annotation>
+					<xsd:documentation>Special education diploma</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="B22">
+				<xsd:annotation>
+					<xsd:documentation>Certificate of completion or attendance</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="B23">
+				<xsd:annotation>
+					<xsd:documentation>Special certificate of completion</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="B24">
+				<xsd:annotation>
+					<xsd:documentation>General Education Development Diploma (GED)</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="B25">
+				<xsd:annotation>
+					<xsd:documentation>Other high school equivalency diploma</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="B26">
+				<xsd:annotation>
+					<xsd:documentation>International diploma or certificate (such as International Baccalaureate)</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="degreeTypes">
+		<xsd:restriction base="xsd:string">
+			<xsd:enumeration value="secondary"/>
+			<xsd:enumeration value="high school or equivalent"/>
+			<xsd:enumeration value="some high school or equivalent"/>
+			<xsd:enumeration value="HND/HNC or equivalent"/>
+			<xsd:enumeration value="vocational"/>
+			<xsd:enumeration value="certification"/>
+			<xsd:enumeration value="some college"/>
+			<xsd:enumeration value="associates"/>
+			<xsd:enumeration value="bachelors"/>
+			<xsd:enumeration value="some post-graduate"/>
+			<xsd:enumeration value="masters"/>
+			<xsd:enumeration value="doctorate"/>
+			<xsd:enumeration value="postdoctorate"/>
+			<xsd:enumeration value="professional"/>
+			<xsd:enumeration value="postprofessional"/>
+			<xsd:enumeration value="intermediategraduate"/>
+			<xsd:enumeration value="specialeducation"/>
+			<xsd:enumeration value="ged"/>
+			<xsd:enumeration value="international"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="DegreeTypeStringExtensionType">
+		<xsd:union memberTypes="degreeTypes degreeCodeTypes graduationCodeTypes xsd:string"/>
+	</xsd:simpleType>
+	<xsd:simpleType name="DressCodeContentType">
+		<xsd:restriction base="xsd:string">
+			<xsd:enumeration value="Professional"/>
+			<xsd:enumeration value="Business"/>
+			<xsd:enumeration value="Business Casual"/>
+			<xsd:enumeration value="Uniform"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="DressCodeContentTypes">
+		<xsd:union memberTypes="DressCodeContentType xStringPatternExtensionType"/>
+	</xsd:simpleType>
+	<xsd:simpleType name="DunsNumberBaseType">
+		<xsd:restriction base="xsd:integer">
+			<xsd:pattern value="\d{9}"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="EEOCJobCategoryEnumType">
+		<xsd:restriction base="xsd:string">
+			<xsd:enumeration value="Officials and Managers"/>
+			<xsd:enumeration value="Professionals"/>
+			<xsd:enumeration value=" Technicians"/>
+			<xsd:enumeration value="Sales"/>
+			<xsd:enumeration value="Official and Clerical"/>
+			<xsd:enumeration value="Craft Workers Skilled"/>
+			<xsd:enumeration value="Operative SemiSkilled"/>
+			<xsd:enumeration value="Laborers Unskilled"/>
+			<xsd:enumeration value="Service Workers"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="employerOrgTypes">
+		<xsd:restriction base="xsd:string">
+			<xsd:enumeration value="soleEmployer"/>
+			<xsd:enumeration value="agent"/>
+			<xsd:enumeration value="broker"/>
+			<xsd:enumeration value="self"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="EmpOrgTypeStringExtensionType">
+		<xsd:union memberTypes="employerOrgTypes xsd:string"/>
+	</xsd:simpleType>
+	<xsd:simpleType name="EventTypeType">
+		<xsd:restriction base="xsd:string">
+			<xsd:enumeration value="convention"/>
+			<xsd:enumeration value="rally"/>
+			<xsd:enumeration value="conference"/>
+			<xsd:enumeration value="sales meeting"/>
+			<xsd:enumeration value="television show"/>
+			<xsd:enumeration value="radio show"/>
+			<xsd:enumeration value="web-based"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="ExpatriateBenefitTypeTypes">
+		<xsd:union memberTypes="BasicExpatriateBenefitTypeTypes xStringPatternExtensionType"/>
+	</xsd:simpleType>
+	<xsd:simpleType name="ExtendedAssociationTypeType">
+		<xsd:union memberTypes="AssociationTypeType xStringPatternExtensionType"/>
+	</xsd:simpleType>
+	<xsd:simpleType name="ExtendedBasicStatusType">
+		<xsd:union memberTypes="BasicStatusType xStringPatternExtensionType"/>
+	</xsd:simpleType>
+	<xsd:simpleType name="ExtendedEventTypeType">
+		<xsd:union memberTypes="EventTypeType xStringPatternExtensionType"/>
+	</xsd:simpleType>
+	<xsd:simpleType name="ExtendedRoleType">
+		<xsd:union memberTypes="xStringPatternExtensionType RoleType"/>
+	</xsd:simpleType>
+	<xsd:simpleType name="ExtendedSpeakingTypeType">
+		<xsd:union memberTypes="SpeakingTypeType xStringPatternExtensionType"/>
+	</xsd:simpleType>
+	<xsd:simpleType name="ExtendedWeightType">
+		<xsd:union memberTypes="CompetencyWeightType xStringPatternExtensionType"/>
+	</xsd:simpleType>
+	<xsd:simpleType name="EyeColorQualifiers">
+		<xsd:union memberTypes="PersonEyeColorQualifiers xStringPatternExtensionType"/>
+	</xsd:simpleType>
+	<xsd:simpleType name="FLSAStatusEnumType">
+		<xsd:restriction base="xsd:string">
+			<xsd:enumeration value="exempt"/>
+			<xsd:enumeration value="non-exempt"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="FrequencyType">
+		<xsd:union memberTypes="BasicFrequencyType xStringPatternExtensionType"/>
+	</xsd:simpleType>
+	<xsd:simpleType name="GenderCodeType">
+		<xsd:annotation>
+			<xsd:documentation>Must conform to ISO 5218 - Representation of Human Sexes (0 - Not Known; 1 - Male; 2 - Female; 9 - Not specified)</xsd:documentation>
+		</xsd:annotation>
+		<xsd:restriction base="xsd:integer">
+			<xsd:pattern value="[0129]"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="GraduatingDegreeType">
+		<xsd:restriction base="xsd:string">
+			<xsd:enumeration value="graduating"/>
+			<xsd:enumeration value="qualifying"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="graduationCodeTypes">
+		<xsd:restriction base="xsd:string">
+			<xsd:enumeration value="2.1">
+				<xsd:annotation>
+					<xsd:documentation>Postsecondary Certificate Or Diploma (less than one year)</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="2.2">
+				<xsd:annotation>
+					<xsd:documentation>Postsecondary Certificate Or Diploma (one year or more but less than four years)</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="2.3">
+				<xsd:annotation>
+					<xsd:documentation>Associate Degree (e.g., Associate In Arts, Associate In Science, Associate In Applied Science)</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="2.4">
+				<xsd:annotation>
+					<xsd:documentation>Baccalaureate Degree</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="2.5">
+				<xsd:annotation>
+					<xsd:documentation>Baccalaureate (Honours) Degree</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="2.6">
+				<xsd:annotation>
+					<xsd:documentation>Postsecondary Certificate Or Diploma (one year or more but less than two years)</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="2.7">
+				<xsd:annotation>
+					<xsd:documentation>Postsecondary Certificate Or Diploma (two years or more but less than four years)</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="3.1">
+				<xsd:annotation>
+					<xsd:documentation>First Professional Degree</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="3.2">
+				<xsd:annotation>
+					<xsd:documentation>Post-Professional Degree</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="4.1">
+				<xsd:annotation>
+					<xsd:documentation>Graduate Certificate</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="4.2">
+				<xsd:annotation>
+					<xsd:documentation>Master's Degree</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="4.3">
+				<xsd:annotation>
+					<xsd:documentation>Intermediate Graduate Degree</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="4.4">
+				<xsd:annotation>
+					<xsd:documentation>Doctoral Degree</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="4.5">
+				<xsd:annotation>
+					<xsd:documentation>Post-Doctoral Degree</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="HairColorQualifiers">
+		<xsd:union memberTypes="PersonHairColorQualifiers xStringPatternExtensionType"/>
+	</xsd:simpleType>
+	<xsd:simpleType name="HandicapStatusEnumType">
+		<xsd:restriction base="xsd:string">
+			<xsd:enumeration value="HandicapOnly"/>
+			<xsd:enumeration value="All"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="HierarchicalRoleType">
+		<xsd:union memberTypes="BasicHierarchicalRoleType xStringPatternExtensionType"/>
+	</xsd:simpleType>
+	<xsd:simpleType name="InsuranceTypes">
+		<xsd:union memberTypes="BasicInsuranceTypes xStringPatternExtensionType"/>
+	</xsd:simpleType>
+	<xsd:simpleType name="InternetEmailAddressType">
+		<xsd:restriction base="xsd:string"/>
+	</xsd:simpleType>
+	<xsd:simpleType name="InternetWebAddressType">
+		<xsd:restriction base="xsd:string"/>
+	</xsd:simpleType>
+	<xsd:simpleType name="intervalTypes">
+		<xsd:restriction base="xsd:string">
+			<xsd:enumeration value="hourly"/>
+			<xsd:enumeration value="daily"/>
+			<xsd:enumeration value="weekly"/>
+			<xsd:enumeration value="monthly"/>
+			<xsd:enumeration value="quarterly"/>
+			<xsd:enumeration value="yearly"/>
+			<xsd:enumeration value="semi-monthly"/>
+			<xsd:enumeration value="biweekly"/>
+			<xsd:enumeration value="fortnightly"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="IntervalTypeStringExtensionType">
+		<xsd:union memberTypes="intervalTypes xsd:string"/>
+	</xsd:simpleType>
+	<xsd:simpleType name="isbnType">
+		<xsd:annotation>
+			<xsd:documentation>International Standard Book Number. The ISBN is defined by the ISO ISO 2108 standard. The International Standard Book Number (ISBN) is a 10-digit system to identify books and monographic publications.
+
+			</xsd:documentation>
+		</xsd:annotation>
+		<xsd:restriction base="xsd:string">
+			<xsd:pattern value="[0-9]{9}[0-9,X]{1}"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="ISCEDInstitutionClassificationType">
+		<xsd:restriction base="xsd:string">
+			<xsd:enumeration value="0"/>
+			<xsd:enumeration value="1"/>
+			<xsd:enumeration value="2"/>
+			<xsd:enumeration value="3"/>
+			<xsd:enumeration value="4"/>
+			<xsd:enumeration value="5"/>
+			<xsd:enumeration value="6"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="issnType">
+		<xsd:annotation>
+			<xsd:documentation>International Standard Serial Number. The is an identifier for articles and serial publications. The ISSN is defined by the ISO 3297 standard. The ISSN can be applied to series of books. A book belonging to a particular series will have both an ISSN (identifying the series) and an ISBN (identifying the given monograph as such).</xsd:documentation>
+		</xsd:annotation>
+		<xsd:restriction base="xsd:string">
+			<xsd:pattern value="ISSN[0-9]{4}-[0-9]{3}[0-9,X]{1}"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="LanguageCodeType">
+		<xsd:annotation>
+			<xsd:documentation>ISO 639-1 two character code is preferred, but not required.</xsd:documentation>
+		</xsd:annotation>
+		<xsd:restriction base="xsd:language"/>
+	</xsd:simpleType>
+	<xsd:simpleType name="LatitudeType">
+		<xsd:annotation>
+			<xsd:documentation>Negative numbers are degrees South Latitude, and positive numbers are degrees North Latitude.</xsd:documentation>
+		</xsd:annotation>
+		<xsd:restriction base="xsd:decimal">
+			<xsd:minInclusive value="-90.0"/>
+			<xsd:maxInclusive value="90.0"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="LocalDateNkNaType">
+		<xsd:union memberTypes="LocalDateType NotKnownLiteral NotApplicableLiteral"/>
+	</xsd:simpleType>
+	<xsd:simpleType name="LocalDateTimeType">
+		<xsd:restriction base="xsd:dateTime">
+			<xsd:pattern value="\d\d\d\d-\d\d-\d\dT\d\d:\d\d:\d\d"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="LocalDateType">
+		<xsd:restriction base="xsd:date">
+			<xsd:pattern value="\d\d\d\d-\d\d-\d\d"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="LocalTimeNkNaType">
+		<xsd:union memberTypes="LocalTimeType NotKnownLiteral NotApplicableLiteral"/>
+	</xsd:simpleType>
+	<xsd:simpleType name="LocalTimeType">
+		<xsd:restriction base="xsd:time">
+			<xsd:pattern value="\d\d:\d\d:\d\d"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="LocationAreaTypeType">
+		<xsd:restriction base="xsd:string">
+			<xsd:enumeration value="municipality"/>
+			<xsd:enumeration value="postalcode"/>
+			<xsd:enumeration value="countrycode"/>
+			<xsd:enumeration value="region"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="LongitudeType">
+		<xsd:annotation>
+			<xsd:documentation>Negative numbers are degrees West Longitude, and positive numbers are degrees East Longitude.</xsd:documentation>
+		</xsd:annotation>
+		<xsd:restriction base="xsd:decimal">
+			<xsd:minInclusive value="-180.0"/>
+			<xsd:maxInclusive value="180.0"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="MaritalStatusList">
+		<xsd:restriction base="xsd:string">
+			<xsd:enumeration value="Domestic Partner"/>
+			<xsd:enumeration value="Divorced"/>
+			<xsd:enumeration value="Married"/>
+			<xsd:enumeration value="Unreported"/>
+			<xsd:enumeration value="Separated"/>
+			<xsd:enumeration value="Unmarried"/>
+			<xsd:enumeration value="Widowed"/>
+			<xsd:enumeration value="Legally Separated"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="MaritalStatusType">
+		<xsd:union memberTypes="MaritalStatusList xStringPatternExtensionType"/>
+	</xsd:simpleType>
+	<xsd:simpleType name="NonNegativeDecimal">
+		<xsd:restriction base="xsd:decimal">
+			<xsd:minInclusive value="0"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="NotApplicableLiteral">
+		<xsd:restriction base="xsd:string">
+			<xsd:enumeration value="notApplicable"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="NoticeFrequencyType">
+		<xsd:union memberTypes="BasicNoticeFrequencyType xStringPatternExtensionType"/>
+	</xsd:simpleType>
+	<xsd:simpleType name="NotKnownLiteral">
+		<xsd:restriction base="xsd:string">
+			<xsd:enumeration value="notKnown"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="OrganizationalUnitRelationshipType">
+		<xsd:union memberTypes="BasicOrganizationalUnitRelationshipType xStringPatternExtensionType"/>
+	</xsd:simpleType>
+	<xsd:simpleType name="OrganizationalUnitStructureType">
+		<xsd:union memberTypes="BasicOrganizationalUnitStructureType xStringPatternExtensionType"/>
+	</xsd:simpleType>
+	<xsd:simpleType name="OrganizationContactPurposeType">
+		<xsd:union memberTypes="BasicOrganizationContactPurposeType xStringPatternExtensionType"/>
+	</xsd:simpleType>
+	<xsd:simpleType name="OrganizationLegalOwnershipType">
+		<xsd:union memberTypes="BasicOrganizationLegalOwnershipType xStringPatternExtensionType"/>
+	</xsd:simpleType>
+	<xsd:simpleType name="OrganizationRelationshipType">
+		<xsd:union memberTypes="BasicOrganizationRelationshipType xStringPatternExtensionType"/>
+	</xsd:simpleType>
+	<xsd:simpleType name="organizationTypes">
+		<xsd:restriction base="xsd:string">
+			<xsd:enumeration value="department"/>
+			<xsd:enumeration value="group"/>
+			<xsd:enumeration value="team"/>
+			<xsd:enumeration value="branch"/>
+			<xsd:enumeration value="company"/>
+			<xsd:enumeration value="subsidiary"/>
+			<xsd:enumeration value="unit"/>
+			<xsd:enumeration value="headquarters"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="OrganizationTypeStringExtensionType">
+		<xsd:union memberTypes="organizationTypes xsd:string"/>
+	</xsd:simpleType>
+	<xsd:simpleType name="orgTypes">
+		<xsd:restriction base="xsd:string">
+			<xsd:enumeration value="department"/>
+			<xsd:enumeration value="subSchool"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="OrgTypeStringExtensionType">
+		<xsd:union memberTypes="orgTypes xsd:string"/>
+	</xsd:simpleType>
+	<xsd:simpleType name="OtherIntervalType">
+		<xsd:union memberTypes="BasicFrequencyType SignOnType xStringPatternExtensionType"/>
+	</xsd:simpleType>
+	<xsd:simpleType name="OtherPayTypeTypes">
+		<xsd:union memberTypes="BasicOtherPayTypeTypes xStringPatternExtensionType"/>
+	</xsd:simpleType>
+	<xsd:simpleType name="PatentStatusTypes">
+		<xsd:union memberTypes="PatentStatusTypeTypes xStringPatternExtensionType"/>
+	</xsd:simpleType>
+	<xsd:simpleType name="PatentStatusTypeTypes">
+		<xsd:restriction base="xsd:string">
+			<xsd:enumeration value="PatentIssued"/>
+			<xsd:enumeration value="PatentPending"/>
+			<xsd:enumeration value="PatentFiled"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="PersonEyeColorQualifiers">
+		<xsd:restriction base="xsd:string">
+			<xsd:enumeration value="Black"/>
+			<xsd:enumeration value="Hazel"/>
+			<xsd:enumeration value="Gray"/>
+			<xsd:enumeration value="Brown"/>
+			<xsd:enumeration value="Violet"/>
+			<xsd:enumeration value="Green"/>
+			<xsd:enumeration value="Blue"/>
+			<xsd:enumeration value="Maroon"/>
+			<xsd:enumeration value="Pink"/>
+			<xsd:enumeration value="Dichromatic"/>
+			<xsd:enumeration value="Unknown"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="PersonHairColorQualifiers">
+		<xsd:restriction base="xsd:string">
+			<xsd:enumeration value="Bald"/>
+			<xsd:enumeration value="Brown"/>
+			<xsd:enumeration value="White"/>
+			<xsd:enumeration value="Blonde"/>
+			<xsd:enumeration value="Gray"/>
+			<xsd:enumeration value="Red"/>
+			<xsd:enumeration value="Auburn"/>
+			<xsd:enumeration value="Black"/>
+			<xsd:enumeration value="Silver"/>
+			<xsd:enumeration value="Unknown"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="PositionScheduleType">
+		<xsd:union memberTypes="BasicScheduleTypes xStringPatternExtensionType"/>
+	</xsd:simpleType>
+	<xsd:simpleType name="positionTypes">
+		<xsd:restriction base="xsd:string">
+			<xsd:enumeration value="directHire"/>
+			<xsd:enumeration value="contract"/>
+			<xsd:enumeration value="temp"/>
+			<xsd:enumeration value="contractToHire"/>
+			<xsd:enumeration value="tempToHire"/>
+			<xsd:enumeration value="volunteer"/>
+			<xsd:enumeration value="internship"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="PositionTypexStringPatternExtensionType">
+		<xsd:union memberTypes="positionTypes xStringPatternExtensionType"/>
+	</xsd:simpleType>
+	<xsd:simpleType name="PublicationOtherTypes">
+		<xsd:union memberTypes="xStringPatternExtensionType PublicationOtherTypeTypes"/>
+	</xsd:simpleType>
+	<xsd:simpleType name="PublicationOtherTypeTypes">
+		<xsd:restriction base="xsd:string">
+			<xsd:enumeration value="Thesis"/>
+			<xsd:enumeration value="Whitepaper"/>
+			<xsd:enumeration value="Report"/>
+			<xsd:enumeration value="TechnicalDocumentation"/>
+			<xsd:enumeration value="Study"/>
+			<xsd:enumeration value="Manual"/>
+			<xsd:enumeration value="ResearchPaper"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="PublicationTypes">
+		<xsd:union memberTypes="PublicationTypeTypes xStringPatternExtensionType"/>
+	</xsd:simpleType>
+	<xsd:simpleType name="PublicationTypeTypes">
+		<xsd:restriction base="xsd:string">
+			<xsd:enumeration value="Article"/>
+			<xsd:enumeration value="Book"/>
+			<xsd:enumeration value="Conference"/>
+			<xsd:enumeration value="Other"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="ReferenceTypes">
+		<xsd:union memberTypes="BasicReferenceType xStringPatternExtensionType"/>
+	</xsd:simpleType>
+	<xsd:simpleType name="RelationshipsType">
+		<xsd:union memberTypes="RelationshipType xStringPatternExtensionType"/>
+	</xsd:simpleType>
+	<xsd:simpleType name="RelationshipType">
+		<xsd:restriction base="xsd:string">
+			<xsd:enumeration value="agent"/>
+			<xsd:enumeration value="broker"/>
+			<xsd:enumeration value="self"/>
+			<xsd:enumeration value="referrer"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="ResumeItemTypes">
+		<xsd:union memberTypes="xStringPatternExtensionType ResumeItemTypeTypes"/>
+	</xsd:simpleType>
+	<xsd:simpleType name="ResumeItemTypeTypes">
+		<xsd:restriction base="xsd:string">
+			<xsd:enumeration value="Activities"/>
+			<xsd:enumeration value="Interests"/>
+			<xsd:enumeration value="Personal"/>
+			<xsd:enumeration value="Community"/>
+			<xsd:enumeration value="Hobbies"/>
+			<xsd:enumeration value="Volunteer"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="RoleType">
+		<xsd:restriction base="xsd:string">
+			<xsd:enumeration value="author"/>
+			<xsd:enumeration value="editor"/>
+			<xsd:enumeration value="illustrator"/>
+			<xsd:enumeration value="contributor"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="ScaleType">
+		<xsd:union memberTypes="BasicScaleTypes xStringPatternExtensionType"/>
+	</xsd:simpleType>
+	<xsd:simpleType name="schoolTypes">
+		<xsd:restriction base="xsd:string">
+			<xsd:enumeration value="highschool"/>
+			<xsd:enumeration value="secondary"/>
+			<xsd:enumeration value="trade"/>
+			<xsd:enumeration value="community"/>
+			<xsd:enumeration value="college"/>
+			<xsd:enumeration value="university"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="SchoolTypeStringExtensionType">
+		<xsd:union memberTypes="schoolTypes xsd:string"/>
+	</xsd:simpleType>
+	<xsd:simpleType name="SchoolTypeType">
+		<xsd:annotation>
+			<xsd:documentation>Further refines the name of the institution. </xsd:documentation>
+		</xsd:annotation>
+		<xsd:restriction base="xsd:string">
+			<xsd:enumeration value="current"/>
+			<xsd:enumeration value="prior"/>
+			<xsd:enumeration value="joint"/>
+			<xsd:enumeration value="degree"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="ShiftPeriodType">
+		<xsd:union memberTypes="BasicShiftPeriodTypes xStringPatternExtensionType"/>
+	</xsd:simpleType>
+	<xsd:simpleType name="SignOnType">
+		<xsd:restriction base="xsd:string">
+			<xsd:enumeration value="Sign-on"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="SourceEnumType">
+		<xsd:restriction base="xsd:string">
+			<xsd:enumeration value="Job Board"/>
+			<xsd:enumeration value="Staffing Agency"/>
+			<xsd:enumeration value="Intermediary"/>
+			<xsd:enumeration value="Referrer"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="SpeakingTypeType">
+		<xsd:restriction base="xsd:string">
+			<xsd:enumeration value="speech"/>
+			<xsd:enumeration value="presentation"/>
+			<xsd:enumeration value="demonstration"/>
+			<xsd:enumeration value="interview"/>
+			<xsd:enumeration value="debate"/>
+			<xsd:enumeration value="panel discussion"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="StaffingPositionClassificationType">
+		<xsd:union memberTypes="BasicPositionClassification xStringPatternExtensionType"/>
+	</xsd:simpleType>
+	<xsd:simpleType name="TimeOffTypes">
+		<xsd:union memberTypes="BasicTimeOffTypes xStringPatternExtensionType"/>
+	</xsd:simpleType>
+	<xsd:simpleType name="TimeType">
+		<xsd:restriction base="xsd:time">
+			<xsd:pattern value="\d\d:\d\d:\d\d(Z|(\+|-)\d\d:\d\d)"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="USPayTypeHoursType">
+		<xsd:union memberTypes="BasicHoursTypes xStringPatternExtensionType"/>
+	</xsd:simpleType>
+	<xsd:simpleType name="WorkStyleType">
+		<xsd:union memberTypes="BasicWorkStyleTypes xStringPatternExtensionType"/>
+	</xsd:simpleType>
+	<xsd:simpleType name="xStringPatternExtensionType">
+		<xsd:restriction base="xsd:string">
+			<xsd:pattern value="x:\S.*"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:complexType name="AccountingCodeType">
+		<xsd:simpleContent>
+			<xsd:extension base="xsd:string">
+				<xsd:attribute name="description" type="xsd:string" use="optional"/>
+			</xsd:extension>
+		</xsd:simpleContent>
+	</xsd:complexType>
+	<xsd:complexType name="AchievementType">
+		<xsd:sequence>
+			<xsd:element name="Date" type="FlexibleDatesType" minOccurs="0"/>
+			<xsd:element name="Description" type="xsd:string" minOccurs="0"/>
+			<xsd:element name="IssuingAuthority" type="xsd:string" minOccurs="0"/>
+		</xsd:sequence>
+	</xsd:complexType>
+	<xsd:complexType name="AdditionalItemType">
+		<xsd:sequence>
+			<xsd:element name="EffectiveDate" minOccurs="0">
+				<xsd:complexType>
+					<xsd:sequence>
+						<xsd:element name="StartDate" type="FlexibleDatesType" minOccurs="0"/>
+						<xsd:element name="EndDate" type="FlexibleDatesType" minOccurs="0"/>
+					</xsd:sequence>
+				</xsd:complexType>
+			</xsd:element>
+			<xsd:element name="Description" type="xsd:string" maxOccurs="unbounded">
+				<xsd:annotation>
+					<xsd:documentation>The type attribute of the parent element will identify the content of this element.  i.e. header, detail, etc.</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+		</xsd:sequence>
+		<xsd:attribute name="type" type="ResumeItemTypes" use="optional"/>
+	</xsd:complexType>
+	<xsd:complexType name="AreaType">
+		<xsd:sequence>
+			<xsd:element name="Value" type="xsd:string"/>
+			<xsd:element name="Area" type="AreaType" minOccurs="0" maxOccurs="unbounded"/>
+		</xsd:sequence>
+		<xsd:attribute name="type">
+			<xsd:simpleType>
+				<xsd:union memberTypes="AreaTypeType xStringPatternExtensionType"/>
+			</xsd:simpleType>
+		</xsd:attribute>
+	</xsd:complexType>
+	<xsd:complexType name="ArticleType">
+		<xsd:annotation>
+			<xsd:documentation>Contains bibliographic information for an article published in a journal or serial.</xsd:documentation>
+		</xsd:annotation>
+		<xsd:complexContent>
+			<xsd:extension base="BasicBibliographicRecordType">
+				<xsd:sequence>
+					<xsd:element name="JournalOrSerialName" type="xsd:string" minOccurs="0"/>
+					<xsd:element name="ISSN" type="issnType" minOccurs="0"/>
+					<xsd:element name="Volume" type="xsd:string" minOccurs="0"/>
+					<xsd:element name="Issue" type="xsd:string" minOccurs="0"/>
+					<xsd:element name="PageNumber" type="xsd:string" minOccurs="0"/>
+					<xsd:element name="PublicationLanguage" type="LanguageCodeType" minOccurs="0"/>
+				</xsd:sequence>
+			</xsd:extension>
+		</xsd:complexContent>
+	</xsd:complexType>
+	<xsd:complexType name="AssociationType">
+		<xsd:sequence>
+			<xsd:element name="Name" type="xsd:string"/>
+			<xsd:element name="Id" type="EntityIdType" minOccurs="0"/>
+			<xsd:element name="Link" type="InternetWebAddressType" minOccurs="0"/>
+			<xsd:element name="StartDate" type="FlexibleDatesType" minOccurs="0"/>
+			<xsd:element name="EndDate" type="FlexibleDatesType" minOccurs="0"/>
+			<xsd:element name="Role" minOccurs="0" maxOccurs="unbounded">
+				<xsd:complexType>
+					<xsd:sequence>
+						<xsd:element name="Name" type="xsd:string" minOccurs="0"/>
+						<xsd:element name="Deliverable" type="xsd:string" minOccurs="0" maxOccurs="unbounded"/>
+						<xsd:element name="StartDate" type="FlexibleDatesType" minOccurs="0"/>
+						<xsd:element name="EndDate" type="FlexibleDatesType" minOccurs="0"/>
+						<xsd:element name="Comments" type="xsd:string" minOccurs="0"/>
+					</xsd:sequence>
+				</xsd:complexType>
+			</xsd:element>
+			<xsd:element name="Comments" type="xsd:string" minOccurs="0"/>
+		</xsd:sequence>
+	</xsd:complexType>
+	<xsd:complexType name="BasePayType">
+		<xsd:sequence>
+			<xsd:element name="BasePayAmountMin" type="xsd:decimal" minOccurs="0"/>
+			<xsd:element name="BasePayAmountMax" type="xsd:decimal" minOccurs="0"/>
+		</xsd:sequence>
+		<xsd:attribute name="currencyCode" type="CurrencyCodeType"/>
+		<xsd:attribute name="baseInterval" type="FrequencyType"/>
+	</xsd:complexType>
+	<xsd:complexType name="BasicBibliographicRecordType">
+		<xsd:sequence>
+			<xsd:element name="Title" type="xsd:string"/>
+			<xsd:element name="Name" minOccurs="0" maxOccurs="unbounded">
+				<xsd:complexType>
+					<xsd:complexContent>
+						<xsd:extension base="PersonNameType">
+							<xsd:attribute name="role" type="ExtendedRoleType" use="required"/>
+						</xsd:extension>
+					</xsd:complexContent>
+				</xsd:complexType>
+			</xsd:element>
+			<xsd:element name="PublicationDate" type="FlexibleDatesType" minOccurs="0"/>
+			<xsd:element name="Link" type="InternetWebAddressType" minOccurs="0" maxOccurs="unbounded"/>
+			<xsd:element name="Abstract" type="xsd:string" minOccurs="0"/>
+			<xsd:element name="Copyright" type="CopyrightType" minOccurs="0"/>
+			<xsd:element name="Comments" type="xsd:string" minOccurs="0"/>
+		</xsd:sequence>
+	</xsd:complexType>
+	<xsd:complexType name="BenefitsType">
+		<xsd:sequence>
+			<xsd:element name="Insurance" minOccurs="0" maxOccurs="unbounded">
+				<xsd:complexType>
+					<xsd:simpleContent>
+						<xsd:extension base="xsd:boolean">
+							<xsd:attribute name="type" type="InsuranceTypes"/>
+						</xsd:extension>
+					</xsd:simpleContent>
+				</xsd:complexType>
+			</xsd:element>
+			<xsd:element name="RetirementOrSavingsPlan" type="xsd:boolean" minOccurs="0"/>
+			<xsd:element name="CompanyVehicle" minOccurs="0" maxOccurs="unbounded">
+				<xsd:complexType>
+					<xsd:sequence>
+						<xsd:element name="Description" type="xsd:string" minOccurs="0"/>
+					</xsd:sequence>
+					<xsd:attribute name="companyOffered" type="xsd:boolean"/>
+				</xsd:complexType>
+			</xsd:element>
+			<xsd:element name="RelocationAssistance" minOccurs="0" maxOccurs="unbounded">
+				<xsd:complexType>
+					<xsd:sequence>
+						<xsd:element name="Description" type="xsd:string" minOccurs="0"/>
+					</xsd:sequence>
+					<xsd:attribute name="companyOffered" type="xsd:boolean"/>
+				</xsd:complexType>
+			</xsd:element>
+			<xsd:element name="VisaSponsorship" type="xsd:boolean" minOccurs="0"/>
+			<xsd:element name="TimeOffAllowance" type="TimeOffAllowanceType" minOccurs="0" maxOccurs="unbounded"/>
+			<xsd:element name="ExpatriateBenefits" type="ExpatriateBenefitsType" minOccurs="0"/>
+			<xsd:element name="OtherBenefits" minOccurs="0" maxOccurs="unbounded">
+				<xsd:complexType>
+					<xsd:simpleContent>
+						<xsd:extension base="xsd:string">
+							<xsd:attribute name="type" type="xsd:string"/>
+						</xsd:extension>
+					</xsd:simpleContent>
+				</xsd:complexType>
+			</xsd:element>
+			<xsd:element name="Comments" type="xsd:string" minOccurs="0"/>
+		</xsd:sequence>
+	</xsd:complexType>
+	<xsd:complexType name="BiologicalDescriptorsType">
+		<xsd:sequence>
+			<xsd:choice>
+				<xsd:element name="DateOfBirth" type="LocalDateNkNaType" minOccurs="0"/>
+				<xsd:element name="MonthDayOfBirth" type="xsd:gMonthDay" minOccurs="0"/>
+			</xsd:choice>
+			<xsd:element name="Age" type="xsd:nonNegativeInteger" minOccurs="0"/>
+			<xsd:element name="GenderCode" type="GenderCodeType" minOccurs="0"/>
+			<xsd:element name="EyeColor" type="EyeColorQualifiers" minOccurs="0"/>
+			<xsd:element name="HairColor" type="HairColorQualifiers" minOccurs="0"/>
+			<xsd:element name="Height" minOccurs="0">
+				<xsd:complexType>
+					<xsd:simpleContent>
+						<xsd:extension base="xsd:string">
+							<xsd:attribute name="unitOfMeasure" type="xsd:string"/>
+						</xsd:extension>
+					</xsd:simpleContent>
+				</xsd:complexType>
+			</xsd:element>
+			<xsd:element name="Weight" minOccurs="0">
+				<xsd:complexType>
+					<xsd:simpleContent>
+						<xsd:extension base="xsd:string">
+							<xsd:attribute name="unitOfMeasure" type="xsd:string"/>
+						</xsd:extension>
+					</xsd:simpleContent>
+				</xsd:complexType>
+			</xsd:element>
+			<xsd:element name="IdentifyingMarks" type="xsd:string" minOccurs="0" maxOccurs="unbounded"/>
+			<xsd:element name="DisabilityInfo" type="DisabilityInfoType" minOccurs="0" maxOccurs="unbounded"/>
+			<xsd:element ref="UserArea" minOccurs="0"/>
+		</xsd:sequence>
+	</xsd:complexType>
+	<xsd:complexType name="BookType">
+		<xsd:annotation>
+			<xsd:documentation>Contain bibliographic information for a book or monograph.</xsd:documentation>
+		</xsd:annotation>
+		<xsd:complexContent>
+			<xsd:extension base="BasicBibliographicRecordType">
+				<xsd:sequence>
+					<xsd:element name="Edition" type="xsd:string" minOccurs="0"/>
+					<xsd:element name="Chapter" type="xsd:string" minOccurs="0"/>
+					<xsd:element name="ISSN" type="issnType" minOccurs="0"/>
+					<xsd:element name="ISBN" type="isbnType" minOccurs="0"/>
+					<xsd:element name="NumberOfPages" type="xsd:positiveInteger" minOccurs="0"/>
+					<xsd:element name="PublisherName" type="xsd:string" minOccurs="0"/>
+					<xsd:element name="PublisherLocation" type="xsd:string" minOccurs="0"/>
+				</xsd:sequence>
+			</xsd:extension>
+		</xsd:complexContent>
+	</xsd:complexType>
+	<xsd:complexType name="CandidatePersonalDataType">
+		<xsd:sequence>
+			<xsd:element name="PersonId" type="EntityIdType" minOccurs="0"/>
+			<xsd:element name="PersonName" type="PersonNameType" minOccurs="0"/>
+			<xsd:element name="ContactMethod" type="ContactMethodType" minOccurs="0" maxOccurs="unbounded"/>
+			<xsd:element name="PersonDescriptors" type="PersonDescriptorsType" minOccurs="0"/>
+			<xsd:element ref="UserArea" minOccurs="0"/>
+		</xsd:sequence>
+	</xsd:complexType>
+	<xsd:complexType name="CandidateProfileType">
+		<xsd:sequence>
+			<xsd:element name="ProfileId" type="EntityIdType" minOccurs="0"/>
+			<xsd:element name="ProfileName" type="xsd:string" minOccurs="0"/>
+			<xsd:element name="AvailabilityInfo" minOccurs="0">
+				<xsd:complexType>
+					<xsd:sequence>
+						<xsd:element name="AvailabilityDates" minOccurs="0" maxOccurs="unbounded">
+							<xsd:complexType>
+								<xsd:sequence>
+									<xsd:element name="StartDate" type="LocalDateNkNaType" minOccurs="0"/>
+									<xsd:element name="EndDate" type="LocalDateNkNaType" minOccurs="0"/>
+								</xsd:sequence>
+							</xsd:complexType>
+						</xsd:element>
+						<xsd:element name="TermOfNotice" minOccurs="0">
+							<xsd:complexType>
+								<xsd:sequence>
+									<xsd:element name="Value" type="xsd:integer"/>
+									<xsd:element name="Interval" type="NoticeFrequencyType"/>
+								</xsd:sequence>
+							</xsd:complexType>
+						</xsd:element>
+					</xsd:sequence>
+				</xsd:complexType>
+			</xsd:element>
+			<xsd:element name="DistributionGuidelines" type="DistributionGuidelinesType" minOccurs="0" maxOccurs="unbounded"/>
+			<xsd:element name="PersonalData" type="CandidatePersonalDataType" minOccurs="0"/>
+			<xsd:element name="PreferredPosition" minOccurs="0">
+				<xsd:complexType>
+					<xsd:complexContent>
+						<xsd:extension base="PositionMatchingType">
+							<xsd:sequence>
+								<xsd:element name="Commute" type="CommuteType" minOccurs="0"/>
+							</xsd:sequence>
+						</xsd:extension>
+					</xsd:complexContent>
+				</xsd:complexType>
+			</xsd:element>
+			<xsd:element ref="EmploymentHistory" minOccurs="0"/>
+			<xsd:element ref="EducationHistory" minOccurs="0"/>
+			<xsd:element ref="MilitaryHistory" minOccurs="0"/>
+			<xsd:element ref="Associations" minOccurs="0" maxOccurs="unbounded"/>
+			<xsd:element name="SupportingMaterials" type="StaffingSupportingMaterialsType" minOccurs="0" maxOccurs="unbounded"/>
+			<xsd:element ref="UserArea" minOccurs="0"/>
+		</xsd:sequence>
+		<xsd:attribute ref="xml:lang"/>
+	</xsd:complexType>
+	<xsd:complexType name="CandidateType">
+		<xsd:sequence>
+			<xsd:element name="CandidateRecordInfo" type="RecordInfoType" minOccurs="0"/>
+			<xsd:element name="RelatedPositionPostings" type="RelatedPositionPostingsType" minOccurs="0"/>
+			<xsd:element name="CandidateSupplier" type="SupplierType" minOccurs="0" maxOccurs="unbounded"/>
+			<xsd:element name="DistributionGuidelines" type="DistributionGuidelinesType" minOccurs="0" maxOccurs="unbounded"/>
+			<xsd:element name="CandidateProfile" type="CandidateProfileType" minOccurs="0" maxOccurs="unbounded"/>
+			<xsd:element ref="Resume" minOccurs="0"/>
+			<xsd:element ref="UserArea" minOccurs="0"/>
+		</xsd:sequence>
+		<xsd:attribute ref="xml:lang"/>
+	</xsd:complexType>
+	<xsd:complexType name="ClassificationType">
+		<xsd:sequence>
+			<xsd:element name="Id" type="EntityIdType" minOccurs="0"/>
+			<xsd:element name="Description" type="xsd:string" minOccurs="0"/>
+		</xsd:sequence>
+	</xsd:complexType>
+	<xsd:complexType name="CommuteType">
+		<xsd:sequence>
+			<xsd:element name="TimeMax" minOccurs="0">
+				<xsd:complexType>
+					<xsd:simpleContent>
+						<xsd:extension base="xsd:decimal">
+							<xsd:attribute name="unitOfMeasure" type="xsd:string" use="optional"/>
+						</xsd:extension>
+					</xsd:simpleContent>
+				</xsd:complexType>
+			</xsd:element>
+			<xsd:element name="DistanceMax" minOccurs="0">
+				<xsd:complexType>
+					<xsd:simpleContent>
+						<xsd:extension base="xsd:decimal">
+							<xsd:attribute name="unitOfMeasure" type="xsd:string" use="optional"/>
+						</xsd:extension>
+					</xsd:simpleContent>
+				</xsd:complexType>
+			</xsd:element>
+			<xsd:element name="Comments" type="xsd:string" minOccurs="0"/>
+		</xsd:sequence>
+	</xsd:complexType>
+	<xsd:complexType name="CompetencyType">
+		<xsd:sequence>
+			<xsd:element name="CompetencyId" minOccurs="0">
+				<xsd:complexType>
+					<xsd:attribute name="id" type="xsd:string" use="required"/>
+					<xsd:attribute name="idOwner" type="xsd:string"/>
+					<xsd:attribute name="description" type="xsd:string"/>
+				</xsd:complexType>
+			</xsd:element>
+			<xsd:element name="TaxonomyId" minOccurs="0" maxOccurs="unbounded">
+				<xsd:complexType>
+					<xsd:attribute name="id" type="xsd:string" use="required"/>
+					<xsd:attribute name="idOwner" type="xsd:string"/>
+					<xsd:attribute name="description" type="xsd:string"/>
+				</xsd:complexType>
+			</xsd:element>
+			<xsd:element name="CompetencyEvidence" minOccurs="0" maxOccurs="unbounded">
+				<xsd:complexType>
+					<xsd:sequence>
+						<xsd:element name="EvidenceId" minOccurs="0">
+							<xsd:complexType>
+								<xsd:attribute name="id" type="xsd:string" use="required"/>
+								<xsd:attribute name="idOwner" type="xsd:string"/>
+								<xsd:attribute name="description" type="xsd:string"/>
+							</xsd:complexType>
+						</xsd:element>
+						<xsd:choice>
+							<xsd:element ref="NumericValue"/>
+							<xsd:element ref="StringValue"/>
+						</xsd:choice>
+						<xsd:element ref="SupportingInformation" minOccurs="0" maxOccurs="unbounded"/>
+					</xsd:sequence>
+					<xsd:attribute name="dateOfIncident" type="AnyDateTimeType"/>
+					<xsd:attribute name="name" type="xsd:string"/>
+					<xsd:attribute name="typeDescription" type="xsd:string"/>
+					<xsd:attribute name="expirationDate" type="AnyDateTimeType"/>
+					<xsd:attribute name="typeId" type="xsd:string"/>
+					<xsd:attribute name="required" type="xsd:boolean"/>
+					<xsd:attribute name="lastUsed" type="AnyDateTimeType"/>
+				</xsd:complexType>
+			</xsd:element>
+			<xsd:element name="CompetencyWeight" minOccurs="0" maxOccurs="unbounded">
+				<xsd:complexType>
+					<xsd:sequence>
+						<xsd:choice>
+							<xsd:element ref="NumericValue"/>
+							<xsd:element ref="StringValue"/>
+						</xsd:choice>
+						<xsd:element ref="SupportingInformation" minOccurs="0" maxOccurs="unbounded"/>
+					</xsd:sequence>
+					<xsd:attribute name="type" type="ExtendedWeightType"/>
+				</xsd:complexType>
+			</xsd:element>
+			<xsd:element ref="Competency" minOccurs="0" maxOccurs="unbounded"/>
+			<xsd:element ref="UserArea" minOccurs="0"/>
+		</xsd:sequence>
+		<xsd:attribute name="name" type="xsd:string"/>
+		<xsd:attribute name="description" type="xsd:string"/>
+		<xsd:attribute name="required" type="xsd:boolean"/>
+	</xsd:complexType>
+	<xsd:complexType name="ConferencePaperType">
+		<xsd:annotation>
+			<xsd:documentation>A paper or presentation given at a conference or published as part of conference proceedings.</xsd:documentation>
+		</xsd:annotation>
+		<xsd:complexContent>
+			<xsd:extension base="BasicBibliographicRecordType">
+				<xsd:sequence>
+					<xsd:element name="EventName" type="xsd:string" minOccurs="0"/>
+					<xsd:element name="ConferenceDate" type="FlexibleDatesType" minOccurs="0"/>
+					<xsd:element name="ConferenceLocation" type="xsd:string" minOccurs="0"/>
+				</xsd:sequence>
+			</xsd:extension>
+		</xsd:complexContent>
+	</xsd:complexType>
+	<xsd:complexType name="ContactMethodType">
+		<xsd:sequence>
+			<xsd:element ref="Use" minOccurs="0"/>
+			<xsd:element ref="Location" minOccurs="0"/>
+			<xsd:element ref="WhenAvailable" minOccurs="0"/>
+			<xsd:element ref="Telephone" minOccurs="0"/>
+			<xsd:element ref="Mobile" minOccurs="0"/>
+			<xsd:element ref="Fax" minOccurs="0"/>
+			<xsd:element ref="Pager" minOccurs="0"/>
+			<xsd:element ref="TTYTDD" minOccurs="0"/>
+			<xsd:element ref="InternetEmailAddress" minOccurs="0"/>
+			<xsd:element ref="InternetWebAddress" minOccurs="0"/>
+			<xsd:element ref="PostalAddress" minOccurs="0"/>
+		</xsd:sequence>
+	</xsd:complexType>
+	<xsd:complexType name="CopyrightType">
+		<xsd:annotation>
+			<xsd:documentation>Contains copyright information, such as year and copyright text.</xsd:documentation>
+		</xsd:annotation>
+		<xsd:sequence>
+			<xsd:element name="CopyrightDates" minOccurs="0">
+				<xsd:complexType>
+					<xsd:sequence>
+						<xsd:element name="OriginalDate" type="FlexibleDatesType"/>
+						<xsd:element name="MostRecentDate" type="FlexibleDatesType" minOccurs="0"/>
+					</xsd:sequence>
+				</xsd:complexType>
+			</xsd:element>
+			<xsd:element name="CopyrightText" type="xsd:string" minOccurs="0"/>
+		</xsd:sequence>
+	</xsd:complexType>
+	<xsd:complexType name="CredentialType">
+		<xsd:sequence>
+			<xsd:element name="Name" type="xsd:string">
+				<xsd:annotation>
+					<xsd:documentation>The name of license or certification.</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+			<xsd:element name="Id" type="xsd:string" minOccurs="0">
+				<xsd:annotation>
+					<xsd:documentation>An identifer for the credential.</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+			<xsd:element name="IssuingAuthority" type="IssuingAuthorityType" minOccurs="0"/>
+			<xsd:element name="Description" type="xsd:string" minOccurs="0"/>
+			<xsd:element name="EffectiveDate" minOccurs="0">
+				<xsd:complexType>
+					<xsd:sequence>
+						<xsd:element name="ValidFrom" type="FlexibleDatesType" minOccurs="0"/>
+						<xsd:element name="ValidTo" type="FlexibleDatesType" minOccurs="0"/>
+						<xsd:element name="FirstIssuedDate" type="FlexibleDatesType" minOccurs="0"/>
+					</xsd:sequence>
+				</xsd:complexType>
+			</xsd:element>
+		</xsd:sequence>
+	</xsd:complexType>
+	<xsd:complexType name="DatesOfAttendanceType">
+		<xsd:sequence>
+			<xsd:element name="StartDate" type="FlexibleDatesType"/>
+			<xsd:element name="EndDate" type="FlexibleDatesType" minOccurs="0"/>
+		</xsd:sequence>
+		<xsd:attribute name="enrollmentStatus" type="xsd:string" use="optional"/>
+		<xsd:attribute name="currentlyEnrolled" type="xsd:boolean" use="optional"/>
+		<xsd:attribute name="studentInGoodStanding" type="xsd:boolean" use="optional"/>
+	</xsd:complexType>
+	<xsd:complexType name="DatesOfServiceType">
+		<xsd:sequence>
+			<xsd:element name="StartDate" type="FlexibleDatesType"/>
+			<xsd:element name="EndDate" type="FlexibleDatesType" minOccurs="0"/>
+		</xsd:sequence>
+	</xsd:complexType>
+	<xsd:complexType name="DELocalizedPositionClassificationType">
+		<xsd:sequence>
+			<xsd:element name="BKZClassification" minOccurs="0">
+				<xsd:annotation>
+					<xsd:documentation>Berufskennziffer (BKZ) is a German occupational classification system.</xsd:documentation>
+				</xsd:annotation>
+				<xsd:complexType>
+					<xsd:sequence>
+						<xsd:element name="BKZId" type="EntityIdType" minOccurs="0"/>
+						<xsd:element name="BKZName" type="xsd:string" minOccurs="0"/>
+					</xsd:sequence>
+				</xsd:complexType>
+			</xsd:element>
+			<xsd:element name="EducationAuthorization" type="xsd:boolean" minOccurs="0"/>
+			<xsd:element name="HandicapStatus" type="HandicapStatusEnumType" minOccurs="0"/>
+		</xsd:sequence>
+	</xsd:complexType>
+	<xsd:complexType name="DemographicDescriptorsType">
+		<xsd:sequence>
+			<xsd:element name="Race" type="xsd:string" minOccurs="0" maxOccurs="unbounded"/>
+			<xsd:element name="Ethnicity" type="xsd:string" minOccurs="0" maxOccurs="unbounded"/>
+			<xsd:element name="Nationality" type="xsd:string" minOccurs="0" maxOccurs="unbounded"/>
+			<xsd:element name="PrimaryLanguage" type="LanguageCodeType" minOccurs="0" maxOccurs="unbounded"/>
+			<xsd:element name="BirthPlace" type="xsd:string" minOccurs="0"/>
+			<xsd:element name="Religion" type="xsd:string" minOccurs="0"/>
+			<xsd:element name="MaritalStatus" type="MaritalStatusType" minOccurs="0"/>
+			<xsd:element name="ChildrenInfo" minOccurs="0">
+				<xsd:complexType>
+					<xsd:sequence>
+						<xsd:element name="NumberOfChildren" type="xsd:nonNegativeInteger" minOccurs="0"/>
+						<xsd:element name="Comments" type="xsd:string" minOccurs="0"/>
+					</xsd:sequence>
+				</xsd:complexType>
+			</xsd:element>
+			<xsd:element ref="UserArea" minOccurs="0"/>
+		</xsd:sequence>
+	</xsd:complexType>
+	<xsd:complexType name="DeprecatedDatesOfAttendanceType">
+		<xsd:annotation>
+			<xsd:documentation>This type is the same as the DatesOfAttendanceType, except it is an unbounded sequence.  This remains for backward compatibility only.  </xsd:documentation>
+		</xsd:annotation>
+		<xsd:sequence maxOccurs="unbounded">
+			<xsd:element name="StartDate" type="FlexibleDatesType"/>
+			<xsd:element name="EndDate" type="FlexibleDatesType" minOccurs="0"/>
+		</xsd:sequence>
+		<xsd:attribute name="enrollmentStatus" type="xsd:string" use="optional"/>
+		<xsd:attribute name="currentlyEnrolled" type="xsd:boolean" use="optional"/>
+		<xsd:attribute name="studentInGoodStanding" type="xsd:boolean" use="optional"/>
+	</xsd:complexType>
+	<xsd:complexType name="DisabilityInfoType">
+		<xsd:sequence>
+			<xsd:element name="LevelOfDisability" type="xsd:string" minOccurs="0"/>
+			<xsd:element name="Percentage" type="xsd:integer" minOccurs="0"/>
+			<xsd:element name="Type" type="xsd:string" minOccurs="0"/>
+			<xsd:element name="AccommodationsNeeded" type="xsd:boolean" minOccurs="0"/>
+		</xsd:sequence>
+	</xsd:complexType>
+	<xsd:complexType name="DistributionGuidelinesType">
+		<xsd:sequence>
+			<xsd:element name="DistributeTo" minOccurs="0" maxOccurs="unbounded">
+				<xsd:complexType>
+					<xsd:complexContent>
+						<xsd:extension base="DistributionType">
+							<xsd:sequence>
+								<xsd:element name="ContactMethod" type="ContactMethodType" minOccurs="0" maxOccurs="unbounded"/>
+							</xsd:sequence>
+						</xsd:extension>
+					</xsd:complexContent>
+				</xsd:complexType>
+			</xsd:element>
+			<xsd:element name="DoNotDistributeTo" type="DistributionType" minOccurs="0" maxOccurs="unbounded"/>
+		</xsd:sequence>
+	</xsd:complexType>
+	<xsd:complexType name="DistributionType">
+		<xsd:sequence>
+			<xsd:element name="Id" type="EntityIdType" minOccurs="0"/>
+			<xsd:element name="Name" type="xsd:string" minOccurs="0"/>
+		</xsd:sequence>
+		<xsd:attribute name="validFrom" type="LocalDateNkNaType"/>
+		<xsd:attribute name="validTo" type="LocalDateNkNaType"/>
+	</xsd:complexType>
+	<xsd:complexType name="DressCodeType">
+		<xsd:simpleContent>
+			<xsd:extension base="DressCodeContentTypes">
+				<xsd:attribute name="suppliedByOrganization" type="xsd:boolean"/>
+			</xsd:extension>
+		</xsd:simpleContent>
+	</xsd:complexType>
+	<xsd:complexType name="DunsNumberDataType">
+		<xsd:simpleContent>
+			<xsd:extension base="DunsNumberBaseType">
+				<xsd:attribute name="dunsNumberType" use="required">
+					<xsd:simpleType>
+						<xsd:restriction base="xsd:string">
+							<xsd:enumeration value="standard Duns"/>
+							<xsd:enumeration value="global ultimate"/>
+							<xsd:enumeration value="domestic ultimate"/>
+						</xsd:restriction>
+					</xsd:simpleType>
+				</xsd:attribute>
+			</xsd:extension>
+		</xsd:simpleContent>
+	</xsd:complexType>
+	<xsd:complexType name="EducationalMeasureType">
+		<xsd:sequence>
+			<xsd:element name="EducationalMeasure" type="EducationMeasureType" minOccurs="0">
+				<xsd:annotation>
+					<xsd:documentation>Identifies the measurement system.  i.e. GPA</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+			<xsd:element name="AcademicCreditCode" type="AcademicCreditCodeType" minOccurs="0">
+				<xsd:annotation>
+					<xsd:documentation>Code indicating the type of credit used (awarded) by the institution.</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+			<xsd:element name="CourseLevelCode" type="CourseLevelCodeType" minOccurs="0">
+				<xsd:annotation>
+					<xsd:documentation>Code indicating the level or type or both, of work which is reflected in the grade average and the credit hours</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+			<xsd:element name="CumulativeSummaryIndicator" type="xsd:boolean" minOccurs="0">
+				<xsd:annotation>
+					<xsd:documentation>If True, this is a summary of all work included in the record.</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+			<xsd:element name="AcademicCreditHoursIncluded" type="xsd:decimal" minOccurs="0">
+				<xsd:annotation>
+					<xsd:documentation>This is the total number of credits (or credit hours) included in the grade point average for this particular summary. Inclusion or exclusion of certain credits depends on the policy of the sending institution.</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+			<xsd:element name="AcademicCreditHoursAttempted" type="xsd:decimal" minOccurs="0">
+				<xsd:annotation>
+					<xsd:documentation>This is the total number of credits (credit hours) included on the record for this particular summary. This would normally be all credits for which the student paid, whether or not the credits were used to calculate the grade point average. Examples of credit hours to be included, if available, are credits for which non-punitive grades such as "I" or "W" or "Audit" were awarded.</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+			<xsd:element name="AcademicCreditHoursEarned" type="xsd:decimal" minOccurs="0">
+				<xsd:annotation>
+					<xsd:documentation>This is the total number of credits (credit hours) attemptedand earned and included in this summary.</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+			<xsd:element name="ClassRank" minOccurs="0">
+				<xsd:annotation>
+					<xsd:documentation>This is a student's numerical class rank with the highest student in the class having a rank or position of 1</xsd:documentation>
+				</xsd:annotation>
+				<xsd:complexType>
+					<xsd:simpleContent>
+						<xsd:extension base="xsd:integer">
+							<xsd:attribute name="numberOfStudents" type="xsd:integer" use="optional"/>
+						</xsd:extension>
+					</xsd:simpleContent>
+				</xsd:complexType>
+			</xsd:element>
+		</xsd:sequence>
+		<xsd:attribute name="measureType" type="xsd:string" use="optional"/>
+	</xsd:complexType>
+	<xsd:complexType name="EducationHistoryType">
+		<xsd:sequence>
+			<xsd:element name="SchoolOrInstitution" maxOccurs="unbounded">
+				<xsd:complexType>
+					<xsd:complexContent>
+						<xsd:extension base="SchoolOrInstitutionType"/>
+					</xsd:complexContent>
+				</xsd:complexType>
+			</xsd:element>
+		</xsd:sequence>
+	</xsd:complexType>
+	<xsd:complexType name="EducationMeasureType">
+		<xsd:sequence>
+			<xsd:element name="MeasureSystem" type="xsd:string" minOccurs="0">
+				<xsd:annotation>
+					<xsd:documentation>Identifies the measurement system.  i.e. GPA</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+			<xsd:element name="MeasureValue" type="MeasureValueType" minOccurs="0">
+				<xsd:annotation>
+					<xsd:documentation>The grade point average of a student.</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+			<xsd:element name="LowestPossibleValue" type="MeasureValueType" minOccurs="0">
+				<xsd:annotation>
+					<xsd:documentation>The value specifying the minimum of the measurement range</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+			<xsd:element name="HighestPossibleValue" type="MeasureValueType" minOccurs="0">
+				<xsd:annotation>
+					<xsd:documentation>The value specifying the maximum of the measurement range</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+			<xsd:element name="ExcessiveValueIndicator" type="xsd:boolean" minOccurs="0">
+				<xsd:annotation>
+					<xsd:documentation>This is a code indicating that an A+ grade has a value higher than the highest possible GPA.  False - It is not possible to have a higher GPA than indicated in Range Maximum.  True - It is possible to have a higher GPA than indicated in Range Maximum.</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+			<xsd:element name="GoodStudentIndicator" type="xsd:boolean" minOccurs="0"/>
+		</xsd:sequence>
+	</xsd:complexType>
+	<xsd:complexType name="EduDegreeType">
+		<xsd:sequence>
+			<xsd:element name="DegreeName" minOccurs="0">
+				<xsd:annotation>
+					<xsd:documentation>The subject studied, as expressed on the diploma.</xsd:documentation>
+				</xsd:annotation>
+				<xsd:complexType>
+					<xsd:simpleContent>
+						<xsd:extension base="xsd:string">
+							<xsd:attribute name="academicHonors" type="xsd:string" use="optional"/>
+							<xsd:attribute name="honorsProgram" type="xsd:string" use="optional"/>
+						</xsd:extension>
+					</xsd:simpleContent>
+				</xsd:complexType>
+			</xsd:element>
+			<xsd:element name="DegreeDate" type="FlexibleDatesType" minOccurs="0">
+				<xsd:annotation>
+					<xsd:documentation>The date the person received their degree. </xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+			<xsd:element name="OtherHonors" minOccurs="0" maxOccurs="unbounded">
+				<xsd:annotation>
+					<xsd:documentation>The name of any other honors, such as Phi Beta Kappa, etc. that the student may have received.</xsd:documentation>
+				</xsd:annotation>
+				<xsd:complexType>
+					<xsd:simpleContent>
+						<xsd:extension base="xsd:string">
+							<xsd:attribute name="type" type="xsd:string" use="optional"/>
+						</xsd:extension>
+					</xsd:simpleContent>
+				</xsd:complexType>
+			</xsd:element>
+			<xsd:element name="DegreeMajor" type="MajorType" minOccurs="0" maxOccurs="unbounded">
+				<xsd:annotation>
+					<xsd:documentation>The official names of any and all major courses of study associated with the student's degree title.</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+			<xsd:element name="DegreeMinor" type="MinorType" minOccurs="0" maxOccurs="unbounded">
+				<xsd:annotation>
+					<xsd:documentation>If applicable, these fields should be used to reflect the official names of any and all minor courses of study associated with the student's degree title.</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+			<xsd:element name="DegreeMeasure" type="EducationalMeasureType" minOccurs="0"/>
+			<xsd:element name="DatesOfAttendance" type="DatesOfAttendanceType" minOccurs="0" maxOccurs="unbounded"/>
+			<xsd:element name="Comments" type="xsd:string" minOccurs="0"/>
+			<xsd:element name="DegreeClassification" type="ClassificationType" minOccurs="0" maxOccurs="unbounded">
+				<xsd:annotation>
+					<xsd:documentation>This construct replaces the deprecated degreeType attribute, which was a union of degreeTypes, degreeCodeTypes, graduationCodeTypes, and a string.</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+			<xsd:element ref="UserArea" minOccurs="0"/>
+		</xsd:sequence>
+		<xsd:attribute name="degreeType" type="DegreeTypeStringExtensionType" use="optional">
+			<xsd:annotation>
+				<xsd:documentation>Deprecated in favor of DegreeClassification.</xsd:documentation>
+			</xsd:annotation>
+		</xsd:attribute>
+		<xsd:attribute name="examPassed" type="xsd:boolean" use="optional"/>
+		<xsd:attribute name="graduatingDegree" type="GraduatingDegreeType" use="optional"/>
+	</xsd:complexType>
+	<xsd:complexType name="EduMeasureType">
+		<xsd:sequence>
+			<xsd:element name="MeasureSystem" type="xsd:string"/>
+			<xsd:element name="MeasureValue" type="xsd:string"/>
+		</xsd:sequence>
+		<xsd:attribute name="measureType" type="xsd:string" use="required"/>
+	</xsd:complexType>
+	<xsd:complexType name="EEOCJobCategoryType">
+		<xsd:choice>
+			<xsd:element name="StandardValue" type="EEOCJobCategoryEnumType"/>
+			<xsd:element name="NonStandardValue" type="xsd:string"/>
+		</xsd:choice>
+	</xsd:complexType>
+	<xsd:complexType name="EmpContactInfoType">
+		<xsd:sequence>
+			<xsd:element ref="PersonName" minOccurs="0"/>
+			<xsd:element name="ContactMethod" type="ContactMethodType" minOccurs="0" maxOccurs="unbounded"/>
+			<xsd:element name="LocationSummary" type="EmploymentLocationSummaryType" minOccurs="0"/>
+			<xsd:element name="InternetDomainName" type="InternetDomainNameType" minOccurs="0" maxOccurs="unbounded"/>
+		</xsd:sequence>
+		<xsd:attribute name="contactType" type="ContactTypeStringExtensionType"/>
+	</xsd:complexType>
+	<xsd:complexType name="EmployerOrgDataType">
+		<xsd:sequence>
+			<xsd:element name="EmployerOrgName" type="xsd:string"/>
+			<xsd:element name="EmployerContactInfo" type="EmpContactInfoType" minOccurs="0"/>
+			<xsd:element name="PositionHistory" maxOccurs="unbounded">
+				<xsd:complexType>
+					<xsd:complexContent>
+						<xsd:extension base="PositionHistoryType"/>
+					</xsd:complexContent>
+				</xsd:complexType>
+			</xsd:element>
+			<xsd:element ref="UserArea" minOccurs="0"/>
+		</xsd:sequence>
+		<xsd:attribute name="employerOrgType" type="EmpOrgTypeStringExtensionType"/>
+	</xsd:complexType>
+	<xsd:complexType name="EmploymentHistoryType">
+		<xsd:sequence>
+			<xsd:element name="EmployerOrg" type="EmployerOrgDataType" maxOccurs="unbounded"/>
+		</xsd:sequence>
+	</xsd:complexType>
+	<xsd:complexType name="EmploymentLocationSummaryType">
+		<xsd:sequence>
+			<xsd:element name="Municipality" type="xsd:string" minOccurs="0"/>
+			<xsd:element name="Region" type="xsd:string" minOccurs="0" maxOccurs="unbounded"/>
+			<xsd:element ref="CountryCode" minOccurs="0"/>
+			<xsd:element name="PostalCode" type="xsd:string" minOccurs="0"/>
+		</xsd:sequence>
+	</xsd:complexType>
+	<xsd:complexType name="EmploymentQuestionAnswerPairType">
+		<xsd:sequence>
+			<xsd:element name="Question" type="xsd:string"/>
+			<xsd:element name="Answer" type="xsd:string" minOccurs="0"/>
+		</xsd:sequence>
+	</xsd:complexType>
+	<xsd:complexType name="EntityIdType">
+		<xsd:sequence>
+			<xsd:element name="IdValue" maxOccurs="unbounded">
+				<xsd:complexType>
+					<xsd:simpleContent>
+						<xsd:extension base="xsd:string">
+							<xsd:attribute name="name" type="xsd:string" use="optional"/>
+						</xsd:extension>
+					</xsd:simpleContent>
+				</xsd:complexType>
+			</xsd:element>
+		</xsd:sequence>
+		<xsd:attribute name="validFrom" type="AnyDateTimeNkNaType" use="optional"/>
+		<xsd:attribute name="validTo" type="AnyDateTimeNkNaType" use="optional"/>
+		<xsd:attribute name="idOwner" type="xsd:string" use="optional"/>
+	</xsd:complexType>
+	<xsd:complexType name="EntityReferenceType">
+		<xsd:sequence>
+			<xsd:element name="Id" type="EntityIdType" minOccurs="0"/>
+			<xsd:element name="Name" type="xsd:string" minOccurs="0"/>
+		</xsd:sequence>
+	</xsd:complexType>
+	<xsd:complexType name="ExpatriateBenefitsType">
+		<xsd:choice>
+			<xsd:element name="ExpatriateBenefitsOffered" type="xsd:boolean" minOccurs="0" maxOccurs="unbounded"/>
+			<xsd:element name="ExpatriateBenefitList" type="ExpatriateBenefitTypeTypes" minOccurs="0" maxOccurs="unbounded"/>
+		</xsd:choice>
+	</xsd:complexType>
+	<xsd:complexType name="FlexibleDatesType">
+		<xsd:choice>
+			<xsd:element name="AnyDate" type="AnyDateTimeNkNaType"/>
+			<xsd:element name="YearMonth" type="xsd:gYearMonth"/>
+			<xsd:element name="Year" type="xsd:gYear"/>
+			<xsd:element name="MonthDay" type="xsd:gMonthDay"/>
+			<xsd:element name="StringDate" type="xsd:string"/>
+		</xsd:choice>
+		<xsd:attribute name="dateDescription" type="xsd:string"/>
+	</xsd:complexType>
+	<xsd:complexType name="IndustryCodeType">
+		<xsd:simpleContent>
+			<xsd:extension base="xsd:string">
+				<xsd:attribute name="primaryIndicator" type="xsd:boolean" use="optional"/>
+				<xsd:attribute name="classificationName" type="xsd:string" use="optional"/>
+			</xsd:extension>
+		</xsd:simpleContent>
+	</xsd:complexType>
+	<xsd:complexType name="InternetDomainNameType">
+		<xsd:simpleContent>
+			<xsd:extension base="xsd:string">
+				<xsd:attribute name="primaryIndicator" type="xsd:boolean" use="optional"/>
+			</xsd:extension>
+		</xsd:simpleContent>
+	</xsd:complexType>
+	<xsd:complexType name="IssuingAuthorityType">
+		<xsd:simpleContent>
+			<xsd:extension base="xsd:string">
+				<xsd:attribute name="countryCode" type="CountryCodeType"/>
+			</xsd:extension>
+		</xsd:simpleContent>
+	</xsd:complexType>
+	<xsd:complexType name="JobLevelInfoType">
+		<xsd:sequence>
+			<xsd:element name="JobPlan" type="xsd:string" minOccurs="0"/>
+			<xsd:element name="JobGrade" type="xsd:string" minOccurs="0"/>
+			<xsd:element name="JobStep" type="xsd:string" minOccurs="0"/>
+			<xsd:element name="Comments" type="xsd:string" minOccurs="0"/>
+		</xsd:sequence>
+	</xsd:complexType>
+	<xsd:complexType name="LanguageDependentTextType">
+		<xsd:simpleContent>
+			<xsd:extension base="xsd:string">
+				<xsd:attribute ref="xml:lang">
+					<xsd:annotation>
+						<xsd:documentation>ISO 639-1 two character code is preferred, but not required.</xsd:documentation>
+					</xsd:annotation>
+				</xsd:attribute>
+			</xsd:extension>
+		</xsd:simpleContent>
+	</xsd:complexType>
+	<xsd:complexType name="LegalIdentifiersType">
+		<xsd:sequence>
+			<xsd:element name="PersonLegalId" type="PersonLegalIdType" minOccurs="0" maxOccurs="unbounded"/>
+			<xsd:element name="MilitaryStatus" minOccurs="0" maxOccurs="unbounded">
+				<xsd:complexType>
+					<xsd:simpleContent>
+						<xsd:extension base="xsd:string">
+							<xsd:attribute name="type" type="xsd:string"/>
+						</xsd:extension>
+					</xsd:simpleContent>
+				</xsd:complexType>
+			</xsd:element>
+			<xsd:element name="VisaStatus" minOccurs="0" maxOccurs="unbounded">
+				<xsd:complexType>
+					<xsd:simpleContent>
+						<xsd:extension base="xsd:string">
+							<xsd:attribute name="countryCode" type="CountryCodeType"/>
+							<xsd:attribute name="validFrom" type="AnyDateTimeNkNaType"/>
+							<xsd:attribute name="validTo" type="AnyDateTimeNkNaType"/>
+						</xsd:extension>
+					</xsd:simpleContent>
+				</xsd:complexType>
+			</xsd:element>
+			<xsd:element name="Citizenship" type="CountryCodeType" minOccurs="0" maxOccurs="unbounded"/>
+			<xsd:element name="Residency" type="CountryCodeType" minOccurs="0" maxOccurs="unbounded"/>
+			<xsd:element ref="UserArea" minOccurs="0"/>
+		</xsd:sequence>
+	</xsd:complexType>
+	<xsd:complexType name="LocationAreaType">
+		<xsd:sequence>
+			<xsd:element name="Description" type="xsd:string"/>
+			<xsd:element name="Area" type="LocationAreaType" minOccurs="0" maxOccurs="unbounded"/>
+		</xsd:sequence>
+		<xsd:attribute name="type">
+			<xsd:simpleType>
+				<xsd:union memberTypes="LocationAreaTypeType xStringPatternExtensionType"/>
+			</xsd:simpleType>
+		</xsd:attribute>
+	</xsd:complexType>
+	<xsd:complexType name="MajorType">
+		<xsd:sequence>
+			<xsd:element name="ProgramId" type="EntityIdType" minOccurs="0" maxOccurs="unbounded">
+				<xsd:annotation>
+					<xsd:documentation>Identifier reflecting the program code(s) associated with any Major course of Study.</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+			<xsd:element name="DegreeConcentration" type="xsd:string" minOccurs="0" maxOccurs="unbounded">
+				<xsd:annotation>
+					<xsd:documentation>Reflects the official names of any and all major concentrations associated with the student's degree title. For example, a Math major may have an Applied Math concentration even though this area of concentration is not required to pursue a Math major.</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+			<xsd:element name="Name" type="xsd:string" maxOccurs="unbounded">
+				<xsd:annotation>
+					<xsd:documentation>Reflects the official names of any and all major courses of study associated with the student's degree title.</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+			<xsd:element name="Option" type="xsd:string" minOccurs="0" maxOccurs="unbounded">
+				<xsd:annotation>
+					<xsd:documentation>Reflects the official names of any and all major options associated with the student's degree title. For example, a particular institution may require their Engineering majors to select either a Mechanical Engineering option or a Structural Engineering option.</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+		</xsd:sequence>
+	</xsd:complexType>
+	<xsd:complexType name="MeasureValueType">
+		<xsd:choice>
+			<xsd:element ref="NumericValue"/>
+			<xsd:element ref="StringValue"/>
+		</xsd:choice>
+	</xsd:complexType>
+	<xsd:complexType name="MilitaryHistoryType">
+		<xsd:sequence>
+			<xsd:element name="CountryServed" type="CountryCodeType"/>
+			<xsd:element name="ServiceNumber" type="EntityIdType" minOccurs="0"/>
+			<xsd:element name="ServiceDetail" minOccurs="0" maxOccurs="unbounded">
+				<xsd:complexType>
+					<xsd:sequence>
+						<xsd:element name="UnitOrDivision" type="xsd:string" minOccurs="0"/>
+						<xsd:element name="RankAchieved" type="RankAchievedType" minOccurs="0"/>
+						<xsd:element name="DatesOfService" type="DatesOfServiceType"/>
+						<xsd:element name="Campaign" type="xsd:string" minOccurs="0" maxOccurs="unbounded"/>
+						<xsd:element name="AreaOfExpertise" type="xsd:string" minOccurs="0" maxOccurs="unbounded"/>
+						<xsd:element name="RecognitionAchieved" type="xsd:string" minOccurs="0" maxOccurs="unbounded"/>
+						<xsd:element name="DisciplinaryAction" type="xsd:string" minOccurs="0" maxOccurs="unbounded"/>
+						<xsd:element name="DischargeStatus" type="xsd:string" minOccurs="0"/>
+						<xsd:element ref="UserArea" minOccurs="0"/>
+					</xsd:sequence>
+					<xsd:attribute name="branch" type="xsd:string" use="required"/>
+				</xsd:complexType>
+			</xsd:element>
+			<xsd:element name="ServiceStatus" type="xsd:string" minOccurs="0"/>
+			<xsd:element name="Comments" type="xsd:string" minOccurs="0"/>
+			<xsd:element ref="UserArea" minOccurs="0"/>
+		</xsd:sequence>
+	</xsd:complexType>
+	<xsd:complexType name="MinorType">
+		<xsd:sequence>
+			<xsd:element name="ProgramId" type="EntityIdType" minOccurs="0" maxOccurs="unbounded">
+				<xsd:annotation>
+					<xsd:documentation>Identifier reflecting the program code(s) associated with any Minor course of Study.</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+			<xsd:element name="Name" type="xsd:string" maxOccurs="unbounded">
+				<xsd:annotation>
+					<xsd:documentation>Reflects the official names of any and all minor courses of study associated with the student's degree title.</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+		</xsd:sequence>
+	</xsd:complexType>
+	<xsd:complexType name="MobileTelcomNumberType">
+		<xsd:complexContent>
+			<xsd:extension base="TelcomNumberType">
+				<xsd:attribute name="smsEnabled" type="xsd:boolean" use="optional"/>
+			</xsd:extension>
+		</xsd:complexContent>
+	</xsd:complexType>
+	<xsd:complexType name="NonXMLResumeType">
+		<xsd:sequence>
+			<xsd:element name="TextResume" type="xsd:string" minOccurs="0"/>
+			<xsd:element name="LinkToResume" type="xsd:string" minOccurs="0"/>
+			<xsd:element name="SupportingMaterials" type="StaffingSupportingMaterialsType" minOccurs="0" maxOccurs="unbounded"/>
+			<xsd:group ref="Comments" minOccurs="0"/>
+			<xsd:element name="RevisionDate" type="AnyDateTimeNkType" minOccurs="0"/>
+		</xsd:sequence>
+	</xsd:complexType>
+	<xsd:complexType name="NumericValueType">
+		<xsd:simpleContent>
+			<xsd:extension base="xsd:double">
+				<xsd:attribute name="minValue" type="xsd:double"/>
+				<xsd:attribute name="maxValue" type="xsd:double"/>
+				<xsd:attribute name="interval" type="xsd:double"/>
+				<xsd:attribute name="description" type="xsd:string"/>
+			</xsd:extension>
+		</xsd:simpleContent>
+	</xsd:complexType>
+	<xsd:complexType name="OccupationalCategoryType">
+		<xsd:sequence>
+			<xsd:element name="TaxonomyName" minOccurs="0">
+				<xsd:complexType>
+					<xsd:simpleContent>
+						<xsd:extension base="xsd:string">
+							<xsd:attribute name="version" type="xsd:string" use="optional"/>
+						</xsd:extension>
+					</xsd:simpleContent>
+				</xsd:complexType>
+			</xsd:element>
+			<xsd:element name="CategoryCode" type="xsd:string" minOccurs="0"/>
+			<xsd:element name="CategoryDescription" type="xsd:string" minOccurs="0"/>
+			<xsd:element name="Comments" type="xsd:string" minOccurs="0"/>
+			<xsd:element name="JobCategory" type="OccupationalCategoryType" minOccurs="0"/>
+		</xsd:sequence>
+	</xsd:complexType>
+	<xsd:complexType name="OrganizationalUnitPersonMemberRoleType">
+		<xsd:sequence>
+			<xsd:element name="RoleName" type="xsd:string" minOccurs="0"/>
+			<xsd:element name="RoleId" type="EntityIdType" minOccurs="0"/>
+			<xsd:element name="Description" type="xsd:string" minOccurs="0"/>
+		</xsd:sequence>
+		<xsd:attribute name="leader" type="xsd:boolean"/>
+	</xsd:complexType>
+	<xsd:complexType name="OrganizationalUnitPersonMemberType">
+		<xsd:sequence>
+			<xsd:element name="PersonName" type="PersonNameType" minOccurs="0"/>
+			<xsd:element name="PersonId" type="EntityIdType" minOccurs="0" maxOccurs="unbounded"/>
+			<xsd:element name="PersonRole" type="OrganizationalUnitPersonMemberRoleType" minOccurs="0" maxOccurs="unbounded"/>
+			<xsd:element name="ContactMethod" type="ContactMethodType" minOccurs="0" maxOccurs="unbounded"/>
+		</xsd:sequence>
+	</xsd:complexType>
+	<xsd:complexType name="OrganizationalUnitType">
+		<xsd:sequence>
+			<xsd:element name="OrganizationalUnitName" type="xsd:string" minOccurs="0"/>
+			<xsd:element name="OrganizationalUnitId" type="EntityIdType" minOccurs="0" maxOccurs="unbounded"/>
+			<xsd:element name="OrganizationId" type="EntityIdType" minOccurs="0"/>
+			<xsd:element name="Description" type="xsd:string" minOccurs="0"/>
+			<xsd:element name="IndustryCode" type="IndustryCodeType" minOccurs="0" maxOccurs="unbounded"/>
+			<xsd:element name="AccountingCode" type="AccountingCodeType" minOccurs="0" maxOccurs="unbounded"/>
+			<xsd:element name="WorkSite" type="WorkSiteType" minOccurs="0" maxOccurs="unbounded"/>
+			<xsd:element name="RelatedOrganizationalUnit" type="RelatedOrganizationalUnitType" minOccurs="0" maxOccurs="unbounded"/>
+			<xsd:element name="PersonMember" type="OrganizationalUnitPersonMemberType" minOccurs="0" maxOccurs="unbounded"/>
+			<xsd:element name="UserArea" type="UserAreaType" minOccurs="0"/>
+		</xsd:sequence>
+		<xsd:attribute name="typeOfGroup" type="xsd:string"/>
+		<xsd:attribute name="hierarchicalRole" type="HierarchicalRoleType" use="optional"/>
+	</xsd:complexType>
+	<xsd:complexType name="OrganizationContactType">
+		<xsd:sequence>
+			<xsd:element name="ContactName" type="PersonNameType" minOccurs="0"/>
+			<xsd:element name="ContactId" type="EntityIdType" minOccurs="0"/>
+			<xsd:element name="ContactMethod" type="ContactMethodType" minOccurs="0"/>
+		</xsd:sequence>
+		<xsd:attribute name="purpose" type="OrganizationContactPurposeType"/>
+	</xsd:complexType>
+	<xsd:complexType name="OrganizationLegalClassificationType">
+		<xsd:simpleContent>
+			<xsd:extension base="xsd:string">
+				<xsd:attribute name="countryCode" type="CountryCodeType" use="required"/>
+				<xsd:attribute name="ownership" type="OrganizationLegalOwnershipType" use="optional"/>
+			</xsd:extension>
+		</xsd:simpleContent>
+	</xsd:complexType>
+	<xsd:complexType name="OrganizationType">
+		<xsd:sequence>
+			<xsd:element name="OrganizationName" type="xsd:string" minOccurs="0"/>
+			<xsd:element name="OrganizationId" type="EntityIdType" minOccurs="0" maxOccurs="unbounded"/>
+			<xsd:element name="TaxId" type="EntityIdType" minOccurs="0" maxOccurs="unbounded"/>
+			<xsd:element name="LegalId" type="EntityIdType" minOccurs="0" maxOccurs="unbounded"/>
+			<xsd:element name="DunsNumber" type="DunsNumberDataType" minOccurs="0" maxOccurs="unbounded"/>
+			<xsd:element name="IsPublicCompany" type="xsd:boolean" minOccurs="0"/>
+			<xsd:element name="Stock" type="StockType" minOccurs="0" maxOccurs="unbounded"/>
+			<xsd:element name="MissionStatement" type="xsd:string" minOccurs="0"/>
+			<xsd:element name="ValueStatement" type="xsd:string" minOccurs="0"/>
+			<xsd:element name="InternetDomainName" type="InternetDomainNameType" minOccurs="0" maxOccurs="unbounded"/>
+			<xsd:element name="DoingBusinessAs" type="LanguageDependentTextType" minOccurs="0" maxOccurs="unbounded"/>
+			<xsd:element name="LegalClassification" type="OrganizationLegalClassificationType" minOccurs="0" maxOccurs="unbounded"/>
+			<xsd:element name="IndustryCode" type="IndustryCodeType" minOccurs="0" maxOccurs="unbounded"/>
+			<xsd:element name="Headcount" type="xsd:nonNegativeInteger" minOccurs="0"/>
+			<xsd:element name="Description" type="xsd:string" minOccurs="0"/>
+			<xsd:element name="WorkSite" type="WorkSiteType" minOccurs="0" maxOccurs="unbounded"/>
+			<xsd:element name="ContactInfo" type="OrganizationContactType" minOccurs="0" maxOccurs="unbounded"/>
+			<xsd:element name="RelatedOrganization" type="RelatedOrganizationType" minOccurs="0" maxOccurs="unbounded"/>
+			<xsd:element name="OrganizationalUnit" type="OrganizationalUnitType" minOccurs="0" maxOccurs="unbounded"/>
+			<xsd:element name="UserArea" type="UserAreaType" minOccurs="0"/>
+		</xsd:sequence>
+	</xsd:complexType>
+	<xsd:complexType name="OtherDescriptorsType">
+		<xsd:sequence>
+			<xsd:element name="Name" type="xsd:string" minOccurs="0"/>
+			<xsd:choice>
+				<xsd:element name="Applicable" type="xsd:boolean" minOccurs="0"/>
+				<xsd:element name="Value" type="xsd:string" minOccurs="0"/>
+				<xsd:element name="List" minOccurs="0">
+					<xsd:complexType>
+						<xsd:sequence>
+							<xsd:element name="Item" type="xsd:string" maxOccurs="unbounded"/>
+						</xsd:sequence>
+					</xsd:complexType>
+				</xsd:element>
+			</xsd:choice>
+		</xsd:sequence>
+	</xsd:complexType>
+	<xsd:complexType name="OtherPayDataType">
+		<xsd:sequence>
+			<xsd:element name="OtherPayAmountMin" type="xsd:decimal" minOccurs="0"/>
+			<xsd:element name="OtherPayAmountMax" type="xsd:decimal" minOccurs="0"/>
+			<xsd:element name="OtherPayCalculation" type="xsd:string" minOccurs="0"/>
+			<xsd:element name="Comments" type="xsd:string" minOccurs="0"/>
+		</xsd:sequence>
+		<xsd:attribute name="currencyCode" type="CurrencyCodeType"/>
+		<xsd:attribute name="otherInterval" type="OtherIntervalType"/>
+		<xsd:attribute name="otherPayType" type="OtherPayTypeTypes"/>
+	</xsd:complexType>
+	<xsd:complexType name="OtherPublicationType">
+		<xsd:annotation>
+			<xsd:documentation>Bibliographic information for other publication type, such as a Thesis, Whitepaper, Report, Technical Documentation, etc.</xsd:documentation>
+		</xsd:annotation>
+		<xsd:complexContent>
+			<xsd:extension base="BasicBibliographicRecordType">
+				<xsd:sequence>
+					<xsd:element name="ISSN" type="issnType" minOccurs="0"/>
+					<xsd:element name="ISBN" type="isbnType" minOccurs="0"/>
+					<xsd:element name="NumberOfPages" type="xsd:positiveInteger" minOccurs="0"/>
+					<xsd:element name="PublisherName" type="xsd:string" minOccurs="0"/>
+					<xsd:element name="PublisherLocation" type="xsd:string" minOccurs="0"/>
+				</xsd:sequence>
+				<xsd:attribute name="type" type="PublicationOtherTypes"/>
+			</xsd:extension>
+		</xsd:complexContent>
+	</xsd:complexType>
+	<xsd:complexType name="OtherSearchCriteriaType">
+		<xsd:sequence>
+			<xsd:element name="CriterionName" type="xsd:string"/>
+			<xsd:element name="CriterionValue" type="xsd:string" minOccurs="0"/>
+			<xsd:element name="Weight" type="NumericValueType" minOccurs="0"/>
+		</xsd:sequence>
+	</xsd:complexType>
+	<xsd:complexType name="PatentDescriptionType">
+		<xsd:sequence>
+			<xsd:element name="PatentTitle" type="xsd:string" minOccurs="0"/>
+			<xsd:element name="Description" type="xsd:string" minOccurs="0"/>
+			<xsd:element name="Inventors" minOccurs="0">
+				<xsd:annotation>
+					<xsd:documentation>A patent has one or more applicants. An applicant is the person or corporate body that applies for the patent and intends to 'work' the invention (to manufacture or license the technology).  Under US law the applicants must be the inventor(s) except in exceptional circumstances.  On a resume or CV listing patents held or submitted, an individual might use the "Applicants" component when the patent is held or was filed with others ("co-applicants").</xsd:documentation>
+				</xsd:annotation>
+				<xsd:complexType>
+					<xsd:sequence>
+						<xsd:element name="InventorName" type="xsd:string" maxOccurs="unbounded"/>
+					</xsd:sequence>
+				</xsd:complexType>
+			</xsd:element>
+			<xsd:element name="PatentDetail" minOccurs="0" maxOccurs="unbounded">
+				<xsd:complexType>
+					<xsd:sequence>
+						<xsd:element name="IssuingAuthority" minOccurs="0">
+							<xsd:complexType>
+								<xsd:simpleContent>
+									<xsd:extension base="xsd:string">
+										<xsd:attribute name="countryCode" type="CountryCodeType"/>
+									</xsd:extension>
+								</xsd:simpleContent>
+							</xsd:complexType>
+						</xsd:element>
+						<xsd:element name="PatentMilestone" maxOccurs="unbounded">
+							<xsd:complexType>
+								<xsd:sequence>
+									<xsd:element name="Id" type="xsd:string" minOccurs="0"/>
+									<xsd:element name="Status" type="PatentStatusTypes" minOccurs="0"/>
+									<xsd:element name="Date" type="AnyDateTimeNkNaType" minOccurs="0"/>
+								</xsd:sequence>
+							</xsd:complexType>
+						</xsd:element>
+					</xsd:sequence>
+				</xsd:complexType>
+			</xsd:element>
+			<xsd:element name="Link" type="InternetWebAddressType" minOccurs="0"/>
+		</xsd:sequence>
+	</xsd:complexType>
+	<xsd:complexType name="PatentHistoryType">
+		<xsd:sequence>
+			<xsd:element name="Patent" type="PatentDescriptionType" maxOccurs="unbounded"/>
+		</xsd:sequence>
+	</xsd:complexType>
+	<xsd:complexType name="PersonDescriptorsType">
+		<xsd:sequence>
+			<xsd:element name="LegalIdentifiers" type="LegalIdentifiersType" minOccurs="0"/>
+			<xsd:element name="DemographicDescriptors" type="DemographicDescriptorsType" minOccurs="0"/>
+			<xsd:element name="BiologicalDescriptors" type="BiologicalDescriptorsType" minOccurs="0"/>
+			<xsd:element name="SupportingMaterials" type="StaffingSupportingMaterialsType" minOccurs="0" maxOccurs="unbounded"/>
+			<xsd:element name="OtherDescriptors" type="OtherDescriptorsType" minOccurs="0" maxOccurs="unbounded"/>
+			<xsd:element ref="UserArea" minOccurs="0"/>
+		</xsd:sequence>
+	</xsd:complexType>
+	<xsd:complexType name="PersonLegalIdType">
+		<xsd:complexContent>
+			<xsd:extension base="EntityIdType">
+				<xsd:attribute name="countryCode" type="CountryCodeType"/>
+				<xsd:attribute name="jurisdiction" type="xsd:string"/>
+				<xsd:attribute name="issuingRegion" type="xsd:string"/>
+				<xsd:attribute name="documentType" type="xsd:string"/>
+				<xsd:attribute name="idSource" type="xsd:string"/>
+			</xsd:extension>
+		</xsd:complexContent>
+	</xsd:complexType>
+	<xsd:complexType name="PersonNameType">
+		<xsd:sequence>
+			<xsd:element name="FormattedName" type="xsd:string" minOccurs="0"/>
+			<xsd:element name="LegalName" type="xsd:string" minOccurs="0"/>
+			<xsd:element name="GivenName" type="xsd:string" minOccurs="0" maxOccurs="unbounded"/>
+			<xsd:element name="PreferredGivenName" type="xsd:string" minOccurs="0"/>
+			<xsd:element name="MiddleName" type="xsd:string" minOccurs="0"/>
+			<xsd:element name="FamilyName" minOccurs="0" maxOccurs="unbounded">
+				<xsd:complexType>
+					<xsd:simpleContent>
+						<xsd:extension base="xsd:string">
+							<xsd:attribute name="primary">
+								<xsd:simpleType>
+									<xsd:restriction base="xsd:string">
+										<xsd:enumeration value="true"/>
+										<xsd:enumeration value="false"/>
+										<xsd:enumeration value="undefined"/>
+									</xsd:restriction>
+								</xsd:simpleType>
+							</xsd:attribute>
+							<xsd:attribute name="prefix" type="xsd:string"/>
+						</xsd:extension>
+					</xsd:simpleContent>
+				</xsd:complexType>
+			</xsd:element>
+			<xsd:element name="Affix" minOccurs="0" maxOccurs="unbounded">
+				<xsd:complexType>
+					<xsd:simpleContent>
+						<xsd:extension base="xsd:string">
+							<xsd:attribute name="type" use="required">
+								<xsd:simpleType>
+									<xsd:restriction base="xsd:string">
+										<xsd:enumeration value="aristocraticTitle"/>
+										<xsd:enumeration value="formOfAddress"/>
+										<xsd:enumeration value="generation"/>
+										<xsd:enumeration value="qualification"/>
+									</xsd:restriction>
+								</xsd:simpleType>
+							</xsd:attribute>
+						</xsd:extension>
+					</xsd:simpleContent>
+				</xsd:complexType>
+			</xsd:element>
+			<xsd:element name="AlternateScript" minOccurs="0" maxOccurs="unbounded">
+				<xsd:complexType>
+					<xsd:sequence>
+						<xsd:element name="FormattedName" type="xsd:string" minOccurs="0"/>
+						<xsd:element name="LegalName" type="xsd:string" minOccurs="0"/>
+						<xsd:element name="GivenName" type="xsd:string" minOccurs="0" maxOccurs="unbounded"/>
+						<xsd:element name="PreferredGivenName" type="xsd:string" minOccurs="0"/>
+						<xsd:element name="MiddleName" type="xsd:string" minOccurs="0"/>
+						<xsd:element name="FamilyName" minOccurs="0" maxOccurs="unbounded">
+							<xsd:complexType>
+								<xsd:simpleContent>
+									<xsd:extension base="xsd:string">
+										<xsd:attribute name="primary">
+											<xsd:simpleType>
+												<xsd:restriction base="xsd:string">
+													<xsd:enumeration value="true"/>
+													<xsd:enumeration value="false"/>
+													<xsd:enumeration value="undefined"/>
+												</xsd:restriction>
+											</xsd:simpleType>
+										</xsd:attribute>
+										<xsd:attribute name="prefix" type="xsd:string"/>
+									</xsd:extension>
+								</xsd:simpleContent>
+							</xsd:complexType>
+						</xsd:element>
+						<xsd:element name="Affix" minOccurs="0" maxOccurs="unbounded">
+							<xsd:complexType>
+								<xsd:simpleContent>
+									<xsd:extension base="xsd:string">
+										<xsd:attribute name="type" use="required">
+											<xsd:simpleType>
+												<xsd:restriction base="xsd:string">
+													<xsd:enumeration value="aristocraticTitle"/>
+													<xsd:enumeration value="formOfAddress"/>
+													<xsd:enumeration value="generation"/>
+													<xsd:enumeration value="qualification"/>
+												</xsd:restriction>
+											</xsd:simpleType>
+										</xsd:attribute>
+									</xsd:extension>
+								</xsd:simpleContent>
+							</xsd:complexType>
+						</xsd:element>
+					</xsd:sequence>
+					<xsd:attribute name="script" type="xsd:string"/>
+				</xsd:complexType>
+			</xsd:element>
+		</xsd:sequence>
+		<xsd:attribute name="script" type="xsd:string"/>
+	</xsd:complexType>
+	<xsd:complexType name="PhysicalLocationType">
+		<xsd:sequence>
+			<xsd:element name="Id" type="EntityIdType" minOccurs="0"/>
+			<xsd:element name="Name" type="xsd:string" minOccurs="0"/>
+			<xsd:element name="EffectiveDate" minOccurs="0">
+				<xsd:complexType>
+					<xsd:sequence>
+						<xsd:element name="StartDate" type="LocalDateNkNaType" minOccurs="0"/>
+						<xsd:element name="EndDate" type="LocalDateNkNaType" minOccurs="0"/>
+					</xsd:sequence>
+				</xsd:complexType>
+			</xsd:element>
+			<xsd:element ref="SpatialLocation" minOccurs="0"/>
+			<xsd:element name="TravelDirections" type="xsd:string" minOccurs="0" maxOccurs="unbounded"/>
+			<xsd:element ref="PostalAddress" minOccurs="0"/>
+			<xsd:element name="Area" type="LocationAreaType" minOccurs="0" maxOccurs="unbounded"/>
+			<xsd:element name="Comments" type="xsd:string" minOccurs="0"/>
+		</xsd:sequence>
+	</xsd:complexType>
+	<xsd:complexType name="PositionCompensationType">
+		<xsd:sequence>
+			<xsd:element name="StartingCompensation" minOccurs="0">
+				<xsd:complexType>
+					<xsd:simpleContent>
+						<xsd:extension base="xsd:string">
+							<xsd:attribute name="currency" type="CurrencyCodeType" use="required"/>
+							<xsd:attribute name="intervalType" type="IntervalTypeStringExtensionType"/>
+							<xsd:attribute name="validFrom" type="AnyDateTimeNaType"/>
+							<xsd:attribute name="validTo" type="AnyDateTimeNaType"/>
+						</xsd:extension>
+					</xsd:simpleContent>
+				</xsd:complexType>
+			</xsd:element>
+			<xsd:element name="EndingCompensation" minOccurs="0">
+				<xsd:complexType>
+					<xsd:simpleContent>
+						<xsd:extension base="xsd:string">
+							<xsd:attribute name="currency" type="CurrencyCodeType" use="required"/>
+							<xsd:attribute name="intervalType" type="IntervalTypeStringExtensionType"/>
+							<xsd:attribute name="validFrom" type="AnyDateTimeNaType"/>
+							<xsd:attribute name="validTo" type="AnyDateTimeNaType"/>
+						</xsd:extension>
+					</xsd:simpleContent>
+				</xsd:complexType>
+			</xsd:element>
+			<xsd:element name="Comments" type="xsd:string" minOccurs="0"/>
+			<xsd:element name="OtherCompensation" minOccurs="0" maxOccurs="unbounded">
+				<xsd:complexType>
+					<xsd:simpleContent>
+						<xsd:extension base="xsd:string">
+							<xsd:attribute name="type" type="xsd:string"/>
+							<xsd:attribute name="validFrom" type="AnyDateTimeNaType"/>
+							<xsd:attribute name="validTo" type="AnyDateTimeNaType"/>
+						</xsd:extension>
+					</xsd:simpleContent>
+				</xsd:complexType>
+			</xsd:element>
+		</xsd:sequence>
+	</xsd:complexType>
+	<xsd:complexType name="PositionHistoryType">
+		<xsd:sequence>
+			<xsd:element name="Title" type="xsd:string" minOccurs="0"/>
+			<xsd:element name="OrgName" type="PositionOrgNameType"/>
+			<xsd:element name="OrgInfo" type="PositionOrgInfoType" minOccurs="0" maxOccurs="unbounded"/>
+			<xsd:element name="OrgIndustry" type="PositionOrgIndustryType" minOccurs="0" maxOccurs="unbounded"/>
+			<xsd:element name="OrgSize" type="xsd:string" minOccurs="0"/>
+			<xsd:element name="Description" type="xsd:string"/>
+			<xsd:element name="StartDate" type="FlexibleDatesType"/>
+			<xsd:element name="EndDate" type="FlexibleDatesType" minOccurs="0"/>
+			<xsd:element name="Compensation" type="PositionCompensationType" minOccurs="0"/>
+			<xsd:element name="Comments" type="xsd:string" minOccurs="0"/>
+			<xsd:element name="Verification" type="VerificationType" minOccurs="0"/>
+			<xsd:element name="JobLevelInfo" type="JobLevelInfoType" minOccurs="0" maxOccurs="unbounded"/>
+			<xsd:element name="JobCategory" type="OccupationalCategoryType" minOccurs="0" maxOccurs="unbounded"/>
+			<xsd:element ref="Competency" minOccurs="0" maxOccurs="unbounded"/>
+			<xsd:element ref="UserArea" minOccurs="0"/>
+		</xsd:sequence>
+		<xsd:attribute name="positionType" type="PositionTypexStringPatternExtensionType"/>
+		<xsd:attribute name="currentEmployer" type="xsd:boolean" use="optional"/>
+	</xsd:complexType>
+	<xsd:complexType name="PositionMatchingType">
+		<xsd:sequence>
+			<xsd:element name="Company" type="EntityReferenceType" minOccurs="0" maxOccurs="unbounded"/>
+			<xsd:element name="CompanyScale" type="ScaleType" minOccurs="0" maxOccurs="unbounded"/>
+			<xsd:element name="IndustryCode" type="IndustryCodeType" minOccurs="0" maxOccurs="unbounded"/>
+			<xsd:element name="PhysicalLocation" type="SEPPhysicalLocationType" minOccurs="0" maxOccurs="unbounded"/>
+			<xsd:element name="JobCategory" type="OccupationalCategoryType" minOccurs="0" maxOccurs="unbounded"/>
+			<xsd:element name="PositionTitle" type="xsd:string" minOccurs="0" maxOccurs="unbounded"/>
+			<xsd:element name="PositionClassification" type="StaffingPositionClassificationType" minOccurs="0" maxOccurs="unbounded"/>
+			<xsd:element name="PositionSchedule" minOccurs="0" maxOccurs="unbounded">
+				<xsd:complexType>
+					<xsd:simpleContent>
+						<xsd:extension base="PositionScheduleType">
+							<xsd:attribute name="percentage" type="xsd:float"/>
+						</xsd:extension>
+					</xsd:simpleContent>
+				</xsd:complexType>
+			</xsd:element>
+			<xsd:element name="Shift" type="WorkShiftScheduleType" minOccurs="0" maxOccurs="unbounded"/>
+			<xsd:element ref="Competency" minOccurs="0" maxOccurs="unbounded"/>
+			<xsd:element name="RemunerationPackage" type="PrehireRemunerationPackageType" minOccurs="0"/>
+			<xsd:element name="WorkStyle" type="WorkStyleType" minOccurs="0" maxOccurs="unbounded"/>
+			<xsd:element name="DressCode" type="DressCodeType" minOccurs="0" maxOccurs="unbounded"/>
+			<xsd:element name="Travel" type="StaffingTravelType" minOccurs="0"/>
+			<xsd:element name="Relocation" type="StaffingRelocationType" minOccurs="0"/>
+			<xsd:element name="PreferredLanguage" type="LanguageCodeType" minOccurs="0"/>
+			<xsd:element name="UserArea" type="UserAreaType" minOccurs="0"/>
+		</xsd:sequence>
+	</xsd:complexType>
+	<xsd:complexType name="PositionOrgIndustryType">
+		<xsd:sequence>
+			<xsd:element name="IndustryDescription" type="xsd:string" minOccurs="0"/>
+			<xsd:element name="IndustryCode" minOccurs="0">
+				<xsd:complexType>
+					<xsd:simpleContent>
+						<xsd:extension base="xsd:string">
+							<xsd:attribute name="classificationName" type="xsd:string"/>
+						</xsd:extension>
+					</xsd:simpleContent>
+				</xsd:complexType>
+			</xsd:element>
+		</xsd:sequence>
+		<xsd:attribute name="primaryIndicator" type="xsd:boolean" use="required"/>
+	</xsd:complexType>
+	<xsd:complexType name="PositionOrgInfoType">
+		<xsd:sequence>
+			<xsd:element name="PositionLocation" type="PostalAddressType" minOccurs="0"/>
+			<xsd:element name="WebSite" type="InternetWebAddressType" minOccurs="0"/>
+			<xsd:element name="LocationSummary" type="EmploymentLocationSummaryType" minOccurs="0"/>
+		</xsd:sequence>
+	</xsd:complexType>
+	<xsd:complexType name="PositionOrgNameType">
+		<xsd:sequence>
+			<xsd:element name="OrganizationName" type="xsd:string"/>
+			<xsd:element name="OrgName" type="PositionOrgNameType" minOccurs="0"/>
+		</xsd:sequence>
+		<xsd:attribute name="organizationType" type="OrganizationTypeStringExtensionType"/>
+	</xsd:complexType>
+	<xsd:complexType name="PositionPostingSearchInfoType">
+		<xsd:complexContent>
+			<xsd:extension base="PositionPostingType">
+				<xsd:sequence>
+					<xsd:element ref="SearchCriteria" minOccurs="0"/>
+					<xsd:element ref="SearchResult" minOccurs="0"/>
+				</xsd:sequence>
+			</xsd:extension>
+		</xsd:complexContent>
+	</xsd:complexType>
+	<xsd:complexType name="PositionPostingType">
+		<xsd:sequence>
+			<xsd:element name="Id" type="EntityIdType" minOccurs="0"/>
+			<xsd:element name="Title" type="xsd:string" minOccurs="0"/>
+			<xsd:element name="Link" type="InternetWebAddressType" minOccurs="0"/>
+		</xsd:sequence>
+	</xsd:complexType>
+	<xsd:complexType name="PostalAddressType">
+		<xsd:sequence>
+			<xsd:element name="CountryCode">
+				<xsd:simpleType>
+					<xsd:restriction base="xsd:string">
+						<xsd:pattern value="[A-Z]{2}"/>
+					</xsd:restriction>
+				</xsd:simpleType>
+			</xsd:element>
+			<xsd:element name="PostalCode" type="xsd:string" minOccurs="0"/>
+			<xsd:element name="Region" type="xsd:string" minOccurs="0" maxOccurs="unbounded"/>
+			<xsd:element name="Municipality" type="xsd:string" minOccurs="0"/>
+			<xsd:element name="DeliveryAddress" minOccurs="0">
+				<xsd:complexType>
+					<xsd:sequence>
+						<xsd:element name="AddressLine" type="xsd:string" minOccurs="0" maxOccurs="unbounded"/>
+						<xsd:element name="StreetName" type="xsd:string" minOccurs="0"/>
+						<xsd:element name="BuildingNumber" type="xsd:string" minOccurs="0"/>
+						<xsd:element name="Unit" type="xsd:string" minOccurs="0"/>
+						<xsd:element name="PostOfficeBox" type="xsd:string" minOccurs="0"/>
+					</xsd:sequence>
+				</xsd:complexType>
+			</xsd:element>
+			<xsd:element name="Recipient" minOccurs="0" maxOccurs="unbounded">
+				<xsd:complexType>
+					<xsd:sequence>
+						<xsd:element name="PersonName" type="PersonNameType" minOccurs="0"/>
+						<xsd:element name="AdditionalText" type="xsd:string" minOccurs="0" maxOccurs="unbounded"/>
+						<xsd:element name="Organization" type="xsd:string" minOccurs="0">
+							<xsd:annotation>
+								<xsd:documentation>Deprecated in favor of OrganizationName element.</xsd:documentation>
+							</xsd:annotation>
+						</xsd:element>
+						<xsd:element name="OrganizationName" type="xsd:string" minOccurs="0"/>
+					</xsd:sequence>
+				</xsd:complexType>
+			</xsd:element>
+		</xsd:sequence>
+		<xsd:attribute name="type">
+			<xsd:simpleType>
+				<xsd:restriction base="xsd:string">
+					<xsd:enumeration value="postOfficeBoxAddress"/>
+					<xsd:enumeration value="streetAddress"/>
+					<xsd:enumeration value="militaryAddress"/>
+					<xsd:enumeration value="undefined"/>
+				</xsd:restriction>
+			</xsd:simpleType>
+		</xsd:attribute>
+	</xsd:complexType>
+	<xsd:complexType name="PrehireRemunerationPackageType">
+		<xsd:sequence>
+			<xsd:element name="BasePay" type="BasePayType" minOccurs="0" maxOccurs="unbounded"/>
+			<xsd:element name="OtherPay" type="OtherPayDataType" minOccurs="0" maxOccurs="unbounded"/>
+			<xsd:element name="Benefits" type="BenefitsType" minOccurs="0" maxOccurs="unbounded"/>
+			<xsd:element ref="UserArea" minOccurs="0"/>
+		</xsd:sequence>
+	</xsd:complexType>
+	<xsd:complexType name="ProfessionalAssociationType">
+		<xsd:sequence>
+			<xsd:element name="Association" type="xsd:string" minOccurs="0" maxOccurs="unbounded"/>
+		</xsd:sequence>
+	</xsd:complexType>
+	<xsd:complexType name="PublicationHistoryType">
+		<xsd:annotation>
+			<xsd:documentation>This is used in the context of a resume or CV to list articles, books, or other publications authored or co-authored by an individual. </xsd:documentation>
+		</xsd:annotation>
+		<xsd:sequence>
+			<xsd:element name="FormattedPublicationDescription" minOccurs="0" maxOccurs="unbounded">
+				<xsd:complexType>
+					<xsd:simpleContent>
+						<xsd:extension base="xsd:string">
+							<xsd:attribute name="type" type="PublicationTypes"/>
+						</xsd:extension>
+					</xsd:simpleContent>
+				</xsd:complexType>
+			</xsd:element>
+			<xsd:element name="Article" type="ArticleType" minOccurs="0" maxOccurs="unbounded"/>
+			<xsd:element name="Book" type="BookType" minOccurs="0" maxOccurs="unbounded"/>
+			<xsd:element name="ConferencePaper" type="ConferencePaperType" minOccurs="0" maxOccurs="unbounded">
+				<xsd:annotation>
+					<xsd:documentation>Contains details about papers or presentations prepared for delivery at a conference.</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+			<xsd:element name="OtherPublication" type="OtherPublicationType" minOccurs="0" maxOccurs="unbounded"/>
+		</xsd:sequence>
+	</xsd:complexType>
+	<xsd:complexType name="RankAchievedType">
+		<xsd:sequence>
+			<xsd:element name="StartRank" type="xsd:string" minOccurs="0"/>
+			<xsd:element name="CurrentOrEndRank" type="xsd:string" minOccurs="0"/>
+		</xsd:sequence>
+	</xsd:complexType>
+	<xsd:complexType name="RankedSearchRelevanceType">
+		<xsd:sequence>
+			<xsd:element name="CriterionName" type="xsd:string" minOccurs="0"/>
+			<xsd:element name="Requested" type="xsd:string" minOccurs="0"/>
+			<xsd:element name="Offered" type="xsd:string" minOccurs="0"/>
+			<xsd:element name="Score" minOccurs="0">
+				<xsd:complexType>
+					<xsd:simpleContent>
+						<xsd:extension base="xsd:string">
+							<xsd:attribute name="unitOfMeasure" type="xsd:string"/>
+						</xsd:extension>
+					</xsd:simpleContent>
+				</xsd:complexType>
+			</xsd:element>
+			<xsd:element name="Weight" type="NumericValueType" minOccurs="0"/>
+			<xsd:element ref="UserArea" minOccurs="0"/>
+			<xsd:element name="RankedResult" type="RankedSearchRelevanceType" minOccurs="0" maxOccurs="unbounded"/>
+		</xsd:sequence>
+	</xsd:complexType>
+	<xsd:complexType name="RankedSearchResultsType">
+		<xsd:sequence>
+			<xsd:element name="RankedResult" type="RankedSearchRelevanceType" minOccurs="0" maxOccurs="unbounded"/>
+		</xsd:sequence>
+	</xsd:complexType>
+	<xsd:complexType name="RatingType">
+		<xsd:choice>
+			<xsd:element name="NumericValue">
+				<xsd:complexType>
+					<xsd:simpleContent>
+						<xsd:extension base="xsd:double">
+							<xsd:attribute name="minValue" type="xsd:double"/>
+							<xsd:attribute name="maxValue" type="xsd:double"/>
+							<xsd:attribute name="description" type="xsd:string"/>
+						</xsd:extension>
+					</xsd:simpleContent>
+				</xsd:complexType>
+			</xsd:element>
+			<xsd:element name="StringValue">
+				<xsd:complexType>
+					<xsd:simpleContent>
+						<xsd:extension base="xsd:string">
+							<xsd:attribute name="minValue" type="xsd:string"/>
+							<xsd:attribute name="maxValue" type="xsd:string"/>
+							<xsd:attribute name="description" type="xsd:string"/>
+						</xsd:extension>
+					</xsd:simpleContent>
+				</xsd:complexType>
+			</xsd:element>
+		</xsd:choice>
+	</xsd:complexType>
+	<xsd:complexType name="RecordInfoType">
+		<xsd:sequence>
+			<xsd:element name="Id" type="EntityIdType" minOccurs="0" maxOccurs="unbounded"/>
+			<xsd:element name="Status" minOccurs="0">
+				<xsd:complexType>
+					<xsd:simpleContent>
+						<xsd:extension base="ExtendedBasicStatusType">
+							<xsd:attribute name="validFrom" type="AnyDateTimeNkNaType"/>
+							<xsd:attribute name="validTo" type="AnyDateTimeNkNaType"/>
+						</xsd:extension>
+					</xsd:simpleContent>
+				</xsd:complexType>
+			</xsd:element>
+		</xsd:sequence>
+	</xsd:complexType>
+	<xsd:complexType name="ReferencesType">
+		<xsd:sequence>
+			<xsd:element ref="Reference" maxOccurs="unbounded"/>
+		</xsd:sequence>
+	</xsd:complexType>
+	<xsd:complexType name="ReferenceType">
+		<xsd:sequence>
+			<xsd:element name="PersonName" type="PersonNameType" minOccurs="0"/>
+			<xsd:element name="PositionTitle" type="xsd:string" minOccurs="0"/>
+			<xsd:element name="ContactMethod" type="ContactMethodType" minOccurs="0" maxOccurs="unbounded"/>
+			<xsd:element name="Comments" type="xsd:string" minOccurs="0"/>
+		</xsd:sequence>
+		<xsd:attribute name="type" type="ReferenceTypes"/>
+	</xsd:complexType>
+	<xsd:complexType name="RelatedOrganizationalUnitType">
+		<xsd:complexContent>
+			<xsd:extension base="OrganizationalUnitType">
+				<xsd:attribute name="relationship" type="OrganizationalUnitRelationshipType"/>
+				<xsd:attribute name="natureOfRelationship" type="OrganizationalUnitStructureType"/>
+			</xsd:extension>
+		</xsd:complexContent>
+	</xsd:complexType>
+	<xsd:complexType name="RelatedOrganizationType">
+		<xsd:complexContent>
+			<xsd:extension base="OrganizationType">
+				<xsd:attribute name="relationship" type="OrganizationRelationshipType"/>
+			</xsd:extension>
+		</xsd:complexContent>
+	</xsd:complexType>
+	<xsd:complexType name="RelatedPositionPostingsType">
+		<xsd:sequence>
+			<xsd:element name="PositionPosting" type="PositionPostingSearchInfoType" minOccurs="0" maxOccurs="unbounded"/>
+		</xsd:sequence>
+	</xsd:complexType>
+	<xsd:complexType name="SafetyEquipmentType">
+		<xsd:simpleContent>
+			<xsd:extension base="xsd:string">
+				<xsd:attribute name="suppliedByOrganization" type="xsd:boolean"/>
+			</xsd:extension>
+		</xsd:simpleContent>
+	</xsd:complexType>
+	<xsd:complexType name="SchoolDataType">
+		<xsd:sequence>
+			<xsd:element name="InternetDomainName" type="InternetDomainNameType" minOccurs="0" maxOccurs="unbounded"/>
+			<xsd:element name="SchoolId" type="EntityIdType" minOccurs="0" maxOccurs="unbounded">
+				<xsd:annotation>
+					<xsd:documentation>Identifier of the School, College or institution attended.  Associated type attribute further qualifies the name as current, prior,  degree or joint.</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+			<xsd:element name="SchoolName" type="xsd:string" minOccurs="0">
+				<xsd:annotation>
+					<xsd:documentation>School, College or institution attended.  Associated type attribute further qualifies the name as current, prior,  degree or joint.</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+		</xsd:sequence>
+		<xsd:attribute name="type" type="SchoolTypeType" use="optional"/>
+	</xsd:complexType>
+	<xsd:complexType name="SchoolOrInstitutionType">
+		<xsd:sequence>
+			<xsd:element name="SchoolName" type="xsd:string" minOccurs="0">
+				<xsd:annotation>
+					<xsd:documentation>Deprecated in favor of the School / SchoolName path.</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+			<xsd:element name="School" type="SchoolDataType" minOccurs="0" maxOccurs="unbounded">
+				<xsd:annotation>
+					<xsd:documentation>School, College or institution attended.  Associated type attribute further qualifies the name as current, prior,  degree or joint.</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+			<xsd:element name="LocationSummary" minOccurs="0">
+				<xsd:annotation>
+					<xsd:documentation>Summarized location of the entity. </xsd:documentation>
+				</xsd:annotation>
+				<xsd:complexType>
+					<xsd:sequence>
+						<xsd:element name="Municipality" type="xsd:string" minOccurs="0"/>
+						<xsd:element name="Region" type="xsd:string" minOccurs="0" maxOccurs="unbounded"/>
+						<xsd:element ref="CountryCode" minOccurs="0"/>
+						<xsd:element name="PostalCode" type="xsd:string" minOccurs="0"/>
+					</xsd:sequence>
+				</xsd:complexType>
+			</xsd:element>
+			<xsd:element ref="PostalAddress" minOccurs="0"/>
+			<xsd:element name="OrganizationUnit" minOccurs="0" maxOccurs="unbounded">
+				<xsd:annotation>
+					<xsd:documentation>The campus, department or other organizational unit for the educational institution. </xsd:documentation>
+				</xsd:annotation>
+				<xsd:complexType>
+					<xsd:simpleContent>
+						<xsd:extension base="xsd:string">
+							<xsd:attribute name="organizationType" type="OrgTypeStringExtensionType" use="required"/>
+							<xsd:attribute name="attendanceStatus" use="optional">
+								<xsd:simpleType>
+									<xsd:restriction base="xsd:string">
+										<xsd:enumeration value="current"/>
+										<xsd:enumeration value="prior"/>
+										<xsd:enumeration value="unknown"/>
+									</xsd:restriction>
+								</xsd:simpleType>
+							</xsd:attribute>
+						</xsd:extension>
+					</xsd:simpleContent>
+				</xsd:complexType>
+			</xsd:element>
+			<xsd:element name="Degree" minOccurs="0" maxOccurs="unbounded">
+				<xsd:complexType>
+					<xsd:complexContent>
+						<xsd:extension base="EduDegreeType"/>
+					</xsd:complexContent>
+				</xsd:complexType>
+			</xsd:element>
+			<xsd:element name="Major" type="xsd:string" minOccurs="0" maxOccurs="unbounded">
+				<xsd:annotation>
+					<xsd:documentation>Deprecated in favor of Degree construct.</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+			<xsd:element name="Minor" type="xsd:string" minOccurs="0" maxOccurs="unbounded">
+				<xsd:annotation>
+					<xsd:documentation>Deprecated in favor of Degree construct.</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+			<xsd:element name="Measure" type="EduMeasureType" minOccurs="0">
+				<xsd:annotation>
+					<xsd:documentation>Deprecated in favor of Degree construct.</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+			<xsd:element name="DatesOfAttendance" type="DeprecatedDatesOfAttendanceType" minOccurs="0">
+				<xsd:annotation>
+					<xsd:documentation>Deprecated in favor of Degree construct.</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+			<xsd:element name="Comments" type="xsd:string" minOccurs="0">
+				<xsd:annotation>
+					<xsd:documentation>Deprecated in favor of Degree construct.</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+			<xsd:element name="ISCEDInstitutionClassification" type="ISCEDInstitutionClassificationType" minOccurs="0">
+				<xsd:annotation>
+					<xsd:documentation>This construct replaces the deprecated schoolType attribute.</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+			<xsd:element name="LocalInstitutionClassification" type="ClassificationType" minOccurs="0" maxOccurs="unbounded">
+				<xsd:annotation>
+					<xsd:documentation>This construct replaces the deprecated schoolType attribute.</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+			<xsd:element ref="UserArea" minOccurs="0"/>
+		</xsd:sequence>
+		<xsd:attribute name="schoolType" type="SchoolTypeStringExtensionType" use="required">
+			<xsd:annotation>
+				<xsd:documentation>Deprecated in favor of ISCEDInstitutionClassification and LocalInstitutionClassification.</xsd:documentation>
+			</xsd:annotation>
+		</xsd:attribute>
+	</xsd:complexType>
+	<xsd:complexType name="SearchCriteriaType">
+		<xsd:sequence>
+			<xsd:element name="SearchCriteriaId" type="EntityIdType" minOccurs="0"/>
+			<xsd:element name="SearchTarget" type="xsd:string" minOccurs="0" maxOccurs="unbounded">
+				<xsd:annotation>
+					<xsd:documentation>The name of a database or service that is the target of the search.</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+			<xsd:element name="UserId" type="EntityIdType" minOccurs="0">
+				<xsd:annotation>
+					<xsd:documentation>The Id of the user conducting the search.</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+			<xsd:element name="SearchTimeStamp" type="xsd:dateTime" minOccurs="0">
+				<xsd:annotation>
+					<xsd:documentation>Date and time search was conducted. I've used LocalDateTimeType.</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+			<xsd:element name="SearchString" type="xsd:anyURI" minOccurs="0">
+				<xsd:annotation>
+					<xsd:documentation>The search string. Usually an URL-encoded string. </xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+			<xsd:element name="SearchCriterion" type="OtherSearchCriteriaType" minOccurs="0" maxOccurs="unbounded"/>
+			<xsd:element ref="UserArea" minOccurs="0"/>
+		</xsd:sequence>
+	</xsd:complexType>
+	<xsd:complexType name="SearchResultType">
+		<xsd:sequence>
+			<xsd:element name="SearchResultId" type="EntityIdType" minOccurs="0"/>
+			<xsd:element name="SearchTarget" type="xsd:string" minOccurs="0" maxOccurs="unbounded">
+				<xsd:annotation>
+					<xsd:documentation>The name of a database or service that is the target of the search.</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+			<xsd:element name="UserId" type="EntityIdType" minOccurs="0"/>
+			<xsd:element name="SearchTimeStamp" type="xsd:dateTime" minOccurs="0"/>
+			<xsd:element name="MatchedObjectId" type="EntityIdType" minOccurs="0">
+				<xsd:annotation>
+					<xsd:documentation>Examples would be an identifier for the Candidate, Position, or other item returned by the search.</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+			<xsd:element name="SearchRelevanceScore" minOccurs="0">
+				<xsd:annotation>
+					<xsd:documentation>The relevance score returned for this item. This might be a percentage, a number score, or textual score (high, medium, low relevance)</xsd:documentation>
+				</xsd:annotation>
+				<xsd:complexType>
+					<xsd:simpleContent>
+						<xsd:extension base="xsd:string">
+							<xsd:attribute name="unitOfMeasure"/>
+						</xsd:extension>
+					</xsd:simpleContent>
+				</xsd:complexType>
+			</xsd:element>
+			<xsd:element name="SearchRelevanceRank" type="xsd:int" minOccurs="0">
+				<xsd:annotation>
+					<xsd:documentation>The rank of this item within the set returned by the search.</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+			<xsd:element name="SearchResultCount" type="xsd:int" minOccurs="0">
+				<xsd:annotation>
+					<xsd:documentation>The number of items returned from the search.</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+			<xsd:element name="RankedSearchResults" type="RankedSearchResultsType" minOccurs="0"/>
+			<xsd:element ref="UserArea" minOccurs="0"/>
+		</xsd:sequence>
+	</xsd:complexType>
+	<xsd:complexType name="SEPContactInfoType">
+		<xsd:sequence>
+			<xsd:element ref="PersonName" minOccurs="0"/>
+			<xsd:element name="ContactMethod" type="ContactMethodType" minOccurs="0" maxOccurs="unbounded"/>
+		</xsd:sequence>
+	</xsd:complexType>
+	<xsd:complexType name="SEPPhysicalLocationType">
+		<xsd:sequence>
+			<xsd:element name="Id" type="EntityIdType" minOccurs="0"/>
+			<xsd:element name="Name" type="xsd:string" minOccurs="0"/>
+			<xsd:element name="SpatialLocation" minOccurs="0">
+				<xsd:complexType>
+					<xsd:sequence>
+						<xsd:element name="Latitude">
+							<xsd:annotation>
+								<xsd:documentation>[N|S]degree.minute.second.f, degree range [0-90], decimal fraction f in arbitrary length (ex. N60.08.00.235556)</xsd:documentation>
+							</xsd:annotation>
+							<xsd:simpleType>
+								<xsd:restriction base="xsd:string">
+									<xsd:pattern value="(\+|\-)((\d|[0-8]\d)\.([0-5]\d))((\.[0-5]\d\.\d+)|(\.[0-5]\d))?|90\.00\.00(\.0+)?">
+										<xsd:annotation>
+											<xsd:documentation>
+Pattern is generally of the form +DD.MM.SS  (D=degrees, M=minutes, S=seconds)
+
+Description of the pattern:
+1) '+' or '-' required unless the value is 90.00.00 
+	- if value is 90.00.00, then omit the '+' or '-'
+	- '+' means North, '-' means South
+2) A one-digit or two-digit number for degrees (range 0 to 89) - required 
+3) A dot (the decimal between degrees and minutes) - required
+4) A two-digit number for minutes (range 00 to 59) - required 
+5) A dot (the decimal between minutes and seconds) - optional
+6) A two-digit number for seconds (range 00 to 59) - optional
+     - if there is a dot in step 5, then there must be a two-digit number for seconds
+7) A dot (the decimal between seconds and parts of a second) - optional
+8) Digits for parts of a second (can be any number of digits) - optional
+     - if there is a dot in step 7, then there must be at least one digit after it
+
+Examples:
++0.00.00
++00.00.00
+90.00.00
+90.00.00.0
+-89.59.59
+-89.59
+-89.59.59.555
+
+
+Pattern breakdown: (D=degrees, M=minutes, S=seconds)
+(\+|\-)  (...see next line..)  |     90\.00\.00(\.0+)? 
+((\d|[0-8]\d)\.([0-5]\d))  (...see next line..) 
+((\.[0-5]\d\.\d+)   |   (\.[0-5]\d))?
+
+
+The original pattern (just for insurance):
+pattern value="(N|S)((\d|[0-8]\d)\.([0-5]\d)\.[0-5]\d(\.\d+)?)|90\.00\.00(\.0+)?" 
+
+
+			</xsd:documentation>
+										</xsd:annotation>
+									</xsd:pattern>
+								</xsd:restriction>
+							</xsd:simpleType>
+						</xsd:element>
+						<xsd:element name="Longitude">
+							<xsd:annotation>
+								<xsd:documentation>[E|W]degree.minute.second.f, degree range [0-180], decimal fraction f in arbitrary length (ex. E25.00.00)</xsd:documentation>
+							</xsd:annotation>
+							<xsd:simpleType>
+								<xsd:restriction base="xsd:string">
+									<xsd:pattern value="(\+|-)(\d|\d\d|[0-1][0-7]\d)\.([0-5]\d)((\.[0-5]\d\.\d+)|(\.[0-5]\d))?|180\.00\.00(\.0+)?">
+										<xsd:annotation>
+											<xsd:documentation>
+Pattern is generally of the form +DDD.MM.SS  (D=degrees, M=minutes, S=seconds)
+
+Description of the pattern:
+1) '+' or '-' required unless the value is 180.00.00 
+	- if 180.00.00, then omit the '+' or '-'
+	- '+' means East, '-' means West
+2) A one-digit, two-digit, or three-digit number for degrees (range 0 to 179) - required 
+3) A dot (the decimal between degrees and minutes) - required
+4) A two-digit number for minutes (range 00 to 59) - required
+5) A dot (the decimal between minutes and seconds) - optional
+6) A two-digit number for seconds (range 00 to 59) - optional
+     - if there is a dot in step 5, then there must be a two-digit number for seconds
+7) A dot (the decimal between seconds and parts of a second) - optional
+8) Digits for parts of a second (can be any number of digits) - optional
+     - if there is a dot in step 7, then there must be at least one digit after it
+
+Examples:
++0.00.00
++00.00.00
++000.00.00
+180.00.00
+180.00.00.0
+-179.59.59
+-40.59.59.555
+-40.59
+
+
+Pattern breakdown: (D=degrees, M=minutes, S=seconds)
+(\+|\-)  (...see next line..)  |     190\.00\.00(\.0+)? 
+(\d|\d\d|[0-1][0-7]\d)\.([0-5]\d)  (...see next line..) 
+((\.[0-5]\d\.\d+)   |   (\.[0-5]\d))?
+
+ 
+The original pattern (just for insurance):
+pattern value="(E|W)((\d|\d\d|[0-1][0-7]\d)\.([0-5]\d)\.[0-5]\d(\.\d+)?)|180\.00\.00(\.0+)?" 
+			</xsd:documentation>
+										</xsd:annotation>
+									</xsd:pattern>
+								</xsd:restriction>
+							</xsd:simpleType>
+						</xsd:element>
+						<xsd:choice>
+							<xsd:element name="Altitude" type="xsd:decimal" minOccurs="0">
+								<xsd:annotation>
+									<xsd:documentation>[(+)|-]x.f meter from WGS-84 datum reference ellipsoid, + above, - below, decimal fraction f in arbitrary length (ex. +12 )</xsd:documentation>
+								</xsd:annotation>
+							</xsd:element>
+							<xsd:element name="AltitudeMeanSeaLevel" type="xsd:decimal" minOccurs="0">
+								<xsd:annotation>
+									<xsd:documentation>[(+)|-]x.f meter from mean sea level, + above, - below, decimal fraction f in arbitrary length (ex. +10 )</xsd:documentation>
+								</xsd:annotation>
+							</xsd:element>
+						</xsd:choice>
+						<xsd:element name="HorizontalAccuracy" type="NonNegativeDecimal" minOccurs="0">
+							<xsd:annotation>
+								<xsd:documentation>by circle of radius from the positioned point in (+)x.f meter, decimal fraction f in arbitrary length (ex. 50.0)</xsd:documentation>
+							</xsd:annotation>
+						</xsd:element>
+						<xsd:element name="VerticalAccuracy" type="NonNegativeDecimal" minOccurs="0">
+							<xsd:annotation>
+								<xsd:documentation>in (+)x.f meter, decimal fraction f in arbitrary length (ex. 2.5)</xsd:documentation>
+							</xsd:annotation>
+						</xsd:element>
+					</xsd:sequence>
+				</xsd:complexType>
+			</xsd:element>
+			<xsd:element name="TravelDirections" type="xsd:string" minOccurs="0" maxOccurs="unbounded"/>
+			<xsd:element name="Area" type="AreaType" minOccurs="0" maxOccurs="unbounded"/>
+			<xsd:element ref="PostalAddress" minOccurs="0"/>
+			<xsd:element name="Comments" type="xsd:string" minOccurs="0"/>
+		</xsd:sequence>
+	</xsd:complexType>
+	<xsd:complexType name="SourceTypeType">
+		<xsd:choice>
+			<xsd:element name="StandardValue" type="SourceEnumType"/>
+			<xsd:element name="NonStandardValue" type="xsd:string"/>
+		</xsd:choice>
+	</xsd:complexType>
+	<xsd:complexType name="SpatialLocationType">
+		<xsd:sequence>
+			<xsd:element name="Latitude" type="LatitudeType"/>
+			<xsd:element name="Longitude" type="LongitudeType"/>
+			<xsd:choice>
+				<xsd:element name="Altitude" type="xsd:decimal" minOccurs="0">
+					<xsd:annotation>
+						<xsd:documentation>[(+)|-]x.f meter from WGS-84 datum reference ellipsoid, + above, - below, decimal fraction f in arbitrary length (ex. +12 )</xsd:documentation>
+					</xsd:annotation>
+				</xsd:element>
+				<xsd:element name="AltitudeMeanSeaLevel" type="xsd:decimal" minOccurs="0">
+					<xsd:annotation>
+						<xsd:documentation>[(+)|-]x.f meter from mean sea level, + above, - below, decimal fraction f in arbitrary length (ex. +10 )</xsd:documentation>
+					</xsd:annotation>
+				</xsd:element>
+			</xsd:choice>
+			<xsd:element name="HorizontalAccuracy" type="NonNegativeDecimal" minOccurs="0">
+				<xsd:annotation>
+					<xsd:documentation>by circle of radius from the positioned point in (+)x.f meter, decimal fraction f in arbitrary length (ex. 50.0)</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+			<xsd:element name="VerticalAccuracy" type="NonNegativeDecimal" minOccurs="0">
+				<xsd:annotation>
+					<xsd:documentation>in (+)x.f meter, decimal fraction f in arbitrary length (ex. 2.5)</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+		</xsd:sequence>
+	</xsd:complexType>
+	<xsd:complexType name="SpeakingEventType">
+		<xsd:sequence>
+			<xsd:element name="Title" type="xsd:string" minOccurs="0"/>
+			<xsd:element name="Role" type="xsd:string" minOccurs="0"/>
+			<xsd:element name="StartDate" type="FlexibleDatesType" minOccurs="0"/>
+			<xsd:element name="EndDate" type="FlexibleDatesType" minOccurs="0"/>
+			<xsd:element name="EventName" type="xsd:string"/>
+			<xsd:element name="EventType" type="ExtendedEventTypeType" minOccurs="0"/>
+			<xsd:element name="Location" type="xsd:string" minOccurs="0"/>
+			<xsd:element name="Description" type="xsd:string" minOccurs="0"/>
+			<xsd:element name="AffiliatedOrganization" type="xsd:string" minOccurs="0" maxOccurs="unbounded"/>
+			<xsd:element name="Link" type="InternetWebAddressType" minOccurs="0"/>
+		</xsd:sequence>
+		<xsd:attribute name="type" type="ExtendedSpeakingTypeType"/>
+	</xsd:complexType>
+	<xsd:complexType name="SpecifiedCompetencyReferenceType">
+		<xsd:sequence>
+			<xsd:element ref="CompetencyId"/>
+			<xsd:element name="ProficencyLevel" type="xsd:string" minOccurs="0">
+				<xsd:annotation>
+					<xsd:documentation>Contains a value indicating a level of proficiency. 
+					The scale and meaning of the proficiency level value is determined within the context of the particular competency taxonomy referenced. </xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+		</xsd:sequence>
+	</xsd:complexType>
+	<xsd:complexType name="StaffingRelocationType">
+		<xsd:sequence>
+			<xsd:element name="Comments" type="xsd:string" minOccurs="0"/>
+		</xsd:sequence>
+		<xsd:attribute name="relocationConsidered" type="xsd:boolean" use="required"/>
+	</xsd:complexType>
+	<xsd:complexType name="StaffingSupportingMaterialsType">
+		<xsd:annotation>
+			<xsd:documentation>This type is officially deprecated in favor of the subsequently issued "SupportingMaterials" schema located in the CPO folder.  The prefix "Staffing" was added to the type name here so as to distinguish it.  No content models were changed here.</xsd:documentation>
+		</xsd:annotation>
+		<xsd:sequence>
+			<xsd:choice>
+				<xsd:element name="Link" type="InternetWebAddressType" minOccurs="0"/>
+				<xsd:element name="AttachmentReference" minOccurs="0">
+					<xsd:complexType>
+						<xsd:simpleContent>
+							<xsd:extension base="xsd:string">
+								<xsd:attribute name="context" type="xsd:string"/>
+								<xsd:attribute name="mimeType" type="xsd:string"/>
+							</xsd:extension>
+						</xsd:simpleContent>
+					</xsd:complexType>
+				</xsd:element>
+			</xsd:choice>
+			<xsd:element name="Description" type="xsd:string" minOccurs="0"/>
+		</xsd:sequence>
+	</xsd:complexType>
+	<xsd:complexType name="StaffingTravelType">
+		<xsd:choice>
+			<xsd:element name="Applicable" type="xsd:boolean" minOccurs="0"/>
+			<xsd:sequence>
+				<xsd:element name="TravelFrequency" type="xsd:string" minOccurs="0"/>
+				<xsd:element name="TravelConsiderations" type="xsd:string" minOccurs="0"/>
+			</xsd:sequence>
+		</xsd:choice>
+	</xsd:complexType>
+	<xsd:complexType name="StockType">
+		<xsd:sequence>
+			<xsd:element name="Id" type="EntityIdType" minOccurs="0"/>
+			<xsd:element name="Symbol" type="xsd:string" minOccurs="0"/>
+			<xsd:element name="Exchange" type="xsd:string" minOccurs="0"/>
+		</xsd:sequence>
+	</xsd:complexType>
+	<xsd:complexType name="StructuredXMLResumeType">
+		<xsd:sequence>
+			<xsd:element name="ContactInfo" type="SEPContactInfoType" minOccurs="0"/>
+			<xsd:element name="ExecutiveSummary" type="xsd:string" minOccurs="0"/>
+			<xsd:element name="Objective" type="xsd:string" minOccurs="0"/>
+			<xsd:element ref="EmploymentHistory" minOccurs="0"/>
+			<xsd:element ref="EducationHistory" minOccurs="0"/>
+			<xsd:element ref="LicensesAndCertifications" minOccurs="0"/>
+			<xsd:element ref="MilitaryHistory" minOccurs="0"/>
+			<xsd:element ref="PatentHistory" minOccurs="0"/>
+			<xsd:element ref="PublicationHistory" minOccurs="0"/>
+			<xsd:element ref="SpeakingEventsHistory" minOccurs="0"/>
+			<xsd:element name="Qualifications" minOccurs="0">
+				<xsd:complexType>
+					<xsd:sequence>
+						<xsd:element name="QualificationSummary" type="xsd:string" minOccurs="0"/>
+						<xsd:element ref="Competency" minOccurs="0" maxOccurs="unbounded"/>
+					</xsd:sequence>
+				</xsd:complexType>
+			</xsd:element>
+			<xsd:element name="Languages" minOccurs="0">
+				<xsd:complexType>
+					<xsd:sequence>
+						<xsd:element ref="Language" maxOccurs="unbounded"/>
+					</xsd:sequence>
+				</xsd:complexType>
+			</xsd:element>
+			<xsd:element ref="Achievements" minOccurs="0"/>
+			<xsd:element ref="Associations" minOccurs="0"/>
+			<xsd:element ref="References" minOccurs="0"/>
+			<xsd:element ref="SecurityCredentials" minOccurs="0"/>
+			<xsd:element name="ResumeAdditionalItems" minOccurs="0">
+				<xsd:complexType>
+					<xsd:sequence>
+						<xsd:element ref="ResumeAdditionalItem" maxOccurs="unbounded"/>
+					</xsd:sequence>
+				</xsd:complexType>
+			</xsd:element>
+			<xsd:element name="SupportingMaterials" type="StaffingSupportingMaterialsType" minOccurs="0" maxOccurs="unbounded"/>
+			<xsd:element name="ProfessionalAssociations" type="ProfessionalAssociationType" minOccurs="0"/>
+			<xsd:group ref="Comments" minOccurs="0"/>
+			<xsd:element name="RevisionDate" type="AnyDateTimeNkType" minOccurs="0"/>
+		</xsd:sequence>
+	</xsd:complexType>
+	<xsd:complexType name="SupplierType">
+		<xsd:sequence>
+			<xsd:element name="SupplierId" type="EntityIdType" minOccurs="0"/>
+			<xsd:element name="EntityName" type="xsd:string" minOccurs="0"/>
+			<xsd:element name="ContactName" type="PersonNameType" minOccurs="0"/>
+			<xsd:element name="ContactMethod" type="ContactMethodType" minOccurs="0" maxOccurs="unbounded"/>
+			<xsd:element name="SourceType" type="SourceTypeType" minOccurs="0"/>
+		</xsd:sequence>
+		<xsd:attribute name="relationship" type="RelationshipsType" use="optional"/>
+	</xsd:complexType>
+	<xsd:complexType name="TelcomNumberType">
+		<xsd:choice>
+			<xsd:element ref="FormattedNumber"/>
+			<xsd:group ref="TelcomNumberGroup"/>
+		</xsd:choice>
+	</xsd:complexType>
+	<xsd:complexType name="TimeOffAllowanceType">
+		<xsd:sequence>
+			<xsd:element name="Description" type="xsd:string" minOccurs="0"/>
+		</xsd:sequence>
+		<xsd:attribute name="timeOffType" type="TimeOffTypes"/>
+	</xsd:complexType>
+	<xsd:complexType name="UserAreaType">
+		<xsd:sequence minOccurs="0" maxOccurs="unbounded">
+			<xsd:annotation>
+				<xsd:documentation>In order to prevent a possible "ambiguous content model" errors in an instance, unbounded sequences were either eliminated from or deprecated in all HR-XML schemas. Removing unbounded sequences ensures that ambiguous errors are not found in an instance.  The unbounded sequence here is officially deprecated and will be changed to a single sequence.</xsd:documentation>
+			</xsd:annotation>
+			<xsd:any namespace="##any" minOccurs="0" maxOccurs="unbounded"/>
+		</xsd:sequence>
+	</xsd:complexType>
+	<xsd:complexType name="USLocalizedPositionClassificationType">
+		<xsd:sequence>
+			<xsd:element name="FLSAStatus" type="FLSAStatusEnumType"/>
+			<xsd:element name="EEOCJobCategory" type="EEOCJobCategoryType" minOccurs="0"/>
+			<xsd:element name="AffirmativeActionPlanJobGroupId" type="EntityIdType" minOccurs="0"/>
+		</xsd:sequence>
+	</xsd:complexType>
+	<xsd:complexType name="VerificationType">
+		<xsd:sequence>
+			<xsd:element name="ContactInfo">
+				<xsd:complexType>
+					<xsd:sequence>
+						<xsd:element ref="PersonName"/>
+						<xsd:element name="ContactMethod" type="ContactMethodType" minOccurs="0" maxOccurs="unbounded"/>
+					</xsd:sequence>
+				</xsd:complexType>
+			</xsd:element>
+			<xsd:element name="ReasonForLeaving" type="xsd:string" minOccurs="0"/>
+			<xsd:element name="PermissionToContact" type="xsd:boolean" minOccurs="0"/>
+			<xsd:element name="VerifyEmployment" type="xsd:boolean" minOccurs="0"/>
+			<xsd:element name="EligibleForRehire" type="xsd:boolean" minOccurs="0"/>
+			<xsd:element name="AttendanceRating" type="RatingType" minOccurs="0"/>
+			<xsd:element name="OverallPerformanceRating" type="RatingType" minOccurs="0"/>
+			<xsd:element name="QuestionAnswerPair" type="EmploymentQuestionAnswerPairType" minOccurs="0" maxOccurs="unbounded">
+				<xsd:annotation>
+					<xsd:documentation>Usage is primarily for the results of a screening, but is not limited to that purpose.  </xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+		</xsd:sequence>
+	</xsd:complexType>
+	<xsd:complexType name="WorkShiftScheduleType">
+		<xsd:sequence>
+			<xsd:element name="Id" type="EntityIdType" minOccurs="0"/>
+			<xsd:element name="Name" type="xsd:string" minOccurs="0"/>
+			<xsd:element name="Hours" type="xsd:decimal" minOccurs="0"/>
+			<xsd:element name="StartTime" type="LocalTimeNkNaType" minOccurs="0"/>
+			<xsd:element name="EndTime" type="LocalTimeNkNaType" minOccurs="0"/>
+			<xsd:element ref="PayTypeHours" minOccurs="0"/>
+			<xsd:element name="Comments" type="xsd:string" minOccurs="0"/>
+		</xsd:sequence>
+		<xsd:attribute name="shiftPeriod" type="ShiftPeriodType" use="optional"/>
+	</xsd:complexType>
+	<xsd:complexType name="WorkSiteEnvironmentType">
+		<xsd:sequence>
+			<xsd:element name="EnvironmentName" type="xsd:string" minOccurs="0"/>
+			<xsd:element name="EnvironmentId" type="EntityIdType" minOccurs="0"/>
+			<xsd:element name="WorkSiteId" type="EntityIdType" minOccurs="0"/>
+			<xsd:element name="Description" minOccurs="0">
+				<xsd:complexType>
+					<xsd:simpleContent>
+						<xsd:extension base="xsd:string">
+							<xsd:attribute ref="xml:lang"/>
+						</xsd:extension>
+					</xsd:simpleContent>
+				</xsd:complexType>
+			</xsd:element>
+			<xsd:element name="Considerations" minOccurs="0" maxOccurs="unbounded">
+				<xsd:complexType>
+					<xsd:sequence>
+						<xsd:element name="General" type="xsd:string" minOccurs="0" maxOccurs="unbounded"/>
+						<xsd:element name="Physical" type="xsd:string" minOccurs="0" maxOccurs="unbounded"/>
+						<xsd:element name="SafetyEquipment" type="SafetyEquipmentType" minOccurs="0" maxOccurs="unbounded"/>
+						<xsd:element name="DressCode" type="DressCodeType" minOccurs="0" maxOccurs="unbounded"/>
+						<xsd:element ref="UserArea" minOccurs="0"/>
+					</xsd:sequence>
+					<xsd:attribute ref="xml:lang"/>
+				</xsd:complexType>
+			</xsd:element>
+			<xsd:element ref="UserArea" minOccurs="0"/>
+		</xsd:sequence>
+	</xsd:complexType>
+	<xsd:complexType name="WorkSiteType">
+		<xsd:sequence>
+			<xsd:element name="WorkSiteName" type="xsd:string" minOccurs="0"/>
+			<xsd:element name="WorkSiteId" type="EntityIdType" minOccurs="0"/>
+			<xsd:element name="Details" minOccurs="0" maxOccurs="unbounded">
+				<xsd:complexType>
+					<xsd:simpleContent>
+						<xsd:extension base="LanguageDependentTextType">
+							<xsd:attribute name="type" type="xsd:string"/>
+						</xsd:extension>
+					</xsd:simpleContent>
+				</xsd:complexType>
+			</xsd:element>
+			<xsd:element name="PostalAddress" type="PostalAddressType" minOccurs="0"/>
+			<xsd:element name="TravelDirections" type="LanguageDependentTextType" minOccurs="0" maxOccurs="unbounded"/>
+			<xsd:element name="ParkingInstructions" type="LanguageDependentTextType" minOccurs="0" maxOccurs="unbounded"/>
+			<xsd:element ref="WorkSiteEnvironment" minOccurs="0" maxOccurs="unbounded"/>
+			<xsd:element ref="UserArea" minOccurs="0"/>
+		</xsd:sequence>
+	</xsd:complexType>
+	<xsd:element name="Achievement" type="AchievementType"/>
+	<xsd:element name="Achievements">
+		<xsd:complexType>
+			<xsd:sequence>
+				<xsd:element ref="Achievement" maxOccurs="unbounded"/>
+			</xsd:sequence>
+		</xsd:complexType>
+	</xsd:element>
+	<xsd:element name="AreaCityCode" type="xsd:string"/>
+	<xsd:element name="Association">
+		<xsd:complexType>
+			<xsd:complexContent>
+				<xsd:extension base="AssociationType">
+					<xsd:attribute name="type" type="ExtendedAssociationTypeType"/>
+				</xsd:extension>
+			</xsd:complexContent>
+		</xsd:complexType>
+	</xsd:element>
+	<xsd:element name="Associations">
+		<xsd:complexType>
+			<xsd:sequence>
+				<xsd:element ref="Association" maxOccurs="unbounded"/>
+			</xsd:sequence>
+		</xsd:complexType>
+	</xsd:element>
+	<xsd:element name="Competency" type="CompetencyType"/>
+	<xsd:element name="CompetencyId" type="EntityIdType">
+		<xsd:annotation>
+			<xsd:documentation>A globally scoped element containing an identifier for a competency being referenced. </xsd:documentation>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="CountryCode" type="CountryCodeType"/>
+	<xsd:element name="CurrencyCode" type="CurrencyCodeType"/>
+	<xsd:element name="DunsNumber" type="DunsNumberDataType"/>
+	<xsd:element name="EducationHistory" type="EducationHistoryType"/>
+	<xsd:element name="EmploymentHistory" type="EmploymentHistoryType"/>
+	<xsd:element name="Extension" type="xsd:string"/>
+	<xsd:element name="Fax" type="TelcomNumberType"/>
+	<xsd:element name="FLSAStatus" type="FLSAStatusEnumType"/>
+	<xsd:element name="FormattedNumber" type="xsd:string"/>
+	<xsd:element name="Frequency" type="FrequencyType"/>
+	<xsd:element name="GenderCode" type="GenderCodeType"/>
+	<xsd:element name="IndustryCode" type="IndustryCodeType"/>
+	<xsd:element name="InternationalCountryCode" type="xsd:string"/>
+	<xsd:element name="InternetDomainName" type="InternetDomainNameType"/>
+	<xsd:element name="InternetEmailAddress" type="InternetEmailAddressType"/>
+	<xsd:element name="InternetWebAddress" type="InternetWebAddressType"/>
+	<xsd:element name="Language">
+		<xsd:complexType>
+			<xsd:sequence>
+				<xsd:element ref="LanguageCode" minOccurs="0"/>
+				<xsd:element name="Read" type="xsd:boolean" minOccurs="0"/>
+				<xsd:element name="Write" type="xsd:boolean" minOccurs="0"/>
+				<xsd:element name="Speak" type="xsd:boolean" minOccurs="0"/>
+				<xsd:element name="Comments" type="xsd:string" minOccurs="0"/>
+			</xsd:sequence>
+		</xsd:complexType>
+	</xsd:element>
+	<xsd:element name="LanguageCode" type="LanguageCodeType"/>
+	<xsd:element name="LicenseOrCertification" type="CredentialType"/>
+	<xsd:element name="LicensesAndCertifications">
+		<xsd:complexType>
+			<xsd:sequence>
+				<xsd:element ref="LicenseOrCertification" maxOccurs="unbounded"/>
+			</xsd:sequence>
+		</xsd:complexType>
+	</xsd:element>
+	<xsd:element name="Location" type="contactMethodLocationPatternExtensionType"/>
+	<xsd:element name="MilitaryHistory" type="MilitaryHistoryType"/>
+	<xsd:element name="Mobile" type="MobileTelcomNumberType"/>
+	<xsd:element name="NationalNumber" type="xsd:string"/>
+	<xsd:element name="NonXMLResume" type="NonXMLResumeType"/>
+	<xsd:element name="NumericValue" type="NumericValueType"/>
+	<xsd:element name="Organization">
+		<xsd:complexType>
+			<xsd:complexContent>
+				<xsd:extension base="OrganizationType"/>
+			</xsd:complexContent>
+		</xsd:complexType>
+	</xsd:element>
+	<xsd:element name="OrganizationalUnit" type="OrganizationalUnitType"/>
+	<xsd:element name="Pager" type="TelcomNumberType"/>
+	<xsd:element name="PatentHistory" type="PatentHistoryType"/>
+	<xsd:element name="PayTypeHours" type="USPayTypeHoursType"/>
+	<xsd:element name="PersonalData" type="CandidatePersonalDataType"/>
+	<xsd:element name="PersonDescriptors" type="PersonDescriptorsType"/>
+	<xsd:element name="PersonName" type="PersonNameType"/>
+	<xsd:element name="PhysicalLocation" type="PhysicalLocationType"/>
+	<xsd:element name="PositionMatching" type="PositionMatchingType"/>
+	<xsd:element name="PostalAddress" type="PostalAddressType"/>
+	<xsd:element name="PrehireRemuneration" type="PrehireRemunerationPackageType"/>
+	<xsd:element name="PublicationHistory" type="PublicationHistoryType"/>
+	<xsd:element name="Reference" type="ReferenceType"/>
+	<xsd:element name="References" type="ReferencesType"/>
+	<xsd:element name="Resume">
+		<xsd:complexType>
+			<xsd:sequence>
+				<xsd:element name="ResumeId" type="EntityIdType" minOccurs="0"/>
+				<xsd:element name="DistributionGuidelines" type="DistributionGuidelinesType" minOccurs="0"/>
+				<xsd:element ref="StructuredXMLResume" minOccurs="0"/>
+				<xsd:element ref="NonXMLResume" minOccurs="0"/>
+				<xsd:element ref="UserArea" minOccurs="0"/>
+			</xsd:sequence>
+			<xsd:attribute ref="xml:lang"/>
+		</xsd:complexType>
+	</xsd:element>
+	<xsd:element name="ResumeAdditionalItem" type="AdditionalItemType"/>
+	<xsd:element name="SearchCriteria" type="SearchCriteriaType"/>
+	<xsd:element name="SearchResult" type="SearchResultType"/>
+	<xsd:element name="SecurityCredential" type="CredentialType"/>
+	<xsd:element name="SecurityCredentials">
+		<xsd:complexType>
+			<xsd:sequence>
+				<xsd:element ref="SecurityCredential" maxOccurs="unbounded"/>
+			</xsd:sequence>
+		</xsd:complexType>
+	</xsd:element>
+	<xsd:element name="SEPPhysicalLocation" type="SEPPhysicalLocationType"/>
+	<xsd:element name="SpatialLocation" type="SpatialLocationType"/>
+	<xsd:element name="SpeakingEvent" type="SpeakingEventType"/>
+	<xsd:element name="SpeakingEventsHistory">
+		<xsd:complexType>
+			<xsd:sequence>
+				<xsd:element ref="SpeakingEvent" maxOccurs="unbounded"/>
+			</xsd:sequence>
+		</xsd:complexType>
+	</xsd:element>
+	<xsd:element name="SpecifiedCompetencyReference" type="SpecifiedCompetencyReferenceType">
+		<xsd:annotation>
+			<xsd:documentation>This element is mainly for documentation purposes. SpecifiedCompetencyReferenceType would generally be 
+			used with an element named for the context in which it appears. For example, the CompetenciesAssessed elment within AssessmentCatalog
+			extends SpecifiedCompetencyReferenceType.</xsd:documentation>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="StringValue">
+		<xsd:complexType>
+			<xsd:simpleContent>
+				<xsd:extension base="xsd:string">
+					<xsd:attribute name="minValue" type="xsd:string"/>
+					<xsd:attribute name="maxValue" type="xsd:string"/>
+					<xsd:attribute name="description" type="xsd:string"/>
+				</xsd:extension>
+			</xsd:simpleContent>
+		</xsd:complexType>
+	</xsd:element>
+	<xsd:element name="StructuredXMLResume" type="StructuredXMLResumeType"/>
+	<xsd:element name="SubscriberNumber" type="xsd:string"/>
+	<xsd:element name="SupportingInformation" type="xsd:string"/>
+	<xsd:element name="Telephone" type="TelcomNumberType"/>
+	<xsd:element name="TTYTDD" type="TelcomNumberType"/>
+	<xsd:element name="Use" type="contactMethodUsePatternExtensionType"/>
+	<xsd:element name="UserArea" type="UserAreaType">
+		<xsd:annotation>
+			<xsd:documentation>HR-XML Technical Steering Committee endorsed extension element.</xsd:documentation>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="WhenAvailable" type="contactMethodWhenAvailableType"/>
+	<xsd:element name="WorkSite" type="WorkSiteType"/>
+	<xsd:element name="WorkSiteEnvironment" type="WorkSiteEnvironmentType"/>
+	<xsd:group name="Comments">
+		<xsd:sequence>
+			<xsd:element name="Comments" type="xsd:string" minOccurs="0"/>
+		</xsd:sequence>
+	</xsd:group>
+	<xsd:group name="TelcomNumberGroup">
+		<xsd:sequence>
+			<xsd:element ref="InternationalCountryCode" minOccurs="0"/>
+			<xsd:element ref="NationalNumber" minOccurs="0"/>
+			<xsd:element ref="AreaCityCode" minOccurs="0"/>
+			<xsd:element ref="SubscriberNumber"/>
+			<xsd:element ref="Extension" minOccurs="0"/>
+		</xsd:sequence>
+	</xsd:group>
+</xsd:schema>

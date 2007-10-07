@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Enrollment xmlns="http://ns.hr-xml.org/2007-04-15" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://ns.hr-xml.org/2007-04-15 Enrollment.xsd" creationDate="2002-01-01T01:00:00-09:00">
+	<Organization organizationName="Premier Company">
+		<Subscriber>
+			<SubscriberType>
+				<SubscriberTypeCode>Employment</SubscriberTypeCode>
+				<StartDate>2002-01-01</StartDate>
+			</SubscriberType>
+			<Person>
+				<IdentificationCode>
+					<IdValue name="SocialSecurityNumber">111-22-3333</IdValue>
+				</IdentificationCode>
+				<PersonName>
+					<GivenName>Janice</GivenName>
+					<FamilyName>Haynes</FamilyName>
+				</PersonName>
+				<Gender>2</Gender>
+				<DateOfBirth>1941-06-15</DateOfBirth>
+				<ContactInformation>
+					<PostalAddress>
+						<CountryCode>US</CountryCode>
+						<PostalCode>60614</PostalCode>
+						<Region>IL</Region>
+						<Municipality>Chicago</Municipality>
+						<DeliveryAddress>
+							<AddressLine>125 Lincoln Park West</AddressLine>
+						</DeliveryAddress>
+					</PostalAddress>
+				</ContactInformation>
+				<MaritalStatus>
+					<MaritalStatusCode>Married</MaritalStatusCode>
+					<StartDate>1967-05-08</StartDate>
+				</MaritalStatus>
+			</Person>
+			<Coverage>
+				<SpendingAccountCoverage type="FSA Health Care">
+					<GroupNumber>AB0123</GroupNumber>
+					<TransactionCode>Add</TransactionCode>
+					<PlanYear>2002</PlanYear>
+					<StartDate>2002-01-01</StartDate>
+					<ContributionData contributor="Employee">
+						<GoalAmount currency="USD">1200</GoalAmount>
+						<PerPayPeriodAmount currency="USD">50</PerPayPeriodAmount>
+					</ContributionData>
+				</SpendingAccountCoverage>
+			</Coverage>
+		</Subscriber>
+	</Organization>
+</Enrollment>

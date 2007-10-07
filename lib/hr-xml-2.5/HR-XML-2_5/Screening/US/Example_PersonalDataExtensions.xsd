@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- This is a non-normative example illustrating a UserArea extension for the PersonalData node within BackgroundCheck.xsd. This type of extension could be useful depending on the particular screening order pattern used by the screening company and its client. A variety of implementation patterns are used in the marketplace. 
+
+1. Order by Package Identifier. One implementation pattern seen in the marketplace is a strict order by package identifier. All the screening options are built into the PackageId. Since all screening details are built into the PackageId, it may be complex or potentially ambiguous to include the data necessary to execute the Package Id within the BackgroundCheck schema's Screenings node.  In such cases, the easiest and most straight-forward way to structure an order might be to provide the search subject details within the  PersonalData element rather than within the BackgroundCheck schema's "Screenings node".  Below is an example of an extension to the UserArea within the PersonalData node. Such an extension may be a straight forward means to handle this type of order.  Note that it re-uses existing HR-XML components. 
+
+2. "A La Carte". A different approach than above would be an "a la carte" order.  Under such a scenario, the basic information about the search subject woud be provided within PersonalData (without extensions), but information pertinent to individual screenings being ordered would be provided within the relevant component under the Screening node. 
+
+3. "Order by Package, Plus".  A third pattern might be termed "Order by Package, Plus". This scenario is the same as the "Order by Package Identifier," except that an additional screening is ordered on top of the standard package. The information that pertains to the "a la carte" search is specified within the relevant components under the Screening node. The data relevant to executing the screenings covered by the PackagedId could be provided within within PersonalData. Again, the extension example below may be helpful in implementing this scenario.
+-->
+<xsd:schema xmlns="http://www.not-a-real-company.com/v1" xmlns:hrx="http://ns.hr-xml.org/2007-04-15" xmlns:xsd="http://www.w3.org/2001/XMLSchema" targetNamespace="http://www.not-a-real-company.com/v1" elementFormDefault="qualified">
+	<xsd:import namespace="http://ns.hr-xml.org/2007-04-15" schemaLocation="BackgroundCheck.xsd"/>
+	<xsd:element name="PersonalDataExtension"/>
+	<xsd:complexType name="PersonalDataExtension">
+		<xsd:sequence>
+			<xsd:element name="EducationHistory" type="hrx:EducationHistoryType" minOccurs="0"/>
+			<xsd:element name="EmploymentHistory" type="hrx:EmploymentHistoryType" minOccurs="0"/>
+			<xsd:element name="License" type="hrx:LicenseType" minOccurs="0"/>
+			<xsd:element name="MilitaryHistory" type="hrx:MilitaryHistoryType" minOccurs="0"/>
+			<xsd:element name="References" type="hrx:ReferencesType" minOccurs="0"/>
+			<xsd:element name="AdmittedChargeSummary" type="xsd:string"/>
+			<xsd:element name="AdditionalItems" type="hrx:FlexibleDetailType" minOccurs="0"/>
+		</xsd:sequence>
+	</xsd:complexType>
+</xsd:schema>

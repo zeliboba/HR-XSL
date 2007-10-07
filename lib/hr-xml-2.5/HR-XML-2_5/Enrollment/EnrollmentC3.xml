@@ -1,0 +1,187 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- edited with XMLSpy v2006 rel. 3 sp1 (http://www.altova.com) by Chuck Allen (HR-XML Consortium, Inc.) -->
+<Enrollment xmlns="http://ns.hr-xml.org/2007-04-15" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://ns.hr-xml.org/2007-04-15 Enrollment.xsd" creationDate="2004-02-04T12:00:00-05:00">
+	<Organization organizationName="Information and Emergency">
+		<Subscriber>
+			<SubscriberType>
+				<SubscriberTypeCode>Employment</SubscriberTypeCode>
+				<StartDate>2000-03-06</StartDate>
+			</SubscriberType>
+			<Person>
+				<IdentificationCode>
+					<IdValue name="SocialSecurityNumber">333111111</IdValue>
+				</IdentificationCode>
+				<PersonName>
+					<GivenName>MAX</GivenName>
+					<MiddleName>B</MiddleName>
+					<FamilyName>SMART</FamilyName>
+				</PersonName>
+				<Gender>1</Gender>
+				<DateOfBirth>1965-12-10</DateOfBirth>
+				<ContactInformation>
+					<PostalAddress type="streetAddress">
+						<CountryCode>US</CountryCode>
+						<PostalCode>80516</PostalCode>
+						<Region>CO</Region>
+						<Municipality>ERIE</Municipality>
+						<DeliveryAddress>
+							<AddressLine>86 SOLE ROAD</AddressLine>
+						</DeliveryAddress>
+					</PostalAddress>
+				</ContactInformation>
+				<MaritalStatus>
+					<MaritalStatusCode>Married</MaritalStatusCode>
+					<StartDate>2003-06-01</StartDate>
+				</MaritalStatus>
+			</Person>
+			<Coverage>
+				<TierCoverage type="Health">
+					<TransactionCode>Change</TransactionCode>
+					<ElectedPlanCode>1</ElectedPlanCode>
+					<GroupNumber>012345600140014TTRX</GroupNumber>
+					<COBRAStatus>non-COBRA</COBRAStatus>
+					<StartDate>2003-06-01</StartDate>
+					<CoverageLevel>
+						<CoverageLevelCode>Family</CoverageLevelCode>
+						<StartDate>2003-10-28</StartDate>
+					</CoverageLevel>
+				</TierCoverage>
+			</Coverage>
+			<Employment>
+				<EmploymentStatus>
+					<EmploymentStatusCode>Active</EmploymentStatusCode>
+					<StartDate>2000-03-06</StartDate>
+				</EmploymentStatus>
+				<HireDate>2000-03-06</HireDate>
+			</Employment>
+			<Dependent relationshipCode="Child" fullTimeStudent="false">
+				<Person>
+					<IdentificationCode>
+						<IdValue name="SocialSecurityNumber">000000000</IdValue>
+					</IdentificationCode>
+					<PersonName>
+						<GivenName>CATHY</GivenName>
+						<FamilyName>SMART</FamilyName>
+					</PersonName>
+					<Gender>2</Gender>
+					<DateOfBirth>2003-10-28</DateOfBirth>
+					<ContactInformation>
+						<PostalAddress type="streetAddress">
+							<CountryCode>US</CountryCode>
+							<PostalCode>80522</PostalCode>
+							<Region>CO</Region>
+							<Municipality>Denver</Municipality>
+							<DeliveryAddress>
+								<AddressLine>503 PINE CIRCLE</AddressLine>
+							</DeliveryAddress>
+						</PostalAddress>
+					</ContactInformation>
+				</Person>
+				<Coverage>
+					<TierCoverage type="Health">
+						<TransactionCode>Add</TransactionCode>
+						<ElectedPlanCode>1</ElectedPlanCode>
+						<GroupNumber>012345600140014TTRX</GroupNumber>
+						<COBRAStatus>non-COBRA</COBRAStatus>
+						<StartDate>2003-10-28</StartDate>
+						<CoverageLevel>
+							<CoverageLevelCode>Family</CoverageLevelCode>
+							<StartDate>2003-10-28</StartDate>
+						</CoverageLevel>
+						<EligibilityPostalCode>80516</EligibilityPostalCode>
+					</TierCoverage>
+				</Coverage>
+			</Dependent>
+			<Dependent relationshipCode="Child" fullTimeStudent="true">
+				<Person>
+					<IdentificationCode>
+						<IdValue name="SocialSecurityNumber">333331111</IdValue>
+					</IdentificationCode>
+					<PersonName>
+						<GivenName>JONATHAN</GivenName>
+						<MiddleName/>
+						<FamilyName>SMART</FamilyName>
+					</PersonName>
+					<Gender>1</Gender>
+					<DateOfBirth>1979-12-01</DateOfBirth>
+					<ContactInformation>
+						<PostalAddress type="streetAddress">
+							<CountryCode>US</CountryCode>
+							<PostalCode>55812</PostalCode>
+							<Region>MN</Region>
+							<Municipality>Minneapolis</Municipality>
+							<DeliveryAddress>
+								<AddressLine>52 COLLEGE DR</AddressLine>
+								<AddressLine>APT 202</AddressLine>
+							</DeliveryAddress>
+						</PostalAddress>
+					</ContactInformation>
+					<MaritalStatus>
+						<MaritalStatusCode>Single</MaritalStatusCode>
+						<StartDate>1930-01-01</StartDate>
+					</MaritalStatus>
+				</Person>
+				<Coverage>
+					<TierCoverage type="Health">
+						<TransactionCode>Change</TransactionCode>
+						<ElectedPlanCode>1</ElectedPlanCode>
+						<GroupNumber>012345600140014TTRX</GroupNumber>
+						<COBRAStatus>non-COBRA</COBRAStatus>
+						<StartDate>2003-06-01</StartDate>
+						<EndDate>2004-12-02</EndDate>
+						<CoverageLevel>
+							<CoverageLevelCode>Not Applicable</CoverageLevelCode>
+							<StartDate>2003-10-28</StartDate>
+						</CoverageLevel>
+						<EligibilityPostalCode>80516</EligibilityPostalCode>
+					</TierCoverage>
+				</Coverage>
+			</Dependent>
+			<Dependent relationshipCode="Spouse" fullTimeStudent="false">
+				<Person>
+					<IdentificationCode>
+						<IdValue name="SocialSecurityNumber">333221111</IdValue>
+					</IdentificationCode>
+					<PersonName>
+						<GivenName>KIMBERLY</GivenName>
+						<MiddleName>M</MiddleName>
+						<FamilyName>SMART</FamilyName>
+					</PersonName>
+					<Gender>2</Gender>
+					<DateOfBirth>1963-10-28</DateOfBirth>
+					<ContactInformation>
+						<PostalAddress type="streetAddress">
+							<CountryCode>US</CountryCode>
+							<PostalCode>80516</PostalCode>
+							<Region>CO</Region>
+							<Municipality>ERIE</Municipality>
+							<DeliveryAddress>
+								<AddressLine>86 SOLE ROAD</AddressLine>
+							</DeliveryAddress>
+						</PostalAddress>
+					</ContactInformation>
+					<MaritalStatus>
+						<MaritalStatusCode>Married</MaritalStatusCode>
+						<StartDate>2003-06-01</StartDate>
+					</MaritalStatus>
+				</Person>
+				<Coverage>
+					<TierCoverage type="Health">
+						<TransactionCode>Change</TransactionCode>
+						<ElectedPlanCode>1</ElectedPlanCode>
+						<GroupNumber>012345600140014TTRX</GroupNumber>
+						<COBRAStatus>non-COBRA</COBRAStatus>
+						<StartDate>2003-06-01</StartDate>
+						<CoverageLevel>
+							<CoverageLevelCode>Family</CoverageLevelCode>
+							<StartDate>2003-10-28</StartDate>
+						</CoverageLevel>
+					</TierCoverage>
+				</Coverage>
+			</Dependent>
+		</Subscriber>
+		<OrganizationId>
+			<IdValue>411911</IdValue>
+		</OrganizationId>
+	</Organization>
+</Enrollment>

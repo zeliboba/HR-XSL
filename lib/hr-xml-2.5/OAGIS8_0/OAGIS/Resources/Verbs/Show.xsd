@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+    License information for this file is provided in LICENSE.TXT
+    For support, more information, or to report implementation bugs, 
+    please contact the Open Applications Group at xml@openapplications.org 
+     
+    ** Revision: 8.0 **
+    ** Date: 05 April 2002 **
+    Open Applications Group XSD
+    Copyright 1998-2002, All Rights Reserved
+    
+    Name: Verbs/Show.xsd
+-->
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns="http://www.openapplications.org/oagis" targetNamespace="http://www.openapplications.org/oagis" elementFormDefault="qualified" attributeFormDefault="unqualified">
+        <xs:include schemaLocation="Verb.xsd"/>
+        <xs:complexType name="Show">
+                <xs:complexContent>
+                        <xs:extension base="ConfirmableVerb"/>
+                </xs:complexContent>
+        </xs:complexType>
+        <xs:element name="Show" type="Show" substitutionGroup="Verb">
+                <xs:annotation>
+                        <xs:documentation source="http://www.openapplications.org/oagis">The Show verb is used when sending the information about a specific instance of a business document or entity.  The Show verb may be used to respond to a Get request or it can be used in a publish scenario, where it pushes information to other applications based on a business event.Although BODs based on this verb do not commonly cause updates to occur, there may be times when the component receiving the Show decides to use the information it receives to update.  This is entirely the decision of the receiving software component and is not forbidden.The behavior of the Show verb is quite straight forward with one exception.  The Show response to any Get request needs to read the request carefully to ensure the response is returning the requested Data Types.</xs:documentation>
+                </xs:annotation>
+        </xs:element>
+</xs:schema>

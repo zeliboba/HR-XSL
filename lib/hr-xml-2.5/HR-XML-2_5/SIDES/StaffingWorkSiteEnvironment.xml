@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<StaffingWorkSiteEnvironment xmlns="http://ns.hr-xml.org/2007-04-15" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://ns.hr-xml.org/2007-04-15
+StaffingWorkSiteEnvironment.xsd">
+	<EnvironmentName>Business Office</EnvironmentName>
+	<EnvironmentConsideration typeConsideration="General">Cafeteria available in the building</EnvironmentConsideration>
+	<EnvironmentConsideration typeConsideration="Physical">Wheelchair accessible</EnvironmentConsideration>
+	<EnvironmentConsideration typeConsideration="Physical">Key card required to enter office areas</EnvironmentConsideration>
+	<EnvironmentConsideration typeConsideration="SafetyEquipment" suppliedByOrganization="true">Hard hat required in construction areas</EnvironmentConsideration>
+	<EnvironmentConsideration typeConsideration="SafetyAndHygiene">Excellent working conditions</EnvironmentConsideration>
+	<EnvironmentConsideration typeConsideration="SafetyAndHygiene">10 minutes rest for every 1 hour worked</EnvironmentConsideration>
+	<EnvironmentConsideration typeConsideration="DressCode">Business attire required</EnvironmentConsideration>
+</StaffingWorkSiteEnvironment>

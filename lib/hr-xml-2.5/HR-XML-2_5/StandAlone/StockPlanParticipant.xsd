@@ -1,0 +1,524 @@
+<?xml version="1.0"?>
+<xsd:schema targetNamespace="http://ns.hr-xml.org/2007-04-15" elementFormDefault="qualified" version="2007-04-15" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="http://ns.hr-xml.org/2007-04-15" xmlns:oa="http://www.openapplications.org/oagis" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:ds="http://www.w3.org/2000/09/xmldsig#">
+<xsd:annotation>
+<xsd:documentation>"Copyright  The HR-XML Consortium. All Rights Reserved. http://www.hr-xml.org"
+
+Terms of license can be found in license.txt.
+</xsd:documentation>
+<xsd:documentation>Stand alone (but non-normative) version of schema, with all "includes" inserted explicitly.  This file is auto-generated.  It should be considered a "convenience" alternative to the normative versions.</xsd:documentation>
+<xsd:documentation>After merging all includes, the result is passed through a stylesheet which deletes any duplicative global components as well as any unused global types.  Finally, it sorts by component name.  Be sure to check the Xml Namespaces to ensure this result is what you requested.</xsd:documentation>
+</xsd:annotation>
+<xsd:import namespace="http://www.w3.org/XML/1998/namespace" schemaLocation="xml.xsd" />
+<xsd:simpleType name="AnyDateTimeNkNaType">
+<xsd:union memberTypes="LocalDateType DateType LocalDateTimeType DateTimeType NotKnownLiteral NotApplicableLiteral"></xsd:union>
+</xsd:simpleType>
+<xsd:simpleType name="contactMethodLocationPatternExtensionType">
+<xsd:union memberTypes="contactMethodLocationType xStringPatternExtensionType"></xsd:union>
+</xsd:simpleType>
+
+<xsd:simpleType name="contactMethodLocationType">
+<xsd:restriction base="xsd:string">
+<xsd:enumeration value="office"></xsd:enumeration>
+<xsd:enumeration value="vehicle"></xsd:enumeration>
+<xsd:enumeration value="onPerson"></xsd:enumeration>
+<xsd:enumeration value="home"></xsd:enumeration>
+</xsd:restriction>
+</xsd:simpleType>
+<xsd:simpleType name="contactMethodUsePatternExtensionType">
+<xsd:union memberTypes="contactMethodUseType xStringPatternExtensionType"></xsd:union>
+</xsd:simpleType>
+<xsd:simpleType name="contactMethodUseType">
+<xsd:restriction base="xsd:string">
+<xsd:enumeration value="business"></xsd:enumeration>
+<xsd:enumeration value="businessDirect"></xsd:enumeration>
+<xsd:enumeration value="personal"></xsd:enumeration>
+</xsd:restriction>
+
+</xsd:simpleType>
+<xsd:simpleType name="contactMethodWhenAvailableType">
+<xsd:restriction base="xsd:string"></xsd:restriction>
+</xsd:simpleType>
+<xsd:simpleType name="CountryCodeType">
+<xsd:annotation>
+<xsd:documentation>Must conform to ISO 3166 Representation of Countries.</xsd:documentation>
+</xsd:annotation>
+<xsd:restriction base="xsd:string">
+<xsd:pattern value="[A-Z][A-Z]"></xsd:pattern>
+</xsd:restriction>
+</xsd:simpleType>
+<xsd:simpleType name="CurrencyCodeType">
+<xsd:annotation>
+<xsd:documentation>Must conform to ISO 4217 - Representation of Currency and Funds</xsd:documentation>
+
+</xsd:annotation>
+<xsd:restriction base="xsd:string">
+<xsd:pattern value="[A-Z][A-Z][A-Z]"></xsd:pattern>
+</xsd:restriction>
+</xsd:simpleType>
+<xsd:simpleType name="DateTimeType">
+<xsd:restriction base="xsd:dateTime">
+<xsd:pattern value="\d\d\d\d-\d\d-\d\dT\d\d:\d\d:\d\d(Z|(\+|-)\d\d:\d\d)"></xsd:pattern>
+</xsd:restriction>
+</xsd:simpleType>
+<xsd:simpleType name="DateType">
+<xsd:restriction base="xsd:date">
+<xsd:pattern value="\d\d\d\d-\d\d-\d\d(Z|(\+|-)\d\d:\d\d)"></xsd:pattern>
+</xsd:restriction>
+</xsd:simpleType>
+<xsd:simpleType name="DunsNumberBaseType">
+<xsd:restriction base="xsd:integer">
+
+<xsd:pattern value="\d{9}"></xsd:pattern>
+</xsd:restriction>
+</xsd:simpleType>
+<xsd:simpleType name="GenderCodeType">
+<xsd:annotation>
+<xsd:documentation>Must conform to ISO 5218 - Representation of Human Sexes (0 - Not Known; 1 - Male; 2 - Female; 9 - Not specified)</xsd:documentation>
+</xsd:annotation>
+<xsd:restriction base="xsd:integer">
+<xsd:pattern value="[0129]"></xsd:pattern>
+</xsd:restriction>
+</xsd:simpleType>
+<xsd:simpleType name="InternetEmailAddressType">
+<xsd:restriction base="xsd:string"></xsd:restriction>
+</xsd:simpleType>
+<xsd:simpleType name="InternetWebAddressType">
+<xsd:restriction base="xsd:string"></xsd:restriction>
+
+</xsd:simpleType>
+<xsd:simpleType name="LanguageCodeType">
+<xsd:annotation>
+<xsd:documentation>ISO 639-1 two character code is preferred, but not required.</xsd:documentation>
+</xsd:annotation>
+<xsd:restriction base="xsd:language"></xsd:restriction>
+</xsd:simpleType>
+<xsd:simpleType name="LocalDateTimeType">
+<xsd:restriction base="xsd:dateTime">
+<xsd:pattern value="\d\d\d\d-\d\d-\d\dT\d\d:\d\d:\d\d"></xsd:pattern>
+</xsd:restriction>
+</xsd:simpleType>
+<xsd:simpleType name="LocalDateType">
+<xsd:restriction base="xsd:date">
+<xsd:pattern value="\d\d\d\d-\d\d-\d\d"></xsd:pattern>
+</xsd:restriction>
+
+</xsd:simpleType>
+<xsd:simpleType name="LocalTimeType">
+<xsd:restriction base="xsd:time">
+<xsd:pattern value="\d\d:\d\d:\d\d"></xsd:pattern>
+</xsd:restriction>
+</xsd:simpleType>
+<xsd:simpleType name="NotApplicableLiteral">
+<xsd:restriction base="xsd:string">
+<xsd:enumeration value="notApplicable"></xsd:enumeration>
+</xsd:restriction>
+</xsd:simpleType>
+<xsd:simpleType name="NotKnownLiteral">
+<xsd:restriction base="xsd:string">
+<xsd:enumeration value="notKnown"></xsd:enumeration>
+</xsd:restriction>
+</xsd:simpleType>
+<xsd:simpleType name="TimeType">
+
+<xsd:restriction base="xsd:time">
+<xsd:pattern value="\d\d:\d\d:\d\d(Z|(\+|-)\d\d:\d\d)"></xsd:pattern>
+</xsd:restriction>
+</xsd:simpleType>
+<xsd:simpleType name="xStringPatternExtensionType">
+<xsd:restriction base="xsd:string">
+<xsd:pattern value="x:\S.*"></xsd:pattern>
+</xsd:restriction>
+</xsd:simpleType>
+<xsd:complexType name="ContactMethodType">
+<xsd:sequence>
+<xsd:element ref="Use" minOccurs="0"></xsd:element>
+<xsd:element ref="Location" minOccurs="0"></xsd:element>
+<xsd:element ref="WhenAvailable" minOccurs="0"></xsd:element>
+<xsd:element ref="Telephone" minOccurs="0"></xsd:element>
+<xsd:element ref="Mobile" minOccurs="0"></xsd:element>
+<xsd:element ref="Fax" minOccurs="0"></xsd:element>
+
+<xsd:element ref="Pager" minOccurs="0"></xsd:element>
+<xsd:element ref="TTYTDD" minOccurs="0"></xsd:element>
+<xsd:element ref="InternetEmailAddress" minOccurs="0"></xsd:element>
+<xsd:element ref="InternetWebAddress" minOccurs="0"></xsd:element>
+<xsd:element ref="PostalAddress" minOccurs="0"></xsd:element>
+</xsd:sequence>
+</xsd:complexType>
+<xsd:complexType name="DunsNumberDataType">
+<xsd:simpleContent>
+<xsd:extension base="DunsNumberBaseType">
+<xsd:attribute name="dunsNumberType" use="required">
+<xsd:simpleType>
+<xsd:restriction base="xsd:string">
+<xsd:enumeration value="standard Duns"></xsd:enumeration>
+<xsd:enumeration value="global ultimate"></xsd:enumeration>
+<xsd:enumeration value="domestic ultimate"></xsd:enumeration>
+</xsd:restriction>
+
+</xsd:simpleType>
+</xsd:attribute>
+</xsd:extension>
+</xsd:simpleContent>
+</xsd:complexType>
+<xsd:complexType name="EntityIdType">
+<xsd:sequence>
+<xsd:element name="IdValue" maxOccurs="unbounded">
+<xsd:complexType>
+<xsd:simpleContent>
+<xsd:extension base="xsd:string">
+<xsd:attribute name="name" type="xsd:string" use="optional"></xsd:attribute>
+</xsd:extension>
+</xsd:simpleContent>
+</xsd:complexType>
+</xsd:element>
+</xsd:sequence>
+
+<xsd:attribute name="validFrom" type="AnyDateTimeNkNaType" use="optional"></xsd:attribute>
+<xsd:attribute name="validTo" type="AnyDateTimeNkNaType" use="optional"></xsd:attribute>
+<xsd:attribute name="idOwner" type="xsd:string" use="optional"></xsd:attribute>
+</xsd:complexType>
+<xsd:complexType name="InternetDomainNameType">
+<xsd:simpleContent>
+<xsd:extension base="xsd:string">
+<xsd:attribute name="primaryIndicator" type="xsd:boolean" use="optional"></xsd:attribute>
+</xsd:extension>
+</xsd:simpleContent>
+</xsd:complexType>
+<xsd:complexType name="MobileTelcomNumberType">
+<xsd:complexContent>
+<xsd:extension base="TelcomNumberType">
+<xsd:attribute name="smsEnabled" type="xsd:boolean" use="optional"></xsd:attribute>
+</xsd:extension>
+</xsd:complexContent>
+
+</xsd:complexType>
+<xsd:complexType name="PersonNameType">
+<xsd:sequence>
+<xsd:element name="FormattedName" type="xsd:string" minOccurs="0"></xsd:element>
+<xsd:element name="LegalName" type="xsd:string" minOccurs="0"></xsd:element>
+<xsd:element name="GivenName" type="xsd:string" minOccurs="0" maxOccurs="unbounded"></xsd:element>
+<xsd:element name="PreferredGivenName" type="xsd:string" minOccurs="0"></xsd:element>
+<xsd:element name="MiddleName" type="xsd:string" minOccurs="0"></xsd:element>
+<xsd:element name="FamilyName" minOccurs="0" maxOccurs="unbounded">
+<xsd:complexType>
+<xsd:simpleContent>
+<xsd:extension base="xsd:string">
+<xsd:attribute name="primary">
+<xsd:simpleType>
+<xsd:restriction base="xsd:string">
+<xsd:enumeration value="true"></xsd:enumeration>
+<xsd:enumeration value="false"></xsd:enumeration>
+
+<xsd:enumeration value="undefined"></xsd:enumeration>
+</xsd:restriction>
+</xsd:simpleType>
+</xsd:attribute>
+<xsd:attribute name="prefix" type="xsd:string"></xsd:attribute>
+</xsd:extension>
+</xsd:simpleContent>
+</xsd:complexType>
+</xsd:element>
+<xsd:element name="Affix" minOccurs="0" maxOccurs="unbounded">
+<xsd:complexType>
+<xsd:simpleContent>
+<xsd:extension base="xsd:string">
+<xsd:attribute name="type" use="required">
+<xsd:simpleType>
+<xsd:restriction base="xsd:string">
+<xsd:enumeration value="aristocraticTitle"></xsd:enumeration>
+
+<xsd:enumeration value="formOfAddress"></xsd:enumeration>
+<xsd:enumeration value="generation"></xsd:enumeration>
+<xsd:enumeration value="qualification"></xsd:enumeration>
+</xsd:restriction>
+</xsd:simpleType>
+</xsd:attribute>
+</xsd:extension>
+</xsd:simpleContent>
+</xsd:complexType>
+</xsd:element>
+<xsd:element name="AlternateScript" minOccurs="0" maxOccurs="unbounded">
+<xsd:complexType>
+<xsd:sequence>
+<xsd:element name="FormattedName" type="xsd:string" minOccurs="0"></xsd:element>
+<xsd:element name="LegalName" type="xsd:string" minOccurs="0"></xsd:element>
+<xsd:element name="GivenName" type="xsd:string" minOccurs="0" maxOccurs="unbounded"></xsd:element>
+<xsd:element name="PreferredGivenName" type="xsd:string" minOccurs="0"></xsd:element>
+
+<xsd:element name="MiddleName" type="xsd:string" minOccurs="0"></xsd:element>
+<xsd:element name="FamilyName" minOccurs="0" maxOccurs="unbounded">
+<xsd:complexType>
+<xsd:simpleContent>
+<xsd:extension base="xsd:string">
+<xsd:attribute name="primary">
+<xsd:simpleType>
+<xsd:restriction base="xsd:string">
+<xsd:enumeration value="true"></xsd:enumeration>
+<xsd:enumeration value="false"></xsd:enumeration>
+<xsd:enumeration value="undefined"></xsd:enumeration>
+</xsd:restriction>
+</xsd:simpleType>
+</xsd:attribute>
+<xsd:attribute name="prefix" type="xsd:string"></xsd:attribute>
+</xsd:extension>
+</xsd:simpleContent>
+
+</xsd:complexType>
+</xsd:element>
+<xsd:element name="Affix" minOccurs="0" maxOccurs="unbounded">
+<xsd:complexType>
+<xsd:simpleContent>
+<xsd:extension base="xsd:string">
+<xsd:attribute name="type" use="required">
+<xsd:simpleType>
+<xsd:restriction base="xsd:string">
+<xsd:enumeration value="aristocraticTitle"></xsd:enumeration>
+<xsd:enumeration value="formOfAddress"></xsd:enumeration>
+<xsd:enumeration value="generation"></xsd:enumeration>
+<xsd:enumeration value="qualification"></xsd:enumeration>
+</xsd:restriction>
+</xsd:simpleType>
+</xsd:attribute>
+</xsd:extension>
+
+</xsd:simpleContent>
+</xsd:complexType>
+</xsd:element>
+</xsd:sequence>
+<xsd:attribute name="script" type="xsd:string"></xsd:attribute>
+</xsd:complexType>
+</xsd:element>
+</xsd:sequence>
+<xsd:attribute name="script" type="xsd:string"></xsd:attribute>
+</xsd:complexType>
+<xsd:complexType name="PostalAddressType">
+<xsd:sequence>
+<xsd:element name="CountryCode">
+<xsd:simpleType>
+<xsd:restriction base="xsd:string">
+<xsd:pattern value="[A-Z]{2}"></xsd:pattern>
+</xsd:restriction>
+
+</xsd:simpleType>
+</xsd:element>
+<xsd:element name="PostalCode" type="xsd:string" minOccurs="0"></xsd:element>
+<xsd:element name="Region" type="xsd:string" minOccurs="0" maxOccurs="unbounded"></xsd:element>
+<xsd:element name="Municipality" type="xsd:string" minOccurs="0"></xsd:element>
+<xsd:element name="DeliveryAddress" minOccurs="0">
+<xsd:complexType>
+<xsd:sequence>
+<xsd:element name="AddressLine" type="xsd:string" minOccurs="0" maxOccurs="unbounded"></xsd:element>
+<xsd:element name="StreetName" type="xsd:string" minOccurs="0"></xsd:element>
+<xsd:element name="BuildingNumber" type="xsd:string" minOccurs="0"></xsd:element>
+<xsd:element name="Unit" type="xsd:string" minOccurs="0"></xsd:element>
+<xsd:element name="PostOfficeBox" type="xsd:string" minOccurs="0"></xsd:element>
+</xsd:sequence>
+</xsd:complexType>
+</xsd:element>
+<xsd:element name="Recipient" minOccurs="0" maxOccurs="unbounded">
+
+<xsd:complexType>
+<xsd:sequence>
+<xsd:element name="PersonName" type="PersonNameType" minOccurs="0"></xsd:element>
+<xsd:element name="AdditionalText" type="xsd:string" minOccurs="0" maxOccurs="unbounded"></xsd:element>
+<xsd:element name="Organization" type="xsd:string" minOccurs="0">
+<xsd:annotation>
+<xsd:documentation>Deprecated in favor of OrganizationName element.</xsd:documentation>
+</xsd:annotation>
+</xsd:element>
+<xsd:element name="OrganizationName" type="xsd:string" minOccurs="0"></xsd:element>
+</xsd:sequence>
+</xsd:complexType>
+</xsd:element>
+</xsd:sequence>
+<xsd:attribute name="type">
+<xsd:simpleType>
+
+<xsd:restriction base="xsd:string">
+<xsd:enumeration value="postOfficeBoxAddress"></xsd:enumeration>
+<xsd:enumeration value="streetAddress"></xsd:enumeration>
+<xsd:enumeration value="militaryAddress"></xsd:enumeration>
+<xsd:enumeration value="undefined"></xsd:enumeration>
+</xsd:restriction>
+</xsd:simpleType>
+</xsd:attribute>
+</xsd:complexType>
+<xsd:complexType name="StockPlanParticipantType">
+<xsd:sequence>
+<xsd:element name="Id" type="EntityIdType"></xsd:element>
+<xsd:element name="Account" type="EntityIdType" minOccurs="0"></xsd:element>
+<xsd:element name="CompanyId" type="EntityIdType"></xsd:element>
+<xsd:element name="Name" type="PersonNameType"></xsd:element>
+<xsd:element name="ContactInfo" type="ContactMethodType"></xsd:element>
+<xsd:element name="AdditionalInfo" minOccurs="0">
+
+<xsd:complexType>
+<xsd:sequence>
+<xsd:element name="DateOfBirth" type="LocalDateType" minOccurs="0"></xsd:element>
+<xsd:element name="Nationality" type="CountryCodeType" minOccurs="0" maxOccurs="unbounded"></xsd:element>
+<xsd:element name="HireDate" type="LocalDateType" minOccurs="0"></xsd:element>
+<xsd:element name="EmploymentInfo" minOccurs="0">
+<xsd:complexType mixed="true">
+<xsd:choice>
+<xsd:element name="FullTimeEquivalence" type="xsd:decimal"></xsd:element>
+<xsd:element name="WorktimeInfo" maxOccurs="unbounded">
+<xsd:complexType>
+<xsd:sequence>
+<xsd:element name="Duration" type="xsd:duration"></xsd:element>
+<xsd:element name="Period" type="xsd:duration"></xsd:element>
+</xsd:sequence>
+</xsd:complexType>
+</xsd:element>
+
+</xsd:choice>
+</xsd:complexType>
+</xsd:element>
+<xsd:element name="Termination" minOccurs="0">
+<xsd:complexType>
+<xsd:sequence>
+<xsd:element name="Date" type="LocalDateType"></xsd:element>
+<xsd:element name="Reason" type="xsd:string"></xsd:element>
+</xsd:sequence>
+</xsd:complexType>
+</xsd:element>
+<xsd:element name="Employee" minOccurs="0" maxOccurs="unbounded">
+<xsd:complexType>
+<xsd:simpleContent>
+<xsd:extension base="xsd:boolean">
+<xsd:attribute name="validFrom" type="LocalDateType"></xsd:attribute>
+<xsd:attribute name="validTo" type="LocalDateType"></xsd:attribute>
+
+</xsd:extension>
+</xsd:simpleContent>
+</xsd:complexType>
+</xsd:element>
+<xsd:element name="Director" minOccurs="0" maxOccurs="unbounded">
+<xsd:complexType>
+<xsd:simpleContent>
+<xsd:extension base="xsd:boolean">
+<xsd:attribute name="validFrom" type="LocalDateType"></xsd:attribute>
+<xsd:attribute name="validTo" type="LocalDateType"></xsd:attribute>
+</xsd:extension>
+</xsd:simpleContent>
+</xsd:complexType>
+</xsd:element>
+<xsd:element name="Insider" minOccurs="0" maxOccurs="unbounded">
+<xsd:complexType>
+<xsd:simpleContent>
+
+<xsd:extension base="xsd:boolean">
+<xsd:attribute name="validFrom" type="LocalDateType"></xsd:attribute>
+<xsd:attribute name="validTo" type="LocalDateType"></xsd:attribute>
+</xsd:extension>
+</xsd:simpleContent>
+</xsd:complexType>
+</xsd:element>
+<xsd:element name="PercentOwner" minOccurs="0" maxOccurs="unbounded">
+<xsd:complexType>
+<xsd:simpleContent>
+<xsd:extension base="xsd:decimal">
+<xsd:attribute name="validFrom" type="LocalDateType"></xsd:attribute>
+<xsd:attribute name="validTo" type="LocalDateType"></xsd:attribute>
+</xsd:extension>
+</xsd:simpleContent>
+</xsd:complexType>
+</xsd:element>
+
+<xsd:element name="WorkLocation" minOccurs="0" maxOccurs="unbounded">
+<xsd:complexType>
+<xsd:sequence>
+<xsd:element name="CountryCode" type="CountryCodeType" minOccurs="0"></xsd:element>
+<xsd:element name="Region" type="xsd:string" minOccurs="0"></xsd:element>
+<xsd:element name="Municipality" type="xsd:string" minOccurs="0"></xsd:element>
+<xsd:element name="PostalCode" type="xsd:string" minOccurs="0"></xsd:element>
+</xsd:sequence>
+<xsd:attribute name="validFrom" type="LocalDateType"></xsd:attribute>
+<xsd:attribute name="validTo" type="LocalDateType"></xsd:attribute>
+</xsd:complexType>
+</xsd:element>
+<xsd:element name="TaxInfo" minOccurs="0" maxOccurs="unbounded">
+<xsd:complexType>
+<xsd:sequence>
+<xsd:element name="TaxType" type="xsd:string"></xsd:element>
+<xsd:element name="TaxationLocation">
+
+<xsd:complexType>
+<xsd:sequence>
+<xsd:element name="CountryCode" type="CountryCodeType" minOccurs="0"></xsd:element>
+<xsd:element name="Region" type="xsd:string" minOccurs="0"></xsd:element>
+<xsd:element name="Municipality" type="xsd:string" minOccurs="0"></xsd:element>
+<xsd:element name="PostalCode" type="xsd:string" minOccurs="0"></xsd:element>
+</xsd:sequence>
+</xsd:complexType>
+</xsd:element>
+<xsd:element name="Percentage" type="xsd:decimal"></xsd:element>
+</xsd:sequence>
+<xsd:attribute name="validFrom" type="LocalDateType"></xsd:attribute>
+<xsd:attribute name="validTo" type="LocalDateType"></xsd:attribute>
+</xsd:complexType>
+</xsd:element>
+</xsd:sequence>
+</xsd:complexType>
+
+</xsd:element>
+<xsd:element ref="UserArea" minOccurs="0"></xsd:element>
+</xsd:sequence>
+</xsd:complexType>
+<xsd:complexType name="TelcomNumberType">
+<xsd:choice>
+<xsd:element ref="FormattedNumber"></xsd:element>
+<xsd:group ref="TelcomNumberGroup"></xsd:group>
+</xsd:choice>
+</xsd:complexType>
+<xsd:complexType name="UserAreaType">
+<xsd:sequence minOccurs="0" maxOccurs="unbounded">
+<xsd:annotation>
+<xsd:documentation>In order to prevent a possible "ambiguous content model" errors in an instance, unbounded sequences were either eliminated from or deprecated in all HR-XML schemas. Removing unbounded sequences ensures that ambiguous errors are not found in an instance.  The unbounded sequence here is officially deprecated and will be changed to a single sequence.</xsd:documentation>
+</xsd:annotation>
+<xsd:any namespace="##any" minOccurs="0" maxOccurs="unbounded"></xsd:any>
+
+</xsd:sequence>
+</xsd:complexType>
+<xsd:element name="AreaCityCode" type="xsd:string"></xsd:element>
+<xsd:element name="CountryCode" type="CountryCodeType"></xsd:element>
+<xsd:element name="CurrencyCode" type="CurrencyCodeType"></xsd:element>
+<xsd:element name="DunsNumber" type="DunsNumberDataType"></xsd:element>
+<xsd:element name="Extension" type="xsd:string"></xsd:element>
+<xsd:element name="Fax" type="TelcomNumberType"></xsd:element>
+<xsd:element name="FormattedNumber" type="xsd:string"></xsd:element>
+<xsd:element name="GenderCode" type="GenderCodeType"></xsd:element>
+<xsd:element name="InternationalCountryCode" type="xsd:string"></xsd:element>
+<xsd:element name="InternetDomainName" type="InternetDomainNameType"></xsd:element>
+<xsd:element name="InternetEmailAddress" type="InternetEmailAddressType"></xsd:element>
+<xsd:element name="InternetWebAddress" type="InternetWebAddressType"></xsd:element>
+<xsd:element name="LanguageCode" type="LanguageCodeType"></xsd:element>
+<xsd:element name="Location" type="contactMethodLocationPatternExtensionType"></xsd:element>
+<xsd:element name="Mobile" type="MobileTelcomNumberType"></xsd:element>
+
+<xsd:element name="NationalNumber" type="xsd:string"></xsd:element>
+<xsd:element name="Pager" type="TelcomNumberType"></xsd:element>
+<xsd:element name="PersonName" type="PersonNameType"></xsd:element>
+<xsd:element name="PostalAddress" type="PostalAddressType"></xsd:element>
+<xsd:element name="StockPlanParticipant" type="StockPlanParticipantType"></xsd:element>
+<xsd:element name="SubscriberNumber" type="xsd:string"></xsd:element>
+<xsd:element name="Telephone" type="TelcomNumberType"></xsd:element>
+<xsd:element name="TTYTDD" type="TelcomNumberType"></xsd:element>
+<xsd:element name="Use" type="contactMethodUsePatternExtensionType"></xsd:element>
+<xsd:element name="UserArea" type="UserAreaType">
+<xsd:annotation>
+<xsd:documentation>HR-XML Technical Steering Committee endorsed extension element.</xsd:documentation>
+</xsd:annotation>
+</xsd:element>
+<xsd:element name="WhenAvailable" type="contactMethodWhenAvailableType"></xsd:element>
+<xsd:group name="TelcomNumberGroup">
+
+<xsd:sequence>
+<xsd:element ref="InternationalCountryCode" minOccurs="0"></xsd:element>
+<xsd:element ref="NationalNumber" minOccurs="0"></xsd:element>
+<xsd:element ref="AreaCityCode" minOccurs="0"></xsd:element>
+<xsd:element ref="SubscriberNumber"></xsd:element>
+<xsd:element ref="Extension" minOccurs="0"></xsd:element>
+</xsd:sequence>
+</xsd:group>
+</xsd:schema>

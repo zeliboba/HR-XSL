@@ -1,0 +1,155 @@
+body {margin-left:0px; margin-top:0px;  font-family:Verdana, Arial, Helvetica; font-size:12px; color:#333333; line-height: 14px; text-decoration: none; background-color:#F0F0F0}
+
+.box, .orange_jp, .orange_eu, .orange_bg, .gruen_jp, .gruen_eu, .gruen_bg, .blau_jp, .blau_eu, .blau_bg, .grau_eu, .grau_jp, .grau_bg, .navi_bg  {
+background-repeat:no-repeat;
+background-color:white;
+padding-top:0px;
+padding-left:5px;
+padding-right:5px;
+padding-bottom:8px;
+margin-bottom:20px;
+}
+
+.orange_jp {background-image:url(../images/reiter_orange_jp.gif);}
+.orange_eu {background-image:url(../images/reiter_orange_eu.gif);}
+.orange_bg {background-image:url(../images/reiter_orange_bg.gif);}
+
+.gruen_jp {background-image:url(../images/reiter_gruen_jp.gif);}
+.gruen_eu {background-image:url(../images/reiter_gruen_eu.gif);}
+.gruen_bg {background-image:url(../images/reiter_gruen_bg.gif);}
+
+.blau_jp {background-image:url(../images/reiter_blau_jp.gif);}
+.blau_eu {background-image:url(../images/reiter_blau_eu.gif);}
+.blau_bg {background-image:url(../images/reiter_blau_bg.gif);}
+
+.grau_jp {background-image:url(../images/reiter_grau_jp.gif);}
+.grau_eu {background-image:url(../images/reiter_grau_eu.gif);}
+.grau_bg {background-image:url(../images/reiter_grau_bg.gif);}
+
+.navi_bg {
+background-image:url(../images/reiter_navi_bg.gif);
+background-color:#F0F0F0;
+}
+
+p.boxhead1, p.boxhead_mit_flagge, p.boxhead_navi {
+overflow:hidden;
+width:100%;
+font-family:arial;
+font-weight:bold;
+font-size:12px;
+line-height: 20px;
+color:white;
+white-space: nowrap; 
+margin-bottom:6px;
+}
+
+p.boxhead_mit_flagge {
+text-indent:28px;
+}
+
+p.boxhead_navi {
+color:#333333;
+}
+
+.boxcontent {
+font-size:11px;
+line-height: 15px;
+}
+
+.boxcontent9_grau {
+font-size:9px;
+line-height: 15px;
+color:#666666;
+}
+
+.headline {
+font-family:arial,helvetica;
+font-size:18px;
+line-height: 20px;
+font-weight:bold;
+color:#666666;
+}
+
+.headline2 {
+font-size:16px;
+line-height: 26px;
+font-weight:bold;
+color:#666666;
+}
+
+.navipfad {
+font-family:arial,helvetica;
+font-size:11px;
+line-height: 14px;
+font-weight:bold;
+color:#666666;
+}
+
+.link1 	{text-decoration: underline; color:#404B9F }
+
+input.standard {font-family:Verdana; color: #333333; font-size : 10px;margin-top:5px;}
+select.standard {font-family:Verdana; color: #333333; font-size : 10px;margin-top:5px;}
+
+.header_links  {
+background-image:url(../images/bg_header_blau.gif);
+height:24px;
+}
+
+.header_rechts  {
+background-image:url(../images/bg_header_orange.gif);
+height:24px;
+}
+
+.header_navi  {
+background-image:url(../images/bg_navi.gif);
+height:22px;
+}
+
+.header9_weiss {
+font-size:9px;
+line-height: 15px;
+color:#ffffff;
+}
+
+a.metanavi {
+text-transform: uppercase; 
+text-decoration: none;
+font-size:10px;
+line-height: 15px;
+color:#333333;}
+a.metanavi:hover  		{color:#FF6600;text-decoration: none;font-weight:bold;}
+a.metanavi:active  		{color:#FF6600;text-decoration: none;font-weight:bold;}
+a.metanavi:visited 		{text-decoration: none;}
+
+a.navi, a.naviebene2 {
+font-family:arial,helvetica;
+font-size:12px;
+line-height: 22px;
+font-weight:bold;
+color:#666666;
+text-decoration: none;
+}
+a.navi:hover{color:#FF6600;}
+
+
+a.naviebene2 {
+line-height: 16px;
+font-weight:normal;
+color:#000000;
+}
+a.naviebene2:hover{color:#FF6600;}
+
+a.navihi, a.naviebene2hi {
+font-family:arial,helvetica;
+font-size:12px;
+line-height: 22px;
+font-weight:bold;
+color:#FF6600;
+text-decoration: none;
+}
+
+a.naviebene2hi {
+line-height: 16px;
+font-weight:normal;
+color:#FF6600;
+}

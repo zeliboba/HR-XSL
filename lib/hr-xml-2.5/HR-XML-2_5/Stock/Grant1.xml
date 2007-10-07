@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Grant xmlns="http://ns.hr-xml.org/2007-04-15" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://ns.hr-xml.org/2007-04-15
+Grant.xsd" validTo="2011-02-14" grantDate="2001-02-15" grantCurrency="EUR">
+	<Id>
+		<IdValue>G-1</IdValue>
+	</Id>
+	<ParticipantId>
+		<IdValue>P-1</IdValue>
+	</ParticipantId>
+	<PlanId>
+		<IdValue>PL-1</IdValue>
+	</PlanId>
+	<GrantType>Non Qualified</GrantType>
+	<Restricted>false</Restricted>
+	<Repurchasable>false</Repurchasable>
+	<SharesGranted>500</SharesGranted>
+	<SharesAccepted>500</SharesAccepted>
+	<GrantPrice>101</GrantPrice>
+	<FairMarketValue>123</FairMarketValue>
+	<VestingInfo>
+		<Shares>
+			<Quantity>250</Quantity>
+			<VestingDate>2002-02-15</VestingDate>
+		</Shares>
+		<Shares>
+			<Quantity>250</Quantity>
+			<VestingDate>2003-02-15</VestingDate>
+		</Shares>
+	</VestingInfo>
+</Grant>

@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<HumanResource xmlns="http://ns.hr-xml.org/2007-04-15" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://ns.hr-xml.org/2007-04-15
+HumanResource.xsd">
+	<HumanResourceId validFrom="2002-01-01" validTo="2002-12-31" idOwner="Kelly">
+		<IdValue name="Employee ID">warddar</IdValue>
+	</HumanResourceId>
+	<HumanResourceStatus status="new"/>
+	<ReferenceInformation>
+		<StaffingSupplierId>
+			<IdValue>79001895</IdValue>
+		</StaffingSupplierId>
+		<StaffingCustomerId>
+			<IdValue>985PPE</IdValue>
+		</StaffingCustomerId>
+		<OrderId>
+			<IdValue>121</IdValue>
+		</OrderId>
+		<PositionId>
+			<IdValue>3</IdValue>
+		</PositionId>
+	</ReferenceInformation>
+	<ResourceInformation>
+		<ResourceType independentContractor="false" payrolledEmployee="false"/>
+		<PersonName>
+			<LegalName>Darren Ward</LegalName>
+		</PersonName>
+		<EntityContactInfo>
+			<EntityName>Kelly Services NY Branch</EntityName>
+			<PersonName>
+				<LegalName>Emily Black</LegalName>
+			</PersonName>
+			<ContactMethod>
+				<Telephone>
+					<FormattedNumber>2123851212</FormattedNumber>
+				</Telephone>
+			</ContactMethod>
+		</EntityContactInfo>
+		<AvailabilityDate>
+			<AvailabilityStartDate>2002-03-01</AvailabilityStartDate>
+			<AvailabilityEndDate>2002-03-31</AvailabilityEndDate>
+		</AvailabilityDate>
+	</ResourceInformation>
+	<Rates rateType="bill" rateStatus="agreed">
+		<Amount rateAmountPeriod="hourly" currency="USD">15.00</Amount>
+		<Class>regular</Class>
+		<StartDate>2002-01-01</StartDate>
+	</Rates>
+	<Profile>
+		<PositionHeader>
+			<PositionId>
+				<Id>123</Id>
+			</PositionId>
+			<FormattedPositionDescription>
+				<Value/>
+			</FormattedPositionDescription>
+			<JobCategory>
+				<Description/>
+			</JobCategory>
+			<ShiftWork haveShiftWork="true">
+				<Description/>
+			</ShiftWork>
+			<PositionMustEndByInfo>
+				<Date>2006-12-31</Date>
+			</PositionMustEndByInfo>
+			<TransitionInfo required="true">
+				<Duration unitOfTime="week">2</Duration>
+				<Description>On the job shuttle bus driver training</Description>
+			</TransitionInfo>
+			<OvertimeInfo haveOvertime="true">
+				<ExpectedTime unitOfTime="hour">4</ExpectedTime>
+				<ExpectedWithin unitOfTime="month">1</ExpectedWithin>
+				<Description>Overtime may be necessary during inventory.</Description>
+			</OvertimeInfo>
+			<HolidayWork haveHolidayWork="true">
+			</HolidayWork>
+			<BusyPeriodInfo>
+				<StartBusyPeriod>June 1</StartBusyPeriod>
+				<EndBusyPeriod>August 31</EndBusyPeriod>
+				<Description>Summer Season</Description>
+			</BusyPeriodInfo>
+			<BusyPeriodInfo>
+				<PeriodString>March 15</PeriodString>
+				<PeriodString>June15</PeriodString>
+				<PeriodString>September 15</PeriodString>
+				<PeriodString>December 15</PeriodString>
+				<Description>Quarterly Inventory</Description>
+			</BusyPeriodInfo>
+			<BusyPeriodInfo>
+				<PeriodString>every month-end</PeriodString>
+				<Description>Month-end Accounting</Description>
+			</BusyPeriodInfo>
+		</PositionHeader>
+	</Profile>
+	<Preferences>
+		<Travel willingToTravel="true">
+			<PercentageTravel>50%</PercentageTravel>
+			<TravelConsiderations>Will not fly</TravelConsiderations>
+		</Travel>
+		<Commute>
+			<TimeMax>1 hr</TimeMax>
+			<DistanceMax>20 miles</DistanceMax>
+		</Commute>
+		<Relocation willingToRelocate="true">
+			<RelocationComments>US and Canada only</RelocationComments>
+		</Relocation>
+		<DistributionRestrictions>
+			<DoNotDistributeTo>IBM</DoNotDistributeTo>
+		</DistributionRestrictions>
+		<DesiredCompensation>
+			<CompensationAmount currency="USD" amountPeriod="yearly">10000</CompensationAmount>
+		</DesiredCompensation>
+	</Preferences>
+	<HumanResourceComments>This is an experienced programer that will fit your needs</HumanResourceComments>
+</HumanResource>

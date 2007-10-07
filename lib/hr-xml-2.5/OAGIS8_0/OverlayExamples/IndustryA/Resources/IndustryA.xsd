@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+    License information for this file is provided in LICENSE.TXT
+    For support, more information, or to report implementation bugs, 
+    please contact the Open Applications Group at xml@openapplications.org 
+     
+    ** Revision: 8.0 **
+    ** Date: 05 April 2002 **
+    Open Applications Group XSD IndustryA Overlay Example
+    Copyright 1998-2002, All Rights Reserved
+    
+    Name: IndustryA.xsd
+-->
+<xs:schema targetNamespace="http://www.oagi.net/oagis/ia" xmlns="http://www.oagi.net/oagis/ia" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:oa="http://www.openapplications.org/oagis" elementFormDefault="qualified" attributeFormDefault="unqualified" version="0.02">
+	<xs:import namespace="http://www.openapplications.org/oagis" schemaLocation="../../../OAGIS/Resources/Fields.xsd"/>
+	<xs:annotation>
+		<xs:documentation/>
+	</xs:annotation>
+</xs:schema>

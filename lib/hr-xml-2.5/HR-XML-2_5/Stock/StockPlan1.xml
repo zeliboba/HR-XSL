@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<StockPlan xmlns="http://ns.hr-xml.org/2007-04-15" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://ns.hr-xml.org/2007-04-15
+StockPlan.xsd" validFrom="2001-01-01" validTo="2010-12-31">
+	<Id>
+		<IdValue>PL-1</IdValue>
+	</Id>
+	<CompanyId>
+		<IdValue>C-1</IdValue>
+	</CompanyId>
+	<PlanType>Stock Options</PlanType>
+	<Name xml:lang="en">Stock Option Plan 2001</Name>
+	<Description xml:lang="en">Stock Option Plan 2001 for all employees</Description>
+	<Stock>
+		<Id>
+			<IdValue name="ISIN">US0007164600</IdValue>
+		</Id>
+	</Stock>
+	<BlackOutInformation>
+		<Period validFrom="2001-03-15" validTo="2001-03-31"/>               
+		<Period validFrom="2001-09-15" validTo="2001-09-30"/>
+		<Period validFrom="2002-03-15" validTo="2002-03-31"/>                
+		<Period validFrom="2002-09-15" validTo="2002-09-30"/>                
+		<Period validFrom="2003-03-15" validTo="2003-03-31"/>                
+		<Period validFrom="2003-09-15" validTo="2003-09-30"/>
+		<Period validFrom="2004-03-15" validTo="2004-03-31"/>               
+		<Period validFrom="2004-09-15" validTo="2004-09-30"/>
+	</BlackOutInformation>
+	<StockOptionInfo>               
+		<Ratio>2</Ratio>
+		<QualifiedGrantsAllowed>true</QualifiedGrantsAllowed>
+		<NonQualifiedGrantsAllowed>true</NonQualifiedGrantsAllowed>
+		<QualifiedGrantDefault>Qualified</QualifiedGrantDefault>
+		<StockAppreciationRights>notApplicable</StockAppreciationRights>
+		<MaximumNumberOfShares>2000000</MaximumNumberOfShares>
+		<MinimumNumberToExercise>100</MinimumNumberToExercise>
+		<MaximumNumberToExercise>1000</MaximumNumberToExercise>
+		<BlocksToExercise>50</BlocksToExercise>
+	</StockOptionInfo>
+</StockPlan>

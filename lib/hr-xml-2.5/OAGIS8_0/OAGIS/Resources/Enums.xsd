@@ -1,0 +1,360 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+    License information for this file is provided in LICENSE.TXT
+    For support, more information, or to report implementation bugs, 
+    please contact the Open Applications Group at xml@openapplications.org 
+     
+    ** Revision: 8.0 **
+    ** Date: 05 April 2002 **
+    Open Applications Group XSD
+    Copyright 1998-2002, All Rights Reserved
+    
+    Name: Enums.xsd
+-->
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns="http://www.openapplications.org/oagis" targetNamespace="http://www.openapplications.org/oagis" elementFormDefault="qualified" attributeFormDefault="unqualified">
+<!-- ====================================================================================================-->
+<!--Enumerations -->
+<!--
+	<xs:simpleType name="ChargeType">
+		<xs:union memberTypes="ChargeTypeBase xs:string"/>
+	</xs:simpleType>
+	<xs:simpleType name="ChargeTypeBase">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="All"/>
+			<xs:enumeration value="Additional"/>
+			<xs:enumeration value="Transport + Additional"/>
+			<xs:enumeration value="Basic Freight"/>
+			<xs:enumeration value="Destination Haulage"/>
+			<xs:enumeration value="Disbursement"/>
+			<xs:enumeration value="Destination Port"/>
+			<xs:enumeration value="Miscellaneous"/>
+			<xs:enumeration value="Transport Up To A Specified Location"/>
+			<xs:enumeration value="Origin Port"/>
+			<xs:enumeration value="Origin Haulage"/>
+			<xs:enumeration value="Other"/>
+			<xs:enumeration value="Specific Amount Payable"/>
+			<xs:enumeration value="Transport Costs"/>
+			<xs:enumeration value="All Costs Up To A Specified Location"/>
+			<xs:enumeration value="Weight/Valuation"/>
+			<xs:enumeration value="All Costs"/>
+			<xs:enumeration value="Transport Costs And Supplementary Costs"/>
+		</xs:restriction>
+	</xs:simpleType>
+	-->
+        <xs:simpleType name="Currency">
+                <xs:restriction base="xs:string"/>
+        </xs:simpleType>
+        <xs:simpleType name="CurrencyEnum">
+                <xs:annotation>
+                        <xs:documentation source="http://www.openapplications.org/oagis">Original Author: Roger Costello www.xfront.com</xs:documentation>
+                        <xs:documentation source="http://www.openapplications.org/oagis">Standard values from ISO 4217:2001</xs:documentation>
+                        <xs:documentation source="http://www.openapplications.org/oagis">Codes for the representation of currencies and funds</xs:documentation>
+                </xs:annotation>
+                <xs:restriction base="xs:string">
+                        <xs:enumeration value="ADP"/>
+                        <xs:enumeration value="AED"/>
+                        <xs:enumeration value="AFA"/>
+                        <xs:enumeration value="ALL"/>
+                        <xs:enumeration value="ANG"/>
+                        <xs:enumeration value="AOK"/>
+                        <xs:enumeration value="ARA"/>
+                        <xs:enumeration value="ATS"/>
+                        <xs:enumeration value="AUD"/>
+                        <xs:enumeration value="AWG"/>
+                        <xs:enumeration value="BBD"/>
+                        <xs:enumeration value="BDT"/>
+                        <xs:enumeration value="BEF"/>
+                        <xs:enumeration value="BGL"/>
+                        <xs:enumeration value="BHD"/>
+                        <xs:enumeration value="BIF"/>
+                        <xs:enumeration value="BMD"/>
+                        <xs:enumeration value="BND"/>
+                        <xs:enumeration value="BOB"/>
+                        <xs:enumeration value="BRC"/>
+                        <xs:enumeration value="BSD"/>
+                        <xs:enumeration value="BTN"/>
+                        <xs:enumeration value="BUK"/>
+                        <xs:enumeration value="BWP"/>
+                        <xs:enumeration value="BZD"/>
+                        <xs:enumeration value="CAD"/>
+                        <xs:enumeration value="CHF"/>
+                        <xs:enumeration value="CLF"/>
+                        <xs:enumeration value="CLP"/>
+                        <xs:enumeration value="CNY"/>
+                        <xs:enumeration value="COP"/>
+                        <xs:enumeration value="CRC"/>
+                        <xs:enumeration value="CSK"/>
+                        <xs:enumeration value="CUP"/>
+                        <xs:enumeration value="CVE"/>
+                        <xs:enumeration value="CYP"/>
+                        <xs:enumeration value="DDM"/>
+                        <xs:enumeration value="DEM"/>
+                        <xs:enumeration value="DJF"/>
+                        <xs:enumeration value="DKK"/>
+                        <xs:enumeration value="DOP"/>
+                        <xs:enumeration value="DZD"/>
+                        <xs:enumeration value="ECS"/>
+                        <xs:enumeration value="EGP"/>
+                        <xs:enumeration value="ESP"/>
+                        <xs:enumeration value="ETB"/>
+                        <xs:enumeration value="EUR"/>
+                        <xs:enumeration value="FIM"/>
+                        <xs:enumeration value="FKP"/>
+                        <xs:enumeration value="FRF"/>
+                        <xs:enumeration value="GBP"/>
+                        <xs:enumeration value="GHC"/>
+                        <xs:enumeration value="GIP"/>
+                        <xs:enumeration value="GMD"/>
+                        <xs:enumeration value="GNF"/>
+                        <xs:enumeration value="GRD"/>
+                        <xs:enumeration value="GTQ"/>
+                        <xs:enumeration value="GWP"/>
+                        <xs:enumeration value="GYD"/>
+                        <xs:enumeration value="HKD"/>
+                        <xs:enumeration value="HNL"/>
+                        <xs:enumeration value="HTG"/>
+                        <xs:enumeration value="HUF"/>
+                        <xs:enumeration value="IDR"/>
+                        <xs:enumeration value="IEP"/>
+                        <xs:enumeration value="ILS"/>
+                        <xs:enumeration value="INR"/>
+                        <xs:enumeration value="IQD"/>
+                        <xs:enumeration value="IRR"/>
+                        <xs:enumeration value="ISK"/>
+                        <xs:enumeration value="ITL"/>
+                        <xs:enumeration value="JMD"/>
+                        <xs:enumeration value="JOD"/>
+                        <xs:enumeration value="JPY"/>
+                        <xs:enumeration value="KES"/>
+                        <xs:enumeration value="KHR"/>
+                        <xs:enumeration value="KMF"/>
+                        <xs:enumeration value="KPW"/>
+                        <xs:enumeration value="KRW"/>
+                        <xs:enumeration value="KWD"/>
+                        <xs:enumeration value="KYD"/>
+                        <xs:enumeration value="LAK"/>
+                        <xs:enumeration value="LBP"/>
+                        <xs:enumeration value="LKR"/>
+                        <xs:enumeration value="LRD"/>
+                        <xs:enumeration value="LSL"/>
+                        <xs:enumeration value="LUF"/>
+                        <xs:enumeration value="LYD"/>
+                        <xs:enumeration value="MAD"/>
+                        <xs:enumeration value="MGF"/>
+                        <xs:enumeration value="MNT"/>
+                        <xs:enumeration value="MOP"/>
+                        <xs:enumeration value="MRO"/>
+                        <xs:enumeration value="MTL"/>
+                        <xs:enumeration value="MUR"/>
+                        <xs:enumeration value="MVR"/>
+                        <xs:enumeration value="MWK"/>
+                        <xs:enumeration value="MXP"/>
+                        <xs:enumeration value="MYR"/>
+                        <xs:enumeration value="MZM"/>
+                        <xs:enumeration value="NGN"/>
+                        <xs:enumeration value="NIC"/>
+                        <xs:enumeration value="NLG"/>
+                        <xs:enumeration value="NOK"/>
+                        <xs:enumeration value="NPR"/>
+                        <xs:enumeration value="NZD"/>
+                        <xs:enumeration value="OMR"/>
+                        <xs:enumeration value="PAB"/>
+                        <xs:enumeration value="PEI"/>
+                        <xs:enumeration value="PGK"/>
+                        <xs:enumeration value="PHP"/>
+                        <xs:enumeration value="PKR"/>
+                        <xs:enumeration value="PLZ"/>
+                        <xs:enumeration value="PTE"/>
+                        <xs:enumeration value="PYG"/>
+                        <xs:enumeration value="QAR"/>
+                        <xs:enumeration value="ROL"/>
+                        <xs:enumeration value="RWF"/>
+                        <xs:enumeration value="SAR"/>
+                        <xs:enumeration value="SBD"/>
+                        <xs:enumeration value="SCR"/>
+                        <xs:enumeration value="SDP"/>
+                        <xs:enumeration value="SEK"/>
+                        <xs:enumeration value="SGD"/>
+                        <xs:enumeration value="SHP"/>
+                        <xs:enumeration value="SLL"/>
+                        <xs:enumeration value="SKK"/>
+                        <xs:enumeration value="SOS"/>
+                        <xs:enumeration value="SRG"/>
+                        <xs:enumeration value="STD"/>
+                        <xs:enumeration value="SUR"/>
+                        <xs:enumeration value="SVC"/>
+                        <xs:enumeration value="SYP"/>
+                        <xs:enumeration value="SZL"/>
+                        <xs:enumeration value="THB"/>
+                        <xs:enumeration value="TND"/>
+                        <xs:enumeration value="TOP"/>
+                        <xs:enumeration value="TPE"/>
+                        <xs:enumeration value="TRL"/>
+                        <xs:enumeration value="TTD"/>
+                        <xs:enumeration value="TWD"/>
+                        <xs:enumeration value="TZS"/>
+                        <xs:enumeration value="UGS"/>
+                        <xs:enumeration value="USD"/>
+                        <xs:enumeration value="UYP"/>
+                        <xs:enumeration value="VEB"/>
+                        <xs:enumeration value="VND"/>
+                        <xs:enumeration value="VUV"/>
+                        <xs:enumeration value="WST"/>
+                        <xs:enumeration value="YDD"/>
+                        <xs:enumeration value="YER"/>
+                        <xs:enumeration value="YUD"/>
+                        <xs:enumeration value="ZAR"/>
+                        <xs:enumeration value="ZRZ"/>
+                        <xs:enumeration value="ZWD"/>
+                </xs:restriction>
+        </xs:simpleType>
+        <xs:simpleType name="Encoding">
+                <xs:union memberTypes="EncodingBase xs:string"/>
+        </xs:simpleType>
+        <xs:simpleType name="EncodingBase">
+                <xs:annotation>
+                        <xs:documentation source="http://www.openapplications.org/oagis">The standard set of encoding types from ???</xs:documentation>
+                </xs:annotation>
+                <xs:restriction base="xs:string">
+                        <xs:enumeration value="base64"/>
+                        <xs:enumeration value="octal"/>
+                        <xs:enumeration value="binary"/>
+                        <xs:enumeration value="plainText"/>
+                </xs:restriction>
+        </xs:simpleType>
+        <xs:simpleType name="PackingMaterial">
+                <xs:restriction base="xs:string"/>
+        </xs:simpleType>
+        <xs:simpleType name="PackingCode">
+                <xs:restriction base="xs:string"/>
+        </xs:simpleType>
+        <xs:simpleType name="AcknowledgementCode">
+                <xs:restriction base="xs:string">
+                        <xs:enumeration value="Accepted"/>
+                        <xs:enumeration value="Rejected"/>
+                        <xs:enumeration value="Modified"/>
+                </xs:restriction>
+        </xs:simpleType>
+        <xs:simpleType name="Country">
+                <xs:annotation>
+                        <xs:documentation source="http://www.openapplications.org/oagis">Standard values from ISO 3166-3:1999 Part 1</xs:documentation>
+                        <xs:documentation source="http://www.openapplications.org/oagis">Codes for the representation of names of countries and their subdivisions - Part 1: Country codes</xs:documentation>
+                </xs:annotation>
+                <xs:restriction base="xs:string"/>
+        </xs:simpleType>
+        <xs:simpleType name="LicenseType">
+                <xs:restriction base="xs:string">
+                        <xs:enumeration value="Import"/>
+                        <xs:enumeration value="Export"/>
+                </xs:restriction>
+        </xs:simpleType>
+        <xs:simpleType name="PaymentMethod">
+                <xs:annotation>
+                        <xs:documentation source="http://www.openapplications.org/oagis">Standard values from ISO 10962:2001?</xs:documentation>
+                        <xs:documentation source="http://www.openapplications.org/oagis">Securities and related financial instruments - Classification of Financial Instruments (CFI code)</xs:documentation>
+                </xs:annotation>
+                <xs:restriction base="xs:string">
+                        <xs:enumeration value="Credit Card"/>
+                        <xs:enumeration value="Debit Card"/>
+                        <xs:enumeration value="Cash"/>
+                        <xs:enumeration value="Check"/>
+                        <xs:enumeration value="Other"/>
+                </xs:restriction>
+        </xs:simpleType>
+        <xs:simpleType name="Rating">
+                <xs:annotation>
+                        <xs:documentation source="http://www.openapplications.org/oagis">Business Party ratings.</xs:documentation>
+                </xs:annotation>
+                <xs:restriction base="xs:string">
+                        <xs:enumeration value="Good"/>
+                        <xs:enumeration value="Bad"/>
+                        <xs:enumeration value="Ugly"/>
+                </xs:restriction>
+        </xs:simpleType>
+        <xs:simpleType name="UOM">
+                <xs:annotation>
+                        <xs:documentation source="http://www.openapplications.org/oagis">Standard values from ISO / SI ????</xs:documentation>
+                </xs:annotation>
+                <xs:restriction base="xs:NMTOKEN"/>
+        </xs:simpleType>
+        <xs:simpleType name="InvoiceType">
+                <xs:annotation>
+                        <xs:documentation source="http://www.openapplications.org/oagis">The type of invoice</xs:documentation>
+                </xs:annotation>
+                <xs:restriction base="xs:string">
+                        <xs:enumeration value="Credit"/>
+                        <xs:enumeration value="Debit"/>
+                        <xs:enumeration value="Both"/>
+                </xs:restriction>
+        </xs:simpleType>
+        <xs:simpleType name="TransportationType">
+                <xs:restriction base="xs:string"/>
+        </xs:simpleType>
+        <xs:simpleType name="CostType">
+                <xs:annotation>
+                        <xs:documentation source="http://www.openapplications.org/oagis">Is the methodology by which the value of an item is determined.
+
+Values are:
+ Standard
+ Moving Average
+ LIFO - For last in first out.
+ FIFO - For first in first out.</xs:documentation>
+                </xs:annotation>
+                <xs:restriction base="xs:string">
+                        <xs:enumeration value="Standard"/>
+                        <xs:enumeration value="MovingAverage"/>
+                        <xs:enumeration value="LIFO"/>
+                        <xs:enumeration value="LastInFirstOut"/>
+                        <xs:enumeration value="FIFO"/>
+                        <xs:enumeration value="FirstInFirstOut"/>
+                </xs:restriction>
+        </xs:simpleType>
+        <xs:simpleType name="TransferType">
+                <xs:annotation>
+                        <xs:documentation source="http://www.openapplications.org/oagis">Is used to describe the item transfer. </xs:documentation>
+                </xs:annotation>
+                <xs:restriction base="xs:string">
+                        <xs:enumeration value="Complete"/>
+                        <xs:enumeration value="Return"/>
+                </xs:restriction>
+        </xs:simpleType>
+        <xs:simpleType name="OperationType">
+                <xs:annotation>
+                        <xs:documentation source="http://www.openapplications.org/oagis">Is used to indicate how the rates are specified.
+Valid values are:
+- Standard =  An operation that has a rate specified as "quantity per unit of time". 
+- Fixed =  A duration operation that takes a specific amount of time regardless of thevquantity being processed. 
+- Batch =  An operation type that has a fixed amount of time for a given batch or partial batch.</xs:documentation>
+                </xs:annotation>
+                <xs:restriction base="xs:string">
+                        <xs:enumeration value="Standard"/>
+                        <xs:enumeration value="Fixed"/>
+                        <xs:enumeration value="Batch"/>
+                </xs:restriction>
+        </xs:simpleType>
+        <xs:simpleType name="ManufacturingReportingFlag">
+                <xs:annotation>
+                        <xs:documentation source="http://www.openapplications.org/oagis">Identifies whether an ITEM is reported theoretically (back-flushed) or if the ITEM is reported directly (actual).</xs:documentation>
+                </xs:annotation>
+                <xs:restriction base="xs:string">
+                        <xs:enumeration value="BackFlushed"/>
+                        <xs:enumeration value="Actual"/>
+                </xs:restriction>
+        </xs:simpleType>
+        <xs:simpleType name="TemperatureScale">
+                <xs:annotation>
+                        <xs:documentation source="http://www.openapplications.org/oagis">The possible temperature scales.</xs:documentation>
+                </xs:annotation>
+                <xs:restriction base="xs:string">
+                        <xs:enumeration value="Celsius"/>
+                        <xs:enumeration value="Fahrenheit"/>
+                        <xs:enumeration value="Kelvin"/>
+                </xs:restriction>
+        </xs:simpleType>
+        <xs:simpleType name="DebitCredit">
+                <xs:restriction base="xs:string">
+                        <xs:enumeration value="Debit"/>
+                        <xs:enumeration value="Credit"/>
+                </xs:restriction>
+        </xs:simpleType>
+</xs:schema>

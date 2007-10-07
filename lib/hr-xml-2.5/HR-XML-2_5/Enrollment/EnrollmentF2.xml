@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Enrollment xmlns="http://ns.hr-xml.org/2007-04-15" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://ns.hr-xml.org/2007-04-15 Enrollment.xsd" creationDate="2002-01-05T01:00:00-09:00">
+	<Organization organizationName="Premier Company">
+		<Subscriber>
+			<SubscriberType>
+				<SubscriberTypeCode>Employment</SubscriberTypeCode>
+				<StartDate>2002-01-01</StartDate>
+			</SubscriberType>
+			<Person>
+				<IdentificationCode>
+					<IdValue name="SocialSecurityNumber">111-22-3333</IdValue>
+				</IdentificationCode>
+				<PersonName>
+					<GivenName>Edmund</GivenName>
+					<FamilyName>Brady</FamilyName>
+				</PersonName>
+				<Gender>1</Gender>
+				<DateOfBirth>1941-06-15</DateOfBirth>
+				<ContactInformation>
+					<PostalAddress>
+						<CountryCode>US</CountryCode>
+						<PostalCode>60614</PostalCode>
+						<Region>IL</Region>
+						<Municipality>Chicago</Municipality>
+						<DeliveryAddress>
+							<AddressLine>125 Lincoln Park West</AddressLine>
+						</DeliveryAddress>
+					</PostalAddress>
+				</ContactInformation>
+				<MaritalStatus>
+					<MaritalStatusCode>Married</MaritalStatusCode>
+					<StartDate>1967-05-08</StartDate>
+				</MaritalStatus>
+			</Person>
+			<Coverage>
+				<RateBasedCoverage>
+					<TransactionCode>Add</TransactionCode>
+					<ElectedPlanCode>25285</ElectedPlanCode>
+					<GroupNumber>AB0123</GroupNumber>
+					<CoverageType>
+						<Product>Life Insurance</Product>
+						<ProductType>Basic</ProductType>
+						<CoveredEntity>Self</CoveredEntity>
+					</CoverageType>
+					<Carrier>
+						<OrganizationName>Life Offerings</OrganizationName>
+						<IdentificationCode>
+							<IdValue name="EmployerGenerated">13246</IdValue>
+						</IdentificationCode>
+					</Carrier>
+					<StartDate>2002-01-05</StartDate>
+					<CoverageLevel>
+						<ApprovedCoverage>
+							<Level>
+								<CoverageLevelValue currency="USD">50000</CoverageLevelValue>
+								<CoverageLevelMultiplier>2</CoverageLevelMultiplier>
+								<CoverageLevelType>Salary</CoverageLevelType>
+							</Level>
+							<Volume currency="USD">100000</Volume>
+						</ApprovedCoverage>
+						<RequestedCoverage>
+							<Level>
+								<CoverageLevelValue currency="USD">50000</CoverageLevelValue>
+								<CoverageLevelMultiplier>2</CoverageLevelMultiplier>
+								<CoverageLevelType>Salary</CoverageLevelType>
+							</Level>
+							<Volume currency="USD">100000</Volume>
+						</RequestedCoverage>
+						<StartDate>2002-01-01</StartDate>
+					</CoverageLevel>
+					<BeneficiaryData>
+						<PersonName>
+							<GivenName>Sarah</GivenName>
+							<FamilyName>Brady</FamilyName>
+						</PersonName>
+						<ContactInformation>
+							<PostalAddress>
+								<CountryCode>US</CountryCode>
+								<PostalCode>60614</PostalCode>
+								<Region>IL</Region>
+								<Municipality>Chicago</Municipality>
+								<DeliveryAddress>
+									<AddressLine>125 Lincoln Park West</AddressLine>
+								</DeliveryAddress>
+							</PostalAddress>
+						</ContactInformation>
+						<Relationship>Spouse</Relationship>
+						<BeneficiarySequence>1</BeneficiarySequence>
+						<StartDate>2002-01-01</StartDate>
+					</BeneficiaryData>
+				</RateBasedCoverage>
+			</Coverage>
+		</Subscriber>
+	</Organization>
+</Enrollment>

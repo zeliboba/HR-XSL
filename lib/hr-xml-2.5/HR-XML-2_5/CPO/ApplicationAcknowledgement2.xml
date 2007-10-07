@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ApplicationAcknowledgement xmlns="http://ns.hr-xml.org/2007-04-15" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://ns.hr-xml.org/2007-04-15 ApplicationAcknowledgement.xsd">
+	<PayloadResponseSummary>
+		<TransportMessageId>
+			<MessageIdType>MQSeriesTransactionID</MessageIdType>
+			<MessageId validFrom="2004-04-02T01:00:00-00:00" validTo="2004-04-03T01:00:00-00:00" idOwner="Premiere Company ">
+				<IdValue name="identificationCodeValue">577012007</IdValue>
+			</MessageId>
+		</TransportMessageId>
+		<UniquePayloadTrackingId>
+			<IdValue>2004-04-02T01:23:01-34:00TPA Inc.</IdValue>
+		</UniquePayloadTrackingId>
+		<TransactionReceiptTimestamp>2004-04-02T01:00:00-09:00</TransactionReceiptTimestamp>
+		<ProcessingTimestamp description="Medical Coverages Processed">2004-04-02T01:00:00-09:10</ProcessingTimestamp>
+		<AcknowledgementCreationTimestamp>2004-04-02T01:00:00-09:20</AcknowledgementCreationTimestamp>
+		<ReceivedPayloadSummary>
+			<ReceivedPayloadSchemaURI>http://ns.hr-xml.org/2007-04-15/2_3/Enrollment/Enrollment.xsd</ReceivedPayloadSchemaURI>
+			<EntityInfo>
+				<EntityInstanceAxisXPath>/Enrollment/Organization/Subscriber</EntityInstanceAxisXPath>
+				<Count>2</Count>
+				<EntityShortName>Subscriber without errors</EntityShortName>
+			</EntityInfo>
+			<EntityInfo>
+				<EntityInstanceAxisXPath>/Enrollment</EntityInstanceAxisXPath>
+				<Count>2</Count>
+				<EntityShortName>Subscriber with errors</EntityShortName>
+			</EntityInfo>
+		</ReceivedPayloadSummary>
+	</PayloadResponseSummary>
+	<PayloadDisposition>
+		<EntityDisposition>
+			<EntityIdentifier validFrom="2004-04-02T01:00:00-00:00" validTo="2004-04-03T01:00:00-00:00" idOwner="Premier Company">
+				<IdValue name="employeeId">32866</IdValue>
+			</EntityIdentifier>
+			<EntityShortName>Medical Enrollment</EntityShortName>
+			<EntitySchemaXPath>/Enrollment</EntitySchemaXPath>
+			<EntityInstanceXPath>/Enrollment/Organization[1]/Subscriber[1]</EntityInstanceXPath>
+			<EntityNoException>true</EntityNoException>
+		</EntityDisposition>
+		<EntityDisposition>
+			<EntityIdentifier validFrom="2004-04-02T01:00:00-00:00" validTo="2004-04-03T01:00:00-00:00" idOwner="Premier Company">
+				<IdValue name="employeeId">498576309</IdValue>
+			</EntityIdentifier>
+			<EntityShortName>Medical Enrollment</EntityShortName>
+			<EntitySchemaXPath>/Enrollment</EntitySchemaXPath>
+			<EntityInstanceXPath>/Enrollment/Organization[1]/Subscriber[2]</EntityInstanceXPath>
+			<EntityException>
+				<Exception>
+					<ExceptionIdentifier>5508</ExceptionIdentifier>
+					<ExceptionSeverity>Warning</ExceptionSeverity>
+					<ExceptionMessage> Subscriber’s given name truncate value to 12 characters</ExceptionMessage>
+					<ExceptionScopeSchemaXPath>/Enrollment/Organization[1]/Subscriber[2]/Person//PersonName/FamilyName</ExceptionScopeSchemaXPath>
+					<Followup responsibleForFollowup="No Followup Needed"/>
+				</Exception>
+			</EntityException>
+		</EntityDisposition>
+		<EntityDisposition>
+			<EntityIdentifier validFrom="2004-04-02T01:00:00-00:00" validTo="2004-04-03T01:00:00-00:00" idOwner="Premier Company">
+				<IdValue name="employeeId">09847</IdValue>
+			</EntityIdentifier>
+			<EntityShortName>Medical Enrollment</EntityShortName>
+			<EntitySchemaXPath>/Enrollment</EntitySchemaXPath>
+			<EntityInstanceXPath>/Enrollment/Organization[1]/Subscriber[3]</EntityInstanceXPath>
+			<EntityNoException>true</EntityNoException>
+		</EntityDisposition>
+		<EntityDisposition>
+			<EntityIdentifier validFrom="2004-04-02T01:00:00-00:00" validTo="2004-04-03T01:00:00-00:00" idOwner="Premier Company">
+				<IdValue name="employeeId">98434</IdValue>
+			</EntityIdentifier>
+			<EntityShortName>Medical Enrollment</EntityShortName>
+			<EntitySchemaXPath>/Enrollment</EntitySchemaXPath>
+			<EntityInstanceXPath>/Enrollment /Organization[1]/Subscriber[4]</EntityInstanceXPath>
+			<EntityException>
+				<Exception>
+					<ExceptionIdentifier>5599</ExceptionIdentifier>
+					<ExceptionSeverity>Fatal</ExceptionSeverity>
+					<ExceptionMessage>Subscriber’s given name is missing or blank.</ExceptionMessage>
+					<ExceptionScopeSchemaXPath>/Enrollment/Organization[1]/Subscriber[4]/Person//PersonName/GivenNam</ExceptionScopeSchemaXPath>
+					<Followup responsibleForFollowup="Payload Source Organization">
+						<OrganizationId>
+							<IdValue name="identificationCodeValue">99384884</IdValue>
+						</OrganizationId>
+						<OrganizationName>TPA Inc. </OrganizationName>
+					</Followup>
+				</Exception>
+			</EntityException>
+		</EntityDisposition>
+	</PayloadDisposition>
+</ApplicationAcknowledgement>

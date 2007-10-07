@@ -1,0 +1,1669 @@
+<!doctype html public "-//w3c//dtd html 4.0 transitional//en"
+  "http://www.w3.org/1999/xhtml">
+<html>
+<head>
+   <meta http-equiv="Content-Type" content="text/html; charset=big5">
+   <meta name="GENERATOR" content="Mozilla/4.72 (Macintosh; I; PPC) [Netscape]">
+   <title>Schematron</title>
+</head>
+<body>
+<center><img src="http://www.ascc.net/xml/schematron/smallBilby.gif"
+alt="Our mascot: the Schematroll" />
+</center>
+
+<h1>
+The Schematron Assertion Language 1.5</h1>
+2000,2001 (C) Rick Jelliffe
+<br>and Academia Sinica Computing Centre
+<br>2001-11-10 
+<br>&nbsp;
+<h2>
+Abstract</h2>
+The Schematron is a language system for specifying and declaring assertions
+about arbitrary patterns in XML documents, based on the presence or absense,
+names and values of elements and attributes along paths. Its target uses
+are for software engineering requiring document validation, for scholarly
+research over patterns in graph-structured data, for automatic creation
+of external markup, and to aid accessibility of documents for people with
+disabilities.
+<br>&nbsp;
+<h2>
+Schemas</h2>
+For markup languages, a <i>schema </i>is a specification of interlocking
+<i>constraints</i> between <i>information items&nbsp;</i> in a <i>document.</i>
+<ul>
+<li>Some schema languages are <i>open</i> (they allow anything by default and
+the schema restricts what is allowed) and some are <i>closed</i> (they 
+allow nothing by default the schema allows specific structures).  Schematron
+is open.
+</li>
+<li>Schematron is fully <i>namespace-aware</i>, and allows a very wide range
+of wildcarding capabilities.
+</li>
+<li>Schematron is <i>declarative</i> and uses XML notation.</li>
+<li>Schematron is <i>rule-based</i> with a fixed four-layer hierarchy
+(phases, patterns, rules, assertions).</li>
+<li>Schematron use <i>path-expressions</i> rather than grammars
+as its <i>schematic paradigm</i>: the W3C Xpath language is used, with the
+various extensions provided by XSLT.</li>
+<li>Schematron has been designed to be trivially <i>implementable</i> on
+XSLT. However other implementation are possible. For example,
+an implementation in Perl has been made.</li>
+</ul>
+<p>Any schema paradigm imposes particular limitations on the
+constraints expressable by a schema. Thus
+SGML declarations refer to its grammar
+declarations as 'content <i>models</i>'; there is a difference
+between (the expectations we have of) a schema versus a model: the
+former defines canonically or exhaustively, whilst the latter describes
+as best it can according to its schematic paradigm.
+</p>
+<p>[SGML] and [XML] have provided a large-scale example of 
+a <i>design-by-contract</i> [Meyer] distributed system: the DTD has acted
+as the language for specifying the
+invariants of documents diring its life, but over-rideable
+(using parameter entities in the internal subset) to allow
+particular process-local invariants to be described. It is common
+practise in SGML shops to override and extend DTD <i>ad hoc</i>,
+in order to better describe and verify (validate) the data
+at various stages. The ability to flexibly alter DTDs as required
+seems to be 
+one distinguishing feature of successful SGML-based production.
+</p>
+<h2>
+Grammars</h2>
+
+<p><br>Conventionally, starting with SGML DTDs, schemas for markup languages
+are defined in terms of grammars to regulate element containment, lists
+to regulate attribute containment, augmented by datatype constraints on
+various information elements. In XML, these additional constraints are
+concerned with enabling graph structures to be represented, rather than
+describing the semantics or types of information elements.&nbsp; In the
+late 1990s, many schema languages were developed for XML in anticipation
+of the development of the World Wide Web Consortium's [XML Schema] schema
+language. All these schema languages used the grammar-founded approach
+mentioned above, elaborating on them using objects [SOX], modules [RELAX],
+production selectors [Assertion Grammars], etc.
+<p>But these approaches have certain deficiencies. For a start, SGML used
+grammars as its schematic paradigm because one does indeed define grammars
+with it, down to lexical level: a full-featured SGML parser can parse 
+many tagged-data languages regardless of the delimiters used. 
+The grammar paradigm is not necessary for
+schemas for XML. Secondly, the grammar approach is not sufficient to express
+any constraints between information items in different branches of the
+attribute-value tree which forms the primary view of an XML document. The
+mechanisms for declaring unique identifies and references do not alter
+this; mechanisms such as that of [XML Schema] and [RELAX] to introduce grammar
+non-terminals (termed the <i>tag/type</i> distinction) allow an element
+name to have a different datatype of content model depending on its parent,
+however this merely allows the type of an element to be constrained by
+its parent's type as well as by its <i>generic identifier</i> (i.e., by
+its tag).
+<p>More generally, there is no reason to expect an arbitrary
+web of information (think of an Entity-Relation diagram) to conform
+itself to a simple tree structures. Consequently there is
+no reason to expect that the information constraining one 
+structure or value will always be found in the same branch.
+(Indeed, schema languages themselves may in part be attempts
+to move non-branch-local information to a separate tree, to
+simplify the markup, and structures).
+</p>
+<p>These deficiencies are nothing more than schema paradigm limitations.
+However there are other pragmatic and policy considerations that may make
+a grammar-based schema paradigm unattractive.
+<h2>
+Considerations</h2>
+The first is a cultural, or perhaps educational and linguistic one. According
+to [deFrancis], Western written languages can be thought of as having the
+broad hierarchy 'character', 'word', 'phrase', 'sentence', while Chinese
+can be thought of as having the broad hierarchy 'character', 'idea', 'phrase',
+'sentence'.&nbsp; A Chinese character does more than a Western character,
+and represents ideas which are again at a slightly higher-level than Western
+words (i.e., in non-agglutinating languages.)&nbsp; Thus in Chinese, it
+is possible that one moves quickly from a non-grammatic level to a semantic
+level fast; this may be why Taiwanese students are anecdotally reported[1]
+to find the idea of formal grammars for natural languages to be
+laughably theoretical rather than practical.&nbsp;
+At the least, we should not dismiss 
+the possibility that using formal grammars as a schematic
+paradigm may more easily acceptable to members of one language group or
+culture than another.
+<p>Secondly, 
+if a schematic paradigm has language or cultural affinities,
+that different schema languages may be doubly difficult for people with
+cognative impairments. I only need to take this point as far
+as saying the obvious that a complex schema paradigm may be more difficult
+than a simple one.&nbsp; And the difficulty of a schematic paradigm may
+be more than just its complexity to explain but also its complexity to
+use and implement.
+<p>Third, when considering the needs of schemas for constraints on documents
+which are needed to support accessibility by disabled people, we come up
+against what I regard as a fundamental shortfall in existing schema languages:
+they are designed to support <i>definitional</i> schemas which intend to
+specifiy exhaustively or canonically the required constraints on a document.
+However, acessibility constraints are
+typically policy constraints imposed on a document
+in addition to those constraints required to define that document.
+Yet these constraints are fundamentally schematic: 
+they relate to invariants about what elements, etc. can be used and where.
+<p>Fourthly, after admitting that there can be important non-definitional
+constraints on a document, the question arises of what other non-definitional
+constraints can there be?&nbsp; The main one I identify is the requirements
+of workflow: that some constraints only may come into existence during
+some <i>phase</i> of a document's lifecycle. Without some notion of constraints
+that come into play during a phase, one must either weaken constraints
+on a schema, 
+until the schema only contains the loosest unparameterized invariants,
+or arbitrarily switch schemas during the document's life cycle.
+<p>Fifthly, building on the notion that it is useful to be able to switch
+constrains in and out during formally defined phases of a document's life
+cycle, we can see that the ability to group and switch in and out constraints
+on an <i>ad hoc</i> basis during editing of a document would be useful.&nbsp;
+It is a common difficulty with validating editors of structured documents
+that otiose errors are reported for documents under construction and incomplete.
+<p>Sixthly, the other side to reporting extranous information is that 
+a grammar-based schema language probably does not have any mechanism to
+explain the significance of particles and groups in its content model: if there is a repeating group of elements, surely it is more interesting to know 
+why they are grouped and repeat rather than merely the bland fact that they
+are grouped and repeated. A group in a content model represents a kind of
+manditorily omitted element, where the schema designer has decided,
+perhaps for pragmatic reasons of markup minimisation, to not allow the
+structure to be named as an element. 
+<p>Seventhly, the previous issue raises the further question of how
+information is to be provided for human interaction with a schema system.
+In the case of grammars, it is possible to synthesize 
+many useful error massages or diagnostic hints from a content model; 
+however grammar based systems have seemed weak in helping
+sort out how to fix in-progress or utterly wrong markup.
+
+<p>Thus one consideration leads to the next, and the result can be considerable
+doubt that grammars provide the optimal schema paradigm for documents for
+the World Wide Web. These are some of the needs and considerations
+underpinning development of the Schematron assertion language.
+<p>Which is not, of course, to say that grammars are not quite useful
+when appropriate.</p>
+<h2>
+Uses</h2>
+The Schematron language has been developed with four main use-areas in
+mind:
+<ul>
+<li>
+For software engineering, to allow the expressing of interlocking constraints
+on standalone XML documents, and for checking pre- and post-conditions
+of XML documents used as arguments or returned by functions in programming
+languages.</li>
+
+<li>
+For data mining and scholarly use, where the dataset is a graph expressable by an XML document,
+where the constraints are hypotheses about the dataset that can be tested.</li>
+
+<li>
+For use in automated markup systems, where one wishes to detect patterns
+in data and produce an external or inline document which links</li>
+
+<li>
+For use as a schema language for "hard" markup languages, such as 
+XLink, RDF and XSL-FO.
+</li>
+</ul>
+As part of the Schematron project, exemplar software to do these has been
+produced and is available on the WWW[2].
+<p>A Schematron process does not augment the information set of the document
+<i>per se</i>.  Instead, it is assumed to create an external document 
+containing links or references (human or machine-readable)
+to the original document.</p> 
+<h2>
+Assertions</h2>
+A Schematron schema is made by specifying <i>assertions</i>, which are
+simple declarative sentences in natural language.
+<p>The &lt;assert> element is used to tag positive assertions about a document.
+For example,
+<pre>&lt;assert>A 'dog' element should contain two 'ear' elements.&lt;/assert></pre>
+This asssertion is something that is expected to be true of the document.
+If a document is validated against the schema, and the test for this assertion
+fails, an application can take some action. Schematron does not specify
+any actions: it only allows assertions to be <i>tested</i>, for the parts
+of assertions to be given <i>roles</i>, for the assertions to be grouped
+into <i>rules</i>, for the rules to be grouped into<i> patterns</i>, and
+for the patterns to be activated in various <i>phases</i>.
+<p>The &lt;report> element is used to tag negative assertions about a document.
+For example,
+<pre>&lt;report>This dog has a bone.&lt;/report></pre>
+<p>The <i>test</i> attribute on a &lt;assert> or &lt;report> element
+is an XPath <i>expression</i> evaluated to boolean: informally, XPath <i>expressions</i> 
+are a simple expression language with functions on strings, numbers, 
+booleans, document context, and nodes.
+The terms can be grouped using parentheses and <tt>|</tt>.
+Formally, they must match the production 
+and semantics of production [14] <tt>Expr</tt>, 
+s.3 Expressions in the [XPath] specification.
+(See Appendix D below for a combined listing of the
+various productions.)
+
+</p>
+
+<pre>&lt;assert test="self::dog and child::bone"
+>A 'dog' element should contain two 'ear' elements.&lt;/assert></pre>
+<p>Within these two elements, it is possible to use a &lt;name> element, which
+gives the specific name of the <i>context</i> element for which the assert
+statement failed or the report statement succeeded. The &lt;name> element
+can also have an attribute <tt>path</tt> in which an [XPath] expression can be
+given; this allows the name of an element or attribute different to the
+context element to be specified. Because some implementations of Schematron
+may format these names differently. For better formatting, an element &lt;emph>
+is also allowed; its only use is to allow names of elements or attributes
+to be specified in assertions to have the same format as those provided
+by evaluating the &lt;name> element.  The &lt;span> element is also allowed,
+with the same meaning as in HTML.
+<pre>&lt;assert test="child::bone"
+>A &lt;name/> element should contain two &lt;emph>ear&lt;/emph> elements.&lt;/assert></pre>
+<p>Note that there is an <i>abbreviated syntax</i> possible for use
+in the test attribute. So the following example is equivalent to the
+previous one:
+</p>
+<pre>&lt;assert test="<b>bone</b>"
+>A &lt;name/> element should contain two &lt;emph>ear&lt;/emph> elements.&lt;/assert></pre>
+<p>For internationalization, the element &lt;dir> can be used inside these
+two elements to support bidirectional written languages; the semantics
+are those of the dir element of [HTML].&nbsp; The elements may also have
+an xml:dir attribute for tagging the written language of the contents of
+the element; the xml:lang attribute does not express the language of the
+target document.
+<p>For better formating of assertion reports, these two elements may also
+have an icon attribute, which is the [URL] of a small image that may provide
+visual clues to a user.
+<p>These two elements can also have a subject attribute. This is an [XPath]
+path which allows very direct specification of the subject of the assertion:
+this may be useful information for automatically generating [RDF] documents.
+</p>
+<p>There is no prescribed order in which assertions must be checked.
+(By default, most implementations will probably check assertions in the
+same order they appear in the document.)
+</p>
+<p>In the particular case of 
+Schematron schemas which need to be very terse, and which are inteded
+for a yes/no validation result, 
+the natural language assertions may be omitted. 
+</p>
+<h2>
+Rules</h2>
+&lt;assert> and &lt;report> elements are grouped inside &lt;rule> elements.
+The &lt;rule> element has a context attribute which contains an [XPath]
+<i>expression</i>.
+Every element in the document for which this path expression evaluates
+to true is then used as the context to test the assertions. An assertion
+is tested by testing an [XPath] expression declared in a test attribute
+of the &lt;assert> and &lt;report> element.
+<p>The full declarations for the assertions above are
+<pre>&lt;rule context="dog">
+&nbsp;&nbsp; &lt;assert test="count(ear) = 2"
+&nbsp;&nbsp; >A 'dog' element should contain two 'ear' elements.&lt;/assert>
+&nbsp;&nbsp; &lt;report test="bone"
+&nbsp;&nbsp; >This dog has a bone.&lt;/report>
+&lt;/rule></pre>
+<p>The <i>context</i> attribute on a &lt;rule> element
+is an XSLT <i>pattern</i>: informally, this allows XPath <i>path
+expressions</i> to be combined in <i>or</i> groups (using the keyword
+<tt>or</tt> 
+and parentheses for grouping).  
+Formally, they must match the production 
+and semantics of production [1] <tt>Pattern</tt>, 
+s.5.2 Patterns in the XSLT specification. 
+(See Appendix D below for a combined listing of the
+various productions.)
+The functions available include those in XSLT s.12 Additional Functions.
+These can be extended using the methods in XSLT s14.2 Extension Methods;
+the <i>function-available()</i> function should be used before any 
+extension function is called to allow some graceful behaviour on systems
+which do not support the functions. (It is anticipated that some more
+business-oriented functions may be developed at some later stage.) 
+</p>
+These three elements are the operational core of Schematron. [XPath] expressions
+allow a very wide range of constraints to be expressed: based on element
+and attribute names, based on their position and occurrence, based on text
+values, and based on counts.&nbsp; In the example, the context is every
+element with a generic identifier 'dog': the test in the &lt;assert> element
+counts the number of child elements with the generic identifer 'ear'.&nbsp;
+Neither assertion in this rule will fail for the following XML document:
+<pre>&lt;dog>&lt;ear/>&lt;ear/>&lt;/dog></pre>
+The context attribute is an [XPath] as extended by [XSLT], allowing 'or'
+operations, for example. The test attributes are [XPath] expressions which
+allow various logical operators such as '|'.
+<p>The &lt;rule>,&lt;assert> and &lt;report> elements can each have
+a role attribute. This is an identifier within the schema to identify the
+role that is played. 
+Schematron 1.5 does not pre-define any roles; the <tt>&lt;ns></tt>
+attribute on the <tt>&lt;schema></tt> element can be used to specify
+some URL to which this controlled vocabulary belongs.
+These elements can also have id attributes.
+<pre>&lt;rule context="dog" role="animal" id="doggy">
+&nbsp;&nbsp; &lt;assert test="count(ear) = 2" role="internalProperty"
+&nbsp;&nbsp; >A 'dog' element should contain two 'ear' elements.&lt;/assert>
+&nbsp;&nbsp; &lt;report test="bone" role="externalProperty"
+&nbsp;&nbsp; >This dog has a bone.&lt;/report>
+&lt;/rule></pre>
+<p>This jointed-leg path system is reminiscent of SQL queries: one could consider
+a query SELECT x FROM y WHERE z IS a&nbsp; to be a context statement (i.e.,
+'WHERE x IS y') and a test (i.e., 'x FROM y).
+<p>A &lt;rule> element can also contain &lt;key> elements, which allows
+[XPath]'s key mechanism to be used. This allows various testing of reference
+constraints; it is more powerful than the [XML] ID/IDREF mechanism. The
+path attribute is an [XPath] path; the name attribute is a token naming
+the key. The icon attribute allows specification of an icon.
+<p>An important feature to note is that, because of [XSLT]'s document()
+function, a Schematron assertion test can refer to data in a different
+document from the context document. This allows Schematron schemas to be
+used for two important uses: to validate against a controlled vocabulary
+located externally to the schema (indeed, this can be in any XML document
+type, not just using a Schematron schema), and to validate the output of
+some programs function against data found in its input (or <i>vice versa</i>)
+as a form of black-box testing.
+<p>It is also useful to note that Schematron lends itself to analysis of
+information sets using <i>cohesion and coupling</i> ideas [Constantine].
+The coupling of one information item to another often is not symetrical:
+DTDs force all coupling contstraints to be expressed in terms of the
+parent to the child, whereas some coupling may be better expressed from
+child to parent. This is a typical way of specifying optional elements
+in a Schematron schema.</p>
+<p>A simple macro mechanism is allowed on rules. A &lt;rule> element can
+have one or more &lt;extends> elements. These have a <tt>rule</tt> 
+attribute, which
+is the identifier of an abstract rule. 
+This allows you to bring the assertions of that anbstract rule into 
+the current rule.
+An abstract rule is specified with an <tt>abstract</tt> attribute with
+a value "true".&nbsp; An abstract rule element cannot have a 
+<tt>context</tt> attribute.
+As an example, this constraint can be specified as follows (in [XPath}
+paths
+<pre>&lt;rule context="sch:rule">
+&nbsp;&nbsp; &lt;assert test="(attribute::abstract='true') and not(attribute::context)"
+&nbsp;&nbsp; >An abstract rule cannot have a context attribute.&lt;/assert>
+&nbsp;&nbsp; &lt;assert test="(attribute::abstract='false') and attribute::context"
+&nbsp;&nbsp; >A rule should have a context attribute (except for abstract rules.)&lt;/assert>
+&nbsp;&nbsp; &lt;assert test="not(attribute::abstract) and attribute::context"
+&nbsp;&nbsp; >A rule should have a context attribute (except for abstract rules.)&lt;/assert>
+&nbsp;&nbsp; &lt;report test="attribute::abstract and not(attribute::abstract='true') and not(attribute::abstract='false')"
+&nbsp;&nbsp; >In a rule, the abstract attribute is optional, and can have values 'true' or 'false'&lt;/report>
+&lt;/rule></pre>
+Note in this example that Schematron schemas are very specific. It is quite
+probable that a simpler schema would be just as effective, or the various
+assertions could be combined into a larger test with a more general statement.&nbsp;&nbsp;
+<p>
+One abstract rule can extend another.&nbsp; XML Entities can also be used
+for various macro effects, as desired.
+<p>There is no prescribed order in which rules must be checked.
+(By default, most implementations will probably check rules in the
+same order they appear in the document.) Note, however, that if rules 
+are checked in a different order, they still must implement the 
+order-dependent semantic that each <tt>context</tt> attribute 
+is a shortened form of the full context attribute, such that the context
+is really formed by first testing negative of or-ing all previous
+contexts in the same pattern; only nodes which pass that seive are
+tested by the rule.</p>
+<h2>
+Patterns</h2>
+Rules are grouped into &lt;pattern> elements.&nbsp; A pattern is a grouping
+of rules. An element will only be used as the context of one rule per pattern;
+the first rule in lexical order for which a context matches will be used.
+<p>Pattern elements have various attributes. The name attribute allows
+specification of a simple human-readable string to identify the pattern.
+The id attribute allows a unique identifier to be assigned. for reference
+purposes. The fpi attribute allows an [SGML] Formal Public Identifier to
+be attached. The see attribute allows a [URL] to be specified which gives
+some human readable documentation for the pattern; a hypertext presentation
+of the schema results can link to that resource.
+<p>A <tt>pattern</tt> is the nearest equivalent in Schematron
+to a <i>type</i>; except that Schematron is concerned 
+with providing as direct as possible specification of the relationships
+between information items rather than trying to fit them into an abstract
+mold such as type. Which is not, of course, to say that notions of
+type are not quite useful where appropriate.
+<p>A &lt;pattern> element can have an icon element.
+<p>There is no prescribed order in which patterns must be checked.
+(By default, most implementations will probably check patterns in the
+same order they appear in the document, and schema-writers may
+put important patterns before less important patterns in the
+document to present the most useful information to the user.) 
+Note, however, that if  the
+pattern is activated in the current phase, it should not be checked.
+<h2>
+Schema</h2>
+The top-level element of an XML schema is &lt;schema>. A schema element
+should have a &lt;title> sub-element.
+<p>Typically the schema will be declared using XML [Namespace] conventions.
+The preferred prefix is <i>sch</i> and the appropriate namespace URI is
+<pre>http://www.ascc.net/xml/schematron</pre>
+Thus a complete XML schema document is as follows:
+<pre>&lt;?xml version="1.0" encoding="US-ASCII"?>
+&lt;sch:schema xmlns:sch="http://www.ascc.net/xml/schematron">
+&nbsp;&lt;sch:title>Example Schematron Schema&lt;/sch:title>
+&nbsp;&lt;sch:pattern>
+&nbsp;&nbsp; &lt;sch:rule context="dog">
+&nbsp;&nbsp;&nbsp; &lt;sch:assert test="count(ear) = 2"
+&nbsp;&nbsp;&nbsp; >A 'dog' element should contain two 'ear' elements.&lt;/sch:assert>
+&nbsp;&nbsp;&nbsp; &lt;sch:report test="bone"
+&nbsp;&nbsp;&nbsp; >This dog has a bone.&lt;/sch:report>
+&nbsp;&nbsp; &lt;/sch:rule>
+&nbsp; &lt;/sch:pattern>
+&lt;/sch:schema></pre>
+The &lt;schema> element can have a ns attribute which gives the namespace
+URI that role attributes will have, if the role is used to externally mark
+up the target document.
+<p>The &lt;schema> element also allows explicit declaration of namespace
+prefixes and URLs that are used in the schema, using the &lt;ns> subelements.
+The usual XML [Namespaces] mechanism can be used, however, then the prefix
+and URL data is not available for diagnostic reporting or application processing;
+furthermore, some implementations may require that the information is made
+available in that form. For example:
+<pre>
+&lt;sch:schema xmlns:sch="http://www.ascc.net/xml/schematron">
+  &lt;sch:title&gt;Screen-scraper for XHTML data&lt;/sch:title&gt;
+  &lt;sch:ns prefix="xhtml" uri="http://www.w3.org/1999/xhtml" /&gt;
+...
+</pre>
+<p>A &lt;schema> can have an icon attribute.&nbsp; It can also contain
+&lt;p> elements, allowing some modest end-user-oriented documentation to
+be given: this allows the user to know what kind of validation or constraints
+the schema specifies, to aid them in interpreting any results usefully.
+The &lt;p> element can have an icon attribute.
+<h2>
+Phases</h2>
+Workflow and dynamical schemas are supported through the phase mechanism.
+The &lt;schema> element can contain &lt;phase> elements. This must have
+an id attribute for a unique identifier; it can have an icon attribute;
+it can have an fpi attribute to give a persistant identifier for the phase,
+because a phase may correspond to a DTD which had an FPI (note that the
+FPI is for the phase, not for the current scheme <i>per se</i>.)
+<p>The &lt;phase> element has subelements <i>active</i> which provide
+the identifier of a &lt;pattern> in an attribute <i>pattern</i>.
+<pre>
+&lt;phase id="basicValidation">
+  &lt;active pattern="text" />
+  &lt;active pattern="tables" />
+  &lt;active pattern="attributePresence" />
+&lt;/phase>
+&lt;phase id="fullValidation">
+  &lt;active pattern="metadata" />
+  &lt;active pattern="text" />
+  &lt;active pattern="tables" />
+  &lt;active pattern="attributePresence" />
+  &lt;active pattern="attributeValueChecks" />
+&lt;/phase>
+</pre>
+<p>By default, all patterns in a document are active. However, an application
+may provide a way to allow the user to select the phase to be used: for
+example, a command line option when invoked from the command line, a preferences
+dialog box in a GUI, or a parameter on the function invocation when called
+as a precondition-checker in a programming language 
+(such as C's <tt>assert()</tt>, from which Schematron's <tt>assert</tt>
+takes its name, or the pre and post-condition statements in Eiffel.)
+</p>
+<h2>
+Diagnostics</h2>
+<p>Users have reported that a common use of Schematron schemas is to allow
+specific diagnostics to be given. However, it is desirable to keep &lt;assert>
+and &lt;report> statements as general assertions rather than diagnostic
+messages. To support this, the &lt;assert> and &lt;report> elements have
+a diagnostics attribute which is a reference to 
+one or more  &lt;diagnostic> elements. These are
+allowed in a &lt;diagnostics> section at the end of the document. The value of
+the diagnostics attribute can be a list of references to &lt;diagnostic> elements.
+<p>A &lt;diagnostic> element is general text. It can trivially be converted
+into HTML. It can contain &lt;dir> (for bidirectional languages),
+&lt;span> and &lt;emph>
+subelements with the same meanings as HTML. 
+It must have an id attribute to allow references to it.&nbsp;
+The &lt;diagnostic> element can have &lt;value-of> sub-elements, which have the
+same semantics as in [XSLT]. These allow insertion of value information
+as well as name details. A &lt;diagnostic> element can have an icon attribute.
+</p>
+<pre>
+&lt;rule context="dog" >
+   &lt;assert test="nose | @exceptional='true'" diagnostics="d1 d2"
+   >A dog should have a nose.&lt;/assert>
+&lt;/rule>
+...
+&lt;diagnostics>
+ &lt;diagnostic id="d1"
+ >Your dog &lt;value-of select="@petname" /> has no nose. 
+ How does he smell? Terrible. Give him a nose element,
+ putting it after the &lt;name path="child::*[2]"/> element.
+ &lt;/diagnostic>
+ &lt;diagnostic id="d2"
+ >Animals such as &lt;name/> usually come with a full complement
+ of legs, ears and noses, etc. However, exceptions are possible.
+ If your dog is exceptional, provide an attribute
+ &lt;emph>exceptional='true'&lt;/emph>
+ &lt;/diagnostic>
+&lt;/diagnostics>
+</pre>
+<p>There is no prescribed order in which diagnostics must be given.
+(By default, most implementations will probably give diagnostics in the
+same order they appear in the document, and schema-writers may try
+to use this by putting more likely diagnostics before unlikely ones.) 
+</p>
+<h2>Documentation</h2>
+<p>Because of the emphasis that the natural language text of an 
+<tt>assert</tt> or <tt>report</tt> element is the definition of an assertion, wi
+the  tests being models of the assertion, even undocumented
+Schematron schemas should be more comprensible than other schema languages.
+The documentation features are designed to extend these, and
+in particular to 
+be able to generate pleasant print or hypertext versions 
+of a schema. </p> 
+<p>A &lt;p> element is general text. It can be trivially converted into HTML.
+It can contain &lt;dir> (for bidirectional languages),
+&lt;span> and &lt;emph>
+subelements with the same meanings as HTML. 
+It can have an id attribute to allow references to it.&nbsp;
+The optional class attribute is provided to help generation of styled HTML,
+The xml:lang attribute can be used to specify the language of the paragraph.
+A &lt;p> element can have an icon attribute, which is not an HTML attribute. 
+<h2>Schematron-Like Systems</h2>
+<p>Other useful validation languages can be built by merely
+using the Schematron framework and substituting other query
+languages. For a language to be <i>Schematron-like</i> it must
+be 
+<ul>
+<li>a rule-based system with asserts and reports;</li>
+<li>the asserts and reports are evaluated in a context
+provided by another query; </li>
+<li>the rules form an if-then-else chain, so that there is a
+lexical priority; and</li>
+<li>the rules are combined into a higher-level abstract,
+in Schematron called a pattern.
+</li>
+</ul>
+<p>A Schematron-like assertion language does not require
+backtracking or a theoretically complex implementation.
+Other higher and lower layers may be added, for instance
+the phase mechanism (which could in turn be generalized into
+a finite state machine.)  However, schema language designers
+should note that there seems to be good usability reasons
+to stick with a fairly fixed hierarchy, rather than, say,
+adding an extra leg between context and the assertions: 
+for a start, it means that Schematron schemas can be 
+entered using simple forms.
+</p>
+<p>Another distinctive that may make a language 
+Schematron-like is the decision to partition the
+query components to a separate, embedded query language.
+This seems to have helped
+the readability, comprehesibility and learnability
+of the language;  it adds a terseness which makes
+hand-editing of schemas completely viable.
+</p>
+<p>Schematron lends itself to being embedded in
+other schema languages. In such a use, an extractor program
+(perhaps an XSLT stylesheet) typically extracts and creates the separate
+Schematron schema. Even though only fragments of Schematron
+are being used, such as just the assert elements, it is 
+still appropriate to use the Schematron namespace. 
+</p>
+<h2>Related Material</h2>
+<p>For a relevant discussion on the role of primacy of natural
+language descriptions over formal descriptions and the
+nature of <i>declarative</i> specifications, which are
+surely applicable to schemas, see 
+[<a href="LeCharlier">LeCharlier</a>]. 
+Note their comments that a specification should always have
+1) a statement indicating purpose, and 2) a list of representation
+conventions that must be satisfied.
+<p>Schematron can be considered a front-end for specifying the targets
+of a transformation system (see [<a href="CIP">CIP</a>].)
+Indeed, Schematron also may be considered to split the
+front-end into a rule-based framework 
+(see [<a href="schemarama">Schemarama</a>] for an implementation of this)
+and a query language (in Schematron's case, XPath.)
+
+<p>The element name <tt>assert</tt> was chosen for familiarity to
+C programmers from the C <tt>assert()</tt>. See ???
+<p>The XLinkIt language is a similar assertion language to 
+Schematron, but invented independently and with different 
+usage goals and design rationales. See [Finkelstein].
+Note the existance of the Patent ???? which relates
+to generating links between a schema document and an instance for
+consistancy checking using a rules-based system.
+con>
+<p>A phase can be regarded as a state in a
+Finite State Machine (see [<a href="Etessami">Etessami</a>] 
+for a comparison of rules-based and state-machine-based 
+approaches.) 
+
+<h2>Appendix A: XML DTD For Schematron 1.5</h2>
+The following are markup declarations for the Schematron assertion language.
+For clarity, this version used default namespace; it is inadvisable to
+use the default namespace in practise, because some Schematron implementations
+may apply that default namespace to the target document, to unqualified
+names.&nbsp; Note that, providing the defaulting noted is followed and
+except for ID purposes, the Schematron DTD does not make infoset contributions
+and should not be required.
+<pre>
+&lt;!-- +//IDN sinica.edu.tw//DTD Schematron 1.5//EN -->
+&lt;!-- http://www.ascc.net/xml/schematron/schematron1-5.dtd -->
+&lt;!-- version of 2001/01/31 -->
+&lt;!-- All names are given indirectly, to allow explicit use of a namespace prefix
+&nbsp;&nbsp;&nbsp;    if desired.  In that case, in the internal subset of the doctype declaration,
+&nbsp;&nbsp;&nbsp;    define &lt;!ENTITY % sp "sch:" >
+-->
+&lt;!ENTITY % sp "">
+&lt;!ENTITY % schema "%sp;schema">
+&lt;!ENTITY % active "%sp;active">
+&lt;!ENTITY % assert "%sp;assert">
+&lt;!ENTITY % dir "%sp;dir">
+&lt;!ENTITY % emph "%sp;emph">
+&lt;!ENTITY % extends "%sp;extends">
+&lt;!ENTITY % diagnostic "%sp;diagnostic">
+&lt;!ENTITY % diagnostics "%sp;diagnostics">
+&lt;!ENTITY % key "%sp;key">
+&lt;!ENTITY % name "%sp;name">
+&lt;!ENTITY % ns "%sp;ns">
+&lt;!ENTITY % p "%sp;p">
+&lt;!ENTITY % pattern "%sp;pattern">
+&lt;!ENTITY % phase "%sp;phase">
+&lt;!ENTITY % report "%sp;report">
+&lt;!ENTITY % rule "%sp;rule">
+&lt;!ENTITY % span "%sp;span">
+&lt;!ENTITY % title "%sp;title">
+&lt;!ENTITY % value-of "%sp;value-of">
+&lt;!-- Data types -->
+&lt;!ENTITY % URI "CDATA">
+&lt;!ENTITY % PATH "CDATA">
+&lt;!ENTITY % EXPR "CDATA">
+&lt;!ENTITY % FPI "CDATA">
+&lt;!-- Element declarations -->
+&lt;!ELEMENT %schema; ((%title;)?, (%ns;)*, (%p;)*, (%phase;)*, (%pattern;)+, (%p;)*, (%diagnostics;)?)>
+&lt;!ELEMENT %active; (#PCDATA | %dir; | %emph; | %span;)*>
+&lt;!ELEMENT %assert; (#PCDATA | %name; | %emph; | %dir; | %span;)*>
+&lt;!ELEMENT %dir; (#PCDATA)>
+&lt;!ELEMENT %emph; (#PCDATA)>
+&lt;!ELEMENT %extends; EMPTY>
+&lt;!ELEMENT %diagnostic; (#PCDATA | %value-of; | %emph; | %dir; | %span;)*>
+&lt;!ELEMENT %diagnostics; (%diagnostic;)*>
+&lt;!ELEMENT %key; EMPTY>
+&lt;!ELEMENT %name; EMPTY>
+&lt;!ELEMENT %ns; EMPTY>
+&lt;!ELEMENT %p; (#PCDATA | %dir; | %emph; | %span;)*>
+&lt;!ELEMENT %pattern; ((%p;)*, (%rule;)*)>
+&lt;!ELEMENT %phase; ((%p;)*, (%active;)*)>
+&lt;!ELEMENT %report; (#PCDATA | %name; | %emph; | %dir; | %span;)*>
+&lt;!ELEMENT %rule; (%assert; | %report; | %key; | %extends;)+>
+&lt;!ELEMENT %span; (#PCDATA)>
+&lt;!ELEMENT %title; (#PCDATA | %dir;)*>
+&lt;!ELEMENT %value-of; EMPTY>
+&lt;!-- Attribute declarations -->
+&lt;!ATTLIST %schema;
+xmlns %URI; #FIXED  "http://www.ascc.net/xml/schematron"
+xmlns:sch %URI; #FIXED "http://www.ascc.net/xml/schematron"
+xmlns:xsi %URI; #FIXED "http://www.w3.org/2000/10/XMLSchema-instance"
+xsi:schemaLocation %URI;  " 
+&nbsp;&nbsp;&nbsp;       http://www.ascc.net/xml/schematron
+&nbsp;&nbsp;&nbsp;          http://www.ascc.net/xml/schematron/schematron.xsd"
+id ID #IMPLIED
+fpi %FPI; #IMPLIED
+schemaVersion CDATA #IMPLIED
+defaultPhase IDREF #IMPLIED
+icon %URI; #IMPLIED
+version CDATA "1.5"
+xml:lang NMTOKEN #IMPLIED
+>
+&lt;!ATTLIST %active;
+pattern ID #REQUIRED
+>
+&lt;!ATTLIST %assert;
+test %EXPR; #REQUIRED
+role NMTOKEN #IMPLIED
+id ID #IMPLIED
+diagnostics IDREFS #IMPLIED
+icon %URI; #IMPLIED
+subject %PATH; #IMPLIED
+xml:lang NMTOKEN #IMPLIED
+>
+&lt;!ATTLIST %dir;
+value (ltr | rtl) #IMPLIED
+>
+&lt;!ATTLIST %extends;
+rule IDREF #REQUIRED
+>
+&lt;!ATTLIST %diagnostic;
+id ID #REQUIRED
+icon %URI; #IMPLIED
+xml:lang NMTOKEN #IMPLIED
+>
+&lt;!ATTLIST %key;
+name NMTOKEN #REQUIRED
+path %PATH; #REQUIRED
+icon %URI; #IMPLIED
+>
+&lt;!ATTLIST %name;
+path %PATH; "."
+>
+&lt;!-- Schematrons should implement '.' 
+&nbsp;&nbsp;&nbsp;            as the default value for path in sch:name -->
+&lt;!ATTLIST %p;
+xml:lang CDATA #IMPLIED
+id ID #IMPLIED
+class CDATA #IMPLIED
+icon %URI; #IMPLIED
+>
+&lt;!ATTLIST %pattern;
+name CDATA #REQUIRED
+see %URI; #IMPLIED
+id ID #IMPLIED
+icon %URI; #IMPLIED
+>
+&lt;!ATTLIST %ns;
+uri %URI; #REQUIRED
+prefix NMTOKEN #IMPLIED
+>
+&lt;!ATTLIST %phase;
+id ID #REQUIRED
+fpi %FPI; #IMPLIED
+icon %URI; #IMPLIED
+>
+&lt;!ATTLIST %span;
+class CDATA #IMPLIED
+>
+&lt;!ATTLIST %report;
+test %EXPR; #REQUIRED
+role NMTOKEN #IMPLIED
+id ID #IMPLIED
+diagnostics IDREFS #IMPLIED
+icon %URI; #IMPLIED
+subject %PATH; #IMPLIED
+>
+&lt;!ATTLIST %rule;
+context %PATH; #IMPLIED
+abstract (true | false) "false"
+role NMTOKEN #IMPLIED
+id ID #IMPLIED
+>
+&lt;!-- Schematrons should implement 'false' as the default
+&nbsp;&nbsp;&nbsp;               value of abstract -->
+&lt;!ATTLIST %value-of;
+select %PATH; #REQUIRED
+>
+
+</pre>
+<h2>
+Appendix B: Schematron Schema for Schematron 1.5
+</h2>
+<pre>
+
+&lt;?xml version="1.0" encoding="UTF-8"?>
+&lt;!DOCTYPE schema PUBLIC "http://www.ascc.net/xml/schematron"
+"http://www.ascc.net/xml/schematron/schematron1-5.dtd">
+&lt;schema xmlns="http://www.ascc.net/xml/schematron"
+xmlns:sch="http://www.ascc.net/xml/schematron"
+xml:lang="en"                                       
+xmlns:xsi="http://www.w3.org/2000/10/XMLSchema-instance"
+xsi:schemaLocation="http://www.ascc.net/xml/schematron
+  http://www.ascc.net/xml/schematron/schematron1-5.xsd" 
+fpi="+//IDN ascc.net//SGML XML Schematron 1.5 Schema for Schematron 1.5//EN"
+schemaVersion="2001/01/31"  version="1.5"
+defaultPhase="New"
+icon="http://www.ascc.net/xml/resource/schematron/bilby.jpg">
+
+&lt;title>Schematron 1.5&lt;/title>
+&lt;ns uri="http://www.ascc.net/xml/schematron" prefix="sch"/>
+
+&lt;p>Copyright (C) 2001 Rick Jellife. 
+Freely and openly available under zlib/libpng license.&lt;/p>
+&lt;p>This schema is open: it only
+considers elements in the Schematron namespce. 
+Elements and attributes from other namespaces can be used freely.
+This schema does not assume that the Schematron schema is the top-level element.
+&lt;/p>
+&lt;p>This schema uses conservative rules (e.g. no use of key()) to 
+work with incomplete XSLT-based implementations.&lt;/p>
+
+
+&lt;phase id="New">
+	&lt;p>For creating new documents.&lt;/p>
+	&lt;active pattern="mini"/>
+&lt;/phase>
+&lt;phase id="Draft">
+	&lt;p>For fast validation of draft documents.&lt;/p>
+	&lt;active pattern="required" />
+&lt;/phase>
+&lt;phase id="Full">
+	&lt;p>For final validation and tracking some tricky problems.&lt;/p>
+	&lt;active pattern="mini" />
+	&lt;active pattern="required" />
+	&lt;active pattern="attributes" />
+&lt;/phase>
+
+&lt;pattern name="Minimal Schematron" id="mini">
+&lt;p>These rule establish the smallest possible Schematron document.
+These rules may be handy for beginners with starting documents.&lt;/p>
+	&lt;rule context="/">
+		&lt;assert test="//sch:schema"
+		>A Schematron schema should have a schema element. &lt;/assert>
+		&lt;report test="count(//sch:schema) > 1"
+		>There should only be one schema per document.&lt;/report>
+		&lt;assert test="//sch:schema/sch:pattern "
+		>A Schematron schema should have pattern elements inside the schema element&lt;/assert>
+		&lt;assert test="//sch:schema/sch:pattern/sch:rule[@context]"
+		>A Schematron schema should have rule elements inside the pattern elements. Rule elements should have a context attribute.&lt;/assert>
+		&lt;assert test="//sch:schema/sch:pattern/sch:rule/sch:assert[@test] 
+		or //sch:schema/sch:pattern/sch:rule/sch:report[@test]" 
+		>A Schematron schema should have  assert or report elements inside the rule elements. Assert and report elements should have a test attribute.&lt;/assert>
+	&lt;/rule>
+&lt;/pattern>
+
+&lt;pattern name="Schematron Elements and Required Attributes" id="required">
+	&lt;p>Rules defining occurrence rules for Schematron elements
+	and their required attributes. Note that for attributes,
+	it is not that the attribute is being tested for existance,
+	but whether it has a value.&lt;/p>
+	&lt;p>Some elements require certain children or attributes. 
+	Other elements require certain parents. Schematron can represent 
+	both these kinds of coupling. &lt;/p> 
+
+	&lt;rule context="sch:schema">
+		&lt;assert test="count(sch:*) = count(sch:title|sch:ns|sch:phrase|sch:p|sch:pattern|sch:diagnostics|sch:phase)"
+		>The element &lt;name/> should contain only the elements title, ns, phrase, p, pattern, diagnostics or phase from the Schematron namespace.&lt;/assert>
+		&lt;assert test="sch:pattern"
+		>A schema element should contain at least one pattern element.&lt;/assert>
+		&lt;report test="ancestor::sch:*"
+		>A Schematron schema should not appear as a child of another Schematron schema.&lt;/report>
+		&lt;report test="@defaultPhase and sch:phase and not(defaultPhase='#ALL') and not(sch:phase[@id= current()/@defaultPhase])"
+		>The value of the defaultPhase attribute must match the id of a phase element.&lt;/report>
+	&lt;/rule> 
+	&lt;rule context="sch:title">
+		&lt;assert test="parent::sch:schema"  diagnostics="bad-parent"
+		>The element &lt;name/> should only appear inside the Schematron element schema.&lt;/assert>
+		&lt;assert test="count(preceding-sibling::sch:*) = 0"
+		>The element &lt;name/> should only appear as the first element from the Schematron namespace in the schema element.&lt;/assert>
+	&lt;/rule>
+	&lt;rule context="sch:ns">
+		&lt;assert test="parent::sch:schema"  diagnostics="bad-parent"
+		>The element &lt;name/> should only appear inside the Schematron element schema.&lt;/assert>
+		&lt;assert test="string-length(normalize-space(@prefix)) &amp;gt; 0"
+		>The element &lt;name/> must have a value for the attribute prefix.&lt;/assert>
+		&lt;assert test="string-length(normalize-space(@uri)) &amp;gt; 0"
+		>The element &lt;name/> must have a value for the attribute uri.&lt;/assert>
+		&lt;assert test="count(preceding-sibling::sch:*) = count(preceding-sibling::sch:title)"
+		>The &lt;name/> element must come before any other Schematron elements, except the title&lt;/assert>
+		&lt;report test="*"
+		>The &lt;name/> element should be empty.&lt;/report>
+	&lt;/rule>
+	&lt;rule context="sch:phase">
+		&lt;assert test="parent::sch:schema"  diagnostics="bad-parent"
+		>The element &lt;name/> should only appear inside the Schematron element schema.&lt;/assert>
+		&lt;assert test="count(preceding-sibling::sch:*) = count(preceding-sibling::sch:phase)
+		+ count(preceding-sibling::sch:title) + count(preceding-sibling::sch:ns)
+		+ count(preceding-sibling::sch:p)"
+		>The &lt;name/> elements must come before any other Schematron elements, except the title, ns and p elements&lt;/assert>
+	&lt;/rule>
+	&lt;rule context="sch:active"> 
+		&lt;assert test="parent::sch:phase"  diagnostics="bad-parent"
+		>The element &lt;name/> should only appear inside the Schematron element phase.&lt;/assert>
+		&lt;assert test="string-length(normalize-space(@pattern)) &amp;gt; 0"
+		>The element &lt;name/> must have a value for the attribute pattern.&lt;/assert>
+	&lt;/rule>
+	&lt;rule context="sch:pattern">
+		&lt;assert test="parent::sch:schema"  diagnostics="bad-parent"
+		>The element &lt;name/> should only appear inside the Schematron element schema.&lt;/assert>
+		&lt;assert test="count(sch:*) = count(sch:rule|sch:p)"
+		>The element &lt;name/> should contain only rule and p elements from the Schematron namespace.&lt;/assert>
+		&lt;assert test="sch:rule"
+		>The element &lt;name/> should contain at least one rule element.&lt;/assert>
+		&lt;assert test="string-length(normalize-space(@name)) &amp;gt; 0"
+		>The element &lt;name/> must have a value for the attribute name.&lt;/assert>
+		&lt;assert test="count(sch:title) &amp;lt; 2"
+		>A Schematron schema cannot have more than one title element.&lt;/assert>
+	&lt;/rule>
+	&lt;rule context="sch:rule[@abstract='true']">
+		&lt;assert test="parent::sch:pattern"  diagnostics="bad-parent"
+		>The element &lt;name/> should only appear inside the Schematron element pattern.&lt;/assert>
+		&lt;assert test="count(sch:*) = count(sch:assert |sch:report|sch:key|sch:extends ) "
+		>The element &lt;name/> should contain only the elements assert, report, key or extends from the Schematron namespace.&lt;/assert>
+		&lt;assert test="sch:assert | sch:report | sch:extends"
+		>The element &lt;name/> should contain at least one assert, report or extends elements.&lt;/assert>
+		&lt;report test="@test"
+		>The &lt;name/> element cannot have a test attribute: that should go on a report or assert element.&lt;/report>
+		&lt;report test="@context"
+		>An abstract rule cannot have a context attribute.&lt;/report>
+		&lt;assert test="string-length(normalize-space(@id)) &amp;gt; 0"
+		>An rule should have an id attribute. &lt;/assert>
+	&lt;/rule>
+	&lt;rule context="sch:rule">
+		&lt;assert test="parent::sch:pattern"  diagnostics="bad-parent"
+		>The element &lt;name/> should only appear inside the Schematron element pattern.&lt;/assert>
+		&lt;assert test="count(sch:*) = count(sch:assert |sch:report|sch:key|sch:extends ) "
+		>The element &lt;name/> should contain only the elements assert, report, key or extends from the Schematron namespace.&lt;/assert>
+		&lt;assert test="sch:assert | sch:report | sch:extends"
+		>The element &lt;name/> should contain at least one assert, report or extends elements.&lt;/assert>
+		&lt;report test="@test"
+		>The &lt;name/> element cannot have a test attribute: that should go on a report or assert element.&lt;/report>
+		&lt;assert test="string-length(normalize-space(@context)) &amp;gt; 0"
+		>A rule should have a context attribute. This should be an XSLT pattern for selecting nodes to make assertions and reports about. (Abstract rules do not require a context attribute.)&lt;/assert>
+		&lt;assert test="not(@abstract) or (@abstract='false')  or (@abstract='true')"
+		>In a rule, the abstract attribute is optional, and can have values 'true' or 'false'&lt;/assert>
+	&lt;/rule>
+	&lt;rule context="sch:assert "> 
+		&lt;assert test="parent::sch:rule"  diagnostics="bad-parent"
+		>The element &lt;name/> should only appear inside the Schematron element rule.&lt;/assert>
+		&lt;assert test="string-length(normalize-space(text())) &amp;gt; 0"
+		>A &lt;name/> element should contain a natural language sentence.&lt;/assert>
+		&lt;assert test="string-length(normalize-space(@test)) &amp;gt; 0"
+		>The element &lt;name/> must have a value for the attribute test. This should be an XSLT expression.&lt;/assert>
+		&lt;report test="@context"
+		>The &lt;name/> element cannot have a context attribute: that should go on the rule element.&lt;/report>
+	&lt;/rule>  
+	&lt;rule context=" sch:report">
+		&lt;assert test="parent::sch:rule"  diagnostics="bad-parent"
+		>The element &lt;name/> should only appear inside the Schematron element rule.&lt;/assert>
+		&lt;assert test="string-length(normalize-space(text())) &amp;gt; 0"
+		>A &lt;name/> element should contain a natural language sentence.&lt;/assert>
+		&lt;assert test="string-length(normalize-space(@test)) &amp;gt; 0"
+		>The element &lt;name/> must have a value for the attribute test. This should be an XSLT expression.&lt;/assert>
+		&lt;report test="@context"
+		>The &lt;name/> element cannot have a context attribute: that should go on the rule element.&lt;/report>
+	&lt;/rule>  
+	&lt;rule context="sch:diagnostics">
+		&lt;assert test="parent::sch:schema"  diagnostics="bad-parent"
+		>The element &lt;name/> should only appear as a child of the schema element&lt;/assert>
+		&lt;report test="following-sibling::sch:*"
+		>The element &lt;name/> should be the last element in the schema.&lt;/report>
+	&lt;/rule>
+	&lt;rule context="sch:diagnostic">
+		&lt;assert test="parent::sch:diagnostics"  diagnostics="bad-parent"
+		>The element &lt;name/> should only appear in the diagnostics section.&lt;/assert>
+		&lt;assert test="string-length(normalize-space(@id)) &amp;gt; 0"
+		>The element &lt;name/> must have a value for the attribute id. &lt;/assert>
+	&lt;/rule>
+	&lt;rule context="sch:key">
+		&lt;assert test="parent::sch:rule"  diagnostics="bad-parent"
+		>The element &lt;name/> should only appear in a rule.&lt;/assert>
+		&lt;assert test="string-length(normalize-space(@name)) &amp;gt; 0"
+		>The element &lt;name/> must have a value for the attribute name. &lt;/assert>
+		&lt;assert test="string-length(normalize-space(@path)) &amp;gt; 0"
+		>The element &lt;name/> must have a value for the attribute path.   This should be an XPath expression.&lt;/assert>
+		&lt;report test="*"
+		>The &lt;name/> element should be empty.&lt;/report>
+	&lt;/rule>
+	&lt;rule context="sch:extends">
+		&lt;assert test="parent::sch:rule"  diagnostics="bad-parent"
+		>The element &lt;name/> should only appear in a rule.&lt;/assert>
+		&lt;assert test="string-length(normalize-space(@rule)) &amp;gt; 0"
+		>The element &lt;name/> must have a value for the attribute rule. &lt;/assert>
+		&lt;report test="*"
+		>The &lt;name/> element should be empty.&lt;/report>
+		&lt;assert test="/*//sch:rule[@abstract='true'][@id = current()/@rule]"
+		>The &lt;name/> element should have an attribute rule which gives the id of an abstract rule.&lt;/assert>
+	&lt;/rule>
+	&lt;rule context="sch:p">
+		&lt;assert test="parent::sch:*"  diagnostics="bad-parent"
+		>The element &lt;name/> should only appear inside an element from the Schematron namespace. It is equivalent to the HTML element of the same name.&lt;/assert>
+	&lt;/rule>
+	&lt;rule context="sch:name">
+		&lt;assert test="parent::sch:assert | parent::sch:report |parent::sch:p | parent::sch:diagnostic"
+		 diagnostics="bad-parent"
+		>The element &lt;name/> should only appear inside a Schematron elements p (paragraph) or diagnostic.&lt;/assert>
+		&lt;report test="*"
+		>The &lt;name/> element should be empty.&lt;/report>
+	&lt;/rule>
+	&lt;rule context="sch:emph">
+		&lt;assert test="parent::sch:p | parent::sch:diagnostic"
+		 diagnostics="bad-parent"
+		>The element &lt;name/> should only appear inside a Schematron elements p (paragraph) or diagnostic. It is equivalent to the HTML element of the same name.&lt;/assert>
+	&lt;/rule>
+	&lt;rule context="sch:dir">
+		&lt;assert test="parent::sch:p | parent::sch:diagnostic"
+		 diagnostics="bad-parent"
+		>The element &lt;name/> should only appear inside a Schematron elements p (paragraph) or diagnostic.&lt;/assert>
+		&lt;assert test="@value and (@value='rtl' or @value='ltr')"
+		>The attribute value of the &lt;name/> element must be lowercase "rtl" or "ltr". It is equivalent to the HTML element of the same name.&lt;/assert>
+	&lt;/rule>
+	&lt;rule context="sch:span">
+		&lt;assert test="parent::sch:p | parent::sch:diagnostic"
+		 diagnostics="bad-parent"
+		>The element &lt;name/> should only appear inside a Schematron elements p (paragraph) or diagnostic. It is equivalent to the HTML element of the same name.&lt;/assert>
+	&lt;/rule>
+	&lt;rule context="sch:value-of">
+		&lt;assert test="parent::sch:diagnostic"   diagnostics="bad-parent"
+		>The element &lt;name/> should only appear inside the Schematron element diagnostic.&lt;/assert>
+		&lt;assert test="string-length(normalize-space(@select)) &amp;gt; 0"
+		>The element &lt;name/> must have a value for the attribute select. The value should be an XPath expression.&lt;/assert>
+		&lt;report test="*"
+		>The &lt;name/> element should be empty.&lt;/report>
+	&lt;/rule>
+	&lt;rule context="sch:*">
+		&lt;report test="1=1" diagnostics="spelling"
+		>The &lt;name/> element is not an element from the Schematron 1.5 namespace&lt;/report>
+	&lt;/rule>
+&lt;/pattern>
+
+&lt;pattern name="Schematron Attributes" id="attributes" >
+	&lt;p>These rules specify which elements each attribute can belong to, and what they mean.&lt;/p>
+	&lt;rule context="sch:*">
+		&lt;report test="@abstract and not(self::sch:rule)"
+		>The boolean attribute abstract can only appear on the element rule. An abstract rule can be used to extend other rules.&lt;/report>
+		&lt;report test="@class and not(self::sch:span or self::sch:p)"
+		>The attribute class can only appear on the elements span and p. It gives a name that can be used by CSS stylesheets.&lt;/report>
+		&lt;report test="@context and not(self::sch:rule)"
+		>The attribute context can only appear on the element rule. It is an XPath pattern.&lt;/report>
+		&lt;report test="@defaultPhase and not(self::sch:schema)"
+		>The attribute defaultPhase can only appear on the element schema. It is the id of the phase that will initially be active.&lt;/report>
+		&lt;report test="@diagnostics and not(self::sch:assert or self::sch:report)"
+		>The attribute diagnostics can only appear on the elements report and report. It is the id of some relevent diagnostic or hint.&lt;/report>
+		&lt;report test="@fpi and not(self::sch:schema or self::sch:phase)"
+		>The attribute fpi can only appear on the elements schema and phase. It is an ISO Formal Public Identifier.&lt;/report>
+		&lt;report test="@icon and not(self::sch:schema or self::sch:report or
+		self::sch:diagnostic or self::sch:key or self::sch:p or self::sch:pattern
+		or self::sch:phase or self::sch:report )"
+		>The attribute icon can only appear on the elements schema, report, diagnostic, key, p, pattern, phase and report. It is the URL of a small image. &lt;/report>
+		&lt;report test="@id and not(self::sch:schema or self::sch:report or
+		self::sch:p or self::sch:pattern or self::sch:phase or 
+		self::sch:report or self::sch:rule or self::sch:diagnostic)"
+		>The attribute id can only appear on the elements schema, report, p, pattern, phase, report, rule and diagnostic. It is a name, it should not start with a number or symbol.&lt;/report>
+		&lt;report test="@name and not(self::sch:key or self::sch:pattern)"
+		>The attribute name can only appear on the elements pattern and key.&lt;/report>
+		&lt;report test="@path and not(self::sch:key | self::sch:name)"
+		>The attribute path can only appear on the element key. It is an XPath path.&lt;/report>
+		&lt;report test="@pattern and not(self::sch:active)"
+		>The attribute pattern can only appear on the element active. It gives the id of a pattern that should be activated in that phase.&lt;/report>
+		&lt;report test="@prefix and not(self::sch:ns)"
+		>The attribute prefix can only appear on the element ns.&lt;/report>
+		&lt;report test="@role and not(self::sch:report or self::sch:report or self::sch:rule)"
+		>The attribute role can only appear on the element report, report or rule. It is a simple name, not a phrase.&lt;/report>
+		&lt;report test="@rule and not(self::sch:extends)"
+		>The attribute rule can only appear on the element extends. It is the id of an abstract rule declared elsewhere in the schema.&lt;/report>
+		&lt;report test="@see and not(self::sch:pattern)"
+		>The attribute see can only appear on the element pattern. It is the URL of some documentation for the schema.&lt;/report>
+		&lt;report test="@select and not(self::sch:value-of)"
+		>The attribute select can only appear on the element value-of, with the same meaning as in XSLT. It is an XSLT pattern.&lt;/report>
+		&lt;report test="@schemaVersion and not(self::sch:schema)"
+		>The attribute schemaVersion can only appear on the element schema. It gives the version of the schema.&lt;/report>
+		&lt;report test="@subject and not(self::sch:report or self::sch:report)"
+		>The attribute subject can only appear on the elements report and report. It is an XSLT pattern. &lt;/report>
+		&lt;report test="@test and not(self::sch:assert or self::sch:report)"
+		>The attribute test can only appear on the elements report and report. It is an XPath expression with the XSLT additional functions.&lt;/report>
+		&lt;report test="@uri and not(self::sch:ns)"
+		>The attribute uri can only appear on the element ns. It is a URI.&lt;/report>
+		&lt;report test="@value and not(self::sch:dir)"
+		>The attribute value can only appear on the element dir. It sets the directionality of text: 'rtl' is right-to-left and 'ltr' is left-to-right.&lt;/report>
+		&lt;report test="@version and not(self::sch:schema)"
+		>The attribute version can only appear on the element schema. It gives the version of Schematron required as major number "." minor number.&lt;/report>
+		&lt;assert test="not(attribute::*) or attribute::*[string-length(normalize-space(text()))=0]"
+		>Every attribute on a Schematron element must have a value if it is specified.&lt;/assert>                  
+	&lt;/rule>
+&lt;/pattern>
+&lt;diagnostics>
+	&lt;diagnostic id="spelling"
+	>Check this is not a spelling error. The recognized element names are
+	schema, title, ns, pattern, rule, key, assert, report, diagnostics, diagnostic,
+	name, value-of, emph and dir.&lt;/diagnostic>
+	&lt;diagnostic id="bad-parent"
+	>The element appeared inside a &lt;value-of select="name(parent::*)"/>.&lt;/diagnostic>
+&lt;/diagnostics>
+&lt;/schema>
+
+</pre>
+<h2>Appendix C: W3C XML Schema for Schematron 1.5</h2>
+<pre>
+
+&lt;?xml version="1.0" encoding="UTF-8"?>
+&lt;xsd:schema 
+targetNamespace="http://www.ascc.net/xml/schematron" 
+xmlns:sch="http://www.ascc.net/xml/schematron" 
+xmlns="http://www.ascc.net/xml/schematron" 
+xmlns:xsd="http://www.w3.org/2000/10/XMLSchema" 
+version="+//IDN sinica.edu.tw//SGML W3C XML Schema for Schematron 1.5//EN">
+&lt;xsd:annotation>
+	&lt;xsd:documentation source="http://www.ascc.net/xml/resource/schematron/schematron.html" xml:lang="en"/>
+&lt;/xsd:annotation>
+&lt;xsd:element name="active">
+	&lt;xsd:complexType mixed="true">
+		&lt;xsd:choice minOccurs="0" maxOccurs="unbounded">
+			&lt;xsd:element ref="sch:dir"/>
+			&lt;xsd:element ref="sch:emph"/>
+			&lt;xsd:element ref="sch:span"/>
+		&lt;/xsd:choice>
+		&lt;xsd:attribute name="pattern" type="xsd:ID" use="required"/>
+	&lt;/xsd:complexType>
+&lt;/xsd:element>
+&lt;xsd:element name="assert">
+	&lt;xsd:complexType mixed="true">
+		&lt;xsd:choice minOccurs="0" maxOccurs="unbounded">
+			&lt;xsd:element ref="sch:name"/>
+			&lt;xsd:element ref="sch:emph"/>
+			&lt;xsd:element ref="sch:dir"/>
+			&lt;xsd:element ref="sch:span"/>
+			&lt;xsd:any namespace="##other" processContents="lax"/>
+		&lt;/xsd:choice>
+		&lt;xsd:attribute name="test" type="xsd:string" use="required"/>
+		&lt;xsd:attribute name="role" type="xsd:NMTOKEN"/>
+		&lt;xsd:attribute name="id" type="xsd:ID"/>
+		&lt;xsd:attribute name="diagnostics" type="xsd:IDREFS"/>
+		&lt;xsd:attribute name="icon" type="xsd:uriReference"/>
+		&lt;xsd:attribute name="subject" type="xsd:string" use="default" value="."/>
+		&lt;xsd:anyAttribute namespace="##other" processContents="lax"/>
+		&lt;!--xsd:attribute name="xml:lang" type="xsd:language" -->
+	&lt;/xsd:complexType>
+&lt;/xsd:element>
+&lt;xsd:element name="diagnostic">
+	&lt;xsd:complexType mixed="true">
+		&lt;xsd:choice minOccurs="0" maxOccurs="unbounded">
+			&lt;xsd:element ref="sch:value-of"/>
+			&lt;xsd:element ref="sch:emph"/>
+			&lt;xsd:element ref="sch:dir"/>
+			&lt;xsd:element ref="sch:span"/>
+			&lt;xsd:any namespace="##other" processContents="lax"/>
+		&lt;/xsd:choice>
+		&lt;xsd:attribute name="id" type="xsd:ID" use="required"/>
+		&lt;xsd:attribute name="icon" type="xsd:uriReference"/>
+		&lt;xsd:anyAttribute namespace="##other" processContents="lax"/>
+		&lt;!--xsd:attribute name="xml:lang" type="xsd:language" -->
+	&lt;/xsd:complexType>
+&lt;/xsd:element>
+&lt;xsd:element name="diagnostics">
+	&lt;xsd:complexType>
+		&lt;xsd:sequence>
+			&lt;xsd:element ref="diagnostic" minOccurs="0" maxOccurs="unbounded"/>
+		&lt;/xsd:sequence>
+	&lt;/xsd:complexType>
+&lt;/xsd:element>
+&lt;xsd:element name="dir">
+	&lt;xsd:complexType>
+		&lt;xsd:simpleContent>
+			&lt;xsd:restriction base="xsd:string">
+				&lt;xsd:attribute name="value">
+					&lt;xsd:simpleType>
+						&lt;xsd:restriction base="xsd:NMTOKEN">
+							&lt;xsd:enumeration value="ltr"/>
+							&lt;xsd:enumeration value="rtl"/>
+						&lt;/xsd:restriction>
+					&lt;/xsd:simpleType>
+				&lt;/xsd:attribute>
+			&lt;/xsd:restriction>
+		&lt;/xsd:simpleContent>
+	&lt;/xsd:complexType>
+&lt;/xsd:element>
+&lt;xsd:element name="emph" type="xsd:string"/>
+&lt;xsd:element name="extends">
+	&lt;xsd:complexType>
+		&lt;xsd:attribute name="rule" type="xsd:IDREF" use="required"/>
+	&lt;/xsd:complexType>
+&lt;/xsd:element>
+&lt;xsd:element name="key">
+	&lt;xsd:complexType>
+		&lt;xsd:attribute name="name" type="xsd:NMTOKEN" use="required"/>
+		&lt;xsd:attribute name="path" type="xsd:string" use="required"/>
+		&lt;xsd:attribute name="icon" type="xsd:uriReference"/>
+	&lt;/xsd:complexType>
+&lt;/xsd:element>
+&lt;xsd:element name="name">
+	&lt;xsd:complexType>
+		&lt;xsd:attribute name="path" type="xsd:string" use="default" value="."/>
+	&lt;/xsd:complexType>
+&lt;/xsd:element>
+&lt;xsd:element name="ns">
+	&lt;xsd:complexType>
+		&lt;xsd:attribute name="uri" type="xsd:uriReference" use="required"/>
+		&lt;xsd:attribute name="prefix" type="xsd:NCName"/>
+	&lt;/xsd:complexType>
+&lt;/xsd:element>
+&lt;xsd:element name="p">
+	&lt;xsd:complexType mixed="true">
+		&lt;xsd:choice minOccurs="0" maxOccurs="unbounded">
+			&lt;xsd:element ref="sch:dir"/>
+			&lt;xsd:element ref="sch:emph"/>
+			&lt;xsd:element ref="sch:span"/>
+		&lt;/xsd:choice>
+		&lt;xsd:attribute name="id" type="xsd:ID"/>
+		&lt;xsd:attribute name="class" type="xsd:string"/>
+		&lt;xsd:attribute name="icon" type="xsd:uriReference"/>
+		&lt;xsd:anyAttribute namespace="##other" processContents="lax"/>
+		&lt;!--xsd:attribute name="xml:lang" type="xsd:language" -->
+	&lt;/xsd:complexType>
+&lt;/xsd:element>
+&lt;xsd:element name="pattern">
+	&lt;xsd:complexType>
+		&lt;xsd:sequence>
+			&lt;xsd:element ref="p" minOccurs="0" maxOccurs="unbounded"/>
+			&lt;xsd:element ref="sch:rule" maxOccurs="unbounded"/>
+		&lt;/xsd:sequence>
+		&lt;xsd:attribute name="name" type="xsd:string" use="required"/>
+		&lt;xsd:attribute name="see" type="xsd:uriReference"/>
+		&lt;xsd:attribute name="id" type="xsd:ID"/>
+		&lt;xsd:attribute name="icon" type="xsd:uriReference"/>
+	&lt;/xsd:complexType>
+&lt;/xsd:element>
+&lt;xsd:element name="phase">
+	&lt;xsd:complexType>
+		&lt;xsd:sequence >
+			&lt;xsd:element ref="sch:p" minOccurs="0" maxOccurs="unbounded"/>
+			&lt;xsd:element ref="sch:active" maxOccurs="unbounded"/>
+		&lt;/xsd:sequence>
+		&lt;xsd:attribute name="id" type="xsd:ID" use="required"/>
+		&lt;xsd:attribute name="fpi" type="xsd:string"/>
+		&lt;xsd:attribute name="icon" type="xsd:uriReference"/>
+	&lt;/xsd:complexType>
+&lt;/xsd:element>
+&lt;xsd:element name="report">
+	&lt;xsd:complexType mixed="true">
+		&lt;xsd:choice minOccurs="0" maxOccurs="unbounded">
+			&lt;xsd:element ref="sch:name"/>
+			&lt;xsd:element ref="sch:emph"/>
+			&lt;xsd:element ref="sch:dir"/>
+			&lt;xsd:element ref="sch:span"/>
+			&lt;xsd:any namespace="##other" processContents="lax"/>
+		&lt;/xsd:choice>
+		&lt;xsd:attribute name="test" type="xsd:string" use="required"/>
+		&lt;xsd:attribute name="role" type="xsd:NMTOKEN"/>
+		&lt;xsd:attribute name="id" type="xsd:ID"/>
+		&lt;xsd:attribute name="diagnostics" type="xsd:IDREFS"/>
+		&lt;xsd:attribute name="icon" type="xsd:uriReference"/>
+		&lt;xsd:attribute name="subject" type="xsd:string" use="default" value="."/>
+	&lt;/xsd:complexType>
+&lt;/xsd:element>
+&lt;xsd:element name="rule">
+	&lt;xsd:complexType>
+		&lt;xsd:choice maxOccurs="unbounded">
+			&lt;xsd:element ref="sch:assert"/>
+			&lt;xsd:element ref="sch:report"/>
+			&lt;xsd:element ref="sch:key"/>
+			&lt;xsd:element ref="sch:extends"/>
+		&lt;/xsd:choice>
+		&lt;xsd:attribute name="context" type="xsd:string"/>
+		&lt;xsd:attribute name="abstract" type="xsd:boolean" use="default" value="false"/>
+		&lt;xsd:attribute name="role" type="xsd:NMTOKEN"/>
+		&lt;xsd:attribute name="id" type="xsd:ID"/>
+	&lt;/xsd:complexType>
+&lt;/xsd:element>
+&lt;xsd:element name="schema">
+	&lt;xsd:complexType>
+		&lt;xsd:sequence>
+			&lt;xsd:element ref="sch:title" minOccurs="0"/>
+			&lt;xsd:element ref="sch:ns" minOccurs="0" maxOccurs="unbounded"/>
+			&lt;xsd:element ref="sch:p" minOccurs="0" maxOccurs="unbounded"/>
+			&lt;xsd:element ref="sch:phase" minOccurs="0" maxOccurs="unbounded"/>
+			&lt;xsd:element ref="sch:pattern" maxOccurs="unbounded"/>
+			&lt;xsd:element ref="sch:p" minOccurs="0" maxOccurs="unbounded"/>
+			&lt;xsd:element ref="sch:diagnostics" minOccurs="0"/>
+		&lt;/xsd:sequence>
+		&lt;xsd:attribute name="id" type="xsd:ID"/>
+		&lt;xsd:attribute name="fpi" type="xsd:string"/>
+		&lt;xsd:attribute name="schemaVersion" type="xsd:string"/>
+		&lt;xsd:attribute name="defaultPhase" type="xsd:IDREF"/>
+		&lt;xsd:attribute name="icon" type="xsd:uriReference"/>
+		&lt;xsd:attribute name="version" type="xsd:string" use="default" value="1.5"/>
+		&lt;xsd:anyAttribute namespace="##other" processContents="lax"/>
+		&lt;!--xsd:attribute name="xml:lang" type="xsd:language" -->
+	&lt;/xsd:complexType>
+&lt;/xsd:element>
+&lt;xsd:element name="span">
+	&lt;xsd:complexType>
+		&lt;xsd:simpleContent>
+			&lt;xsd:restriction base="xsd:string">
+				&lt;xsd:attribute name="class" type="xsd:string"/>
+			&lt;/xsd:restriction>
+		&lt;/xsd:simpleContent>
+	&lt;/xsd:complexType>
+&lt;/xsd:element>
+&lt;xsd:element name="title">
+	&lt;xsd:complexType mixed="true">
+		&lt;xsd:choice minOccurs="0" maxOccurs="unbounded">
+			&lt;xsd:element ref="sch:dir"/>
+		&lt;/xsd:choice>
+	&lt;/xsd:complexType>
+&lt;/xsd:element>
+&lt;xsd:element name="value-of">
+	&lt;xsd:complexType>
+		&lt;xsd:attribute name="select" type="xsd:string" use="required"/>
+	&lt;/xsd:complexType>
+&lt;/xsd:element>
+&lt;/xsd:schema>
+
+</pre>
+<h2>Appendix D: EBNF Productions for Paths and Expressions</h2>
+<p>These have been abstracted from the relevant W3C Recommendations,
+which should be treated as the normative sourse. Schematron implementations
+should track the most recent W3C specifications.</p>
+
+<pre>
+
+AbbreviatedAbsoluteLocationPath    
+::=    '//' RelativeLocationPath  
+AbbreviatedRelativeLocationPath    
+::=    RelativeLocationPath '//' Step  
+AbbreviatedStep    
+::=    '.'  | '..'  
+AbbreviatedAxisSpecifier    
+::=    '@'? 
+AbsoluteLocationPath    
+::=    '/' RelativeLocationPath?  | AbbreviatedAbsoluteLocationPath  
+AdditiveExpr    
+::=    MultiplicativeExpr  
+| AdditiveExpr '+' MultiplicativeExpr  
+| AdditiveExpr '-' MultiplicativeExpr  
+AndExpr    
+::=    EqualityExpr  | AndExpr 'and' EqualityExpr  
+Argument    
+::=    Expr 
+AxisSpecifier    
+::=    AxisName '::'  | AbbreviatedAxisSpecifier  
+AxisName    
+::=    'ancestor'  | 'ancestor-or-self'  | 'attribute'  
+| 'child'  | 'descendant'  | 'descendant-or-self'  
+| 'following'  | 'following-sibling'  | 'namespace'  
+| 'parent'  | 'preceding'  | 'preceding-sibling'  | 'self' 
+ChildOrAttributeAxisSpecifier    
+::=    AbbreviatedAxisSpecifier  | ('child' | 'attribute') '::' 
+Digits    
+::=    +  
+EqualityExpr    
+::=    RelationalExpr  
+| EqualityExpr '=' RelationalExpr  
+| EqualityExpr '!=' RelationalExpr  
+<a name="expr" /><b>Expr</b>    
+::=    OrExpr  
+ExprToken    
+::=    '(' | ')' | '' | '.' | '..' | '@' | ',' | '::'  
+| NameTest  | NodeType  | Operator  | FunctionName  | AxisName  
+| Literal  | Number  | VariableReference  
+FilterExpr    
+::=    PrimaryExpr  | FilterExpr Predicate 
+FunctionCall    
+::=    FunctionName '(' ( Argument ( ',' Argument )* )? ')'  
+FunctionName    
+::=   'last' | 'position' | 'ount' | 'id' | 'local-name'
+| 'namespace-uri' | 'name' | 'string' | 'concat' | 'starts-with'
+| 'contains' | 'substring-before' | 'substring-after' | 'substring'
+| 'string-length' | 'normalize-space' | 'translate' | 'boolean'
+| 'not' | 'true' | 'fals' | 'lang' | 'number' | 'sum'
+| 'floor' | 'ceiling' | 'round' | 'document' | 'key'
+| 'format-number' | 'current' 
+| 'system-property' (<i>Caution: system-roperty() available with XSLT 1.1 only</i>) 
+IdKeyPattern    
+::=    'id' '(' Literal ')'  | 'key' '(' Literal ',' Literal ')'  
+LocalPart 
+::=  NCName 
+LocationPath    
+::=    RelativeLocationPath  | AbsoluteLocationPath  
+LocationPathPattern    
+::=    '/' RelativePathPattern?  | '//'? RelativePathPattern  
+Literal    
+::=    '"' * "'"  
+MultiplicativeExpr    
+::=    UnaryExpr  
+| MultiplicativeExpr MultiplyOperator UnaryExpr  
+| MultiplicativeExpr 'div' UnaryExpr  
+| MultiplicativeExpr 'mod' UnaryExpr  
+MultiplyOperator    
+::=    '*'  
+NameTest    
+::=    '*'  | NCName ':' '*'  | QName  
+NCName 
+::=  (Letter | '_') (NCNameChar)* 
+NCNameChar 
+::=  Letter | Digit | '.' | '-' | '_' | CombiningChar | Extender 
+NodeTest    
+::=    NameTest  | NodeType '(' ')'  
+| 'processing-instruction' '(' Literal ')'  
+NodeType    
+::=    'comment'  | 'text'  | 'processing-instruction'  | 'node'  
+Number    
+::=    Digits ('.' Digits?)?  | '.' Digits  
+Operator    
+::=    OperatorName  | MultiplyOperator  
+| '/' | '//' | '|' | '+' | '-' | '=' | '!=' | '<' | '<=' | '>' | '>='  
+OperatorName    
+::=    'and' | 'or' | 'mod' | 'div'  
+PathExpr    
+::=    LocationPath  | FilterExpr  
+| FilterExpr '/' RelativeLocationPath  
+| FilterExpr '//' RelativeLocationPath  
+<a name="pattern" /><b>Pattern</b>    
+::=    LocationPathPattern  | Pattern '|' LocationPathPattern  
+| IdKeyPattern (('/' | '//') RelativePathPattern)?  
+Predicate    
+::=    ''  
+PredicateExpr    
+::=    Expr 
+Prefix 
+::=  NCName 
+PrimaryExpr    
+::=    VariableReference  | '(' Expr ')'  | Literal  
+| Number  | FunctionCall 
+QName 
+::=  (Prefix ':')? LocalPart 
+RelativeLocationPath    
+::=    Step  | RelativeLocationPath '/' Step  
+| AbbreviatedRelativeLocationPath 
+RelativePathPattern    
+::=    StepPattern  
+| RelativePathPattern '/' StepPattern  
+| RelativePathPattern '//' StepPattern  
+RelationalExpr    
+::=    AdditiveExpr  
+| RelationalExpr '<' AdditiveExpr  
+| RelationalExpr '>' AdditiveExpr  
+| RelationalExpr '<=' AdditiveExpr  
+| RelationalExpr '>=' AdditiveExpr  
+S    
+::=    (#x20 | #x9 | #xD | #xA)+ 
+Step    
+::=    AxisSpecifier NodeTest Predicate*  | AbbreviatedStep  
+StepPattern    
+::=    ChildOrAttributeAxisSpecifier NodeTest Predicate*   
+UnaryExpr    
+::=    UnionExpr  | '-' UnaryExpr 
+UnionExpr    
+::=    PathExpr  | UnionExpr '|' PathExpr  
+VariableReference    
+::=    '$' QName  
+</pre>
+<h2>Appendix F: Reference Implementation for Schematron 1.3</h2>
+<p>Following is a reference implementation for an earlier
+version of Schematron. It shows how simple a basic implementation
+can be. For reference and other implementations of Schematron 1.5,
+visit the website <a href="http://www.ascc.net/xml/schematron"
+>http://www.ascc.net/xml/schematron</a></p>
+<pre>
+&lt;?xml version="1.0" ?>
+&lt;!-- Preprocessor for the Schematron XML Schema Language.
+http://www.ascc.net/xml/resource/schematron/schematron.html
+
+Copyright (c) 1999, 2000 Rick Jelliffe and Academia Sinica Computing Center, Taiwan
+
+This software is provided 'as-is', without any express or implied warranty. 
+In no event will the authors be held liable for any damages arising from 
+the use of this software.
+
+Permission is granted to anyone to use this software for any purpose, 
+including commercial applications, and to alter it and redistribute it freely,
+subject to the following restrictions:
+
+1. The origin of this software must not be misrepresented; you must not claim
+that you wrote the original software. If you use this software in a product, 
+an acknowledgment in the product documentation would be appreciated but is 
+not required.
+
+2. Altered source versions must be plainly marked as such, and must not be 
+misrepresented as being the original software.
+
+3. This notice may not be removed or altered from any source distribution.
+
+History: 
+1999-10-18 Created RJ
+1999-10-25 In report and assert should use apply-template not value-of
+	Thanks to James Clark for this fix
+1999-11-2  Add key element
+1999-12-21 Add ns element: thanks Dave Carlisle for the code
+2000-03-26 Add axsl:output and version- well spotted Oliver Becker 
+2000-10-20 Add select to do-all-patterns: thanks Uche Obbuji
+-->
+&lt;xsl:stylesheet
+version="1.0"
+xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
+xmlns:axsl="http://www.w3.org/1999/XSL/TransformAlias">
+
+&lt;xsl:namespace-alias stylesheet-prefix="axsl" result-prefix="xsl"/>
+
+&lt;!-- Category: top-level-element -->
+&lt;xsl:output
+method="xml" 
+omit-xml-declaration="no"
+standalone="yes" 
+indent="yes" />
+
+
+&lt;xsl:template match="schema">
+&lt;axsl:stylesheet version="1.0">
+&lt;axsl:output method="text" />
+
+	&lt;xsl:for-each select="ns">
+		&lt;xsl:attribute 
+		name="{concat(@prefix,':dummy-for-xmlns')}"
+		namespace="{@uri}"/>
+	&lt;/xsl:for-each>
+	&lt;xsl:attribute name="version">1.0&lt;/xsl:attribute>
+	&lt;xsl:apply-templates mode="do-keys" />
+	&lt;axsl:template match='/'>
+		&lt;xsl:value-of select="title" />
+		&lt;xsl:apply-templates mode="do-all-patterns" />
+	&lt;/axsl:template>
+
+	&lt;xsl:apply-templates />
+
+	&lt;axsl:template match="text()" priority="-1">
+		&lt;!-- strip characters -->
+	&lt;/axsl:template>
+&lt;/axsl:stylesheet>
+
+&lt;/xsl:template>
+
+&lt;xsl:template match="pattern" mode="do-all-patterns" >
+&lt;axsl:apply-templates select="/" mode='M{count(preceding-sibling::*)}' />
+&lt;/xsl:template>
+
+&lt;xsl:template match="pattern">
+&lt;xsl:apply-templates />
+
+&lt;axsl:template match="text()" priority="-1" mode="M{count(preceding-sibling::*)}">
+	&lt;!-- strip characters -->
+&lt;/axsl:template>
+&lt;/xsl:template>
+
+&lt;xsl:template match="rule">
+&lt;axsl:template match='{@context}' priority='{4000 - count(preceding-sibling::*)}' mode='M{count(../preceding-sibling::*)}'>
+	&lt;xsl:apply-templates />
+	&lt;axsl:apply-templates mode='M{count(../preceding-sibling::*)}'/>
+&lt;/axsl:template>
+
+&lt;/xsl:template>
+
+&lt;xsl:template match="name" mode="text">
+&lt;xsl:choose>
+	&lt;xsl:when test='@path' >
+		&lt;axsl:value-of select="name({@path})" />
+	&lt;/xsl:when>		
+	&lt;xsl:otherwise>
+		&lt;axsl:value-of select="name(.)" />
+	&lt;/xsl:otherwise>
+&lt;/xsl:choose>
+&lt;/xsl:template>
+
+&lt;xsl:template match="assert">
+&lt;axsl:choose> 
+	&lt;axsl:when test='{@test}'/>
+	&lt;axsl:otherwise>
+		&lt;xsl:if test="@role">(&lt;xsl:value-of select="@role"/>) &lt;/xsl:if>
+In pattern &lt;xsl:value-of select="ancestor::pattern/@name"/>:
+		&lt;xsl:apply-templates mode="text" />
+	&lt;/axsl:otherwise>
+&lt;/axsl:choose> 
+
+&lt;/xsl:template>
+
+&lt;xsl:template match="report">
+&lt;axsl:if test='{@test}'>
+		&lt;xsl:if test="@role">(&lt;xsl:value-of select="@role"/>) &lt;/xsl:if>
+In pattern &lt;xsl:value-of select="ancestor::pattern/@name"/>:
+		&lt;xsl:apply-templates mode="text"/>
+&lt;/axsl:if> 
+&lt;/xsl:template>
+
+&lt;xsl:template match="rule/key" mode="do-keys">
+&lt;axsl:key match="{../@context}" name="@name" path="@use" />
+&lt;/xsl:template>
+
+&lt;xsl:template match="text()" priority="-1" mode="do-keys" >
+&lt;!-- strip characters -->
+&lt;/xsl:template>
+
+&lt;xsl:template match="text()" priority="-1" mode="do-all-patterns">
+&lt;!-- strip characters -->
+&lt;/xsl:template>
+
+&lt;xsl:template match="text()" priority="-1">
+&lt;!-- strip characters -->
+&lt;/xsl:template>
+
+&lt;/xsl:stylesheet>
+</pre>
+<h2>
+Acknowledgements</h2>
+The Schematron was developed as a free software project at the Academia
+Sinica Computing Centre in 1999 and 2000 by the author. I thank the Director,
+Dr. Simon Lin, for his encouragement and support. Also I owe thanks for
+the support and contributions of Professor C.C. Hsieh, Dr Makoto Murata,
+Dr Oliver Becker (architecture), Dr Miloslav Nic (tutorials), Dr David
+Carlisle, Mr James Clark, Mr Adrian Edwards, Mr Uche Ogbuji, 
+Mr Francis Norton, Mr David Pawson,
+Mr Eddie Robertsson,
+Mr Ludvig Svenovius (extends) and the members of the Schematron mail list.
+Other work was performed with sponsorship from GeoTempo Inc., Taipei, 
+Allette Systems, Pty. Ltd. Sydney, and Topologi Pty. Ltd. Sydney.
+<p>This specification is a much updated version of a paper delivered at the 
+Pacific Neighbourhood Consortium/Electronic Cultural Atlas 
+Initiative/Electronic Buddhist Text Initiative joint conference, 
+University of California, Berkeley, Feb. 2000.
+<h2>
+References</h2>
+[1] Private conversation by the author with a Taiwanese MIS professor.
+<p>[2] The Schematron project website is at
+<pre>http://www.ascc.net/xml/resource/schematron/schematron.html</pre>
+A new website to encourage open source contributions is being established
+for full operation 1Q/20001 at
+<pre>http://sourceforge.net/projects/schematron</pre>
+<p>[CIP]
+F.L. Bauer, M. Broy, B. Moller, P. Pepper, M. Wirsing, et al. The Munich Project CIP. Vol. I: The Wide Spectrum Language CIP-L, volume I of Lecture Notes on Computer Science. Springer Verlag, Berlin, Heidelberg, New York, Berlin, 1985.
+
+<p>[deFrancis] The Chinese Language
+<p>[Etessami]
+K. Etessami and M. Yannakakis,
+From Rule-based to Automata-based testing,
+<i>Proceedings of FORTE/PSTV'2000, 20th IFIP Int. Conf. on Formal Description Techniques/Protocol Specification, Testing, and Verification</i>,
+2000,
+<a href="citeseer.nj.nec.com/410961.html"
+>http://citeseer.nj.nec.com/410961.html</a>
+
+<p>[Finkelstein]
+<p>[HTML]
+<p>[LeCarlier]Baudouin Le Charlier and Pierre Flener,
+    Specifications Are Necessarily Informal or: Some More Myths of Formal Methods,
+    <i>The Journal of Systems and Software</i>
+    Vol. 40", No."3",
+    March, 1998
+    <a href="citeseer.nj.nec.com/190011.html"
+    >citeseer.nj.nec.com/190011.html</a>
+<p>[Namespace]
+<p>[SGML]
+<p>[Schemarama]
+<p>[SOX]
+<p>[RDF]
+<p>[RELAX] Murata M.
+<p>[URL]
+<p>[XLink]
+<p>[XML]
+<p>[XML Schema]
+<p>[XSL-FO]
+<p>[XSLT]
+</body>
+</html>

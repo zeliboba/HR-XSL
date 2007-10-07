@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<StockPlan xmlns="http://ns.hr-xml.org/2007-04-15" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://ns.hr-xml.org/2007-04-15
+StockPlan.xsd" validFrom="2002-01-08" validTo="2006-11-08">
+	<Id>
+		<IdValue>SOP2002</IdValue>
+	</Id>
+	<CompanyId>
+		<IdValue>%542201100</IdValue>
+	</CompanyId>
+	<PlanType>Stock Options</PlanType>
+	<Name xml:lang="en">2002 Employee Stock Option Plan</Name>
+	<Description xml:lang="en">2002 Employee Stock Option Plan - Compensation Plan 2002</Description>
+	<Stock>
+		<Id>
+			<IdValue name="CUSIP">554100210</IdValue>
+		</Id>
+		<Symbol>AAA</Symbol>
+		<Exchange>NYSE</Exchange>
+	</Stock>
+	<BlackOutInformation>
+		<Period validFrom="2002-12-01" validTo="2003-01-02"/>                                                                              
+	</BlackOutInformation>
+	<StockOptionInfo>
+		<StockOptionType country="US">Qualified</StockOptionType>               
+		<Ratio>1</Ratio>
+		<QualifiedGrantsAllowed>true</QualifiedGrantsAllowed>
+		<NonQualifiedGrantsAllowed>true</NonQualifiedGrantsAllowed>
+		<QualifiedGrantDefault>Qualified</QualifiedGrantDefault>
+		<StockAppreciationRights>notApplicable</StockAppreciationRights>
+		<MaximumNumberOfShares>2000000</MaximumNumberOfShares>
+		<MinimumNumberToExercise>100</MinimumNumberToExercise>
+		<MaximumNumberToExercise>10000</MaximumNumberToExercise>
+		<BlocksToExercise>100</BlocksToExercise>
+	</StockOptionInfo>
+</StockPlan>

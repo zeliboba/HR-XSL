@@ -1,0 +1,153 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema xmlns="http://ns.hr-xml.org/2007-04-15" xmlns:xsd="http://www.w3.org/2001/XMLSchema" targetNamespace="http://ns.hr-xml.org/2007-04-15" elementFormDefault="qualified" version="2007-04-15">
+	<xsd:annotation>
+		<xsd:documentation>
+"Copyright  The HR-XML Consortium. All Rights Reserved. http://www.hr-xml.org"
+Name: MetricsInterchange.xsd
+Status: Recommendation
+Date this version: 2007-04-15
+Purpose: 
+Author(s): Bill Kerr, Oracle Corporation; Chuck Allen, HR-XML Consortium, Metrics Workgroup.
+Documentation: MetricsInterchange.html
+
+Terms of license can be found in license.txt.
+		
+		</xsd:documentation>
+	</xsd:annotation>
+	<xsd:import namespace="http://www.w3.org/XML/1998/namespace" schemaLocation="../../W3C/xml.xsd"/>
+	<xsd:include schemaLocation="../CPO/IdentifierTypes.xsd"/>
+	<xsd:include schemaLocation="../CPO/Organization.xsd"/>
+	<xsd:include schemaLocation="../CPO/PhysicalLocation.xsd"/>
+	<xsd:element name="MetricsInterchange" type="MetricsInterchangeType"/>
+	<xsd:element name="ReportingData" type="ReportingDataType"/>
+	<xsd:complexType name="MetricsInterchangeType">
+		<xsd:sequence>
+			<xsd:element name="ReportingPeriod" type="ReportingPeriodType"/>
+			<xsd:element name="ReportDescription">
+				<xsd:complexType>
+					<xsd:sequence>
+						<xsd:element name="Name" type="xsd:string" minOccurs="0"/>
+						<xsd:element name="Description" type="xsd:string" minOccurs="0"/>
+					</xsd:sequence>
+				</xsd:complexType>
+			</xsd:element>
+			<xsd:element name="PrincipalRespondentOrganization">
+				<xsd:complexType>
+					<xsd:sequence>
+						<xsd:element ref="Organization"/>
+						<xsd:element name="AdditionalData" type="MetricsAdditionalDataType" minOccurs="0" maxOccurs="unbounded"/>
+					</xsd:sequence>
+				</xsd:complexType>
+			</xsd:element>
+			<xsd:element name="ReportedMetrics" type="ReportedMetricsType" minOccurs="0" maxOccurs="unbounded"/>
+		</xsd:sequence>
+		<xsd:attribute ref="xml:lang"/>
+	</xsd:complexType>
+	<xsd:complexType name="MonetaryValueType">
+		<xsd:simpleContent>
+			<xsd:extension base="xsd:decimal">
+				<xsd:attribute name="currencyCode" type="CurrencyCodeType"/>
+			</xsd:extension>
+		</xsd:simpleContent>
+	</xsd:complexType>
+	<xsd:complexType name="ReportingPeriodType">
+		<xsd:sequence>
+			<xsd:element name="StartDate" type="LocalDateType" minOccurs="0"/>
+			<xsd:element name="EndDate" type="LocalDateType" minOccurs="0"/>
+		</xsd:sequence>
+	</xsd:complexType>
+	<xsd:complexType name="ReportingDataType">
+		<xsd:sequence>
+			<xsd:element name="ReportingCategory" type="xsd:string" minOccurs="0"/>
+			<xsd:element name="Description" type="xsd:string" minOccurs="0"/>
+			<xsd:element name="ReportingPeriod" type="ReportingPeriodType" minOccurs="0"/>
+			<xsd:element name="DataElement" type="DataElementType" maxOccurs="unbounded"/>
+		</xsd:sequence>
+	</xsd:complexType>
+	<xsd:complexType name="DataElementType">
+		<xsd:sequence>
+			<xsd:element name="Id" type="EntityIdType" minOccurs="0"/>
+			<xsd:element name="Description" type="xsd:string" minOccurs="0"/>
+			<xsd:choice>
+				<xsd:element name="MonetaryValue" type="MonetaryValueType"/>
+				<xsd:element name="DataValue" type="xsd:string"/>
+			</xsd:choice>
+			<xsd:element name="DataElementSubType" type="DataElementType" minOccurs="0" maxOccurs="unbounded"/>
+		</xsd:sequence>
+		<xsd:attribute name="type" type="xsd:string"/>
+	</xsd:complexType>
+	<xsd:complexType name="ReportedMetricsType">
+		<xsd:choice>
+			<xsd:element name="ReportedOrganization" maxOccurs="unbounded">
+				<xsd:complexType>
+					<xsd:sequence>
+						<xsd:element name="OrganizationName" type="xsd:string" minOccurs="0"/>
+						<xsd:element name="OrganizationId" type="EntityIdType" minOccurs="0"/>
+						<xsd:element name="RelatedReportedOrganization" type="RelatedReportedOrganizationType" minOccurs="0"/>
+						<xsd:choice>
+							<xsd:element name="IsRespondentOrganization" type="xsd:string" fixed="true"/>
+							<xsd:element name="RelationshipToRespondent" type="xsd:string"/>
+						</xsd:choice>
+						<xsd:element name="ContactInfo" type="OrganizationContactType" minOccurs="0" maxOccurs="unbounded"/>
+						<xsd:element name="OrganizationDescriptors" type="MetricsOrganizationDescriptorsType"/>
+						<xsd:element ref="ReportingData" maxOccurs="unbounded"/>
+					</xsd:sequence>
+				</xsd:complexType>
+			</xsd:element>
+			<xsd:element name="ReportedPerson" maxOccurs="unbounded">
+				<xsd:complexType>
+					<xsd:sequence>
+						<xsd:element name="ReportedPersonDetail" minOccurs="0">
+							<xsd:complexType>
+								<xsd:sequence>
+									<xsd:element ref="PersonName" minOccurs="0"/>
+									<xsd:element name="PersonId" type="EntityIdType" minOccurs="0"/>
+									<xsd:element name="ContactInfo" type="ContactMethodType" minOccurs="0" maxOccurs="unbounded"/>
+									<xsd:element name="DataElement" type="DataElementType" minOccurs="0" maxOccurs="unbounded"/>
+								</xsd:sequence>
+							</xsd:complexType>
+						</xsd:element>
+						<xsd:element ref="ReportingData" maxOccurs="unbounded"/>
+					</xsd:sequence>
+				</xsd:complexType>
+			</xsd:element>
+		</xsd:choice>
+	</xsd:complexType>
+	<xsd:complexType name="MetricsOrganizationDescriptorsType">
+		<xsd:sequence>
+			<xsd:element name="GeographicalScope" type="LocationAreaType" minOccurs="0"/>
+			<xsd:element name="OrganizationSize" minOccurs="0">
+				<xsd:complexType>
+					<xsd:sequence>
+						<xsd:element name="Headcount" type="xsd:string" minOccurs="0"/>
+						<xsd:element name="FiscalSize" minOccurs="0" maxOccurs="unbounded">
+							<xsd:complexType>
+								<xsd:simpleContent>
+									<xsd:extension base="xsd:string">
+										<xsd:attribute name="type" type="xsd:string"/>
+									</xsd:extension>
+								</xsd:simpleContent>
+							</xsd:complexType>
+						</xsd:element>
+					</xsd:sequence>
+				</xsd:complexType>
+			</xsd:element>
+			<xsd:element ref="IndustryCode" minOccurs="0" maxOccurs="unbounded"/>
+			<xsd:element name="DataElement" type="DataElementType" minOccurs="0" maxOccurs="unbounded"/>
+		</xsd:sequence>
+	</xsd:complexType>
+	<xsd:complexType name="MetricsAdditionalDataType">
+		<xsd:simpleContent>
+			<xsd:extension base="xsd:string">
+				<xsd:attribute name="type" type="xsd:string"/>
+			</xsd:extension>
+		</xsd:simpleContent>
+	</xsd:complexType>
+	<xsd:complexType name="RelatedReportedOrganizationType">
+		<xsd:sequence>
+			<xsd:element name="OrganizationName" type="xsd:string" minOccurs="0"/>
+			<xsd:element name="OrganizationId" type="EntityIdType" minOccurs="0"/>
+		</xsd:sequence>
+		<xsd:attribute name="relationship" type="OrganizationRelationshipType"/>
+	</xsd:complexType>
+</xsd:schema>

@@ -1,0 +1,227 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<Assignment xmlns="http://ns.hr-xml.org/2007-04-15" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://ns.hr-xml.org/2007-04-15 
+Assignment.xsd" assignmentStatus="active" xml:lang="en-gb">
+	<AssignmentId validFrom="2004-07-10" validTo="2005-03-01" idOwner="XYZ Staffing">
+		<IdValue name="Assignment number">45789A2297P2</IdValue>
+	</AssignmentId>
+	<ReferenceInformation>
+		<StaffingCustomerId validFrom="notKnown" validTo="notKnown" idOwner="XYZ Staffing">
+			<IdValue name="Customer Number">45789</IdValue>
+		</StaffingCustomerId>
+		<StaffingCustomerOrgUnitId validFrom="notKnown" validTo="notKnown" idOwner="ABC Company">
+			<IdValue name="Distribution Centre">DC1590</IdValue>
+		</StaffingCustomerOrgUnitId>
+		<OrderId validFrom="notKnown" validTo="notKnown" idOwner="XYZ Staffing">
+			<IdValue name="Order Number">A2297</IdValue>
+		</OrderId>
+		<HumanResourceId validFrom="notKnown" validTo="notKnown" idOwner=" XYZ Staffing">
+			<IdValue name="Employee Number">32529983</IdValue>
+		</HumanResourceId>
+		<PositionId validFrom="notKnown" validTo="notKnown" idOwner=" XYZ Staffing">
+			<IdValue name="Position Number">A2297 P2</IdValue>
+		</PositionId>
+		<BillToEntityId validFrom="notKnown" validTo="notKnown" idOwner=" XYZ Staffing">
+			<IdValue name="Accounting"> Accounts Payable </IdValue>
+		</BillToEntityId>
+	</ReferenceInformation>
+	<CustomerReportingRequirements>
+		<SupervisorName>Howard Wilkes</SupervisorName>
+		<PurchaseOrderNumber>XYZ071304</PurchaseOrderNumber>
+		<DepartmentCode>DC1590</DepartmentCode>
+		<DepartmentName>Shipping and Receiving</DepartmentName>
+		<LocationName>Dunlop Distribution</LocationName>
+		<CustomerJobCode>SR1123</CustomerJobCode>
+	</CustomerReportingRequirements>
+	<Rates rateType="bill" rateStatus="agreed">
+		<ExternalRateSetId validFrom="2003-01-09" validTo="2005-08-30" idOwner="ABC Company">
+			<IdValue name="Master Contract Number">DCFA0032</IdValue>
+		</ExternalRateSetId>
+		<Amount rateAmountPeriod="hourly" currency="GBP">8.79</Amount>
+		<Class>Regular</Class>
+		<StaffingShiftId validFrom="notKnown" validTo="notKnown" idOwner="ABC Company">
+			<IdValue name="Day Shift">D85</IdValue>
+		</StaffingShiftId>
+		<StartDate>2003-01-09</StartDate>
+	</Rates>
+	<StaffingShift shiftPeriod="daily">
+		<Id validFrom="notKnown" validTo="notKnown" idOwner="ABC Company">
+			<IdValue name="Day Shift">D85</IdValue>
+		</Id>
+		<Name>Standard Day Shift</Name>
+		<Hours>9.0</Hours>
+		<StartTime>08:00:00</StartTime>
+		<EndTime>17:00:00</EndTime>
+		<TypeHours>Regular Hours</TypeHours>
+		<Comment>One hour lunch from 1200 to 1300</Comment>
+		<ExternalStaffingShiftSetId validFrom="notKnown" validTo="notKnown" idOwner="ABC Company">
+			<IdValue name="Central Locations">Warehouse</IdValue>
+		</ExternalStaffingShiftSetId>
+	</StaffingShift>
+	<AssignmentDateRange>
+		<StartDate>2004-07-13</StartDate>
+		<ExpectedEndDate>2005-03-01</ExpectedEndDate>
+		<FlexibilityMinDate>2004-07-10</FlexibilityMinDate>
+		<FlexibilityMaxDate>2005-03-15</FlexibilityMaxDate>
+		<ProbationaryPeriod unitOfMeasure="days">30</ProbationaryPeriod>
+		<SuspensionPeriod>
+			<StartDate>2004-07-10</StartDate>
+			<EndDate>2004-07-13</EndDate>
+			<Comments>Replaced person not leaving until the 13th</Comments>
+		</SuspensionPeriod>
+		<EffectiveDate>2004-03-15</EffectiveDate>
+	</AssignmentDateRange>
+	<ContractInformation contractType="human resource" contractStatus="signed">
+		<ContractId validFrom="2004-07-10" validTo="2004-07-10" idOwner="XYZ Staffing">
+			<IdValue name="Employee Contract">Sanchez037</IdValue>
+		</ContractId>
+		<LegalInformation>Renewable as needed up to one year from Start date</LegalInformation>
+		<ContractVersion>1</ContractVersion>
+		<ContractVersionDate>2004-07-10</ContractVersionDate>
+		<StaffType>Contract</StaffType>
+		<LocalContractRequirements xml:lang="en-gb">
+			<WorkSite>
+				<WorkSiteName>Dunlop Distribution</WorkSiteName>
+				<WorkSiteId validFrom="notKnown" validTo="notKnown" idOwner="XYZ Staffing">
+					<IdValue>DD 1334</IdValue>
+				</WorkSiteId>
+				<Details xml:lang="en-gb" type="String">String</Details>
+				<PostalAddress type="undefined">
+					<CountryCode>GB</CountryCode>
+					<PostalCode>LE5 5LY</PostalCode>
+					<Region>Midlands</Region>
+					<Municipality>Leicester</Municipality>
+					<DeliveryAddress>
+						<AddressLine>Dunlop Business Centre</AddressLine>
+						<StreetName>Evington Valley Road</StreetName>
+					</DeliveryAddress>
+					<Recipient>
+						<PersonName>
+							<FormattedName>Howard Wilkes</FormattedName>
+						</PersonName>
+						<AdditionalText>office just inside loading dock 2</AdditionalText>
+					</Recipient>
+				</PostalAddress>
+				<TravelDirections xml:lang="en-gb"> From Jct 21, M1 and M69, turn onto A5460, at junction of A563, Ring Road South. Turn left and follow road, crossing roundabout onto A563, Ring Road North. Drive to next island, cross A50 roundabout onto A563, follow road to next roundabout, passing the Leicester Water Centre. At the next roundabout turn right onto Evington Valley Road and continue to the Dunlop Business Centre</TravelDirections>
+				<ParkingInstructions xml:lang="en-us">Employee car park on south side of warehouse</ParkingInstructions>
+				<WorkSiteEnvironment>
+					<EnvironmentName>Distribution Centre</EnvironmentName>
+					<EnvironmentId validFrom="notKnown" validTo="notKnown" idOwner="XYZ Staffing">
+						<IdValue name="Midlands DC">Warehouse</IdValue>
+					</EnvironmentId>
+					<Description xml:lang="en-us">32000 square foot building</Description>
+					<Considerations xml:lang="en-us">
+						<General>non air-conditioned warehouse</General>
+						<Physical>Narrow aisles for stock, open area for shipping and receiving</Physical>
+						<SafetyEquipment suppliedByOrganization="0">back belt</SafetyEquipment>
+						<DressCode suppliedByOrganization="1">Business Casual</DressCode>
+						<UserArea/>
+					</Considerations>
+					<UserArea/>
+				</WorkSiteEnvironment>
+				<UserArea/>
+			</WorkSite>
+			<StartStaffingShiftId validFrom="2003-09-01" validTo="2005-08-30" idOwner="ABC Company">
+				<IdValue name="Day Shift">DC85</IdValue>
+			</StartStaffingShiftId>
+			<ContractLegalReason>
+				<LocalContractType>customer</LocalContractType>
+				<RecourseType>
+					<Code>MTSL</Code>
+					<Description>Mid-Term sick leave</Description>
+				</RecourseType>
+				<ContractReason>Replacing individual who will be undergoing surgery and expects a 6-9 month recovery period</ContractReason>
+				<ReplacedPerson>
+					<PersonName>
+						<FormattedName>Samuel Adams</FormattedName>
+						<PreferredGivenName>Sick Sammy</PreferredGivenName>
+					</PersonName>
+					<Position>Shipping and Receiving Clerk</Position>
+				</ReplacedPerson>
+			</ContractLegalReason>
+			<CompensationReference>
+				<Code>SR1123</Code>
+				<Description>May be eligible for ₤.50 per hour increase after probationary period with high performance marks</Description>
+			</CompensationReference>
+			<SupplierSignature>
+				<WrittenBy>
+					<FormattedName>Agatha Admin </FormattedName>
+				</WrittenBy>
+				<SignedBy>
+					<FormattedName>Sally Supplier</FormattedName>
+				</SignedBy>
+				<Date>2004-07-10</Date>
+			</SupplierSignature>
+			<CustomerSignature>
+				<SignedBy>
+					<FormattedName>Cathy Customer</FormattedName>
+				</SignedBy>
+				<Date>2004-07-10</Date>
+			</CustomerSignature>
+			<PositionCharacteristics>
+				<PositionTitle>Shipping Clerk</PositionTitle>
+				<PositionStatus>
+					<Code>Active</Code>
+					<Description>Position active and open req is filled</Description>
+				</PositionStatus>
+				<PositionLevel>G9</PositionLevel>
+				<PositionCoefficient>String</PositionCoefficient>
+				<PositionSpecificCondition>
+					<ConditionCode>HL50</ConditionCode>
+					<ConditionDescription>Lifting Required</ConditionDescription>
+					<ConditionValue>up to 50 lbs</ConditionValue>
+				</PositionSpecificCondition>
+			</PositionCharacteristics>
+			<UserArea/>
+		</LocalContractRequirements>
+		<FrameAgreementInfo>
+			<DocumentId validFrom="2004-09-01" validTo="2004-08-30" idOwner="XYZ Staffing">
+				<IdValue name="ABC-XYZ DC">FA0905DC</IdValue>
+			</DocumentId>
+			<DocumentVersion>Version 2.5</DocumentVersion>
+			<ValidityDateRange>
+				<StartDate>2003-09-01</StartDate>
+				<EndDate>2005-08-30</EndDate>
+			</ValidityDateRange>
+			<DocumentName>XYZ@ABC Midlands DC</DocumentName>
+			<DocumentType>regional</DocumentType>
+			<StaffingOrgContact typeOfOrganization="Customer">
+				<PersonName>
+					<FormattedName>Cathy Customer</FormattedName>
+				</PersonName>
+				<ContactMethod>
+					<Use>business</Use>
+					<Location>office</Location>
+					<WhenAvailable>Weekdays, business hours</WhenAvailable>
+					<Telephone>
+						<FormattedNumber> 00 44 (0) 1706 359933 </FormattedNumber>
+					</Telephone>
+					<Fax>
+						<FormattedNumber> 00 44 (0) 1706 358835 </FormattedNumber>
+					</Fax>
+					<InternetEmailAddress>cathyc@dunlapcentre.co.uk</InternetEmailAddress>
+					<InternetWebAddress>http://dunlapcentre.co.uk</InternetWebAddress>
+					<PostalAddress type="undefined">
+						<CountryCode>GB</CountryCode>
+						<PostalCode> OL12 6BZ </PostalCode>
+						<Region>UK</Region>
+						<Municipality>Manchester</Municipality>
+						<DeliveryAddress>
+							<StreetName>Dell Road</StreetName>
+							<BuildingNumber>Jape One Business Centre</BuildingNumber>
+							<Unit>Office Suite F6</Unit>
+						</DeliveryAddress>
+						<Recipient>
+							<PersonName>
+								<FormattedName>Cathy Customer</FormattedName>
+							</PersonName>
+							<AdditionalText>Billing contact</AdditionalText>
+							<OrganizationName>ABC Logistics</OrganizationName>
+						</Recipient>
+					</PostalAddress>
+				</ContactMethod>
+			</StaffingOrgContact>
+		</FrameAgreementInfo>
+	</ContractInformation>
+	<UserArea/>
+</Assignment>

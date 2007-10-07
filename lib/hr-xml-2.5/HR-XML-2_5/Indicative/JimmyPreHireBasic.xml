@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Many times the intention of hiring an employee needs to be sent to
+     a third party.  The person is technically not an employee, but information
+     needs to be sent ahead of time.  Typically, this is so that the third party
+     can meet contractual obligations (e.g. allow the employee to do online benefit
+     enrollment on their first day of work.
+     
+     The <ProposedHireInfo> element is used to indicate when they are expected to
+     become an employee.  Notice that the <IsEmployed> status is set to false, as
+     the potential employee has not yet been 'hired'.
+
+
+	Scenario: This XML document represents a bare boned information exchange.  Merely just
+	reflecting the intention to have the person become an employee.  See example
+	JimmyPreHireDetailed.xml for a document where the employee details are sent along
+	with the propsed information (i.e. need information in advance to do eligibility calculations).
+	
+	WARNING:  EmploymentInfo/HireInfo should not be sent as they have not been hired!  That is the
+	          purpose of the <ProposedHireInfo> node - to model the intention of becoming an employee
+	          without stating that they actually have!  HireInfo would typically be sent when they
+	          have actually become and employee.
+-->
+<IndicativeBatch xmlns="http://ns.hr-xml.org/2007-04-15" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://ns.hr-xml.org/2007-04-15
+ IndicativeBatch.xsd">
+	<TransactionType>Change</TransactionType>
+	<CreateDate>2004-09-16</CreateDate>
+	<BaselineDate>2004-09-16</BaselineDate>
+	<IndicativeData>
+		<Employer>
+			<OrganizationId>
+				<IdValue>12345</IdValue>
+			</OrganizationId>
+		</Employer>
+		<Employee>
+			<PersonInfo>
+				<!-- For now, using a legal id for identification (no employee id yet) -->
+				<PersonLegalId idOwner="US:SSA">
+					<IdValue name="SSN">555-11-1111</IdValue>
+				</PersonLegalId>
+			</PersonInfo>
+			<EmploymentInfo>
+				<IsEmployed>false</IsEmployed>
+				<ProposedHireInfo>
+					<ExpectedStartDate>2004-10-01</ExpectedStartDate>
+				</ProposedHireInfo>
+			</EmploymentInfo>
+		</Employee>
+	</IndicativeData>
+</IndicativeBatch>

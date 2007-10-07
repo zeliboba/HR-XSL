@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema xmlns="http://ns.hr-xml.org/2007-04-15" xmlns:xsd="http://www.w3.org/2001/XMLSchema" targetNamespace="http://ns.hr-xml.org/2007-04-15" elementFormDefault="qualified" version="2007-04-15">
+
+	<xsd:include schemaLocation="../CPO/IdentifierTypes.xsd"/>
+	<xsd:include schemaLocation="../CPO/ContactMethod.xsd"/>
+	<xsd:include schemaLocation="../CPO/UserArea.xsd"/>
+	
+	<xsd:complexType name="IndOrganizationalInfoType">
+		<xsd:sequence>
+			<xsd:element name="Organization" type="IndEmployeeOrganizationRefType" minOccurs="0" maxOccurs="unbounded"/>
+			<xsd:element name="OrganizationalUnit" type="IndEmployeeOrganizationalUnitRefType" minOccurs="0" maxOccurs="unbounded"/>
+			<xsd:element name="WorkLocation" type="IndEmployeeWorkSiteRefType" minOccurs="0" maxOccurs="unbounded"/>
+			<xsd:element name="UserArea" type="UserAreaType" minOccurs="0"/>
+		</xsd:sequence>
+	</xsd:complexType>
+
+	<xsd:complexType name="IndEmployeeWorkSiteRefType">
+		<xsd:sequence>
+			<xsd:element name="Name" type="xsd:string" minOccurs="0"/>
+			<xsd:element name="Id" type="EntityIdType" minOccurs="0"/>
+			<xsd:element name="PostalAddress" type="PostalAddressType" minOccurs="0"/>
+		</xsd:sequence>
+		<xsd:attribute name="validFrom" type="LocalDateType" use="optional"/>
+		<xsd:attribute name="validTo" type="LocalDateType" use="optional"/>
+		<xsd:attribute name="allocationPercentage" type="xsd:decimal"/>
+	</xsd:complexType>
+
+	<xsd:complexType name="IndOrganizationRefType">
+		<xsd:sequence>
+			<xsd:element name="OrganizationName" type="xsd:string" minOccurs="0"/>
+			<xsd:element name="OrganizationId" type="EntityIdType" minOccurs="0"/>
+			<xsd:element name="TaxId" type="EntityIdType" minOccurs="0"/>
+			<xsd:element name="LegalId" type="EntityIdType" minOccurs="0"/>
+		</xsd:sequence>
+	</xsd:complexType>
+
+	<xsd:complexType name="IndEmployeeOrganizationRefType">
+		<xsd:complexContent>
+			<xsd:extension base="IndOrganizationRefType">
+				<xsd:attribute name="validFrom" type="LocalDateType" use="optional"/>
+				<xsd:attribute name="validTo" type="LocalDateType" use="optional"/>
+			</xsd:extension>
+		</xsd:complexContent>
+	</xsd:complexType>
+
+	<xsd:complexType name="IndEmployeeOrganizationalUnitRefType">
+		<xsd:sequence>
+			<xsd:element name="OrganizationalUnitName" type="xsd:string" minOccurs="0"/>
+			<xsd:element name="OrganizationalUnitId" type="EntityIdType" minOccurs="0"/>
+			<xsd:element name="AccountingCode" type="OrgAccountingCodeType" minOccurs="0"/>
+		</xsd:sequence>
+		<xsd:attribute name="validFrom" type="LocalDateType" use="optional"/>
+		<xsd:attribute name="validTo" type="LocalDateType" use="optional"/>
+	</xsd:complexType>
+
+	<xsd:complexType name="OrgAccountingCodeType">
+		<xsd:simpleContent>
+			<xsd:extension base="xsd:string">
+				<xsd:attribute name="description" type="xsd:string"/>
+				<xsd:attribute name="validFrom" type="LocalDateType" use="optional"/>
+				<xsd:attribute name="validTo" type="LocalDateType" use="optional"/>
+			</xsd:extension>
+		</xsd:simpleContent>
+	</xsd:complexType>
+
+</xsd:schema>

@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+    License information for this file is provided in LICENSE.TXT
+    For support, more information, or to report implementation bugs, 
+    please contact the Open Applications Group at xml@openapplications.org 
+     
+    ** Revision: 8.0 **
+    ** Date: 05 April 2002 **
+    Open Applications Group Sample XML Data
+    Copyright 1998-2002, All Rights Reserved
+    
+    Name: ConfirmBOD.xml
+-->
+<ConfirmBOD xmlns="http://www.openapplications.org/oagis" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.openapplications.org/oagis ../BODs/ConfirmBOD.xsd" revision="8.0" environment="Production" lang="en-US">
+        <ApplicationArea>
+                <Sender>
+                        <LogicalId>String</LogicalId>
+                        <Component>String</Component>
+                        <Task>String</Task>
+                        <ReferenceId>String</ReferenceId>
+                        <Confirmation>0</Confirmation>
+                        <AuthorizationId>String</AuthorizationId>
+                </Sender>
+                <CreationDateTime>2001-12-17T09:30:47-05:00</CreationDateTime>
+                <Signature qualifyingAgency="String"/>
+                <BODId>String</BODId>
+                <UserArea/>
+        </ApplicationArea>
+        <DataArea>
+                <Confirm/>
+                <BOD>
+                        <Header>
+                                <OriginalApplicationArea>
+                                        <Sender>
+                                                <LogicalId>String</LogicalId>
+                                                <Component>String</Component>
+                                                <Task>String</Task>
+                                                <ReferenceId>String</ReferenceId>
+                                                <Confirmation>0</Confirmation>
+                                                <AuthorizationId>String</AuthorizationId>
+                                        </Sender>
+                                        <CreationDateTime>2001-12-17T09:30:47-05:00</CreationDateTime>
+                                        <Signature qualifyingAgency="String"/>
+                                        <BODId>String</BODId>
+                                        <UserArea/>
+                                </OriginalApplicationArea>
+                                <OriginalBODReference>
+                                        <DocumentIds>
+                                                <DocumentId>
+                                                        <Id>String</Id>
+                                                        <Revision>String</Revision>
+                                                </DocumentId>
+                                        </DocumentIds>
+                                        <DocumentDate>2002-04-05</DocumentDate>
+                                        <Description lang="en-us" owner="String">String</Description>
+                                        <Name lang="en-us">String</Name>
+                                        <Status>
+                                                <Code>String</Code>
+                                                <Description lang="en-us" owner="String">String</Description>
+                                                <Change>
+                                                        <From>String</From>
+                                                        <To>String</To>
+                                                        <ChangeDate>2002-04-05</ChangeDate>
+                                                        <Description lang="en-us" owner="String">String</Description>
+                                                        <UserArea/>
+                                                </Change>
+                                                <UserArea/>
+                                        </Status>
+                                        <Usage>String</Usage>
+                                        <Note lang="en-us" author="String" entryDateTime="2002-04-05T00:00:00Z">String</Note>
+                                        <UserArea/>
+                                </OriginalBODReference>
+                                <BODSuccess/>
+                        </Header>
+                        <NounOutcome>
+                                <DocumentIds>
+                                        <DocumentId>
+                                                <Id>String</Id>
+                                                <Revision>String</Revision>
+                                        </DocumentId>
+                                </DocumentIds>
+                                <NounSuccess/>
+                        </NounOutcome>
+                </BOD>
+        </DataArea>
+</ConfirmBOD>

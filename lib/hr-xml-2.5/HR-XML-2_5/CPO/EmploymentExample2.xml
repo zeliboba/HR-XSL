@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmploymentHistory xmlns="http://ns.hr-xml.org/2007-04-15" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://ns.hr-xml.org/2007-04-15
+EmploymentHistory.xsd">
+	<EmployerOrg employerOrgType="soleEmployer">
+		<EmployerOrgName>Sally's Contact Company</EmployerOrgName>
+		<PositionHistory positionType="directHire">
+			<Title>Supervisor</Title> 
+			<OrgName>
+				<OrganizationName>Sally's Contact Company</OrganizationName>
+			</OrgName>
+			<Description></Description>
+			<StartDate>
+				 <AnyDate>1993-03-01</AnyDate>
+			</StartDate>
+			<EndDate>
+				<AnyDate>1996-03-01</AnyDate>
+			</EndDate>
+			<Compensation>
+				<EndingCompensation intervalType="yearly" currency="USD">38K</EndingCompensation>
+			</Compensation>
+			<Verification>
+				<ContactInfo>
+					<PersonName>
+						<FormattedName>Sally's Contact Name</FormattedName>							</PersonName>
+					<ContactMethod>
+						<Location>office</Location>
+						<Telephone>
+							<FormattedNumber>555-555-5555</FormattedNumber>
+						</Telephone>
+						<PostalAddress type="undefined">
+							<CountryCode>US</CountryCode>
+							<PostalCode>60434</PostalCode>
+							<Region>IL</Region>
+							<Municipality>Joliet</Municipality>
+							<DeliveryAddress>
+								<AddressLine>PO Box 789</AddressLine>
+							</DeliveryAddress>
+						</PostalAddress>
+					</ContactMethod>
+				</ContactInfo>
+				<ReasonForLeaving>None</ReasonForLeaving>
+				<PermissionToContact>true</PermissionToContact>
+				<VerifyEmployment>false</VerifyEmployment>
+				<EligibleForRehire>false</EligibleForRehire>
+				<AttendanceRating>
+					<NumericValue>8</NumericValue>
+				</AttendanceRating>
+				<OverallPerformanceRating>
+					<NumericValue>9</NumericValue>
+				</OverallPerformanceRating>
+				<QuestionAnswerPair>
+					<Question>Have you ever received any reprimands?</Question>
+					<Answer>Yes</Answer>
+				</QuestionAnswerPair>
+				<QuestionAnswerPair>
+					<Question> What was the nature of the reprimands?</Question>
+					<Answer>The 1st occurrance,I vandalized the bosses car. The 2nd time was for trashing his office.</Answer>
+				</QuestionAnswerPair>
+			</Verification>
+		</PositionHistory>
+	</EmployerOrg>
+</EmploymentHistory>

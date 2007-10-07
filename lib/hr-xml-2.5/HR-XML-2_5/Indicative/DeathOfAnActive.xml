@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--Sample Name: Death of an Active Employee-->
+<!--Description:  This xml file is used to exchange the basic data for the death of an active employee.   In this example, Jim Johnson died while he was still an active employee.  Since the employee was still active we also need to transmit termination data to support downstream systems.  The first indicator of a death in the schema is that the DateofDeath tied to PersonalInfo is populated.  In addition, the termination REASON of 'DEATH' signifies why we are sending the related termination dates.  The termination date in this case is equal to the date of death. The LastDayWorked is 4 days prior to the death date to signifiy that Jim was absent from work four days prior to his death.  In addition, the LastDayPaid is set at 3 and a half weeks after his LastDayWorked to show that Jim had vaction time banked up that would need to be incorporated into benefits or final compensation calculations.  -->
+<!--Assumptions:  We assume the receiving system already has Jim Johnsonon their system and would either use SSN or empl_ID to identify for whom the change was made.  We also assume that all other data for Jim is correct on the receiving system and that this document is only transmitting those elements that have changed.  In this case, only information directly impacted by the death.-->
+<IndicativeBatch xmlns="http://ns.hr-xml.org/2007-04-15" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://ns.hr-xml.org/2007-04-15  IndicativeBatch.xsd">
+	<TransactionType>Change</TransactionType>
+	<CreateDate>2004-06-15</CreateDate>
+	<OriginatorId idOwner="Maypole Electric">
+		<IdValue name="System Name">HRMS System Production</IdValue>
+	</OriginatorId>
+	<OriginatorName>Maypole Electric</OriginatorName>
+	<BaselineDate>2004-06-15</BaselineDate>
+	<RecipientId>
+		<IdValue>0RECEIVE</IdValue>
+	</RecipientId>
+	<RecipientName>Receiving Company Inc  Benefits System</RecipientName>
+	<IndicativeData>
+		<Employer>
+			<OrganizationId>
+				<IdValue>0873055</IdValue>
+			</OrganizationId>
+		</Employer>
+		<Employee>
+			<PersonInfo>
+				<PersonLegalId idOwner="US">
+					<IdValue name="SSN">522-21-1234</IdValue>
+				</PersonLegalId>
+				<PersonName>
+					<GivenName>Jim</GivenName>
+					<FamilyName>Johnson</FamilyName>
+				</PersonName>
+				<DateOfDeath>2004-05-24</DateOfDeath>
+			</PersonInfo>
+			<EmployeeInfo>
+				<EmployeeId>
+					<IdValue name="emp_ID">8878987</IdValue>
+				</EmployeeId>
+			</EmployeeInfo>
+			<EmploymentInfo>
+				<Employment>
+					<TerminationInfo>
+						<TerminationReason>DEATH</TerminationReason>
+						<TerminationDate>2004-05-24</TerminationDate>
+						<LastDateWorked>2004-05-20</LastDateWorked>
+						<LastDatePaid>2004-06-15</LastDatePaid>
+					</TerminationInfo>
+				</Employment>
+			</EmploymentInfo>
+		</Employee>
+	</IndicativeData>
+</IndicativeBatch>

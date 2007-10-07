@@ -1,0 +1,409 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EPMResult xmlns="http://ns.hr-xml.org/2007-04-15" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://ns.hr-xml.org/2007-04-15
+ EPMResult.xsd">
+	<ResultDate>2006-07-30</ResultDate>
+	<AppraisalSubject>
+		<PersonId idOwner="Notarealcorp, Inc.">
+			<IdValue name="employee Id">4871-1810</IdValue>
+		</PersonId>
+		<PersonName>
+			<GivenName>John</GivenName>
+			<FamilyName>Smith</FamilyName>
+		</PersonName>
+	</AppraisalSubject>
+	<!-- A regularly scheduled annual review for John Smith -->
+	<ReasonCode>
+		<StandardValue>scheduled</StandardValue>
+	</ReasonCode>
+	<ScheduleType>
+		<StandardValue>annual</StandardValue>
+	</ScheduleType>
+	<OverallRating>
+		<Score>
+			<NumericValue>3.6</NumericValue>
+		</Score>
+	</OverallRating>
+	<!-- Begin objectives section -->
+	<ObjectivesSection>
+		<!-- Overall rating within objectives section -->
+		<SectionSummaryResult>
+			<Weight description="percent">40</Weight>
+			<Score>
+				<NumericValue>3</NumericValue>
+			</Score>
+		</SectionSummaryResult>
+		<!-- Begin breakout of objectives -->
+		<ObjectiveSingleResult>
+			<ObjectiveDescription>Increase dept sales by 25.</ObjectiveDescription>
+			<IndividualRaterScore>
+				<RaterId>
+					<IdValue>93481-88-011</IdValue>
+				</RaterId>
+				<Score>
+					<NumericValue>3</NumericValue>
+				</Score>
+				<Comments>I increased dept sales by 24 percent</Comments>
+			</IndividualRaterScore>
+			<IndividualRaterScore>
+				<RaterId>
+					<IdValue>93481-88-012</IdValue>
+				</RaterId>
+				<Score>
+					<NumericValue>2</NumericValue>
+				</Score>
+				<Comments>He only increased dept sales by 24 percent.</Comments>
+			</IndividualRaterScore>
+			<IndividualRaterScore>
+				<RaterId>
+					<IdValue>93481-88-013</IdValue>
+				</RaterId>
+				<Comments>Almost made the 25 percent.</Comments>
+			</IndividualRaterScore>
+		</ObjectiveSingleResult>
+		<!-- Next individual objective -->
+		<ObjectiveSingleResult>
+			<ObjectiveDescription>Increase product sales by 50.</ObjectiveDescription>
+			<IndividualRaterScore>
+				<RaterId>
+					<IdValue>93481-88-011</IdValue>
+				</RaterId>
+				<Score>
+					<NumericValue>4</NumericValue>
+				</Score>
+				<Comments>I increased product sales by 50 percent.</Comments>
+			</IndividualRaterScore>
+			<IndividualRaterScore>
+				<RaterId>
+					<IdValue>93481-88-012</IdValue>
+				</RaterId>
+				<Score>
+					<NumericValue>4</NumericValue>
+				</Score>
+				<Comments>He increased product sales by 50 percent.</Comments>
+			</IndividualRaterScore>
+			<IndividualRaterScore>
+				<RaterId>
+					<IdValue>93481-88-013</IdValue>
+				</RaterId>
+				<Comments>A tremendous contribution to our sales growth.</Comments>
+			</IndividualRaterScore>
+		</ObjectiveSingleResult>
+	</ObjectivesSection>
+	<!-- Begin competencies rating section -->
+	<CompetencySection>
+		<!-- Overall competencies rating. -->
+		<SectionSummaryResult>
+			<Description>Competency Overall Rating</Description>
+			<Weight description="percentage">60</Weight>
+			<Score>
+				<NumericValue>4</NumericValue>
+			</Score>
+		</SectionSummaryResult>
+		<!-- Detailed result for Communication Competency -->
+		<CompetencySingleResult>
+			<IndividualRaterScore>
+				<RaterId>
+					<IdValue>93481-88-011</IdValue>
+				</RaterId>
+				<Score>
+					<NumericValue>3</NumericValue>
+				</Score>
+			</IndividualRaterScore>
+			<IndividualRaterScore>
+				<RaterId>
+					<IdValue>93481-88-012</IdValue>
+				</RaterId>
+				<Score>
+					<NumericValue>3</NumericValue>
+				</Score>
+			</IndividualRaterScore>
+			<CompetencyAssessed>
+				<CompetencyName>Communication</CompetencyName>
+			</CompetencyAssessed>
+		</CompetencySingleResult>
+		<!-- Detailed result for Leadership Competency -->
+		<CompetencySingleResult>
+			<IndividualRaterScore>
+				<RaterId>
+					<IdValue>93481-88-011</IdValue>
+				</RaterId>
+				<Score>
+					<NumericValue>4</NumericValue>
+				</Score>
+			</IndividualRaterScore>
+			<IndividualRaterScore>
+				<RaterId>
+					<IdValue>93481-88-012</IdValue>
+				</RaterId>
+				<Score>
+					<NumericValue>4</NumericValue>
+				</Score>
+			</IndividualRaterScore>
+			<CompetencyAssessed>
+				<CompetencyName>Leadership</CompetencyName>
+			</CompetencyAssessed>
+		</CompetencySingleResult>
+		<!-- Detailed result for Teamwork Competency -->
+		<CompetencySingleResult>
+			<IndividualRaterScore>
+				<RaterId>
+					<IdValue>93481-88-011</IdValue>
+				</RaterId>
+				<Score>
+					<NumericValue>5</NumericValue>
+				</Score>
+			</IndividualRaterScore>
+			<IndividualRaterScore>
+				<RaterId>
+					<IdValue>93481-88-012</IdValue>
+				</RaterId>
+				<Score>
+					<NumericValue>5</NumericValue>
+				</Score>
+			</IndividualRaterScore>
+			<CompetencyAssessed>
+				<CompetencyName>Team Work</CompetencyName>
+			</CompetencyAssessed>
+		</CompetencySingleResult>
+	</CompetencySection>
+	<!-- Multi-Rater Scores -->
+	<CompetencySection>
+		<SectionTitle>Multi-Rater Appraisals</SectionTitle>
+		<!-- Ratings for competency "Delivers Results" -->
+		<CompetencySingleResult>
+			<MultiRaterGroupScore>
+				<RaterGroup>
+					<StandardValue>self</StandardValue>
+				</RaterGroup>
+				<Score>
+					<NumericValue>5</NumericValue>
+				</Score>
+			</MultiRaterGroupScore>
+			<MultiRaterGroupScore>
+				<RaterGroup>
+					<StandardValue>supervisor</StandardValue>
+				</RaterGroup>
+				<Score>
+					<NumericValue>5</NumericValue>
+				</Score>
+			</MultiRaterGroupScore>
+			<MultiRaterGroupScore>
+				<RaterGroup>
+					<StandardValue>peer</StandardValue>
+				</RaterGroup>
+				<Score>
+					<NumericValue>4.67</NumericValue>
+				</Score>
+			</MultiRaterGroupScore>
+			<MultiRaterGroupScore>
+				<RaterGroup>
+					<NonStandardValue>DR/client</NonStandardValue>
+				</RaterGroup>
+				<Score>
+					<NumericValue>4.67</NumericValue>
+				</Score>
+			</MultiRaterGroupScore>
+			<CompetencyAssessed>
+				<CompetencyName>Delivers Results</CompetencyName>
+			</CompetencyAssessed>
+		</CompetencySingleResult>
+		<!-- Ratings for competency "Build Relationships" -->
+		<CompetencySingleResult>
+			<MultiRaterGroupScore>
+				<RaterGroup>
+					<StandardValue>self</StandardValue>
+				</RaterGroup>
+				<Score>
+					<NumericValue>4.8</NumericValue>
+				</Score>
+			</MultiRaterGroupScore>
+			<MultiRaterGroupScore>
+				<RaterGroup>
+					<StandardValue>supervisor</StandardValue>
+				</RaterGroup>
+				<Score>
+					<NumericValue>2.75</NumericValue>
+				</Score>
+			</MultiRaterGroupScore>
+			<MultiRaterGroupScore>
+				<RaterGroup>
+					<StandardValue>peer</StandardValue>
+				</RaterGroup>
+				<Score>
+					<NumericValue>4.75</NumericValue>
+				</Score>
+			</MultiRaterGroupScore>
+			<MultiRaterGroupScore>
+				<RaterGroup>
+					<NonStandardValue>DR/client</NonStandardValue>
+				</RaterGroup>
+				<Score>
+					<NumericValue>5</NumericValue>
+				</Score>
+			</MultiRaterGroupScore>
+			<CompetencyAssessed>
+				<CompetencyName>Build Relationships</CompetencyName>
+			</CompetencyAssessed>
+		</CompetencySingleResult>
+		<!-- Ratings for competency "Demonstrate Trust and Integrity". Note that this also includes ratings of Behaviorial Indicators that roll-up into that competency. -->
+		<CompetencySingleResult>
+			<MultiRaterGroupScore>
+				<RaterGroup>
+					<StandardValue>self</StandardValue>
+				</RaterGroup>
+				<Score>
+					<NumericValue>4.63</NumericValue>
+				</Score>
+			</MultiRaterGroupScore>
+			<MultiRaterGroupScore>
+				<RaterGroup>
+					<StandardValue>supervisor</StandardValue>
+				</RaterGroup>
+				<Score>
+					<NumericValue>5</NumericValue>
+				</Score>
+			</MultiRaterGroupScore>
+			<MultiRaterGroupScore>
+				<RaterGroup>
+					<StandardValue>peer</StandardValue>
+				</RaterGroup>
+				<Score>
+					<NumericValue>4.24</NumericValue>
+				</Score>
+			</MultiRaterGroupScore>
+			<MultiRaterGroupScore>
+				<RaterGroup>
+					<NonStandardValue>DR/client</NonStandardValue>
+				</RaterGroup>
+				<Score>
+					<NumericValue>4.68</NumericValue>
+				</Score>
+			</MultiRaterGroupScore>
+			<CompetencyAssessed>
+				<CompetencyId>
+					<IdValue>skillsbanknet:748</IdValue>
+				</CompetencyId>
+				<CompetencyName>Demonstrate Trust and Integrity</CompetencyName>
+			</CompetencyAssessed>
+			<!-- First Behaviorial Indicator, Treats others with respect and dignity.-->
+			<BehavioralIndicatorScoringInfo>
+				<Description>Treats others with respect and dignity.</Description>
+				<MultiRaterGroupScore>
+					<RaterGroup>
+						<StandardValue>self</StandardValue>
+					</RaterGroup>
+					<Score>
+						<NumericValue>4.5</NumericValue>
+					</Score>
+				</MultiRaterGroupScore>
+				<MultiRaterGroupScore>
+					<RaterGroup>
+						<StandardValue>peer</StandardValue>
+					</RaterGroup>
+					<Score>
+						<NumericValue>4.67</NumericValue>
+					</Score>
+				</MultiRaterGroupScore>
+				<MultiRaterGroupScore>
+					<RaterGroup>
+						<StandardValue>supervisor</StandardValue>
+					</RaterGroup>
+					<Score>
+						<NumericValue>4.33</NumericValue>
+					</Score>
+				</MultiRaterGroupScore>
+				<MultiRaterGroupScore>
+					<RaterGroup>
+						<NonStandardValue>DR/client</NonStandardValue>
+					</RaterGroup>
+					<Score>
+						<NumericValue>3.9</NumericValue>
+					</Score>
+				</MultiRaterGroupScore>
+			</BehavioralIndicatorScoringInfo>
+			<!-- Second Behaviorial Indicator, Follows through on commitments. -->
+			<BehavioralIndicatorScoringInfo>
+				<Description>Follows through on commitments.</Description>
+				<MultiRaterGroupScore>
+					<RaterGroup>
+						<StandardValue>self</StandardValue>
+					</RaterGroup>
+					<Score>
+						<NumericValue>4.75</NumericValue>
+					</Score>
+				</MultiRaterGroupScore>
+				<MultiRaterGroupScore>
+					<RaterGroup>
+						<StandardValue>peer</StandardValue>
+					</RaterGroup>
+					<Score>
+						<NumericValue>4.85</NumericValue>
+					</Score>
+				</MultiRaterGroupScore>
+				<MultiRaterGroupScore>
+					<RaterGroup>
+						<StandardValue>supervisor</StandardValue>
+					</RaterGroup>
+					<Score>
+						<NumericValue>4.75</NumericValue>
+					</Score>
+				</MultiRaterGroupScore>
+				<MultiRaterGroupScore>
+					<RaterGroup>
+						<NonStandardValue>DR/client</NonStandardValue>
+					</RaterGroup>
+					<Score>
+						<NumericValue>4.42</NumericValue>
+					</Score>
+				</MultiRaterGroupScore>
+			</BehavioralIndicatorScoringInfo>
+		</CompetencySingleResult>
+	</CompetencySection>
+	<!-- This RaterPanelInfo element contains information identifying raters whose individual ratings were presented in the objectives section.  Note that a larger rater panel was involved in delivering ratings of competencies, but only summary information for the rater group was presented versus individual ratings. Thus, those individuals are not identified in the rater panel. -->
+	<RaterPanelInfo>
+		<Rater>
+			<RaterId>
+				<IdValue>93481-88-011</IdValue>
+			</RaterId>
+			<RelationshipGroup>
+				<StandardValue>self</StandardValue>
+			</RelationshipGroup>
+			<PersonName>
+				<GivenName>John</GivenName>
+				<FamilyName>Smith</FamilyName>
+			</PersonName>
+		</Rater>
+		<Rater>			
+			<RaterId>
+				<IdValue>93481-88-012</IdValue>
+			</RaterId>
+			<RelationshipGroup>
+				<StandardValue>supervisor</StandardValue>
+			</RelationshipGroup>
+			<PersonName>
+				<GivenName>Jane</GivenName>
+				<FamilyName>Doe</FamilyName>
+			</PersonName>
+			<ContactInfo>
+				<InternetEmailAddress>jane.doe@acmecorp.net</InternetEmailAddress>
+			</ContactInfo>
+			<IsConfidential>false</IsConfidential>
+			</Rater>
+		<Rater>
+			<RaterId>
+				<IdValue>93481-88-013</IdValue>
+			</RaterId>
+			<RelationshipGroup>
+				<NonStandardValue>supervisor's manager</NonStandardValue>
+			</RelationshipGroup>
+			<PersonName>
+				<GivenName>Chris</GivenName>
+				<FamilyName>Franklin</FamilyName>
+			</PersonName>
+			<ContactInfo>
+				<InternetEmailAddress>chris.franklin@acmecorp.net</InternetEmailAddress>
+			</ContactInfo>
+		<IsConfidential>false</IsConfidential>
+		</Rater>
+	</RaterPanelInfo>
+</EPMResult>

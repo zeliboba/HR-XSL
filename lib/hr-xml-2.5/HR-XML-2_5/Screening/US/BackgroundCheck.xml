@@ -1,0 +1,612 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<BackgroundCheck xmlns="http://ns.hr-xml.org/2007-04-15" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://ns.hr-xml.org/2007-04-15 BackgroundCheck.xsd" userId="FAATS" password="XXX">
+	<ReferenceId>
+		<IdValue>204</IdValue>
+	</ReferenceId>
+	<BackgroundSearchPackage>
+		<ProcessingInformation>
+			<AccessCredential type="UserName">CCorner</AccessCredential>
+			<AccessCredential type="Password">HR-XML</AccessCredential>
+			<AccessCredential type="Account">900123</AccessCredential>
+			<ScopeOfWork type="x:All" qualifier="Validation">
+				<Text>Override</Text>
+				<AdditionalItems type="x:SSN" qualifier="Byass">
+					<Text>True</Text>
+				</AdditionalItems>
+				<AdditionalItems type="x:Duplicates" qualifier="Byass">
+					<Text>True</Text>
+				</AdditionalItems>
+			</ScopeOfWork>
+		</ProcessingInformation>
+		<ReferenceId>
+			<IdValue>204</IdValue>
+		</ReferenceId>
+		<PersonalData>
+			<PersonName>
+				<GivenName>John</GivenName>
+				<MiddleName>Test</MiddleName>
+				<FamilyName primary="undefined">Doe</FamilyName>
+			</PersonName>
+			<DemographicDetail>
+				<GovernmentId countryCode="US" issuingAuthority="SSN">320851818</GovernmentId>
+				<DateOfBirth>1978-08-25</DateOfBirth>
+				<Race>U</Race>
+				<GenderCode>0</GenderCode>
+			</DemographicDetail>
+		</PersonalData>
+		<Screenings>
+			<ReferenceId>
+				<IdValue>F513666</IdValue>
+			</ReferenceId>
+			<SupportingDocumentation>
+				<!--  Client provided  link to a release form  -->
+				<Documentation type="release" mediaType="tiff">
+					<InternetWebAddress>ftp://ns.hr-xml.org/Screenings/F513666Tiff</InternetWebAddress>
+				</Documentation>
+				<!--  Specify that a copy of the results for all screenings for this SearchPackage are to be sent to the specified base URL  -->
+				<Documentation type="distribution" mediaType="rtf">
+					<InternetWebAddress>ftp://ns.hr-xml.org/Screenings/</InternetWebAddress>
+				</Documentation>
+			</SupportingDocumentation>
+			<Screening type="criminal" qualifier="county">
+				<ReferenceId>
+					<IdValue>7JK</IdValue>
+				</ReferenceId>
+				<CountryCode>US</CountryCode>
+				<Region>WA</Region>
+				<ClientReferences>
+					<IdValue name="ref1">3666</IdValue>
+				</ClientReferences>
+				<SearchCriminal>
+					<Municipality></Municipality>
+					<County>KING</County>
+					<PostalCode></PostalCode>
+					<CourtName>KING SUPERIOR-(F)</CourtName>
+					<CourtType>Felony</CourtType>
+				</SearchCriminal>
+			</Screening>
+		</Screenings>
+	</BackgroundSearchPackage>
+	<BackgroundSearchPackage>
+		<PersonalData>
+			<PersonName>
+				<GivenName>John</GivenName>
+				<MiddleName>Test</MiddleName>
+				<FamilyName primary="undefined">Doe</FamilyName>
+			</PersonName>
+			<DemographicDetail>
+				<GovernmentId countryCode="US" issuingAuthority="SSN">231332468</GovernmentId>
+				<GovernmentId countryCode="US" jurisdiction="TX" issuingAuthority="DMV">S57597474</GovernmentId>
+				<DateOfBirth>1974-07-27</DateOfBirth>
+				<Race>U</Race>
+				<GenderCode>0</GenderCode>
+			</DemographicDetail>
+		</PersonalData>
+		<Screenings>
+			<ReferenceId>
+				<IdValue>F513666</IdValue>
+			</ReferenceId>
+			<SupportingDocumentation>
+				<Documentation type="release" mediaType="tiff">
+					<InternetWebAddress>ftp://ns.hr-xml.org/Screenings/F513666Tiff</InternetWebAddress>
+				</Documentation>
+				<Documentation type="distribution" mediaType="rtf">
+					<InternetWebAddress>ftp://ns.hr-xml.org/Screenings/</InternetWebAddress>
+				</Documentation>
+			</SupportingDocumentation>
+			<Screening type="drug">
+				<SearchDrugs>
+					<ReasonForTest>Pre-employment</ReasonForTest>
+					<TestType type="5Panel"></TestType>
+					<CollectionSite>
+						<OrganizationName>LabCorp</OrganizationName>
+						<PostalAddress type="streetAddress">
+							<CountryCode>US</CountryCode>
+							<PostalCode>77040</PostalCode>
+							<Region>TX</Region>
+							<Municipality>Houston</Municipality>
+							<DeliveryAddress>
+								<AddressLine>7202 North Gessner</AddressLine>
+							</DeliveryAddress>
+						</PostalAddress>
+					</CollectionSite>
+					<SpecimenIdNumber>
+						<IdValue>0329457995</IdValue>
+					</SpecimenIdNumber>
+					<Organization type="SearchSubject">
+						<OrganizationName>First Advantage</OrganizationName>
+						<OrganizationId>
+							<IdValue>111111</IdValue>
+						</OrganizationId>
+						<ContactMethod>
+							<Use>business</Use>
+							<Location>office</Location>
+							<Telephone>
+								<FormattedNumber>727-290-1000</FormattedNumber>
+							</Telephone>
+							<Fax>
+								<FormattedNumber>727-535-1111</FormattedNumber>
+							</Fax>
+							<PostalAddress type="streetAddress">
+								<CountryCode>US</CountryCode>
+								<PostalCode>33702</PostalCode>
+								<Region>FL</Region>
+								<Municipality>St. Petersburg</Municipality>
+								<DeliveryAddress>
+									<AddressLine>805 Executive Center Drive West, Suite 300</AddressLine>
+								</DeliveryAddress>
+								<Recipient>
+									<PersonName>
+										<FormattedName>David Jones</FormattedName>
+										<Affix type="qualification">Dr.</Affix>
+									</PersonName>
+								</Recipient>
+							</PostalAddress>
+						</ContactMethod>
+					</Organization>
+				</SearchDrugs>
+			</Screening>
+			<Screening type="criminal" qualifier="county">
+				<ReferenceId>
+					<IdValue>7JL</IdValue>
+				</ReferenceId>
+				<CountryCode>US</CountryCode>
+				<Region>WA</Region>
+				<ClientReferences>
+					<IdValue name="ref1">3666</IdValue>
+				</ClientReferences>
+				<SearchCriminal>
+					<Municipality></Municipality>
+					<County>KING</County>
+					<PostalCode></PostalCode>
+					<CourtName>KING-SEATTLE MUNICIPAL-(M)</CourtName>
+					<CourtType>Misdemeanor</CourtType>
+					<AdmittedChargeSummary>DUI in Newcastle, Wa </AdmittedChargeSummary>
+				</SearchCriminal>
+			</Screening>
+			<Screening type="credit">
+				<ReferenceId>
+					<IdValue>6U8</IdValue>
+				</ReferenceId>
+				<CountryCode>US</CountryCode>
+				<PermissiblePurpose>Employment</PermissiblePurpose>
+				<EndUser>Test End User Information</EndUser>
+				<Vendor>experian</Vendor>
+				<ClientReferences>
+					<IdValue name="ref1">3666</IdValue>
+					<IdValue name="ref2">Client Reference 2</IdValue>
+					<IdValue name="ref3">Client Reference 3</IdValue>
+				</ClientReferences>
+			</Screening>
+			<Screening type="license" qualifier="mvPersonal">
+				<ReferenceId>
+					<IdValue>6UA</IdValue>
+				</ReferenceId>
+				<CountryCode>US</CountryCode>
+				<Region>CT</Region>
+				<SearchLicense>
+					<License>
+						<LicenseNumber>S32106445</LicenseNumber>
+						<LicensingAgency>CT</LicensingAgency>
+						<LicenseName>mvPersonal</LicenseName>
+					</License>
+				</SearchLicense>
+			</Screening>
+			<Screening type="employment">
+				<ReferenceId>
+					<IdValue>6UH</IdValue>
+				</ReferenceId>
+				<CountryCode>US</CountryCode>
+				<Region>IL</Region>
+				<SearchEmployment type="prior">
+					<EmploymentHistory>
+						<EmployerOrg employerOrgType="soleEmployer">
+							<EmployerOrgName>Sally's Contact Company</EmployerOrgName>
+							<PositionHistory positionType="directHire">
+								<Title>SUPERVISOR</Title>
+								<OrgName>
+									<OrganizationName>Sally's Contact Company</OrganizationName>
+								</OrgName>
+								<Description></Description>
+								<StartDate>
+									<AnyDate>1993-03-01</AnyDate>
+								</StartDate>
+								<EndDate>
+									<AnyDate>1996-03-01</AnyDate>
+								</EndDate>
+								<Compensation>
+									<EndingCompensation intervalType="year" currency="USD">38K</EndingCompensation>
+								</Compensation>
+								<Verification>
+									<ContactInfo>
+										<PersonName>
+											<FormattedName>Sally's Contact Name</FormattedName>
+										</PersonName>
+										<ContactMethod>
+											<Location>office</Location>
+											<Telephone>
+												<FormattedNumber>555-555-5555</FormattedNumber>
+											</Telephone>
+											<PostalAddress type="undefined">
+												<CountryCode>US</CountryCode>
+												<PostalCode>60434</PostalCode>
+												<Region>IL</Region>
+												<Municipality>JOLIET</Municipality>
+												<DeliveryAddress>
+													<AddressLine>PO BOX 789</AddressLine>
+												</DeliveryAddress>
+											</PostalAddress>
+										</ContactMethod>
+									</ContactInfo>
+									<ReasonForLeaving>None</ReasonForLeaving>
+									<PermissionToContact>true</PermissionToContact>
+									<VerifyEmployment>false</VerifyEmployment>
+								</Verification>
+							</PositionHistory>
+						</EmployerOrg>
+					</EmploymentHistory>
+					<OtherApplicantInformation>
+						<IdValue name="Have you ever received any reprimands?">Yes</IdValue>
+						<IdValue name="What was the nature of the reprimands?">The 1st occurrance,I vandalized the bosses car. The 2nd time was for trashing his office.</IdValue>
+					</OtherApplicantInformation>
+				</SearchEmployment>
+			</Screening>
+			<Screening type="criminal" qualifier="statewide">
+				<ReferenceId>
+					<IdValue>9XA</IdValue>
+				</ReferenceId>
+				<CountryCode>US</CountryCode>
+				<Region>PA</Region>
+			</Screening>
+			<Screening type="reference" qualifier="personal">
+				<ReferenceId>
+					<IdValue>9XB</IdValue>
+				</ReferenceId>
+				<CountryCode>US</CountryCode>
+				<Region>XX</Region>
+				<SearchReference>
+					<Contact>
+						<PersonName>
+							<FormattedName>Mary's Contact Name</FormattedName>
+						</PersonName>
+						<ContactMethod>
+							<Location>home</Location>
+							<Telephone>
+								<FormattedNumber>555-555-5555</FormattedNumber>
+							</Telephone>
+							<PostalAddress type="undefined">
+								<CountryCode>US</CountryCode>
+								<Region>XX</Region>
+								<DeliveryAddress></DeliveryAddress>
+							</PostalAddress>
+						</ContactMethod>
+						<Relationship>Buddy</Relationship>
+					</Contact>
+				</SearchReference>
+			</Screening>
+			<Screening type="ssn">
+				<ReferenceId>
+					<IdValue>9XD</IdValue>
+				</ReferenceId>
+				<CountryCode>US</CountryCode>
+				<PermissiblePurpose>Employment</PermissiblePurpose>
+				<EndUser>Test End User Information</EndUser>
+				<Vendor>transUnion</Vendor>
+			</Screening>
+			<Screening type="ssn">
+				<ReferenceId>
+					<IdValue>9XJ</IdValue>
+				</ReferenceId>
+				<CountryCode>US</CountryCode>
+				<PermissiblePurpose>Employment</PermissiblePurpose>
+				<EndUser>Test End User Information</EndUser>
+				<Vendor>experian</Vendor>
+			</Screening>
+			<Screening type="education">
+				<ReferenceId>
+					<IdValue>9XL</IdValue>
+				</ReferenceId>
+				<CountryCode>US</CountryCode>
+				<Region>MS</Region>
+				<ClientReferences>
+					<IdValue name="ref1">3666</IdValue>
+					<IdValue name="ref2">Client Reference 2</IdValue>
+					<IdValue name="ref3">Client Reference 3</IdValue>
+				</ClientReferences>
+				<SearchEducation>
+					<EducationHistory>
+						<SchoolOrInstitution schoolType="highschool">
+							<SchoolName>JEFFERSON CO HIGH SCHOOL</SchoolName>
+							<LocationSummary>
+								<Municipality>FAYETTE</Municipality>
+								<Region>MS</Region>
+								<CountryCode>US</CountryCode>
+							</LocationSummary>
+							<OrganizationUnit organizationType="subSchool">Andover</OrganizationUnit>
+							<Degree degreeType="high school or equivalent">
+								<DegreeName>Graduated</DegreeName>
+								<DegreeDate>
+									<AnyDate>notKnown</AnyDate>
+								</DegreeDate>
+							</Degree>
+							<DatesOfAttendance>
+								<StartDate>
+									<StringDate>01/01/1901-01/01/1997</StringDate>
+								</StartDate>
+							</DatesOfAttendance>
+						</SchoolOrInstitution>
+					</EducationHistory>
+				</SearchEducation>
+			</Screening>
+			<Screening type="name">
+				<ReferenceId>
+					<IdValue>9XV</IdValue>
+				</ReferenceId>
+				<CountryCode>US</CountryCode>
+			</Screening>
+			<Screening type="workcomp">
+				<ReferenceId>
+					<IdValue>008</IdValue>
+				</ReferenceId>
+				<CountryCode>US</CountryCode>
+				<Region>TX</Region>
+			</Screening>
+			<Screening type="abuse" qualifier="elderly">
+				<ReferenceId>
+					<IdValue>009</IdValue>
+				</ReferenceId>
+				<CountryCode>US</CountryCode>
+				<Region>TX</Region>
+			</Screening>
+			<Screening type="earnings" qualifier="summary">
+				<ReferenceId>
+					<IdValue>9XW</IdValue>
+				</ReferenceId>
+				<CountryCode>US</CountryCode>
+				<Duration>P5Y</Duration>
+			</Screening>
+			<Screening type="credit" qualifier="business">
+				<ReferenceId>
+					<IdValue>9X1</IdValue>
+				</ReferenceId>
+				<CountryCode>US</CountryCode>
+			</Screening>
+			<Screening type="license" qualifier="teacher">
+				<ReferenceId>
+					<IdValue>9X2</IdValue>
+				</ReferenceId>
+				<CountryCode>US</CountryCode>
+				<Region>AL</Region>
+				<SearchLicense>
+					<License>
+						<LicenseNumber>S23470816</LicenseNumber>
+						<LicensingAgency>AL</LicensingAgency>
+						<LicenseName>teacher</LicenseName>
+					</License>
+				</SearchLicense>
+			</Screening>
+			<Screening type="other" qualifier="x:Medicaid">
+				<ReferenceId>
+					<IdValue>9X3</IdValue>
+				</ReferenceId>
+				<CountryCode>US</CountryCode>
+			</Screening>
+			<Screening type="phone">
+				<ReferenceId>
+					<IdValue>9X4</IdValue>
+				</ReferenceId>
+				<CountryCode>US</CountryCode>
+			</Screening>
+			<Screening type="license" qualifier="fcc">
+				<ReferenceId>
+					<IdValue>9X5</IdValue>
+				</ReferenceId>
+				<CountryCode>US</CountryCode>
+				<SearchLicense>
+					<License>
+						<LicenseNumber>S32915569</LicenseNumber>
+						<LicensingAgency>FCC</LicensingAgency>
+						<LicenseName>fcc</LicenseName>
+					</License>
+				</SearchLicense>
+			</Screening>
+			<Screening type="license" qualifier="faa">
+				<ReferenceId>
+					<IdValue>9X6</IdValue>
+				</ReferenceId>
+				<CountryCode>US</CountryCode>
+				<SearchLicense>
+					<License>
+						<LicenseNumber>S41742248</LicenseNumber>
+						<LicensingAgency>FAA</LicensingAgency>
+						<LicenseName>faa</LicenseName>
+					</License>
+				</SearchLicense>
+			</Screening>
+			<Screening type="license" qualifier="x:RAD TECH">
+				<ReferenceId>
+					<IdValue>9X7</IdValue>
+				</ReferenceId>
+				<CountryCode>US</CountryCode>
+				<Region>SD</Region>
+				<SearchLicense>
+					<License>
+						<LicenseNumber>S33308835</LicenseNumber>
+						<LicensingAgency>SD</LicensingAgency>
+						<LicenseName>x:RAD TECH</LicenseName>
+						<EffectiveDate>
+							<EndDate>
+								<StringDate>5/02</StringDate>
+							</EndDate>
+						</EffectiveDate>
+					</License>
+				</SearchLicense>
+			</Screening>
+			<Screening type="other" qualifier="x:Intelliscore">
+				<ReferenceId>
+					<IdValue>9X8</IdValue>
+				</ReferenceId>
+				<CountryCode>US</CountryCode>
+			</Screening>
+			<Screening type="reference" qualifier="professional">
+				<ReferenceId>
+					<IdValue>9X9</IdValue>
+				</ReferenceId>
+				<CountryCode>US</CountryCode>
+				<Region>NV</Region>
+				<SearchReference>
+					<Contact>
+						<PersonName>
+							<FormattedName>Steven's Contact Name</FormattedName>
+						</PersonName>
+						<ContactMethod>
+							<Location>home</Location>
+							<Telephone>
+								<FormattedNumber>800-555-5555</FormattedNumber>
+							</Telephone>
+						</ContactMethod>
+						<ContactMethod>
+							<Location>office</Location>
+							<Telephone>
+								<FormattedNumber>5054256746</FormattedNumber>
+							</Telephone>
+							<PostalAddress type="undefined">
+								<CountryCode>US</CountryCode>
+								<Region>NV</Region>
+								<DeliveryAddress></DeliveryAddress>
+							</PostalAddress>
+						</ContactMethod>
+						<Relationship>CHARLYNNE OTERO</Relationship>
+					</Contact>
+					<Competency description="Java Programmer"></Competency>
+					<Competency description="VB Programmer"></Competency>
+					<Competency description="VB.Net Programmer"></Competency>
+				</SearchReference>
+			</Screening>
+			<Screening type="other" qualifier="x:Ins">
+				<ReferenceId>
+					<IdValue>9XA</IdValue>
+				</ReferenceId>
+				<CountryCode>US</CountryCode>
+				<SearchOther>
+					<GovernmentId countryCode="US" issuingAuthority="INS" document="LIST A ITEM 5">A091469638</GovernmentId>
+					<EffectiveDate></EffectiveDate>
+				</SearchOther>
+			</Screening>
+		</Screenings>
+	</BackgroundSearchPackage>
+	<BackgroundSearchPackage>
+		<PersonalData>
+			<PersonName>
+				<GivenName>Jane</GivenName>
+				<MiddleName>M</MiddleName>
+				<FamilyName>DOE</FamilyName>
+			</PersonName>
+			<PostalAddress type="undefined">
+				<CountryCode>US</CountryCode>
+				<PostalCode>06606</PostalCode>
+				<Region>CT</Region>
+				<Municipality>BRIDGEPORT</Municipality>
+				<DeliveryAddress>
+					<AddressLine>7743 CLEVELAND AVE</AddressLine>
+				</DeliveryAddress>
+			</PostalAddress>
+			<DemographicDetail>
+				<GovernmentId countryCode="US">555666666</GovernmentId>
+				<DateOfBirth>1975-07-03</DateOfBirth>
+				<Race>B</Race>
+				<GenderCode>2</GenderCode>
+			</DemographicDetail>
+		</PersonalData>
+		<!--  Example SearchPackage based on predefined package including additional supporting info or request for additional searches -->
+		<Screenings>
+			<ReferenceId>
+				<IdValue>65A9XV</IdValue>
+			</ReferenceId>
+			<PackageId>
+				<IdValue>Executive</IdValue>
+			</PackageId>
+			<Screening type="license">
+				<ReferenceId>
+					<IdValue>A9XV</IdValue>
+				</ReferenceId>
+				<CountryCode>US</CountryCode>
+				<EndUser>Hirecheck</EndUser>
+				<SearchLicense>
+					<License>
+						<LicenseNumber>A12345678</LicenseNumber>
+						<LicensingAgency>FL</LicensingAgency>
+						<LicenseName>mvPersonal</LicenseName>
+					</License>
+				</SearchLicense>
+			</Screening>
+			<Screening type="education">
+				<ReferenceId>
+					<IdValue>9XL</IdValue>
+				</ReferenceId>
+				<CountryCode>US</CountryCode>
+				<Region>MS</Region>
+				<ClientReferences>
+					<IdValue name="billingCode">3666</IdValue>
+				</ClientReferences>
+				<SearchEducation>
+					<EducationHistory>
+						<SchoolOrInstitution schoolType="highschool">
+							<SchoolName>JEFFERSON CO HIGH SCHOOL</SchoolName>
+							<LocationSummary>
+								<Municipality>FAYETTE</Municipality>
+								<Region>MS</Region>
+								<CountryCode>US</CountryCode>
+							</LocationSummary>
+							<OrganizationUnit organizationType="subSchool">Andover</OrganizationUnit>
+							<Degree degreeType="high school or equivalent">
+								<DegreeName>Graduated</DegreeName>
+								<DegreeDate>
+									<AnyDate>notKnown</AnyDate>
+								</DegreeDate>
+							</Degree>
+							<DatesOfAttendance>
+								<StartDate>
+									<StringDate>01/01/1901-01/01/1997</StringDate>
+								</StartDate>
+							</DatesOfAttendance>
+						</SchoolOrInstitution>
+					</EducationHistory>
+				</SearchEducation>
+			</Screening>
+		</Screenings>
+	</BackgroundSearchPackage>
+	<!--  Example SearchPackage based on predefined package -->
+	<BackgroundSearchPackage>
+		<PersonalData>
+			<PersonName>
+				<GivenName>Jane</GivenName>
+				<MiddleName>M</MiddleName>
+				<FamilyName>DOE</FamilyName>
+			</PersonName>
+			<PostalAddress type="undefined">
+				<CountryCode>US</CountryCode>
+				<PostalCode>06606</PostalCode>
+				<Region>CT</Region>
+				<Municipality>BRIDGEPORT</Municipality>
+				<DeliveryAddress>
+					<AddressLine>7743 CLEVELAND AVE</AddressLine>
+				</DeliveryAddress>
+			</PostalAddress>
+			<DemographicDetail>
+				<GovernmentId countryCode="US">555666666</GovernmentId>
+				<DateOfBirth>1975-07-03</DateOfBirth>
+				<Race>B</Race>
+				<GenderCode>2</GenderCode>
+			</DemographicDetail>
+		</PersonalData>
+		<Screenings>
+			<ReferenceId>
+				<IdValue>65A9XV</IdValue>
+			</ReferenceId>
+			<PackageId>
+				<IdValue>Executive</IdValue>
+			</PackageId>
+		</Screenings>
+	</BackgroundSearchPackage>
+</BackgroundCheck>

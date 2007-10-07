@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EducationHistory xmlns="http://ns.hr-xml.org/2007-04-15" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://ns.hr-xml.org/2007-04-15 EducationHistory.xsd">
+	<SchoolOrInstitution schoolType="">
+		<School type="prior">
+			<SchoolName>Devry University</SchoolName>
+		</School>
+		<OrganizationUnit organizationType="subSchool">Electrical Engineering</OrganizationUnit>
+		<Degree examPassed="true" graduatingDegree="graduating">
+			<DegreeDate>
+				<Year>2001</Year>
+			</DegreeDate>
+			<DegreeMajor>
+				<DegreeConcentration>Electronics</DegreeConcentration>
+				<Name>Electrical Engineering</Name>
+			</DegreeMajor>
+			<DegreeMajor>
+				<Name>Computer Repair</Name>
+			</DegreeMajor>
+			<DatesOfAttendance currentlyEnrolled="false">
+				<StartDate>
+					<AnyDate>1998-01-01</AnyDate>
+				</StartDate>
+				<EndDate>
+					<AnyDate>2001-05-18</AnyDate>
+				</EndDate>
+			</DatesOfAttendance>
+			<!--This example includes 3 options for specifying a similar degree. Any combination of these values could be used. -->
+			<DegreeClassification>
+				<Id>
+					<IdValue>B20</IdValue>
+				</Id>
+				<Description>Vocational Diploma</Description>
+			</DegreeClassification>
+			<DegreeClassification>
+				<Id idOwner="Postsecondary Electronic Standards Council (PESC)">
+					<IdValue>2.2</IdValue>
+				</Id>
+				<Description>Postsecondary Certificate Or Diploma</Description>
+			</DegreeClassification>
+			<DegreeClassification>
+				<Description>Vocational</Description>
+			</DegreeClassification>
+		</Degree>
+		<ISCEDInstitutionClassification>4</ISCEDInstitutionClassification>
+		<LocalInstitutionClassification>
+			<Description>Trade</Description>
+		</LocalInstitutionClassification>
+	</SchoolOrInstitution>
+</EducationHistory>

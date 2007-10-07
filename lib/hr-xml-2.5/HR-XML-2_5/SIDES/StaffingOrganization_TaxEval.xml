@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- This file described in Japanese and translated into English.
+    Example file for followings:
+    TaxEvaluation which was added from Japanese requirements.
+-->
+<StaffingOrganization typeOfOrganization="Customer" xml:lang="en-us" xmlns="http://ns.hr-xml.org/2007-04-15" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://ns.hr-xml.org/2007-04-15
+StaffingOrganization.xsd">
+	<Organization/>
+	<PaymentInfo>
+		<TaxEvaluation>
+			<!-- [TaxType] SalesTax:  Information on Application of Consumption Tax in Japan > -->
+			<TaxType>SalesTax</TaxType>
+			<!-- [Description] Application Method
+				  Tax included:  Consumption tax calculation is not required as it is included in a price.
+				  Tax excluded (item by item):  tax calculated by item
+				  Tax excluded (voucher by voucher):  tax calculated by voucher
+				  Tax excluded (invoice by invoice):  tax calculated by invoice  -->
+			<Description>Tax excluded (item by item)</Description>
+			<!-- [TaxRounding] round the number below decimal point
+				  Example: 0 ＝ round the number to integer  One Japanese Yen is the smallest  currency in Japan.-->
+			<TaxRounding resultDigit="0">
+				<RoundingMethod>RoundDown</RoundingMethod>
+			</TaxRounding>
+		</TaxEvaluation>
+	</PaymentInfo>
+</StaffingOrganization>

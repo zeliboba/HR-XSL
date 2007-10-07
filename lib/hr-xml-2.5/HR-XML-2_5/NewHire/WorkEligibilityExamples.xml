@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<NewHire xmlns="http://ns.hr-xml.org/2007-04-15" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:ds="http://www.w3.org/2000/09/xmldsig#" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://ns.hr-xml.org/2007-04-15
+NewHire.xsd   http://purl.org/dc/elements/1.1/ ../../DublinCore/simpledc20021212.xsd">
+	<TypeOfHire>
+		<StandardValue>Transfer</StandardValue>
+	</TypeOfHire>
+	<EmployeeInfo>
+		<PersonName>
+			<FormattedName>String</FormattedName>
+			<LegalName>Jane Doe</LegalName>
+			<GivenName>Jane</GivenName>
+			<FamilyName>Doe</FamilyName>
+		</PersonName>
+	</EmployeeInfo>
+	<!-- UK Eligibility Right of Abode Example -->
+	<ApplicationInfo>
+		<WorkEligibilityInfo>
+			<FormId>
+				<IdValue>Right of Abode</IdValue>
+			</FormId>
+			<DocumentId>
+				<IdValue>ROA-7895699</IdValue>
+			</DocumentId>
+			<DocumentName>Right of Abode</DocumentName>
+			<VerificationInfo>
+				<Status>Verified by Employer</Status>
+				<Date>2005-05-05</Date>
+				<PersonName>
+					<FormattedName>Joe Blogs</FormattedName>
+				</PersonName>
+				<PersonId>
+					<IdValue>32-89636-9</IdValue>
+				</PersonId>
+				</VerificationInfo>
+			<IssuingAuthority>UKDOI</IssuingAuthority>
+			<IsDocumentSignedByCandidate>true</IsDocumentSignedByCandidate>
+			<Comments>Document is photocopied and the copy is filed with application documents.</Comments>
+		</WorkEligibilityInfo>
+			<!-- UK Eligibility Right to Work Example -->
+		<WorkEligibilityInfo>
+			<FormId>
+				<IdValue>Right to Work</IdValue>
+			</FormId>
+			<DocumentId>
+				<IdValue>RTW-12345</IdValue>
+			</DocumentId>
+			<DocumentName>Right to Work</DocumentName>
+			<VerificationInfo>
+				<Status>Verified by Employer</Status>
+				<Date>2005-05-08</Date>
+				<PersonName>
+					<FormattedName>Joe Blogs</FormattedName>
+				</PersonName>
+				<PersonId>
+					<IdValue>32-89636-9</IdValue>
+				</PersonId>
+				</VerificationInfo>
+			<IssuingAuthority>UK Home Office</IssuingAuthority>
+			<IsDocumentSignedByCandidate>true</IsDocumentSignedByCandidate>
+			<Comments>Document is photocopied and the copy is filed with application documents.</Comments>
+		</WorkEligibilityInfo>
+			<!-- US I9 Eligibility Example -->
+		<WorkEligibilityInfo>
+			<FormId>
+				<IdValue>I9</IdValue>
+			</FormId>
+			<DocumentName>I-9 Proof of Employment Eligibility</DocumentName>
+			<VerificationInfo>
+				<Status>Verified by Recruiter</Status>
+				<Date>2005-05-05</Date>
+				<PersonName>
+					<FormattedName>John Doe</FormattedName>
+				</PersonName>
+				<PersonId>
+					<IdValue>EMPLID-456-336622</IdValue>
+				</PersonId>
+				</VerificationInfo>
+			<IssuingAuthority>US DOJ</IssuingAuthority>
+			<IsDocumentSignedByCandidate>true</IsDocumentSignedByCandidate>
+			<Comments>Hard copy filed under employee name</Comments>
+		</WorkEligibilityInfo>
+			<!-- US Security Example -->
+		<WorkEligibilityInfo>
+			<FormId>
+				<IdValue>SS-77-A</IdValue>
+			</FormId>
+			<DocumentId>
+				<IdValue>890-89-998969</IdValue>
+			</DocumentId>
+			<DocumentName>Top Secret Security Clearance</DocumentName>
+			<VerificationInfo>
+				<Status>Completed by Candidate</Status>
+				<Date>2005-05-05</Date>
+				<PersonName>
+					<FormattedName>Jeanine Lewis</FormattedName>
+				</PersonName>
+				<PersonId>
+					<IdValue>TR-561203</IdValue>
+				</PersonId>
+				</VerificationInfo>
+			<IssuingAuthority>Defense Security Services</IssuingAuthority>
+			<IsDocumentSignedByCandidate>true</IsDocumentSignedByCandidate>
+			<SupportingMaterials>
+				<dc:title>Link to Defense Security Services</dc:title>
+				<dc:format>text/html</dc:format>
+				<ReferenceInfo>
+					<InternetWebAddress>https://dss.gov/verisystem</InternetWebAddress>
+				</ReferenceInfo>
+			</SupportingMaterials>
+		</WorkEligibilityInfo>
+	</ApplicationInfo>
+	<PositionInfo>
+		<ReferenceInfo>
+			<PositionId idOwner="myHRMS">
+				<IdValue name="PositionId">456789</IdValue>
+			</PositionId>
+		</ReferenceInfo>
+		<OfferInfo>
+			<EmploymentStartDate>2005-02-15</EmploymentStartDate>
+			<RemunerationInfo>
+				<BasePay baseInterval="Annually" currencyCode="USD">100000</BasePay>
+			</RemunerationInfo>
+		</OfferInfo>
+	</PositionInfo>
+</NewHire>

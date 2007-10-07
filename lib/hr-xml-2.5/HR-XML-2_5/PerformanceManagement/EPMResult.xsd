@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- edited with XMLSpy v2006 rel. 3 sp1 (http://www.altova.com) by Chuck Allen (HR-XML Consortium, Inc.) -->
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="http://ns.hr-xml.org/2007-04-15" targetNamespace="http://ns.hr-xml.org/2007-04-15" elementFormDefault="qualified" version="2007-04-15">
+	<xsd:annotation>
+		<xsd:documentation>
+"Copyright  The HR-XML Consortium. All Rights Reserved. http://www.hr-xml.org"
+Name: EPMResult.xsd
+Status: Draft
+Date this version: 2007-04-15
+Author(s): Performance Management Work Group
+Documentation: 
+
+Terms of license can be found in license.txt.
+
+		
+		</xsd:documentation>
+	</xsd:annotation>
+	<xsd:import namespace="http://www.w3.org/XML/1998/namespace" schemaLocation="../../W3C/xml.xsd"/>
+	<xsd:include schemaLocation="../PerformanceManagement/RaterPanelInfo.xsd"/>
+	<xsd:include schemaLocation="../PerformanceManagement/EPMTypes.xsd"/>
+	<xsd:element name="EPMResult" type="EPMFullResultType">
+		<xsd:annotation>
+			<xsd:documentation>Defines a full performance appraisal result such as might be required by a talent management system (e.g., Learning Management Systems, Competency Management Systems, etc.) Includes Result Metadata  (type appraisal, dates,  prepared by); Overall Performance Rating; Objective Section Results; Competencies Section Results, etc.</xsd:documentation>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:complexType name="EPMFullResultType">
+		<xsd:annotation>
+			<xsd:documentation>Defines a full performance appraisal result such as might be required by a talent management system (e.g., Learning Management Systems, Competency Management Systems, etc.) Includes Result Metadata  (type appraisal, dates,  prepared by); Overall Performance Rating; Objective Section Results; Competencies Section Results, etc.
+</xsd:documentation>
+		</xsd:annotation>
+		<xsd:sequence>
+			<xsd:element name="ResultId" type="EntityIdType" minOccurs="0">
+				<xsd:annotation>
+					<xsd:documentation>An identifier for the EPM result.</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+			<xsd:element name="ResultDate" type="xsd:date">
+				<xsd:annotation>
+					<xsd:documentation>Required element. Date of the EPM result.</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+			<xsd:element name="AppraisalPeriod" type="EPMPeriodType" minOccurs="0">
+				<xsd:annotation>
+					<xsd:documentation>Contains the begin and end dates of the period for which performance was assessed.</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+			<xsd:element name="ProviderId" type="EntityIdType" minOccurs="0">
+				<xsd:annotation>
+					<xsd:documentation>An optional identifier for the EPM provider or source of the EPM Result.</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+			<xsd:element name="PreparedBy" type="EPMPersonType" minOccurs="0">
+				<xsd:annotation>
+					<xsd:documentation>Identifies the person with primary responsibility for preparing the performance appraisal RaterPanelInfo element provivdes means to capture details about all stakeholders involved in appraisal/rating process.</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+			<xsd:element name="AppraisalSubject" type="EPMPersonType">
+				<xsd:annotation>
+					<xsd:documentation>Identifies the person who is subject to the performance management process.</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+			<xsd:element name="ReasonCode" type="EPMReasonCodeType" minOccurs="0">
+				<xsd:annotation>
+					<xsd:documentation>A code identifying the reason for the appraisal or review. Allows for choice of either standard enumerated values or a non-standard value. Standard values are: promotion; job change; and scheduled.</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+			<xsd:element name="ScheduleType" type="EPMScheduleType" minOccurs="0">
+				<xsd:annotation>
+					<xsd:documentation>In the case of a scheduled review, this element is used to identify the type of schedule. Allows for a choice of either standard enumerated values or a non-standard value. Standard values are: annual, mid-year, and probation. </xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+			<xsd:element name="OverallRating" type="EPMOverallRatingType" minOccurs="0">
+				<xsd:annotation>
+					<xsd:documentation>Provides an overall or summary performance rating.</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+			<xsd:element name="ObjectivesSection" type="EPMObjectivesSectionType" minOccurs="0">
+				<xsd:annotation>
+					<xsd:documentation>The section within a performance appraisal that contains objective results and ratings. The section may contain a summary result, groups of objectives, as well as individual or single objective results.</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+			<xsd:element name="CompetencySection" type="EPMCompetencySectionType" minOccurs="0" maxOccurs="unbounded">
+				<xsd:annotation>
+					<xsd:documentation>A section within a performance appraisal that contains competency results and ratings. The section may contain a summary result, groups of competency ratings, as well as individual competency ratings. This section is repeatable so that specialized types of Competency sections -- such as "Core Values" or "Mission" might be accomodated.</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+			<xsd:element name="OtherRatingSection" type="EPMOtherRatingSectionType" minOccurs="0" maxOccurs="unbounded">
+				<xsd:annotation>
+					<xsd:documentation>A "catch all" section for ratings that are not related to objectives or competencies. </xsd:documentation>
+					<xsd:documentation>A "catch all" section for ratings that are not related to objectives or competencies. </xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+			<xsd:element name="RaterPanelInfo" type="EPMRaterPanelInfoType" minOccurs="0">
+				<xsd:annotation>
+					<xsd:documentation>Identifies individuals who participated in the performance management process and their relationship to the appraisal subject.</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+			<xsd:element name="RemunerationRecommendationDetail" type="EPMRemunerationRecommendationType" minOccurs="0" maxOccurs="unbounded">
+				<xsd:annotation>
+					<xsd:documentation>Contains recommendations for "remuneration" changes/increases associated with the performance management result. This element is repeatable so that multiple compensation components can be represented.</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+			<xsd:element ref="UserArea" minOccurs="0"/>
+		</xsd:sequence>
+		<xsd:attribute ref="xml:lang"/>
+	</xsd:complexType>
+</xsd:schema>

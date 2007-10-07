@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Resume xmlns="http://ns.hr-xml.org/2007-04-15" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://ns.hr-xml.org/2007-04-15 Resume.xsd">
+	<StructuredXMLResume>
+		<ResumeAdditionalItems>
+			<ResumeAdditionalItem type="Personal">
+				<Description>Married with 4 children</Description>
+			</ResumeAdditionalItem>
+			<ResumeAdditionalItem type="Volunteer">
+				<EffectiveDate>
+					<StartDate>
+						<Year>1999</Year>
+					</StartDate>
+					<EndDate>
+						<Year>2001</Year>
+					</EndDate>
+				</EffectiveDate>
+				<Description>Delivered Meals on Wheels to homebound elderly</Description>
+			</ResumeAdditionalItem>
+			<ResumeAdditionalItem type="Hobbies">
+				<EffectiveDate>
+					<StartDate>
+						<Year>2000</Year>
+					</StartDate>
+				</EffectiveDate>
+				<Description>Rock Climbing</Description>
+			</ResumeAdditionalItem>
+		</ResumeAdditionalItems>
+	</StructuredXMLResume>
+</Resume>

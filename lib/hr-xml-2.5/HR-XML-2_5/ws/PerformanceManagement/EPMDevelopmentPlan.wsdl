@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- This example WSDL is offered as a template for implementing web services using HR-XML. The target namespace is intended to be replaced with one belonging to the implementer. WSDL faults are included as placeholders. These could be used as is, removed, or replaced with those appropriate for the implementation -->
+<wsdl:definitions xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:soapbind="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:hrxml="http://ns.hr-xml.org/2007-04-15" xmlns="http://replace-with-yours/ns" targetNamespace="http://replace-with-yours/ns">
+	<wsdl:types>
+		<xs:schema elementFormDefault="qualified" targetNamespace="http://replace-with-yours/ns">
+			<xs:import namespace="http://ns.hr-xml.org/2007-04-15" schemaLocation="CreateEPMDevelopmentPlan.xsd"/>
+			<xs:import namespace="http://ns.hr-xml.org/2007-04-15" schemaLocation="UpdateEPMDevelopmentPlan.xsd"/>
+			<xs:import namespace="http://ns.hr-xml.org/2007-04-15" schemaLocation="CancelEPMDevelopmentPlan.xsd"/>
+			<xs:import namespace="http://ns.hr-xml.org/2007-04-15" schemaLocation="../Common/Faults.xsd"/>
+			<xs:import namespace="http://ns.hr-xml.org/2007-04-15" schemaLocation="../Common/Acknowledge.xsd"/>
+		</xs:schema>
+	</wsdl:types>
+	<wsdl:message name="CreateEPMDevelopmentPlan">
+		<wsdl:part name="Message" element="hrxml:CreateEPMDevelopmentPlan"/>
+	</wsdl:message>
+	<wsdl:message name="UpdateEPMDevelopmentPlan">
+		<wsdl:part name="Message" element="hrxml:UpdateEPMDevelopmentPlan"/>
+	</wsdl:message>
+	<wsdl:message name="CancelEPMDevelopmentPlan">
+		<wsdl:part name="Message" element="hrxml:CancelEPMDevelopmentPlan"/>
+	</wsdl:message>
+	<wsdl:message name="CreateEPMDevelopmentPlanFault">
+		<wsdl:part name="SOAPFault_Part" element="hrxml:FaultExtensible"/>
+	</wsdl:message>
+	<wsdl:message name="UpdateEPMDevelopmentPlanFault">
+		<wsdl:part name="SOAPFault_Part" element="hrxml:FaultExtensible"/>
+	</wsdl:message>
+	<wsdl:message name="CancelEPMDevelopmentPlanFault">
+		<wsdl:part name="SOAPFault_Part" element="hrxml:FaultExtensible"/>
+	</wsdl:message>
+	<wsdl:message name="Acknowledge">
+		<wsdl:part name="Message" element="hrxml:Acknowledge"/>
+	</wsdl:message>
+	<wsdl:portType name="EPMDevelopmentPlan_PortType">
+		<wsdl:operation name="CreateEPMDevelopmentPlan">
+			<wsdl:input message="CreateEPMDevelopmentPlan"/>
+			<wsdl:output message="Acknowledge"/>
+			<wsdl:fault name="CreateEPMDevelopmentPlanFault" message="CreateEPMDevelopmentPlanFault"/>
+		</wsdl:operation>
+		<wsdl:operation name="UpdateEPMDevelopmentPlan">
+			<wsdl:input message="UpdateEPMDevelopmentPlan"/>
+			<wsdl:output message="Acknowledge"/>
+			<wsdl:fault name="UpdateEPMDevelopmentPlanFault" message="UpdateEPMDevelopmentPlanFault"/>
+		</wsdl:operation>
+		<wsdl:operation name="CancelEPMDevelopmentPlan">
+			<wsdl:input message="CancelEPMDevelopmentPlan"/>
+			<wsdl:output message="Acknowledge"/>
+			<wsdl:fault name="CancelEPMDevelopmentPlanFault" message="CancelEPMDevelopmentPlanFault"/>
+		</wsdl:operation>
+	</wsdl:portType>
+	<wsdl:binding name="EPMDevelopmentPlan_Binding" type="EPMDevelopmentPlan_PortType">
+		<soapbind:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+		<wsdl:operation name="CreateEPMDevelopmentPlan">
+			<soapbind:operation style="document"/>
+			<wsdl:input>
+				<soapbind:body use="literal"/>
+			</wsdl:input>
+			<wsdl:output>
+				<soapbind:body use="literal"/>
+			</wsdl:output>
+			<wsdl:fault name="CreateEPMDevelopmentPlanFault">
+				<soapbind:fault name="CreateEPMDevelopmentPlanFault" use="literal"/>
+			</wsdl:fault>
+		</wsdl:operation>
+		<wsdl:operation name="UpdateEPMDevelopmentPlan">
+			<soapbind:operation style="document"/>
+			<wsdl:input>
+				<soapbind:body use="literal"/>
+			</wsdl:input>
+			<wsdl:output>
+				<soapbind:body use="literal"/>
+			</wsdl:output>
+			<wsdl:fault name="UpdateEPMDevelopmentPlanFault">
+				<soapbind:fault name="UpdateEPMDevelopmentPlanFault" use="literal"/>
+			</wsdl:fault>
+		</wsdl:operation>
+		<wsdl:operation name="CancelEPMDevelopmentPlan">
+			<soapbind:operation style="document"/>
+			<wsdl:input>
+				<soapbind:body use="literal"/>
+			</wsdl:input>
+			<wsdl:output>
+				<soapbind:body use="literal"/>
+			</wsdl:output>
+			<wsdl:fault name="CancelEPMDevelopmentPlanFault">
+				<soapbind:fault name="CancelEPMDevelopmentPlanFault" use="literal"/>
+			</wsdl:fault>
+		</wsdl:operation>
+	</wsdl:binding>
+	<wsdl:service name="EPMDevelopmentPlan_Service">
+		<wsdl:port name="EPMDevelopmentPlan_Port" binding="EPMDevelopmentPlan_Binding">
+			<soapbind:address location="http://www.replace-with-yours.com/ws/EPMDevelopmentPlan"/>
+		</wsdl:port>
+	</wsdl:service>
+</wsdl:definitions>

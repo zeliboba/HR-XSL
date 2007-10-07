@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+    License information for this file is provided in LICENSE.TXT
+    For support, more information, or to report implementation bugs, 
+    please contact the Open Applications Group at xml@openapplications.org 
+     
+    ** Revision: 8.0 **
+    ** Date: 05 April 2002 **
+    Open Applications Group XSD IndustryA Overlay Example
+    Copyright 1998-2002, All Rights Reserved
+    
+    Name: IndustryA TimeCard.xsd
+-->
+<xs:schema targetNamespace="http://www.oagi.net/oagis/ia" xmlns:oa="http://www.openapplications.org/oagis" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:ia="http://www.oagi.net/oagis/ia" elementFormDefault="qualified" attributeFormDefault="unqualified">
+	<xs:import namespace="http://www.openapplications.org/oagis" schemaLocation="../../../../OAGIS/Resources/Components.xsd"/>
+	<xs:complexType name="TimeCard">
+		<xs:complexContent>
+			<xs:extension base="oa:Noun"/>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:element name="TimeCard" type="ia:TimeCard" substitutionGroup="oa:Noun"/>
+</xs:schema>

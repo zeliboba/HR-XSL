@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Project XSL_DestFolderSet="Yes" XSL_DestFolder=".\./Documentation" XSL_DestFileExtSet="Yes">
+	<Folder FolderName="OAGIS">
+		<Folder FolderName="Resources">
+			<Folder FolderName="Nouns">
+				<Folder FolderName="BaseNouns">
+					<File FilePath=".\OAGIS\Resources\Nouns\Document.xsd" HomeFolder="Yes"/>
+					<File FilePath=".\OAGIS\Resources\Nouns\Order.xsd" HomeFolder="Yes"/>
+				</Folder>
+				<File FilePath=".\OAGIS\Resources\Nouns\Invoice.xsd" HomeFolder="Yes"/>
+			</Folder>
+			<Folder FolderName="Verbs">
+				<File FilePath=".\OAGIS\Resources\Verbs\Confirm.xsd" HomeFolder="Yes"/>
+				<File FilePath=".\OAGIS\Resources\Verbs\Get.xsd" HomeFolder="Yes"/>
+				<File FilePath=".\OAGIS\Resources\Verbs\Process.xsd" HomeFolder="Yes"/>
+				<File FilePath=".\OAGIS\Resources\Verbs\Show.xsd" HomeFolder="Yes"/>
+				<File FilePath=".\OAGIS\Resources\Verbs\Sync.xsd" HomeFolder="Yes"/>
+				<File FilePath=".\OAGIS\Resources\Verbs\Verb.xsd" HomeFolder="Yes"/>
+				<File FilePath=".\OAGIS\Resources\Verbs\VerbBase.xsd" HomeFolder="Yes"/>
+			</Folder>
+			<File FilePath=".\OAGIS\Resources\Components.xsd" HomeFolder="Yes"/>
+			<File FilePath=".\OAGIS\Resources\Enums.xsd" HomeFolder="Yes"/>
+			<File FilePath=".\OAGIS\Resources\Fields.xsd" HomeFolder="Yes"/>
+			<File FilePath=".\OAGIS\Resources\Meta.xsd" HomeFolder="Yes"/>
+			<File FilePath=".\OAGIS\Resources\MfgComponents.xsd" HomeFolder="Yes"/>
+		</Folder>
+		<Folder FolderName="BODs">
+			<Folder FolderName="Sorted By Noun">
+				<Folder FolderName="BOD">
+					<File FilePath=".\OAGIS\BODs\ConfirmBOD.xsd" HomeFolder="Yes"/>
+				</Folder>
+				<Folder FolderName="Invoice">
+					<File FilePath=".\OAGIS\BODs\GetInvoice.xsd" HomeFolder="Yes"/>
+					<File FilePath=".\OAGIS\BODs\ProcessInvoice.xsd" HomeFolder="Yes"/>
+					<File FilePath=".\OAGIS\BODs\ShowInvoice.xsd" HomeFolder="Yes"/>
+					<File FilePath=".\OAGIS\BODs\SyncInvoice.xsd" HomeFolder="Yes"/>
+				</Folder>
+			</Folder>
+			<Folder FolderName="Sorted By Verb">
+				<Folder FolderName="Acknowledge">
+					<File FilePath=".\OAGIS\BODs\AcknowledgeDeliveryReceipt.xsd" HomeFolder="Yes"/>
+				</Folder>
+				<Folder FolderName="Get">
+					<File FilePath=".\OAGIS\BODs\GetInvoice.xsd"/>
+				</Folder>
+				<Folder FolderName="Process">
+					<File FilePath=".\OAGIS\BODs\ProcessInvoice.xsd"/>
+				</Folder>
+				<Folder FolderName="Show">
+					<File FilePath=".\OAGIS\BODs\ShowInvoice.xsd"/>
+				</Folder>
+				<Folder FolderName="Sync">
+					<File FilePath=".\OAGIS\BODs\SyncInvoice.xsd"/>
+				</Folder>
+			</Folder>
+		</Folder>
+		<Folder FolderName="Overlays"/>
+		<Folder FolderName="BOD Instance Examples">
+			<Folder FolderName="BOD">
+				<File FilePath=".\OAGIS\BODExamples\ConfirmBOD.xml" HomeFolder="Yes"/>
+			</Folder>
+			<Folder FolderName="Invoice">
+				<File FilePath=".\OAGIS\BODExamples\GetInvoice.xml" HomeFolder="Yes"/>
+				<File FilePath=".\OAGIS\BODExamples\ProcessInvoice.xml" HomeFolder="Yes"/>
+				<File FilePath=".\OAGIS\BODExamples\ShowInvoice.xml" HomeFolder="Yes"/>
+				<File FilePath=".\OAGIS\BODExamples\SyncInvoice.xml" HomeFolder="Yes"/>
+			</Folder>
+		</Folder>
+		<Folder FolderName="BOD Constraints">
+			<Folder FolderName="Rules">
+				<Folder FolderName="BOD">
+					<File FilePath=".\OAGIS\BODConstraints\Rules\ConfirmBOD.xml" HomeFolder="Yes"/>
+				</Folder>
+				<Folder FolderName="Invoice">
+					<File FilePath=".\OAGIS\BODConstraints\Rules\GetInvoice.xml" HomeFolder="Yes"/>
+					<File FilePath=".\OAGIS\BODConstraints\Rules\ProcessInvoice.xml" HomeFolder="Yes"/>
+					<File FilePath=".\OAGIS\BODConstraints\Rules\ShowInvoice.xml" HomeFolder="Yes"/>
+					<File FilePath=".\OAGIS\BODConstraints\Rules\SyncInvoice.xml" HomeFolder="Yes"/>
+				</Folder>
+				<File FilePath=".\OAGIS\BODConstraints\Rules\GlobalConstraints.xml" HomeFolder="Yes"/>
+			</Folder>
+			<Folder FolderName="Generated">
+				<Folder FolderName="BOD">
+					<File FilePath=".\OAGIS\BODConstraints\Generated\ConfirmBOD.xsl" HomeFolder="Yes"/>
+				</Folder>
+				<Folder FolderName="Invoice">
+					<File FilePath=".\OAGIS\BODConstraints\Generated\GetInvoice.xsl" HomeFolder="Yes"/>
+					<File FilePath=".\OAGIS\BODConstraints\Generated\ProcessInvoice.xsl" HomeFolder="Yes"/>
+					<File FilePath=".\OAGIS\BODConstraints\Generated\ShowInvoice.xsl" HomeFolder="Yes"/>
+					<File FilePath=".\OAGIS\BODConstraints\Generated\SyncInvoice.xsl" HomeFolder="Yes"/>
+				</Folder>
+				<File FilePath=".\OAGIS\BODConstraints\Generated\GlobalConstraints.xsl" HomeFolder="Yes"/>
+			</Folder>
+		</Folder>
+	</Folder>
+	<Folder FolderName="Overlays">
+		<Folder FolderName="IndustryA">
+			<Folder FolderName="BODExamples">
+				<File FilePath=".\OverlayExamples\IndustryA\BODExamples\ProcessInvoice.xml" HomeFolder="Yes"/>
+				<File FilePath=".\OverlayExamples\IndustryA\BODExamples\ProcessTimeCard.xml" HomeFolder="Yes"/>
+			</Folder>
+			<Folder FolderName="BODs">
+				<File FilePath=".\OverlayExamples\IndustryA\BODs\ProcessInvoice.xsd" HomeFolder="Yes"/>
+				<File FilePath=".\OverlayExamples\IndustryA\BODs\ProcessTimeCard.xsd" HomeFolder="Yes"/>
+			</Folder>
+			<Folder FolderName="Resources">
+				<Folder FolderName="Nouns">
+					<File FilePath=".\OverlayExamples\IndustryA\Resources\Nouns\Invoice.xsd" HomeFolder="Yes"/>
+					<File FilePath=".\OverlayExamples\IndustryA\Resources\Nouns\TimeCard.xsd" HomeFolder="Yes"/>
+				</Folder>
+				<File FilePath=".\OverlayExamples\IndustryA\Resources\IndustryA.xsd" HomeFolder="Yes"/>
+			</Folder>
+		</Folder>
+	</Folder>
+	<Folder FolderName="Documentation" XSL_DestFolderSet="Yes" XSL_DestFolder=".\./Documentation">
+		<File FilePath=".\Documentation\OAGISFrames.html" HomeFolder="Yes"/>
+	</Folder>
+</Project>

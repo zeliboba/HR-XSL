@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema xmlns="http://ns.hr-xml.org/2007-04-15" xmlns:xsd="http://www.w3.org/2001/XMLSchema" targetNamespace="http://ns.hr-xml.org/2007-04-15" elementFormDefault="qualified" attributeFormDefault="unqualified">
+
+	<xsd:include schemaLocation="../CPO/DateTimeDataTypes.xsd"/>
+	<xsd:include schemaLocation="../CPO/UserArea.xsd"/>
+
+	<xsd:complexType name="IndEmploymentInfoType">
+		<xsd:sequence>
+			<xsd:element name="IsEmployed" type="xsd:boolean" minOccurs="0"/>
+			<xsd:element name="ProposedHireInfo" type="IndProposedHireInfoType" minOccurs="0"/>
+			<xsd:element name="Employment" type="IndEmploymentLifecycleType" minOccurs="0" maxOccurs="unbounded"/>
+			<xsd:element name="UserArea" type="UserAreaType" minOccurs="0"/>
+		</xsd:sequence>
+	</xsd:complexType>
+
+	<xsd:simpleType name="IndEmploymentStatusType">
+		<xsd:restriction base="xsd:string">
+			<xsd:enumeration value="Employed"/>
+			<xsd:enumeration value="NotEmployed"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+
+	<xsd:complexType name="IndEmploymentLifecycleType">
+		<xsd:sequence>
+			<xsd:element name="HireInfo" type="IndHireInfoType" minOccurs="0"/>
+			<xsd:element name="IsOnLeave" type="xsd:boolean" minOccurs="0"/>
+			<xsd:element name="LeaveInfo" type="IndLOAInfoType" minOccurs="0" maxOccurs="unbounded"/>
+			<xsd:element name="IsTerminated" type="xsd:boolean" minOccurs="0"/>
+			<xsd:element name="TerminationInfo" type="IndTerminationInfoType" minOccurs="0"/>
+		</xsd:sequence>
+	</xsd:complexType>
+
+	<xsd:complexType name="IndProposedHireInfoType">
+		<xsd:sequence>
+			<xsd:element name="ExpectedStartDate" type="LocalDateType" minOccurs="0"/>
+			<xsd:element name="CancelHire" type="IndCancelHireType" minOccurs="0"/>
+		</xsd:sequence>
+	</xsd:complexType>
+
+	<xsd:complexType name="IndHireInfoType">
+		<xsd:sequence>
+			<xsd:element name="HireDate" type="LocalDateType" minOccurs="0"/>
+			<xsd:element name="OriginalHireDate" type="LocalDateType" minOccurs="0"/>
+			<xsd:element name="AdjustedHireDate" type="IndAdjustedHireDateType" minOccurs="0" maxOccurs="unbounded"/>
+		</xsd:sequence>
+		<xsd:attribute name="typeOfHire">
+			<xsd:simpleType>
+				<xsd:restriction base="xsd:string">
+					<xsd:enumeration value="NewHire"/>
+					<xsd:enumeration value="Rehire"/>
+					<xsd:enumeration value="Acquisition"/>
+				</xsd:restriction>
+			</xsd:simpleType>
+		</xsd:attribute>
+	</xsd:complexType>
+
+	<xsd:complexType name="IndLOAInfoType">
+		<xsd:sequence>
+			<xsd:element name="LeaveDate" type="LocalDateType" minOccurs="0"/>
+			<xsd:element name="LeaveReason" type="LeaveReasonType" minOccurs="0"/>
+			<xsd:element name="LastDateWorked" type="LocalDateType" minOccurs="0"/>
+			<xsd:element name="ScheduledReturnToWorkDate" type="LocalDateType" minOccurs="0"/>
+			<xsd:element name="ReturnedToWorkDate" type="LocalDateType" minOccurs="0"/>
+		</xsd:sequence>
+		<xsd:attribute name="employeeLeaveStatus">
+			<xsd:simpleType>
+				<xsd:restriction base="xsd:string">
+					<xsd:enumeration value="Active"/>
+					<xsd:enumeration value="Inactive"/>
+				</xsd:restriction>
+			</xsd:simpleType>
+		</xsd:attribute>
+		<xsd:attribute name="remunerationLeaveStatus">
+			<xsd:simpleType>
+				<xsd:restriction base="xsd:string">
+					<xsd:enumeration value="Paid"/>
+					<xsd:enumeration value="Unpaid"/>
+				</xsd:restriction>
+			</xsd:simpleType>
+		</xsd:attribute>
+	</xsd:complexType>
+
+	<xsd:complexType name="IndTerminationInfoType">
+		<xsd:sequence>
+			<xsd:element name="TerminationReason" type="xsd:string" minOccurs="0"/>
+			<xsd:element name="TerminationDate" type="LocalDateType" minOccurs="0"/>
+			<xsd:element name="LastDateWorked" type="LocalDateType" minOccurs="0"/>
+			<xsd:element name="LastDatePaid" type="LocalDateType" minOccurs="0"/>
+		</xsd:sequence>
+		<xsd:attribute name="isVoluntary" type="xsd:boolean"/>
+	</xsd:complexType>
+
+	<xsd:complexType name="IndCancelHireType">
+		<xsd:simpleContent>
+			<xsd:extension base="TrueValueOnlyEnumType">
+				<xsd:attribute name="cancelDate" type="LocalDateType" use="optional"/>
+			</xsd:extension>
+		</xsd:simpleContent>
+	</xsd:complexType>
+
+	<xsd:complexType name="IndAdjustedHireDateType">
+		<xsd:simpleContent>
+			<xsd:extension base="LocalDateType">
+				<xsd:attribute name="type" type="xsd:string" use="optional"/>
+			</xsd:extension>
+		</xsd:simpleContent>
+	</xsd:complexType>
+
+	<xsd:complexType name="LeaveReasonType">
+		<xsd:simpleContent>
+			<xsd:extension base="xsd:string">
+				<xsd:attribute name="validFrom" type="LocalDateType"/>
+			</xsd:extension>
+		</xsd:simpleContent>
+	</xsd:complexType>
+
+	<xsd:simpleType name="TrueValueOnlyEnumType">
+		<xsd:restriction base="xsd:string">
+			<xsd:enumeration value="true"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+</xsd:schema>

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="http://ns.hr-xml.org/2007-04-15" targetNamespace="http://ns.hr-xml.org/2007-04-15" elementFormDefault="qualified" attributeFormDefault="unqualified">
+
+	<xsd:include schemaLocation="../CPO/IdentifierTypes.xsd"/>
+	<xsd:include schemaLocation="../CPO/SharedStaffingModules.xsd"/>
+	<xsd:include schemaLocation="../CPO/UserArea.xsd"/>
+
+	<xsd:complexType name="IndAffiliationInfoType">
+		<xsd:sequence>
+			<xsd:element name="LaborBargainingUnitMembership" type="LaborBargainingUnitMembershipType" minOccurs="0" maxOccurs="unbounded"/>
+			<xsd:element ref="Association" minOccurs="0" maxOccurs="unbounded"/>
+			<xsd:element name="UserArea" type="UserAreaType" minOccurs="0"/>
+		</xsd:sequence>
+	</xsd:complexType>
+
+	<xsd:complexType name="LaborBargainingUnitMembershipType">
+		<xsd:sequence>
+			<xsd:element name="OrganizationName" type="xsd:string" minOccurs="0"/>
+			<xsd:element name="OrganizationId" type="EntityIdType" minOccurs="0"/>
+			<xsd:element name="MemberId" type="EntityIdType" minOccurs="0"/>
+		</xsd:sequence>
+		<xsd:attribute name="validFrom" type="LocalDateType" use="optional"/>
+		<xsd:attribute name="validTo" type="LocalDateType" use="optional"/>
+	</xsd:complexType>
+</xsd:schema>

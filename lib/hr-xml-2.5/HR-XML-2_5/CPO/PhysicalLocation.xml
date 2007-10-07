@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<PhysicalLocation xmlns="http://ns.hr-xml.org/2007-04-15" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://ns.hr-xml.org/2007-04-15 
+PhysicalLocation.xsd">
+	<Id>
+		<IdValue>String</IdValue>
+	</Id>
+	<Name>String</Name>
+	<EffectiveDate>
+		<StartDate>2000-01-01</StartDate>
+		<EndDate>2000-01-01</EndDate>
+	</EffectiveDate>
+	<SpatialLocation>
+		<Latitude>37</Latitude>
+		<Longitude>122</Longitude>
+		<Altitude>3.14</Altitude>
+		<HorizontalAccuracy>0</HorizontalAccuracy>
+		<VerticalAccuracy>0</VerticalAccuracy>
+	</SpatialLocation>
+	<TravelDirections>String</TravelDirections>
+	<PostalAddress>
+		<CountryCode>AA</CountryCode>
+		<PostalCode>String</PostalCode>
+		<Region>String</Region>
+		<Municipality>String</Municipality>
+		<DeliveryAddress>
+			<AddressLine>String</AddressLine>
+			<StreetName>String</StreetName>
+			<BuildingNumber>String</BuildingNumber>
+			<Unit>String</Unit>
+			<PostOfficeBox>String</PostOfficeBox>
+		</DeliveryAddress>
+		<Recipient>
+			<PersonName>
+				<FormattedName>String</FormattedName>
+				<LegalName>String</LegalName>
+				<GivenName>String</GivenName>
+				<PreferredGivenName>String</PreferredGivenName>
+				<MiddleName>String</MiddleName>
+				<FamilyName primary="undefined" prefix="String">String</FamilyName>
+				<Affix type="qualification">String</Affix>
+			</PersonName>
+			<AdditionalText>String</AdditionalText>
+			<Organization>String</Organization>
+			<OrganizationName>String</OrganizationName>
+		</Recipient>
+	</PostalAddress>
+	<Area>
+		<Description>String</Description>
+		<Area>
+			<Description>String</Description>
+		</Area>
+	</Area>
+	<Comments>String</Comments>
+</PhysicalLocation>

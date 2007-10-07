@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema targetNamespace="http://ns.hr-xml.org/2007-04-15" xmlns="http://ns.hr-xml.org/2007-04-15" xmlns:xsd="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" version="2007-04-15">
+	<xsd:annotation>
+		<xsd:documentation>
+"Copyright  The HR-XML Consortium. All Rights Reserved. http://www.hr-xml.org"
+Name: BenefitDeductionCategoryType.xsd
+Status: Recommendation
+Date this version: 2007-04-15
+Purpose: This schema acts as a union for implemented deduction category types.
+Author(s): Jason Brown, Payroll Workgroup
+Document: PayrollInstructions.html containts semantic information.  SchemaDesignGuidelines.pdf contains the syntactic design for "Localization" extension used in this schema.
+
+Terms of license can be found in license.txt.
+
+</xsd:documentation>
+	</xsd:annotation>
+	<xsd:include schemaLocation="../CPO/xStringPatternExtensionType.xsd"/>
+	<xsd:include schemaLocation="../Payroll/US/USLocalizations.xsd"/>
+	<!-- BenefitDeductionCategory Type -->
+	<xsd:simpleType name="BenefitDeductionCategoryType">
+		<xsd:union memberTypes="USBenefitDeductionCategoryType xStringPatternExtensionType"/>
+	</xsd:simpleType>
+</xsd:schema>

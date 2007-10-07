@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+    License information for this file is provided in LICENSE.TXT
+    For support, more information, or to report implementation bugs, 
+    please contact the Open Applications Group at xml@openapplications.org 
+     
+    ** Revision: 8.0 **
+    ** Date: 05 April 2002 **
+    Open Applications Group XSD
+    Copyright 1998-2002, All Rights Reserved
+    
+    Name: ProcessInvoice.xsd
+-->
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns="http://www.openapplications.org/oagis" targetNamespace="http://www.openapplications.org/oagis" elementFormDefault="qualified" attributeFormDefault="unqualified">
+        <xs:include schemaLocation="../Resources/Verbs/Process.xsd"/>
+        <xs:include schemaLocation="../Resources/Nouns/Invoice.xsd"/>
+        <xs:element name="ProcessInvoice" type="ProcessInvoice">
+                <xs:annotation>
+                        <xs:documentation source="http://www.openapplications.org/oagis">The purpose of the ProcessInvoice is to transmit an invoice from a supplier to a customer. Indicating that the receiver of the Invoice is to Process the Invoice for payment.</xs:documentation>
+                </xs:annotation>
+        </xs:element>
+        <xs:complexType name="ProcessInvoice">
+                <xs:complexContent>
+                        <xs:extension base="BusinessObjectDocument">
+                                <xs:sequence>
+                                        <xs:element name="DataArea">
+                                                <xs:annotation>
+                                                        <xs:documentation source="http://www.openapplications.org/oagis">Is where the information that the BOD message carries is provided, in this case ProcessInvoice. The information consists of a Verb and one or more Nouns. The verb (Process) indicates the action to be performed on the Noun (Invoice).</xs:documentation>
+                                                </xs:annotation>
+                                        </xs:element>
+                                </xs:sequence>
+                        </xs:extension>
+                </xs:complexContent>
+        </xs:complexType>
+<!--
+	<xs:complexType name="DataArea">
+		<xs:complexContent>
+			<xs:restriction base="DataAreaBase">
+				<xs:sequence>
+					<xs:choice>
+						<xs:element ref="Process"/>
+					</xs:choice>
+					<xs:choice maxOccurs="unbounded">
+						<xs:element ref="Invoice"/>
+					</xs:choice>
+				</xs:sequence>
+			</xs:restriction>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:element name="DataArea" type="DataArea" substitutionGroup="DataAreaAbs">
+		<xs:annotation>
+			<xs:documentation>Is where the information that the message carries is provided. This is done by using the Verb which indicates the action to be performed on the Noun and 1 or more Nouns, which is the object that the action is to be performed.</xs:documentation>
+		</xs:annotation>
+	</xs:element>  -->
+        <xs:complexType name="ProcessInvoiceDataArea">
+                <xs:complexContent>
+                        <xs:extension base="DataArea">
+                                <xs:sequence>
+                                        <xs:element ref="Process"/>
+                                        <xs:element ref="Invoice" maxOccurs="unbounded"/>
+                                </xs:sequence>
+                        </xs:extension>
+                </xs:complexContent>
+        </xs:complexType>
+</xs:schema>

@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TimeCard xmlns="http://ns.hr-xml.org/2007-04-15" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://ns.hr-xml.org/2007-04-15
+../../SIDES/TimeCardAdditionalData.xsd">
+	<!--This xml file serves as a HR-XML SIDES TimeCard example -->
+	<Id>
+		<IdValue>12345678</IdValue>
+	</Id>
+	<ReportedResource>
+		<Person>
+			<!-- The IdValue of the ReportedResource may specify the identifier of a person within an organization. Through the attribute of idowner we can specify whether this number is valid wih the Staffing company or the Staffing customer --> 
+			<Id idOwner="StaffingCustomer">
+				<IdValue>23456</IdValue>
+			</Id>
+			<PersonName>
+				<FormattedName>Piet Jansen</FormattedName>
+				<LegalName>Pieter</LegalName>
+				<PreferredGivenName>Piet</PreferredGivenName>
+				<FamilyName primary="true" prefix="van">Jansen</FamilyName>
+				<Affix type="qualification">Dr.</Affix>
+			</PersonName>
+		</Person>
+	</ReportedResource>
+	<ReportedTime>
+		<PeriodStartDate>2006-04-03</PeriodStartDate>
+		<PeriodEndDate>2006-04-04</PeriodEndDate>
+		<!-- The TimeInterval types have been standardized in the Netherlands as to contain one of eight specific types (for the moment): Regular, Overtime, Shift, Travel, Additional, Special leave, Short leave, Holiday, Unpayed leave, Training, Vacation, Sick time, Work underload -->
+		<TimeInterval type="regular" billable="true">
+			<StartDateTime>2006-04-03T09:00:00</StartDateTime>
+			<EndDateTime>2006-04-03T17:00:00</EndDateTime>
+			<Duration>8.00</Duration>
+			<RateOrAmount currency="EUR" type="hourly">30</RateOrAmount>
+		</TimeInterval>
+		<TimeInterval type="overtime" billable="true">
+			<StartDateTime>2006-04-03T19:00:00</StartDateTime>
+			<EndDateTime>2006-04-03T21:00:00</EndDateTime>
+			<Duration>2.00</Duration>
+			<!-- The 'multiplier' attribute in the RateOrAmount element specifies a surcharge percentage for a Rate. 100% constitutes a Rate without surcharges. -->
+			<RateOrAmount currency="EUR" type="hourly" multiplier="150">30</RateOrAmount>
+		</TimeInterval>
+			<TimeInterval type="shift" billable="true">
+			<StartDateTime>2006-04-04T18:00:00</StartDateTime>
+			<EndDateTime>2006-04-04T23:00:00</EndDateTime>
+			<Duration>7.00</Duration>
+			<RateOrAmount currency="EUR" type="hourly" multiplier="125">30</RateOrAmount>
+		</TimeInterval>
+		<!-- Expenses/allowances  are all specified by means of an Allowance element. The attribute 'type' specifies whether it should be intepreted as  an allowance or an expense. We assume that all Allowance elements specified on the TimeCard are in fact 'billable'. Allowances that are not 'billable'are specified as an Allowance within a TimeInterval -->
+		<Allowance type="allowance">
+			<Id>
+				<!-- The expense/allowance types are specified in the attribute 'name' and have been standardized in The Netherlands  -->
+				<IdValue name="travel expenses"></IdValue>
+			</Id>
+			<StartDate>2006-04-01</StartDate>
+			<EndDate>2006-04-05</EndDate>
+			<Amount currency="EUR">14.00</Amount>
+			<Comment>Example of an allowance</Comment>
+		</Allowance>
+		<Allowance type="expense">
+			<Id>
+				<IdValue name="meal"></IdValue>
+			</Id>
+			<StartDate>2006-04-04</StartDate>
+			<EndDate>2006-04-04</EndDate>
+			<Amount currency="EUR">10.00</Amount>
+			<Comment>Example of a statement of expenses</Comment>
+		</Allowance>
+		<!-- Expenses/allowances that are not billable, are specified as an Allowance within a TimeInterval -->
+		<TimeInterval type="Regular" billable="false">
+			<StartDateTime>2006-04-03T09:00:00</StartDateTime>
+			<EndDateTime>2006-04-03T17:00:00</EndDateTime>
+			<Allowance type="expense">
+				<Amount currency="EUR">15.00</Amount>
+			</Allowance>
+		</TimeInterval>
+	</ReportedTime>
+	<ApprovalInfo>
+		<Person>
+			<Id>
+				<IdValue/>
+			</Id>
+			<PersonName>
+				<FormattedName>Jan Pietersen</FormattedName>
+			</PersonName>
+		</Person>
+		<ApprovedDateTime>2006-04-06T09:30:00</ApprovedDateTime>
+	</ApprovalInfo>
+	<AdditionalData>
+		<StaffingAdditionalData>
+			<CustomerReportingRequirements>
+				<!-- CustomerReportingRequirements allow for specification of multiple reporting elements  in order to provide input to processing the invoice at the customer's site -->
+				<DepartmentCode>4321</DepartmentCode>
+				<DepartmentName>Afdeling B</DepartmentName>
+				<CostCenterCode>BB-456</CostCenterCode>
+				<CostCenterName>Kostennaam</CostCenterName>
+				<!--Projectcode -->
+				<ProjectCode>P-Project 01.26</ProjectCode>
+				<!-- Budgetnumber -->
+				<CustomerReferenceNumber>5678</CustomerReferenceNumber>
+				<!-- Additional requirements/referenties that do not fit into other elements, may be specified in an unlimited number of AdditionalRequirements -->
+				<AdditionalRequirement requirementTitle="optionele naam vooor de referentie">Vrije tekst</AdditionalRequirement>
+				<AdditionalRequirement>Nog meer vrije tekst</AdditionalRequirement>
+			</CustomerReportingRequirements>			
+			<ReferenceInformation>
+				<!-- A reference to the AssignmentId -->
+				<AssignmentId>
+					<IdValue>1234/1234561</IdValue>
+				</AssignmentId>
+			</ReferenceInformation>
+		</StaffingAdditionalData>
+	</AdditionalData>
+</TimeCard>

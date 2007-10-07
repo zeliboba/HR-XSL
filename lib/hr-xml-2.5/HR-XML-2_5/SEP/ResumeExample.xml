@@ -1,0 +1,294 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Resume xml:lang="EN" xmlns="http://ns.hr-xml.org/2007-04-15" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://ns.hr-xml.org/2007-04-15
+Resume.xsd">
+	<ResumeId>
+		<IdValue>JA2284</IdValue>
+	</ResumeId>
+	<DistributionGuidelines>
+		<DistributeTo>
+			<Name>Abbot Laboratories</Name>
+			<ContactMethod>
+				<Telephone>
+					<FormattedNumber>01-790-123-1557</FormattedNumber>
+				</Telephone>
+				<InternetWebAddress>www.abbotlab.com</InternetWebAddress>
+			</ContactMethod>
+		</DistributeTo>
+		<DoNotDistributeTo>
+			<Name>Wilson Research Laboratories</Name>
+		</DoNotDistributeTo>
+	</DistributionGuidelines>
+	<StructuredXMLResume>
+		<ContactInfo>
+			<PersonName>
+				<FormattedName>John A. Example</FormattedName>
+			</PersonName>
+			<ContactMethod>
+				<Telephone>
+					<FormattedNumber>+1 404 122 1234 </FormattedNumber>
+				</Telephone>
+				<Fax>
+					<FormattedNumber>+1 404 123 1234</FormattedNumber>
+				</Fax>
+				<InternetEmailAddress>jaexample@cc.gatech.edu</InternetEmailAddress>
+				<InternetWebAddress>http://www.cc.gatech.edu/~jaexample/</InternetWebAddress>
+				<PostalAddress>
+					<CountryCode>US</CountryCode>
+					<PostalCode>12345-1234</PostalCode>
+					<Region>GA</Region>
+					<Municipality>Atlanta</Municipality>
+					<Recipient>
+						<OrganizationName>College of Computing, Georgia Institute of Technology</OrganizationName>
+					</Recipient>
+				</PostalAddress>
+			</ContactMethod>
+		</ContactInfo>
+		<ExecutiveSummary>Summary of employment and education history, publications, speaking engagements, and other acheivements during my career.</ExecutiveSummary>
+		<Objective>To find opportunity which best fits my skills and experience.</Objective>
+		<EmploymentHistory>
+			<EmployerOrg>
+				<EmployerOrgName>IBM</EmployerOrgName>
+				<EmployerContactInfo>
+					<LocationSummary>
+						<Municipality>Yorktown Heights</Municipality>
+						<Region>NY</Region>
+					</LocationSummary>
+				</EmployerContactInfo>
+				<PositionHistory positionType="internship">
+					<Title/>
+					<OrgName>
+						<OrganizationName>T.J. Watson Research Center</OrganizationName>
+					</OrgName>
+					<Description>Designed and prototyped extensions to Babble, a distributed workgroup support system developed at IBM Research. Babble allows members of a workgroup to stay in contact through semi-synchronous textual discussion (both public and private) and variety of awareness aids. Performed an in-depth analysis of the system as it currently exists and created a number of design sketches, prototypes, and working versions of an improved Babble that supports much richer interaction. Two patents are pending on this work. </Description>
+					<StartDate>
+						<YearMonth>1998-06</YearMonth>
+					</StartDate>
+					<EndDate>
+						<YearMonth>1998-08</YearMonth>
+					</EndDate>
+				</PositionHistory>
+			</EmployerOrg>
+		</EmploymentHistory>
+		<EducationHistory>
+			<SchoolOrInstitution schoolType="trade">
+				<School>
+					<InternetDomainName>www.gatech.edu</InternetDomainName>
+					<SchoolName>Georgia Institute of Technology</SchoolName>
+				</School>
+				<Degree degreeType="doctorate">
+					<DegreeName>Ph.D.</DegreeName>
+					<DegreeDate>
+						<YearMonth>2002-12</YearMonth>
+					</DegreeDate>
+					<DegreeMajor>
+						<Name>Computer Science</Name>
+					</DegreeMajor>
+					<DegreeMinor>
+						<Name>History, Technology, and Society</Name>
+					</DegreeMinor>
+					<Comments>Dissertation advisor: Amy Breck</Comments>
+				</Degree>
+			</SchoolOrInstitution>
+		</EducationHistory>
+		<LicensesAndCertifications>
+			<LicenseOrCertification>
+				<Name>Microsoft Certified Systems Engineer</Name>
+				<Id/>
+				<IssuingAuthority>Microsoft</IssuingAuthority>
+				<Description>Analyze business requirements to design and implement an infrastructure solution based on the Windows platform and Microsoft Servers software.</Description>
+				<EffectiveDate>
+					<ValidFrom>
+						<AnyDate>2002-01-01</AnyDate>
+					</ValidFrom>
+					<ValidTo>
+						<AnyDate>2003-01-01</AnyDate>
+					</ValidTo>
+				</EffectiveDate>
+			</LicenseOrCertification>
+		</LicensesAndCertifications>
+		<PatentHistory>
+			<Patent>
+				<PatentTitle>Method for Translucent Online Interaction</PatentTitle>
+				<Description/>
+				<Inventors>
+					<InventorName>Rachel R. Bell</InventorName>
+					<InventorName>John A. Example</InventorName>
+				</Inventors>
+				<PatentDetail>
+					<PatentMilestone>
+						<Status>PatentPending</Status>
+						<Date>2000-09-12</Date>
+					</PatentMilestone>
+				</PatentDetail>
+			</Patent>
+		</PatentHistory>
+		<PublicationHistory>
+			<Article>
+				<Title>Designing Interfaces for Youth Services Information Management.</Title>
+				<Name role="author">
+					<FormattedName>John A. Example</FormattedName>
+				</Name>
+				<PublicationDate>
+					<YearMonth>1996-06</YearMonth>
+				</PublicationDate>
+				<JournalOrSerialName>1996 Human-Computer Interaction Laboratory Video Reports, K. Pleasant, Ed., </JournalOrSerialName>
+				<Volume>vol. 2</Volume>
+				<Issue>no. 3</Issue>
+				<PageNumber>pp.319-329</PageNumber>
+				<PublicationLanguage>EN</PublicationLanguage>
+			</Article>
+			<Book>
+				<Title>XML in a Seashell</Title>
+				<Name role="author">
+					<FormattedName>John A. Example</FormattedName>
+				</Name>
+				<PublicationDate>
+					<YearMonth>2001-02</YearMonth>
+				</PublicationDate>
+				<Abstract>A very readable introduction to XML for readers with existing knowledge of markup and Web technologies. </Abstract>
+				<Copyright>
+					<CopyrightDates>
+						<OriginalDate>
+							<Year>2001</Year>
+						</OriginalDate>
+					</CopyrightDates>
+					<CopyrightText>Copyright 2nd edition</CopyrightText>
+				</Copyright>
+				<Edition>2nd Edition</Edition>
+				<ISBN>0596000222</ISBN>
+				<PublisherName>O'Malley Associates</PublisherName>
+				<PublisherLocation> Garden City, NY, US	</PublisherLocation>
+			</Book>
+			<ConferencePaper>
+				<Title>Trends in Employee Benefit Offerings</Title>
+				<Name role="author">
+					<FormattedName>Debra J. Cohen</FormattedName>
+				</Name>
+				<EventName>SHRM 55th Annual Conference and Exposition</EventName>
+				<ConferenceDate>
+					<AnyDate>2003-06-10</AnyDate>
+				</ConferenceDate>
+				<ConferenceLocation>Orlando, FL</ConferenceLocation>
+			</ConferencePaper>
+			<OtherPublication type="x:Software">
+				<Title>UCLA Tree-Repeater-Interconnect-Optimization (TRIO) Package</Title>
+				<Name role="x:developer">
+					<FormattedName>John A. Example</FormattedName>
+				</Name>
+				<PublicationDate>
+					<Year>2002</Year>
+				</PublicationDate>
+				<Link>http://ballade.cs.ucla.edu/~cong/slides/vlsi99.pdf</Link>
+			</OtherPublication>
+		</PublicationHistory>
+		<SpeakingEventsHistory>
+			<SpeakingEvent type="x:reviewer">
+				<StartDate>
+					<Year>1997</Year>
+				</StartDate>
+				<EventName>ACM/IEEE Design Automation Conference (DAC)</EventName>
+				<EventType>conference</EventType>
+				<Link>http://www.ACMDAC.com</Link>
+			</SpeakingEvent>
+		</SpeakingEventsHistory>
+		<Qualifications>
+			<Competency name="Communication Skills">
+				<Competency name="Written Communication Skills">
+					<CompetencyEvidence name="WRITTENTEST1-A" dateOfIncident="1995-01-01" lastUsed="2000-01-01">
+						<NumericValue minValue="3" maxValue="5" description="SEP-equivalent Skill-Level Range">5</NumericValue>
+					</CompetencyEvidence>
+					<CompetencyWeight>
+						<NumericValue minValue="0" maxValue="100">35</NumericValue>
+					</CompetencyWeight>
+				</Competency>
+			</Competency>
+		</Qualifications>
+		<Languages>
+			<Language>
+				<LanguageCode>EN</LanguageCode>
+				<Read>true</Read>
+				<Write>true</Write>
+				<Speak>true</Speak>
+			</Language>
+		</Languages>
+		<Achievements>
+			<Achievement>
+				<Date>
+					<StringDate>2001-2002</StringDate>
+				</Date>
+				<Description>Intel Foundation Graduate Fellowship</Description>
+			</Achievement>
+		</Achievements>
+		<Associations>
+			<Association type="Professional">
+				<Name>HR-XML Consortium</Name>
+				<Link>www.hr-xml.org</Link>
+				<StartDate>
+					<YearMonth>2000-01</YearMonth>
+				</StartDate>
+				<Role>
+					<Name>Recruiting and Staffing Project Lead</Name>
+					<Deliverable>Resume 2.0 Specification</Deliverable>
+					<StartDate>
+						<YearMonth>2002-03</YearMonth>
+					</StartDate>
+					<EndDate>
+						<YearMonth>2003-07</YearMonth>
+					</EndDate>
+				</Role>
+				<Comments>Membership through current employer.</Comments>
+			</Association>
+		</Associations>
+		<References>
+			<Reference type="Professional">
+				<PersonName>
+					<FormattedName>Dr. Amy R. Breck</FormattedName>
+				</PersonName>
+				<PositionTitle>Advisor</PositionTitle>
+				<ContactMethod>
+					<Telephone>
+						<FormattedNumber>1 404 1224567</FormattedNumber>
+					</Telephone>
+					<InternetEmailAddress>arbreck@cc.gatech.edu</InternetEmailAddress>
+				</ContactMethod>
+				<Comments>College of Computing, Georgia Institute of Technology</Comments>
+			</Reference>
+		</References>
+		<SecurityCredentials>
+			<SecurityCredential>
+				<Name>Top Secret Security Clearance (Active)</Name>
+				<IssuingAuthority>Department of Defence</IssuingAuthority>
+				<Description>Currently holding a top secret security clearance for my previous job with in the Central Intelligence Agency</Description>
+				<EffectiveDate>
+					<ValidFrom>
+						<StringDate>4/1/1997</StringDate>
+					</ValidFrom>
+					<ValidTo>
+						<StringDate>4/1/2003</StringDate>
+					</ValidTo>
+					<FirstIssuedDate>
+						<StringDate>4/1/1997</StringDate>
+					</FirstIssuedDate>
+				</EffectiveDate>
+			</SecurityCredential>
+		</SecurityCredentials>
+		<ResumeAdditionalItems>
+			<ResumeAdditionalItem type="Hobbies">
+				<EffectiveDate>
+					<StartDate>
+						<Year>2000</Year>
+					</StartDate>
+				</EffectiveDate>
+				<Description>Rock Climbing</Description>
+			</ResumeAdditionalItem>
+		</ResumeAdditionalItems>
+		<RevisionDate>2003-03-13</RevisionDate>
+	</StructuredXMLResume>
+	<NonXMLResume>
+		<TextResume>The resume text would be entered here. No formatting would apply.</TextResume>
+		<SupportingMaterials>
+			<Link>http://www.my-resume.com</Link>
+			<Description>Link to my online resume</Description>
+		</SupportingMaterials>
+	</NonXMLResume>
+</Resume>

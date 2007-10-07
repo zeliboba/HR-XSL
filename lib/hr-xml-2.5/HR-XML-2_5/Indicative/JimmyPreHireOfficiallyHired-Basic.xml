@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- 
+	Scenario: JimmyPrehire's information was sent to a third party PRIOR to him
+			  actually becoming an employee (that is, prior to him actually being hired).
+			  See JimmyPreHireDetailed.xml for the document sent prior to this document
+			  
+			  Jimmy now officially becomes an employee and the actual HireInfo now needs to be sent.
+			  In this example, Jimmy actually started on the 2004-10-05, as opposed to the intended
+			  start date of 2004-10-01.  Since detailed information was already sent, the previously
+			  sent information does not have to be sent again.  If previously sent information was
+			  incorrect, then the correct information could be sent in this document or subsequent documents.
+-->
+<IndicativeBatch xmlns="http://ns.hr-xml.org/2007-04-15" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://ns.hr-xml.org/2007-04-15
+ IndicativeBatch.xsd">
+	<TransactionType>Change</TransactionType>
+	<CreateDate>2004-10-05</CreateDate>
+	<BaselineDate>2004-10-05</BaselineDate>
+	<IndicativeData>
+		<Employer>
+			<OrganizationId>
+				<IdValue>12345</IdValue>
+			</OrganizationId>
+		</Employer>
+		<Employee>
+			<PersonInfo>
+				<!-- Sending previously sent legal id, since that is how the 'Jimmy" was uniquely identified
+				     in the previous documents (in this scenario employee ids are not given
+				     until actually hired and employee reports for their first day of work)
+				-->
+				<PersonLegalId idOwner="US:SSA">
+					<IdValue name="SSN">555-11-1111</IdValue>
+				</PersonLegalId>
+			</PersonInfo>
+			<EmployeeInfo>
+				<!-- we now have an employee id for Jimmy.  Used a personal id in previous documents -->
+				<EmployeeId>
+					<IdValue>1212-4321-99</IdValue>
+				</EmployeeId>
+			</EmployeeInfo>
+			<EmploymentInfo>
+				<!-- IsEmployed is now 'true' -->
+				<IsEmployed>true</IsEmployed>
+				<Employment>
+					<!-- Official hire date -->
+					<HireInfo>
+						<HireDate>2004-10-05</HireDate>
+					</HireInfo>
+				</Employment>
+			</EmploymentInfo>
+		</Employee>
+	</IndicativeData>
+</IndicativeBatch>

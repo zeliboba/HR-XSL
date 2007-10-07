@@ -1,0 +1,259 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- William was rehired by Widget Manufacturing on June 21, 2004.  Upon rehire, the following document was sent to a benefits third party administrator. -->
+<IndicativeBatch xmlns="http://ns.hr-xml.org/2007-04-15" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://ns.hr-xml.org/2007-04-15  IndicativeBatch.xsd">
+	<TransactionType>Change</TransactionType>
+	<CreateDate>2004-11-15</CreateDate>
+	<BaselineDate>2004-11-15</BaselineDate>
+	<IndicativeData>
+		<Employer>
+			<OrganizationName>Widget Manufacturing</OrganizationName>
+			<OrganizationId idOwner="Dunn &amp; Bradstreet">
+				<IdValue name="DUNNS">72241</IdValue>
+			</OrganizationId>
+		</Employer>
+		<Employee>
+			<PersonInfo>
+				<PersonLegalId idOwner="US SSA" validFrom="2000-05-12">
+					<IdValue name="SSN">456-11-1111</IdValue>
+				</PersonLegalId>
+				<PersonName>
+					<GivenName>William</GivenName>
+					<FamilyName>Jones</FamilyName>
+				</PersonName>
+				<DateOfBirth>1961-04-05</DateOfBirth>
+				<GenderCode>1</GenderCode>
+				<MaritalStatus validFrom="1996-08-28">
+					<StandardValue>Married</StandardValue>
+				</MaritalStatus>
+				<ContactInfo precedence="Primary" validFrom="1998-06-06">
+					<Location>home</Location>
+					<WhenAvailable>evenings, weekends</WhenAvailable>
+					<Telephone>
+						<FormattedNumber>1 212 555 1212</FormattedNumber>
+					</Telephone>
+					<PostalAddress>
+						<CountryCode>US</CountryCode>
+						<PostalCode>11217</PostalCode>
+						<Region>NY</Region>
+						<Municipality>Brooklyn</Municipality>
+						<DeliveryAddress>
+							<AddressLine>4100 Abiline Avenue</AddressLine>
+							<Unit>15A</Unit>
+						</DeliveryAddress>
+					</PostalAddress>
+				</ContactInfo>
+				<Citizenship validFrom="2000-05-12">
+					<CountryCode>US</CountryCode>
+				</Citizenship>
+				<IsVeteran>false</IsVeteran>
+				<IsDisabled>false</IsDisabled>
+				<IsTobaccoUser>true</IsTobaccoUser>
+				<Dependent>
+					<PersonLegalId idOwner="US SSA">
+						<IdValue name="SSN">221871555</IdValue>
+					</PersonLegalId>
+					<PersonName>
+						<FormattedName>Margaret Jones</FormattedName>
+					</PersonName>
+					<DateOfBirth>1963-05-21</DateOfBirth>
+					<GenderCode>2</GenderCode>
+					<ContactInfo precedence="Primary" validFrom="1998-06-06">
+						<Location>home</Location>
+						<Telephone>
+							<FormattedNumber>1 212 555 1212</FormattedNumber>
+						</Telephone>
+						<PostalAddress>
+							<CountryCode>US</CountryCode>
+							<PostalCode>11217</PostalCode>
+							<Region>NY</Region>
+							<Municipality>Brooklyn</Municipality>
+							<DeliveryAddress>
+								<AddressLine>4100 Abiline Avenue</AddressLine>
+								<Unit>15A</Unit>
+							</DeliveryAddress>
+						</PostalAddress>
+					</ContactInfo>
+					<Relationship>
+						<StandardValue>Spouse</StandardValue>
+					</Relationship>
+				</Dependent>
+				<Dependent>
+					<PersonLegalId idOwner="US SSA">
+						<IdValue name="SSN">223990987</IdValue>
+					</PersonLegalId>
+					<PersonName>
+						<FormattedName>Paul Jones</FormattedName>
+					</PersonName>
+					<DateOfBirth>1999-03-21</DateOfBirth>
+					<GenderCode>1</GenderCode>
+					<ContactInfo precedence="Primary" validFrom="1999-03-21">
+						<Location>home</Location>
+						<Telephone>
+							<FormattedNumber>1 212 555 1212</FormattedNumber>
+						</Telephone>
+						<PostalAddress>
+							<CountryCode>US</CountryCode>
+							<PostalCode>11217</PostalCode>
+							<Region>NY</Region>
+							<Municipality>Brooklyn</Municipality>
+							<DeliveryAddress>
+								<AddressLine>4100 Abiline Avenue</AddressLine>
+								<Unit>15A</Unit>
+							</DeliveryAddress>
+						</PostalAddress>
+					</ContactInfo>
+					<Relationship>
+						<StandardValue>Child</StandardValue>
+					</Relationship>
+				</Dependent>
+			</PersonInfo>
+			<EmployeeInfo>
+				<EmployeeId validFrom="2004-06-21" validTo="2004-10-24" idOwner="Widget Manufacturing">
+					<IdValue name="EE Id">654</IdValue>
+				</EmployeeId>
+				<!--William works Monday, Tuesday, Thursday, and Friday at the New York Plant and Wednesday at the Syracuse Plant. -->
+				<ContactInfo precedence="Primary" validFrom="2004-06-21">
+					<Location>office</Location>
+					<WhenAvailable>Monday, Tuesday, Thursday, Friday</WhenAvailable>
+					<Telephone>
+						<FormattedNumber>1 212 456 5000</FormattedNumber>
+					</Telephone>
+					<PostalAddress>
+						<CountryCode>US</CountryCode>
+						<PostalCode>11220</PostalCode>
+						<Region>NY</Region>
+						<Municipality>Manhattan</Municipality>
+						<DeliveryAddress>
+							<AddressLine>5001 Progress Street</AddressLine>
+						</DeliveryAddress>
+					</PostalAddress>
+				</ContactInfo>
+				<ContactInfo precedence="Secondary" validFrom="2004-06-21">
+					<Location>office</Location>
+					<WhenAvailable>Wednesday</WhenAvailable>
+					<Telephone>
+						<FormattedNumber>1 212 570 3123</FormattedNumber>
+					</Telephone>
+					<PostalAddress>
+						<CountryCode>US</CountryCode>
+						<PostalCode>11225</PostalCode>
+						<Region>NY</Region>
+						<Municipality>Syracuse</Municipality>
+						<DeliveryAddress>
+							<AddressLine>15 Warehouse Road</AddressLine>
+						</DeliveryAddress>
+					</PostalAddress>
+				</ContactInfo>
+				<RemunerationBasis>Salaried</RemunerationBasis>
+				<FLSAStatus>exempt</FLSAStatus>
+				<EmploymentLevel>FullTime</EmploymentLevel>
+				<ResourceRelationship>Employee</ResourceRelationship>
+				<EmploymentTerm>Regular</EmploymentTerm>
+				<LaborBargainingUnitStatus>NonMember</LaborBargainingUnitStatus>
+				<ForeignStatus>Domestic</ForeignStatus>
+				<IsVIP>false</IsVIP>
+				<IsExecutive>false</IsExecutive>
+				<IsOfficer>false</IsOfficer>
+				<IsHighlyCompensated>true</IsHighlyCompensated>
+				<IsPercentOwner percentage="5">true</IsPercentOwner>
+				<EmployeeGroup validFrom="2004-06-21" validTo="2004-10-24" idOwner="Widget Manufacturing">
+					<IdValue name="StatusCode">X17RN9</IdValue>
+				</EmployeeGroup>
+			</EmployeeInfo>
+			<EmploymentInfo>
+				<IsEmployed>true</IsEmployed>
+				<Employment>
+					<HireInfo typeOfHire="Rehire">
+						<HireDate>2004-04-01</HireDate>
+						<!-- Note that the following nodes MAY need to be sent on a rehire.  Trading Partner
+							 Agreements will handle which new hire information needs to be sent.-->
+						<OriginalHireDate>1987-01-01</OriginalHireDate>
+						<AdjustedHireDate type="service start date">1987-01-01</AdjustedHireDate>
+					</HireInfo>
+				</Employment>
+			</EmploymentInfo>
+			<JobPositionInfo>
+				<JobPositionDetail validFrom="2004-06-21">
+					<PositionId idOwner="Widget Manufacturing">
+						<IdValue name="Job Id">22</IdValue>
+					</PositionId>
+					<PositionTitle>Floor Manager</PositionTitle>
+					<JobLevel>
+						<JobPlan>Management</JobPlan>
+						<JobGrade>B10</JobGrade>
+						<JobStep>1</JobStep>
+					</JobLevel>
+					<JobCategory>Shop Floor - Management</JobCategory>
+					<JobEntryReason>
+						<NonStandardValue>x:Rehire</NonStandardValue>
+					</JobEntryReason>
+				</JobPositionDetail>
+			</JobPositionInfo>
+			<OrganizationInfo>
+				<Organization validFrom="1987-01-01">
+					<OrganizationName>Widget Manufacturing</OrganizationName>
+					<OrganizationId idOwner="Dunn &amp; Bradstreet">
+						<IdValue name="DUNNS">72241</IdValue>
+					</OrganizationId>
+				</Organization>
+				<OrganizationalUnit validFrom="1998-06-06">
+					<OrganizationalUnitName>New York Plant</OrganizationalUnitName>
+					<OrganizationalUnitId idOwner="Widget Manufacturing">
+						<IdValue name="Division Id">02</IdValue>
+					</OrganizationalUnitId>
+					<AccountingCode description="cost center">54321</AccountingCode>
+				</OrganizationalUnit>
+				<WorkLocation allocationPercentage="80">
+					<Name>Manhattan</Name>
+					<Id idOwner="Acme">
+						<IdValue name="location Id">M25</IdValue>
+					</Id>
+					<PostalAddress>
+						<CountryCode>US</CountryCode>
+					</PostalAddress>
+				</WorkLocation>
+				<WorkLocation allocationPercentage="20">
+					<Name>Syracuse</Name>
+					<Id idOwner="Acme">
+						<IdValue name="location Id">M27</IdValue>
+					</Id>
+					<PostalAddress>
+						<CountryCode>US</CountryCode>
+					</PostalAddress>
+				</WorkLocation>
+			</OrganizationInfo>
+			<RemunerationInfo>
+				<RemunerationDetail validFrom="2004-06-24">
+					<PayRate currencyCode="USD">150000</PayRate>
+					<PayRateFrequency>
+						<StandardValue>Annually</StandardValue>
+					</PayRateFrequency>
+					<RemunerationType>
+						<StandardValue>BasePay</StandardValue>
+					</RemunerationType>
+				</RemunerationDetail>
+				<PayCycleFrequency>
+					<StandardValue>Weekly</StandardValue>
+				</PayCycleFrequency>
+				<PayGroup>1334</PayGroup>
+			</RemunerationInfo>
+			<AffiliationInfo>
+				<LaborBargainingUnitMembership>
+					<OrganizationName>US Shop Floor Workers Union</OrganizationName>
+					<MemberId validFrom="1998-06-06" validTo="2003-10-18">
+						<IdValue>U8801544</IdValue>
+					</MemberId>
+				</LaborBargainingUnitMembership>
+				<Association type="Professional">
+					<Name>North American Manufacturing Association</Name>
+					<Id idOwner="NAMA">
+						<IdValue name="member Id">098893</IdValue>
+					</Id>
+					<StartDate dateDescription="Join Date">
+						<AnyDate>1990-08-12</AnyDate>
+					</StartDate>
+				</Association>
+			</AffiliationInfo>
+		</Employee>
+	</IndicativeData>
+</IndicativeBatch>

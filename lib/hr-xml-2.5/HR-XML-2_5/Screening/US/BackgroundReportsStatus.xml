@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<BackgroundReports xmlns="http://ns.hr-xml.org/2007-04-15" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:sep="http://ns.hr-xml.org/2007-04-15" xsi:schemaLocation="http://ns.hr-xml.org/2007-04-15  BackgroundReports.xsd" userId="900XXX">
+	<!-- Example of Search Status results -->
+	<ProviderReferenceId>
+		<IdValue>204</IdValue>
+	</ProviderReferenceId>
+	<BackgroundReportPackage type="status">
+		<ClientReferenceId>
+			<IdValue>A1234</IdValue>
+		</ClientReferenceId>
+		<Screenings>
+			<Screening type="education">
+				<ProviderReferenceId>
+					<IdValue>01234</IdValue>
+				</ProviderReferenceId>
+				<ClientReferenceId>
+					<IdValue>A1234-1</IdValue>
+				</ClientReferenceId>
+				<ScreeningStatus>
+					<OrderStatus>New</OrderStatus>
+					<DateOrderReceived>2002-01-13T12:24:01</DateOrderReceived>
+				</ScreeningStatus>
+			</Screening>
+			<Screening type="license" qualifier="mvPersonal">
+				<ProviderReferenceId>
+					<IdValue>01235</IdValue>
+				</ProviderReferenceId>
+				<ClientReferenceId>
+					<IdValue>A1234-2</IdValue>
+				</ClientReferenceId>
+				<ScreeningStatus>
+					<OrderStatus>InProgress</OrderStatus>
+					<DateOrderReceived>2002-01-13T12:24:01</DateOrderReceived>
+				</ScreeningStatus>
+			</Screening>
+			<Screening type="credit">
+				<ProviderReferenceId>
+					<IdValue>01236</IdValue>
+				</ProviderReferenceId>
+				<ClientReferenceId>
+					<IdValue>A1234-3</IdValue>
+				</ClientReferenceId>
+				<ScreeningStatus>
+					<OrderStatus>Cancelled</OrderStatus>
+					<DateOrderReceived>2002-01-13T12:24:01</DateOrderReceived>
+				</ScreeningStatus>
+			</Screening>
+		</Screenings>
+	</BackgroundReportPackage>
+</BackgroundReports>

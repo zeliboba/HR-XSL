@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="http://ns.hr-xml.org/2007-04-15" targetNamespace="http://ns.hr-xml.org/2007-04-15" elementFormDefault="qualified" attributeFormDefault="unqualified">
+
+	<xsd:include schemaLocation="../Indicative/PersonalInfoTypes.xsd"/>
+	<xsd:include schemaLocation="../Indicative/EmployeeInfoTypes.xsd"/>
+	<xsd:include schemaLocation="../Indicative/EmploymentInfoTypes.xsd"/>
+	<xsd:include schemaLocation="../Indicative/OrganizationalInfoTypes.xsd"/>
+	<xsd:include schemaLocation="../Indicative/JobInfoTypes.xsd"/>
+	<xsd:include schemaLocation="../Indicative/RemunerationInfoTypes.xsd"/>
+	<xsd:include schemaLocation="../Indicative/AffiliationTypes.xsd"/>
+	<xsd:include schemaLocation="../CPO/UserArea.xsd"/>
+
+	<xsd:element name="IndicativeData" type="IndEmployeeRosterType"/>
+
+	<xsd:complexType name="IndEmployeeRosterType">
+		<xsd:sequence>
+			<xsd:element name="Employer" type="IndOrganizationRefType"/>
+			<xsd:element name="Employee" type="IndEmployeeType" maxOccurs="unbounded"/>
+			<xsd:element name="UserArea" type="UserAreaType" minOccurs="0"/>
+		</xsd:sequence>
+	</xsd:complexType>
+
+	<xsd:complexType name="IndEmployeeType">
+		<xsd:sequence>
+			<xsd:element name="PersonInfo" type="IndPersonalInfoType" minOccurs="0"/>
+			<xsd:element name="EmployeeInfo" type="IndEmployeeInfoType" minOccurs="0"/>
+			<xsd:element name="EmploymentInfo" type="IndEmploymentInfoType" minOccurs="0"/>
+			<xsd:element name="JobPositionInfo" type="IndJobPositionInfoType" minOccurs="0"/>
+			<xsd:element name="OrganizationInfo" type="IndOrganizationalInfoType" minOccurs="0"/>
+			<xsd:element name="RemunerationInfo" type="IndRemunerationInfoType" minOccurs="0"/>
+			<xsd:element name="AffiliationInfo" type="IndAffiliationInfoType" minOccurs="0"/>
+			<xsd:element name="UserArea" type="UserAreaType" minOccurs="0"/>
+		</xsd:sequence>
+		<xsd:attribute name="changeType" type="IndChangeTypeEnumType"/>
+		<xsd:attribute name="validFrom" type="LocalDateType" use="optional"/>
+		<xsd:attribute name="validTo" type="LocalDateType" use="optional"/>
+	</xsd:complexType>
+
+	<xsd:simpleType name="IndChangeTypeEnumType">
+		<xsd:restriction base="xsd:string">
+			<xsd:enumeration value="Add"/>
+			<xsd:enumeration value="Correct"/>
+			<xsd:enumeration value="Delete"/>
+			<xsd:enumeration value="Update"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+</xsd:schema>

@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ContactInfo xmlns="http://ns.hr-xml.org/2007-04-15" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://ns.hr-xml.org/2007-04-15
+ContactInfo.xsd">
+	<PersonName>
+		<FormattedName>Jon Smith</FormattedName>
+	</PersonName>
+	<ContactMethod>
+		<Use>business</Use>
+		<Location>office</Location>
+		<Telephone>
+			<FormattedNumber> 1-877-555-1213</FormattedNumber>
+		</Telephone>
+		<InternetEmailAddress> jon.smith@hotplace.com</InternetEmailAddress>
+		<PostalAddress>
+			<CountryCode>CA</CountryCode>
+			<PostalCode> 4P5 T6D</PostalCode>
+			<DeliveryAddress>
+				<AddressLine> 127 Forrest Ave</AddressLine>
+				<Unit> STE. 1301</Unit>
+			</DeliveryAddress>
+			<Recipient>
+				<PersonName>
+					<FormattedName>Jon Smith</FormattedName>
+				</PersonName>
+			</Recipient>
+		</PostalAddress>
+	</ContactMethod>
+	<ContactMethod>
+		<Use>personal</Use>
+		<Location>home</Location>
+		<Telephone>
+			<FormattedNumber> 1-877-223-1234</FormattedNumber>
+		</Telephone>
+	</ContactMethod>
+	<ContactId>
+		<IdValue name="Employee ID">E15778</IdValue>
+	</ContactId>
+</ContactInfo>

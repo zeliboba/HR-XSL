@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EPMDevelopmentPlan xmlns="http://ns.hr-xml.org/2007-04-15" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://ns.hr-xml.org/2007-04-15
+ EPMDevelopmentPlan.xsd">
+	<PlanSubject>
+		<PersonId idOwner="Acme Co">
+			<IdValue name="Employee Id">acme3330-05</IdValue>
+		</PersonId>
+		<PersonName>
+			<GivenName>Henry</GivenName>
+			<FamilyName>Smith</FamilyName>
+		</PersonName>
+	</PlanSubject>
+	<DevelopmentItem>
+		<DevelopmentItemId idOwner="Acme Co">
+			<IdValue>DP-00032</IdValue>
+		</DevelopmentItemId>
+		<DevelopmentItemName>Certified Information System Security (CISS)</DevelopmentItemName>
+		<DevelopmentItemDescription>Demonstrate information system security competencies by obtaining CISS certification.</DevelopmentItemDescription>
+<!-- LearningObjectReference  is optional and repeatable to reference specific developmental tools -->
+		<LearningObjectReference>
+			<LearningObjectId idOwner="LearningSystemsIncCorp">
+				<IdValue>LISC-0033-00227</IdValue>
+			</LearningObjectId>
+			<LearningObjectName>Boson's Training CBT for CISSP</LearningObjectName>
+		</LearningObjectReference>
+		<LearningObjectReference>
+			<LearningObjectId idOwner="Learning Sys. Inc. Corp.">
+				<IdValue>LISC-0033-00228</IdValue>
+			</LearningObjectId>
+			<LearningObjectName>CISSP Common Body of Knowledge (CBK) Preparation Course</LearningObjectName>
+		</LearningObjectReference>
+		<LearningObjectReference>
+			<LearningObjectId idOwner="Learning Sys. Inc. Corp.">
+				<IdValue>LISC-0033-00228</IdValue>
+			</LearningObjectId>
+			<LearningObjectName>CISSP Common Body of Knowledge (CBK) Preparation Course</LearningObjectName>
+		</LearningObjectReference>
+		<LearningObjectReference>
+			<LearningObjectId idOwner="Learning Sys. Inc. Corp.">
+				<IdValue>LISC-0033-00229</IdValue>
+			</LearningObjectId>
+			<LearningObjectName>CISSP Common Body of Knowledge (CBK) Review Course</LearningObjectName>
+		</LearningObjectReference>
+		<TargetDate>2007-12-01</TargetDate>
+		<DevelopmentItemMetric>
+			<MeasureId idOwner="Learning Sys. Inc. Corp.">
+				<IdValue>Assessment-0033-00230</IdValue>
+			</MeasureId>
+			<MeasureName>CISSP Exam</MeasureName>
+			<MeasureValue>
+				<StringValue>Pass</StringValue>
+			</MeasureValue>
+		</DevelopmentItemMetric>
+	</DevelopmentItem>
+</EPMDevelopmentPlan>

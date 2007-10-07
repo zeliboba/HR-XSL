@@ -1,0 +1,567 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<BackgroundReports xmlns="http://ns.hr-xml.org/2007-04-15" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://ns.hr-xml.org/2007-04-15  BackgroundReports.xsd" userId="" password="" account="" location="" version="2007-04-15" xml:lang="en">
+	<ProviderReferenceId idOwner="Hirecheck">
+		<IdValue>0178567</IdValue>
+	</ProviderReferenceId>
+	<!--
+Sample XML depicting the text and parsed results of a Driver License Search.  First sample has a ResultStatus = Review, second sample has a ResultsStatus = Clear.
+-->
+	<BackgroundReportPackage type="report">
+		<ClientReferenceId>
+			<IdValue>bec61f0f-aaa9-4211-8e49-18d603c76cd0</IdValue>
+		</ClientReferenceId>
+		<PackageId>
+			<IdValue>DRIVER</IdValue>
+		</PackageId>
+		<CopyToApplicant>true</CopyToApplicant>
+		<ScreeningsSummary>
+			<Organization type="Vendor">
+				<OrganizationName>First Advantage</OrganizationName>
+				<ContactMethod>
+					<Use>business</Use>
+					<Location>office</Location>
+					<Telephone>
+						<FormattedNumber>1-800-321-4473</FormattedNumber>
+					</Telephone>
+				</ContactMethod>
+			</Organization>
+			<PersonalData type="Current">
+				<PersonName type="Subject">
+					<GivenName>Demitri</GivenName>
+					<MiddleName>J</MiddleName>
+					<FamilyName>Doe</FamilyName>
+				</PersonName>
+				<!--  Home Address -->
+				<PostalAddress type="undefined" validFrom="2001-04-01">
+					<CountryCode>US</CountryCode>
+					<PostalCode>20170</PostalCode>
+					<Region>VA</Region>
+					<Municipality>HERNDON</Municipality>
+					<DeliveryAddress>
+						<AddressLine>15555 GARBERRY CT</AddressLine>
+					</DeliveryAddress>
+				</PostalAddress>
+				<ContactMethod>
+					<Use>personal</Use>
+					<Location>home</Location>
+					<Telephone>
+						<FormattedNumber>555-123-4567</FormattedNumber>
+					</Telephone>
+					<!--  Mailing Address -->
+					<PostalAddress type="postOfficeBoxAddress">
+						<CountryCode>US</CountryCode>
+						<PostalCode>20171</PostalCode>
+						<Region>VA</Region>
+						<Municipality>Oak Hill</Municipality>
+						<DeliveryAddress>
+							<PostOfficeBox>50</PostOfficeBox>
+						</DeliveryAddress>
+					</PostalAddress>
+				</ContactMethod>
+				<DemographicDetail>
+					<GovernmentId countryCode="US" issuingAuthority="SSN">555-55-5555</GovernmentId>
+					<DateOfBirth>1961-04-13</DateOfBirth>
+					<Race>W</Race>
+					<GenderCode>1</GenderCode>
+				</DemographicDetail>
+			</PersonalData>
+			<PersonalData type="Prior">
+				<PersonName type="Subject">
+					<GivenName>Demitri</GivenName>
+					<MiddleName>J</MiddleName>
+					<FamilyName>DOUGHNUT</FamilyName>
+				</PersonName>
+				<!--  Home Address -->
+				<PostalAddress type="undefined" validFrom="2000-04-01" validTo="2001-04-01">
+					<CountryCode>US</CountryCode>
+					<PostalCode>20878</PostalCode>
+					<Region>VA</Region>
+					<Municipality>North Potomac</Municipality>
+				</PostalAddress>
+				<PostalAddress type="undefined" validFrom="1996-11-01" validTo="2000-04-01">
+					<CountryCode>US</CountryCode>
+					<PostalCode>20737</PostalCode>
+					<Region>VA</Region>
+					<Municipality>Riverdale</Municipality>
+				</PostalAddress>
+			</PersonalData>
+			<ClientReferences>
+				<IdValue name="BillingCode">176-345</IdValue>
+			</ClientReferences>
+		</ScreeningsSummary>
+		<Screenings>
+			<Screening type="license" qualifier="mvPersonal" xml:lang="en">
+				<ProviderReferenceId>
+					<IdValue>6069481</IdValue>
+				</ProviderReferenceId>
+				<ClientReferenceId>
+					<IdValue>B0019474MV</IdValue>
+				</ClientReferenceId>
+				<ScreeningStatus>
+					<OrderStatus>Completed</OrderStatus>
+					<ResultStatus>Review</ResultStatus>
+					<DateOrderReceived>2003-01-21</DateOrderReceived>
+				</ScreeningStatus>
+				<CountryCode>US</CountryCode>
+				<Region>VA</Region>
+				<LegalText type="Disclaimer" fontSize="16" fontColor="Red">
+					<Text>
+                                DISCLAIMER
+
+     Information contained herein should not be the sole determination in 
+     evaluation of this individual.  All other factors, references and 
+     current situations should be considered.  Human error in compiling 
+     this information is possible.  The FCRA requires certain actions if 
+     you take adverse action based in whole or in part on this report.
+     See your Help File, the FCRA or call for procedures.</Text>
+				</LegalText>
+				<ScreeningResults type="results" mediaType="txt" resultType="report">
+					<Text>
+                                DISCLAIMER
+
+     Information contained herein should not be the sole determination in 
+     evaluation of this individual.  All other factors, references and 
+     current situations should be considered.  Human error in compiling 
+     this information is possible.  The FCRA requires certain actions if 
+     you take adverse action based in whole or in part on this report.
+     See your Help File, the FCRA or call for procedures.
+
+
+                             MOTOR VEHICLE SEARCH
+
+                                     Order ID:    6069481
+VIRGINIA Driver Record               Order Dt:    01/21/2003
+                                      License:    228155555
+
+                                         Name:    Doe, Demitri J
+                                     Zip Code:
+
+
+--------------------------------------------------------------------------------
+                                      DOB: 04/13/1961         Age: 41
+ Eyes:             Hair:            Issue: 05/21/2001     Expires: 04/30/2006
+
+--------------------------------------------------------------------------------
+Type  Code     ACD Viol       Conv       Description
+----- -------- --- ---------- ---------- ---------------------------------------
+CONV  33.1-46  M49 03/07/2000 05/16/2000 HOV VIOLATION Violation State: VA -
+                                         VIRGINIA Points: 0 Suspension: N AVD
+                                         Code: MB10
+CONV  46.2-10  F04 03/07/2000 05/16/2000 SAFETY BELT VIOLATION Violation State:
+                                         VA - VIRGINIA Points: 0 Suspension: N
+                                         AVD Code: EB02
+CONV  46.2-830 M17 04/04/2000 05/24/2000 FAIL TO OBEY HIGHWAY SIGN Violation
+                                         State: VA - VIRGINIA Points: 3
+                                         Suspension: N AVD Code: MA17
+CONV  46.2-830 M17 08/06/2001 10/10/2001 FAIL TO OBEY HIGHWAY SIGN Violation
+                                         State: VA - VIRGINIA Points: 3
+                                         Suspension: N AVD Code: MA17
+CONV  S93      S93 09/08/2001 10/23/2001 SPEEDING 15-19 MPH ABOVE SPEED LIMI
+                                         Violation State: VA - VIRGINIA Points:
+                                         4 Suspension: N AVD Code: SA11
+SUSP           UNK 10/25/2001 12/03/2001 CT ORDER FAIL TO PAY FINE Date Ordered:
+                                         11/07/2001 11072001 11/07/01 110701
+                                         State Issued: VA - VIRGINIA AVD Code:
+                                         DE15
+SUSP           UNK 11/07/2001 12/03/2001 CT ORDER FAIL TO PAY FINE Date Ordered:
+                                         11/15/2001 11152001 11/15/01 111501
+                                         State Issued: VA - VIRGINIA AVD Code:
+                                         DE15
+SUSP           UNK 11/27/2002            FOR INSURANCE MONITORING Date Ordered:
+                                         10/28/2002 10282002 10/28/02 102802
+                                         State Issued: VA - VIRGINIA AVD Code:
+                                         UE08
+CONV           S93 01/25/2002 03/13/2002 SPEED 4511.21D Violation State: OH -
+                                         OHIO Docket Number: 2D55555 Court:
+                                         MARION Commercial Vehicle: N Points: 0
+                                         AVD Code: SA01
+ACCD               10/20/2002            ** ACCIDENT ** State: OH - OHIO Report
+                                         Number: 55555376 Location: WYANDOT
+ENDR                                     TRAILER
+ENDR                                     HAZMAT
+                                         
+DEPT                                     PREV LIC. ISSUED: 08/13/1997 EXPIRES:
+                                         04/30/2001 ISSUE TYPE: DU
+DEPT                                     PREV LIC. ISSUED: 04/13/1996 EXPIRES:
+                                         04/30/2001 ISSUE TYPE: RE
+
+License Status(1):    SUSPENDED
+License Type(1)..:    COMMERCIAL
+Drivers Class(1).:    NONE
+
+License Status(2):    SUSPENDED
+License Type(2)..:    PERSONAL
+Drivers Class(2).:    OPERATOR
+
+Return Response..:    NONE
+Total Points.....:    -7
+</Text>
+				</ScreeningResults>
+				<MVRReport>
+					<MVRInput>
+						<License>
+							<CountryCode>US</CountryCode>
+							<LicenseNumber>228155555</LicenseNumber>
+							<LicensingAgency>VA</LicensingAgency>
+						</License>
+					</MVRInput>
+					<MVRResults>
+						<PersonName type="Subject">
+							<GivenName>Demitri</GivenName>
+							<MiddleName>J</MiddleName>
+							<FamilyName>Doe</FamilyName>
+						</PersonName>
+						<DemographicDetail>
+							<DateOfBirth>2003-01-22</DateOfBirth>
+							<Age>41</Age>
+						</DemographicDetail>
+						<License>
+							<CountryCode>US</CountryCode>
+							<LicenseNumber>228155555</LicenseNumber>
+							<LicensingAgency>VA</LicensingAgency>
+							<LicenseName>mvPersonal</LicenseName>
+							<LicenseTotalPoints>-7</LicenseTotalPoints>
+							<LicenseReturnResponse>NONE</LicenseReturnResponse>
+							<LicenseReportDetail type="Primary">
+								<EffectiveDate>
+									<StartDate>
+										<AnyDate>2002-12-03</AnyDate>
+									</StartDate>
+									<EndDate>
+										<AnyDate>2005-04-30</AnyDate>
+									</EndDate>
+								</EffectiveDate>
+							</LicenseReportDetail>
+							<LicenseReportDetail>
+								<LicenseType>mvCommercial</LicenseType>
+								<LicenseStatus>SUSPENDED</LicenseStatus>
+								<LicenseClass>NONE</LicenseClass>
+							</LicenseReportDetail>
+							<LicenseReportDetail>
+								<LicenseType>PERSONAL</LicenseType>
+								<LicenseStatus>SUSPENDED</LicenseStatus>
+								<LicenseClass>OPERATOR</LicenseClass>
+							</LicenseReportDetail>
+						</License>
+					</MVRResults>
+					<!--  All Violations were not  included for sake of brevity. -->
+					<Violations>
+						<ViolationType>CONV</ViolationType>
+						<ViolationDate>
+							<AnyDate>2000-03-07</AnyDate>
+						</ViolationDate>
+						<ViolationCode>33.1-46</ViolationCode>
+						<ViolationACDCode>M49</ViolationACDCode>
+						<ViolationDescription>HOV VIOLATION VIOLATION STATE: VA - VIRGINIA POINTS: 0 SUSPENSION: N AVD CODE: MB10</ViolationDescription>
+						<ViolationConvictedDate>
+							<AnyDate>2000-05-16</AnyDate>
+						</ViolationConvictedDate>
+						<ViolationPoints>0</ViolationPoints>
+					</Violations>
+					<Violations>
+						<ViolationType>CONV</ViolationType>
+						<ViolationDate>
+							<AnyDate>2000-03-07</AnyDate>
+						</ViolationDate>
+						<ViolationCode>46.2-10</ViolationCode>
+						<ViolationACDCode>F04</ViolationACDCode>
+						<ViolationDescription>SAFETY BELT VIOLATION VIOLATION STATE: VA - VIRGINIA POINTS: 0 SUSPENSION: N AVD CODE: EB02</ViolationDescription>
+						<ViolationConvictedDate>
+							<AnyDate>2000-05-16</AnyDate>
+						</ViolationConvictedDate>
+						<ViolationPoints>0</ViolationPoints>
+					</Violations>
+					<Violations>
+						<ViolationType>SUSP</ViolationType>
+						<ViolationDate>
+							<AnyDate>2001-10-25</AnyDate>
+						</ViolationDate>
+						<ViolationCode>46.2-10</ViolationCode>
+						<ViolationACDCode>UNK</ViolationACDCode>
+						<ViolationDescription>CT ORDER FAIL TO PAY FINE DATE ORDERED: 11/07/2001 11072001 11/07/01 110701 STATE ISSUED: VA - VIRGINIA AVD CODE: DE15</ViolationDescription>
+						<ViolationConvictedDate>
+							<AnyDate>2001-12-03</AnyDate>
+						</ViolationConvictedDate>
+						<ViolationPoints>0</ViolationPoints>
+					</Violations>
+					<Violations>
+						<ViolationType>SUSP</ViolationType>
+						<ViolationDate>
+							<AnyDate>2002-01-25</AnyDate>
+						</ViolationDate>
+						<ViolationACDCode>S93</ViolationACDCode>
+						<ViolationDescription>SPEED 4511.21D Violation State: OH OHIO Docket Number: 2D55555 Court:MARION Commercial Vehicle: N Points: 0 AVD Code: SA01</ViolationDescription>
+						<ViolationConvictedDate>
+							<AnyDate>2002-03-13</AnyDate>
+						</ViolationConvictedDate>
+						<ViolationPoints>0</ViolationPoints>
+						<AgencyReference type="Docket">
+							<IdValue>2D01506</IdValue>
+						</AgencyReference>
+						<CourtName>MARION</CourtName>
+						<ViolationVehicleType>NonCommercial</ViolationVehicleType>
+					</Violations>
+					<Accidents>
+						<AccidentDate>
+							<AnyDate>2002-10-20</AnyDate>
+						</AccidentDate>
+						<AccidentLocation>WYANDOT</AccidentLocation>
+						<AgencyReference validFrom="notKnown" validTo="notKnown" idOwner="OH" type="StateId">
+							<IdValue>55555376</IdValue>
+						</AgencyReference>
+						<AccidentPoliceReportFiled>true</AccidentPoliceReportFiled>
+					</Accidents>
+					<AdditionalItems type="x:ENDR">
+						<Text>TRAILER</Text>
+					</AdditionalItems>
+					<AdditionalItems type="x:ENDR">
+						<Text>HAZMAT</Text>
+					</AdditionalItems>
+					<AdditionalItems type="x:DEPT">
+						<Sequence>1</Sequence>
+						<EffectiveDate>
+							<StartDate>
+								<AnyDate>1997-08-13</AnyDate>
+							</StartDate>
+							<EndDate>
+								<AnyDate>2001-04-30</AnyDate>
+							</EndDate>
+						</EffectiveDate>
+						<Text>PREV LIC. TYPE: DU</Text>
+					</AdditionalItems>
+					<AdditionalItems type="x:DEPT">
+						<Sequence>2</Sequence>
+						<EffectiveDate>
+							<StartDate>
+								<AnyDate>1996-04-13</AnyDate>
+							</StartDate>
+							<EndDate>
+								<AnyDate>2001-04-30</AnyDate>
+							</EndDate>
+						</EffectiveDate>
+						<Text>PREV LIC. TYPE: RE</Text>
+					</AdditionalItems>
+					<Comments></Comments>
+				</MVRReport>
+				<UserArea></UserArea>
+			</Screening>
+		</Screenings>
+	</BackgroundReportPackage>
+	<BackgroundReportPackage type="report">
+		<ClientReferenceId>
+			<IdValue>bec61f0f-aaa9-4211-8e49-18d603c76ac0</IdValue>
+		</ClientReferenceId>
+		<PackageId>
+			<IdValue>99482632-80d8-40fc-8e49-2dcccce6756f</IdValue>
+		</PackageId>
+		<ScreeningsSummary>
+			<Organization type="Vendor">
+				<OrganizationName>First Advantage</OrganizationName>
+				<ContactMethod>
+					<Use>business</Use>
+					<Location>office</Location>
+					<Telephone>
+						<FormattedNumber>1-800-321-4473</FormattedNumber>
+					</Telephone>
+				</ContactMethod>
+			</Organization>
+			<PersonalData type="Current">
+				<PersonName type="Subject">
+					<GivenName>Michael</GivenName>
+					<MiddleName>C</MiddleName>
+					<FamilyName>Doe</FamilyName>
+				</PersonName>
+				<!--  Home Address -->
+				<PostalAddress type="undefined" validFrom="2001-04">
+					<CountryCode>US</CountryCode>
+					<PostalCode>20170</PostalCode>
+					<Region>VA</Region>
+					<Municipality>HERNDON</Municipality>
+					<DeliveryAddress>
+						<AddressLine>15555 GARBERRY CT</AddressLine>
+					</DeliveryAddress>
+				</PostalAddress>
+				<ContactMethod>
+					<Use>personal</Use>
+					<Location>home</Location>
+					<Telephone>
+						<FormattedNumber>555-123-4567</FormattedNumber>
+					</Telephone>
+					<!--  Mailing Address -->
+					<PostalAddress type="postOfficeBoxAddress">
+						<CountryCode>US</CountryCode>
+						<PostalCode>20171</PostalCode>
+						<Region>VA</Region>
+						<Municipality>Oak Hill</Municipality>
+						<DeliveryAddress>
+							<PostOfficeBox>50</PostOfficeBox>
+						</DeliveryAddress>
+					</PostalAddress>
+				</ContactMethod>
+				<DemographicDetail>
+					<GovernmentId countryCode="US" issuingAuthority="SSN">555-44-5555</GovernmentId>
+					<DateOfBirth>1965-04-17</DateOfBirth>
+					<Race>W</Race>
+					<GenderCode>1</GenderCode>
+				</DemographicDetail>
+			</PersonalData>
+			<PersonalData type="Prior">
+				<PersonName type="Subject">
+					<GivenName>Demitri</GivenName>
+					<MiddleName>J</MiddleName>
+					<FamilyName>DOUGHNUT</FamilyName>
+				</PersonName>
+				<!--  Home Address -->
+				<PostalAddress type="undefined" validFrom="2000-04-01" validTo="2001-04-01">
+					<CountryCode>US</CountryCode>
+					<PostalCode>20878</PostalCode>
+					<Region>VA</Region>
+					<Municipality>North Potomac</Municipality>
+				</PostalAddress>
+				<PostalAddress type="undefined" validFrom="1996-11-01" validTo="2000-04-01">
+					<CountryCode>US</CountryCode>
+					<PostalCode>20737</PostalCode>
+					<Region>VA</Region>
+					<Municipality>Riverdale</Municipality>
+				</PostalAddress>
+			</PersonalData>
+			<ClientReferences>
+				<IdValue name="BillingCode">176-345</IdValue>
+			</ClientReferences>
+		</ScreeningsSummary>
+		<Screenings>
+			<Screening type="license" qualifier="mvPersonal" xml:lang="en">
+				<ProviderReferenceId>
+					<IdValue>6069116</IdValue>
+				</ProviderReferenceId>
+				<ClientReferenceId>
+					<IdValue>B0019484MV</IdValue>
+				</ClientReferenceId>
+				<ScreeningStatus>
+					<OrderStatus>Completed</OrderStatus>
+					<ResultStatus>Clear</ResultStatus>
+					<DateOrderReceived>2003-01-21</DateOrderReceived>
+				</ScreeningStatus>
+				<CountryCode>US</CountryCode>
+				<Region>VA</Region>
+				<LegalText type="Disclaimer" fontSize="16" fontColor="Red">
+					<Text>
+                                DISCLAIMER
+
+     Information contained herein should not be the sole determination in 
+     evaluation of this individual.  All other factors, references and 
+     current situations should be considered.  Human error in compiling 
+     this information is possible.  The FCRA requires certain actions if 
+     you take adverse action based in whole or in part on this report.
+     See your Help File, the FCRA or call for procedures.</Text>
+				</LegalText>
+				<ScreeningResults type="results" mediaType="txt" resultType="report">
+					<Text>
+                                DISCLAIMER
+
+     Information contained herein should not be the sole determination in 
+     evaluation of this individual.  All other factors, references and 
+     current situations should be considered.  Human error in compiling 
+     this information is possible.  The FCRA requires certain actions if 
+     you take adverse action based in whole or in part on this report.
+     See your Help File, the FCRA or call for procedures.
+
+
+                             MOTOR VEHICLE SEARCH
+
+                                     Order ID:    6069116
+VIRGINIA Driver Record               Order Dt:    01/21/2003
+                                      License:    T22155556
+
+                                         Name:    Doe, Michael C
+                                     Zip Code:
+
+
+--------------------------------------------------------------------------------
+                                      DOB: 04/17/1965         Age: 37
+ Eyes:             Hair:            Issue: 12/03/2002     Expires: 04/30/2005
+
+--------------------------------------------------------------------------------
+Type  Code     ACD Viol       Conv       Description
+----- -------- --- ---------- ---------- ---------------------------------------
+DEPT                                     *NOTE: STATE DOES NOT RELEASE MEDICAL
+                                         RESTRICTIONS
+DEPT                                     PREV LIC. ISSUED: 11/05/2001 EXPIRES:
+                                         04/30/2005 ISSUE TYPE: OR
+DEPT                                     FOREIGN LIC SURRENDERED: 11/05/2001
+                                         STATE: GA LIC NO: 032958
+
+License Status(1):    VALID
+License Type(1)..:    PERSONAL
+Drivers Class(1).:    OPERATOR
+
+Return Response..:    NONE
+Total Points.....:    0
+</Text>
+				</ScreeningResults>
+				<MVRReport>
+					<MVRInput>
+						<License>
+							<CountryCode>US</CountryCode>
+							<LicenseNumber>228155556</LicenseNumber>
+							<LicensingAgency>VA</LicensingAgency>
+						</License>
+					</MVRInput>
+					<MVRResults>
+						<PersonName type="Subject">
+							<GivenName>Michael</GivenName>
+							<MiddleName>C</MiddleName>
+							<FamilyName>Doe</FamilyName>
+						</PersonName>
+						<DemographicDetail>
+							<DateOfBirth>2003-01-22</DateOfBirth>
+							<Age>41</Age>
+						</DemographicDetail>
+						<License>
+							<CountryCode>US</CountryCode>
+							<LicenseNumber>228155556</LicenseNumber>
+							<LicensingAgency>VA</LicensingAgency>
+							<LicenseName>mvPersonal</LicenseName>
+							<LicenseTotalPoints>0</LicenseTotalPoints>
+							<LicenseReturnResponse>NONE</LicenseReturnResponse>
+							<LicenseReportDetail type="Primary">
+								<EffectiveDate>
+									<StartDate>
+										<AnyDate>2002-12-03</AnyDate>
+									</StartDate>
+									<EndDate>
+										<AnyDate>2005-04-30</AnyDate>
+									</EndDate>
+								</EffectiveDate>
+							</LicenseReportDetail>
+							<LicenseReportDetail>
+								<LicenseType>PERSONAL</LicenseType>
+								<LicenseStatus>VALID</LicenseStatus>
+								<LicenseClass>OPERATOR</LicenseClass>
+							</LicenseReportDetail>
+						</License>
+					</MVRResults>
+					<AdditionalItems type="x:DEPT">
+						<Text>NOTE: STATE DOES NOT RELEASE MEDICALRESTRICTIONS</Text>
+					</AdditionalItems>
+					<AdditionalItems type="x:DEPT">
+						<EffectiveDate>
+							<StartDate>
+								<AnyDate>2001-11-05</AnyDate>
+							</StartDate>
+							<EndDate>
+								<AnyDate>2005-04-30</AnyDate>
+							</EndDate>
+						</EffectiveDate>
+						<Text>PREV LIC. TYPE: OR</Text>
+					</AdditionalItems>
+					<AdditionalItems type="x:DEPT">
+						<Text>FOREIGN LIC SURRENDERED: 11/05/2001STATE: GA LIC NO: 777958</Text>
+					</AdditionalItems>
+					<Comments></Comments>
+				</MVRReport>
+				<UserArea></UserArea>
+			</Screening>
+		</Screenings>
+	</BackgroundReportPackage>
+</BackgroundReports>

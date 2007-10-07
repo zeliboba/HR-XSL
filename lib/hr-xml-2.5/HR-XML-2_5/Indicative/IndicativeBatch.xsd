@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema xmlns="http://ns.hr-xml.org/2007-04-15" xmlns:xsd="http://www.w3.org/2001/XMLSchema" targetNamespace="http://ns.hr-xml.org/2007-04-15" elementFormDefault="qualified" attributeFormDefault="unqualified">
+	<xsd:include schemaLocation="IndicativeData.xsd"/>
+	<xsd:element name="IndicativeBatch">
+		<xsd:complexType>
+			<xsd:sequence>
+				<xsd:element name="TransactionType" type="IndTransactionTypeEnum"/>
+				<xsd:element name="CreateDate" type="AnyDateTimeType"/>
+				<xsd:element name="OriginatorId" type="EntityIdType" minOccurs="0"/>
+				<xsd:element name="OriginatorName" type="xsd:string" minOccurs="0"/>
+				<xsd:element name="BaselineDate" type="AnyDateTimeType" minOccurs="0"/>
+				<xsd:element name="RecipientId" type="EntityIdType" minOccurs="0"/>
+				<xsd:element name="RecipientName" type="xsd:string" minOccurs="0"/>
+				<xsd:element name="UniquePayloadTrackingId" type="EntityIdType" minOccurs="0"/>
+				<xsd:element ref="IndicativeData" maxOccurs="unbounded"/>
+				<xsd:element name="UserArea" type="UserAreaType" minOccurs="0"/>
+			</xsd:sequence>
+		</xsd:complexType>
+	</xsd:element>
+	<xsd:simpleType name="IndTransactionTypeEnum">
+		<xsd:restriction base="xsd:string">
+			<xsd:enumeration value="Change"/>
+			<xsd:enumeration value="Full"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+</xsd:schema>

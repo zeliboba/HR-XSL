@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Grant xmlns="http://ns.hr-xml.org/2007-04-15" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://ns.hr-xml.org/2007-04-15
+Grant.xsd" validTo="2002-08-06" grantDate="2005-08-06" grantCurrency="USD">
+	<Id>
+		<IdValue>0000112211541</IdValue>
+	</Id>
+	<ParticipantId>
+		<IdValue>541852258</IdValue>
+	</ParticipantId>
+	<PlanId>
+		<IdValue>SOP2002</IdValue>
+	</PlanId>
+	<GrantType>Qualified</GrantType>
+	<Restricted>false</Restricted>
+	<Repurchasable>false</Repurchasable>
+	<SharesGranted>4000</SharesGranted>
+	<SharesAccepted>4000</SharesAccepted>
+	<GrantPrice>9.50</GrantPrice>
+	<FairMarketValue>9.50</FairMarketValue>
+	<VestingInfo>
+		<Shares>
+			<Quantity>1000</Quantity>
+			<VestingDate>2002-02-15</VestingDate>
+		</Shares>
+		<Shares>
+			<Quantity>250</Quantity>
+			<VestingDate>2003-08-06</VestingDate>
+		</Shares>
+	</VestingInfo>
+	<ExercisabilityInfo>
+		<Rule>Yearly</Rule>
+	</ExercisabilityInfo>
+</Grant>

@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EPMSummaryResult xmlns="http://ns.hr-xml.org/2007-04-15" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://ns.hr-xml.org/2007-04-15
+ EPMSummaryResult.xsd">
+	<ResultDate>2006-03-05</ResultDate>
+	<AppraisalPeriod>
+		<StartDate>2005-04-17</StartDate>
+		<EndDate>2006-04-17</EndDate>
+	</AppraisalPeriod>
+	<PreparedBy>
+		<PersonName>
+			<GivenName>Bob</GivenName>
+			<FamilyName>Mangler</FamilyName>
+		</PersonName>
+	</PreparedBy>
+	<AppraisalSubject>
+		<PersonName>
+			<GivenName>Anne</GivenName>
+			<FamilyName>Empee</FamilyName>
+		</PersonName>
+	</AppraisalSubject>
+	<ReasonCode>
+		<StandardValue>scheduled</StandardValue>
+	</ReasonCode>
+	<ScheduleType>
+		<StandardValue>annual</StandardValue>
+	</ScheduleType>
+	<!-- Overall Rating Section -->
+	<OverallRating>
+		<Passed>true</Passed>
+		<Score>
+			<NumericValue maxValue="5.0">4.8</NumericValue>
+		</Score>
+		<Comments>Another great year!</Comments>
+	</OverallRating>
+</EPMSummaryResult>

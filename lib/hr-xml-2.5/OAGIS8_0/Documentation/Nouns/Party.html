@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<html>
+   <head>
+      <style type="text/css"> .SectionHeader { font-size: 14pt; font-weight: bold; color: #000000; }</style>
+   </head>
+   <body>
+      <p/>
+      <table border="1" cellpadding="3" cellspacing="0" width="100%">
+         <tr>
+            <td bgcolor="#FFFF99">
+               <span class="SectionHeader">Party</span>
+               <a href="../../OAGIS/Resources/Nouns/Party.xsd">schema</a>
+            </td>
+         </tr>
+      </table>
+      <a name="Party_element"/>
+      <p/>
+      <table border="1" cellpadding="3" cellspacing="0" width="100%">
+         <tr bgcolor="#e0e0e0" valign="top">
+            <td width="10%" colspan="2">
+               <b>Party</b> type: <a href="../OAGIS.html#PartyInstitutional_type" target="body">
+                  <b>
+                     <i>PartyInstitutional</i>
+                  </b>
+               </a>
+            </td>
+         </tr>
+         <tr bgcolor="#e0e0e0" valign="top">
+            <td colspan="2">
+               <p style="margin-top: 3; margin-bottom: 3">Allows the communication of party information between business applications with in a given integration. These Parties may play different roles witin an integration from Supplier, Customer, to Carrier and many more.</p>
+               <i>
+                  <p style="margin-top: 3; margin-bottom: 3">A business entity that plays some role in the transaction, either actively or  by reference (active parties  in a purchase might be the CustomerParty or the SupplierParty, while Manufacturer would be referenced Party  that plays no active role in the transaction).
+
+The Party type carries with it all of the identifying and descriptive information about the party. 
+
+A specific Party's role name is captured in the corresponding element's name, following the so-called "semantically-named element substitution group" design pattern. The instance is named [rolename]Party, as in SupplierParty, CustomerParty, etc. Each is of type Party, or of some derived type.
+
+Need to bring more Party elements into PartyBase, once reg testing can be broken for a little while. mdf</p>
+               </i>
+            </td>
+         </tr>
+      </table>
+      <p/>
+      <table border="1" cellpadding="3" cellspacing="0" width="100%">
+         <tr>
+            <td bgcolor="#FFFF99">
+               <span class="SectionHeader">Noun Common Files</span>
+            </td>
+         </tr>
+      </table>
+      <div/>
+   </body>
+</html>

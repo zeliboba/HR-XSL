@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- edited with XML Spy v4.2 U (http://www.xmlspy.com) by Kurt Kanaskie (Lucent Technologies) -->
+<sch:schema xmlns="http://www.ascc.net/xml/schematron" xmlns:oag="http://www.openapplications.org/oagis" xmlns:sch="http://www.ascc.net/xml/schematron" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.ascc.net/xml/schematron ../../../Utility/Schematron/schematron1-5.xsd">
+	<sch:title>Schematron Validator for OAGI Global Constraints</sch:title>
+	<sch:ns prefix="oa" uri="http://www.openapplications.org/oagis"/>
+	<sch:pattern name="Attachment Level">
+		<sch:rule context="oa:Attachment">
+			<sch:assert test="oa:EmbeddedData | oa:URI | oa:FileName | oa:ISBN">Contact must have either EmbeddedData, URI, FileName or ISBN.</sch:assert>
+		</sch:rule>
+	</sch:pattern>
+	<sch:pattern name="OrderItem Level">
+		<sch:rule context="oa:OrderItem">
+			<sch:assert test="oa:ItemIds | oa:Description">Must have an ItemId or a description.</sch:assert>
+		</sch:rule>
+	</sch:pattern>
+</sch:schema>

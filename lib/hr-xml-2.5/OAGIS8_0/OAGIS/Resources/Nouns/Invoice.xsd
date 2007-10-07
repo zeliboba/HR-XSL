@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+    License information for this file is provided in LICENSE.TXT
+    For support, more information, or to report implementation bugs, 
+    please contact the Open Applications Group at xml@openapplications.org 
+     
+    ** Revision: 8.0 **
+    ** Date: 05 April 2002 **
+    Open Applications Group XSD
+    Copyright 1998-2002, All Rights Reserved
+    
+    Name: Nouns/Invoice.xsd
+-->
+<xs:schema targetNamespace="http://www.openapplications.org/oagis" xmlns="http://www.openapplications.org/oagis" xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified">
+	<xs:include schemaLocation="Order.xsd"/>
+	<xs:element name="Invoice" type="Invoice" substitutionGroup="Noun">
+		<xs:annotation>
+			<xs:documentation source="http://www.openapplications.org/oagis">The Invoice is use to invoice the customer.</xs:documentation>
+		</xs:annotation>
+	</xs:element>
+	<xs:element name="Header" type="InvoiceHeader">
+		<xs:annotation>
+			<xs:documentation source="http://www.openapplications.org/oagis">Information that applies to the entire invoice document. The Header supports summary amounts for line items, charges, taxes and allowances.
+<p/>
+It also supports itemizing Header level charges, taxes and allowances for use in credit or debit invoices. In this case Line items are not needed. 
+<p/>
+The summary amounts in the Header include the Line level amounts and Header level amounts.</xs:documentation>
+		</xs:annotation>
+	</xs:element>
+	<xs:element name="Line" type="InvoiceLine">
+		<xs:annotation>
+			<xs:documentation source="http://www.openapplications.org/oagis">In general an Invoice Line can be aligned with Order Lines. The ItemQuantity and Price are used to compute the Total. The TotalAmount is a sum of the Total and any Charges, Taxes or Allowances.</xs:documentation>
+		</xs:annotation>
+	</xs:element>
+	<xs:complexType name="Invoice">
+		<xs:complexContent>
+			<xs:extension base="Order"/>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="InvoiceHeader">
+		<xs:annotation>
+			<xs:documentation>The InvoiceHeader type supports summary amounts for line items, charges and allowances.</xs:documentation>
+		</xs:annotation>
+		<xs:complexContent>
+			<xs:extension base="OrderHeader">
+				<xs:sequence>
+					<xs:element name="Type" type="InvoiceType" minOccurs="0">
+						<xs:annotation>
+							<xs:documentation source="http://www.openapplications.org/oagis">Represents the type of invoice.</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="Reason" type="Reason" minOccurs="0" maxOccurs="unbounded">
+						<xs:annotation>
+							<xs:documentation source="http://www.openapplications.org/oagis">A free form description of the reason for this invoice.
+<p/>
+Example: Special allowance for preferred customers.</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="PaymentMethod" type="PaymentMethod" minOccurs="0" maxOccurs="unbounded">
+						<xs:annotation>
+							<xs:documentation source="http://www.openapplications.org/oagis">The method of payment.</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="TotalAllowance" type="Amount" minOccurs="0">
+						<xs:annotation>
+							<xs:documentation source="http://www.openapplications.org/oagis">Represents the grand total of all allowances both from line items and header itemizations.</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="TotalCharges" type="Amount" minOccurs="0">
+						<xs:annotation>
+							<xs:documentation source="http://www.openapplications.org/oagis">Represents the grand total of all charges, both from line items and header itemizations.</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="TotalTax" type="Amount" minOccurs="0">
+						<xs:annotation>
+							<xs:documentation source="http://www.openapplications.org/oagis">The grand total of all taxes, both from the line items and header itemizations.</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element ref="Allowance" minOccurs="0" maxOccurs="unbounded"/>
+					<xs:element ref="Tax" minOccurs="0" maxOccurs="unbounded"/>
+					<xs:element ref="UserArea" minOccurs="0"/>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="InvoiceLine">
+		<xs:annotation>
+			<xs:documentation source="http://www.openapplications.org/oagis">The InvoiceLine type supports order line invoicing.</xs:documentation>
+		</xs:annotation>
+		<xs:complexContent>
+			<xs:extension base="OrderLine">
+				<xs:sequence>
+					<xs:element name="Price" type="AmountPerQuantity" minOccurs="0">
+						<xs:annotation>
+							<xs:documentation source="http://www.openapplications.org/oagis">The price for the item.</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="ItemQuantity" type="Quantity" minOccurs="0">
+						<xs:annotation>
+							<xs:documentation source="http://www.openapplications.org/oagis">The quantity of the item being invoiced.</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="ProjectActivity" type="ProjectActivity" minOccurs="0">
+						<xs:annotation>
+							<xs:documentation source="http://www.openapplications.org/oagis">The specific business process or task within a project.  For example, billing, receiving or preparing purchase orders</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="ProjectResource" type="ProjectResource" minOccurs="0" maxOccurs="unbounded">
+						<xs:annotation>
+							<xs:documentation source="http://www.openapplications.org/oagis">The categorization of project resources into classes, subclasses, etc..
+<p/>
+Examples:
+<ul>
+									<li>Labor</li>
+									<li>Material</li>
+									<li>Equipment</li>
+								</ul>
+							</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element ref="Allowance" minOccurs="0" maxOccurs="unbounded"/>
+					<xs:element name="Line" type="InvoiceLine" minOccurs="0" maxOccurs="unbounded">
+						<xs:annotation>
+							<xs:documentation source="http://www.openapplications.org/oagis">To support complex hirearchical structures an invoice line can contain another invoice line.</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="UserArea" type="UserArea" minOccurs="0"/>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+</xs:schema>

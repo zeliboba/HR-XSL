@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+    License information for this file is provided in LICENSE.TXT
+    For support, more information, or to report implementation bugs, 
+    please contact the Open Applications Group at xml@openapplications.org 
+     
+    ** Revision: 8.0 **
+    ** Date: 05 April 2002 **
+    Open Applications Group XSD
+    Copyright 1998-2002, All Rights Reserved
+    
+    Name: Nouns/Document.xsd
+-->
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns="http://www.openapplications.org/oagis" targetNamespace="http://www.openapplications.org/oagis" elementFormDefault="qualified" attributeFormDefault="unqualified" version="0.02">
+        <xs:include schemaLocation="../Components.xsd"/>
+        <xs:complexType name="DocumentHeader" abstract="true">
+                <xs:sequence>
+                        <xs:element ref="DocumentIds" minOccurs="0">
+                                <xs:annotation>
+                                        <xs:documentation source="http://www.openapplications.org/oagis">Is the identifier for the document. It is possible to carry the document identifier for the other Parties. These DocumentIds are referenced by sematic names.</xs:documentation>
+                                        <xs:documentation source="http://www.openapplications.org/oagis">Is the identifier for the document. It is possible to carry the document identifier for the other Parties. These DocumentIds are referenced by sematic names.</xs:documentation>
+                                </xs:annotation>
+                        </xs:element>
+                        <xs:element ref="Status" minOccurs="0"/>
+                        <xs:element name="LastModificationDateTime" type="DateTime" minOccurs="0">
+                                <xs:annotation>
+                                        <xs:documentation source="http://www.openapplications.org/oagis">Is the date and time the document was last modified. This is not the date and time that the BOD message was sent.</xs:documentation>
+                                </xs:annotation>
+                        </xs:element>
+                        <xs:element name="DocumentDateTime" type="DateTime" minOccurs="0">
+                                <xs:annotation>
+                                        <xs:documentation source="http://www.openapplications.org/oagis">Is the date and time the document was last created. This is not the date and time that the BOD message instance was created.</xs:documentation>
+                                </xs:annotation>
+                        </xs:element>
+                        <xs:element name="Description" type="Description" minOccurs="0" maxOccurs="unbounded">
+                                <xs:annotation>
+                                        <xs:documentation source="http://www.openapplications.org/oagis">Is a description of the document.</xs:documentation>
+                                </xs:annotation>
+                        </xs:element>
+                        <xs:element name="Note" type="Note" minOccurs="0" maxOccurs="unbounded">
+                                <xs:annotation>
+                                        <xs:documentation source="http://www.openapplications.org/oagis">Is Note for the document in which it is contained.</xs:documentation>
+                                </xs:annotation>
+                        </xs:element>
+                        <xs:element ref="DocumentReferences" minOccurs="0"/>
+                        <xs:element ref="Attachments" minOccurs="0"/>
+                </xs:sequence>
+        </xs:complexType>
+        <xs:complexType name="DocumentLine">
+                <xs:sequence>
+                        <xs:element name="LineNumber" type="LineNumber" minOccurs="0">
+                                <xs:annotation>
+                                        <xs:documentation source="http://www.openapplications.org/oagis">Is the Line Number of the given Line Coponent within the document. LineNumbers are assigned by the sending system.</xs:documentation>
+                                </xs:annotation>
+                        </xs:element>
+                </xs:sequence>
+        </xs:complexType>
+        <xs:complexType name="DocumentOrderHeader">
+                <xs:complexContent>
+                        <xs:restriction base="DocumentHeader">
+                                <xs:sequence>
+                                        <xs:element ref="DocumentIds" minOccurs="0">
+                                                <xs:annotation>
+                                                        <xs:documentation source="http://www.openapplications.org/oagis">Is the identifier for the document. It is possible to carry the document identifier for the other Parties. These DocumentIds are referenced by sematic names.</xs:documentation>
+                                                        <xs:documentation source="http://www.openapplications.org/oagis">Is the identifier for the document. It is possible to carry the document identifier for the other Parties. These DocumentIds are referenced by sematic names.</xs:documentation>
+                                                </xs:annotation>
+                                        </xs:element>
+                                        <xs:element name="LastModificationDateTime" type="DateTime" minOccurs="0">
+                                                <xs:annotation>
+                                                        <xs:documentation source="http://www.openapplications.org/oagis">Is the date and time the document was last modified. This is not the date and time that the BOD message was sent.</xs:documentation>
+                                                </xs:annotation>
+                                        </xs:element>
+                                        <xs:element name="DocumentDateTime" type="DateTime" minOccurs="0">
+                                                <xs:annotation>
+                                                        <xs:documentation source="http://www.openapplications.org/oagis">Is the date and time the document was last created. This is not the date and time that the BOD message instance was created.</xs:documentation>
+                                                </xs:annotation>
+                                        </xs:element>
+                                        <xs:element name="Description" type="Description" minOccurs="0" maxOccurs="unbounded">
+                                                <xs:annotation>
+                                                        <xs:documentation source="http://www.openapplications.org/oagis">Is a description of the document.</xs:documentation>
+                                                </xs:annotation>
+                                        </xs:element>
+                                        <xs:element name="Note" type="Note" minOccurs="0" maxOccurs="unbounded">
+                                                <xs:annotation>
+                                                        <xs:documentation source="http://www.openapplications.org/oagis">Is Note for the document in which it is contained.</xs:documentation>
+                                                </xs:annotation>
+                                        </xs:element>
+                                        <xs:element ref="DocumentReferences" minOccurs="0"/>
+                                        <xs:element ref="Attachments" minOccurs="0"/>
+                                </xs:sequence>
+                        </xs:restriction>
+                </xs:complexContent>
+        </xs:complexType>
+        <xs:complexType name="Document">
+                <xs:complexContent>
+                        <xs:extension base="Noun">
+                                <xs:sequence>
+                                        <xs:element ref="Header" minOccurs="0"/>
+                                        <xs:element ref="Line" minOccurs="0" maxOccurs="unbounded"/>
+                                </xs:sequence>
+                        </xs:extension>
+                </xs:complexContent>
+        </xs:complexType>
+</xs:schema>

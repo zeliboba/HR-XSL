@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<html xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+	<head>
+		<LINK href="../Common/wsdoc.css" rel="stylesheet"/>
+	<title>EPMObjectiveResult</title>
+</head>
+	<body>
+	<div id="wsbody">
+
+<h2 align="center">EPMObjectives.wsdl</h2>
+<br/>
+	<table border="1" width="830">
+			<tr>
+				<td>
+					<b>Template Name</b>
+				</td>
+				<td>EPMObjectives</td>
+			</tr>
+			<tr>
+				<td>
+					<b>WSDL</b>
+				</td>
+				<td><A HREF="http://ns.hr-xml.org/2_5/HR-XML-2_5/ws/PerformanceManagement/EPMObjectives.wsdl" TARGET="_BLANK">EPMObjectives.wsdl</A></td>
+			</tr>
+							<tr>
+								<td>
+									<b>Status</b>
+								</td>
+								<td>Approved.  This example WSDL is offered as a template for implementing web services using HR-XML. The target namespace is intended to be replaced with one belonging to the implementer. WSDL faults are included as placeholders. These could be used as is, removed, or replaced with those appropriate for the implementation. </td>
+							</tr>
+							<tr>
+								<td>
+									<b>Date</b>
+								</td>
+								<td>2007-04-15</td>
+							</tr>
+				<tr>
+				<td>
+					<b>Description</b>
+				</td>
+				<td><ul>
+					<li>Defines operations to create, update, and cancel employee objective plans.</li>
+					<li>Defines an operation to submit or process employee objective results against objective plans.</li>
+				</ul> </td>
+			</tr>
+			<tr>
+				<td>
+					<b>Related Scenarios</b>
+				</td>
+				<td><ol>
+					<li>EPM and Compensation Management System Interactions</li>
+					<li>EPM and Business Performance Management System Interactions</li>
+				</ol>
+				</td>
+			</tr>
+		</table><p/>
+
+<h2 align="center">Messages</h2>
+<table border="1"  width="830">
+			<tr>
+				<td>
+					<b>Message Name</b>
+				</td>
+				<td>
+					<b>Content</b>
+				</td>
+			</tr>
+			<tr>
+				<td>Acknowledge</td>
+				<td>hrxml:Acknowledgement</td>
+			</tr>
+			<tr>
+				<td>CreateEPMObjectivesPlan</td>
+				<td>hrxml:EPMObjectivesPlan</td>
+			</tr>
+			<tr>
+				<td>UpdateEPMObjectivesPlan</td>
+				<td>hrxml:EPMObjectivesPlan</td>
+			</tr>
+			<tr>
+				<td>CancelEPMObjectivesPlan</td>
+				<td>hrxml:CancelMethod</td>
+			</tr>
+				<tr>
+					<td>ProcessEPMObjectivesResult</td>
+					<td>hrxml:EPMObjectivesResult</td>
+				</tr>
+			<tr>
+				<td>CreateEPMObjectivesPlanFault</td>
+				<td>hrxml:FaultExtensible (Placeholder of type xs:any)</td>
+			</tr>
+			<tr>
+				<td>UpdateEPMObjectivesPlanFault</td>
+				<td>hrxml:FaultExtensible (Placeholder of type xs:any)</td>
+			</tr>
+			<tr>
+				<td>CancelEPMObjectivesPlanFault</td>
+				<td>hrxml:FaultExtensible (Placeholder of type xs:any)</td>
+			</tr>
+			<tr>
+				<td>ProcessEPMObjectivesResultFault</td>
+				<td>hrxml:FaultExtensible (Placeholder of type xs:any)</td>
+			</tr>
+		</table>
+<h2 align="center">PortTypes and Operations</h2>
+<h3>1. EPMObjectivesPlan_PortType</h3>
+
+<table border="1"  width="830">
+			<tr>
+				<td>
+					<b>Operation</b>
+				</td>
+				<td>
+					<b>Description</b>
+				</td>
+			</tr>
+			<tr>
+				<td>CreateEPMObjectivesPlan</td>
+				<td><br/><font color="white"> ..... </font>input: CreateEPMObjectivesPlan<br/><font color="white"> ..... </font>output: Acknowledge<br/><font color="white"> ..... </font>fault: CreateEPMObjectivesPlanFault</td>
+			</tr>
+			<tr>
+				<td>UpdateEPMObjectivesPlan</td>
+				<td><br/><font color="white"> ..... </font>input: UpdateEPMObjectivesPlan<br/><font color="white"> ..... </font>output: Acknowledge<br/><font color="white"> ..... </font>fault: UpdateEPMObjectivesPlanFault</td>
+			</tr>
+			<tr>
+				<td>CancelEPMObjectivesPlan</td>
+				<td><br/><font color="white"> ..... </font>input: CancelEPMObjectivesPlan<br/><font color="white"> ..... </font>output: Acknowledge<br/><font color="white"> ..... </font>fault: CancelEPMObjectivesPlanFault</td>
+			</tr>
+		</table>
+		<h3>2. EPMObjectivesResult_PortType</h3>
+		<table border="1" width="830">
+			<tr>
+				<td>
+					<b>Operation</b>
+				</td>
+				<td>
+					<b>Description</b>
+				</td>
+			</tr>
+				<tr>
+					<td>ProcessEPMObjectivesResult</td>
+					<td><br/><font color="white"> ..... </font>input: ProcessEPMObjectivesResult<br/><font color="white"> ..... </font>output: Acknowledge<br/><font color="white"> ..... </font>fault: ProcessEPMObjectivesResultFault</td>
+				</tr>
+		</table><p/>
+
+		</div>
+	</body>
+</html>

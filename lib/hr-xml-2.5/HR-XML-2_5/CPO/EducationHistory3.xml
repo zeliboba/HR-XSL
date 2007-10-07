@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- This example shows how you might exchange degree and institution classifications within different regions. You would not typically have 3 different degree classifications within the same transaction. -->
+<EducationHistory xmlns="http://ns.hr-xml.org/2007-04-15" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://ns.hr-xml.org/2007-04-15 EducationHistory.xsd">
+	<SchoolOrInstitution schoolType="">
+		<Degree>
+			<DegreeClassification>
+				<Id idOwner="ISCED">
+					<IdValue>3</IdValue>
+				</Id>
+				<Description>Abiturprüfung</Description>
+			</DegreeClassification>
+		</Degree>
+		<ISCEDInstitutionClassification>3</ISCEDInstitutionClassification>
+		<LocalInstitutionClassification>
+			<Id idOwner="eurydice">
+				<IdValue>3</IdValue>
+			</Id>
+			<Description>Gymnasium</Description>
+		</LocalInstitutionClassification>
+	</SchoolOrInstitution>
+	<!-- -->
+	<SchoolOrInstitution schoolType="">
+		<Degree>
+			<DegreeClassification>
+				<Id idOwner="ISCED">
+					<IdValue>5</IdValue>
+				</Id>
+				<Description>Diplomprüfung</Description>
+			</DegreeClassification>
+		</Degree>
+		<ISCEDInstitutionClassification>5</ISCEDInstitutionClassification>
+		<LocalInstitutionClassification>
+			<Id idOwner="eurydice">
+				<IdValue>5</IdValue>
+			</Id>
+			<Description>Fachhochschule</Description>
+		</LocalInstitutionClassification>
+	</SchoolOrInstitution>
+	<!-- -->
+	<SchoolOrInstitution schoolType="">
+		<Degree>
+			<DegreeClassification>
+				<Id idOwner="ISCED">
+					<IdValue>6</IdValue>
+				</Id>
+				<Description>Promotion</Description>
+			</DegreeClassification>
+		</Degree>
+		<!-- -->
+		<ISCEDInstitutionClassification>6</ISCEDInstitutionClassification>
+		<LocalInstitutionClassification>
+			<Id idOwner="eurydice">
+				<IdValue>6</IdValue>
+			</Id>
+			<Description>Universität</Description>
+		</LocalInstitutionClassification>
+	</SchoolOrInstitution>
+</EducationHistory>

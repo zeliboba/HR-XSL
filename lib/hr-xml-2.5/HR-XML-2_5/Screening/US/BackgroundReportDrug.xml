@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<BackgroundReports xmlns="http://ns.hr-xml.org/2007-04-15" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://ns.hr-xml.org/2007-04-15  BackgroundReports.xsd" userId="" password="" account="" location="" version="2007-04-15" xml:lang="en">
+	<ProviderReferenceId idOwner="Hirecheck">
+		<IdValue>0178567</IdValue>
+	</ProviderReferenceId>
+	<!--
+Sample XML depicting the text and parsed results of a Drug and Alcohol  Search. 
+-->
+	<BackgroundReportPackage type="report">
+		<ClientReferenceId>
+			<IdValue>bec61f0f-aaa9-4211-8e49-18d603c76cd0</IdValue>
+		</ClientReferenceId>
+		<CopyToApplicant>true</CopyToApplicant>
+		<ScreeningsSummary>
+			<Organization type="Vendor">
+				<OrganizationName>First Advantage</OrganizationName>
+				<ContactMethod>
+					<Use>business</Use>
+					<Location>office</Location>
+					<Telephone>
+						<FormattedNumber>1-800-321-4473</FormattedNumber>
+					</Telephone>
+				</ContactMethod>
+			</Organization>
+			<PersonalData type="Current">
+				<PersonName type="Subject">
+					<GivenName>STEPHANIE</GivenName>
+					<MiddleName>D</MiddleName>
+					<FamilyName>DOE</FamilyName>
+				</PersonName>
+				<DemographicDetail>
+					<GovernmentId countryCode="US" issuingAuthority="SSN">555-12-4567</GovernmentId>
+					<DateOfBirth>1974-01-14</DateOfBirth>
+				</DemographicDetail>
+			</PersonalData>
+			<ClientReferences>
+				<IdValue name="BillingCode">176-345</IdValue>
+			</ClientReferences>
+		</ScreeningsSummary>
+		<Screenings>
+			<Screening type="drug">
+				<ProviderReferenceId>
+					<IdValue>900XXX0C0</IdValue>
+				</ProviderReferenceId>
+				<ClientReferenceId>
+					<IdValue>B0019474MV</IdValue>
+				</ClientReferenceId>
+				<ScreeningStatus>
+					<OrderStatus>Completed</OrderStatus>
+					<ResultStatus>Fail</ResultStatus>
+					<DateOrderReceived>2002-07-26</DateOrderReceived>
+				</ScreeningStatus>
+				<CountryCode>US</CountryCode>
+				<Region>VA</Region>
+				<LegalText type="Disclaimer" fontSize="16" fontColor="Red">
+					<Text>
+                                DISCLAIMER
+
+     Information contained herein should not be the sole determination in 
+     evaluation of this individual.  All other factors, references and 
+     current situations should be considered.  Human error in compiling 
+     this information is possible.  The FCRA requires certain actions if 
+     you take adverse action based in whole or in part on this report.
+     See your Help File, the FCRA or call for procedures.</Text>
+				</LegalText>
+				<ScreeningResults type="results" mediaType="txt" resultType="report">
+					<Text>                       DRUG SCREEN REPORT
+--------------------------------------------------------------------------
+NAME.............: DOE, STEPHANIE D
+SSN..............: 555-12-4567
+COMPANY..........: HRCK/BAD BROTHERS
+DIST/CLI/REQ.....: 900XXX0C0
+LOCATION.........: 
+TEST REASON......: PREHIRE
+TEST TYPE........: OR5P
+COLLECTION DATE..: 07/22/2002
+LABORATORY.......: LABONE
+MRO..............: KEVIN EDWARDS, M.D.
+CHAIN OF CUSTODY.: 24755555
+COMMENT..........: UNABLE TO CONTACT
+---------------------------------------------------------------------------
+RESULT: P - COCA
+</Text>
+				</ScreeningResults>
+				<DrugAbuseReport>
+					<OrganizationName>HRCK/BAD BROTHERS</OrganizationName>
+					<ApplicantInformation>
+						<PersonName type="Subject">
+							<GivenName>STEPHANIE</GivenName>
+							<MiddleName>D</MiddleName>
+							<FamilyName>DOE</FamilyName>
+						</PersonName>
+						<DemographicDetail>
+							<GovernmentId countryCode="US" issuingAuthority="SSN">555-12-4567</GovernmentId>
+							<DateOfBirth>1974-01-14</DateOfBirth>
+						</DemographicDetail>
+					</ApplicantInformation>
+					<ScreeningVerificationResults>
+						<ReasonForTest>Pre-employment</ReasonForTest>
+						<TestType type="OR5P"></TestType>
+						<SpecimenCollectionDate>
+							<AnyDate>2002-07-22</AnyDate>
+						</SpecimenCollectionDate>
+						<Laboratory>LABONE</Laboratory>
+						<MedicalReviewOfficer>KEVIN EDWARDS, M.D.</MedicalReviewOfficer>
+						<SpecimenIdNumber>
+							<IdValue>24755555</IdValue>
+						</SpecimenIdNumber>
+						<TestResults>
+							<Substance>
+								<SubstanceType>COC</SubstanceType>
+								<Results>Positive</Results>
+							</Substance>
+						</TestResults>
+						<Comments>UNABLE TO CONTACT</Comments>
+					</ScreeningVerificationResults>
+				</DrugAbuseReport>
+			</Screening>
+		</Screenings>
+	</BackgroundReportPackage>
+</BackgroundReports>

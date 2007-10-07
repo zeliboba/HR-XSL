@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<BackgroundReports xmlns="http://ns.hr-xml.org/2007-04-15" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:sep="http://ns.hr-xml.org/2007-04-15" xsi:schemaLocation="http://ns.hr-xml.org/2007-04-15  BackgroundReports.xsd" userId="900XXX">
+	<!-- Example of Search Status results -->
+	<ProviderReferenceId>
+		<IdValue>204</IdValue>
+	</ProviderReferenceId>
+	<BackgroundReportPackage type="status">
+		<ClientReferenceId>
+			<IdValue>A1234</IdValue>
+		</ClientReferenceId>
+		<!-- Overall Status of all searches in the package -->
+		<ScreeningStatus>
+			<OrderStatus>New</OrderStatus>
+			<DateOrderReceived>2002-01-13T12:24:01</DateOrderReceived>
+		</ScreeningStatus>
+		<!-- Summary information for the Search Subject applicable to all searches in the package -->
+		<ScreeningsSummary>
+			<PersonalData>
+				<PersonName>
+					<GivenName>Joe</GivenName>
+					<MiddleName>S</MiddleName>
+					<FamilyName>Doe</FamilyName>
+				</PersonName>
+				<DemographicDetail>
+					<GovernmentId countryCode="US">555555555</GovernmentId>
+				</DemographicDetail>
+			</PersonalData>
+			<ClientReferences>
+				<IdValue name="ProviderRequestNumber">03y</IdValue>
+			</ClientReferences>
+		</ScreeningsSummary>
+		<!-- Individual Status of each search in the package -->
+		<Screenings>
+			<Screening type="education">
+				<ProviderReferenceId>
+					<IdValue>01234</IdValue>
+				</ProviderReferenceId>
+				<ClientReferenceId>
+					<IdValue>A1234-1</IdValue>
+				</ClientReferenceId>
+				<ScreeningStatus>
+					<OrderStatus>New</OrderStatus>
+					<DateOrderReceived>2002-01-13T12:24:01</DateOrderReceived>
+				</ScreeningStatus>
+			</Screening>
+			<Screening type="license" qualifier="mvPersonal">
+				<ProviderReferenceId>
+					<IdValue>01235</IdValue>
+				</ProviderReferenceId>
+				<ClientReferenceId>
+					<IdValue>A1234-2</IdValue>
+				</ClientReferenceId>
+				<ScreeningStatus>
+					<OrderStatus>InProgress</OrderStatus>
+					<DateOrderReceived>2002-01-13T12:24:01</DateOrderReceived>
+				</ScreeningStatus>
+			</Screening>
+			<Screening type="credit">
+				<ProviderReferenceId>
+					<IdValue>01236</IdValue>
+				</ProviderReferenceId>
+				<ClientReferenceId>
+					<IdValue>A1234-3</IdValue>
+				</ClientReferenceId>
+				<ScreeningStatus>
+					<OrderStatus>Cancelled</OrderStatus>
+					<DateOrderReceived>2002-01-13T12:24:01</DateOrderReceived>
+				</ScreeningStatus>
+			</Screening>
+		</Screenings>
+		<!-- Error results for searches in the package -->
+		<ErrorReport>
+			<ErrorDescription>Missing Required Field:  DATEOFBIRTH</ErrorDescription>
+			<ErrorCode>300</ErrorCode>
+			<ErrorSeverity>Fatal</ErrorSeverity>
+			<FileReferenceId>
+				<IdValue>11202001173000</IdValue>
+			</FileReferenceId>
+			<PackageReferenceId>
+				<IdValue>112020011</IdValue>
+			</PackageReferenceId>
+			<ScreeningReferenceId>
+				<IdValue>570128-338586</IdValue>
+			</ScreeningReferenceId>
+			<ScreeningType>education</ScreeningType>
+			<ProviderReferenceId>
+				<IdValue>XXXO1034.XML</IdValue>
+			</ProviderReferenceId>
+		</ErrorReport>
+		<ErrorReport>
+			<ErrorDescription>Missing Required Field:  DATEOFBIRTH</ErrorDescription>
+			<ErrorCode>300</ErrorCode>
+			<ErrorSeverity>x:Serious but not fatal2</ErrorSeverity>
+			<FileReferenceId>
+				<IdValue>41202001173000</IdValue>
+			</FileReferenceId>
+			<PackageReferenceId>
+				<IdValue>412020011</IdValue>
+			</PackageReferenceId>
+			<ScreeningReferenceId>
+				<IdValue>570428-738586</IdValue>
+			</ScreeningReferenceId>
+			<ScreeningType>license</ScreeningType>
+			<ScreeningQualifier>mvPersonal</ScreeningQualifier>
+			<ProviderReferenceId>
+				<IdValue>XXXO1034.XML</IdValue>
+			</ProviderReferenceId>
+		</ErrorReport>
+	</BackgroundReportPackage>
+</BackgroundReports>

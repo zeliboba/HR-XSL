@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- edited with XMLSpy v2006 rel. 3 sp1 (http://www.altova.com) by Chuck Allen (HR-XML Consortium, Inc.) -->
+<Rates rateType="bill" rateStatus="proposed" xmlns="http://ns.hr-xml.org/2007-04-15" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://ns.hr-xml.org/2007-04-15 Rates.xsd">
+	<ExternalRateSetId validFrom="notKnown" validTo="notKnown" idOwner="String">
+		<IdValue name="String">String</IdValue>
+	</ExternalRateSetId>
+	<Amount rateAmountPeriod="hourly" currency="USD">15.25</Amount>
+	<Class> Regular</Class>
+	<StaffingShiftId validFrom="2004-01-01" validTo="2005-01-01">
+		<IdValue>Day Shift</IdValue>
+	</StaffingShiftId>
+	<Multiplier percentIndicator="1">1.5</Multiplier>
+	<StartDate>2003-01-01</StartDate>
+	<EndDate>notKnown</EndDate>
+	<Description>Bill</Description>
+	<RatesId validFrom="2004-01-01" validTo="2005-01-01">
+		<IdValue>Standard Rate</IdValue>
+	</RatesId>
+	<CustomerRateClassification>
+		<IdValue name="String">String</IdValue>
+	</CustomerRateClassification>
+	<BillingMultiplier percentIndicator="1">2</BillingMultiplier>
+	<TimeWorkedRounding summaryCycle="Daily">
+		<TimeInterval roundingMethod="RoundUp" unitOfTime="hour">4</TimeInterval>
+	</TimeWorkedRounding>
+</Rates>

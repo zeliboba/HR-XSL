@@ -1,0 +1,150 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Enrollment xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://ns.hr-xml.org/2007-04-15" xsi:schemaLocation="http://ns.hr-xml.org/2007-04-15 Enrollment.xsd" creationDate="2003-11-28T10:24:27-01:00" transactionType="Change" originatorId="COA" originatorName="CompanyA" recipientId="FI" recipientName="Fidelity Investments">
+	<Organization organizationName="CompanyA">
+		<BenefitsAdministrativeAffiliate>
+			<OrganizationName>Acme Online Benefits Services</OrganizationName>
+			<EntityRole>Third Party Administrator</EntityRole>
+			<AccountNumber>123456</AccountNumber>
+			<ContactInformation>
+				<Use>business</Use>
+				<Location>office</Location>
+				<Telephone>
+					<FormattedNumber>602 457 1233</FormattedNumber>
+				</Telephone>
+				<PostalAddress>
+					<CountryCode>US</CountryCode>
+					<PostalCode>92037</PostalCode>
+					<Region>CA</Region>
+					<Municipality>La Jolla</Municipality>
+					<DeliveryAddress>
+						<AddressLine>5 La Jolla Boulevard </AddressLine>
+					</DeliveryAddress>
+				</PostalAddress>
+			</ContactInformation>
+		</BenefitsAdministrativeAffiliate>
+		<Subscriber>
+			<SubscriberType>
+				<SubscriberTypeCode>Employment</SubscriberTypeCode>
+				<StartDate>2004-01-01</StartDate>
+			</SubscriberType>
+			<Person>
+				<IdentificationCode>
+					<IdValue name="Employee Number">522-412-112</IdValue>
+				</IdentificationCode>
+				<PersonName>
+					<FormattedName>John Adams</FormattedName>
+				</PersonName>
+				<Gender>1</Gender>
+				<DateOfBirth>1983-10-28</DateOfBirth>
+				<ContactInformation>
+					<Use>business</Use>
+					<Location>office</Location>
+					<Telephone>
+						<FormattedNumber>902 124 4566</FormattedNumber>
+					</Telephone>
+					<PostalAddress>
+						<CountryCode>US</CountryCode>
+						<PostalCode>90123</PostalCode>
+						<Region>CA</Region>
+						<Municipality>La Jolla</Municipality>
+						<DeliveryAddress>
+							<AddressLine>521</AddressLine>
+							<StreetName> Orange Street</StreetName>
+							<BuildingNumber>134</BuildingNumber>
+							<Unit>5B</Unit>
+						</DeliveryAddress>
+						<Recipient>
+							<PersonName>
+								<FormattedName>John Adams</FormattedName>
+							</PersonName>
+						</Recipient>
+					</PostalAddress>
+				</ContactInformation>
+			</Person>
+			<Coverage>
+				<StockPurchasePlanCoverage>
+					<TransactionCode>Add</TransactionCode>
+					<EnrollmentDate>2004-01-01</EnrollmentDate>
+					<ElectedPlanId>
+						<IdValue>123-98765</IdValue>
+					</ElectedPlanId>
+					<OfferingPeriod>
+						<StartDate>2004-01-01</StartDate>
+						<EndDate>2004-06-30</EndDate>
+					</OfferingPeriod>
+					<ShareIssuance type="StockDeposit">
+						<BrokerInfo>
+							<Broker>
+								<OrganizationName>Fidelity Investments</OrganizationName>
+								<OrganizationId>
+									<IdValue>FI</IdValue>
+								</OrganizationId>
+								<DunsNumber dunsNumberType="standard Duns">958973711</DunsNumber>
+								<ContactInfo purpose="Sales">
+									<ContactName>
+										<FormattedName>John Merritt</FormattedName>
+									</ContactName>
+									<ContactMethod>
+										<Use>business</Use>
+										<Location>office</Location>
+										<WhenAvailable>9:00-17:00, Weekdays</WhenAvailable>
+										<Telephone>
+											<FormattedNumber>123-456-7890</FormattedNumber>
+										</Telephone>
+									</ContactMethod>
+								</ContactInfo>
+							</Broker>
+							<AccountIdentifier validFrom="2000-01-01">
+								<IdValue>MS9999</IdValue>
+							</AccountIdentifier>
+						</BrokerInfo>
+						<ShareRegistrationInfo>
+							<PersonInfo>
+								<PersonName>
+									<FormattedName>Mr. John Adams</FormattedName>
+								</PersonName>
+								<PostalAddress>
+									<CountryCode>US</CountryCode>
+									<PostalCode>93121</PostalCode>
+									<Region>CA</Region>
+									<Municipality>Sunnyvale</Municipality>
+									<DeliveryAddress>
+										<AddressLine>5911</AddressLine>
+										<StreetName>Oxford Street</StreetName>
+									</DeliveryAddress>
+									<Recipient>
+										<PersonName>
+											<FormattedName>Mr. John Adams</FormattedName>
+										</PersonName>
+									</Recipient>
+								</PostalAddress>
+							</PersonInfo>
+						</ShareRegistrationInfo>
+					</ShareIssuance>
+					<SharePurchaseRestrictions>
+						<MaximumPurchaseAmount currencyCode="USD">10625.00</MaximumPurchaseAmount>
+					</SharePurchaseRestrictions>
+					<ContributionPercentage>8</ContributionPercentage>
+					<UserArea/>
+				</StockPurchasePlanCoverage>
+				<UserArea/>
+			</Coverage>
+			<Employment employeeId="522-412-1122">
+				<EmploymentStatus>
+					<EmploymentStatusCode>Active</EmploymentStatusCode>
+					<StartDate>1998-01-01</StartDate>
+				</EmploymentStatus>
+				<EmploymentLevel>
+					<EmploymentLevelCode>Full Time</EmploymentLevelCode>
+					<StartDate>1998-01-01</StartDate>
+				</EmploymentLevel>
+				<HireDate>1998-01-01</HireDate>
+			</Employment>
+			<UserArea/>
+		</Subscriber>
+		<OrganizationId>
+			<IdValue>01234</IdValue>
+		</OrganizationId>
+	</Organization>
+	<UserArea/>
+</Enrollment>

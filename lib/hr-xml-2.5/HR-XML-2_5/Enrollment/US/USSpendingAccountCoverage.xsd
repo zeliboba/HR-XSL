@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- edited with XMLSpy v2006 rel. 3 sp1 (http://www.altova.com) by Chuck Allen (HR-XML Consortium, Inc.) -->
+<xsd:schema xmlns="http://ns.hr-xml.org/2007-04-15" xmlns:xsd="http://www.w3.org/2001/XMLSchema" targetNamespace="http://ns.hr-xml.org/2007-04-15" elementFormDefault="qualified" version="2007-04-15">
+	<xsd:annotation>
+		<xsd:documentation>
+"Copyright  The HR-XML Consortium. All Rights Reserved. http://www.hr-xml.org"
+Name: USSpendingAccountCoverage.xsd
+Status: Recommendation
+Date this version: 2007-04-15
+Purpose: 
+Author(s): 
+Documentation: Enrollment.html
+
+		</xsd:documentation>
+	</xsd:annotation>
+	<xsd:import namespace="http://www.w3.org/XML/1998/namespace" schemaLocation="../../../W3C/xml.xsd"/>
+	<xsd:include schemaLocation="../../CPO/PersonName.xsd"/>
+	<xsd:include schemaLocation="../../CPO/PostalAddress.xsd"/>
+	<xsd:include schemaLocation="../../CPO/DateTimeDataTypes.xsd"/>
+	<xsd:include schemaLocation="../../CPO/ContactMethod.xsd"/>
+	<xsd:include schemaLocation="../../CPO/TelcomNumber.xsd"/>
+	<xsd:include schemaLocation="../../CPO/OnlineAddress.xsd"/>
+	<xsd:include schemaLocation="../../CPO/EntityIdType.xsd"/>
+	<xsd:include schemaLocation="../../CPO/UserArea.xsd"/>
+	<xsd:include schemaLocation="../../CPO/ISOUtilities.xsd"/>
+	<xsd:include schemaLocation="../../Enrollment/EnrollmentTypes.xsd"/>
+	<xsd:complexType name="USSpendingAccountCoverage">
+		<xsd:sequence>
+			<xsd:element name="GroupNumber" type="xsd:string" minOccurs="0"/>
+			<xsd:element name="TransactionCode" type="EnrollmentTransactionType" minOccurs="0"/>
+			<xsd:element name="PlanParticipationSuspensionDate" type="DateType" minOccurs="0"/>
+			<xsd:element name="PlanYear" type="xsd:gYear"/>
+			<xsd:element name="PlanStartDate" type="LocalDateType" minOccurs="0"/>
+			<xsd:element name="PlanEndDate" type="LocalDateType" minOccurs="0"/>
+			<xsd:element name="StartDate" type="LocalDateType"/>
+			<xsd:element name="EndDate" type="LocalDateType" minOccurs="0"/>
+			<xsd:element name="ContributionData" type="ContributionDataType" maxOccurs="unbounded"/>
+			<xsd:element name="RolloverBalance" minOccurs="0">
+				<xsd:complexType>
+					<xsd:simpleContent>
+						<xsd:extension base="xsd:double">
+							<xsd:attribute name="currency" type="CurrencyCodeType" use="required"/>
+						</xsd:extension>
+					</xsd:simpleContent>
+				</xsd:complexType>
+			</xsd:element>
+			<xsd:element name="Carrier" type="CarrierData" minOccurs="0"/>
+			<xsd:element name="DirectDepositData" minOccurs="0">
+				<xsd:complexType>
+					<xsd:sequence>
+						<xsd:element name="AccountType">
+							<xsd:simpleType>
+								<xsd:restriction base="xsd:string">
+									<xsd:enumeration value="Checking"/>
+									<xsd:enumeration value="Savings"/>
+								</xsd:restriction>
+							</xsd:simpleType>
+						</xsd:element>
+						<xsd:element name="ABARoutingNumber" type="xsd:string"/>
+						<xsd:element name="BankAccountNumber" type="xsd:string"/>
+					</xsd:sequence>
+				</xsd:complexType>
+			</xsd:element>
+			<xsd:element name="AutoReimbursementIndicator" type="AutoReimbursementIndicatorType" minOccurs="0"/>
+			<xsd:element ref="UserArea" minOccurs="0"/>
+		</xsd:sequence>
+		<xsd:attribute name="type" type="SpendingAccountTypeType" use="required"/>
+	</xsd:complexType>
+	<xsd:simpleType name="AutoReimbursementIndicatorType">
+		<xsd:restriction base="xsd:string">
+			<xsd:enumeration value="all"/>
+			<xsd:enumeration value="none"/>
+			<xsd:enumeration value="byClaim"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="SpendingAccountTypeType">
+		<xsd:restriction base="xsd:string">
+			<xsd:enumeration value="FSA Health Care"/>
+			<xsd:enumeration value="FSA Dependent Care"/>
+			<xsd:enumeration value="Health Reimbursement Account"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:complexType name="ContributionDataType">
+		<xsd:sequence>
+			<xsd:element name="GoalAmount" minOccurs="0">
+				<xsd:complexType>
+					<xsd:simpleContent>
+						<xsd:extension base="xsd:double">
+							<xsd:attribute name="currency" type="CurrencyCodeType" use="required"/>
+						</xsd:extension>
+					</xsd:simpleContent>
+				</xsd:complexType>
+			</xsd:element>
+			<xsd:element name="PerPayPeriodAmount" minOccurs="0">
+				<xsd:complexType>
+					<xsd:simpleContent>
+						<xsd:extension base="xsd:double">
+							<xsd:attribute name="currency" type="CurrencyCodeType" use="required"/>
+						</xsd:extension>
+					</xsd:simpleContent>
+				</xsd:complexType>
+			</xsd:element>
+			<xsd:element name="YTDContributionAmount" minOccurs="0">
+				<xsd:complexType>
+					<xsd:simpleContent>
+						<xsd:extension base="xsd:double">
+							<xsd:attribute name="currency" type="CurrencyCodeType" use="required"/>
+						</xsd:extension>
+					</xsd:simpleContent>
+				</xsd:complexType>
+			</xsd:element>
+			<xsd:element name="Frequency" minOccurs="0">
+				<xsd:simpleType>
+					<xsd:restriction base="xsd:string">
+						<xsd:enumeration value="Annually"/>
+						<xsd:enumeration value="Bi-Weekly"/>
+						<xsd:enumeration value="Daily"/>
+						<xsd:enumeration value="Monthly"/>
+						<xsd:enumeration value="One Time Only"/>
+						<xsd:enumeration value="Quarterly"/>
+						<xsd:enumeration value="Semi-Annually"/>
+						<xsd:enumeration value="Semi-Monthly"/>
+						<xsd:enumeration value="Weekly"/>
+					</xsd:restriction>
+				</xsd:simpleType>
+			</xsd:element>
+			<xsd:element name="FirstPayrollDate" type="LocalDateType" minOccurs="0"/>
+			<xsd:element name="StartDate" type="LocalDateType" minOccurs="0"/>
+		</xsd:sequence>
+		<xsd:attribute name="contributor" use="required">
+			<xsd:simpleType>
+				<xsd:restriction base="xsd:string">
+					<xsd:enumeration value="Employer"/>
+					<xsd:enumeration value="Employee"/>
+				</xsd:restriction>
+			</xsd:simpleType>
+		</xsd:attribute>
+	</xsd:complexType>
+</xsd:schema>

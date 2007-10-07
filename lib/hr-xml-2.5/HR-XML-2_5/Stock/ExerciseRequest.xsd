@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema xmlns="http://ns.hr-xml.org/2007-04-15" xmlns:xsd="http://www.w3.org/2001/XMLSchema" targetNamespace="http://ns.hr-xml.org/2007-04-15" elementFormDefault="qualified" version="2007-04-15">
+	<xsd:annotation>
+		<xsd:documentation>
+"Copyright  The HR-XML Consortium. All Rights Reserved. http://www.hr-xml.org"
+Name: ExerciseRequest.xsd
+Status: Recommendation
+Date this version: 2007-04-15
+Author(s): Andreas Bold - SAP, Stock Work Group
+Documentation: EmployeeStocksPlanInterface.html
+
+Terms of license can be found in license.txt.
+
+		</xsd:documentation>
+	</xsd:annotation>
+	<xsd:include schemaLocation="../CPO/EntityIdType.xsd"/>
+	<xsd:include schemaLocation="../CPO/UserArea.xsd"/>
+	<xsd:include schemaLocation="../CPO/ISOUtilities.xsd"/>
+	<xsd:complexType name="ExerciseRequestType">
+		<xsd:sequence>
+			<xsd:element name="Id" type="EntityIdType"/>
+			<xsd:element name="ParticipantId" type="EntityIdType"/>
+			<xsd:element name="RequestDate" type="LocalDateType"/>
+			<xsd:element name="ExerciseDate" type="LocalDateType"/>
+			<xsd:element name="ExerciseInfo">
+				<xsd:complexType>
+					<xsd:sequence>
+						<xsd:element name="GrantId" type="EntityIdType"/>
+						<xsd:element name="OptionsToBeExercised" type="xsd:decimal"/>
+						<xsd:element name="GrantPrice" minOccurs="0">
+							<xsd:complexType>
+								<xsd:simpleContent>
+									<xsd:extension base="xsd:decimal">
+										<xsd:attribute name="currency" type="CurrencyCodeType" use="required"/>
+									</xsd:extension>
+								</xsd:simpleContent>
+							</xsd:complexType>
+						</xsd:element>
+						<xsd:element name="SharesToBeSold" type="xsd:decimal"/>
+						<xsd:element name="SARPercentCashRequested" type="xsd:decimal"/>
+					</xsd:sequence>
+				</xsd:complexType>
+			</xsd:element>
+			<xsd:element name="ExerciseInstructions" minOccurs="0">
+				<xsd:complexType>
+					<xsd:sequence>
+						<xsd:element name="SellToCoverOptions" type="xsd:boolean"/>
+						<xsd:element name="SellToCoverTaxes" type="xsd:boolean"/>
+						<xsd:element name="SellToCoverFees" type="xsd:boolean"/>
+						<xsd:element name="UseSharesForTaxes" type="xsd:boolean"/>
+						<xsd:element name="UseSharesFirst" type="xsd:boolean"/>
+						<xsd:element name="SharesSwapped" type="xsd:decimal"/>
+						<xsd:element name="TaxRelevantPrice" minOccurs="0">
+							<xsd:complexType>
+								<xsd:simpleContent>
+									<xsd:extension base="xsd:decimal">
+										<xsd:attribute name="currency" type="CurrencyCodeType" use="required"/>
+									</xsd:extension>
+								</xsd:simpleContent>
+							</xsd:complexType>
+						</xsd:element>
+						<xsd:element name="SaleType">
+							<xsd:complexType>
+								<xsd:choice>
+									<xsd:element name="MarketOrder" type="xsd:boolean"/>
+									<xsd:element name="LimitOrder">
+										<xsd:complexType>
+											<xsd:sequence>
+												<xsd:element name="LimitPrice" type="xsd:decimal"/>
+												<xsd:element name="ExpiryDate" type="LocalDateType"/>
+											</xsd:sequence>
+										</xsd:complexType>
+									</xsd:element>
+									<xsd:element name="GoodTillCancelled" type="xsd:boolean"/>
+								</xsd:choice>
+							</xsd:complexType>
+						</xsd:element>
+					</xsd:sequence>
+				</xsd:complexType>
+			</xsd:element>
+			<xsd:element ref="UserArea" minOccurs="0"/>
+		</xsd:sequence>
+	</xsd:complexType>
+	<xsd:element name="ExerciseRequest" type="ExerciseRequestType"/>
+</xsd:schema>

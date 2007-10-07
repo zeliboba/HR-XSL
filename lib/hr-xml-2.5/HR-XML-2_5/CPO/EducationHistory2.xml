@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EducationHistory xmlns="http://ns.hr-xml.org/2007-04-15" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://ns.hr-xml.org/2007-04-15 EducationHistory.xsd">
+	<SchoolOrInstitution schoolType="">
+		<School type="prior">
+			<SchoolId>
+				<IdValue>CO1887641</IdValue>
+			</SchoolId>
+			<SchoolName>University of Colorado</SchoolName>
+		</School>
+		<LocationSummary>
+			<Municipality>Boulder</Municipality>
+			<Region>CO</Region>
+			<CountryCode>US</CountryCode>
+		</LocationSummary>
+		<OrganizationUnit organizationType="subSchool">School of Education</OrganizationUnit>
+		<Degree graduatingDegree="graduating">
+			<DegreeDate>
+				<AnyDate>1987-01-02</AnyDate>
+			</DegreeDate>
+			<DegreeMajor>
+				<ProgramId>
+					<IdValue>173.24</IdValue>
+				</ProgramId>
+				<DegreeConcentration>Elementary Education</DegreeConcentration>
+				<Name>Education</Name>
+			</DegreeMajor>
+			<DegreeMeasure>
+				<EducationalMeasure>
+					<MeasureSystem>GPA</MeasureSystem>
+					<MeasureValue>
+						<NumericValue>3.9</NumericValue>
+					</MeasureValue>
+					<GoodStudentIndicator>true</GoodStudentIndicator>
+				</EducationalMeasure>
+				<AcademicCreditCode>A</AcademicCreditCode>
+				<ClassRank numberOfStudents="380">78</ClassRank>
+			</DegreeMeasure>
+			<DatesOfAttendance currentlyEnrolled="false">
+				<StartDate>
+					<YearMonth>1980-09</YearMonth>
+				</StartDate>
+				<EndDate>
+					<YearMonth>1981-04</YearMonth>
+				</EndDate>
+			</DatesOfAttendance>
+			<DatesOfAttendance currentlyEnrolled="false">
+				<StartDate>
+					<YearMonth>1984-09</YearMonth>
+				</StartDate>
+				<EndDate>
+					<YearMonth>1987-04</YearMonth>
+				</EndDate>
+			</DatesOfAttendance>
+			<Comments>Due to financial reasons, it was necessary to withdraw after the 1st year, then continue my studies at a later time.</Comments>
+			<!-- Typically, only one degree classification would be exchanged. However, the example shows how a Bachelor's degree may be exchanged within numerous regions. -->
+			<DegreeClassification>
+				<Id idOwner="Swedish School System">
+					<IdValue>T3</IdValue>
+				</Id>
+				<Description>Bachelor's Degree</Description>
+			</DegreeClassification>
+			<DegreeClassification>
+				<Id idOwner="French School System">
+					<IdValue/>
+				</Id>
+				<Description>La License</Description>
+			</DegreeClassification>
+			<DegreeClassification>
+				<Id validFrom="2004-01-01" idOwner="Postsecondary Electronic Standards Council (PESC)">
+					<IdValue>2.4</IdValue>
+				</Id>
+				<Description>Baccalaureate Degree</Description>
+			</DegreeClassification>
+			<DegreeClassification>
+				<Id idOwner="Colorado Department of Education">
+					<IdValue>16</IdValue>
+				</Id>
+				<Description>Bachelor's (Baccalaureate) degree (e.g., B.A., A.B., B.S.)</Description>
+			</DegreeClassification>
+			<DegreeClassification>
+				<Id idOwner="resumemirror.com">
+					<IdValue>bachelors</IdValue>
+				</Id>
+				<Description>Bachelor's Degree</Description>
+			</DegreeClassification>
+		</Degree>	
+		<ISCEDInstitutionClassification>5</ISCEDInstitutionClassification>
+		<LocalInstitutionClassification>
+			<Id idOwner="resumemirror.com">
+				<IdValue>COLLEGE/UNIVERSITY</IdValue>
+			</Id>
+			<Description>University</Description>
+		</LocalInstitutionClassification>
+	</SchoolOrInstitution>
+</EducationHistory>

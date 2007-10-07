@@ -1,0 +1,191 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema xmlns="http://ns.hr-xml.org/2007-04-15" xmlns:xsd="http://www.w3.org/2001/XMLSchema" targetNamespace="http://ns.hr-xml.org/2007-04-15" elementFormDefault="qualified" version="2007-04-15">
+	<xsd:annotation>
+		<xsd:documentation>
+"Copyright  The HR-XML Consortium. All Rights Reserved. http://www.hr-xml.org"
+Name: EnrollmentTypes.xsd
+Status: Recommendation
+Date this version: 2007-04-15
+Purpose: 
+Author(s): 
+Documentation: Enrollment.html
+
+		</xsd:documentation>
+	</xsd:annotation>
+	<xsd:import namespace="http://www.w3.org/XML/1998/namespace" schemaLocation="../../W3C/xml.xsd"/>
+	<xsd:include schemaLocation="../CPO/PersonName.xsd"/>
+	<xsd:include schemaLocation="../CPO/PostalAddress.xsd"/>
+	<xsd:include schemaLocation="../CPO/DateTimeDataTypes.xsd"/>
+	<xsd:include schemaLocation="../CPO/ContactMethod.xsd"/>
+	<xsd:include schemaLocation="../CPO/TelcomNumber.xsd"/>
+	<xsd:include schemaLocation="../CPO/OnlineAddress.xsd"/>
+	<xsd:include schemaLocation="../CPO/EntityIdType.xsd"/>
+	<xsd:include schemaLocation="../CPO/UserArea.xsd"/>
+	<xsd:include schemaLocation="../CPO/ISOUtilities.xsd"/>
+	<xsd:complexType name="LanguageData">
+		<xsd:sequence>
+			<xsd:element name="LanguageCode">
+				<xsd:simpleType>
+					<xsd:restriction base="xsd:string">
+						<xsd:pattern value="[A-Z][A-Z]"/>
+					</xsd:restriction>
+				</xsd:simpleType>
+			</xsd:element>
+			<xsd:element name="LanguageUsage">
+				<xsd:simpleType>
+					<xsd:restriction base="xsd:string">
+						<xsd:enumeration value="Written"/>
+						<xsd:enumeration value="Spoken"/>
+					</xsd:restriction>
+				</xsd:simpleType>
+			</xsd:element>
+		</xsd:sequence>
+		<xsd:attribute name="languageCodeQualifier" type="xsd:string" fixed="ISO-639"/>
+		<xsd:attribute name="use">
+			<xsd:simpleType>
+				<xsd:restriction base="xsd:string">
+					<xsd:enumeration value="Native Language"/>
+					<xsd:enumeration value="Reading Language"/>
+					<xsd:enumeration value="Speaking Language"/>
+				</xsd:restriction>
+			</xsd:simpleType>
+		</xsd:attribute>
+	</xsd:complexType>
+	<xsd:complexType name="IdCardData">
+		<xsd:sequence>
+			<xsd:element name="PlanCoverageDescription" type="xsd:string"/>
+			<xsd:element name="Quantity" type="xsd:nonNegativeInteger" minOccurs="0"/>
+			<xsd:element name="ActionCode" minOccurs="0">
+				<xsd:simpleType>
+					<xsd:restriction base="xsd:string">
+						<xsd:enumeration value="Add"/>
+						<xsd:enumeration value="Change"/>
+						<xsd:enumeration value="Replace"/>
+					</xsd:restriction>
+				</xsd:simpleType>
+			</xsd:element>
+		</xsd:sequence>
+		<xsd:attribute name="idCardType" use="required">
+			<xsd:simpleType>
+				<xsd:restriction base="xsd:string">
+					<xsd:enumeration value="Dental Insurance"/>
+					<xsd:enumeration value="Health Insurance"/>
+					<xsd:enumeration value="Prescription Drug Service Insurance"/>
+				</xsd:restriction>
+			</xsd:simpleType>
+		</xsd:attribute>
+	</xsd:complexType>
+	<xsd:complexType name="CarrierData">
+		<xsd:sequence>
+			<xsd:element name="OrganizationName" type="xsd:string" minOccurs="0"/>
+			<xsd:element name="IdentificationCode" type="EntityIdType" minOccurs="0" maxOccurs="unbounded"/>
+			<xsd:element name="ContactInformation" type="ContactMethodType" minOccurs="0" maxOccurs="unbounded"/>
+		</xsd:sequence>
+	</xsd:complexType>
+	<xsd:complexType name="HSAVendorType">
+		<xsd:complexContent>
+			<xsd:extension base="CarrierData">
+				<xsd:sequence>
+					<xsd:element name="UseDefaultAccountSponsor" type="xsd:boolean" minOccurs="0"/>
+					<xsd:element name="SignatureDate" type="LocalDateType" minOccurs="0"/>
+				</xsd:sequence>
+			</xsd:extension>
+		</xsd:complexContent>
+	</xsd:complexType>
+	<xsd:simpleType name="ProductType">
+		<xsd:restriction base="xsd:string">
+			<xsd:enumeration value="Life Insurance"/>
+			<xsd:enumeration value="Accidental Death and Dismemberment Insurance"/>
+			<xsd:enumeration value="Long-Term Disability Insurance"/>
+			<xsd:enumeration value="Short-Term Disability Insurance"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="ProductTypeType">
+		<xsd:restriction base="xsd:string">
+			<xsd:enumeration value="Not Applicable"/>
+			<xsd:enumeration value="Supplemental"/>
+			<xsd:enumeration value="Basic"/>
+			<xsd:enumeration value="Group"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="CoverageLevelCodeType">
+		<xsd:restriction base="xsd:string">
+			<xsd:enumeration value="Children Only"/>
+			<xsd:enumeration value="Dependents Only"/>
+			<xsd:enumeration value="Employee and Children"/>
+			<xsd:enumeration value="Employee and Five or More Dependents"/>
+			<xsd:enumeration value="Employee and Four or More Dependents"/>
+			<xsd:enumeration value="Employee and One Dependent"/>
+			<xsd:enumeration value="Employee and One or More Dependents"/>
+			<xsd:enumeration value="Employee and Spouse"/>
+			<xsd:enumeration value="Employee and Three Dependents"/>
+			<xsd:enumeration value="Employee and Three or More Dependents"/>
+			<xsd:enumeration value="Employee and Two Dependents"/>
+			<xsd:enumeration value="Employee and Two or More Dependents"/>
+			<xsd:enumeration value="Employee Only"/>
+			<xsd:enumeration value="Family"/>
+			<xsd:enumeration value="Individual"/>
+			<xsd:enumeration value="Not Applicable"/>
+			<xsd:enumeration value="Spouse and Children"/>
+			<xsd:enumeration value="Spouse Only"/>
+			<xsd:enumeration value="Two Party"/>
+			<xsd:enumeration value="Employee and Domestic Partner"/>
+			<xsd:enumeration value="Domestic Partner and Children"/>
+			<xsd:enumeration value="Domestic Partner Only"/>
+			<xsd:enumeration value="Employee and Spouse or Domestic Partner"/>
+			<xsd:enumeration value="Child or Children of a Domestic Partner"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="FamilyRelationshipType">
+		<xsd:restriction base="xsd:string">
+			<xsd:enumeration value="Adopted Child"/>
+			<xsd:enumeration value="Brother or Sister"/>
+			<xsd:enumeration value="Brother-in-Law or Sister-in-Law"/>
+			<xsd:enumeration value="Child"/>
+			<xsd:enumeration value="Collateral Dependent"/>
+			<xsd:enumeration value="Court Appointed Guardian"/>
+			<xsd:enumeration value="Cousin"/>
+			<xsd:enumeration value="Dependent of a Minor Dependent"/>
+			<xsd:enumeration value="Ex-Spouse"/>
+			<xsd:enumeration value="Father"/>
+			<xsd:enumeration value="Father or Mother"/>
+			<xsd:enumeration value="Father-in-Law or Mother-in-Law"/>
+			<xsd:enumeration value="Foster Child"/>
+			<xsd:enumeration value="Grandfather or Grandmother"/>
+			<xsd:enumeration value="Grandson or Granddaughter"/>
+			<xsd:enumeration value="Guardian"/>
+			<xsd:enumeration value="Life Partner"/>
+			<xsd:enumeration value="Mother"/>
+			<xsd:enumeration value="Nephew or Niece"/>
+			<xsd:enumeration value="Self"/>
+			<xsd:enumeration value="Son-in-Law or Daughter-in-Law"/>
+			<xsd:enumeration value="Sponsored Dependent"/>
+			<xsd:enumeration value="Spouse"/>
+			<xsd:enumeration value="Stepfather"/>
+			<xsd:enumeration value="Stepmother"/>
+			<xsd:enumeration value="Stepson or Stepdaughter"/>
+			<xsd:enumeration value="Uncle or Aunt"/>
+			<xsd:enumeration value="Ward"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="CustodyInfoType">
+		<xsd:restriction base="xsd:string">
+			<xsd:enumeration value="both parents"/>
+			<xsd:enumeration value="former spouse"/>
+			<xsd:enumeration value="subscriber only"/>
+			<xsd:enumeration value="other or unknown"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="EnrollmentTransactionType">
+		<xsd:restriction base="xsd:string">
+			<xsd:enumeration value="Add"/>
+			<xsd:enumeration value="Audit"/>
+			<xsd:enumeration value="Change"/>
+			<xsd:enumeration value="Correction"/>
+			<xsd:enumeration value="Delete"/>
+			<xsd:enumeration value="Employee Information Not Available"/>
+			<xsd:enumeration value="Reinstatement"/>
+			<xsd:enumeration value="Termination"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+</xsd:schema>

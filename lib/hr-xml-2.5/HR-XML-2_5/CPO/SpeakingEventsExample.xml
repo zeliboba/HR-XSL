@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<SpeakingEventsHistory xmlns="http://ns.hr-xml.org/2007-04-15" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://ns.hr-xml.org/2007-04-15
+../SEP/Resume.xsd">
+	<SpeakingEvent type="x:reviewer">
+		<StartDate>
+			<Year>1997</Year>
+		</StartDate>
+		<EventName>ACM/IEEE Design Automation Conference (DAC)</EventName>
+		<EventType>conference</EventType>
+	</SpeakingEvent>
+	<SpeakingEvent type="panel discussion">
+		<Title>Palaver Tree Online: A Community of Oral History</Title>
+		<StartDate>
+			<AnyDate>2000-06-15</AnyDate>
+		</StartDate>
+		<EventName> International Conference of the Learning Sciences 2000</EventName>
+		<EventType>conference</EventType>
+		<Location>Ann Arbor, MI</Location>
+		<Link>http://www.umich.edu/~icls/</Link>
+	</SpeakingEvent>
+	<SpeakingEvent type="x:invited guest speaker">
+		<Title>Community Updated</Title>
+		<StartDate>
+			<AnyDate>1999-03-07</AnyDate>
+		</StartDate>
+		<EventName> Cleveland Talk Radio 1490am</EventName>
+		<EventType>radio show</EventType>
+	</SpeakingEvent>
+</SpeakingEventsHistory>

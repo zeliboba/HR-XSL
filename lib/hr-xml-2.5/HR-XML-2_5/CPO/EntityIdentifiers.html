@@ -1,0 +1,3443 @@
+<html>
+
+<head>
+<meta http-equiv=Content-Type content="text/html; charset=us-ascii">
+<meta name=Generator content="Microsoft Word 11 (filtered)">
+<title>Entity Identifiers</title>
+
+<style>
+<!--
+ /* Font Definitions */
+ @font-face
+	{font-family:Courier;
+	panose-1:2 7 4 9 2 2 5 2 4 4;}
+@font-face
+	{font-family:Wingdings;
+	panose-1:5 0 0 0 0 0 0 0 0 0;}
+@font-face
+	{font-family:"MS Mincho";
+	panose-1:2 2 6 9 4 2 5 8 3 4;}
+@font-face
+	{font-family:Tahoma;
+	panose-1:2 11 6 4 3 5 4 4 2 4;}
+@font-face
+	{font-family:"\@MS Mincho";
+	panose-1:2 2 6 9 4 2 5 8 3 4;}
+@font-face
+	{font-family:Verdana;
+	panose-1:2 11 6 4 3 5 4 4 2 4;}
+@font-face
+	{font-family:GillSans;}
+@font-face
+	{font-family:Copperplate31ab;}
+@font-face
+	{font-family:"Verdana\, Arial\, Helvetica";}
+ /* Style Definitions */
+ p.MsoNormal, li.MsoNormal, div.MsoNormal
+	{margin-top:6.0pt;
+	margin-right:0in;
+	margin-bottom:6.0pt;
+	margin-left:0in;
+	font-size:11.0pt;
+	font-family:Arial;}
+h1
+	{margin-top:24.0pt;
+	margin-right:0in;
+	margin-bottom:12.0pt;
+	margin-left:.3in;
+	text-align:justify;
+	text-justify:inter-ideograph;
+	text-indent:-.3in;
+	page-break-after:avoid;
+	font-size:14.0pt;
+	font-family:Copperplate31ab;
+	font-weight:normal;}
+h2
+	{margin-top:.25in;
+	margin-right:0in;
+	margin-bottom:6.0pt;
+	margin-left:.4in;
+	text-indent:-.4in;
+	page-break-after:avoid;
+	layout-grid-mode:char;
+	font-size:12.0pt;
+	font-family:Arial;
+	font-weight:bold;
+	font-style:italic;}
+h3
+	{margin-top:12.0pt;
+	margin-right:0in;
+	margin-bottom:6.0pt;
+	margin-left:.5in;
+	text-indent:-.5in;
+	page-break-after:avoid;
+	layout-grid-mode:char;
+	font-size:10.0pt;
+	font-family:Arial;
+	font-weight:bold;}
+h4
+	{margin-top:12.0pt;
+	margin-right:0in;
+	margin-bottom:3.0pt;
+	margin-left:.5in;
+	text-indent:-.5in;
+	page-break-after:avoid;
+	font-size:12.0pt;
+	font-family:Arial;
+	font-weight:bold;}
+h5
+	{margin-top:6.0pt;
+	margin-right:0in;
+	margin-bottom:6.0pt;
+	margin-left:.7in;
+	text-align:justify;
+	text-justify:inter-ideograph;
+	text-indent:-.7in;
+	page-break-after:avoid;
+	punctuation-wrap:simple;
+	text-autospace:none;
+	font-size:12.0pt;
+	font-family:GillSans;
+	font-weight:bold;}
+h6
+	{margin-top:12.0pt;
+	margin-right:0in;
+	margin-bottom:3.0pt;
+	margin-left:.8in;
+	text-align:justify;
+	text-justify:inter-ideograph;
+	text-indent:-.8in;
+	font-size:11.0pt;
+	font-family:GillSans;
+	font-weight:bold;}
+p.MsoHeading7, li.MsoHeading7, div.MsoHeading7
+	{margin-top:12.0pt;
+	margin-right:0in;
+	margin-bottom:3.0pt;
+	margin-left:.9in;
+	text-align:justify;
+	text-justify:inter-ideograph;
+	text-indent:-.9in;
+	font-size:12.0pt;
+	font-family:GillSans;}
+p.MsoHeading8, li.MsoHeading8, div.MsoHeading8
+	{margin-top:12.0pt;
+	margin-right:0in;
+	margin-bottom:3.0pt;
+	margin-left:1.0in;
+	text-align:justify;
+	text-justify:inter-ideograph;
+	text-indent:-1.0in;
+	font-size:12.0pt;
+	font-family:GillSans;
+	font-style:italic;}
+p.MsoHeading9, li.MsoHeading9, div.MsoHeading9
+	{margin-top:12.0pt;
+	margin-right:0in;
+	margin-bottom:3.0pt;
+	margin-left:1.1in;
+	text-align:justify;
+	text-justify:inter-ideograph;
+	text-indent:-1.1in;
+	font-size:11.0pt;
+	font-family:Arial;}
+p.MsoIndex1, li.MsoIndex1, div.MsoIndex1
+	{margin-top:6.0pt;
+	margin-right:0in;
+	margin-bottom:6.0pt;
+	margin-left:12.0pt;
+	text-align:justify;
+	text-justify:inter-ideograph;
+	text-indent:-12.0pt;
+	font-size:12.0pt;
+	font-family:GillSans;}
+p.MsoIndex2, li.MsoIndex2, div.MsoIndex2
+	{margin-top:6.0pt;
+	margin-right:0in;
+	margin-bottom:6.0pt;
+	margin-left:24.0pt;
+	text-align:justify;
+	text-justify:inter-ideograph;
+	text-indent:-12.0pt;
+	font-size:12.0pt;
+	font-family:GillSans;}
+p.MsoIndex3, li.MsoIndex3, div.MsoIndex3
+	{margin-top:6.0pt;
+	margin-right:0in;
+	margin-bottom:6.0pt;
+	margin-left:.5in;
+	text-align:justify;
+	text-justify:inter-ideograph;
+	text-indent:-12.0pt;
+	font-size:12.0pt;
+	font-family:GillSans;}
+p.MsoIndex4, li.MsoIndex4, div.MsoIndex4
+	{margin-top:6.0pt;
+	margin-right:0in;
+	margin-bottom:6.0pt;
+	margin-left:48.0pt;
+	text-align:justify;
+	text-justify:inter-ideograph;
+	text-indent:-12.0pt;
+	font-size:12.0pt;
+	font-family:GillSans;}
+p.MsoIndex5, li.MsoIndex5, div.MsoIndex5
+	{margin-top:6.0pt;
+	margin-right:0in;
+	margin-bottom:6.0pt;
+	margin-left:60.0pt;
+	text-align:justify;
+	text-justify:inter-ideograph;
+	text-indent:-12.0pt;
+	font-size:12.0pt;
+	font-family:GillSans;}
+p.MsoIndex6, li.MsoIndex6, div.MsoIndex6
+	{margin-top:6.0pt;
+	margin-right:0in;
+	margin-bottom:6.0pt;
+	margin-left:1.0in;
+	text-align:justify;
+	text-justify:inter-ideograph;
+	text-indent:-12.0pt;
+	font-size:12.0pt;
+	font-family:GillSans;}
+p.MsoIndex7, li.MsoIndex7, div.MsoIndex7
+	{margin-top:6.0pt;
+	margin-right:0in;
+	margin-bottom:6.0pt;
+	margin-left:84.0pt;
+	text-align:justify;
+	text-justify:inter-ideograph;
+	text-indent:-12.0pt;
+	font-size:12.0pt;
+	font-family:GillSans;}
+p.MsoIndex8, li.MsoIndex8, div.MsoIndex8
+	{margin-top:6.0pt;
+	margin-right:0in;
+	margin-bottom:6.0pt;
+	margin-left:96.0pt;
+	text-align:justify;
+	text-justify:inter-ideograph;
+	text-indent:-12.0pt;
+	font-size:12.0pt;
+	font-family:GillSans;}
+p.MsoIndex9, li.MsoIndex9, div.MsoIndex9
+	{margin-top:6.0pt;
+	margin-right:0in;
+	margin-bottom:6.0pt;
+	margin-left:1.5in;
+	text-align:justify;
+	text-justify:inter-ideograph;
+	text-indent:-12.0pt;
+	font-size:12.0pt;
+	font-family:GillSans;}
+p.MsoToc1, li.MsoToc1, div.MsoToc1
+	{margin-top:12.0pt;
+	margin-right:0in;
+	margin-bottom:6.0pt;
+	margin-left:0in;
+	font-size:11.0pt;
+	font-family:"Times New Roman";
+	font-weight:bold;}
+p.MsoToc2, li.MsoToc2, div.MsoToc2
+	{margin-top:6.0pt;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:11.0pt;
+	margin-bottom:.0001pt;
+	font-size:11.0pt;
+	font-family:"Times New Roman";
+	font-style:italic;}
+p.MsoToc3, li.MsoToc3, div.MsoToc3
+	{margin-top:0in;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:22.0pt;
+	margin-bottom:.0001pt;
+	font-size:11.0pt;
+	font-family:"Times New Roman";}
+p.MsoToc4, li.MsoToc4, div.MsoToc4
+	{margin-top:0in;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:33.0pt;
+	margin-bottom:.0001pt;
+	font-size:11.0pt;
+	font-family:"Times New Roman";}
+p.MsoToc5, li.MsoToc5, div.MsoToc5
+	{margin-top:0in;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:44.0pt;
+	margin-bottom:.0001pt;
+	font-size:11.0pt;
+	font-family:"Times New Roman";}
+p.MsoToc6, li.MsoToc6, div.MsoToc6
+	{margin-top:0in;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:55.0pt;
+	margin-bottom:.0001pt;
+	font-size:11.0pt;
+	font-family:"Times New Roman";}
+p.MsoToc7, li.MsoToc7, div.MsoToc7
+	{margin-top:0in;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:66.0pt;
+	margin-bottom:.0001pt;
+	font-size:11.0pt;
+	font-family:"Times New Roman";}
+p.MsoToc8, li.MsoToc8, div.MsoToc8
+	{margin-top:0in;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:77.0pt;
+	margin-bottom:.0001pt;
+	font-size:11.0pt;
+	font-family:"Times New Roman";}
+p.MsoToc9, li.MsoToc9, div.MsoToc9
+	{margin-top:0in;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:88.0pt;
+	margin-bottom:.0001pt;
+	font-size:11.0pt;
+	font-family:"Times New Roman";}
+p.MsoNormalIndent, li.MsoNormalIndent, div.MsoNormalIndent
+	{margin-top:6.0pt;
+	margin-right:0in;
+	margin-bottom:6.0pt;
+	margin-left:.5in;
+	font-size:11.0pt;
+	font-family:Arial;}
+p.MsoFootnoteText, li.MsoFootnoteText, div.MsoFootnoteText
+	{margin-top:6.0pt;
+	margin-right:0in;
+	margin-bottom:6.0pt;
+	margin-left:0in;
+	text-align:justify;
+	text-justify:inter-ideograph;
+	font-size:11.0pt;
+	font-family:GillSans;}
+p.MsoCommentText, li.MsoCommentText, div.MsoCommentText
+	{margin-top:6.0pt;
+	margin-right:0in;
+	margin-bottom:6.0pt;
+	margin-left:0in;
+	text-align:justify;
+	text-justify:inter-ideograph;
+	font-size:11.0pt;
+	font-family:GillSans;}
+p.MsoHeader, li.MsoHeader, div.MsoHeader
+	{margin-top:6.0pt;
+	margin-right:0in;
+	margin-bottom:6.0pt;
+	margin-left:0in;
+	text-align:justify;
+	text-justify:inter-ideograph;
+	font-size:11.0pt;
+	font-family:GillSans;}
+p.MsoFooter, li.MsoFooter, div.MsoFooter
+	{margin-top:6.0pt;
+	margin-right:0in;
+	margin-bottom:6.0pt;
+	margin-left:0in;
+	text-align:justify;
+	text-justify:inter-ideograph;
+	font-size:11.0pt;
+	font-family:GillSans;}
+p.MsoIndexHeading, li.MsoIndexHeading, div.MsoIndexHeading
+	{margin-top:6.0pt;
+	margin-right:0in;
+	margin-bottom:6.0pt;
+	margin-left:0in;
+	text-align:justify;
+	text-justify:inter-ideograph;
+	font-size:12.0pt;
+	font-family:Arial;
+	font-weight:bold;}
+p.MsoCaption, li.MsoCaption, div.MsoCaption
+	{margin-top:6.0pt;
+	margin-right:0in;
+	margin-bottom:6.0pt;
+	margin-left:0in;
+	text-align:center;
+	font-size:12.0pt;
+	font-family:GillSans;
+	font-weight:bold;}
+p.MsoTof, li.MsoTof, div.MsoTof
+	{margin-top:6.0pt;
+	margin-right:0in;
+	margin-bottom:6.0pt;
+	margin-left:24.0pt;
+	text-indent:-24.0pt;
+	font-size:11.0pt;
+	font-family:Arial;}
+p.MsoEnvelopeAddress, li.MsoEnvelopeAddress, div.MsoEnvelopeAddress
+	{margin-top:6.0pt;
+	margin-right:0in;
+	margin-bottom:6.0pt;
+	margin-left:2.0in;
+	text-align:justify;
+	text-justify:inter-ideograph;
+	font-size:12.0pt;
+	font-family:Arial;}
+p.MsoEnvelopeReturn, li.MsoEnvelopeReturn, div.MsoEnvelopeReturn
+	{margin-top:6.0pt;
+	margin-right:0in;
+	margin-bottom:6.0pt;
+	margin-left:0in;
+	text-align:justify;
+	text-justify:inter-ideograph;
+	font-size:11.0pt;
+	font-family:Arial;}
+span.MsoFootnoteReference
+	{vertical-align:super;}
+span.MsoCommentReference
+	{color:fuchsia;}
+p.MsoEndnoteText, li.MsoEndnoteText, div.MsoEndnoteText
+	{margin-top:6.0pt;
+	margin-right:0in;
+	margin-bottom:6.0pt;
+	margin-left:0in;
+	text-align:justify;
+	text-justify:inter-ideograph;
+	font-size:11.0pt;
+	font-family:GillSans;}
+p.MsoToa, li.MsoToa, div.MsoToa
+	{margin-top:6.0pt;
+	margin-right:0in;
+	margin-bottom:6.0pt;
+	margin-left:12.0pt;
+	text-indent:-12.0pt;
+	font-size:11.0pt;
+	font-family:Arial;}
+p.MsoMacroText, li.MsoMacroText, div.MsoMacroText
+	{margin:0in;
+	margin-bottom:.0001pt;
+	text-align:justify;
+	text-justify:inter-ideograph;
+	font-size:10.0pt;
+	font-family:"Courier New";}
+p.MsoToaHeading, li.MsoToaHeading, div.MsoToaHeading
+	{margin-top:6.0pt;
+	margin-right:0in;
+	margin-bottom:6.0pt;
+	margin-left:0in;
+	font-size:11.0pt;
+	font-family:Arial;
+	font-weight:bold;}
+p.MsoList, li.MsoList, div.MsoList
+	{margin-top:6.0pt;
+	margin-right:0in;
+	margin-bottom:6.0pt;
+	margin-left:.25in;
+	text-align:justify;
+	text-justify:inter-ideograph;
+	text-indent:-.25in;
+	font-size:12.0pt;
+	font-family:GillSans;}
+p.MsoListBullet, li.MsoListBullet, div.MsoListBullet
+	{margin-top:6.0pt;
+	margin-right:0in;
+	margin-bottom:6.0pt;
+	margin-left:.25in;
+	text-align:justify;
+	text-justify:inter-ideograph;
+	text-indent:-.25in;
+	font-size:12.0pt;
+	font-family:GillSans;}
+p.MsoListNumber, li.MsoListNumber, div.MsoListNumber
+	{margin-top:6.0pt;
+	margin-right:0in;
+	margin-bottom:6.0pt;
+	margin-left:.25in;
+	text-align:justify;
+	text-justify:inter-ideograph;
+	text-indent:-.25in;
+	font-size:12.0pt;
+	font-family:GillSans;}
+p.MsoList2, li.MsoList2, div.MsoList2
+	{margin-top:6.0pt;
+	margin-right:0in;
+	margin-bottom:6.0pt;
+	margin-left:.5in;
+	text-align:justify;
+	text-justify:inter-ideograph;
+	text-indent:-.25in;
+	font-size:12.0pt;
+	font-family:GillSans;}
+p.MsoList3, li.MsoList3, div.MsoList3
+	{margin-top:6.0pt;
+	margin-right:0in;
+	margin-bottom:6.0pt;
+	margin-left:.75in;
+	text-align:justify;
+	text-justify:inter-ideograph;
+	text-indent:-.25in;
+	font-size:12.0pt;
+	font-family:GillSans;}
+p.MsoList4, li.MsoList4, div.MsoList4
+	{margin-top:6.0pt;
+	margin-right:0in;
+	margin-bottom:6.0pt;
+	margin-left:1.0in;
+	text-align:justify;
+	text-justify:inter-ideograph;
+	text-indent:-.25in;
+	font-size:12.0pt;
+	font-family:GillSans;}
+p.MsoList5, li.MsoList5, div.MsoList5
+	{margin-top:6.0pt;
+	margin-right:0in;
+	margin-bottom:6.0pt;
+	margin-left:1.25in;
+	text-align:justify;
+	text-justify:inter-ideograph;
+	text-indent:-.25in;
+	font-size:12.0pt;
+	font-family:GillSans;}
+p.MsoListBullet2, li.MsoListBullet2, div.MsoListBullet2
+	{margin-top:6.0pt;
+	margin-right:0in;
+	margin-bottom:6.0pt;
+	margin-left:.5in;
+	text-align:justify;
+	text-justify:inter-ideograph;
+	text-indent:-.25in;
+	font-size:12.0pt;
+	font-family:GillSans;}
+p.MsoListBullet3, li.MsoListBullet3, div.MsoListBullet3
+	{margin-top:6.0pt;
+	margin-right:0in;
+	margin-bottom:6.0pt;
+	margin-left:.75in;
+	text-align:justify;
+	text-justify:inter-ideograph;
+	text-indent:-.25in;
+	font-size:12.0pt;
+	font-family:GillSans;}
+p.MsoListBullet4, li.MsoListBullet4, div.MsoListBullet4
+	{margin-top:6.0pt;
+	margin-right:0in;
+	margin-bottom:6.0pt;
+	margin-left:1.0in;
+	text-align:justify;
+	text-justify:inter-ideograph;
+	text-indent:-.25in;
+	font-size:12.0pt;
+	font-family:GillSans;}
+p.MsoListBullet5, li.MsoListBullet5, div.MsoListBullet5
+	{margin-top:6.0pt;
+	margin-right:0in;
+	margin-bottom:6.0pt;
+	margin-left:1.25in;
+	text-align:justify;
+	text-justify:inter-ideograph;
+	text-indent:-.25in;
+	font-size:12.0pt;
+	font-family:GillSans;}
+p.MsoListNumber2, li.MsoListNumber2, div.MsoListNumber2
+	{margin-top:6.0pt;
+	margin-right:0in;
+	margin-bottom:6.0pt;
+	margin-left:.5in;
+	text-align:justify;
+	text-justify:inter-ideograph;
+	text-indent:-.25in;
+	font-size:12.0pt;
+	font-family:GillSans;}
+p.MsoListNumber3, li.MsoListNumber3, div.MsoListNumber3
+	{margin-top:6.0pt;
+	margin-right:0in;
+	margin-bottom:6.0pt;
+	margin-left:.75in;
+	text-align:justify;
+	text-justify:inter-ideograph;
+	text-indent:-.25in;
+	font-size:12.0pt;
+	font-family:GillSans;}
+p.MsoListNumber4, li.MsoListNumber4, div.MsoListNumber4
+	{margin-top:6.0pt;
+	margin-right:0in;
+	margin-bottom:6.0pt;
+	margin-left:1.0in;
+	text-align:justify;
+	text-justify:inter-ideograph;
+	text-indent:-.25in;
+	font-size:12.0pt;
+	font-family:GillSans;}
+p.MsoListNumber5, li.MsoListNumber5, div.MsoListNumber5
+	{margin-top:6.0pt;
+	margin-right:0in;
+	margin-bottom:6.0pt;
+	margin-left:1.25in;
+	text-align:justify;
+	text-justify:inter-ideograph;
+	text-indent:-.25in;
+	font-size:12.0pt;
+	font-family:GillSans;}
+p.MsoTitle, li.MsoTitle, div.MsoTitle
+	{margin-top:12.0pt;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:0in;
+	margin-bottom:.0001pt;
+	font-size:18.0pt;
+	font-family:Arial;
+	color:navy;
+	font-weight:bold;}
+p.MsoClosing, li.MsoClosing, div.MsoClosing
+	{margin-top:6.0pt;
+	margin-right:0in;
+	margin-bottom:6.0pt;
+	margin-left:3.0in;
+	text-align:justify;
+	text-justify:inter-ideograph;
+	font-size:12.0pt;
+	font-family:GillSans;}
+p.MsoSignature, li.MsoSignature, div.MsoSignature
+	{margin-top:6.0pt;
+	margin-right:0in;
+	margin-bottom:6.0pt;
+	margin-left:3.0in;
+	font-size:11.0pt;
+	font-family:Arial;}
+p.MsoBodyText, li.MsoBodyText, div.MsoBodyText
+	{margin-top:6.0pt;
+	margin-right:0in;
+	margin-bottom:6.0pt;
+	margin-left:0in;
+	text-align:justify;
+	text-justify:inter-ideograph;
+	layout-grid-mode:char;
+	font-size:12.0pt;
+	font-family:GillSans;}
+p.MsoBodyTextIndent, li.MsoBodyTextIndent, div.MsoBodyTextIndent
+	{margin-top:6.0pt;
+	margin-right:0in;
+	margin-bottom:6.0pt;
+	margin-left:.25in;
+	text-align:justify;
+	text-justify:inter-ideograph;
+	font-size:12.0pt;
+	font-family:GillSans;}
+p.MsoListContinue, li.MsoListContinue, div.MsoListContinue
+	{margin-top:6.0pt;
+	margin-right:0in;
+	margin-bottom:6.0pt;
+	margin-left:.25in;
+	text-align:justify;
+	text-justify:inter-ideograph;
+	font-size:12.0pt;
+	font-family:GillSans;}
+p.MsoListContinue2, li.MsoListContinue2, div.MsoListContinue2
+	{margin-top:6.0pt;
+	margin-right:0in;
+	margin-bottom:6.0pt;
+	margin-left:.5in;
+	text-align:justify;
+	text-justify:inter-ideograph;
+	font-size:12.0pt;
+	font-family:GillSans;}
+p.MsoListContinue3, li.MsoListContinue3, div.MsoListContinue3
+	{margin-top:6.0pt;
+	margin-right:0in;
+	margin-bottom:6.0pt;
+	margin-left:.75in;
+	text-align:justify;
+	text-justify:inter-ideograph;
+	font-size:12.0pt;
+	font-family:GillSans;}
+p.MsoListContinue4, li.MsoListContinue4, div.MsoListContinue4
+	{margin-top:6.0pt;
+	margin-right:0in;
+	margin-bottom:6.0pt;
+	margin-left:1.0in;
+	text-align:justify;
+	text-justify:inter-ideograph;
+	font-size:12.0pt;
+	font-family:GillSans;}
+p.MsoListContinue5, li.MsoListContinue5, div.MsoListContinue5
+	{margin-top:6.0pt;
+	margin-right:0in;
+	margin-bottom:6.0pt;
+	margin-left:1.25in;
+	text-align:justify;
+	text-justify:inter-ideograph;
+	font-size:12.0pt;
+	font-family:GillSans;}
+p.MsoMessageHeader, li.MsoMessageHeader, div.MsoMessageHeader
+	{margin-top:6.0pt;
+	margin-right:0in;
+	margin-bottom:6.0pt;
+	margin-left:.75in;
+	text-align:justify;
+	text-justify:inter-ideograph;
+	text-indent:-.75in;
+	background:#CCCCCC;
+	font-size:12.0pt;
+	font-family:Arial;}
+p.MsoSubtitle, li.MsoSubtitle, div.MsoSubtitle
+	{margin:0in;
+	margin-bottom:.0001pt;
+	text-align:center;
+	font-size:14.0pt;
+	font-family:Copperplate31ab;
+	font-weight:bold;}
+p.MsoSalutation, li.MsoSalutation, div.MsoSalutation
+	{margin-top:6.0pt;
+	margin-right:0in;
+	margin-bottom:6.0pt;
+	margin-left:0in;
+	font-size:11.0pt;
+	font-family:Arial;}
+p.MsoDate, li.MsoDate, div.MsoDate
+	{margin-top:6.0pt;
+	margin-right:0in;
+	margin-bottom:6.0pt;
+	margin-left:0in;
+	text-align:justify;
+	text-justify:inter-ideograph;
+	font-size:12.0pt;
+	font-family:GillSans;}
+p.MsoBodyTextFirstIndent, li.MsoBodyTextFirstIndent, div.MsoBodyTextFirstIndent
+	{margin-top:6.0pt;
+	margin-right:0in;
+	margin-bottom:6.0pt;
+	margin-left:0in;
+	text-align:justify;
+	text-justify:inter-ideograph;
+	text-indent:10.5pt;
+	font-size:12.0pt;
+	font-family:GillSans;}
+p.MsoBodyTextFirstIndent2, li.MsoBodyTextFirstIndent2, div.MsoBodyTextFirstIndent2
+	{margin-top:6.0pt;
+	margin-right:0in;
+	margin-bottom:6.0pt;
+	margin-left:.25in;
+	text-align:justify;
+	text-justify:inter-ideograph;
+	text-indent:10.5pt;
+	font-size:12.0pt;
+	font-family:GillSans;}
+p.MsoNoteHeading, li.MsoNoteHeading, div.MsoNoteHeading
+	{margin-top:6.0pt;
+	margin-right:0in;
+	margin-bottom:6.0pt;
+	margin-left:0in;
+	font-size:11.0pt;
+	font-family:Arial;}
+p.MsoBodyText2, li.MsoBodyText2, div.MsoBodyText2
+	{margin-top:6.0pt;
+	margin-right:0in;
+	margin-bottom:6.0pt;
+	margin-left:0in;
+	text-align:justify;
+	text-justify:inter-ideograph;
+	line-height:200%;
+	font-size:12.0pt;
+	font-family:GillSans;}
+p.MsoBodyText3, li.MsoBodyText3, div.MsoBodyText3
+	{margin-top:6.0pt;
+	margin-right:0in;
+	margin-bottom:6.0pt;
+	margin-left:0in;
+	line-height:200%;
+	font-size:12.0pt;
+	font-family:Arial;}
+p.MsoBodyTextIndent2, li.MsoBodyTextIndent2, div.MsoBodyTextIndent2
+	{margin-top:6.0pt;
+	margin-right:0in;
+	margin-bottom:6.0pt;
+	margin-left:.25in;
+	text-align:justify;
+	text-justify:inter-ideograph;
+	line-height:200%;
+	font-size:12.0pt;
+	font-family:GillSans;}
+p.MsoBodyTextIndent3, li.MsoBodyTextIndent3, div.MsoBodyTextIndent3
+	{margin-top:6.0pt;
+	margin-right:0in;
+	margin-bottom:6.0pt;
+	margin-left:.25in;
+	text-align:justify;
+	text-justify:inter-ideograph;
+	font-size:8.0pt;
+	font-family:GillSans;}
+p.MsoBlockText, li.MsoBlockText, div.MsoBlockText
+	{margin-top:6.0pt;
+	margin-right:1.0in;
+	margin-bottom:6.0pt;
+	margin-left:1.0in;
+	text-align:justify;
+	text-justify:inter-ideograph;
+	font-size:12.0pt;
+	font-family:GillSans;}
+a:link, span.MsoHyperlink
+	{color:blue;
+	text-decoration:none none;}
+a:visited, span.MsoHyperlinkFollowed
+	{color:purple;
+	text-decoration:none none;}
+p.MsoDocumentMap, li.MsoDocumentMap, div.MsoDocumentMap
+	{margin-top:6.0pt;
+	margin-right:0in;
+	margin-bottom:6.0pt;
+	margin-left:0in;
+	text-align:justify;
+	text-justify:inter-ideograph;
+	background:navy;
+	font-size:12.0pt;
+	font-family:Tahoma;}
+p.MsoPlainText, li.MsoPlainText, div.MsoPlainText
+	{margin:0in;
+	margin-bottom:.0001pt;
+	font-size:10.0pt;
+	font-family:"Courier New";}
+p.MsoAutoSig, li.MsoAutoSig, div.MsoAutoSig
+	{margin-top:6.0pt;
+	margin-right:0in;
+	margin-bottom:6.0pt;
+	margin-left:0in;
+	text-align:justify;
+	text-justify:inter-ideograph;
+	font-size:12.0pt;
+	font-family:GillSans;}
+p
+	{margin:0in;
+	margin-bottom:.0001pt;
+	font-size:8.0pt;
+	font-family:"Times New Roman";}
+address
+	{margin-top:6.0pt;
+	margin-right:0in;
+	margin-bottom:6.0pt;
+	margin-left:0in;
+	text-align:justify;
+	text-justify:inter-ideograph;
+	font-size:12.0pt;
+	font-family:GillSans;
+	font-style:italic;}
+pre
+	{margin-top:6.0pt;
+	margin-right:0in;
+	margin-bottom:6.0pt;
+	margin-left:0in;
+	text-align:justify;
+	text-justify:inter-ideograph;
+	font-size:11.0pt;
+	font-family:"Courier New";}
+p.xml, li.xml, div.xml
+	{margin-top:6.0pt;
+	margin-right:0in;
+	margin-bottom:6.0pt;
+	margin-left:0in;
+	font-size:11.0pt;
+	font-family:"Courier New";}
+p.appendices, li.appendices, div.appendices
+	{margin-top:24.0pt;
+	margin-right:0in;
+	margin-bottom:12.0pt;
+	margin-left:.3in;
+	text-align:center;
+	text-indent:-.3in;
+	page-break-after:avoid;
+	font-size:14.0pt;
+	font-family:Copperplate31ab;
+	font-weight:bold;}
+p.bullet, li.bullet, div.bullet
+	{margin-top:3.0pt;
+	margin-right:4.3pt;
+	margin-bottom:3.0pt;
+	margin-left:.5in;
+	text-align:justify;
+	text-justify:inter-ideograph;
+	text-indent:-.25in;
+	layout-grid-mode:char;
+	font-size:12.0pt;
+	font-family:GillSans;}
+p.footerlandscape, li.footerlandscape, div.footerlandscape
+	{margin-top:6.0pt;
+	margin-right:0in;
+	margin-bottom:6.0pt;
+	margin-left:0in;
+	text-align:justify;
+	text-justify:inter-ideograph;
+	font-size:11.0pt;
+	font-family:GillSans;}
+p.headerlandscape, li.headerlandscape, div.headerlandscape
+	{margin-top:6.0pt;
+	margin-right:0in;
+	margin-bottom:6.0pt;
+	margin-left:0in;
+	text-align:justify;
+	text-justify:inter-ideograph;
+	font-size:11.0pt;
+	font-family:GillSans;}
+p.number, li.number, div.number
+	{margin-top:3.0pt;
+	margin-right:0in;
+	margin-bottom:3.0pt;
+	margin-left:.5in;
+	text-indent:-.25in;
+	font-size:11.0pt;
+	font-family:Arial;}
+p.titlecover, li.titlecover, div.titlecover
+	{margin-top:1.25in;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:.75in;
+	margin-bottom:.0001pt;
+	page-break-after:avoid;
+	font-size:36.0pt;
+	font-family:Arial;
+	letter-spacing:-2.4pt;
+	font-weight:bold;}
+p.subtitlecover, li.subtitlecover, div.subtitlecover
+	{margin-top:76.0pt;
+	margin-right:84.0pt;
+	margin-bottom:0in;
+	margin-left:.75in;
+	margin-bottom:.0001pt;
+	page-break-after:avoid;
+	font-size:20.0pt;
+	font-family:"Times New Roman";
+	letter-spacing:-1.0pt;
+	font-style:italic;}
+p.tabletext, li.tabletext, div.tabletext
+	{margin:0in;
+	margin-bottom:.0001pt;
+	font-size:11.0pt;
+	font-family:Arial;}
+p.tablebullet, li.tablebullet, div.tablebullet
+	{margin-top:0in;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:.15in;
+	margin-bottom:.0001pt;
+	text-indent:-.15in;
+	font-size:11.0pt;
+	font-family:Arial;}
+p.tableheader, li.tableheader, div.tableheader
+	{margin:0in;
+	margin-bottom:.0001pt;
+	text-align:center;
+	font-size:11.0pt;
+	font-family:Copperplate31ab;
+	color:white;
+	font-weight:bold;}
+p.tablelist, li.tablelist, div.tablelist
+	{margin-top:0in;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:.25in;
+	margin-bottom:.0001pt;
+	text-indent:-.3in;
+	font-size:11.0pt;
+	font-family:Arial;}
+p.tablesubheader, li.tablesubheader, div.tablesubheader
+	{margin:0in;
+	margin-bottom:.0001pt;
+	text-align:center;
+	font-size:11.0pt;
+	font-family:Arial;
+	font-weight:bold;}
+p.version, li.version, div.version
+	{margin:0in;
+	margin-bottom:.0001pt;
+	text-align:center;
+	font-size:10.0pt;
+	font-family:Copperplate31ab;}
+p.style1, li.style1, div.style1
+	{margin-top:12.0pt;
+	margin-right:0in;
+	margin-bottom:6.0pt;
+	margin-left:.5in;
+	text-indent:-.5in;
+	page-break-after:avoid;
+	layout-grid-mode:char;
+	font-size:10.0pt;
+	font-family:Arial;
+	font-weight:bold;}
+p.h4, li.h4, div.h4
+	{margin-top:6.0pt;
+	margin-right:0in;
+	margin-bottom:6.0pt;
+	margin-left:0in;
+	font-size:11.0pt;
+	font-family:Arial;
+	font-weight:bold;}
+p.b, li.b, div.b
+	{margin:0in;
+	margin-bottom:.0001pt;
+	font-size:12.0pt;
+	font-family:"Courier New";
+	color:red;
+	font-weight:bold;}
+p.e, li.e, div.e
+	{margin-top:0in;
+	margin-right:12.0pt;
+	margin-bottom:0in;
+	margin-left:12.0pt;
+	margin-bottom:.0001pt;
+	text-indent:-12.0pt;
+	font-size:12.0pt;
+	font-family:"Times New Roman";}
+p.k, li.k, div.k
+	{margin-top:0in;
+	margin-right:12.0pt;
+	margin-bottom:0in;
+	margin-left:12.0pt;
+	margin-bottom:.0001pt;
+	text-indent:-12.0pt;
+	font-size:12.0pt;
+	font-family:"Times New Roman";}
+p.t, li.t, div.t
+	{margin:0in;
+	margin-bottom:.0001pt;
+	font-size:12.0pt;
+	font-family:"Times New Roman";
+	color:#990000;}
+p.xt, li.xt, div.xt
+	{margin:0in;
+	margin-bottom:.0001pt;
+	font-size:12.0pt;
+	font-family:"Times New Roman";
+	color:#990099;}
+p.ns, li.ns, div.ns
+	{margin:0in;
+	margin-bottom:.0001pt;
+	font-size:12.0pt;
+	font-family:"Times New Roman";
+	color:red;}
+p.m, li.m, div.m
+	{margin:0in;
+	margin-bottom:.0001pt;
+	font-size:12.0pt;
+	font-family:"Times New Roman";
+	color:blue;}
+p.tx, li.tx, div.tx
+	{margin:0in;
+	margin-bottom:.0001pt;
+	font-size:12.0pt;
+	font-family:"Times New Roman";
+	font-weight:bold;}
+p.db, li.db, div.db
+	{margin-top:0in;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:12.0pt;
+	margin-bottom:.0001pt;
+	font-size:12.0pt;
+	font-family:Courier;}
+p.di, li.di, div.di
+	{margin:0in;
+	margin-bottom:.0001pt;
+	font-size:12.0pt;
+	font-family:Courier;}
+p.d, li.d, div.d
+	{margin:0in;
+	margin-bottom:.0001pt;
+	font-size:12.0pt;
+	font-family:"Times New Roman";
+	color:blue;}
+p.pi, li.pi, div.pi
+	{margin:0in;
+	margin-bottom:.0001pt;
+	font-size:12.0pt;
+	font-family:"Times New Roman";
+	color:blue;}
+p.cb, li.cb, div.cb
+	{margin-top:0in;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:12.0pt;
+	margin-bottom:.0001pt;
+	font-size:12.0pt;
+	font-family:Courier;
+	color:#888888;}
+p.ci, li.ci, div.ci
+	{margin:0in;
+	margin-bottom:.0001pt;
+	font-size:12.0pt;
+	font-family:Courier;
+	color:#888888;}
+p.workingdraftdate, li.workingdraftdate, div.workingdraftdate
+	{margin-top:12.0pt;
+	margin-right:0in;
+	margin-bottom:12.0pt;
+	margin-left:0in;
+	font-size:16.0pt;
+	font-family:Arial;
+	color:navy;}
+p.heading3preface, li.heading3preface, div.heading3preface
+	{margin:0in;
+	margin-bottom:.0001pt;
+	font-size:10.0pt;
+	font-family:Arial;
+	font-weight:bold;}
+p.prefacetext, li.prefacetext, div.prefacetext
+	{margin-top:0in;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:.5in;
+	margin-bottom:.0001pt;
+	font-size:10.0pt;
+	font-family:Arial;}
+p.heading2preface, li.heading2preface, div.heading2preface
+	{margin-top:24.0pt;
+	margin-right:0in;
+	margin-bottom:3.0pt;
+	margin-left:0in;
+	font-size:14.0pt;
+	font-family:Arial;
+	color:navy;
+	font-weight:bold;}
+span.m1
+	{color:blue;}
+span.pi1
+	{color:blue;}
+span.d1
+	{color:blue;}
+span.b1
+	{font-family:"Courier New";
+	color:red;
+	font-weight:bold;
+	text-decoration:none none;}
+span.t1
+	{color:#990000;}
+span.tx1
+	{font-weight:bold;}
+span.note1
+	{color:gray;}
+span.headers1
+	{font-family:"Verdana\, Arial\, Helvetica";
+	font-weight:bold;}
+@page Section1
+	{size:8.5in 11.0in;
+	margin:1.0in 1.0in .6in 1.0in;}
+div.Section1
+	{page:Section1;}
+ /* List Definitions */
+ ol
+	{margin-bottom:0in;}
+ul
+	{margin-bottom:0in;}
+-->
+</style>
+
+</head>
+
+<body lang=EN-US link=blue vlink=purple>
+
+<div class=Section1>
+
+<p class=xml><span style='font-family:Arial'><img width=281 height=87
+src="EntityIdentifiers_files/image001.jpg">&nbsp;</span></p>
+
+<p class=MsoTitle>Entity Identifiers </p>
+
+<p class=MsoTitle>Recommendation, 2007 April 15</p>
+
+<p class=heading3preface style='margin-top:6.0pt'>Editors:</p>
+
+<p class=prefacetext>Karl Brophey, eBenX</p>
+
+<p class=prefacetext>Grant Chappell, City and County of Denver</p>
+
+<p class=prefacetext>Rob Payne, bp</p>
+
+<p class=prefacetext>Sandra Stover</p>
+
+<p class=heading3preface style='margin-top:6.0pt'>Authors:</p>
+
+<p class=prefacetext>Members of the Cross-Process Object work group</p>
+
+<p class=heading3preface style='margin-top:6.0pt'>Contributors:</p>
+
+<p class=prefacetext>Members of the Cross-Process Object work group</p>
+
+<p class=prefacetext style='margin-left:0in'><b>&nbsp;</b></p>
+
+<p class=prefacetext style='margin-left:0in'><b>Copyright &copy; 2007 HR-XML
+Consortium, Inc.</b></p>
+
+<p class=prefacetext style='margin-left:0in'>&nbsp;</p>
+
+<div style='border:none;border-top:double windowtext 2.25pt;padding:24.0pt 0in 0in 0in'>
+
+<p class=heading2preface style='margin-top:12.0pt'>Abstract</p>
+
+</div>
+
+<p class=MsoPlainText><span style='font-family:Arial'>This document creates a
+methodology for identifier management that can standardize identifier handling across
+HR-XML Consortium schemas. This includes a set of design norms and
+recommendations as well as a XML Schema data type to use for entity
+identifiers. In addition, common use patterns are laid out, guidance is
+provided for when this standard should be used, recommendations are given for
+managing the related topic of identifier-change, and guidelines are included
+for facilitating trading partner agreements pertaining to identifiers in
+business transactions.</span></p>
+
+<p class=heading2preface style='margin-top:12.0pt;margin-right:0in;margin-bottom:
+0in;margin-left:0in;margin-bottom:.0001pt'>&nbsp;</p>
+
+<p class=heading2preface style='margin-top:12.0pt;margin-right:0in;margin-bottom:
+0in;margin-left:0in;margin-bottom:.0001pt'>Table of Contents</p>
+
+<p class=MsoToc1><span class=MsoHyperlink><a href="#_Toc127534134">1<span
+style='font-size:12.0pt;color:windowtext;font-weight:normal'>&nbsp;&nbsp;&nbsp;&nbsp;
+</span>Overview<span style='color:windowtext;display:none'>.. 4</span></a></span></p>
+
+<p class=MsoToc2><span class=MsoHyperlink><a href="#_Toc127534135">1.1<span
+style='font-size:12.0pt;color:windowtext;font-style:normal'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span>Objective<span style='color:windowtext;display:none'>. 4</span></a></span></p>
+
+<p class=MsoToc3><span class=MsoHyperlink><a href="#_Toc127534136">1.1.1<span
+style='font-size:12.0pt;color:windowtext'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span>Domain Issues<span style='color:windowtext;display:none'>. 4</span></a></span></p>
+
+<p class=MsoToc3><span class=MsoHyperlink><a href="#_Toc127534137">1.1.2<span
+style='font-size:12.0pt;color:windowtext'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span>Business Reasons<span style='color:windowtext;display:none'>. 5</span></a></span></p>
+
+<p class=MsoToc2><span class=MsoHyperlink><a href="#_Toc127534138">1.2<span
+style='font-size:12.0pt;color:windowtext;font-style:normal'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span>Design Requirements<span style='color:windowtext;display:none'>. 5</span></a></span></p>
+
+<p class=MsoToc2><span class=MsoHyperlink><a href="#_Toc127534139">1.3<span
+style='font-size:12.0pt;color:windowtext;font-style:normal'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span>Scope<span style='color:windowtext;display:none'>. 5</span></a></span></p>
+
+<p class=MsoToc3><span class=MsoHyperlink><a href="#_Toc127534140">1.3.1<span
+style='font-size:12.0pt;color:windowtext'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span>Major Components<span style='color:windowtext;display:none'>. 5</span></a></span></p>
+
+<p class=MsoToc3><span class=MsoHyperlink><a href="#_Toc127534141">1.3.2<span
+style='font-size:12.0pt;color:windowtext'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span>Items Within the Design Scope<span style='color:windowtext;display:none'>.
+6</span></a></span></p>
+
+<p class=MsoToc3><span class=MsoHyperlink><a href="#_Toc127534142">1.3.3<span
+style='font-size:12.0pt;color:windowtext'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span>Items Outside of Design Scope<span style='color:windowtext;display:none'>.
+6</span></a></span></p>
+
+<p class=MsoToc1><span class=MsoHyperlink><a href="#_Toc127534143">2<span
+style='font-size:12.0pt;color:windowtext;font-weight:normal'>&nbsp;&nbsp;&nbsp;&nbsp;
+</span>Supported Business Processes<span style='color:windowtext;display:none'>.
+7</span></a></span></p>
+
+<p class=MsoToc2><span class=MsoHyperlink><a href="#_Toc127534144">2.1<span
+style='font-size:12.0pt;color:windowtext;font-style:normal'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span>Vocabulary Requirements<span style='color:windowtext;display:none'>. 7</span></a></span></p>
+
+<p class=MsoToc4><span class=MsoHyperlink><a href="#_Toc127534145">2.1.1.1<span
+style='font-size:12.0pt;color:windowtext'>&nbsp;&nbsp;&nbsp;&nbsp; </span>Identifier<span
+style='color:windowtext;display:none'> 7</span></a></span></p>
+
+<p class=MsoToc4><span class=MsoHyperlink><a href="#_Toc127534146">2.1.1.2<span
+style='font-size:12.0pt;color:windowtext'>&nbsp;&nbsp;&nbsp;&nbsp; </span>Key<span
+style='color:windowtext;display:none'>. 7</span></a></span></p>
+
+<p class=MsoToc4><span class=MsoHyperlink><a href="#_Toc127534147">2.1.1.3<span
+style='font-size:12.0pt;color:windowtext'>&nbsp;&nbsp;&nbsp;&nbsp; </span>Keying<span
+style='color:windowtext;display:none'>. 7</span></a></span></p>
+
+<p class=MsoToc2><span class=MsoHyperlink><a href="#_Toc127534148">2.2<span
+style='font-size:12.0pt;color:windowtext;font-style:normal'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span>Trading Partner Roles<span style='color:windowtext;display:none'>. 7</span></a></span></p>
+
+<p class=MsoToc2><span class=MsoHyperlink><a href="#_Toc127534149">2.3<span
+style='font-size:12.0pt;color:windowtext;font-style:normal'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span>Usage Examples of Identifiers<span style='color:windowtext;display:none'>.
+7</span></a></span></p>
+
+<p class=MsoToc3><span class=MsoHyperlink><a href="#_Toc127534150">2.3.1<span
+style='font-size:12.0pt;color:windowtext'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span>Summary<span style='color:windowtext;display:none'>. 7</span></a></span></p>
+
+<p class=MsoToc3><span class=MsoHyperlink><a href="#_Toc127534151">2.3.2<span
+style='font-size:12.0pt;color:windowtext'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span>Use Case Scenarios<span style='color:windowtext;display:none'>. 8</span></a></span></p>
+
+<p class=MsoToc4><span class=MsoHyperlink><a href="#_Toc127534152">2.3.2.1<span
+style='font-size:12.0pt;color:windowtext'>&nbsp;&nbsp;&nbsp;&nbsp; </span>Simple
+Cases<span style='color:windowtext;display:none'>. 9</span></a></span></p>
+
+<p class=MsoToc5><span class=MsoHyperlink><a href="#_Toc127534153">2.3.2.1.1<span
+style='font-size:12.0pt;color:windowtext'>&nbsp;&nbsp;&nbsp; </span>Initial
+transmission of data<span style='color:windowtext;display:none'>. 9</span></a></span></p>
+
+<p class=MsoToc5><span class=MsoHyperlink><a href="#_Toc127534154">2.3.2.1.2<span
+style='font-size:12.0pt;color:windowtext'>&nbsp;&nbsp;&nbsp; </span>Transmission
+with Reply<span style='color:windowtext;display:none'>. 9</span></a></span></p>
+
+<p class=MsoToc5><span class=MsoHyperlink><a href="#_Toc127534155">2.3.2.1.3<span
+style='font-size:12.0pt;color:windowtext'>&nbsp;&nbsp;&nbsp; </span>Multiple
+Transmissions Involving the Same Entity<span style='color:windowtext;
+display:none'>. 9</span></a></span></p>
+
+<p class=MsoToc5><span class=MsoHyperlink><a href="#_Toc127534156">2.3.2.1.4<span
+style='font-size:12.0pt;color:windowtext'>&nbsp;&nbsp;&nbsp; </span>Related Business
+Transactions Involving the Same Entity<span style='color:windowtext;display:
+none'>. 10</span></a></span></p>
+
+<p class=MsoToc4><span class=MsoHyperlink><a href="#_Toc127534157">2.3.2.2<span
+style='font-size:12.0pt;color:windowtext'>&nbsp;&nbsp;&nbsp;&nbsp; </span>Identifier
+Change Cases<span style='color:windowtext;display:none'>. 10</span></a></span></p>
+
+<p class=MsoToc5><span class=MsoHyperlink><a href="#_Toc127534158">2.3.2.2.1<span
+style='font-size:12.0pt;color:windowtext'>&nbsp;&nbsp;&nbsp; </span>Cases with
+Timely Notification of Identifier Change<span style='color:windowtext;
+display:none'>. 11</span></a></span></p>
+
+<p class=MsoToc5><span class=MsoHyperlink><a href="#_Toc127534159">2.3.2.2.2<span
+style='font-size:12.0pt;color:windowtext'>&nbsp;&nbsp;&nbsp; </span>Cases with
+Late Notification of Identifier Change<span style='color:windowtext;display:
+none'>. 12</span></a></span></p>
+
+<p class=MsoToc4><span class=MsoHyperlink><a href="#_Toc127534160">2.3.2.3<span
+style='font-size:12.0pt;color:windowtext'>&nbsp;&nbsp;&nbsp;&nbsp; </span>Receiving
+System Cases<span style='color:windowtext;display:none'>. 13</span></a></span></p>
+
+<p class=MsoToc5><span class=MsoHyperlink><a href="#_Toc127534161">2.3.2.3.1<span
+style='font-size:12.0pt;color:windowtext'>&nbsp;&nbsp;&nbsp; </span>More Than
+One Identifier Provided<span style='color:windowtext;display:none'>. 13</span></a></span></p>
+
+<p class=MsoToc5><span class=MsoHyperlink><a href="#_Toc127534162">2.3.2.3.2<span
+style='font-size:12.0pt;color:windowtext'>&nbsp;&nbsp;&nbsp; </span>Business
+Elements Recommended for Verification of Matches<span style='color:windowtext;
+display:none'>. 15</span></a></span></p>
+
+<p class=MsoToc5><span class=MsoHyperlink><a href="#_Toc127534163">2.3.2.3.3<span
+style='font-size:12.0pt;color:windowtext'>&nbsp;&nbsp;&nbsp; </span>Prior Value
+Provided in Primary Transaction<span style='color:windowtext;display:none'>. 16</span></a></span></p>
+
+<p class=MsoToc1><span class=MsoHyperlink><a href="#_Toc127534164">3<span
+style='font-size:12.0pt;color:windowtext;font-weight:normal'>&nbsp;&nbsp;&nbsp;&nbsp;
+</span>Schema Design<span style='color:windowtext;display:none'>. 18</span></a></span></p>
+
+<p class=MsoToc2><span class=MsoHyperlink><a href="#_Toc127534165">3.1<span
+style='font-size:12.0pt;color:windowtext;font-style:normal'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span>Entity Identification (Keying)<span style='color:windowtext;display:
+none'> 18</span></a></span></p>
+
+<p class=MsoToc3><span class=MsoHyperlink><a href="#_Toc127534166">3.1.1<span
+style='font-size:12.0pt;color:windowtext'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span>Schema Diagrams<span style='color:windowtext;display:none'>. 18</span></a></span></p>
+
+<p class=MsoToc3><span class=MsoHyperlink><a href="#_Toc127534167">3.1.2<span
+style='font-size:12.0pt;color:windowtext'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span>Schema Elements Explained<span style='color:windowtext;display:none'>.
+18</span></a></span></p>
+
+<p class=MsoToc1><span class=MsoHyperlink><a href="#_Toc127534168">4<span
+style='font-size:12.0pt;color:windowtext;font-weight:normal'>&nbsp;&nbsp;&nbsp;&nbsp;
+</span>Implementation Considerations<span style='color:windowtext;display:none'>.
+20</span></a></span></p>
+
+<p class=MsoToc2><span class=MsoHyperlink><a href="#_Toc127534169">4.1<span
+style='font-size:12.0pt;color:windowtext;font-style:normal'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span>Choosing to Use EntityIdType Versus Local Definition<span
+style='color:windowtext;display:none'>. 20</span></a></span></p>
+
+<p class=MsoToc2><span class=MsoHyperlink><a href="#_Toc127534170">4.2<span
+style='font-size:12.0pt;color:windowtext;font-style:normal'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span>Naming Entity Identification Elements<span style='color:windowtext;
+display:none'>. 21</span></a></span></p>
+
+<p class=MsoToc2><span class=MsoHyperlink><a href="#_Toc127534171">4.3<span
+style='font-size:12.0pt;color:windowtext;font-style:normal'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span>Multi-part Identifiers<span style='color:windowtext;display:none'>. 21</span></a></span></p>
+
+<p class=MsoToc2><span class=MsoHyperlink><a href="#_Toc127534172">4.4<span
+style='font-size:12.0pt;color:windowtext;font-style:normal'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span>Allowing Single versus Multiple Occurrences of Identifiers<span
+style='color:windowtext;display:none'>. 22</span></a></span></p>
+
+<p class=MsoToc2><span class=MsoHyperlink><a href="#_Toc127534173">4.5<span
+style='font-size:12.0pt;color:windowtext;font-style:normal'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span>Facilitating Identifier Change<span style='color:windowtext;display:
+none'>. 23</span></a></span></p>
+
+<p class=MsoToc3><span class=MsoHyperlink><a href="#_Toc127534174">4.5.1<span
+style='font-size:12.0pt;color:windowtext'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span>Identifier Change Transactions<span style='color:windowtext;display:
+none'>. 23</span></a></span></p>
+
+<p class=MsoToc3><span class=MsoHyperlink><a href="#_Toc127534175">4.5.2<span
+style='font-size:12.0pt;color:windowtext'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span>Previous Value Element<span style='color:windowtext;display:none'> 24</span></a></span></p>
+
+<p class=MsoToc3><span class=MsoHyperlink><a href="#_Toc127534176">4.5.3<span
+style='font-size:12.0pt;color:windowtext'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span>Manual Notification<span style='color:windowtext;display:none'>. 25</span></a></span></p>
+
+<p class=MsoToc1><span class=MsoHyperlink><a href="#_Toc127534177">5<span
+style='font-size:12.0pt;color:windowtext;font-weight:normal'>&nbsp;&nbsp;&nbsp;&nbsp;
+</span>Appendix A - Document Version History<span style='color:windowtext;
+display:none'>. 26</span></a></span></p>
+
+<p class=MsoToc1><span class=MsoHyperlink><a href="#_Toc127534178">6<span
+style='font-size:12.0pt;color:windowtext;font-weight:normal'>&nbsp;&nbsp;&nbsp;&nbsp;
+</span>Appendix B &#8211; Related Documents<span style='color:windowtext;
+display:none'>. 26</span></a></span></p>
+
+<p class=MsoToc1><span class=MsoHyperlink><a href="#_Toc127534179">7<span
+style='font-size:12.0pt;color:windowtext;font-weight:normal'>&nbsp;&nbsp;&nbsp;&nbsp;
+</span>Appendix C &#8211; Reference Examples<span style='color:windowtext;
+display:none'>. 26</span></a></span></p>
+
+<p class=MsoToc2><span class=MsoHyperlink><a href="#_Toc127534180">7.1<span
+style='font-size:12.0pt;color:windowtext;font-style:normal'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span>Simple Person Identifiers<span style='color:windowtext;display:none'>.
+27</span></a></span></p>
+
+<p class=MsoToc2><span class=MsoHyperlink><a href="#_Toc127534181">7.2<span
+style='font-size:12.0pt;color:windowtext;font-style:normal'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span>Multiple Identifiers<span style='color:windowtext;display:none'>. 27</span></a></span></p>
+
+<p class=MsoToc2><span class=MsoHyperlink><a href="#_Toc127534182">7.3<span
+style='font-size:12.0pt;color:windowtext;font-style:normal'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span>Multi-part Identifiers<span style='color:windowtext;display:none'>. 28</span></a></span></p>
+
+<p class=MsoToc2><span class=MsoHyperlink><a href="#_Toc127534183">7.4<span
+style='font-size:12.0pt;color:windowtext;font-style:normal'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span>Effective Dated Identifiers<span style='color:windowtext;display:none'>.
+28</span></a></span></p>
+
+<p class=MsoToc1>&nbsp;</p>
+
+<span style='font-size:14.0pt;font-family:Copperplate31ab'><br clear=all
+style='page-break-before:always'>
+</span>
+
+<h1 style='margin-top:12.0pt'><a name="_Toc127534134"><b>1</b></a><b><span
+style='font-size:7.0pt;font-family:"Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span>Overview</b><a name="_Toc492656056"></a><a name="_Toc492655894"></a><a
+name="_Toc493472395"></a><a name="_Toc493472734"></a><a name="_Toc493472396"></a><a
+name="_Toc493472735"></a><a name="_Toc493472034"></a><a name="_Toc493472399"></a><a
+name="_Toc493472738"></a><a name="_Toc493472400"></a><a name="_Toc493472739"></a><a
+name="_Toc493472401"></a><a name="_Toc493472740"></a><a name="_Toc493472436"></a><a
+name="_Toc493472775"></a><a name="_Toc493472437"></a><a name="_Toc493472776"></a><a
+name="_Toc492655893"></a><a name="_Toc492656055"></a><a name="_Toc493472438"></a><a
+name="_Toc493472777"></a></h1>
+
+<h2><a name="_Toc127534135">1.1</a><span style='font-size:7.0pt;font-family:
+"Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>Objective</h2>
+
+<p class=MsoNormal>Create a methodology for identifier management that can
+standardize identifier handling across HR-XML Consortium schemas. This includes
+a set of design norms and recommendations as well as a XML Schema data type to
+use for entity identifiers.</p>
+
+<h3><a name="_Toc127534136">1.1.1</a><span style='font-size:7.0pt;font-family:
+"Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>Domain
+Issues</h3>
+
+<p class=MsoNormal>In transporting data, transaction types can be categorized
+into: those that are single occurrences, and those that may later need to be
+referred to. For example, when placing an order for a staffing resource, the
+responder needs to be able to identify which request is being responded to.
+Additionally, the requester may wish to amend the request, which requires that
+they be able to reference the previous request so that the amendment <i>changes</i>
+that previous request rather than looking like a <i>new, additional</i>
+request. Likewise, for payroll and benefits enrollment, it is important to
+identify which employee is being referenced so that subsequent feeds amend the
+information that is already on record rather than setting up duplicate entries.</p>
+
+<p class=MsoNormal>One could question whether there indeed is any situation
+where it is not important to be able to later update information. One presumes
+that items such as an informational publication that need not be acted upon
+exist and would not require this matching consideration. You may also be able
+to devise situations where matching is based solely on meaningful business
+attributes (such as company name and invoice date for billing).</p>
+
+<p class=MsoNormal>For the great class of transactions that do require the
+ability to match data in one transmission to data that may have been previously
+conveyed, the issues involved are identical regardless of what vertical within
+the HR-domain is being considered. In fact, the issues are nearly independent
+of domain altogether. The fundamental issue is to be able to match not just the
+transaction itself (which would almost certainly be an issue for envelopes to
+address), but to match the most significant entities within a transaction such
+as an employee or a specific request within a group of requests sent together.</p>
+
+<p class=MsoNormal>Taking an example, consider perhaps the most ubiquitous
+example of an entity identifier within the HR domain: personal identifiers,
+usually for an employee. Personal identifiers are fundamental to almost every
+HR process. An identifier can be described as an element that identifies an
+individual in a transaction. Identifiers come in many forms internationally.
+Organizations in the US (for good or bad) use Social Security Number quite
+often to identify individuals. Likewise, in Canada groups may use Social
+Insurance Number. Some organizations may use Driver&#8217;s License Number,
+Employee ID, or even personal traits such as name or date of birth. They may
+even use a combination of these various forms. The particulars of this
+identification cannot be enforced as each trading partner might behave
+differently. Thus a flexible approach is needed.</p>
+
+<p class=MsoNormal>Regardless of the method chosen, a transaction needs to
+clearly demonstrate a unique individual, so an implementation might want to
+suggest how an identifier should be validated against other elements in case
+duplicates or errors occur. Furthermore, since many of the items that may be
+used as identifiers are real-world data that must be manually entered into a
+system, mistakes may happen. Thus, when a transaction definition includes such
+an identifier, it should address how trading partners manage changes to what
+was previously communicated.</p>
+
+<p class=MsoNormal>The concerns surrounding other entities are quite similar to
+this example. As previously mentioned, the keying of data is really a
+fundamental systems issue, nearly independent of domain.</p>
+
+<h3><a name="_Toc127534137">1.1.2</a><span style='font-size:7.0pt;font-family:
+"Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>Business
+Reasons</h3>
+
+<p class=MsoNormal>The primary purpose for creating a standard approach to the
+keying of transactional data is to save effort or duplication of effort. This
+is in the form of reducing duplicate effort to solve the same problem amongst
+HR-XML Consortium workgroups, as well as creating a solution that is cheaper to
+implement when included in HR-XML standards.</p>
+
+<p class=MsoNormal>Developing an interface for interoperability between
+companies and/or software vendors may take many months. The development of
+standard XML vocabularies and schemas can drastically reduce the time needed in
+the development phase, but certain details still are left to individual trading
+partners. By creating a well thought-out framework for having those
+discussions, even this effort is reduced.</p>
+
+<p class=MsoNormal>Additional business reasons include:</p>
+
+<p class=number style='margin-top:0in;margin-right:0in;margin-bottom:0in;
+margin-left:.25in;margin-bottom:.0001pt'><span style='font-family:Wingdings'>&sect;</span><span
+style='font-size:7.0pt;font-family:"Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span>Reducing the risk of duplicate entries&#8212;be they paid employees,
+resource requests, or benefit plan participants; and</p>
+
+<p class=number style='margin-top:0in;margin-right:0in;margin-bottom:0in;
+margin-left:.25in;margin-bottom:.0001pt'><span style='font-family:Wingdings'>&sect;</span><span
+style='font-size:7.0pt;font-family:"Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span>Managing identification across business transactions&#8212;that is,
+within a vertical: for example to be able to identify that a particular billing
+line ties back to a particular resource request.</p>
+
+<h2><a name="_Toc127534138">1.2</a><span style='font-size:7.0pt;font-family:
+"Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>Design
+Requirements</h2>
+
+<p class=number style='margin-top:0in;margin-right:0in;margin-bottom:0in;
+margin-left:.25in;margin-bottom:.0001pt;text-autospace:none'><a
+name="_Toc492655895"></a><a name="_Toc492656057"></a><span style='font-family:
+Wingdings'>&sect;</span><span style='font-size:7.0pt;font-family:"Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span>Syntax must be as self-documenting;</p>
+
+<p class=MsoNormal style='margin-top:0in;margin-right:0in;margin-bottom:0in;
+margin-left:.25in;margin-bottom:.0001pt;text-indent:-.25in;text-autospace:none'><span
+style='font-family:Wingdings'>&sect;</span><span style='font-size:7.0pt;
+font-family:"Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span>Must take international requirements into consideration;</p>
+
+<p class=MsoNormal style='margin-top:0in;margin-right:0in;margin-bottom:0in;
+margin-left:.25in;margin-bottom:.0001pt;text-indent:-.25in;text-autospace:none'><span
+style='font-family:Wingdings'>&sect;</span><span style='font-size:7.0pt;
+font-family:"Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span>Must be deployable in existing HR-XML Schemas;</p>
+
+<p class=MsoNormal style='margin-top:0in;margin-right:0in;margin-bottom:0in;
+margin-left:.25in;margin-bottom:.0001pt;text-indent:-.25in;text-autospace:none'><span
+style='font-family:Wingdings'>&sect;</span><span style='font-size:7.0pt;
+font-family:"Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span>Must support processes to correct a previously communicated identifier;
+and</p>
+
+<p class=MsoNormal style='margin-top:0in;margin-right:0in;margin-bottom:0in;
+margin-left:.25in;margin-bottom:.0001pt;text-indent:-.25in;text-autospace:none'><span
+style='font-family:Wingdings'>&sect;</span><span style='font-size:7.0pt;
+font-family:"Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span>Must be capable of transmitting both multi-part identifiers, and
+multiple identifiers for the same entity (for example a sending system employee
+number and a receiving system employee number, assuming the sending system
+knows both).</p>
+
+<p class=MsoNormal style='margin:0in;margin-bottom:.0001pt;text-autospace:none'>&nbsp;</p>
+
+<h2><a name="_Toc127534139">1.3</a><span style='font-size:7.0pt;font-family:
+"Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>Scope</h2>
+
+<h3><a name="_Toc127534140">1.3.1</a><span style='font-size:7.0pt;font-family:
+"Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>Major
+Components</h3>
+
+<p class=MsoNormal>This recommendation includes:</p>
+
+<p class=number style='margin-top:0in;margin-right:0in;margin-bottom:0in;
+margin-left:.25in;margin-bottom:.0001pt'><span style='font-family:Wingdings'>&sect;</span><span
+style='font-size:7.0pt;font-family:"Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span>A complex schema data type for use in workgroup entity identifiers;</p>
+
+<p class=number style='margin-top:0in;margin-right:0in;margin-bottom:0in;
+margin-left:.25in;margin-bottom:.0001pt'><span style='font-family:Wingdings'>&sect;</span><span
+style='font-size:7.0pt;font-family:"Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span>Guidelines for inclusion and treatment of entity identifiers; and</p>
+
+<p class=number style='margin-top:0in;margin-right:0in;margin-bottom:0in;
+margin-left:.25in;margin-bottom:.0001pt'><span style='font-family:Wingdings'>&sect;</span><span
+style='font-size:7.0pt;font-family:"Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span>Boilerplate language for use by workgroups in their recommendations.</p>
+
+<h3><a name="_Toc127534141">1.3.2</a><span style='font-size:7.0pt;font-family:
+"Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>Items
+Within the Design Scope</h3>
+
+<p class=number style='margin-top:0in;margin-right:0in;margin-bottom:0in;
+margin-left:.25in;margin-bottom:.0001pt'><span style='font-family:Wingdings'>&sect;</span><span
+style='font-size:7.0pt;font-family:"Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span>Identifiers made up of multiple parts;</p>
+
+<p class=number style='margin-top:0in;margin-right:0in;margin-bottom:0in;
+margin-left:.25in;margin-bottom:.0001pt'><span style='font-family:Wingdings'>&sect;</span><span
+style='font-size:7.0pt;font-family:"Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span>Ability to describe within the data what the identifier represents;</p>
+
+<p class=number style='margin-top:0in;margin-right:0in;margin-bottom:0in;
+margin-left:.25in;margin-bottom:.0001pt'><span style='font-family:Wingdings'>&sect;</span><span
+style='font-size:7.0pt;font-family:"Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span>Identification of the issuer or &#8220;owning party&#8221; of an
+identifier;</p>
+
+<p class=number style='margin-top:0in;margin-right:0in;margin-bottom:0in;
+margin-left:.25in;margin-bottom:.0001pt'><span style='font-family:Wingdings'>&sect;</span><span
+style='font-size:7.0pt;font-family:"Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span>Effective dating of an identifier;</p>
+
+<p class=number style='margin-top:0in;margin-right:0in;margin-bottom:0in;
+margin-left:.25in;margin-bottom:.0001pt'><span style='font-family:Wingdings'>&sect;</span><span
+style='font-size:7.0pt;font-family:"Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span>Discussion of management of identifier change as a business and
+transactional process;</p>
+
+<p class=number style='margin-top:0in;margin-right:0in;margin-bottom:0in;
+margin-left:.25in;margin-bottom:.0001pt'><span style='font-family:Wingdings'>&sect;</span><span
+style='font-size:7.0pt;font-family:"Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span>Discussion of need to support multiple identifiers for the same entity; </p>
+
+<p class=number style='margin-top:0in;margin-right:0in;margin-bottom:0in;
+margin-left:.25in;margin-bottom:.0001pt'><span style='font-family:Wingdings'>&sect;</span><span
+style='font-size:7.0pt;font-family:"Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span>Discussion of requirements for trading partners to agree on the specific
+identifier(s) to be supplied; and</p>
+
+<p class=number style='margin-top:0in;margin-right:0in;margin-bottom:0in;
+margin-left:.25in;margin-bottom:.0001pt'><span style='font-family:Wingdings'>&sect;</span><span
+style='font-size:7.0pt;font-family:"Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span>Discussion of options for recommending secondary matching on business
+data.</p>
+
+<h3><a name="_Toc127534142">1.3.3</a><span style='font-size:7.0pt;font-family:
+"Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>Items
+Outside of Design Scope</h3>
+
+<p class=number style='margin-top:0in;margin-right:0in;margin-bottom:0in;
+margin-left:.25in;margin-bottom:.0001pt'><span style='font-family:Wingdings'>&sect;</span><span
+style='font-size:7.0pt;font-family:"Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span>Guaranteeing the uniqueness of identifiers;</p>
+
+<p class=number style='margin-top:0in;margin-right:0in;margin-bottom:0in;
+margin-left:.25in;margin-bottom:.0001pt'><span style='font-family:Wingdings'>&sect;</span><span
+style='font-size:7.0pt;font-family:"Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span>Method of issuing identifiers;</p>
+
+<p class=number style='margin-top:0in;margin-right:0in;margin-bottom:0in;
+margin-left:.25in;margin-bottom:.0001pt'><span style='font-family:Wingdings'>&sect;</span><span
+style='font-size:7.0pt;font-family:"Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span>Taxonomies of identification owners (such as company names or IDs,
+government names or country codes, etc.) or typical data used (such as Social
+Security Number, employee ID, driver&#8217;s license number, name, date of
+birth, etc.); and</p>
+
+<p class=number style='margin-top:0in;margin-right:0in;margin-bottom:0in;
+margin-left:.25in;margin-bottom:.0001pt'><span style='font-family:Wingdings'>&sect;</span><span
+style='font-size:7.0pt;font-family:"Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span>Creation of any technique for identification; scope is limited to the
+exchange of data</p>
+
+<span style='font-size:11.0pt;font-family:Arial'><br clear=all
+style='page-break-before:always'>
+</span>
+
+<p class=number style='margin:0in;margin-bottom:.0001pt;text-indent:0in'>&nbsp;</p>
+
+<h1><a name="_Toc127534143"></a><a name="_Toc492656080"></a><a
+name="_Toc492655918"></a><a name="_Toc493471746"></a><a name="_Toc493472043"></a><a
+name="_Toc493472446"></a><a name="_Toc493472785"></a><a name="_Toc493471751"></a><a
+name="_Toc493472048"></a><a name="_Toc493472451"></a><a name="_Toc493472790"></a><a
+name="_Toc493471752"></a><a name="_Toc493472049"></a><a name="_Toc493472452"></a><a
+name="_Toc493472791"></a><a name="_Toc493471754"></a><a name="_Toc493472051"></a><a
+name="_Toc493472454"></a><a name="_Toc493472793"></a><a name="_Toc492655903"></a><a
+name="_Toc492656065"></a><a name="_Toc492868751"></a><a name="_Toc492868858"></a><a
+name="_Toc493463955"></a><a name="_Toc493471755"></a><a name="_Toc493472052"></a><a
+name="_Toc493472455"></a><a name="_Toc493472794"></a><a name="_Toc492655904"></a><a
+name="_Toc492656066"></a><a name="_Toc492868752"></a><a name="_Toc492868859"></a><a
+name="_Toc493463956"></a><a name="_Toc493471756"></a><a name="_Toc493472053"></a><a
+name="_Toc493472456"></a><a name="_Toc493472795"></a><a name="_Toc493471757"></a><a
+name="_Toc493472054"></a><a name="_Toc493472457"></a><a name="_Toc493472796"></a><a
+name="_Toc492655909"></a><a name="_Toc492656071"></a><a name="_Toc492868757"></a><a
+name="_Toc492868864"></a><a name="_Toc493463961"></a><a name="_Toc493471761"></a><a
+name="_Toc493472058"></a><a name="_Toc493472461"></a><a name="_Toc493472800"></a><a
+name="_Toc492655914"></a><a name="_Toc492656076"></a><a name="_Toc492868762"></a><a
+name="_Toc492868869"></a><a name="_Toc493463966"></a><a name="_Toc493471766"></a><a
+name="_Toc493472063"></a><a name="_Toc493472466"></a><a name="_Toc493472805"></a><a
+name="_Toc492655917"></a><a name="_Toc492656079"></a><a name="_Toc492868765"></a><a
+name="_Toc492868872"></a><a name="_Toc493463969"></a><a name="_Toc493471769"></a><a
+name="_Toc493472066"></a><a name="_Toc493472469"></a><a name="_Toc493472808"></a><b>2</b><b><span
+style='font-size:7.0pt;font-family:"Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span>Supported Business Processes</b></h1>
+
+<h2><a name="_Toc127534144"></a><a name="_Toc493471771"></a><a
+name="_Toc493472068"></a><a name="_Toc493472471"></a><a name="_Toc493472810"></a><a
+name="_Toc493471772"></a><a name="_Toc493472069"></a><a name="_Toc493472472"></a><a
+name="_Toc493472811"></a>2.1<span style='font-size:7.0pt;font-family:"Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span>Vocabulary Requirements </h2>
+
+<p class=MsoNormal>The XML vocabulary adopted for the Entity Identifiers Schema
+conforms to the guidelines outlined in the Technical Steering Committee&#8217;s
+Schema Design Guidelines document. Where appropriate the same terms are used
+but some name changes have occurred. </p>
+
+<h4><a name="_Toc127534145">2.1.1.1</a><span style='font-size:7.0pt;font-family:
+"Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span>Identifier</h4>
+
+<p class=MsoNormal>A set of data that unambiguously identifies the specific
+object which it describes. For example, a database primary key is the
+identifier for a database row. An example in a business context is that United States businesses frequently use Social Security Number as the identifier for an
+employee.</p>
+
+<h4><a name="_Toc127534146">2.1.1.2</a><span style='font-size:7.0pt;font-family:
+"Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span>Key </h4>
+
+<p class=MsoNormal>One or more fields in an object or record that holds unique
+data that identifies that object or record from all others. The term
+&quot;key&quot; is frequently thought of in relation to database systems,
+particularly in terms of &quot;primary keys&quot; and &quot;foreign keys&quot;.
+To avoid confusion, this recommendation avoids using this term to refer to a
+data structure for identification within an XML document.</p>
+
+<h4><a name="_Toc127534147">2.1.1.3</a><span style='font-size:7.0pt;font-family:
+"Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span>Keying</h4>
+
+<p class=MsoNormal>The act of using identifiers or keys to match
+representations of objects as being of the same object. This could also be
+thought of as &quot;key matching&quot; or &quot;identifier matching&quot;.</p>
+
+<h2><a name="_Toc127534148">2.2</a><span style='font-size:7.0pt;font-family:
+"Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>Trading
+Partner Roles</h2>
+
+<p class=MsoNormal>Because this is a Cross-Process Object, and not a
+transaction itself, the roles of trading partners using Entity Identifiers will
+be those of the business processes that include the identifiers. There are a
+relatively small number of common patterns for trading partner use of
+identifiers, and these are outlined in the use cases in the next section.</p>
+
+<h2><a name="_Toc127534149">2.3</a><span style='font-size:7.0pt;font-family:
+"Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>Usage
+Examples of Identifiers</h2>
+
+<h3><a name="_Toc127534150">2.3.1</a><span style='font-size:7.0pt;font-family:
+"Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>Summary</h3>
+
+<p class=MsoNormal>To cover the general topic of identifier usage, rather than
+documenting a specific business process, this section deals with generalities.
+There are a limited number of patterns of usage that cover the vast majority of
+cases. Any real business process will only correspond to a few of these
+patterns, and the particular patterns will frequently be dictated not only by
+the business process but by the identifier management strategy of the
+transaction definition as well.</p>
+
+<h3><a name="_Toc127534151">2.3.2</a><span style='font-size:7.0pt;font-family:
+"Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>Use
+Case Scenarios</h3>
+
+<p class=MsoNormal>This section contains an examination a number of different
+cases that one might like to support. The first set will consider simple data
+exchange examples. Next it progresses to consideration of techniques for
+communication of changes to identifier values. Last are complex cases giving
+examples of how a receiving system might utilize identifier data.</p>
+
+<p class=MsoNormal>The cases are listed here, with detailed discussions to
+follow. </p>
+
+<p class=MsoNormal>Simple cases:</p>
+
+<p class=number style='margin-top:0in;margin-right:0in;margin-bottom:0in;
+margin-left:.25in;margin-bottom:.0001pt'><span style='font-family:Wingdings'>&sect;</span><span
+style='font-size:7.0pt;font-family:"Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span>Initial transmission of data</p>
+
+<p class=number style='margin-top:0in;margin-right:0in;margin-bottom:0in;
+margin-left:.25in;margin-bottom:.0001pt'><span style='font-family:Wingdings'>&sect;</span><span
+style='font-size:7.0pt;font-family:"Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span>Transmission with reply</p>
+
+<p class=number style='margin-top:0in;margin-right:0in;margin-bottom:0in;
+margin-left:.25in;margin-bottom:.0001pt'><span style='font-family:Wingdings'>&sect;</span><span
+style='font-size:7.0pt;font-family:"Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span>Multiple transmissions involving the same entity</p>
+
+<p class=number style='margin-top:0in;margin-right:0in;margin-bottom:0in;
+margin-left:.25in;margin-bottom:.0001pt'><span style='font-family:Wingdings'>&sect;</span><span
+style='font-size:7.0pt;font-family:"Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span>Related business transactions involving the same entity</p>
+
+<p class=MsoNormal>Identifier change cases:</p>
+
+<p class=number style='margin-top:0in;margin-right:0in;margin-bottom:0in;
+margin-left:.25in;margin-bottom:.0001pt'><span style='font-family:Wingdings'>&sect;</span><span
+style='font-size:7.0pt;font-family:"Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span>Cases with timely notification of identifier change:</p>
+
+<p class=number style='margin-top:0in;margin-right:0in;margin-bottom:0in;
+margin-left:.75in;margin-bottom:.0001pt'><span style='font-family:Wingdings'>&sect;</span><span
+style='font-size:7.0pt;font-family:"Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span>Transmission, update of data including identifier, and updating
+transmission noting identifier change</p>
+
+<p class=number style='margin-top:0in;margin-right:0in;margin-bottom:0in;
+margin-left:.75in;margin-bottom:.0001pt'><span style='font-family:Wingdings'>&sect;</span><span
+style='font-size:7.0pt;font-family:"Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span>Transmission, update of data including identifier, identifier change
+transaction, and updating transmission</p>
+
+<p class=number style='margin-top:0in;margin-right:0in;margin-bottom:0in;
+margin-left:.75in;margin-bottom:.0001pt'><span style='font-family:Wingdings'>&sect;</span><span
+style='font-size:7.0pt;font-family:"Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span>Transmission, update of data including identifier, manual communication
+of identifier change, and updating transmission</p>
+
+<p class=number style='margin-top:0in;margin-right:0in;margin-bottom:0in;
+margin-left:.25in;margin-bottom:.0001pt;page-break-after:avoid'><span
+style='font-family:Wingdings'>&sect;</span><span style='font-size:7.0pt;
+font-family:"Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span>Cases with late notification of identifier change:</p>
+
+<p class=number style='margin-top:0in;margin-right:0in;margin-bottom:0in;
+margin-left:.75in;margin-bottom:.0001pt;page-break-after:avoid'><span
+style='font-family:Wingdings'>&sect;</span><span style='font-size:7.0pt;
+font-family:"Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span>Transmission, update of data including identifier, updating transmission
+(no identifier change noted), and updating transmission noting identifier
+change</p>
+
+<p class=number style='margin-top:0in;margin-right:0in;margin-bottom:0in;
+margin-left:.75in;margin-bottom:.0001pt'><span style='font-family:Wingdings'>&sect;</span><span
+style='font-size:7.0pt;font-family:"Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span>Transmission, update of data including identifier, updating
+transmission, and identifier change transaction</p>
+
+<p class=number style='margin-top:0in;margin-right:0in;margin-bottom:0in;
+margin-left:.75in;margin-bottom:.0001pt'><span style='font-family:Wingdings'>&sect;</span><span
+style='font-size:7.0pt;font-family:"Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span>Transmission, update of data including identifier, updating
+transmission, and manual communication of identifier change</p>
+
+<p class=MsoNormal>Receiving system cases:</p>
+
+<p class=number style='margin-top:0in;margin-right:0in;margin-bottom:0in;
+margin-left:.25in;margin-bottom:.0001pt'><span style='font-family:Wingdings'>&sect;</span><span
+style='font-size:7.0pt;font-family:"Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span>More than one identifier provided:</p>
+
+<p class=number style='margin-top:0in;margin-right:0in;margin-bottom:0in;
+margin-left:.75in;margin-bottom:.0001pt'><span style='font-family:Wingdings'>&sect;</span><span
+style='font-size:7.0pt;font-family:"Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span>Receiver attempts match, finds no match, and utilizes additional
+identifier to find match</p>
+
+<p class=number style='margin-top:0in;margin-right:0in;margin-bottom:0in;
+margin-left:.75in;margin-bottom:.0001pt'><span style='font-family:Wingdings'>&sect;</span><span
+style='font-size:7.0pt;font-family:"Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span>Receiver attempts match, finds match, and utilizes additional identifiers
+for verification</p>
+
+<p class=number style='margin-top:0in;margin-right:0in;margin-bottom:0in;
+margin-left:.25in;margin-bottom:.0001pt'><span style='font-family:Wingdings'>&sect;</span><span
+style='font-size:7.0pt;font-family:"Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span>Business elements recommended for verification of matches:</p>
+
+<p class=number style='margin-top:0in;margin-right:0in;margin-bottom:0in;
+margin-left:.75in;margin-bottom:.0001pt'><span style='font-family:Wingdings'>&sect;</span><span
+style='font-size:7.0pt;font-family:"Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span>Receiver attempts match, finds match, utilizes recommended business
+elements for verification, and matches</p>
+
+<p class=number style='margin-top:0in;margin-right:0in;margin-bottom:0in;
+margin-left:.75in;margin-bottom:.0001pt'><span style='font-family:Wingdings'>&sect;</span><span
+style='font-size:7.0pt;font-family:"Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span>Receiver attempts match, finds match, utilizes recommended business
+elements for verification, and does not match</p>
+
+<p class=number style='margin-top:0in;margin-right:0in;margin-bottom:0in;
+margin-left:.25in;margin-bottom:.0001pt;page-break-after:avoid'><span
+style='font-family:Wingdings'>&sect;</span><span style='font-size:7.0pt;
+font-family:"Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span>Prior value provided in primary transaction:</p>
+
+<p class=number style='margin-top:0in;margin-right:0in;margin-bottom:0in;
+margin-left:.75in;margin-bottom:.0001pt;page-break-after:avoid'><span
+style='font-family:Wingdings'>&sect;</span><span style='font-size:7.0pt;
+font-family:"Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span>Receiver attempts match, finds no match, and utilizes prior value for
+match</p>
+
+<p class=number style='margin-top:0in;margin-right:0in;margin-bottom:0in;
+margin-left:.75in;margin-bottom:.0001pt'><span style='font-family:Wingdings'>&sect;</span><span
+style='font-size:7.0pt;font-family:"Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span>Receiver attempts match, finds match, utilizes prior value to detect
+duplication</p>
+
+<h4><a name="_Toc127534152">2.3.2.1</a><span style='font-size:7.0pt;font-family:
+"Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span>Simple Cases</h4>
+
+<p class=MsoNormal>These are straightforward representations of common data
+transmission scenarios.</p>
+
+<p class=number style='margin:0in;margin-bottom:.0001pt;text-indent:0in'><i>&nbsp;</i></p>
+
+<h5><a name="_Toc127534153">2.3.2.1.1</a><span style='font-size:7.0pt;
+font-family:"Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>Initial
+transmission of data</h5>
+
+<p class=number style='margin:0in;margin-bottom:.0001pt;text-indent:0in'>&nbsp;</p>
+
+<p class=number style='margin:0in;margin-bottom:.0001pt;text-indent:0in'>In this
+case, data for a particular business transaction is sent, received, confirmed
+to be new, and loaded. </p>
+
+<p class=number style='margin:0in;margin-bottom:.0001pt;text-indent:0in'>&nbsp;</p>
+
+<p class=number style='margin:0in;margin-bottom:.0001pt;text-indent:0in'>The
+identifier is used in confirming that the data is new. If no data were ever
+updated, identifiers would not be needed this case would be all that was seen.</p>
+
+<p class=number style='margin:0in;margin-bottom:.0001pt;text-indent:0in'>&nbsp;</p>
+
+<h5><a name="_Toc127534154">2.3.2.1.2</a><span style='font-size:7.0pt;
+font-family:"Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>Transmission
+with Reply</h5>
+
+<p class=number style='margin:0in;margin-bottom:.0001pt;text-indent:0in'>&nbsp;</p>
+
+<p class=number style='margin:0in;margin-bottom:.0001pt;text-indent:0in'>In
+this case, data for a particular business transaction is sent, received, and
+loaded. Then the activity requested by the transaction is performed. Finally, a
+separate business transaction is sent back either confirming for each entity in
+the original set that the work is done or providing the requested information. </p>
+
+<p class=number style='margin:0in;margin-bottom:.0001pt;text-indent:0in'>&nbsp;</p>
+
+<p class=number style='margin:0in;margin-bottom:.0001pt;text-indent:0in'>An
+example of this might be a transaction containing several requests for resumes,
+each with a given request number. When transactions containing candidate
+resumes come back, they are identified with the corresponding request number
+(or numbers if they match several and the transaction is structured to support
+this structure).</p>
+
+<p class=number style='margin:0in;margin-bottom:.0001pt;text-indent:0in'>&nbsp;</p>
+
+<p class=number style='margin:0in;margin-bottom:.0001pt;text-indent:0in'>If one
+does not have an identifier for the request, then the receiver would need to
+examine the data to deduce which request the data is a match for. This is
+clearly not desirable.</p>
+
+<p class=number style='margin:0in;margin-bottom:.0001pt;text-indent:0in'>&nbsp;</p>
+
+<h5><a name="_Toc127534155">2.3.2.1.3</a><span style='font-size:7.0pt;
+font-family:"Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>Multiple
+Transmissions Involving the Same Entity</h5>
+
+<p class=number style='margin:0in;margin-bottom:.0001pt;text-indent:0in'>&nbsp;</p>
+
+<p class=number style='margin:0in;margin-bottom:.0001pt;text-indent:0in'>In
+this case, data for a particular business transaction is sent, received, and
+loaded. Then the information provided by the sender is updated. They repeat
+sending the same business transaction with the new data. The second transaction
+is received, matched, and loaded.</p>
+
+<p class=number style='margin:0in;margin-bottom:.0001pt;text-indent:0in'>&nbsp;</p>
+
+<p class=number style='margin:0in;margin-bottom:.0001pt;text-indent:0in'>An
+example of this is passing data from a payroll system to a payroll company for
+production of checks. Information is sent regarding a given employee. That
+employee&#8217;s pay is changed in the payroll system. An update is sent to the
+payroll company and the payroll company amends their current data for that
+employee.</p>
+
+<p class=number style='margin:0in;margin-bottom:.0001pt;text-indent:0in'>&nbsp;</p>
+
+<p class=number style='margin:0in;margin-bottom:.0001pt;text-indent:0in'>The
+importance of the matching is seen in this example, since failure to correctly
+match the employee would result in duplicate checks being issued.</p>
+
+<p class=number style='margin:0in;margin-bottom:.0001pt;text-indent:0in'>&nbsp;</p>
+
+<h5><a name="_Toc127534156">2.3.2.1.4</a><span style='font-size:7.0pt;
+font-family:"Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>Related
+Business Transactions Involving the Same Entity</h5>
+
+<p class=number style='margin:0in;margin-bottom:.0001pt;text-indent:0in'>&nbsp;</p>
+
+<p class=number style='margin:0in;margin-bottom:.0001pt;text-indent:0in'>There are
+actually a variety of cases that might be considered in this scenario. They
+follow two basic patterns:</p>
+
+<p class=number style='margin-top:0in;margin-right:0in;margin-bottom:0in;
+margin-left:.25in;margin-bottom:.0001pt'><span style='font-family:Wingdings'>&sect;</span><span
+style='font-size:7.0pt;font-family:"Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span>System A produces Transaction X for Entity Q and sends to System B;
+System A then produces Transaction Y for Entity Q and sends to System B.</p>
+
+<p class=number style='margin-top:0in;margin-right:0in;margin-bottom:0in;
+margin-left:.25in;margin-bottom:.0001pt'><span style='font-family:Wingdings'>&sect;</span><span
+style='font-size:7.0pt;font-family:"Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span>System A produces Transaction X for Entity Q and sends to System B;
+System B then produces Transaction Y for Entity Q and sends to System A.</p>
+
+<p class=number style='margin:0in;margin-bottom:.0001pt;text-indent:0in'>&nbsp;</p>
+
+<p class=number style='margin:0in;margin-bottom:.0001pt;text-indent:0in'>This
+might be considered the same as the previous example of transmission and
+response. What is being contemplated here is cases where the transactions are
+not fundamentally joined&#8212;Transaction Y is not a logical response for
+Transaction X. If one modeled the various business events holistically across
+the HR domain it would be seen to be a natural response, but X and Y are in
+different verticals, so a narrow analysis does not predict it.</p>
+
+<p class=number style='margin:0in;margin-bottom:.0001pt;text-indent:0in'>&nbsp;</p>
+
+<p class=number style='margin:0in;margin-bottom:.0001pt;text-indent:0in'>Examples
+of these patterns come naturally in the combination of benefits and payroll
+disciplines.</p>
+
+<p class=number style='margin:0in;margin-bottom:.0001pt;text-indent:0in'>&nbsp;</p>
+
+<p class=number style='margin:0in;margin-bottom:.0001pt;text-indent:0in'>An
+example of the first pattern can be seen in the passing of data to a flexible
+spending account administrator. Typically there are separate feeds sent to this
+administrator, one containing plan enrollment data, and the other containing
+payroll deduction data. For this case, consider the benefits and payroll
+systems to be unified as &#8220;System A&#8221; and the administrator to be
+&#8220;System B&#8221;.</p>
+
+<p class=number style='margin:0in;margin-bottom:.0001pt;text-indent:0in'>&nbsp;</p>
+
+<p class=number style='margin:0in;margin-bottom:.0001pt;text-indent:0in'>An
+employee, Juan Garcia, is enrolled in a medical FSA account. The fact of that
+benefit enrollment is sent to the account administrator. Then payroll
+deductions are made for that benefit and the amount deducted from Juan&#8217;s
+check is sent to the administrator.</p>
+
+<p class=number style='margin:0in;margin-bottom:.0001pt;text-indent:0in'>&nbsp;</p>
+
+<p class=number style='margin:0in;margin-bottom:.0001pt;text-indent:0in'>The
+second pattern can be seen in action during the interaction of non-integrated
+payroll and benefits systems.</p>
+
+<p class=number style='margin:0in;margin-bottom:.0001pt;text-indent:0in'>&nbsp;</p>
+
+<p class=number style='margin:0in;margin-bottom:.0001pt;text-indent:0in'>A feed
+is sent from a payroll system to an HRIS system updating employment data for a
+list of employees. One of these employees moves from full-time to part-time,
+losing her eligibility for benefits. The HRIS system then terminates the
+benefits, causing a change in payroll deductions. The HRIS system sends a
+payroll deduction transaction identifying this same employee with her revised
+deduction amount.</p>
+
+<h4><a name="_Toc127534157">2.3.2.2</a><span style='font-size:7.0pt;font-family:
+"Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span>Identifier Change Cases</h4>
+
+<p class=number style='margin:0in;margin-bottom:.0001pt;text-indent:0in'>Aside
+from the primary use of identifiers in matching entities across transactions,
+the most significant event an identifier experiences is change. Identifier
+change frequently leads to undesirable duplication of data. A variety of cases
+are noted below, but the all to frequent case of an identifier changing and no
+notification ever being sent is intentionally omitted. This is a default case
+that is unintended and highly undesirable, and obviously is not the intention
+for what any transaction supports. The supported cases are differentiated
+between those cases where the change is noted before a transaction is sent
+requiring the identifier change, and those where the transaction using the new
+data arrives first. Each set of cases is split into three different approaches
+to communicating identifier changes:</p>
+
+<p class=number style='margin-top:0in;margin-right:0in;margin-bottom:0in;
+margin-left:.25in;margin-bottom:.0001pt'><span style='font-family:Wingdings'>&sect;</span><span
+style='font-size:7.0pt;font-family:"Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span>The business transaction provides an element for previous identifier
+value</p>
+
+<p class=number style='margin-top:0in;margin-right:0in;margin-bottom:0in;
+margin-left:.25in;margin-bottom:.0001pt'><span style='font-family:Wingdings'>&sect;</span><span
+style='font-size:7.0pt;font-family:"Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span>A separate transaction is provided for notification of changes to
+identifier</p>
+
+<p class=number style='margin-top:0in;margin-right:0in;margin-bottom:0in;
+margin-left:.25in;margin-bottom:.0001pt'><span style='font-family:Wingdings'>&sect;</span><span
+style='font-size:7.0pt;font-family:"Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span>Identifier change notification is a manual process</p>
+
+<p class=number style='margin-top:0in;margin-right:0in;margin-bottom:0in;
+margin-left:.5in;margin-bottom:.0001pt'>&nbsp;</p>
+
+<h5><a name="_Toc127534158">2.3.2.2.1</a><span style='font-size:7.0pt;
+font-family:"Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>Cases
+with Timely Notification of Identifier Change</h5>
+
+<p class=number style='margin:0in;margin-bottom:.0001pt;text-indent:0in'>&nbsp;</p>
+
+<p class=number style='margin:0in;margin-bottom:.0001pt;text-indent:0in'>These cases
+assume that an identifier change occurs, and that data about the identifier
+change is sent in time to handle the change to affect any transaction that
+depends on the identifier change. Because these are more a matter of system
+behavior than business requirements, no business scenarios are included.</p>
+
+<p class=number style='margin:0in;margin-bottom:.0001pt;text-indent:0in'>&nbsp;</p>
+
+<p class=number style='margin-top:0in;margin-right:0in;margin-bottom:0in;
+margin-left:.25in;margin-bottom:.0001pt'><span style='font-family:Wingdings'>&sect;</span><span
+style='font-size:7.0pt;font-family:"Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span>Transmission, Update Of Data Including Identifier, And Updating
+Transmission Noting Identifier Change</p>
+
+<p class=number style='margin:0in;margin-bottom:.0001pt;text-indent:0in'>&nbsp;</p>
+
+<p class=number style='margin:0in;margin-bottom:.0001pt;text-indent:0in'>Assume
+that data has been transmitted. Now the identifier in the source system is
+changed. As the next transmission from the source system is created, it
+includes the prior identifier as well as the current one. When the transmission
+is received and processed, the receiving system sees the prior identifier and
+looks to see if there is a match. The receiver&#8217;s current identifier
+matches the sender&#8217;s prior identifier, so a match is found and the data
+updates correctly, including updating the identifier. </p>
+
+<p class=number style='margin:0in;margin-bottom:.0001pt;text-indent:0in'>&nbsp;</p>
+
+<p class=number style='margin:0in;margin-bottom:.0001pt;text-indent:0in'>Incidentally,
+a match for the prior identifier may not be found. Perhaps because the sender includes
+the prior information for a month and the receiver has already updated their
+copy, so the prior value no longer shows in their system. In such a case, you
+would expect the receiver to operate on the normal identifier as usual.</p>
+
+<p class=number style='margin:0in;margin-bottom:.0001pt;text-indent:0in'>&nbsp;</p>
+
+<p class=number style='margin-top:0in;margin-right:0in;margin-bottom:0in;
+margin-left:.25in;margin-bottom:.0001pt'><span style='font-family:Wingdings'>&sect;</span><span
+style='font-size:7.0pt;font-family:"Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span>Transmission, Update Of Data Including Identifier, Identifier Change
+Transaction, And Updating Transmission</p>
+
+<p class=number style='margin:0in;margin-bottom:.0001pt;text-indent:0in'>&nbsp;</p>
+
+<p class=number style='margin:0in;margin-bottom:.0001pt;text-indent:0in'>Assume
+that data has been transmitted. Now the identifier in the source system is
+changed. On the next transmission from the source system, an identifier change
+transaction is created and sent. Then the regular transmission is sent as usual
+(with the new identifier). When the transmissions are received and processed,
+the receiving system first processes the identifier change transactions. Since
+this is done as the first step, the receiving system now has the identifier on
+record in their system. The main transmission then processes as usual. </p>
+
+<p class=number style='margin:0in;margin-bottom:.0001pt;text-indent:0in'>&nbsp;</p>
+
+<p class=number style='margin:0in;margin-bottom:.0001pt;text-indent:0in'>&nbsp;</p>
+
+<p class=number style='margin-top:0in;margin-right:0in;margin-bottom:0in;
+margin-left:.25in;margin-bottom:.0001pt;page-break-after:avoid'><span
+style='font-family:Wingdings'>&sect;</span><span style='font-size:7.0pt;
+font-family:"Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span>Transmission, Update Of Data Including Identifier, Manual Communication
+Of Identifier Change, And Updating Transmission</p>
+
+<p class=number style='margin:0in;margin-bottom:.0001pt;text-indent:0in'>&nbsp;</p>
+
+<p class=number style='margin:0in;margin-bottom:.0001pt;text-indent:0in'>Assume
+that data has been transmitted. Now the identifier in the source system is
+changed. There is a procedure in place to notify the trading partner and this
+happens. The trading partner updates the identifier in their system. When the source
+system is ready for the next transmission a regular transmission is created.
+When the transmission is received and processed, the receiving system has the
+changed identifier on record already and the transmission processes as usual. </p>
+
+<p class=number style='margin:0in;margin-bottom:.0001pt;text-indent:0in'>&nbsp;</p>
+
+<h5><a name="_Toc127534159">2.3.2.2.2</a><span style='font-size:7.0pt;
+font-family:"Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>Cases
+with Late Notification of Identifier Change</h5>
+
+<p class=number style='margin:0in;margin-bottom:.0001pt;text-indent:0in;
+page-break-after:avoid'>&nbsp;</p>
+
+<p class=number style='margin:0in;margin-bottom:.0001pt;text-indent:0in;
+page-break-after:avoid'>These cases assume that an identifier is changed, and a
+transaction is sent identified by the new identifier value without the change
+being communicated. Finally, the identifier change is transmitted.</p>
+
+<p class=number style='margin:0in;margin-bottom:.0001pt;text-indent:0in'>&nbsp;</p>
+
+<p class=number style='margin-top:0in;margin-right:0in;margin-bottom:0in;
+margin-left:.25in;margin-bottom:.0001pt'><span style='font-family:Wingdings'>&sect;</span><span
+style='font-size:7.0pt;font-family:"Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span>Transmission, Update of Data Including Identifier, Updating Transmission
+(No Identifier Change Noted), and Updating Transmission Noting Identifier
+Change</p>
+
+<p class=number style='margin:0in;margin-bottom:.0001pt;text-indent:0in'>&nbsp;</p>
+
+<p class=number style='margin:0in;margin-bottom:.0001pt;text-indent:0in'>Assume
+that data has been transmitted. Now the identifier in the source system is changed.
+As the next transmission is created, the prior identifier is not included. When
+the transmission is received and processed, the receiving system does recognize
+the identifier, thus they create a duplicate. </p>
+
+<p class=number style='margin:0in;margin-bottom:.0001pt;text-indent:0in'>&nbsp;</p>
+
+<p class=number style='margin:0in;margin-bottom:.0001pt;text-indent:0in'>Later,
+the source system creates another transmission, and this time the prior
+identifier is included (and noted as being prior) as well as the current one,
+and other business changes to apply. When the transmission is received and
+processed, the receiving system has matches for both the current identifier and
+the prior identifier. The system may update based on the current identifier
+only, but it must note that there very likely is a duplicate. The receiving
+company must enact whatever measures they have to remedy the duplicate
+situation. As noted, the receiver must decide where to apply the additional
+business changes, or whether to suspend applying changes for this entity until
+the duplication is handled.</p>
+
+<p class=number style='margin:0in;margin-bottom:.0001pt;text-indent:0in'>&nbsp;</p>
+
+<p class=number style='margin-top:0in;margin-right:0in;margin-bottom:0in;
+margin-left:.25in;margin-bottom:.0001pt'><span style='font-family:Wingdings'>&sect;</span><span
+style='font-size:7.0pt;font-family:"Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span>Transmission, Update of Data Including Identifier, Updating
+Transmission, and Identifier Change Transaction</p>
+
+<p class=number style='margin:0in;margin-bottom:.0001pt;text-indent:0in'>&nbsp;</p>
+
+<p class=number style='margin:0in;margin-bottom:.0001pt;text-indent:0in'>Assume
+that data has been transmitted. Now the identifier in the source system is
+changed. As the next transmission is created, no change transaction for the
+prior identifier is created. When the transmission is received and processed,
+the receiving system does recognize the identifier, thus they create a
+duplicate. </p>
+
+<p class=number style='margin:0in;margin-bottom:.0001pt;text-indent:0in'>&nbsp;</p>
+
+<p class=number style='margin:0in;margin-bottom:.0001pt;text-indent:0in'>Later,
+the source system creates the change transaction. When this is received and
+processed, the receiving system has matches for both the current identifier and
+the prior identifier. The system must note that there very likely is a
+duplicate. The receiving company must enact whatever measures they have to
+remedy the duplicate situation.</p>
+
+<p class=number style='margin:0in;margin-bottom:.0001pt;text-indent:0in'>&nbsp;</p>
+
+<p class=number style='margin-top:0in;margin-right:0in;margin-bottom:0in;
+margin-left:.25in;margin-bottom:.0001pt'><span style='font-family:Wingdings'>&sect;</span><span
+style='font-size:7.0pt;font-family:"Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span>Transmission, Update of Data Including Identifier, Updating Transmission,
+and Manual Communication of Identifier Change</p>
+
+<p class=number style='margin:0in;margin-bottom:.0001pt;text-indent:0in'>&nbsp;</p>
+
+<p class=number style='margin:0in;margin-bottom:.0001pt;text-indent:0in'>Assume
+that data has been transmitted. Now the identifier in the source system is
+changed. As the next transmission is created, no change for the identifier has
+been communicated. When the transmission is received and processed, the
+receiving system does recognize the identifier, thus they create a duplicate. </p>
+
+<p class=number style='margin:0in;margin-bottom:.0001pt;text-indent:0in'>&nbsp;</p>
+
+<p class=number style='margin:0in;margin-bottom:.0001pt;text-indent:0in'>Later,
+the owner of the source system realizes the mistake and communicates the
+change. When this is received, the owners of the receiving system see that they
+have a duplicate. They must enact whatever measures they have to remedy the
+duplicate situation.</p>
+
+<h4><a name="_Toc127534160">2.3.2.3</a><span style='font-size:7.0pt;font-family:
+"Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span>Receiving System Cases</h4>
+
+<p class=number style='margin:0in;margin-bottom:.0001pt;text-indent:0in'>The
+following set of cases detail how a variety of scenarios might be handled using
+identifier information by a receiving system. These are not the only ways of
+handling the given situations, nor even necessarily the best, thus they are not
+recommendations. They are included as examples of the types of use that a
+keying mechanism might reasonably be expected to support. These examples are
+more of an algorithm to consider rather than a use case.</p>
+
+<p class=number style='margin:0in;margin-bottom:.0001pt;text-indent:0in'>&nbsp;</p>
+
+<h5><a name="_Toc127534161">2.3.2.3.1</a><span style='font-size:7.0pt;
+font-family:"Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>More
+Than One Identifier Provided</h5>
+
+<p class=number style='margin:0in;margin-bottom:.0001pt;text-indent:0in'>These
+cases outline how a transaction that allows for multiple identifiers to be
+provided supports more robust operation.</p>
+
+<p class=number style='margin:0in;margin-bottom:.0001pt;text-indent:0in'>&nbsp;</p>
+
+<p class=number style='margin-top:0in;margin-right:0in;margin-bottom:0in;
+margin-left:.25in;margin-bottom:.0001pt'><span style='font-family:Wingdings'>&sect;</span><span
+style='font-size:7.0pt;font-family:"Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span>Receiver Attempts Match, Finds No Match, and Utilizes Additional
+Identifier to Find Match</p>
+
+<p class=number style='margin:0in;margin-bottom:.0001pt;text-indent:0in'>&nbsp;</p>
+
+<p class=number style='margin:0in;margin-bottom:.0001pt;text-indent:0in'>Assume
+that the sender is providing more than one identifier per entity and that the receiving
+system has stored all of these identifiers and can check for a match on each.
+The receiving system might follow these steps to prevent duplicates that a
+single key might allow:</p>
+
+<p class=number style='margin:0in;margin-bottom:.0001pt;text-indent:0in'><img
+border=0 width=307 height=336 src="EntityIdentifiers_files/image002.gif"></p>
+
+<p class=number style='margin:0in;margin-bottom:.0001pt;text-indent:0in'>&nbsp;</p>
+
+<p class=number style='margin:0in;margin-bottom:.0001pt;text-indent:0in'>&nbsp;</p>
+
+<p class=number style='margin:0in;margin-bottom:.0001pt;text-indent:0in'>&nbsp;</p>
+
+<span style='font-size:11.0pt;font-family:Arial'><br clear=all
+style='page-break-before:always'>
+</span>
+
+<p class=number style='margin:0in;margin-bottom:.0001pt;text-indent:0in'>&nbsp;</p>
+
+<p class=number style='margin-top:0in;margin-right:0in;margin-bottom:0in;
+margin-left:.25in;margin-bottom:.0001pt'><span style='font-family:Wingdings'>&sect;</span><span
+style='font-size:7.0pt;font-family:"Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span>Receiver Attempts Match, Finds Match, and Utilizes Additional
+Identifiers for Verification</p>
+
+<p class=number style='margin:0in;margin-bottom:.0001pt;text-indent:0in'>&nbsp;</p>
+
+<p class=number style='margin:0in;margin-bottom:.0001pt;text-indent:0in'>Assume
+that the sender is providing more than one identifier per entity and that the
+receiving system has stored all of these identifiers and can check for a match
+on each. The receiving system might follow these steps to confirm the
+identifier that was agreed to for matching:</p>
+
+<p class=number style='margin:0in;margin-bottom:.0001pt;text-indent:0in'><img
+border=0 width=307 height=384 src="EntityIdentifiers_files/image003.gif"></p>
+
+<span style='font-size:11.0pt;font-family:Arial'><br clear=all
+style='page-break-before:always'>
+</span>
+
+<p class=number style='margin:0in;margin-bottom:.0001pt;text-indent:0in'>&nbsp;</p>
+
+<h5><a name="_Toc127534162">2.3.2.3.2</a><span style='font-size:7.0pt;
+font-family:"Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>Business
+Elements Recommended for Verification of Matches</h5>
+
+<p class=number style='margin:0in;margin-bottom:.0001pt;text-indent:0in'>These
+cases outline how a transaction implementation guide can help enable a more
+robust business process by defining likely &#8220;key&#8221; attributes. That
+is, if there is a set of business data that generally will uniquely identify an
+entity (a set of &#8220;key&#8221; attributes), various measures can be
+employed by a receiving system to increase the robustness of the interchange.
+The following two scenarios are considered in one flow chart.</p>
+
+<p class=number style='margin:0in;margin-bottom:.0001pt;text-indent:0in'>&nbsp;</p>
+
+<p class=number style='margin-top:0in;margin-right:0in;margin-bottom:0in;
+margin-left:.25in;margin-bottom:.0001pt'><span style='font-family:Wingdings'>&sect;</span><span
+style='font-size:7.0pt;font-family:"Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span>Receiver Attempts Match, Finds Match, Utilizes Recommended Business
+Elements for Verification, and Matches</p>
+
+<p class=number style='margin-top:0in;margin-right:0in;margin-bottom:0in;
+margin-left:.25in;margin-bottom:.0001pt'><span style='font-family:Wingdings'>&sect;</span><span
+style='font-size:7.0pt;font-family:"Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span>Receiver Attempts Match, Finds Match, Utilizes Recommended Business Elements
+for Verification, and Does Not Match</p>
+
+<p class=number style='margin:0in;margin-bottom:.0001pt;text-indent:0in'>&nbsp;</p>
+
+<p class=number style='margin:0in;margin-bottom:.0001pt;text-indent:0in'>A
+system attempting to handle these situations might follow this logic:</p>
+
+<p class=number style='margin:0in;margin-bottom:.0001pt;text-indent:0in'><img
+border=0 width=307 height=336 src="EntityIdentifiers_files/image004.gif">&nbsp;</p>
+
+<p class=number style='margin:0in;margin-bottom:.0001pt;text-indent:0in'>The
+assumption here is that a person can cheaply validate whether the match is
+correct or not, and avoid a duplication that might be costly to remedy later.</p>
+
+<span style='font-size:11.0pt;font-family:Arial'><br clear=all
+style='page-break-before:always'>
+</span>
+
+<p class=number style='margin:0in;margin-bottom:.0001pt;text-indent:0in'>&nbsp;</p>
+
+<h5><a name="_Toc127534163">2.3.2.3.3</a><span style='font-size:7.0pt;
+font-family:"Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>Prior
+Value Provided in Primary Transaction</h5>
+
+<p class=number style='margin:0in;margin-bottom:.0001pt;text-indent:0in'>These
+cases outline how identifier change is handled on transactions that include the
+prior value in place.</p>
+
+<p class=number style='margin:0in;margin-bottom:.0001pt;text-indent:0in'>&nbsp;</p>
+
+<p class=number style='margin-top:0in;margin-right:0in;margin-bottom:0in;
+margin-left:.25in;margin-bottom:.0001pt'><span style='font-family:Wingdings'>&sect;</span><span
+style='font-size:7.0pt;font-family:"Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span>Receiver Attempts Match, Finds No Match, And Utilizes Prior Value For
+Match</p>
+
+<p class=number style='margin:0in;margin-bottom:.0001pt;text-indent:0in'>&nbsp;</p>
+
+<p class=number style='margin:0in;margin-bottom:.0001pt;text-indent:0in'>Assuming
+a receiving system has a method to attempt a match, it might follow this flow:</p>
+
+<p class=number style='margin:0in;margin-bottom:.0001pt;text-indent:0in'><img
+border=0 width=307 height=336 src="EntityIdentifiers_files/image005.gif"></p>
+
+<span style='font-size:11.0pt;font-family:Arial'><br clear=all
+style='page-break-before:always'>
+</span>
+
+<p class=number style='margin:0in;margin-bottom:.0001pt;text-indent:0in'>&nbsp;</p>
+
+<p class=number style='margin-top:0in;margin-right:0in;margin-bottom:0in;
+margin-left:.25in;margin-bottom:.0001pt'><span style='font-family:Wingdings'>&sect;</span><span
+style='font-size:7.0pt;font-family:"Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span>Receiver Attempts Match, Finds Match, Utilizes Prior Value to Detect
+Duplication</p>
+
+<p class=number style='margin:0in;margin-bottom:.0001pt;text-indent:0in'>&nbsp;</p>
+
+<p class=number style='margin:0in;margin-bottom:.0001pt;text-indent:0in'><a
+name="_Toc493471782"></a><a name="_Toc493472079"></a><a name="_Toc493472482"></a><a
+name="_Toc493472820"></a><a name="_Toc493463983"></a><a name="_Toc493471784"></a><a
+name="_Toc493472081"></a><a name="_Toc493472484"></a><a name="_Toc493472822"></a><a
+name="_Toc493471785"></a><a name="_Toc493472082"></a><a name="_Toc493472485"></a><a
+name="_Toc493472823"></a><a name="_Toc493463987"></a><a name="_Toc493471786"></a><a
+name="_Toc493472083"></a><a name="_Toc493472486"></a><a name="_Toc493472824"></a><a
+name="_Toc493471794"></a><a name="_Toc493472091"></a><a name="_Toc493472494"></a><a
+name="_Toc493472832"></a><a name="_Toc493471795"></a><a name="_Toc493472092"></a><a
+name="_Toc493472495"></a><a name="_Toc493472833"></a><a name="_Toc493471796"></a><a
+name="_Toc493472093"></a><a name="_Toc493472496"></a><a name="_Toc493472834"></a><a
+name="_Toc492868799"></a><a name="_Toc492868906"></a><a name="_Toc493463999"></a><a
+name="_Toc493471798"></a><a name="_Toc493472095"></a><a name="_Toc493472498"></a><a
+name="_Toc493472836"></a><a name="_Toc493471799"></a><a name="_Toc493472096"></a><a
+name="_Toc493472499"></a><a name="_Toc493472837"></a><a name="_Toc493471800"></a><a
+name="_Toc493472097"></a><a name="_Toc493472500"></a><a name="_Toc493472838"></a><a
+name="_Toc493471801"></a><a name="_Toc493472098"></a><a name="_Toc493472501"></a><a
+name="_Toc493472839"></a>Assuming a receiving system has a method to attempt a
+match, it might follow this flow:</p>
+
+<p class=number style='margin:0in;margin-bottom:.0001pt;text-indent:0in'><img
+border=0 width=307 height=384 src="EntityIdentifiers_files/image006.gif"></p>
+
+<p class=number style='margin:0in;margin-bottom:.0001pt;text-indent:0in'>A
+caveat here is that with non-system identifiers (such as a government-issued ID
+number), sometimes the reason for the change is that an error was discovered by
+trying to record the entity that rightfully has the given identifier. For
+example, in a system that uses US social security numbers as identifiers, if
+Joe is entered with SSN 111&#8209;22&#8209;3333 but the last digit should be a
+4, the error might be discovered when Juanita is entered and Juanita&#8217;s
+SSN really is 111&#8209;22&#8209;3333. In such a case, matching on the prior
+incorrect value beyond the first transmission would be undesirable. When such
+an algorithm is used to provide a warning rather than an automated response, it
+can aid in cleaning up duplicates that might otherwise go undetected.</p>
+
+<span style='font-size:11.0pt;font-family:Arial'><br clear=all
+style='page-break-before:always'>
+</span>
+
+<p class=number style='margin:0in;margin-bottom:.0001pt;text-indent:0in'>&nbsp;</p>
+
+<h1><a name="_Toc127534164"><b>3</b></a><b><span style='font-size:7.0pt;
+font-family:"Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span>Schema Design</b></h1>
+
+<h2><a name="_Toc127534165">3.1</a><span style='font-size:7.0pt;font-family:
+"Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>Entity
+Identification (Keying)</h2>
+
+<h3><a name="_Toc127534166">3.1.1</a><span style='font-size:7.0pt;font-family:
+"Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>Schema
+Diagrams</h3>
+
+<p class=MsoNormal><img border=0 width=562 height=101
+src="EntityIdentifiers_files/image007.jpg"></p>
+
+<p class=MsoNormal>&nbsp;</p>
+
+<h3><a name="_Toc483985870"></a><a name="_Toc127534167"></a>3.1.2<span
+style='font-size:7.0pt;font-family:"Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span>Schema Elements Explained</h3>
+
+<p class=MsoNormal>&nbsp;</p>
+
+<table class=MsoNormalTable border=1 cellpadding=0 width="100%"
+ style='width:100.0%'>
+ <tr>
+  <td width="18%" valign=top style='width:18.2%;padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal align=center style='text-align:center'><b><span
+  style='font-size:8.0pt;font-family:Verdana'>Component Name</span></b></p>
+  <p class=MsoNormal align=center style='text-align:center'><span
+  style='font-size:8.0pt;font-family:Verdana'>[Global types listed at the end
+  of the table.] </span></p>
+  </td>
+  <td width="22%" valign=top style='width:22.34%;padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal align=center style='text-align:center'><b><span
+  style='font-size:8.0pt;font-family:Verdana'>ContentModel</span></b><span
+  style='font-size:8.0pt;font-family:Verdana'><br>
+  <span style='color:green'>Data type</span><br>
+  </span><span style='font-size:8.0pt;color:blue'>Occurrence: <br>
+  <u>S</u>equence | <u>C</u>hoice | <u>A</u>ll </span><span style='font-size:
+  8.0pt;font-family:Verdana;color:blue'>(minOccurs/maxOccurs)</span><span
+  style='font-size:8.0pt;font-family:Verdana'><br>
+  <span style='color:red'>Attributes</span> </span></p>
+  </td>
+  <td valign=top style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal align=center style='text-align:center'><b><span
+  style='font-size:8.0pt;font-family:Verdana'>Definition</span></b></p>
+  </td>
+ </tr>
+ <tr>
+  <td width="18%" valign=top style='width:18.2%;padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal><span style='font-size:8.0pt;font-family:Verdana'>/<br>
+  <b>IdValue</b></span></p>
+  </td>
+  <td width="22%" valign=top style='width:22.34%;padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal><span style='font-size:8.0pt;font-family:Verdana;
+  color:green'>xsd:extension</span><b><span style='font-size:8.0pt;font-family:
+  Verdana;color:black'> base: </span></b><span style='font-size:8.0pt;
+  font-family:Verdana;color:green'>xsd:string</span><span style='font-size:
+  8.0pt;font-family:Verdana'> </span></p>
+  </td>
+  <td valign=top style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal><span style='font-size:8.0pt;font-family:Verdana'>A
+  sequence of characters that one or more systems use as an identifier for the
+  given entity. This could be numeric, alpha, and may include punctuation. </span></p>
+  </td>
+ </tr>
+ <tr>
+  <td width="18%" valign=top style='width:18.2%;padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal><span style='font-size:8.0pt;font-family:Verdana'>/
+  IdValue/<br>
+  <span style='color:red'>name</span> </span></p>
+  </td>
+  <td width="22%" valign=top style='width:22.34%;padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal><span style='font-size:8.0pt;font-family:Verdana'>- <span
+  style='color:green'>xsd:string - </span></span></p>
+  </td>
+  <td valign=top style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal><span style='font-size:8.0pt;font-family:Verdana'>A
+  description of the type of identifier or the portion of an identifier that
+  &#8220;IdValue&#8221; represents. If used, values should be determined by
+  trading partner agreement. See Appendix B in the specification documentation
+  for examples of use. </span></p>
+  </td>
+ </tr>
+ <tr>
+  <td width="18%" valign=top style='width:18.2%;padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal><span style='font-size:8.0pt;font-family:Verdana'>/<br>
+  [EntityIdType] </span></p>
+  </td>
+  <td width="22%" valign=top style='width:22.34%;padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal><span style='font-size:8.0pt;font-family:Verdana'>IdValue
+  - <span style='color:green'>xsd:string - </span><span style='color:blue'>S
+  (1/*) </span><br>
+  <span style='color:red'>validFrom</span> <span style='color:green'>AnyDateTimeNkNaType</span>
+  <span style='color:blue'>- optional</span><br>
+  <span style='color:red'>validTo</span> <span style='color:green'>AnyDateTimeNkNaType</span>
+  <span style='color:blue'>- optional</span><br>
+  <span style='color:red'>idOwner</span> <span style='color:green'>xsd:string</span>
+  <span style='color:blue'>- optional</span></span></p>
+  </td>
+  <td valign=top style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal><span style='font-size:8.0pt;font-family:Verdana'>Data
+  Type used to represent any Entity Identifier. </span></p>
+  </td>
+ </tr>
+ <tr>
+  <td width="18%" valign=top style='width:18.2%;padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal><span style='font-size:8.0pt;font-family:Verdana'>/
+  EntityIdType/<br>
+  <span style='color:red'>validFrom</span> </span></p>
+  </td>
+  <td width="22%" valign=top style='width:22.34%;padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal><span style='font-size:8.0pt;font-family:Verdana'>- <span
+  style='color:green'>AnyDateTimeNkNaType - </span></span></p>
+  </td>
+  <td valign=top style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal><span style='font-size:8.0pt;font-family:Verdana'>A method
+  for &#8220;effective dating&#8221; identifiers. Use should be determined by
+  trading partner agreement. See Appendix B in the specification documentation
+  for examples of use. </span></p>
+  </td>
+ </tr>
+ <tr>
+  <td width="18%" valign=top style='width:18.2%;padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal><span style='font-size:8.0pt;font-family:Verdana'>/
+  EntityIdType/<br>
+  <span style='color:red'>validTo</span> </span></p>
+  </td>
+  <td width="22%" valign=top style='width:22.34%;padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal><span style='font-size:8.0pt;font-family:Verdana'>- <span
+  style='color:green'>AnyDateTimeNkNaType - </span></span></p>
+  </td>
+  <td valign=top style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal><span style='font-size:8.0pt;font-family:Verdana'>A method
+  for &#8220;effective dating&#8221; identifiers. Use should be determined by
+  trading partner agreement. See Appendix B in the specification documentation
+  for examples of use. </span></p>
+  </td>
+ </tr>
+ <tr>
+  <td width="18%" valign=top style='width:18.2%;padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal><span style='font-size:8.0pt;font-family:Verdana'>/
+  EntityIdType/<br>
+  <span style='color:red'>idOwner</span> </span></p>
+  </td>
+  <td width="22%" valign=top style='width:22.34%;padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal><span style='font-size:8.0pt;font-family:Verdana'>- <span
+  style='color:green'>xsd:string - </span></span></p>
+  </td>
+  <td valign=top style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal><span style='font-size:8.0pt;font-family:Verdana'>A
+  description of who &#8220;owns&#8221; the identifier. This usually will be the
+  company and/or system name that utilizes the given value(s) for uniqueness.
+  Use should be by trading partner agreement. See Implementation Considerations
+  on the use of multiple identifiers for further discussion. See Appendix B in
+  the specification documentation for examples of use. </span></p>
+  </td>
+ </tr>
+</table>
+
+<p class=MsoNormal><span style='font-size:12.0pt;font-family:"Times New Roman"'>&nbsp;</span></p>
+
+<span style='font-size:12.0pt;font-family:"Times New Roman"'><br clear=all
+style='page-break-before:always'>
+</span>
+
+<p class=MsoNormal><span style='font-size:12.0pt;font-family:"Times New Roman"'>&nbsp;</span></p>
+
+<h1><a name="_Toc127534168"><b>4</b></a><b><span style='font-size:7.0pt;
+font-family:"Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span>Implementation Considerations</b></h1>
+
+<p class=number style='margin:0in;margin-bottom:.0001pt;text-indent:0in'><a
+name="_Toc459726669"></a><a name="_Toc492656050"></a><a name="_Toc492655888"></a><a
+name="_Toc487469954"></a><a name="_Toc480517156"></a>&nbsp;</p>
+
+<p class=number style='margin:0in;margin-bottom:.0001pt;text-indent:0in'>Topics:</p>
+
+<p class=number style='margin-top:0in;margin-right:0in;margin-bottom:0in;
+margin-left:.25in;margin-bottom:.0001pt'><span style='font-family:Wingdings'>&sect;</span><span
+style='font-size:7.0pt;font-family:"Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span>Choosing to use EntityIdType versus local definition</p>
+
+<p class=number style='margin-top:0in;margin-right:0in;margin-bottom:0in;
+margin-left:.25in;margin-bottom:.0001pt'><span style='font-family:Wingdings'>&sect;</span><span
+style='font-size:7.0pt;font-family:"Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span>Naming Entity Identification Elements</p>
+
+<p class=number style='margin-top:0in;margin-right:0in;margin-bottom:0in;
+margin-left:.25in;margin-bottom:.0001pt'><span style='font-family:Wingdings'>&sect;</span><span
+style='font-size:7.0pt;font-family:"Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span>Multipart identifiers</p>
+
+<p class=number style='margin-top:0in;margin-right:0in;margin-bottom:0in;
+margin-left:.25in;margin-bottom:.0001pt'><span style='font-family:Wingdings'>&sect;</span><span
+style='font-size:7.0pt;font-family:"Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span>Allowing single versus multiple occurrences of identifiers</p>
+
+<p class=number style='margin-top:0in;margin-right:0in;margin-bottom:0in;
+margin-left:.25in;margin-bottom:.0001pt'><span style='font-family:Wingdings'>&sect;</span><span
+style='font-size:7.0pt;font-family:"Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span>Facilitating identifier change</p>
+
+<h2><a name="_Toc127534169">4.1</a><span style='font-size:7.0pt;font-family:
+"Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>Choosing
+to Use EntityIdType Versus Local Definition</h2>
+
+<p class=MsoNormal>Entity Identifiers are a more nebulous concept than other
+Cross Process Objects such as Postal Address or PersonName. As such, work
+groups may not be clear when it is appropriate to utilize the defined type and
+the surrounding frameworks in this recommendation. This section attempts to
+provide clear explanations.</p>
+
+<p class=MsoNormal>An entity is a discrete object of some kind. Thus it is
+largely a reference to a particular noun, - &#8220;a person&#8221;, &#8220;an
+employee&#8221;, &#8220;a purchase order&#8221;, &#8220;a staffing
+request&#8221;, &#8220;an invoice&#8221;, etc. EntityIdType provides a means of
+uniquely identifying a particular employee, staffing request, or the like.</p>
+
+<p class=MsoNormal>EntityIdType is intended only to contain unique identifiers
+of the entities being passed in the transaction. If a data element is intended
+to allow a system to match an entity to data previously sent, or to reply with
+data about the entity and have it be matched, use the EntityIdType.&nbsp; For
+example, if company A sends a request to fill a position to staffing company B,
+and company B later sends candidates for the position, the second exchange
+needs to identify the position sent in the first transaction.&nbsp;
+EntityIdType would be a good data type to use for the position identifier
+element in both transactions. </p>
+
+<p class=MsoNormal>However, if a data element is intended for use by the
+business context for purposes other than unique entity identification do not
+use EntityIdType, instead create an appropriate structure for that data. </p>
+
+<p class=MsoNormal>Consider an example &#8211; a trucking company might need to
+have the driver&#8217;s license information for an employee on file. The
+license number may need to be transmitted for government compliance reporting
+purposes. The reason for including driver&#8217;s license data is that you
+clearly show that all drivers are licensed. This purpose is not a general
+method of identifying entities passed in a transaction. Further, there are a
+number of additional attributes specific to a driver&#8217;s license number,
+such as a grade (commercial, etc.) that could be important for business
+purposes but not for unique entity identification. The owner attribute and
+multi-part nature of the EntityIdType could conceivably be used to house the
+data. But the driver&#8217;s license is relevant to the business, so the schema
+would be much clearer and resulting documents would be more likely to contain
+all needed data if a new &#8220;DriversLicense&#8221; type were defined.</p>
+
+<p class=MsoNormal>So to summarize, it is recommended that the EntityIdType be
+used for all elements or attributes whose only intent is to provide the ability
+to do transaction-to-transaction keying of transmitted entities to a sending or
+receiving system. It is further recommended that other specific, detailed, and
+descriptive types be used for elements and attributes whose purpose is to
+supply other business-relevant data.</p>
+
+<h2><a name="_Toc127534170">4.2</a><span style='font-size:7.0pt;font-family:
+"Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>Naming
+Entity Identification Elements</h2>
+
+<p class=MsoNormal>This recommendation provides a schema data type, but no
+global element. It is expected that each schema that utilizes the EntityIdType
+will create a specifically named element to match the type of entity being
+identified. Thus a JobPosting schema would contain an element named
+JobPostingId. It is felt that this leads to designs that are much more easily
+understood by users of the published schemas.</p>
+
+<p class=MsoNormal>In addition to identifying an entity in a transaction, an
+identifier might be used to refer to a previously defined entity. For example,
+a response transaction that summarizes processing may need to identify that
+there was a business error in the data for a particular submitted entity. This
+reference should use the same element name as was used to identify the entity.
+Thus if the previously mentioned JobPosting schema had a response schema, and
+the response contains information about each individual JobPosting, the
+response should include a JobPostingId element.</p>
+
+<h2><a name="_Toc127534171">4.3</a><span style='font-size:7.0pt;font-family:
+"Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>Multi-part
+Identifiers</h2>
+
+<p class=MsoNormal>Sometimes a trading partner uses a combination of values in
+order to uniquely identify an entity. For example, an organization might use an
+employee ID along with a subsidiary company ID in order to uniquely identify an
+individual. It is possible to treat these two values as strings and concatenate
+them in order to create a unique value, but parsing out the individual segments
+from the concatenated string can be complex and error prone. EntityIdType
+allows for more than one IdValue element in order to facilitate multipart
+identifiers such as this.</p>
+
+<p class=MsoNormal>This also allows personal &#8220;traits&#8221; to be used as
+an identifier. For example, a person sometimes will be identified in a system
+by their first, middle, and last names, plus sex date of birth. An identifier
+could be created with five parts, one for each of these &#8220;traits&#8221;.
+If the data for these &#8220;traits&#8221; is included elsewhere in the
+transaction, it may not be obvious why you would repeat them in the identifier.
+There are multiple reasons to do this.</p>
+
+<p class=MsoNormal>First, identifiers should have a documented method for
+communicating changes, which business data typically does not have. Thus by
+placing data in an identifier, it becomes easier to prevent duplication than if
+matching were simply done on a series of business elements. Also, by always
+using the identifier element to perform identification, it maintains
+responsibility for determining uniqueness with the sender of data.</p>
+
+<p class=MsoNormal>In both of the cases looked at, it is desirable to fill in
+the &#8220;name&#8221; attribute on the IdValue elements to reflect what the
+particular portion of the identifier represents. In the first example, it would
+differentiate between the employee ID and the company ID. For the second
+example, it would identify which of the five traits was being provided. Example
+XML documents for these cases are included in Appendix B.</p>
+
+<h2><a name="_Toc127534172">4.4</a><span style='font-size:7.0pt;font-family:
+"Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>Allowing
+Single versus Multiple Occurrences of Identifiers</h2>
+
+<p class=xml><span style='font-family:Arial'>When implementing an element with
+EntityIdType, a significant consideration is whether to allow multiple
+occurrences of that element. The reason for doing so would be to allow for a
+collection of identifiers to be included when a business transaction involves
+more than two trading partners.</span></p>
+
+<p class=xml><span style='font-family:Arial'>In reality, nearly any transaction
+could involve an intermediary. An intermediary may have reason to have its own
+system identifiers, and may pass both the originator&#8217;s identifier as well
+as its own.</span></p>
+
+<p class=xml><span style='font-family:Arial'>Even for a pair of trading
+partners, they may have independent identifiers and may opt to pass the
+identifiers for both systems back and forth. This might occur when the
+communication is between two systems of the same organization, such as
+synchronization feeds between multiple HRIS systems for an employer.</span></p>
+
+<p class=xml><span style='font-family:Arial'>The majority of users of HR-XML
+standards will employ a single identifier. But in order to facilitate use by
+all parties, schemas will usually need to allow for multiple identifiers. Only
+in cases where a work group can demonstrate that multiple identifiers would
+never make sense should it restrict identifiers to a single occurrence. </span></p>
+
+<p class=xml><span style='font-family:Arial'>When using multiple identifiers,
+the receiver must be able to determine which identifiers on the current transmission
+to match to those of prior transmissions. This is the purpose of the optional
+&#8220;idOwner&#8221; attribute. </span></p>
+
+<p class=xml><span style='font-family:Arial'>An example would be a company with
+HRIS installations in Europe and Africa. It could fill &#8220;idOwner&#8221; in
+with values of &#8220;EuropeHRIS&#8221; and &#8220;AfricaHRIS&#8221;. Thus on a
+given transaction an identifier tagged with &#8220;EuropeHRIS&#8221; should be
+matched with identifiers that were also tagged with &#8220;EuropeHRIS&#8221;.
+Likewise for &#8220;AfricaHRIS&#8221; you would match to previously sent identifiers
+with that designation.</span></p>
+
+<p class=xml><span style='font-family:Arial'>Because of the desire for the use
+of multiple occurrences to be governed by trading partner agreement, and
+because of the complexity involved, it is recommended that work groups discuss
+the topic in their Implementation Considerations. Possible text for that section
+is included here. It should be tailored to best meet the situation and needs of
+the particular business transaction being supported.</span></p>
+
+<p class=h4 style='margin-left:.5in'>Sample Boilerplate Text for Work Group
+Use:</p>
+
+<p class=MsoNormal style='margin-top:0in;margin-right:0in;margin-bottom:6.0pt;
+margin-left:.5in'><i><u>Multiple Occurrences of Identifiers</u></i></p>
+
+<p class=MsoNormal style='margin-top:0in;margin-right:0in;margin-bottom:6.0pt;
+margin-left:.5in'><i>Certain elements (&lt;list names&gt;) are used to provide
+a means for matching data from one transmission to another. &lt;This/These&gt;
+element&lt;s&gt; allow&lt;s&gt; for multiple occurrences. </i></p>
+
+<p class=MsoNormal style='margin-top:0in;margin-right:0in;margin-bottom:6.0pt;
+margin-left:.5in'><i>If multiple identifiers are to be used, a trading partner
+agreement should stipulate this. The agreement should state what the various
+identifiers are and how they are to be used. Further, the agreement should
+identify what value should be placed in the &#8220;idOwner&#8221; attribute for
+each identifier.</i></p>
+
+<p class=MsoNormal style='margin-left:.5in'><i>In the absence of a trading
+partner agreement as just described, it should be assumed that each of these
+identifier elements (&lt;list names&gt;) is considered single instance.</i></p>
+
+<h2><a name="_Toc127534173">4.5</a><span style='font-size:7.0pt;font-family:
+"Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>Facilitating
+Identifier Change</h2>
+
+<p class=MsoNormal>In an ideal world, any identifier used to match entities
+would be permanent and unchanging. Of course this is not always the case. System
+conversions lead to changes in system-generated ID values; identifiers get
+mistyped and must be corrected. Since a system of passing entity identifiers
+exists solely to ensure information is correctly associated and that duplicates
+do not occur, such a system must provide for such change scenarios.</p>
+
+<p class=MsoNormal>This recommendation document strongly suggests that if a
+work group uses the EntityIdType for persistent data the group must provide a
+defined mechanism in their Implementation Considerations section of their
+recommendation for managing identifier change. The preferred method is to
+provide a separate identifier change transaction (as described below), but any
+of the following methodologies are acceptable provided they are documented:</p>
+
+<p class=MsoNormal style='margin-left:.25in;text-indent:-.25in'><span
+style='font-family:Wingdings'>&sect;</span><span style='font-size:7.0pt;
+font-family:"Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span>Identifier change transactions (preferred)</p>
+
+<p class=MsoNormal style='margin-left:.25in;text-indent:-.25in'><span
+style='font-family:Wingdings'>&sect;</span><span style='font-size:7.0pt;
+font-family:"Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span>Previous value element as a peer to the identifier</p>
+
+<p class=MsoNormal style='margin-left:.25in;text-indent:-.25in'><span
+style='font-family:Wingdings'>&sect;</span><span style='font-size:7.0pt;
+font-family:"Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span>Manual (non-systematic) notification</p>
+
+<p class=MsoNormal>Each of these methods is detailed below.</p>
+
+<h3><a name="_Toc127534174">4.5.1</a><span style='font-size:7.0pt;font-family:
+"Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>Identifier
+Change Transactions</h3>
+
+<p class=xml><span style='font-family:Arial'>An identifier change transaction
+contains an XML document that communicates a change for a specific use of an
+EntityIdType. It is recommended that the schema for this transaction include a
+place for both the previous and new (replacement) values.</span></p>
+
+<p class=xml><span style='font-family:Arial'>Thus to change the identifier for
+a person in the Benefits Enrollment transaction (which uses the element name
+&#8220;IdentificationCode&#8221;) the following schema might be used:</span></p>
+
+<p class=xml><b><span style='font-family:Arial'><img border=0 width=581
+height=140 src="EntityIdentifiers_files/image008.jpg"></span></b></p>
+
+<p class=xml><span style='font-family:Arial'>This additional transaction type
+would be documented in the Benefits Enrollment recommendation document.
+Implementation of sending and receiving this additional transaction type would
+be considered part of implementing the Benefit Enrollment standard.</span></p>
+
+<p class=xml><span style='font-family:Arial'>Since not all systems can
+necessarily handle identifier changes automatically, it is recommended that in
+the Implementation Considerations section of the recommendation, that
+&#8220;manual notification&#8221; for identifier changes be stipulated as a
+less desirable alternative available by trading partner agreement.</span></p>
+
+<p class=MsoNormal style='margin-left:.5in;page-break-after:avoid'><b>Sample
+Boilerplate Text for Work Group Use:</b></p>
+
+<p class=MsoNormal style='margin-left:.5in'><i>Handling Identifier Changes</i></p>
+
+<p class=MsoNormal style='margin-left:.5in'><i>Certain elements (&lt;list
+names&gt;) are used to provide a means for matching data from one transmission
+to another. Because the data contained in &lt;this/these&gt; element&lt;s&gt;
+may change over time, a method for systematically communicating these changes
+is provided.</i></p>
+
+<p class=MsoNormal style='margin-left:.5in'><i>If multiple identifiers are
+provided for keying, the &#8220;idOwner&#8221; attribute must be used to match the
+correction information to the previous information. See the Implementation
+Considerations for multiple identifiers for more information on
+&#8220;idOwner&#8221;.</i></p>
+
+<p class=MsoNormal style='margin-left:.5in'><i>It is assumed that the receiver
+of data will handle any business implications from resolving the change to the
+identifier. This might include resolving the situation where duplication of the
+given data has already occurred. If the sender cannot assume this will be
+handled, it should be stipulated in a trading partner agreement.</i></p>
+
+<p class=MsoNormal style='margin-left:.5in'><i>Likewise, if either a sender or
+a receiver in a trading partner arrangement cannot send identifier changes
+systematically as described, a trading partner agreement should state that
+identifier changes will be communicated via correspondence. Such an agreement
+might list any detailed requirements or procedures.</i></p>
+
+<p class=xml><span style='font-family:Arial'>If there are multiple entity
+identifiers in the transactions of a particular recommendation, the identifier
+change transaction can be structured to allow all of the identifiers to be
+modified using a single schema, or a separate schema can be defined for each.
+What is significant is that the identifier change can be automatically handled.</span></p>
+
+<p class=xml><span style='font-family:Arial'>There should be a discussion in
+the Implementation Considerations section of the recommendation for both this
+option and the &#8220;Previous Value Element&#8221; option. Boilerplate text
+that might be used for this purpose is shown above.</span></p>
+
+<h3><a name="_Toc127534175">4.5.2</a><span style='font-size:7.0pt;font-family:
+"Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>Previous
+Value Element</h3>
+
+<p class=xml><span style='font-family:Arial'>The second method for automatic
+handling of identifier change is to put an additional element in the primary
+transaction. This element would sit next to the actual identifier and would
+have a name indicating that it was storing a previously sent value. Like the
+identifier, the prior identifier element would be of type EntityIdType. In most
+cases identifier elements are required, however the prior identifier element
+should <i>always</i> be optional. Finally, prior identifier elements should
+always allow multiple occurrences, even if the identifier element allows only a
+single occurrence&#8212;this allows multiple previous incorrect values to be
+communicated.</span></p>
+
+<p class=xml><span style='font-family:Arial'>The explanation for the prior
+identifier element should read like:</span></p>
+
+<p class=xml style='margin-left:.5in'><span style='font-family:Arial'>&#8220;Contains
+previously communicated identification data. The current identification data is
+transmitted in &lt;element name&gt;. The previous data is for use in handling
+identifier changes. See the Implementation Considerations section for more
+details.&#8221;</span></p>
+
+<p class=xml><span style='font-family:Arial'>Additionally, commentary must be
+put in the Implementation Considerations section. An example of what that text
+might be is included in the discussion of the &#8220;Identifier Change
+Transactions&#8221;, above.</span></p>
+
+<p class=xml><span style='font-family:Arial'>For an element named Person that
+has an identifier called PersonId, implementing this method for handling
+changes might result in this schema:</span></p>
+
+<p class=xml><span style='font-family:Arial'><img border=0 width=249
+height=157 src="EntityIdentifiers_files/image009.jpg"></span></p>
+
+<h3><a name="_Toc127534176">4.5.3</a><span style='font-size:7.0pt;font-family:
+"Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>Manual
+Notification</h3>
+
+<p class=number style='margin:0in;margin-bottom:.0001pt;text-indent:0in'>As
+discussed above, identifier changes can be communicated in a non-automated way.
+This should normally be considered a fallback position to be left to trading
+partners who cannot automate the process. For a business transaction where it
+is deemed highly unlikely that identifier changes will occur, it may be
+suggested that those cases be handled via separate communication between
+trading partners. As in the above examples, it is recommended that the topic of
+identifier change be discussed in the Implementation Considerations section. </p>
+
+<span style='font-size:11.0pt;font-family:Arial'><br clear=all
+style='page-break-before:always'>
+</span>
+
+<p class=number style='margin:0in;margin-bottom:.0001pt;text-indent:0in'>&nbsp;</p>
+
+<h1><a name="_Toc127534177"><b>5</b></a><b><span style='font-size:7.0pt;
+font-family:"Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span>Appendix A - Document Version History</b></h1>
+
+<table class=MsoNormalTable border=0 cellspacing=0 cellpadding=0
+ style='margin-left:-.05in;border-collapse:collapse'>
+ <tr>
+  <td width=120 valign=top style='width:1.25in;background:#E5E5E5;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=tabletext align=center style='text-align:center'><b>Date</b></p>
+  </td>
+  <td width=414 valign=top style='width:310.5pt;background:#E5E5E5;padding:
+  0in 5.4pt 0in 5.4pt'>
+  <p class=tabletext><b>Description</b></p>
+  </td>
+ </tr>
+ <tr>
+  <td width=120 valign=top style='width:1.25in;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=tabletext align=center style='text-align:center'>2002-03-11</p>
+  </td>
+  <td width=414 valign=top style='width:310.5pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=tabletext>Candidate submission to TSC</p>
+  </td>
+ </tr>
+ <tr>
+  <td width=120 valign=top style='width:1.25in;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=tabletext align=center style='text-align:center'>2002-April-1</p>
+  </td>
+  <td width=414 valign=top style='width:310.5pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=tabletext>Present for Membership review</p>
+  </td>
+ </tr>
+ <tr>
+  <td width=120 valign=top style='width:1.25in;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=tabletext align=center style='text-align:center'>2002-April-10</p>
+  </td>
+  <td width=414 valign=top style='width:310.5pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=tabletext>Approved Spec.</p>
+  </td>
+ </tr>
+ <tr>
+  <td width=120 valign=top style='width:1.25in;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=tabletext align=center style='text-align:center'>2003-Feb-26</p>
+  </td>
+  <td width=414 valign=top style='width:310.5pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=tabletext>Approved recommendation by HR-XML Consortium. <span
+  style='background:white'>The default and targetNamespaces of all HR-XML
+  schemas have been standardized to &quot;http://ns.hr-xml.org&quot;.</span>
+  This recommendation is available as part of the HR-XML 2_0 architecture.</p>
+  </td>
+ </tr>
+ <tr>
+  <td width=120 valign=top style='width:1.25in;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=tabletext align=center style='text-align:center'>2006-Feb-28</p>
+  </td>
+  <td width=414 valign=top style='width:310.5pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=tabletext>Approved by Consortium</p>
+  </td>
+ </tr>
+ <tr>
+  <td width=120 valign=top style='width:1.25in;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=tabletext align=center style='text-align:center'>2007-Apr-15</p>
+  </td>
+  <td width=414 valign=top style='width:310.5pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=tabletext>Approved by Consortium</p>
+  </td>
+ </tr>
+</table>
+
+<h1><a name="_Toc524242455"></a><a name="_Toc127534178"></a><a
+name="_Toc5407313"></a><a name="_Toc528591799"></a><a name="_Toc528380106"></a><b>6</b><b><span
+style='font-size:7.0pt;font-family:"Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span>Appendix B &#8211; Related Documents</b></h1>
+
+<table class=MsoNormalTable border=0 cellspacing=0 cellpadding=0 width=606
+ style='width:454.5pt;margin-left:-.05in;border-collapse:collapse'>
+ <tr style='height:13.95pt'>
+  <td width=192 valign=top style='width:2.0in;border:solid windowtext 1.0pt;
+  background:#E5E5E5;padding:0in 5.4pt 0in 5.4pt;height:13.95pt'>
+  <p class=tabletext>Reference</p>
+  </td>
+  <td width=414 valign=top style='width:310.5pt;border:solid windowtext 1.0pt;
+  border-left:none;background:#E5E5E5;padding:0in 5.4pt 0in 5.4pt;height:13.95pt'>
+  <p class=tabletext>Link</p>
+  </td>
+ </tr>
+ <tr style='height:14.85pt'>
+  <td width=192 valign=top style='width:2.0in;padding:0in 5.4pt 0in 5.4pt;
+  height:14.85pt'>
+  <p class=tabletext>EntityId 1.0 schema</p>
+  </td>
+  <td width=414 valign=top style='width:310.5pt;padding:0in 5.4pt 0in 5.4pt;
+  height:14.85pt'>
+  <p class=tabletext><a
+  href="http://ns.hr-xml.org/2_5/HR-XML-2_5/CPO/EntityIdType.xsd">http://ns.hr-xml.org/2_5/HR-XML-2_5/CPO/EntityIdType.xsd</a></p>
+  <p class=tabletext>&nbsp;</p>
+  </td>
+ </tr>
+</table>
+
+<p class=MsoNormal>&nbsp;</p>
+
+<h1><a name="_Toc127534179"><b><span lang=FR>7</span></b></a><b><span lang=FR
+style='font-size:7.0pt;font-family:"Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></b><b><span lang=FR>Appendix C &#8211; Reference Examples</span></b></h1>
+
+<p class=MsoNormal><span lang=FR>Examples:</span></p>
+
+<p class=MsoNormal style='margin-left:.25in;text-indent:-.25in'><span
+style='font-family:Wingdings'>&sect;</span><span lang=FR style='font-size:7.0pt;
+font-family:"Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span><span lang=FR>Simple person identifiers</span></p>
+
+<p class=MsoNormal style='margin-left:.25in;text-indent:-.25in'><span
+style='font-family:Wingdings'>&sect;</span><span lang=FR style='font-size:7.0pt;
+font-family:"Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span><span lang=FR>Multiple identifiers</span></p>
+
+<p class=MsoNormal style='margin-left:.25in;text-indent:-.25in'><span
+style='font-family:Wingdings'>&sect;</span><span lang=FR style='font-size:7.0pt;
+font-family:"Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span><span lang=FR>Multi-part identifiers</span></p>
+
+<p class=MsoNormal style='margin-left:.25in;text-indent:-.25in'><span
+style='font-family:Wingdings'>&sect;</span><span style='font-size:7.0pt;
+font-family:"Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span>Effective dated identifiers</p>
+
+<p class=MsoNormal>Each example contemplates an identifier being used in the
+context of an element named &#8220;Person&#8221;.&nbsp; &#8220;Person&#8221;
+contains the element these examples are illustrating, &#8220;PersonId&#8221;,
+that is of type EntityIdType. Presumably, it also contains elements like
+&#8220;Name&#8221; and &#8220;Address&#8221;, so that the schema might look
+like:</p>
+
+<p class=MsoNormal><img border=0 width=229 height=116
+src="EntityIdentifiers_files/image010.jpg"></p>
+
+<p class=MsoNormal>Since the concern is only with how the EntityIdType is
+utilized, the examples show only the &#8220;Person&#8221; and
+&#8220;PersonId&#8221; elements.</p>
+
+<h2><a name="_Toc127534180">7.1</a><span style='font-size:7.0pt;font-family:
+"Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>Simple
+Person Identifiers</h2>
+
+<p class=MsoNormal>The most straightforward example is where a person is
+identified with a single, one-part identifier. In such a case it does not
+matter who owns the identifier, or what the identifier represents.</p>
+
+<p class=MsoNormal>If Cogs, Inc. sends Mohammed Abdul to their payroll
+administrator, PayCo, and Mohammed&#8217;s employee ID in Cogs&#8217; HRIS is
+113355, the transaction might look like:</p>
+
+<p class=MsoNormal style='margin:0in;margin-bottom:.0001pt;text-autospace:none'><span
+style='font-size:10.0pt;font-family:"Courier New"'>&lt;Person&gt;</span></p>
+
+<p class=MsoNormal style='margin:0in;margin-bottom:.0001pt;text-autospace:none'><span
+style='font-size:10.0pt;font-family:"Courier New"'>&nbsp; &lt;PersonId&gt;</span></p>
+
+<p class=MsoNormal style='margin:0in;margin-bottom:.0001pt;text-autospace:none'><span
+style='font-size:10.0pt;font-family:"Courier New"'>&nbsp;
+&nbsp;&nbsp;&lt;IdValue&gt;113355&lt;/IdValue&gt;</span></p>
+
+<p class=MsoNormal style='margin:0in;margin-bottom:.0001pt;text-autospace:none'><span
+style='font-size:10.0pt;font-family:"Courier New"'>&nbsp; &lt;/PersonId&gt;</span></p>
+
+<p class=MsoNormal style='margin:0in;margin-bottom:.0001pt;text-autospace:none'><span
+style='font-size:10.0pt;font-family:"Courier New"'>&lt;/Person&gt;</span></p>
+
+<p class=MsoNormal style='page-break-after:avoid'>A more verbose option is:</p>
+
+<p class=MsoNormal style='margin:0in;margin-bottom:.0001pt;page-break-after:
+avoid;text-autospace:none'><span style='font-size:10.0pt;font-family:"Courier New"'>&lt;Person&gt;</span></p>
+
+<p class=MsoNormal style='margin:0in;margin-bottom:.0001pt;page-break-after:
+avoid;text-autospace:none'><span style='font-size:10.0pt;font-family:"Courier New"'>&nbsp;
+&lt;PersonId&nbsp; idOwner=&quot;Cogs, Inc.&quot;&gt;</span></p>
+
+<p class=MsoNormal style='margin:0in;margin-bottom:.0001pt;page-break-after:
+avoid;text-autospace:none'><span style='font-size:10.0pt;font-family:"Courier New"'>&nbsp;&nbsp;&nbsp;
+&lt;IdValue&nbsp; name=&quot;Employee ID&quot;&gt;113355&lt;/IdValue&gt;</span></p>
+
+<p class=MsoNormal style='margin:0in;margin-bottom:.0001pt;page-break-after:
+avoid;text-autospace:none'><span style='font-size:10.0pt;font-family:"Courier New"'>&nbsp;
+&lt;/PersonId&gt;</span></p>
+
+<p class=MsoNormal style='margin:0in;margin-bottom:.0001pt;page-break-after:
+avoid;text-autospace:none'><span style='font-size:10.0pt;font-family:"Courier New"'>&lt;/Person&gt;</span></p>
+
+<h2><a name="_Toc127534181">7.2</a><span style='font-size:7.0pt;font-family:
+"Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>Multiple
+Identifiers</h2>
+
+<p class=MsoNormal>Extending the above example, say that PayCo has started
+receiving data through an intermediary named GlueCom. GlueCom has their own
+system identifiers, and Mohammed&#8217;s is MA237. Presumably Cogs will send
+the same data as before, just to GlueCom rather than PayCo. If PayCo has
+arranged with GlueCom to provide both identifiers, the transaction would look
+like:</p>
+
+<p class=MsoNormal style='margin:0in;margin-bottom:.0001pt;text-autospace:none'><span
+style='font-size:10.0pt;font-family:"Courier New"'>&lt;Person&gt;</span></p>
+
+<p class=MsoNormal style='margin:0in;margin-bottom:.0001pt;text-autospace:none'><span
+style='font-size:10.0pt;font-family:"Courier New"'>&nbsp; &lt;PersonId&nbsp;
+idOwner=&quot;Cogs, Inc.&quot;&gt;</span></p>
+
+<p class=MsoNormal style='margin:0in;margin-bottom:.0001pt;text-autospace:none'><span
+style='font-size:10.0pt;font-family:"Courier New"'>&nbsp;&nbsp;&nbsp;
+&lt;IdValue&gt;113355&lt;/IdValue&gt;</span></p>
+
+<p class=MsoNormal style='margin:0in;margin-bottom:.0001pt;text-autospace:none'><span
+style='font-size:10.0pt;font-family:"Courier New"'>&nbsp; &lt;/PersonId&gt;</span></p>
+
+<p class=MsoNormal style='margin:0in;margin-bottom:.0001pt;text-autospace:none'><span
+style='font-size:10.0pt;font-family:"Courier New"'>&nbsp; &lt;PersonId&nbsp;
+idOwner=&quot;GlueCom&quot;&gt;</span></p>
+
+<p class=MsoNormal style='margin:0in;margin-bottom:.0001pt;text-autospace:none'><span
+style='font-size:10.0pt;font-family:"Courier New"'>&nbsp;&nbsp;&nbsp; </span><span
+lang=FR style='font-size:10.0pt;font-family:"Courier New"'>&lt;IdValue&gt;MA237&lt;/IdValue&gt;</span></p>
+
+<p class=MsoNormal style='margin:0in;margin-bottom:.0001pt;text-autospace:none'><span
+lang=FR style='font-size:10.0pt;font-family:"Courier New"'>&nbsp; &lt;/PersonId&gt;</span></p>
+
+<p class=MsoNormal style='margin:0in;margin-bottom:.0001pt;text-autospace:none'><span
+lang=FR style='font-size:10.0pt;font-family:"Courier New"'>&lt;/Person&gt;</span></p>
+
+<h2><a name="_Toc127534182"><span lang=FR>7.3</span></a><span lang=FR
+style='font-size:7.0pt;font-family:"Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span><span lang=FR>Multi-part Identifiers</span></h2>
+
+<p class=MsoNormal>Cogs buys another company, GearTech, and makes them a
+largely independent division. GearTech keeps their own HRIS system, but is switching
+to utilizing PayCo, and Cogs will send a feed with data from both HRIS systems.
+There is a problem: the employee IDs between the two systems overlap, so you
+cannot identify just by employee ID. Their solution is to add a division
+indicator and works this out with GlueCom (that data receiver for PayCo).</p>
+
+<p class=MsoNormal>Now Mohammed&#8217;s entry in a transaction might look like:</p>
+
+<p class=MsoNormal style='margin:0in;margin-bottom:.0001pt;text-autospace:none'><span
+style='font-size:10.0pt;font-family:"Courier New"'>&lt;Person&gt;</span></p>
+
+<p class=MsoNormal style='margin:0in;margin-bottom:.0001pt;text-autospace:none'><span
+style='font-size:10.0pt;font-family:"Courier New"'>&nbsp; &lt;PersonId&gt;</span></p>
+
+<p class=MsoNormal style='margin:0in;margin-bottom:.0001pt;text-autospace:none'><span
+style='font-size:10.0pt;font-family:"Courier New"'>&nbsp;&nbsp;&nbsp;
+&lt;IdValue&nbsp; name=&quot;Employee ID&quot;&gt;113355&lt;/IdValue&gt;</span></p>
+
+<p class=MsoNormal style='margin:0in;margin-bottom:.0001pt;text-autospace:none'><span
+style='font-size:10.0pt;font-family:"Courier New"'>&nbsp;&nbsp;&nbsp;
+&lt;IdValue&nbsp; name=&quot;Division&quot;&gt;Corporate&lt;/IdValue&gt;</span></p>
+
+<p class=MsoNormal style='margin:0in;margin-bottom:.0001pt;text-autospace:none'><span
+style='font-size:10.0pt;font-family:"Courier New"'>&nbsp; &lt;/PersonId&gt;</span></p>
+
+<p class=MsoNormal style='margin:0in;margin-bottom:.0001pt;text-autospace:none'><span
+style='font-size:10.0pt;font-family:"Courier New"'>&lt;/Person&gt;</span></p>
+
+<p class=MsoNormal>When GlueCom passes this information to PayCo, it will now
+look like:</p>
+
+<p class=MsoNormal style='margin:0in;margin-bottom:.0001pt;text-autospace:none'><span
+style='font-size:10.0pt;font-family:"Courier New"'>&lt;Person&gt;</span></p>
+
+<p class=MsoNormal style='margin:0in;margin-bottom:.0001pt;text-autospace:none'><span
+style='font-size:10.0pt;font-family:"Courier New"'>&nbsp; &lt;PersonId&nbsp;
+idOwner=&quot;Cogs, Inc.&quot;&gt;</span></p>
+
+<p class=MsoNormal style='margin:0in;margin-bottom:.0001pt;text-autospace:none'><span
+style='font-size:10.0pt;font-family:"Courier New"'>&nbsp;&nbsp;&nbsp;
+&lt;IdValue&nbsp; name=&quot;Employee ID&quot;&gt;113355&lt;/IdValue&gt;</span></p>
+
+<p class=MsoNormal style='margin:0in;margin-bottom:.0001pt;text-autospace:none'><span
+style='font-size:10.0pt;font-family:"Courier New"'>&nbsp;&nbsp;&nbsp;
+&lt;IdValue&nbsp; name=&quot;Division&quot;&gt;Corporate&lt;/IdValue&gt;</span></p>
+
+<p class=MsoNormal style='margin:0in;margin-bottom:.0001pt;text-autospace:none'><span
+style='font-size:10.0pt;font-family:"Courier New"'>&nbsp; &lt;/PersonId&gt;</span></p>
+
+<p class=MsoNormal style='margin:0in;margin-bottom:.0001pt;text-autospace:none'><span
+style='font-size:10.0pt;font-family:"Courier New"'>&nbsp; &lt;PersonId&nbsp;
+idOwner=&quot;GlueCom&quot;&gt;</span></p>
+
+<p class=MsoNormal style='margin:0in;margin-bottom:.0001pt;text-autospace:none'><span
+style='font-size:10.0pt;font-family:"Courier New"'>&nbsp;&nbsp;&nbsp;
+&lt;IdValue&gt;MA237&lt;/IdValue&gt;</span></p>
+
+<p class=MsoNormal style='margin:0in;margin-bottom:.0001pt;text-autospace:none'><span
+style='font-size:10.0pt;font-family:"Courier New"'>&nbsp; &lt;/PersonId&gt;</span></p>
+
+<p class=MsoNormal style='margin:0in;margin-bottom:.0001pt;text-autospace:none'><span
+style='font-size:10.0pt;font-family:"Courier New"'>&lt;/Person&gt;</span></p>
+
+<p class=MsoNormal>&nbsp;</p>
+
+<p class=MsoNormal>This example matches to the first scenario in the multi-part
+identifiers discussion in Implementation Considerations (section 4.2). The
+other example in that section is using personal traits to identify a person.</p>
+
+<p class=MsoNormal>Assuming Mohammed was born 1963-04-14, a trait-based
+identification would look like:</p>
+
+<p class=MsoNormal style='margin:0in;margin-bottom:.0001pt;text-autospace:none'><span
+style='font-size:10.0pt;font-family:"Courier New"'>&lt;Person&gt;</span></p>
+
+<p class=MsoNormal style='margin:0in;margin-bottom:.0001pt;text-autospace:none'><span
+style='font-size:10.0pt;font-family:"Courier New"'>&nbsp; &lt;PersonId&gt;</span></p>
+
+<p class=MsoNormal style='margin:0in;margin-bottom:.0001pt;text-autospace:none'><span
+style='font-size:10.0pt;font-family:"Courier New"'>&nbsp;&nbsp;&nbsp;
+&lt;IdValue&nbsp; name=&quot;FirstName&quot;&gt;Mohammed&lt;/IdValue&gt;</span></p>
+
+<p class=MsoNormal style='margin:0in;margin-bottom:.0001pt;text-autospace:none'><span
+style='font-size:10.0pt;font-family:"Courier New"'>&nbsp;&nbsp;&nbsp;
+&lt;IdValue&nbsp; name=&quot;MiddleName&quot;&gt;&lt;/IdValue&gt;</span></p>
+
+<p class=MsoNormal style='margin:0in;margin-bottom:.0001pt;text-autospace:none'><span
+style='font-size:10.0pt;font-family:"Courier New"'>&nbsp;&nbsp;&nbsp;
+&lt;IdValue&nbsp; name=&quot;LastName&quot;&gt;Abdul&lt;/IdValue&gt;</span></p>
+
+<p class=MsoNormal style='margin:0in;margin-bottom:.0001pt;text-autospace:none'><span
+style='font-size:10.0pt;font-family:"Courier New"'>&nbsp;&nbsp;&nbsp;
+&lt;IdValue&nbsp; name=&quot;Sex&quot;&gt;M&lt;/IdValue&gt;</span></p>
+
+<p class=MsoNormal style='margin:0in;margin-bottom:.0001pt;text-autospace:none'><span
+style='font-size:10.0pt;font-family:"Courier New"'>&nbsp;&nbsp;&nbsp;
+&lt;IdValue&nbsp; name=&quot;DOB&quot;&gt;1963-04-14&lt;/IdValue&gt;</span></p>
+
+<p class=MsoNormal style='margin:0in;margin-bottom:.0001pt;text-autospace:none'><span
+style='font-size:10.0pt;font-family:"Courier New"'>&nbsp; &lt;/PersonId&gt;</span></p>
+
+<p class=MsoNormal style='margin:0in;margin-bottom:.0001pt;text-autospace:none'><span
+style='font-size:10.0pt;font-family:"Courier New"'>&lt;/Person&gt;</span></p>
+
+<h2><a name="_Toc127534183">7.4</a><span style='font-size:7.0pt;font-family:
+"Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>Effective
+Dated Identifiers</h2>
+
+<p class=MsoNormal>Taking the example even farther, Cogs has decided to converge
+to one HRIS system, and they decide to use the one at GearTech, meaning that
+everyone in the Cogs HRIS must be given a new employee ID; Mohammed&#8217;s
+will be 2221001. In preparation for the transition, they arrange to begin
+sending both the current and the future identifier values. If their plan is to
+begin using the combined system on 2000-08-01, the transmission might look
+like:</p>
+
+<p class=MsoNormal style='margin:0in;margin-bottom:.0001pt;text-autospace:none'><span
+style='font-size:10.0pt;font-family:"Courier New"'>&lt;Person&gt;</span></p>
+
+<p class=MsoNormal style='margin:0in;margin-bottom:.0001pt;text-autospace:none'><span
+style='font-size:10.0pt;font-family:"Courier New"'>&nbsp; &lt;PersonId&nbsp;
+validFrom=&quot;1900-01-01&quot; validTo=&quot;2000-07-31&quot;&gt;</span></p>
+
+<p class=MsoNormal style='margin:0in;margin-bottom:.0001pt;text-autospace:none'><span
+style='font-size:10.0pt;font-family:"Courier New"'>&nbsp;&nbsp;&nbsp;
+&lt;IdValue&nbsp; name=&quot;Employee ID&quot;&gt;113355&lt;/IdValue&gt;</span></p>
+
+<p class=MsoNormal style='margin:0in;margin-bottom:.0001pt;text-autospace:none'><span
+style='font-size:10.0pt;font-family:"Courier New"'>&nbsp;&nbsp;&nbsp; &lt;IdValue&nbsp;
+name=&quot;Division&quot;&gt;Corporate&lt;/IdValue&gt;</span></p>
+
+<p class=MsoNormal style='margin:0in;margin-bottom:.0001pt;text-autospace:none'><span
+style='font-size:10.0pt;font-family:"Courier New"'>&nbsp; &lt;/PersonId&gt;</span></p>
+
+<p class=MsoNormal style='margin:0in;margin-bottom:.0001pt;text-autospace:none'><span
+style='font-size:10.0pt;font-family:"Courier New"'>&nbsp; &lt;PersonId&nbsp;
+validFrom=&quot;2000-08-01&quot; validTo=&quot;notApplicable&quot;&gt;</span></p>
+
+<p class=MsoNormal style='margin:0in;margin-bottom:.0001pt;text-autospace:none'><span
+style='font-size:10.0pt;font-family:"Courier New"'>&nbsp;&nbsp;&nbsp;
+&lt;IdValue&nbsp; name=&quot;Employee ID&quot;&gt;2221001&lt;/IdValue&gt;</span></p>
+
+<p class=MsoNormal style='margin:0in;margin-bottom:.0001pt;text-autospace:none'><span
+style='font-size:10.0pt;font-family:"Courier New"'>&nbsp;&nbsp;&nbsp;
+&lt;IdValue&nbsp; name=&quot;Division&quot;&gt;GearTech&lt;/IdValue&gt;</span></p>
+
+<p class=MsoNormal style='margin:0in;margin-bottom:.0001pt;text-autospace:none'><span
+style='font-size:10.0pt;font-family:"Courier New"'>&nbsp; &lt;/PersonId&gt;</span></p>
+
+<p class=MsoNormal style='margin:0in;margin-bottom:.0001pt;text-autospace:none'><span
+style='font-size:10.0pt;font-family:"Courier New"'>&lt;/Person&gt;</span></p>
+
+<p class=MsoNormal>Thus, effective dating in this case takes the place of
+identifier change mechanisms.</p>
+
+<p class=MsoNormal>In this example, since they are switching to a single system
+again, they would probably like to switch back to a single-part identifier,
+which would make the transmission look like:</p>
+
+<p class=MsoNormal style='margin:0in;margin-bottom:.0001pt;text-autospace:none'><span
+style='font-size:10.0pt;font-family:"Courier New"'>&lt;Person&gt;</span></p>
+
+<p class=MsoNormal style='margin:0in;margin-bottom:.0001pt;text-autospace:none'><span
+style='font-size:10.0pt;font-family:"Courier New"'>&nbsp; &lt;PersonId&nbsp;
+validFrom=&quot;1900-01-01&quot; validTo=&quot;2000-07-31&quot;&gt;</span></p>
+
+<p class=MsoNormal style='margin:0in;margin-bottom:.0001pt;text-autospace:none'><span
+style='font-size:10.0pt;font-family:"Courier New"'>&nbsp;&nbsp;&nbsp;
+&lt;IdValue&nbsp; name=&quot;Employee ID&quot;&gt;113355&lt;/IdValue&gt;</span></p>
+
+<p class=MsoNormal style='margin:0in;margin-bottom:.0001pt;text-autospace:none'><span
+style='font-size:10.0pt;font-family:"Courier New"'>&nbsp;&nbsp;&nbsp;
+&lt;IdValue&nbsp; name=&quot;Division&quot;&gt;Corporate&lt;/IdValue&gt;</span></p>
+
+<p class=MsoNormal style='margin:0in;margin-bottom:.0001pt;text-autospace:none'><span
+style='font-size:10.0pt;font-family:"Courier New"'>&nbsp; &lt;/PersonId&gt;</span></p>
+
+<p class=MsoNormal style='margin:0in;margin-bottom:.0001pt;text-autospace:none'><span
+style='font-size:10.0pt;font-family:"Courier New"'>&nbsp; &lt;PersonId&nbsp;
+validFrom=&quot;2000-08-01&quot; validTo=&quot;notApplicable&quot;&gt;</span></p>
+
+<p class=MsoNormal style='margin:0in;margin-bottom:.0001pt;text-autospace:none'><span
+style='font-size:10.0pt;font-family:"Courier New"'>&nbsp;&nbsp;&nbsp;
+&lt;IdValue&gt;2221001&lt;/IdValue&gt;</span></p>
+
+<p class=MsoNormal style='margin:0in;margin-bottom:.0001pt;text-autospace:none'><span
+style='font-size:10.0pt;font-family:"Courier New"'>&nbsp; &lt;/PersonId&gt;</span></p>
+
+<p class=MsoNormal style='margin:0in;margin-bottom:.0001pt;text-autospace:none'><span
+style='font-size:10.0pt;font-family:"Courier New"'>&lt;/Person&gt;</span></p>
+
+<p class=MsoNormal>This has the unpleasant side effect of the two portions of
+the timeline of identifiers not having the same structure (not the same number
+of parts). Because use of effective dates, multiple identifiers, and multi-part
+identifiers are left to trading partner arrangement, if Cogs and GlueCom agree
+this is how they want to handle their situation, it is perfectly acceptable,
+and this recommendation supports this type of flexibility.</p>
+
+</div>
+
+</body>
+
+</html>

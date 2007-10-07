@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ExerciseConfirmation xmlns="http://ns.hr-xml.org/2007-04-15" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://ns.hr-xml.org/2007-04-15
+ExerciseConfirmation.xsd">
+	<Id>
+		<IdValue>EC-1</IdValue>
+	</Id>
+	<ParticipantId>
+		<IdValue>P-1</IdValue>
+	</ParticipantId>
+	<ExerciseDate>2002-07-14</ExerciseDate>
+	<ExerciseInfo>
+		<GrantId>
+			<IdValue>G-1</IdValue>
+		</GrantId>
+		<OptionsExercised>200</OptionsExercised>
+		<SharesTradedForTax>0</SharesTradedForTax>
+		<SharesSwapped>0</SharesSwapped>
+		<SharesSold>0</SharesSold>
+		<SARPercentCashRequested>0</SARPercentCashRequested>
+	</ExerciseInfo>
+	<FairMarketValueOnExerciseDate currency="EUR">187</FairMarketValueOnExerciseDate>
+	<ExerciseInstructions>
+		<SellToCoverOptions>true</SellToCoverOptions>
+		<SellToCoverTaxes>false</SellToCoverTaxes>
+		<SellToCoverFees>false</SellToCoverFees>
+		<UseSharesForTaxes>false</UseSharesForTaxes>
+		<UseSharesFirst>false</UseSharesFirst>
+		<TaxRelevantPrice currency="EUR">187</TaxRelevantPrice>
+	</ExerciseInstructions>
+	<TaxInfo>
+		<TaxDate>2002-07-14</TaxDate>
+		<TaxType>Einkommenssteuer</TaxType>
+		<TaxationLocation>
+			<CountryCode>DE</CountryCode>
+		</TaxationLocation>
+		<TaxAmount currency="EUR">6880</TaxAmount>
+	</TaxInfo>
+</ExerciseConfirmation>

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<StaffingWorkSite xmlns="http://ns.hr-xml.org/2007-04-15" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://ns.hr-xml.org/2007-04-15
+StaffingWorkSite.xsd">
+	<WorkSiteName>Office</WorkSiteName>
+	<!-- 1st direction candidate to reach the office -->
+	<StructuredTravelDirections>
+		<!-- StartPoint is usually station name in Japan-->
+		<StartPoint>Tokyo Station</StartPoint>
+		<!-- Typically no EndPoint unless travel by bus -->
+		<Transportation>Walk</Transportation>
+		<TimeRequired unitOfMeasure="minutes">10</TimeRequired>
+		<Description>It takes 10 minutes Walk from the Tokyo Station</Description>
+	</StructuredTravelDirections>
+	<!-- 2nd direction candidate to reach the office -->
+	<StructuredTravelDirections>
+		<!-- StartPoint is typically station name in Japan-->
+		<StartPoint>Tokyo Station</StartPoint>
+		<!-- EndPoint is usually a bus stop name -->
+		<EndPoint>Takabashi</EndPoint>
+		<Transportation>Bus</Transportation>
+		<TimeRequired unitOfMeasure="minutes">3</TimeRequired>
+		<Description>It takes 3 minutes by bus from the Tokyo Station and short walk. There are few bus schedules so walking is preferable.</Description>
+	</StructuredTravelDirections>
+</StaffingWorkSite>

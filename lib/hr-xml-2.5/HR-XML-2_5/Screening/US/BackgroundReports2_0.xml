@@ -1,0 +1,426 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<BackgroundReports xmlns="http://ns.hr-xml.org/2007-04-15" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://ns.hr-xml.org/2007-04-15  BackgroundReports.xsd" userId="" password="" account="" location="" version="2007-04-15" xml:lang="en">
+	<ProviderReferenceId>
+		<IdValue>204</IdValue>
+	</ProviderReferenceId>
+	<!-- Example of Search Package returning parsed XML results.  -->
+	<BackgroundReportPackage type="report">
+		<ProviderReferenceId>
+			<IdValue>204-111</IdValue>
+		</ProviderReferenceId>
+		<ClientReferenceId>
+			<IdValue>12345</IdValue>
+		</ClientReferenceId>
+		<PackageId>
+			<IdValue>1</IdValue>
+		</PackageId>
+		<ScreeningStatus>
+			<OrderStatus>Completed</OrderStatus>
+			<ResultStatus>Fail</ResultStatus>
+			<DateOrderReceived>2002-01-13T12:24:01</DateOrderReceived>
+		</ScreeningStatus>
+		<ScreeningsSummary>
+			<PersonalData>
+				<PersonName>
+					<GivenName>Joe</GivenName>
+					<MiddleName>S</MiddleName>
+					<FamilyName>Doe</FamilyName>
+				</PersonName>
+				<PostalAddress>
+					<CountryCode>US</CountryCode>
+					<PostalCode>14850</PostalCode>
+					<Region>NY</Region>
+					<Municipality>Ithaca</Municipality>
+					<DeliveryAddress>
+						<StreetName>Forest Park Lane</StreetName>
+						<BuildingNumber>1</BuildingNumber>
+					</DeliveryAddress>
+				</PostalAddress>
+				<ContactMethod>
+					<Telephone>
+						<FormattedNumber>6072532330</FormattedNumber>
+					</Telephone>
+				</ContactMethod>
+				<DemographicDetail>
+					<GovernmentId countryCode="US" issuingAuthority="SSN">555555555</GovernmentId>
+				</DemographicDetail>
+			</PersonalData>
+			<ClientReferences>
+				<IdValue name="ProviderRequestNumber">03y</IdValue>
+				<IdValue name="LocationPhoneNumber">9494285945</IdValue>
+				<IdValue name="ApplicantNumber">PC224</IdValue>
+				<IdValue name="CostCenter">Pacific Coast Region</IdValue>
+			</ClientReferences>
+		</ScreeningsSummary>
+		<Screenings>
+			<!-- Example of Education screening returning parsed XML results.  -->
+			<Screening type="education">
+				<ProviderReferenceId>
+					<IdValue>A204-111</IdValue>
+				</ProviderReferenceId>
+				<ClientReferenceId>
+					<IdValue>012345</IdValue>
+				</ClientReferenceId>
+				<ScreeningStatus>
+					<OrderStatus>Completed</OrderStatus>
+					<ResultStatus>Clear</ResultStatus>
+					<DateOrderReceived>2002-05-23</DateOrderReceived>
+				</ScreeningStatus>
+				<EducationVerificationReport>
+					<EducationInput>
+						<SchoolOrInstitution schoolType="university">
+							<School type="prior">
+								<SchoolName>ND State</SchoolName>
+							</School>
+							<LocationSummary>
+								<Municipality>Fargo</Municipality>
+								<Region>ND</Region>
+							</LocationSummary>
+							<Degree degreeType="bachelors">
+								<DegreeName>civil eng</DegreeName>
+								<DatesOfAttendance currentlyEnrolled="false">
+									<StartDate>
+										<Year>1973</Year>
+									</StartDate>
+									<EndDate>
+										<Year>1977</Year>
+									</EndDate>
+								</DatesOfAttendance>
+							</Degree>
+							<Comments></Comments>
+						</SchoolOrInstitution>
+					</EducationInput>
+					<EducationResult>
+						<ContactInformation>
+							<PersonName>
+								<FormattedName>Holly Dolly</FormattedName>
+							</PersonName>
+							<Title>TRANSCRIPT CLERK</Title>
+						</ContactInformation>
+						<SchoolOrInstitution schoolType="university">
+							<School type="prior">
+								<SchoolName>NORTH DAKOTA STATE UNIVERSITY</SchoolName>
+							</School>
+							<LocationSummary>
+								<Municipality>Fargo</Municipality>
+								<Region>ND</Region>
+							</LocationSummary>
+							<Degree degreeType="bachelors">
+								<DegreeName>Bachelors of Science</DegreeName>
+								<DegreeDate>
+									<AnyDate>1977-08-17</AnyDate>
+								</DegreeDate>
+								<DegreeMajor>
+									<Name>CIVIL ENGINEERING</Name>
+								</DegreeMajor>
+								<DegreeMeasure>
+									<EducationalMeasure>
+										<MeasureSystem>GPA</MeasureSystem>
+										<MeasureValue>
+											<NumericValue minValue="1" maxValue="4.0">4.1</NumericValue>
+										</MeasureValue>
+										<ExcessiveValueIndicator>true</ExcessiveValueIndicator>
+									</EducationalMeasure>
+									<AcademicCreditCode>A</AcademicCreditCode>
+									<CourseLevelCode>2</CourseLevelCode>
+									<ClassRank numberOfStudents="100">97</ClassRank>
+								</DegreeMeasure>
+								<DatesOfAttendance currentlyEnrolled="false">
+									<StartDate>
+										<AnyDate>1975-09-08</AnyDate>
+									</StartDate>
+								</DatesOfAttendance>
+							</Degree>
+							<Degree degreeType="masters">
+								<DegreeName>Masters of Science</DegreeName>
+								<DegreeDate>
+									<AnyDate>1980-05-24</AnyDate>
+								</DegreeDate>
+								<DegreeMajor>
+									<Name>CIVIL ENGINEERING</Name>
+								</DegreeMajor>
+								<DegreeMeasure>
+									<EducationalMeasure>
+										<MeasureSystem>GPA</MeasureSystem>
+										<MeasureValue>
+											<NumericValue minValue="1" maxValue="4.0">4.0</NumericValue>
+										</MeasureValue>
+										<ExcessiveValueIndicator>false</ExcessiveValueIndicator>
+									</EducationalMeasure>
+									<AcademicCreditCode>A</AcademicCreditCode>
+									<CourseLevelCode>8</CourseLevelCode>
+									<ClassRank numberOfStudents="100">95</ClassRank>
+								</DegreeMeasure>
+								<DatesOfAttendance currentlyEnrolled="false">
+									<StartDate>
+										<AnyDate>1975-09-08</AnyDate>
+									</StartDate>
+								</DatesOfAttendance>
+							</Degree>
+							<Comments>WE CALLED THE SCHOOL AND SPOKE WITH HOLLY, WHO VERIFIED THE ABOVE INFORMATION.</Comments>
+						</SchoolOrInstitution>
+					</EducationResult>
+				</EducationVerificationReport>
+			</Screening>
+			<!-- Example of Employment screening returning parsed XML results.  -->
+			<Screening type="employment">
+				<ProviderReferenceId>
+					<IdValue>204-111E</IdValue>
+				</ProviderReferenceId>
+				<ClientReferenceId>
+					<IdValue>012348</IdValue>
+				</ClientReferenceId>
+				<ScreeningStatus>
+					<OrderStatus>Completed</OrderStatus>
+					<ResultStatus>Review</ResultStatus>
+					<DateOrderReceived>2003-01-12</DateOrderReceived>
+				</ScreeningStatus>
+				<EmploymentVerificationReport>
+					<EmploymentInput>
+						<EmploymentHistory>
+							<EmployerOrg employerOrgType="soleEmployer">
+								<EmployerOrgName>IBM</EmployerOrgName>
+								<EmployerContactInfo contactType="directSupervisor">
+									<LocationSummary>
+										<Municipality>Poughkeepsie</Municipality>
+										<Region>NY</Region>
+										<CountryCode>US</CountryCode>
+									</LocationSummary>
+								</EmployerContactInfo>
+								<PositionHistory positionType="internship">
+									<Title>Integration Tester</Title>
+									<OrgName>
+										<OrganizationName>IBM</OrganizationName>
+									</OrgName>
+									<Description></Description>
+									<StartDate dateDescription="Most recent hire date">
+										<AnyDate>1999-01-20</AnyDate>
+									</StartDate>
+									<EndDate>
+										<AnyDate>2000-06-07</AnyDate>
+									</EndDate>
+									<Compensation>
+										<EndingCompensation currency="USD">50000</EndingCompensation>
+									</Compensation>
+									<Verification>
+										<ContactInfo>
+											<PersonName>
+												<FormattedName>Skip Scianna</FormattedName>
+											</PersonName>
+											<ContactMethod>
+												<Telephone>
+													<FormattedNumber>8452515678</FormattedNumber>
+												</Telephone>
+											</ContactMethod>
+										</ContactInfo>
+										<ReasonForLeaving>terminated</ReasonForLeaving>
+										<PermissionToContact>true</PermissionToContact>
+										<VerifyEmployment>true</VerifyEmployment>
+										<EligibleForRehire>false</EligibleForRehire>
+										<AttendanceRating>
+											<NumericValue minValue="1" maxValue="10">3</NumericValue>
+										</AttendanceRating>
+										<OverallPerformanceRating>
+											<StringValue minValue="A" maxValue="Z">X</StringValue>
+										</OverallPerformanceRating>
+										<QuestionAnswerPair>
+											<Question>Did the individual get along with coworkers?:</Question>
+											<Answer>No</Answer>
+										</QuestionAnswerPair>
+										<QuestionAnswerPair>
+											<Question>Did the person meet deadlines on time?:</Question>
+											<Answer>No</Answer>
+										</QuestionAnswerPair>
+										<QuestionAnswerPair>
+											<Question>Did he/she exhibit any behavior which resulted in disciplinary action?:</Question>
+											<Answer>Yes</Answer>
+										</QuestionAnswerPair>
+									</Verification>
+								</PositionHistory>
+							</EmployerOrg>
+						</EmploymentHistory>
+					</EmploymentInput>
+				</EmploymentVerificationReport>
+			</Screening>
+		</Screenings>
+	</BackgroundReportPackage>
+	<!-- Example of Search Package returning text results for one of the screening types.-->
+	<BackgroundReportPackage type="report">
+		<ProviderReferenceId>
+			<IdValue>204-111</IdValue>
+		</ProviderReferenceId>
+		<ClientReferenceId>
+			<IdValue>12345</IdValue>
+		</ClientReferenceId>
+		<PackageId>
+			<IdValue>1</IdValue>
+		</PackageId>
+		<ScreeningStatus>
+			<OrderStatus>Completed</OrderStatus>
+			<ResultStatus>Hit</ResultStatus>
+			<DateOrderReceived>2002-01-13T12:24:01</DateOrderReceived>
+		</ScreeningStatus>
+		<ScreeningsSummary>
+			<PersonalData>
+				<PersonName>
+					<GivenName>Joe</GivenName>
+					<MiddleName>S</MiddleName>
+					<FamilyName>Doe</FamilyName>
+				</PersonName>
+				<PostalAddress>
+					<CountryCode>US</CountryCode>
+					<PostalCode>14850</PostalCode>
+					<Region>NY</Region>
+					<Municipality>Ithaca</Municipality>
+					<DeliveryAddress>
+						<StreetName>Forest Park Lane</StreetName>
+						<BuildingNumber>1</BuildingNumber>
+					</DeliveryAddress>
+				</PostalAddress>
+				<ContactMethod>
+					<Telephone>
+						<FormattedNumber>6072532330</FormattedNumber>
+					</Telephone>
+				</ContactMethod>
+				<DemographicDetail>
+					<GovernmentId countryCode="US">555555555</GovernmentId>
+				</DemographicDetail>
+			</PersonalData>
+			<ClientReferences>
+				<IdValue name="ProviderRequestNumber">03y</IdValue>
+				<IdValue name="LocationPhoneNumber">9494285945</IdValue>
+				<IdValue name="ApplicantNumber">PC224</IdValue>
+				<IdValue name="CostCenter">Pacific Coast Region</IdValue>
+			</ClientReferences>
+		</ScreeningsSummary>
+		<Screenings>
+			<!-- Example of Education screening returning unparsed XML results.  -->
+			<Screening type="education">
+				<ProviderReferenceId>
+					<IdValue>A204-111</IdValue>
+				</ProviderReferenceId>
+				<ClientReferenceId>
+					<IdValue>012345</IdValue>
+				</ClientReferenceId>
+				<ScreeningResults type="result" mediaType="txt" resultType="report">
+					<Text>
+                                  DISCLAIMER
+
+     Information contained herein should not be the sole determination in 
+     evaluation of this individual.  All other factors, references and 
+     current situations should be considered.  Human error in compiling 
+     this information is possible.  The FCRA requires certain actions if 
+     you take adverse action based in whole or in part on this report.
+     See your Help File, the FCRA or call for procedures.
+
+
+                            EDUCATION VERIFICATION
+
+--------------------------------------------------------------------------------
+
+Name.....................:   JANE JILL DOE
+Social Security Number...:   555-55-5555
+Search Date..............:   01/09/2002 1:19:53 PM
+Reference Number.........:   012345
+--------------------------------------------------------------------------------
+
+Name of School               NORTH DAKOTA STATE UNIVERSITY
+
+City/State                   FARGO, ND
+
+Degree Attained              BACHELOR OF SCIENCE DEGREE (BS), MASTER OF SCIENCE
+                              DEGREE (MS).
+
+Years Attended               BS DEGREE RECEIVED AUGUST 17, 1977.  MS DEGREE 
+                             RECEIVED MAY 24, 1980. FIRST ENROLLED SEPTEMBER 8,
+                              1975.
+
+Studies                      MAJOR FOR BOTH DEGREES / CIVIL ENGINEERING.
+
+Contact Person/Position      HOLLY DOLLY / TRANSCRIPT CLERK.
+
+Comments                     WE CALLED THE SCHOOL AND SPOKE WITH HOLLY, WHO 
+                             VERIFIED THE ABOVE INFORMATION.
+
+                              **SEARCH COMPLETE**
+
+********************************************************************************
+Search History
+
+07/06/2001 5:32:33 PM        NORTH DAKOTA STATE UNIVERSITY.
+
+                             THIS INSTITUTION WAS CALLED BUT NO ONE WAS 
+                             IMMEDIATELY AVAILABLE TO CHECK RECORDS. FOLLOW-UP 
+                             WILL OCCUR.
+
+07/09/2001 1:19:45 PM        SEARCH COMPLETE.
+
+                                 </Text>
+				</ScreeningResults>
+			</Screening>
+		</Screenings>
+	</BackgroundReportPackage>
+	<!-- Example of Search Package returning screening results in an HTML file -->
+	<BackgroundReportPackage type="report">
+		<ProviderReferenceId>
+			<IdValue>204-114</IdValue>
+		</ProviderReferenceId>
+		<ClientReferenceId>
+			<IdValue>12347</IdValue>
+		</ClientReferenceId>
+		<PackageId>
+			<IdValue>1</IdValue>
+		</PackageId>
+		<ScreeningStatus>
+			<OrderStatus>Completed</OrderStatus>
+			<ResultStatus>Hit</ResultStatus>
+			<DateOrderReceived>2002-01-13T12:24:01</DateOrderReceived>
+		</ScreeningStatus>
+		<ScreeningsSummary>
+			<PersonalData>
+				<PersonName>
+					<GivenName>Joe</GivenName>
+					<MiddleName>S</MiddleName>
+					<FamilyName>Doe</FamilyName>
+				</PersonName>
+				<PostalAddress>
+					<CountryCode>US</CountryCode>
+					<PostalCode>14850</PostalCode>
+					<Region>NY</Region>
+					<Municipality>Ithaca</Municipality>
+					<DeliveryAddress>
+						<StreetName>Forest Park Lane</StreetName>
+						<BuildingNumber>1</BuildingNumber>
+					</DeliveryAddress>
+				</PostalAddress>
+				<ContactMethod>
+					<Telephone>
+						<FormattedNumber>6072532330</FormattedNumber>
+					</Telephone>
+				</ContactMethod>
+				<DemographicDetail>
+					<GovernmentId countryCode="US">555555555</GovernmentId>
+				</DemographicDetail>
+			</PersonalData>
+			<ClientReferences>
+				<IdValue name="ProviderRequestNumber">03y</IdValue>
+				<IdValue name="LocationPhoneNumber">9494285945</IdValue>
+				<IdValue name="ApplicantNumber">PC224</IdValue>
+				<IdValue name="CostCenter">Pacific Coast Region</IdValue>
+			</ClientReferences>
+		</ScreeningsSummary>
+		<Screenings>
+			<Screening>
+				<ProviderReferenceId>
+					<IdValue>204-1218</IdValue>
+				</ProviderReferenceId>
+				<ClientReferenceId>
+					<IdValue>123428</IdValue>
+				</ClientReferenceId>
+				<ScreeningResults type="result" mediaType="html" resultType="report">
+					<InternetWebAddress>https://www.hireright.com/200211/sf/XXX11Q04.html?ID=12345</InternetWebAddress>
+				</ScreeningResults>
+			</Screening>
+		</Screenings>
+	</BackgroundReportPackage>
+</BackgroundReports>

@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TimeCard xmlns="http://ns.hr-xml.org/2007-04-15" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://ns.hr-xml.org/2007-04-15
+TimeCard.xsd">
+	<ReportedResource>
+		<Person>
+			<Id>
+				<IdValue>d026194</IdValue>
+			</Id>
+		</Person>
+	</ReportedResource>
+	<ReportedTime status="Approved">
+		<PeriodStartDate>2006-05-01</PeriodStartDate>
+		<PeriodEndDate>2006-05-18</PeriodEndDate>
+		<TimeInterval type="Regular" billable="true">
+			<StartDateTime>2006-05-07</StartDateTime>
+			<EndDateTime>2006-05-07</EndDateTime>
+			<Duration>PT8H</Duration>
+			<Allowance type="Riskallowance" billable="true">
+				<StartDate>2006-05-06</StartDate>
+				<ApprovalInfo>
+					<Person>
+						<PersonName>
+							<FormattedName>Elvira Annevelink</FormattedName>
+						</PersonName>
+					</Person>
+					<ApprovedDateTime>2006-05-09</ApprovedDateTime>
+				</ApprovalInfo>
+			</Allowance>
+			<SubmitterInfo>
+				<Person>
+					<PersonName>
+						<FormattedName>Erwin Folmer</FormattedName>
+					</PersonName>
+				</Person>
+				<SubmittedDateTime>2006-05-08</SubmittedDateTime>
+			</SubmitterInfo>
+			<Comment>Aaabbbccc</Comment>
+		</TimeInterval>
+		<Expense type="Meal" billable="true">
+			<ExpenseDate>2006-05-07</ExpenseDate>
+			<ExpenseAmount currency="USD">10</ExpenseAmount>
+		</Expense>
+		<TimeInterval type="Vacation" actionCode="Add">
+			<StartDateTime>2006-05-08</StartDateTime>
+			<EndDateTime>2006-05-11</EndDateTime>
+		</TimeInterval>
+		<TimeInterval type="Regular" actionCode="Change">
+			<StartDateTime>2006-05-14</StartDateTime>
+			<EndDateTime>2006-05-14</EndDateTime>
+			<Duration>PT4H</Duration>
+		</TimeInterval>
+		<TimeInterval type="Sickness" actionCode="Unchanged">
+			<StartDateTime>2006-05-14</StartDateTime>
+			<EndDateTime>2006-05-14</EndDateTime>
+			<Duration>PT4H</Duration>
+		</TimeInterval>
+		<TimeInterval type="Sickness" actionCode="Void">
+			<StartDateTime>2006-05-15</StartDateTime>
+			<EndDateTime>2006-05-18</EndDateTime>
+		</TimeInterval>
+	</ReportedTime>
+</TimeCard>

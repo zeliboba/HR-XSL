@@ -1,0 +1,203 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+    License information for this file is provided in LICENSE.TXT
+    For support, more information, or to report implementation bugs, 
+    please contact the Open Applications Group at xml@openapplications.org 
+     
+    ** Revision: 8.0 **
+    ** Date: 05 April 2002 **
+    Open Applications Group XSD
+    Copyright 1998-2002, All Rights Reserved
+    
+    Name: Nouns/BOD.xsd
+-->
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns="http://www.openapplications.org/oagis" targetNamespace="http://www.openapplications.org/oagis" elementFormDefault="qualified">
+        <xs:include schemaLocation="../Components.xsd"/>
+<!--   Abstract elements that support substitution of various Narrowed Nouns-->
+<!--   Abstract elements that support substitution of various Narrowed Nouns-->
+        <xs:element name="BOD" type="BOD" substitutionGroup="Noun">
+                <xs:annotation>
+                        <xs:documentation source="http://www.openapplications.org/oagis">The outcome of processing a specific BOD. Describes overall/summary outcome, plus the outcome of processing each noun of the BOD. Includes noun-specific error and/or warning messaages encountered during processing. May include summary and/or roll-up messages at the BOD level.</xs:documentation>
+                </xs:annotation>
+        </xs:element>
+        <xs:complexType name="BOD">
+                <xs:annotation>
+                        <xs:documentation source="http://www.openapplications.org/oagis">The outcome of processing a specific BOD. Describes overall/summary outcome, plus the outcome of processing each noun of the BOD. Includes noun-specific error and/or warning messaages encountered during processing. May include summary and/or roll-up messages at the BOD level.</xs:documentation>
+                        <xs:documentation source="http://www.openapplications.org/oagis">The general-purpose noun used only in the "ConfirmBOD." This noun carries back the status resulting from the sending of another BOD. The ConfirmBOD could be thought of as  "ConfirmTransaction"   </xs:documentation>
+                </xs:annotation>
+                <xs:complexContent>
+                        <xs:extension base="Noun">
+                                <xs:sequence>
+                                        <xs:element ref="Header" minOccurs="0"/>
+                                        <xs:element ref="NounOutcome" minOccurs="0" maxOccurs="unbounded"/>
+                                </xs:sequence>
+                        </xs:extension>
+                </xs:complexContent>
+        </xs:complexType>
+        <xs:complexType name="BODHeader">
+                <xs:annotation>
+                        <xs:documentation source="http://www.openapplications.org/oagis">Information about the BOD that was processed, including identifying information and a summary-level indication of the outcome of processing the BOD.</xs:documentation>
+                </xs:annotation>
+                <xs:sequence>
+                        <xs:element name="OriginalApplicationArea" type="ApplicationArea">
+                                <xs:annotation>
+                                        <xs:documentation source="http://www.openapplications.org/oagis">A copy of the ApplicationArea for the original BOD that was processed. Present either as additional reference information, or for use in identifying the BOD in situations where a BODReference is not known.</xs:documentation>
+                                </xs:annotation>
+                        </xs:element>
+                        <xs:element name="OriginalBODReference" type="GenericDocumentReference" minOccurs="0">
+                                <xs:annotation>
+                                        <xs:documentation source="http://www.openapplications.org/oagis">Reference to the original BOD that was processed.</xs:documentation>
+                                </xs:annotation>
+                        </xs:element>
+                        <xs:element ref="BODOutcomeValue" minOccurs="0"/>
+                </xs:sequence>
+        </xs:complexType>
+        <xs:element name="Header" type="BODHeader">
+                <xs:annotation>
+                        <xs:documentation source="http://www.openapplications.org/oagis">Information about the BOD that was processed, including identifying information and a summary-level indication of the outcome of processing the BOD.</xs:documentation>
+                </xs:annotation>
+        </xs:element>
+        <xs:complexType name="NounOutcome">
+                <xs:annotation>
+                        <xs:documentation source="http://www.openapplications.org/oagis">Each NounOutcome captures the outcome of processing each noun of the BOD.</xs:documentation>
+                </xs:annotation>
+                <xs:sequence>
+                        <xs:element ref="DocumentIds" minOccurs="0"/>
+                        <xs:element ref="NounOutcomeValue" minOccurs="0"/>
+                        <xs:element ref="UserArea" minOccurs="0"/>
+                </xs:sequence>
+        </xs:complexType>
+        <xs:element name="NounOutcome" type="NounOutcome">
+                <xs:annotation>
+                        <xs:documentation source="http://www.openapplications.org/oagis">Each NounOutcome captures the outcome of processing each noun of the BOD.</xs:documentation>
+                </xs:annotation>
+        </xs:element>
+        <xs:complexType name="NounStatus">
+                <xs:sequence/>
+        </xs:complexType>
+        <xs:simpleType name="ConfirmationStatus">
+                <xs:restriction base="xs:string">
+                        <xs:enumeration value="Valid">
+                                <xs:annotation>
+                                        <xs:documentation source="http://www.openapplications.org/oagis">The BOD has been received and can be processed. It has passed syntax validation, but not content validation.</xs:documentation>
+                                </xs:annotation>
+                        </xs:enumeration>
+                        <xs:enumeration value="Invalid">
+                                <xs:annotation>
+                                        <xs:documentation source="http://www.openapplications.org/oagis">The BOD is syntactically or structurally incorrect.</xs:documentation>
+                                </xs:annotation>
+                        </xs:enumeration>
+                        <xs:enumeration value="Accepted">
+                                <xs:annotation>
+                                        <xs:documentation source="http://www.openapplications.org/oagis">The BOD is "Valid" and has been processed.</xs:documentation>
+                                </xs:annotation>
+                        </xs:enumeration>
+                        <xs:enumeration value="Rejected">
+                                <xs:annotation>
+                                        <xs:documentation source="http://www.openapplications.org/oagis">The BOD is "Valid" but not processed.</xs:documentation>
+                                </xs:annotation>
+                        </xs:enumeration>
+                </xs:restriction>
+        </xs:simpleType>
+<!--Global elements, for extensibility-->
+        <xs:element name="NounOutcomeValue" type="OutcomeValue" abstract="true">
+                <xs:annotation>
+                        <xs:documentation source="http://www.openapplications.org/oagis">The specific outcome of processing the noun, with supporting detail.</xs:documentation>
+                </xs:annotation>
+        </xs:element>
+        <xs:element name="NounSuccess" type="ProcessingSuccess" substitutionGroup="NounOutcomeValue" nillable="true">
+                <xs:annotation>
+                        <xs:documentation source="http://www.openapplications.org/oagis">Indicates that the processing of this noun has succeeded; may provide non-fatal warning messages that arose during the processing of the noun.</xs:documentation>
+                </xs:annotation>
+        </xs:element>
+        <xs:element name="NounFailure" type="ProcessingFailure" substitutionGroup="NounOutcomeValue" nillable="true">
+                <xs:annotation>
+                        <xs:documentation source="http://www.openapplications.org/oagis">Indicates that the processing of this noun has failed, and provides error and warning messages that arose during the processing of the noun.</xs:documentation>
+                </xs:annotation>
+        </xs:element>
+        <xs:complexType name="OutcomeValue"/>
+        <xs:element name="BODOutcomeValue" type="OutcomeValue" abstract="true">
+                <xs:annotation>
+                        <xs:documentation source="http://www.openapplications.org/oagis">The possible BOD-level outcomes; an extensible list.</xs:documentation>
+                </xs:annotation>
+        </xs:element>
+        <xs:element name="BODSuccess" type="ProcessingSuccess" substitutionGroup="BODOutcomeValue">
+                <xs:annotation>
+                        <xs:documentation source="http://www.openapplications.org/oagis">The processing of the BOD was a success. Possible, non-fatal warning messages may appear here. Specific outcomes of processing each noun are reported in each of the NounOutcome elements.</xs:documentation>
+                </xs:annotation>
+        </xs:element>
+        <xs:element name="BODPartialSuccess" type="ProcessingFailure" substitutionGroup="BODOutcomeValue">
+                <xs:annotation>
+                        <xs:documentation source="http://www.openapplications.org/oagis">The processing of at least one noun in the BOD has failed. Error and warning messages may explain the failure. Specific outcomes of processing each noun are reported in each of the NounOutcome elements.</xs:documentation>
+                </xs:annotation>
+        </xs:element>
+        <xs:element name="BODFailure" type="ProcessingFailure" substitutionGroup="BODOutcomeValue">
+                <xs:annotation>
+                        <xs:documentation source="http://www.openapplications.org/oagis">The processing of the BOD has failed. Provides a list of error and warning messages that explain the failure. Specific outcomes of processing each noun are reported in each of the NounOutcome elements.</xs:documentation>
+                </xs:annotation>
+        </xs:element>
+        <xs:element name="BODOutcomeSummary">
+                <xs:annotation>
+                        <xs:documentation source="http://www.openapplications.org/oagis">Could make this an enum, if we're absolutely certain that no user would want to extend it.</xs:documentation>
+                </xs:annotation>
+                <xs:complexType>
+                        <xs:sequence/>
+                </xs:complexType>
+        </xs:element>
+        <xs:complexType name="ProcessingOutcomeMessage">
+                <xs:sequence>
+                        <xs:element name="Description" type="Description" minOccurs="0" maxOccurs="unbounded"/>
+                        <xs:element name="ReasonCode" type="ReasonCode" minOccurs="0"/>
+                        <xs:element ref="UserArea" minOccurs="0"/>
+                </xs:sequence>
+        </xs:complexType>
+        <xs:complexType name="ErrorMessage">
+                <xs:complexContent>
+                        <xs:extension base="ProcessingOutcomeMessage"/>
+                </xs:complexContent>
+        </xs:complexType>
+        <xs:complexType name="WarningMessage">
+                <xs:complexContent>
+                        <xs:extension base="ProcessingOutcomeMessage"/>
+                </xs:complexContent>
+        </xs:complexType>
+        <xs:complexType name="NounOutcomeValue">
+                <xs:sequence/>
+        </xs:complexType>
+        <xs:element name="ErrorMessage" type="ErrorMessage">
+                <xs:annotation>
+                        <xs:documentation source="http://www.openapplications.org/oagis">Error message encountered during processing.</xs:documentation>
+                </xs:annotation>
+        </xs:element>
+        <xs:element name="WarningMessage" type="WarningMessage">
+                <xs:annotation>
+                        <xs:documentation source="http://www.openapplications.org/oagis">Non-fatal warning message encountered during processing.</xs:documentation>
+                </xs:annotation>
+        </xs:element>
+        <xs:complexType name="ProcessingFailure">
+                <xs:annotation>
+                        <xs:documentation source="http://www.openapplications.org/oagis">The processing has failed. Provides a list of error and warning messages that explain the failure.</xs:documentation>
+                </xs:annotation>
+                <xs:complexContent>
+                        <xs:extension base="OutcomeValue">
+                                <xs:sequence>
+                                        <xs:element ref="ErrorMessage" minOccurs="0" maxOccurs="unbounded"/>
+                                        <xs:element ref="WarningMessage" minOccurs="0" maxOccurs="unbounded"/>
+                                </xs:sequence>
+                        </xs:extension>
+                </xs:complexContent>
+        </xs:complexType>
+        <xs:complexType name="ProcessingSuccess">
+                <xs:annotation>
+                        <xs:documentation source="http://www.openapplications.org/oagis">The processing was a success. Possible, non-fatal warning messages may appear here.</xs:documentation>
+                </xs:annotation>
+                <xs:complexContent>
+                        <xs:extension base="OutcomeValue">
+                                <xs:sequence>
+                                        <xs:element ref="WarningMessage" minOccurs="0" maxOccurs="unbounded"/>
+                                        <xs:element ref="UserArea" minOccurs="0"/>
+                                </xs:sequence>
+                        </xs:extension>
+                </xs:complexContent>
+        </xs:complexType>
+</xs:schema>

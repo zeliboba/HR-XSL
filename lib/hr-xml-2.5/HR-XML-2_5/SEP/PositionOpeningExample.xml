@@ -1,0 +1,232 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<PositionOpening xmlns="http://ns.hr-xml.org/2007-04-15" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://ns.hr-xml.org/2007-04-15
+PositionOpening.xsd">
+	<PositionRecordInfo>
+		<Id validFrom="2003-12-01" validTo="2003-12-31" idOwner="ABC Company">
+			<IdValue>Order#123456</IdValue>
+		</Id>
+		<Status validFrom="2003-11-10" validTo="2003-11-30">Active</Status>
+	</PositionRecordInfo>
+	<PositionPostings>
+		<PositionPosting>
+			<Id validFrom="2003-11-10" validTo="2003-11-20" idOwner="XYZ Job Board">
+				<IdValue>Posting - EN345678</IdValue>
+			</Id>
+			<Title>Database Administrator - English</Title>
+		</PositionPosting>
+		<PositionPosting>
+			<Id validFrom="2003-11-10" validTo="2003-11-25" idOwner="LMNO Job Board">
+				<IdValue>Posting - FR345678</IdValue>
+			</Id>
+			<Title>Database Administrator - French</Title>
+		</PositionPosting>
+	</PositionPostings>
+	<PositionSupplier relationship="agent">
+		<SupplierId>
+			<IdValue>456789</IdValue>
+		</SupplierId>
+		<EntityName>Best Recruiting Agency</EntityName>
+		<ContactMethod>
+			<Telephone>
+				<InternationalCountryCode>1</InternationalCountryCode>
+				<AreaCityCode>414</AreaCityCode>
+				<SubscriberNumber>961-1000</SubscriberNumber>
+			</Telephone>
+			<Fax>
+				<InternationalCountryCode>33</InternationalCountryCode>
+				<AreaCityCode>1</AreaCityCode>
+				<SubscriberNumber>40 20 50 50</SubscriberNumber>
+			</Fax>
+		</ContactMethod>
+		<Role>Recruiter</Role>
+	</PositionSupplier>
+	<PositionSupplier relationship="self">
+		<EntityName>ABC Company</EntityName>
+		<ContactName>
+			<FormattedName>John Smith</FormattedName>
+		</ContactName>
+		<ContactMethod>
+			<Telephone>
+				<InternationalCountryCode>1</InternationalCountryCode>
+				<AreaCityCode>414</AreaCityCode>
+				<SubscriberNumber>211-1348</SubscriberNumber>
+			</Telephone>
+		</ContactMethod>
+		<Role>Hiring Manager</Role>
+	</PositionSupplier>
+	<PositionProfile xml:lang="en-US">
+		<ProfileId>
+			<IdValue>GS DBA</IdValue>
+		</ProfileId>
+		<ProfileName>Marketing DBA</ProfileName>
+		<PositionDateInfo>
+			<StartAsSoonAsPossible>true</StartAsSoonAsPossible>
+			<StartDate>2003-12-15</StartDate>
+			<ExpectedEndDate>2003-12-15</ExpectedEndDate>
+			<MaximumEndDate>2003-12-31</MaximumEndDate>
+		</PositionDateInfo>
+		<Organization>
+			<OrganizationName>ABC Company</OrganizationName>
+		</Organization>
+		<PositionDetail>
+			<Company>
+				<Name>ABC Company</Name>
+			</Company>
+			<CompanyScale>Global</CompanyScale>
+			<IndustryCode primaryIndicator="1" classificationName="Employment">1235-5</IndustryCode>
+			<PhysicalLocation>
+				<Name>Regional HQ</Name>
+				<TravelDirections>”I-43 north to Silver Spring exit, north on Pt. Washington two blocks, turn right on Lexington by the Kinkos, go one block. Road dead ends at parking lot</TravelDirections>
+				<Area type="countrycode">
+					<Value>US</Value>
+				</Area>
+				<Area type="x:state">
+					<Value>Wisconsin</Value>
+				</Area>
+				<Area type="municipality">
+					<Value>Milwaukee</Value>
+				</Area>
+				<Area type="x:district">
+					<Value>Glendale</Value>
+				</Area>
+				<PostalAddress>
+					<CountryCode>AA</CountryCode>
+					<PostalCode>53217</PostalCode>
+					<Region>Upper Midwest</Region>
+					<DeliveryAddress>
+						<AddressLine>”5301“</AddressLine>
+						<StreetName> “N. Ironwood Road “</StreetName>
+					</DeliveryAddress>
+					<Recipient>
+						<PersonName>
+							<FormattedName>”D. Turcq”</FormattedName>
+						</PersonName>
+						<OrganizationName>ABC Company</OrganizationName>
+					</Recipient>
+				</PostalAddress>
+			</PhysicalLocation>
+			<JobCategory>
+				<TaxonomyName version="4.0">ONET</TaxonomyName>
+				<CategoryCode>15-1061.00</CategoryCode>
+				<CategoryDescription>Database Administrator</CategoryDescription>
+				<Comments>Sales and Marketing focus</Comments>
+			</JobCategory>
+			<PositionTitle>Database Administrator</PositionTitle>
+			<PositionClassification>Temp to Hire</PositionClassification>
+			<PositionSchedule percentage="80">Part Time</PositionSchedule>
+			<Shift shiftPeriod="Daily">
+				<Name>Business Hours</Name>
+				<Hours>30.00</Hours>
+				<StartTime>08:00:00</StartTime>
+				<EndTime>16:30:00</EndTime>
+				<PayTypeHours>Regular</PayTypeHours>
+				<Comments>occasional overtime</Comments>
+			</Shift>
+			<Competency name="SQL Server">
+				<CompetencyWeight>
+					<NumericValue minValue="0" maxValue="100">90</NumericValue>
+				</CompetencyWeight>
+			</Competency>
+			<RemunerationPackage>
+				<BasePay currencyCode="USD" baseInterval="Annually">
+					<BasePayAmountMin>55000.00</BasePayAmountMin>
+					<BasePayAmountMax>60000.00</BasePayAmountMax>
+				</BasePay>
+				<Benefits>
+					<Insurance type="Medical">1</Insurance>
+					<RetirementOrSavingsPlan>1</RetirementOrSavingsPlan>
+					<RelocationAssistance companyOffered="1"/>
+					<VisaSponsorship>1</VisaSponsorship>
+					<TimeOffAllowance timeOffType="PaidHoliday"/>
+					<TimeOffAllowance timeOffType="PaidVacation"/>
+				</Benefits>
+			</RemunerationPackage>
+			<WorkStyle>Independent</WorkStyle>
+			<DressCode suppliedByOrganization="1">Business Casual</DressCode>
+			<Travel>
+				<Applicable>1</Applicable>
+			</Travel>
+			<Relocation relocationConsidered="1">
+				<Comments>String</Comments>
+			</Relocation>
+			<PreferredLanguage>en-us</PreferredLanguage>
+			<JobLevelInfo>
+				<JobPlan>US Technical</JobPlan>
+				<JobGrade>Analyst-Administrator</JobGrade>
+				<JobStep>Level 2</JobStep>
+			</JobLevelInfo>
+		</PositionDetail>
+		<PositionClassification>
+			<DEClassification>
+				<BKZClassification>
+					<BKZId>
+						<IdValue>5896</IdValue>
+					</BKZId>
+					<BKZName><![CDATA[Techniker/in - Textiltechnik (Strickerei/Wirkerei)]]></BKZName>
+				</BKZClassification>
+				<EducationAuthorization>true</EducationAuthorization>
+				<HandicapStatus>All</HandicapStatus>
+			</DEClassification>
+		</PositionClassification>
+		<FormattedPositionDescription>
+			<Name>Job Title - English</Name>
+			<Value>Database Administrator</Value>
+		</FormattedPositionDescription>
+		<FormattedPositionDescription>
+			<Name>SummaryDescription - English</Name>
+			<Value>The Database Administrator provides administration and support of Oracle Databases in production, testing and development environments. Responsible for performing administrative functions affecting all system users. Performs system wide services such as backup and recovery, file and table space sizing, setting system parameters, monitoring system performance and proactive performance tuning</Value>
+		</FormattedPositionDescription>
+		<FormattedPositionDescription>
+			<Name>Aptitudes - French</Name>
+			<Value>Réalisateur d'applications</Value>
+		</FormattedPositionDescription>
+		<FormattedPositionDescription>
+			<Name> Aptitudes - French </Name>
+			<Value> Administrateur de base de données </Value>
+		</FormattedPositionDescription>
+		<HowToApply>
+			<PersonName>
+				<FormattedName>Jenny Recruiter</FormattedName>
+			</PersonName>
+			<ApplicationMethod>
+				<Telephone>
+					<FormattedNumber>1-800-867-5309</FormattedNumber>
+				</Telephone>
+				<Fax>
+					<FormattedNumber>1-800-555-1234</FormattedNumber>
+				</Fax>
+				<InternetEmailAddress>jdoe@somecompanydomain.com</InternetEmailAddress>
+				<InternetWebAddress>><![CDATA[http://www.somecompanydomain.com/apply.aspx?job=12345]]></InternetWebAddress>
+				<PostalAddress>
+					<CountryCode>US</CountryCode>
+					<PostalCode>01821</PostalCode>
+					<Region>MA</Region>
+					<Municipality>SomeTown</Municipality>
+					<DeliveryAddress>
+						<AddressLine>123 Main Street</AddressLine>
+					</DeliveryAddress>
+					<Recipient>
+						<PersonName>
+							<FormattedName>Recruiting Operations</FormattedName>
+						</PersonName>
+						<OrganizationName>SomeCompanyName</OrganizationName>
+					</Recipient>
+				</PostalAddress>
+				<InPerson>
+					<TravelDirections><![CDATA[From Penrith & Hwy 66: Follow the A66 towards Keswick and take the first left towards the town.<BR>When you reach the main junction turn right following signs for Ambleside. 200 yds up the hill on your right.<BR>Go down the hill until it flattens out and the SomeCompany office is on your right.]]></TravelDirections>
+					<MapLink><![CDATA[http://www.mapquest.com/maps/map.adp?formtype=search&searchtype=search&country=US&addtohistory=&cat=may%27s&1ahXX=&address=&city=SomeTown&state=MA&zipcode=01821]]></MapLink>
+					<AdditionalInstructions><![CDATA[Parking to the rear.]]></AdditionalInstructions>
+				</InPerson>
+			</ApplicationMethod>
+			<UserArea>
+				<!--
+        <Field Name="Telex Number" value="654789321" />-->
+			</UserArea>
+		</HowToApply>
+		<SupportingMaterials>
+			<Link>”http://client.njoyn.com/cl/ex/JobDetails4.asp?”</Link>
+			<Description>Company website posting</Description>
+		</SupportingMaterials>
+	</PositionProfile>
+	<NumberToFill>1</NumberToFill>
+</PositionOpening>

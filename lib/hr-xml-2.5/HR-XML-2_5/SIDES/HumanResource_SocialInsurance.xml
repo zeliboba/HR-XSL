@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- This file described in Japanese and translated into English.
+  Example file for followings:
+  SocialInsurance which was added from Japanese requirements.
+    WelfarePension(厚生年金)
+    Health(健康保険)
+    UnemploymentInsurance(雇用保険) 
+-->
+<HumanResource xmlns="http://ns.hr-xml.org/2007-04-15" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://ns.hr-xml.org/2007-04-15
+HumanResource.xsd">
+  <HumanResourceId>
+    <IdValue/>
+  </HumanResourceId>
+  <HumanResourceStatus status="new"/>
+  <ReferenceInformation>
+    <StaffingSupplierId>
+      <IdValue/>
+    </StaffingSupplierId>
+    <StaffingCustomerId>
+      <IdValue/>
+    </StaffingCustomerId>
+  </ReferenceInformation>
+  <ResourceInformation>
+    <PersonName/>
+    <EntityContactInfo>
+      <EntityName/>
+      <ContactMethod/>
+    </EntityContactInfo>
+  </ResourceInformation>
+  <Profile/>
+  <Preferences/>
+  <!-- 例： 厚生年金保険＝加入、健康保険＝加入、雇用保険＝未加入
+		Example in case of 
+		   WelfarePension=Participating,
+		   Health=Participating, 
+		   UnemploymentInsurance=Not Participating	-->
+  <SocialInsurance>
+    <!-- Type[社会保険種別] Social Insurance Type.  
+			WelfarePension(厚生年金), Health(健康保険), UnemploymentInsurance(雇用保険) -->
+    <Type>
+      <StandardValue>WelfarePension</StandardValue>
+    </Type>
+    <IsParticipating>true</IsParticipating>
+  </SocialInsurance>
+  <SocialInsurance>
+    <Type>
+      <StandardValue>Health</StandardValue>
+    </Type>
+    <IsParticipating>true</IsParticipating>
+  </SocialInsurance>
+  <SocialInsurance>
+    <Type>
+      <StandardValue>UnemploymentInsurance</StandardValue>
+    </Type>
+    <IsParticipating>false</IsParticipating>
+    <ReasonForNotParticipating>労働時間が適用時間に達しない[The contracted total working hours do not reach to the applicable working hours..]</ReasonForNotParticipating>
+  </SocialInsurance>
+</HumanResource>

@@ -1,0 +1,3041 @@
+<html>
+
+<head>
+<meta http-equiv=Content-Type content="text/html; charset=us-ascii">
+<meta name=Generator content="Microsoft Word 11 (filtered)">
+<title>HR-XML Extension</title>
+<style>
+<!--p.SUPER
+	{position:relative;
+	top:-3pt;}
+li.SUPER
+	{position:relative;
+	top:-3pt;}
+div.SUPER
+	{position:relative;
+	top:-3pt;}
+
+ /* Font Definitions */
+ @font-face
+	{font-family:Courier;
+	panose-1:2 7 4 9 2 2 5 2 4 4;}
+@font-face
+	{font-family:"MS Mincho";
+	panose-1:2 2 6 9 4 2 5 8 3 4;}
+@font-face
+	{font-family:Tahoma;
+	panose-1:2 11 6 4 3 5 4 4 2 4;}
+@font-face
+	{font-family:"\@MS Mincho";
+	panose-1:2 2 6 9 4 2 5 8 3 4;}
+@font-face
+	{font-family:"Book Antiqua";
+	panose-1:2 4 6 2 5 3 5 3 3 4;}
+@font-face
+	{font-family:GillSans;}
+@font-face
+	{font-family:Copperplate31ab;}
+@font-face
+	{font-family:"Verdana\, Arial\, Helvetica";}
+ /* Style Definitions */
+ p.MsoNormal, li.MsoNormal, div.MsoNormal
+	{margin-top:6.0pt;
+	margin-right:0in;
+	margin-bottom:6.0pt;
+	margin-left:0in;
+	font-size:11.0pt;
+	font-family:Arial;}
+h1
+	{margin-top:24.0pt;
+	margin-right:0in;
+	margin-bottom:12.0pt;
+	margin-left:.3in;
+	text-align:justify;
+	text-justify:inter-ideograph;
+	text-indent:-.3in;
+	page-break-after:avoid;
+	font-size:14.0pt;
+	font-family:Copperplate31ab;
+	font-weight:normal;}
+h2
+	{margin-top:.25in;
+	margin-right:0in;
+	margin-bottom:6.0pt;
+	margin-left:.4in;
+	text-indent:-.4in;
+	page-break-after:avoid;
+	layout-grid-mode:char;
+	font-size:12.0pt;
+	font-family:Arial;
+	font-weight:bold;
+	font-style:italic;}
+h3
+	{margin-top:12.0pt;
+	margin-right:0in;
+	margin-bottom:6.0pt;
+	margin-left:.5in;
+	text-indent:-.5in;
+	page-break-after:avoid;
+	layout-grid-mode:char;
+	font-size:10.0pt;
+	font-family:Arial;
+	font-weight:bold;}
+h4
+	{margin-top:12.0pt;
+	margin-right:0in;
+	margin-bottom:3.0pt;
+	margin-left:0in;
+	page-break-after:avoid;
+	font-size:12.0pt;
+	font-family:Arial;
+	font-weight:bold;}
+h5
+	{margin-top:6.0pt;
+	margin-right:0in;
+	margin-bottom:6.0pt;
+	margin-left:.7in;
+	text-align:justify;
+	text-justify:inter-ideograph;
+	text-indent:-.7in;
+	page-break-after:avoid;
+	punctuation-wrap:simple;
+	text-autospace:none;
+	font-size:12.0pt;
+	font-family:GillSans;
+	font-weight:bold;}
+h6
+	{margin-top:12.0pt;
+	margin-right:0in;
+	margin-bottom:3.0pt;
+	margin-left:.8in;
+	text-align:justify;
+	text-justify:inter-ideograph;
+	text-indent:-.8in;
+	font-size:11.0pt;
+	font-family:GillSans;
+	font-weight:bold;}
+p.MsoHeading7, li.MsoHeading7, div.MsoHeading7
+	{margin-top:12.0pt;
+	margin-right:0in;
+	margin-bottom:3.0pt;
+	margin-left:.9in;
+	text-align:justify;
+	text-justify:inter-ideograph;
+	text-indent:-.9in;
+	font-size:12.0pt;
+	font-family:GillSans;}
+p.MsoHeading8, li.MsoHeading8, div.MsoHeading8
+	{margin-top:12.0pt;
+	margin-right:0in;
+	margin-bottom:3.0pt;
+	margin-left:1.0in;
+	text-align:justify;
+	text-justify:inter-ideograph;
+	text-indent:-1.0in;
+	font-size:12.0pt;
+	font-family:GillSans;
+	font-style:italic;}
+p.MsoHeading9, li.MsoHeading9, div.MsoHeading9
+	{margin-top:12.0pt;
+	margin-right:0in;
+	margin-bottom:3.0pt;
+	margin-left:1.1in;
+	text-align:justify;
+	text-justify:inter-ideograph;
+	text-indent:-1.1in;
+	font-size:11.0pt;
+	font-family:Arial;}
+p.MsoIndex1, li.MsoIndex1, div.MsoIndex1
+	{margin-top:6.0pt;
+	margin-right:0in;
+	margin-bottom:6.0pt;
+	margin-left:12.0pt;
+	text-align:justify;
+	text-justify:inter-ideograph;
+	text-indent:-12.0pt;
+	font-size:12.0pt;
+	font-family:GillSans;}
+p.MsoIndex2, li.MsoIndex2, div.MsoIndex2
+	{margin-top:6.0pt;
+	margin-right:0in;
+	margin-bottom:6.0pt;
+	margin-left:24.0pt;
+	text-align:justify;
+	text-justify:inter-ideograph;
+	text-indent:-12.0pt;
+	font-size:12.0pt;
+	font-family:GillSans;}
+p.MsoIndex3, li.MsoIndex3, div.MsoIndex3
+	{margin-top:6.0pt;
+	margin-right:0in;
+	margin-bottom:6.0pt;
+	margin-left:.5in;
+	text-align:justify;
+	text-justify:inter-ideograph;
+	text-indent:-12.0pt;
+	font-size:12.0pt;
+	font-family:GillSans;}
+p.MsoIndex4, li.MsoIndex4, div.MsoIndex4
+	{margin-top:6.0pt;
+	margin-right:0in;
+	margin-bottom:6.0pt;
+	margin-left:48.0pt;
+	text-align:justify;
+	text-justify:inter-ideograph;
+	text-indent:-12.0pt;
+	font-size:12.0pt;
+	font-family:GillSans;}
+p.MsoIndex5, li.MsoIndex5, div.MsoIndex5
+	{margin-top:6.0pt;
+	margin-right:0in;
+	margin-bottom:6.0pt;
+	margin-left:60.0pt;
+	text-align:justify;
+	text-justify:inter-ideograph;
+	text-indent:-12.0pt;
+	font-size:12.0pt;
+	font-family:GillSans;}
+p.MsoIndex6, li.MsoIndex6, div.MsoIndex6
+	{margin-top:6.0pt;
+	margin-right:0in;
+	margin-bottom:6.0pt;
+	margin-left:1.0in;
+	text-align:justify;
+	text-justify:inter-ideograph;
+	text-indent:-12.0pt;
+	font-size:12.0pt;
+	font-family:GillSans;}
+p.MsoIndex7, li.MsoIndex7, div.MsoIndex7
+	{margin-top:6.0pt;
+	margin-right:0in;
+	margin-bottom:6.0pt;
+	margin-left:84.0pt;
+	text-align:justify;
+	text-justify:inter-ideograph;
+	text-indent:-12.0pt;
+	font-size:12.0pt;
+	font-family:GillSans;}
+p.MsoIndex8, li.MsoIndex8, div.MsoIndex8
+	{margin-top:6.0pt;
+	margin-right:0in;
+	margin-bottom:6.0pt;
+	margin-left:96.0pt;
+	text-align:justify;
+	text-justify:inter-ideograph;
+	text-indent:-12.0pt;
+	font-size:12.0pt;
+	font-family:GillSans;}
+p.MsoIndex9, li.MsoIndex9, div.MsoIndex9
+	{margin-top:6.0pt;
+	margin-right:0in;
+	margin-bottom:6.0pt;
+	margin-left:1.5in;
+	text-align:justify;
+	text-justify:inter-ideograph;
+	text-indent:-12.0pt;
+	font-size:12.0pt;
+	font-family:GillSans;}
+p.MsoToc1, li.MsoToc1, div.MsoToc1
+	{margin-top:12.0pt;
+	margin-right:0in;
+	margin-bottom:6.0pt;
+	margin-left:0in;
+	font-size:11.0pt;
+	font-family:"Times New Roman";
+	font-weight:bold;}
+p.MsoToc2, li.MsoToc2, div.MsoToc2
+	{margin-top:6.0pt;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:11.0pt;
+	margin-bottom:.0001pt;
+	font-size:11.0pt;
+	font-family:"Times New Roman";
+	font-style:italic;}
+p.MsoToc3, li.MsoToc3, div.MsoToc3
+	{margin-top:0in;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:22.0pt;
+	margin-bottom:.0001pt;
+	font-size:11.0pt;
+	font-family:"Times New Roman";}
+p.MsoToc4, li.MsoToc4, div.MsoToc4
+	{margin-top:0in;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:33.0pt;
+	margin-bottom:.0001pt;
+	font-size:11.0pt;
+	font-family:"Times New Roman";}
+p.MsoToc5, li.MsoToc5, div.MsoToc5
+	{margin-top:0in;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:44.0pt;
+	margin-bottom:.0001pt;
+	font-size:11.0pt;
+	font-family:"Times New Roman";}
+p.MsoToc6, li.MsoToc6, div.MsoToc6
+	{margin-top:0in;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:55.0pt;
+	margin-bottom:.0001pt;
+	font-size:11.0pt;
+	font-family:"Times New Roman";}
+p.MsoToc7, li.MsoToc7, div.MsoToc7
+	{margin-top:0in;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:66.0pt;
+	margin-bottom:.0001pt;
+	font-size:11.0pt;
+	font-family:"Times New Roman";}
+p.MsoToc8, li.MsoToc8, div.MsoToc8
+	{margin-top:0in;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:77.0pt;
+	margin-bottom:.0001pt;
+	font-size:11.0pt;
+	font-family:"Times New Roman";}
+p.MsoToc9, li.MsoToc9, div.MsoToc9
+	{margin-top:0in;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:88.0pt;
+	margin-bottom:.0001pt;
+	font-size:11.0pt;
+	font-family:"Times New Roman";}
+p.MsoNormalIndent, li.MsoNormalIndent, div.MsoNormalIndent
+	{margin-top:6.0pt;
+	margin-right:0in;
+	margin-bottom:6.0pt;
+	margin-left:.5in;
+	font-size:11.0pt;
+	font-family:Arial;}
+p.MsoFootnoteText, li.MsoFootnoteText, div.MsoFootnoteText
+	{margin-top:6.0pt;
+	margin-right:0in;
+	margin-bottom:6.0pt;
+	margin-left:0in;
+	text-align:justify;
+	text-justify:inter-ideograph;
+	font-size:11.0pt;
+	font-family:GillSans;}
+p.MsoCommentText, li.MsoCommentText, div.MsoCommentText
+	{margin-top:6.0pt;
+	margin-right:0in;
+	margin-bottom:6.0pt;
+	margin-left:0in;
+	text-align:justify;
+	text-justify:inter-ideograph;
+	font-size:11.0pt;
+	font-family:GillSans;}
+p.MsoHeader, li.MsoHeader, div.MsoHeader
+	{margin-top:6.0pt;
+	margin-right:0in;
+	margin-bottom:6.0pt;
+	margin-left:0in;
+	text-align:justify;
+	text-justify:inter-ideograph;
+	font-size:11.0pt;
+	font-family:GillSans;}
+p.MsoFooter, li.MsoFooter, div.MsoFooter
+	{margin-top:6.0pt;
+	margin-right:0in;
+	margin-bottom:6.0pt;
+	margin-left:0in;
+	text-align:justify;
+	text-justify:inter-ideograph;
+	font-size:11.0pt;
+	font-family:GillSans;}
+p.MsoIndexHeading, li.MsoIndexHeading, div.MsoIndexHeading
+	{margin-top:6.0pt;
+	margin-right:0in;
+	margin-bottom:6.0pt;
+	margin-left:0in;
+	text-align:justify;
+	text-justify:inter-ideograph;
+	font-size:12.0pt;
+	font-family:Arial;
+	font-weight:bold;}
+p.MsoCaption, li.MsoCaption, div.MsoCaption
+	{margin-top:6.0pt;
+	margin-right:0in;
+	margin-bottom:6.0pt;
+	margin-left:0in;
+	text-align:center;
+	font-size:12.0pt;
+	font-family:GillSans;
+	font-weight:bold;}
+p.MsoTof, li.MsoTof, div.MsoTof
+	{margin-top:6.0pt;
+	margin-right:0in;
+	margin-bottom:6.0pt;
+	margin-left:24.0pt;
+	text-indent:-24.0pt;
+	font-size:11.0pt;
+	font-family:Arial;}
+p.MsoEnvelopeAddress, li.MsoEnvelopeAddress, div.MsoEnvelopeAddress
+	{margin-top:6.0pt;
+	margin-right:0in;
+	margin-bottom:6.0pt;
+	margin-left:2.0in;
+	text-align:justify;
+	text-justify:inter-ideograph;
+	font-size:12.0pt;
+	font-family:Arial;}
+p.MsoEnvelopeReturn, li.MsoEnvelopeReturn, div.MsoEnvelopeReturn
+	{margin-top:6.0pt;
+	margin-right:0in;
+	margin-bottom:6.0pt;
+	margin-left:0in;
+	text-align:justify;
+	text-justify:inter-ideograph;
+	font-size:11.0pt;
+	font-family:Arial;}
+span.MsoFootnoteReference
+	{vertical-align:super;}
+span.MsoCommentReference
+	{color:fuchsia;}
+span.MsoEndnoteReference
+	{vertical-align:super;}
+p.MsoEndnoteText, li.MsoEndnoteText, div.MsoEndnoteText
+	{margin-top:6.0pt;
+	margin-right:0in;
+	margin-bottom:6.0pt;
+	margin-left:0in;
+	text-align:justify;
+	text-justify:inter-ideograph;
+	font-size:11.0pt;
+	font-family:GillSans;}
+p.MsoToa, li.MsoToa, div.MsoToa
+	{margin-top:6.0pt;
+	margin-right:0in;
+	margin-bottom:6.0pt;
+	margin-left:12.0pt;
+	text-indent:-12.0pt;
+	font-size:11.0pt;
+	font-family:Arial;}
+p.MsoMacroText, li.MsoMacroText, div.MsoMacroText
+	{margin:0in;
+	margin-bottom:.0001pt;
+	text-align:justify;
+	text-justify:inter-ideograph;
+	font-size:10.0pt;
+	font-family:"Courier New";}
+p.MsoToaHeading, li.MsoToaHeading, div.MsoToaHeading
+	{margin-top:6.0pt;
+	margin-right:0in;
+	margin-bottom:6.0pt;
+	margin-left:0in;
+	font-size:11.0pt;
+	font-family:Arial;
+	font-weight:bold;}
+p.MsoList, li.MsoList, div.MsoList
+	{margin-top:6.0pt;
+	margin-right:0in;
+	margin-bottom:6.0pt;
+	margin-left:.25in;
+	text-align:justify;
+	text-justify:inter-ideograph;
+	text-indent:-.25in;
+	font-size:12.0pt;
+	font-family:GillSans;}
+p.MsoListBullet, li.MsoListBullet, div.MsoListBullet
+	{margin-top:6.0pt;
+	margin-right:0in;
+	margin-bottom:6.0pt;
+	margin-left:.25in;
+	text-align:justify;
+	text-justify:inter-ideograph;
+	text-indent:-.25in;
+	font-size:12.0pt;
+	font-family:GillSans;}
+p.MsoListNumber, li.MsoListNumber, div.MsoListNumber
+	{margin-top:6.0pt;
+	margin-right:0in;
+	margin-bottom:6.0pt;
+	margin-left:.25in;
+	text-align:justify;
+	text-justify:inter-ideograph;
+	text-indent:-.25in;
+	font-size:12.0pt;
+	font-family:GillSans;}
+p.MsoList2, li.MsoList2, div.MsoList2
+	{margin-top:6.0pt;
+	margin-right:0in;
+	margin-bottom:6.0pt;
+	margin-left:.5in;
+	text-align:justify;
+	text-justify:inter-ideograph;
+	text-indent:-.25in;
+	font-size:12.0pt;
+	font-family:GillSans;}
+p.MsoList3, li.MsoList3, div.MsoList3
+	{margin-top:6.0pt;
+	margin-right:0in;
+	margin-bottom:6.0pt;
+	margin-left:.75in;
+	text-align:justify;
+	text-justify:inter-ideograph;
+	text-indent:-.25in;
+	font-size:12.0pt;
+	font-family:GillSans;}
+p.MsoList4, li.MsoList4, div.MsoList4
+	{margin-top:6.0pt;
+	margin-right:0in;
+	margin-bottom:6.0pt;
+	margin-left:1.0in;
+	text-align:justify;
+	text-justify:inter-ideograph;
+	text-indent:-.25in;
+	font-size:12.0pt;
+	font-family:GillSans;}
+p.MsoList5, li.MsoList5, div.MsoList5
+	{margin-top:6.0pt;
+	margin-right:0in;
+	margin-bottom:6.0pt;
+	margin-left:1.25in;
+	text-align:justify;
+	text-justify:inter-ideograph;
+	text-indent:-.25in;
+	font-size:12.0pt;
+	font-family:GillSans;}
+p.MsoListBullet2, li.MsoListBullet2, div.MsoListBullet2
+	{margin-top:6.0pt;
+	margin-right:0in;
+	margin-bottom:6.0pt;
+	margin-left:.5in;
+	text-align:justify;
+	text-justify:inter-ideograph;
+	text-indent:-.25in;
+	font-size:12.0pt;
+	font-family:GillSans;}
+p.MsoListBullet3, li.MsoListBullet3, div.MsoListBullet3
+	{margin-top:6.0pt;
+	margin-right:0in;
+	margin-bottom:6.0pt;
+	margin-left:.75in;
+	text-align:justify;
+	text-justify:inter-ideograph;
+	text-indent:-.25in;
+	font-size:12.0pt;
+	font-family:GillSans;}
+p.MsoListBullet4, li.MsoListBullet4, div.MsoListBullet4
+	{margin-top:6.0pt;
+	margin-right:0in;
+	margin-bottom:6.0pt;
+	margin-left:1.0in;
+	text-align:justify;
+	text-justify:inter-ideograph;
+	text-indent:-.25in;
+	font-size:12.0pt;
+	font-family:GillSans;}
+p.MsoListBullet5, li.MsoListBullet5, div.MsoListBullet5
+	{margin-top:6.0pt;
+	margin-right:0in;
+	margin-bottom:6.0pt;
+	margin-left:1.25in;
+	text-align:justify;
+	text-justify:inter-ideograph;
+	text-indent:-.25in;
+	font-size:12.0pt;
+	font-family:GillSans;}
+p.MsoListNumber2, li.MsoListNumber2, div.MsoListNumber2
+	{margin-top:6.0pt;
+	margin-right:0in;
+	margin-bottom:6.0pt;
+	margin-left:.5in;
+	text-align:justify;
+	text-justify:inter-ideograph;
+	text-indent:-.25in;
+	font-size:12.0pt;
+	font-family:GillSans;}
+p.MsoListNumber3, li.MsoListNumber3, div.MsoListNumber3
+	{margin-top:6.0pt;
+	margin-right:0in;
+	margin-bottom:6.0pt;
+	margin-left:.75in;
+	text-align:justify;
+	text-justify:inter-ideograph;
+	text-indent:-.25in;
+	font-size:12.0pt;
+	font-family:GillSans;}
+p.MsoListNumber4, li.MsoListNumber4, div.MsoListNumber4
+	{margin-top:6.0pt;
+	margin-right:0in;
+	margin-bottom:6.0pt;
+	margin-left:1.0in;
+	text-align:justify;
+	text-justify:inter-ideograph;
+	text-indent:-.25in;
+	font-size:12.0pt;
+	font-family:GillSans;}
+p.MsoListNumber5, li.MsoListNumber5, div.MsoListNumber5
+	{margin-top:6.0pt;
+	margin-right:0in;
+	margin-bottom:6.0pt;
+	margin-left:1.25in;
+	text-align:justify;
+	text-justify:inter-ideograph;
+	text-indent:-.25in;
+	font-size:12.0pt;
+	font-family:GillSans;}
+p.MsoTitle, li.MsoTitle, div.MsoTitle
+	{margin-top:12.0pt;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:0in;
+	margin-bottom:.0001pt;
+	font-size:18.0pt;
+	font-family:Arial;
+	color:navy;
+	font-weight:bold;}
+p.MsoClosing, li.MsoClosing, div.MsoClosing
+	{margin-top:6.0pt;
+	margin-right:0in;
+	margin-bottom:6.0pt;
+	margin-left:3.0in;
+	text-align:justify;
+	text-justify:inter-ideograph;
+	font-size:12.0pt;
+	font-family:GillSans;}
+p.MsoSignature, li.MsoSignature, div.MsoSignature
+	{margin-top:6.0pt;
+	margin-right:0in;
+	margin-bottom:6.0pt;
+	margin-left:3.0in;
+	font-size:11.0pt;
+	font-family:Arial;}
+p.MsoBodyText, li.MsoBodyText, div.MsoBodyText
+	{margin-top:6.0pt;
+	margin-right:0in;
+	margin-bottom:6.0pt;
+	margin-left:0in;
+	text-align:justify;
+	text-justify:inter-ideograph;
+	layout-grid-mode:char;
+	font-size:12.0pt;
+	font-family:GillSans;}
+p.MsoBodyTextIndent, li.MsoBodyTextIndent, div.MsoBodyTextIndent
+	{margin-top:6.0pt;
+	margin-right:0in;
+	margin-bottom:6.0pt;
+	margin-left:.25in;
+	text-align:justify;
+	text-justify:inter-ideograph;
+	font-size:12.0pt;
+	font-family:GillSans;}
+p.MsoListContinue, li.MsoListContinue, div.MsoListContinue
+	{margin-top:6.0pt;
+	margin-right:0in;
+	margin-bottom:6.0pt;
+	margin-left:.25in;
+	text-align:justify;
+	text-justify:inter-ideograph;
+	font-size:12.0pt;
+	font-family:GillSans;}
+p.MsoListContinue2, li.MsoListContinue2, div.MsoListContinue2
+	{margin-top:6.0pt;
+	margin-right:0in;
+	margin-bottom:6.0pt;
+	margin-left:.5in;
+	text-align:justify;
+	text-justify:inter-ideograph;
+	font-size:12.0pt;
+	font-family:GillSans;}
+p.MsoListContinue3, li.MsoListContinue3, div.MsoListContinue3
+	{margin-top:6.0pt;
+	margin-right:0in;
+	margin-bottom:6.0pt;
+	margin-left:.75in;
+	text-align:justify;
+	text-justify:inter-ideograph;
+	font-size:12.0pt;
+	font-family:GillSans;}
+p.MsoListContinue4, li.MsoListContinue4, div.MsoListContinue4
+	{margin-top:6.0pt;
+	margin-right:0in;
+	margin-bottom:6.0pt;
+	margin-left:1.0in;
+	text-align:justify;
+	text-justify:inter-ideograph;
+	font-size:12.0pt;
+	font-family:GillSans;}
+p.MsoListContinue5, li.MsoListContinue5, div.MsoListContinue5
+	{margin-top:6.0pt;
+	margin-right:0in;
+	margin-bottom:6.0pt;
+	margin-left:1.25in;
+	text-align:justify;
+	text-justify:inter-ideograph;
+	font-size:12.0pt;
+	font-family:GillSans;}
+p.MsoMessageHeader, li.MsoMessageHeader, div.MsoMessageHeader
+	{margin-top:6.0pt;
+	margin-right:0in;
+	margin-bottom:6.0pt;
+	margin-left:.75in;
+	text-align:justify;
+	text-justify:inter-ideograph;
+	text-indent:-.75in;
+	background:#CCCCCC;
+	font-size:12.0pt;
+	font-family:Arial;}
+p.MsoSubtitle, li.MsoSubtitle, div.MsoSubtitle
+	{margin:0in;
+	margin-bottom:.0001pt;
+	text-align:center;
+	font-size:14.0pt;
+	font-family:Copperplate31ab;
+	font-weight:bold;}
+p.MsoSalutation, li.MsoSalutation, div.MsoSalutation
+	{margin-top:6.0pt;
+	margin-right:0in;
+	margin-bottom:6.0pt;
+	margin-left:0in;
+	font-size:11.0pt;
+	font-family:Arial;}
+p.MsoDate, li.MsoDate, div.MsoDate
+	{margin-top:6.0pt;
+	margin-right:0in;
+	margin-bottom:6.0pt;
+	margin-left:0in;
+	text-align:justify;
+	text-justify:inter-ideograph;
+	font-size:12.0pt;
+	font-family:GillSans;}
+p.MsoBodyTextFirstIndent, li.MsoBodyTextFirstIndent, div.MsoBodyTextFirstIndent
+	{margin-top:6.0pt;
+	margin-right:0in;
+	margin-bottom:6.0pt;
+	margin-left:0in;
+	text-align:justify;
+	text-justify:inter-ideograph;
+	text-indent:10.5pt;
+	font-size:12.0pt;
+	font-family:GillSans;}
+p.MsoBodyTextFirstIndent2, li.MsoBodyTextFirstIndent2, div.MsoBodyTextFirstIndent2
+	{margin-top:6.0pt;
+	margin-right:0in;
+	margin-bottom:6.0pt;
+	margin-left:.25in;
+	text-align:justify;
+	text-justify:inter-ideograph;
+	text-indent:10.5pt;
+	font-size:12.0pt;
+	font-family:GillSans;}
+p.MsoNoteHeading, li.MsoNoteHeading, div.MsoNoteHeading
+	{margin-top:6.0pt;
+	margin-right:0in;
+	margin-bottom:6.0pt;
+	margin-left:0in;
+	font-size:11.0pt;
+	font-family:Arial;}
+p.MsoBodyText2, li.MsoBodyText2, div.MsoBodyText2
+	{margin-top:6.0pt;
+	margin-right:0in;
+	margin-bottom:6.0pt;
+	margin-left:0in;
+	text-align:justify;
+	text-justify:inter-ideograph;
+	line-height:200%;
+	font-size:12.0pt;
+	font-family:GillSans;}
+p.MsoBodyText3, li.MsoBodyText3, div.MsoBodyText3
+	{margin-top:6.0pt;
+	margin-right:0in;
+	margin-bottom:6.0pt;
+	margin-left:0in;
+	line-height:200%;
+	font-size:12.0pt;
+	font-family:Arial;}
+p.MsoBodyTextIndent2, li.MsoBodyTextIndent2, div.MsoBodyTextIndent2
+	{margin-top:6.0pt;
+	margin-right:0in;
+	margin-bottom:6.0pt;
+	margin-left:.25in;
+	text-align:justify;
+	text-justify:inter-ideograph;
+	line-height:200%;
+	font-size:12.0pt;
+	font-family:GillSans;}
+p.MsoBodyTextIndent3, li.MsoBodyTextIndent3, div.MsoBodyTextIndent3
+	{margin-top:6.0pt;
+	margin-right:0in;
+	margin-bottom:6.0pt;
+	margin-left:.25in;
+	text-align:justify;
+	text-justify:inter-ideograph;
+	font-size:8.0pt;
+	font-family:GillSans;}
+p.MsoBlockText, li.MsoBlockText, div.MsoBlockText
+	{margin-top:6.0pt;
+	margin-right:1.0in;
+	margin-bottom:6.0pt;
+	margin-left:1.0in;
+	text-align:justify;
+	text-justify:inter-ideograph;
+	font-size:12.0pt;
+	font-family:GillSans;}
+a:link, span.MsoHyperlink
+	{color:blue;
+	text-decoration:none none;}
+a:visited, span.MsoHyperlinkFollowed
+	{color:purple;
+	text-decoration:none none;}
+p.MsoDocumentMap, li.MsoDocumentMap, div.MsoDocumentMap
+	{margin-top:6.0pt;
+	margin-right:0in;
+	margin-bottom:6.0pt;
+	margin-left:0in;
+	text-align:justify;
+	text-justify:inter-ideograph;
+	background:navy;
+	font-size:12.0pt;
+	font-family:Tahoma;}
+p.MsoPlainText, li.MsoPlainText, div.MsoPlainText
+	{margin:0in;
+	margin-bottom:.0001pt;
+	font-size:10.0pt;
+	font-family:"Courier New";}
+p.MsoAutoSig, li.MsoAutoSig, div.MsoAutoSig
+	{margin-top:6.0pt;
+	margin-right:0in;
+	margin-bottom:6.0pt;
+	margin-left:0in;
+	text-align:justify;
+	text-justify:inter-ideograph;
+	font-size:12.0pt;
+	font-family:GillSans;}
+p
+	{margin:0in;
+	margin-bottom:.0001pt;
+	font-size:8.0pt;
+	font-family:"Times New Roman";}
+address
+	{margin-top:6.0pt;
+	margin-right:0in;
+	margin-bottom:6.0pt;
+	margin-left:0in;
+	text-align:justify;
+	text-justify:inter-ideograph;
+	font-size:12.0pt;
+	font-family:GillSans;
+	font-style:italic;}
+code
+	{font-family:"Courier New";}
+pre
+	{margin-top:6.0pt;
+	margin-right:0in;
+	margin-bottom:6.0pt;
+	margin-left:0in;
+	text-align:justify;
+	text-justify:inter-ideograph;
+	font-size:11.0pt;
+	font-family:"Courier New";}
+p.MsoAcetate, li.MsoAcetate, div.MsoAcetate
+	{margin-top:6.0pt;
+	margin-right:0in;
+	margin-bottom:6.0pt;
+	margin-left:0in;
+	font-size:8.0pt;
+	font-family:Tahoma;}
+p.xml, li.xml, div.xml
+	{margin-top:6.0pt;
+	margin-right:0in;
+	margin-bottom:6.0pt;
+	margin-left:0in;
+	font-size:11.0pt;
+	font-family:"Courier New";}
+p.appendices, li.appendices, div.appendices
+	{margin-top:24.0pt;
+	margin-right:0in;
+	margin-bottom:12.0pt;
+	margin-left:.3in;
+	text-align:center;
+	text-indent:-.3in;
+	page-break-after:avoid;
+	font-size:14.0pt;
+	font-family:Copperplate31ab;
+	font-weight:bold;}
+p.bullet, li.bullet, div.bullet
+	{margin-top:3.0pt;
+	margin-right:4.3pt;
+	margin-bottom:3.0pt;
+	margin-left:.5in;
+	text-align:justify;
+	text-justify:inter-ideograph;
+	text-indent:-.25in;
+	layout-grid-mode:char;
+	font-size:12.0pt;
+	font-family:GillSans;}
+p.footerlandscape, li.footerlandscape, div.footerlandscape
+	{margin-top:6.0pt;
+	margin-right:0in;
+	margin-bottom:6.0pt;
+	margin-left:0in;
+	text-align:justify;
+	text-justify:inter-ideograph;
+	font-size:11.0pt;
+	font-family:GillSans;}
+p.headerlandscape, li.headerlandscape, div.headerlandscape
+	{margin-top:6.0pt;
+	margin-right:0in;
+	margin-bottom:6.0pt;
+	margin-left:0in;
+	text-align:justify;
+	text-justify:inter-ideograph;
+	font-size:11.0pt;
+	font-family:GillSans;}
+p.number, li.number, div.number
+	{margin-top:3.0pt;
+	margin-right:0in;
+	margin-bottom:3.0pt;
+	margin-left:.5in;
+	text-indent:-.25in;
+	font-size:11.0pt;
+	font-family:Arial;}
+p.titlecover, li.titlecover, div.titlecover
+	{margin-top:1.25in;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:.75in;
+	margin-bottom:.0001pt;
+	page-break-after:avoid;
+	font-size:36.0pt;
+	font-family:Arial;
+	letter-spacing:-2.4pt;
+	font-weight:bold;}
+p.subtitlecover, li.subtitlecover, div.subtitlecover
+	{margin-top:76.0pt;
+	margin-right:84.0pt;
+	margin-bottom:0in;
+	margin-left:.75in;
+	margin-bottom:.0001pt;
+	page-break-after:avoid;
+	font-size:20.0pt;
+	font-family:"Times New Roman";
+	letter-spacing:-1.0pt;
+	font-style:italic;}
+p.tabletext, li.tabletext, div.tabletext
+	{margin:0in;
+	margin-bottom:.0001pt;
+	font-size:11.0pt;
+	font-family:Arial;}
+p.tablebullet, li.tablebullet, div.tablebullet
+	{margin-top:0in;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:.15in;
+	margin-bottom:.0001pt;
+	text-indent:-.15in;
+	font-size:11.0pt;
+	font-family:Arial;}
+p.tableheader, li.tableheader, div.tableheader
+	{margin:0in;
+	margin-bottom:.0001pt;
+	text-align:center;
+	font-size:11.0pt;
+	font-family:Copperplate31ab;
+	color:white;
+	font-weight:bold;}
+p.tablelist, li.tablelist, div.tablelist
+	{margin-top:0in;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:.25in;
+	margin-bottom:.0001pt;
+	text-indent:-.3in;
+	font-size:11.0pt;
+	font-family:Arial;}
+p.tablesubheader, li.tablesubheader, div.tablesubheader
+	{margin:0in;
+	margin-bottom:.0001pt;
+	text-align:center;
+	font-size:11.0pt;
+	font-family:Arial;
+	font-weight:bold;}
+p.version, li.version, div.version
+	{margin:0in;
+	margin-bottom:.0001pt;
+	text-align:center;
+	font-size:10.0pt;
+	font-family:Copperplate31ab;}
+p.style1, li.style1, div.style1
+	{margin-top:12.0pt;
+	margin-right:0in;
+	margin-bottom:6.0pt;
+	margin-left:.5in;
+	text-indent:-.5in;
+	page-break-after:avoid;
+	layout-grid-mode:char;
+	font-size:10.0pt;
+	font-family:Arial;
+	font-weight:bold;}
+p.h4, li.h4, div.h4
+	{margin-top:6.0pt;
+	margin-right:0in;
+	margin-bottom:6.0pt;
+	margin-left:0in;
+	font-size:11.0pt;
+	font-family:Arial;
+	font-weight:bold;}
+p.b, li.b, div.b
+	{margin:0in;
+	margin-bottom:.0001pt;
+	font-size:12.0pt;
+	font-family:"Courier New";
+	color:red;
+	font-weight:bold;}
+p.e, li.e, div.e
+	{margin-top:0in;
+	margin-right:12.0pt;
+	margin-bottom:0in;
+	margin-left:12.0pt;
+	margin-bottom:.0001pt;
+	text-indent:-12.0pt;
+	font-size:12.0pt;
+	font-family:"Times New Roman";}
+p.k, li.k, div.k
+	{margin-top:0in;
+	margin-right:12.0pt;
+	margin-bottom:0in;
+	margin-left:12.0pt;
+	margin-bottom:.0001pt;
+	text-indent:-12.0pt;
+	font-size:12.0pt;
+	font-family:"Times New Roman";}
+p.t, li.t, div.t
+	{margin:0in;
+	margin-bottom:.0001pt;
+	font-size:12.0pt;
+	font-family:"Times New Roman";
+	color:#990000;}
+p.xt, li.xt, div.xt
+	{margin:0in;
+	margin-bottom:.0001pt;
+	font-size:12.0pt;
+	font-family:"Times New Roman";
+	color:#990099;}
+p.ns, li.ns, div.ns
+	{margin:0in;
+	margin-bottom:.0001pt;
+	font-size:12.0pt;
+	font-family:"Times New Roman";
+	color:red;}
+p.m, li.m, div.m
+	{margin:0in;
+	margin-bottom:.0001pt;
+	font-size:12.0pt;
+	font-family:"Times New Roman";
+	color:blue;}
+p.tx, li.tx, div.tx
+	{margin:0in;
+	margin-bottom:.0001pt;
+	font-size:12.0pt;
+	font-family:"Times New Roman";
+	font-weight:bold;}
+p.db, li.db, div.db
+	{margin-top:0in;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:12.0pt;
+	margin-bottom:.0001pt;
+	font-size:12.0pt;
+	font-family:Courier;}
+p.di, li.di, div.di
+	{margin:0in;
+	margin-bottom:.0001pt;
+	font-size:12.0pt;
+	font-family:Courier;}
+p.d, li.d, div.d
+	{margin:0in;
+	margin-bottom:.0001pt;
+	font-size:12.0pt;
+	font-family:"Times New Roman";
+	color:blue;}
+p.pi, li.pi, div.pi
+	{margin:0in;
+	margin-bottom:.0001pt;
+	font-size:12.0pt;
+	font-family:"Times New Roman";
+	color:blue;}
+p.cb, li.cb, div.cb
+	{margin-top:0in;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:12.0pt;
+	margin-bottom:.0001pt;
+	font-size:12.0pt;
+	font-family:Courier;
+	color:#888888;}
+p.ci, li.ci, div.ci
+	{margin:0in;
+	margin-bottom:.0001pt;
+	font-size:12.0pt;
+	font-family:Courier;
+	color:#888888;}
+p.workingdraftdate, li.workingdraftdate, div.workingdraftdate
+	{margin-top:12.0pt;
+	margin-right:0in;
+	margin-bottom:12.0pt;
+	margin-left:0in;
+	font-size:16.0pt;
+	font-family:Arial;
+	color:navy;}
+p.heading3preface, li.heading3preface, div.heading3preface
+	{margin:0in;
+	margin-bottom:.0001pt;
+	font-size:10.0pt;
+	font-family:Arial;
+	font-weight:bold;}
+p.prefacetext, li.prefacetext, div.prefacetext
+	{margin-top:0in;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:.5in;
+	margin-bottom:.0001pt;
+	font-size:10.0pt;
+	font-family:Arial;}
+p.heading2preface, li.heading2preface, div.heading2preface
+	{margin-top:24.0pt;
+	margin-right:0in;
+	margin-bottom:3.0pt;
+	margin-left:0in;
+	font-size:14.0pt;
+	font-family:Arial;
+	color:navy;
+	font-weight:bold;}
+p.address, li.address, div.address
+	{margin-top:0in;
+	margin-right:0in;
+	margin-bottom:3.0pt;
+	margin-left:0in;
+	line-height:12.0pt;
+	font-size:10.0pt;
+	font-family:Arial;}
+p.dash, li.dash, div.dash
+	{margin-top:2.0pt;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:.6in;
+	margin-bottom:.0001pt;
+	text-indent:-.3in;
+	font-size:10.0pt;
+	font-family:Arial;}
+p.highlight, li.highlight, div.highlight
+	{margin-top:12.0pt;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:0in;
+	margin-bottom:.0001pt;
+	font-size:10.0pt;
+	font-family:Arial;
+	color:navy;
+	font-weight:bold;}
+p.tabentry, li.tabentry, div.tabentry
+	{margin-top:1.0pt;
+	margin-right:0in;
+	margin-bottom:1.0pt;
+	margin-left:0in;
+	font-size:10.0pt;
+	font-family:Arial;}
+p.tabtitle, li.tabtitle, div.tabtitle
+	{margin-top:6.0pt;
+	margin-right:0in;
+	margin-bottom:6.0pt;
+	margin-left:0in;
+	text-align:center;
+	page-break-after:avoid;
+	font-size:10.0pt;
+	font-family:Arial;
+	font-weight:bold;}
+p.cvheaderfooter, li.cvheaderfooter, div.cvheaderfooter
+	{margin-top:3.0pt;
+	margin-right:19.3pt;
+	margin-bottom:3.0pt;
+	margin-left:0in;
+	line-height:12.0pt;
+	font-size:10.0pt;
+	font-family:Arial;}
+p.cvhp, li.cvhp, div.cvhp
+	{margin-top:3.0pt;
+	margin-right:19.3pt;
+	margin-bottom:3.0pt;
+	margin-left:1.5in;
+	text-indent:-.5in;
+	line-height:12.0pt;
+	font-size:10.0pt;
+	font-family:Arial;}
+p.cvnormal, li.cvnormal, div.cvnormal
+	{margin-top:3.0pt;
+	margin-right:19.3pt;
+	margin-bottom:3.0pt;
+	margin-left:1.0in;
+	text-indent:-1.0in;
+	line-height:12.0pt;
+	font-size:10.0pt;
+	font-family:Arial;}
+p.diagram, li.diagram, div.diagram
+	{margin-top:3.0pt;
+	margin-right:0in;
+	margin-bottom:3.0pt;
+	margin-left:0in;
+	text-align:center;
+	line-height:12.0pt;
+	page-break-after:avoid;
+	font-size:10.0pt;
+	font-family:Arial;}
+p.endofdoc, li.endofdoc, div.endofdoc
+	{margin-top:24.0pt;
+	margin-right:0in;
+	margin-bottom:3.0pt;
+	margin-left:0in;
+	text-align:center;
+	line-height:12.0pt;
+	font-size:10.0pt;
+	font-family:Arial;}
+p.figure, li.figure, div.figure
+	{margin-top:6.0pt;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:0in;
+	margin-bottom:.0001pt;
+	text-align:center;
+	page-break-after:avoid;
+	font-size:10.0pt;
+	font-family:Arial;}
+p.frontpage, li.frontpage, div.frontpage
+	{margin-top:0in;
+	margin-right:0in;
+	margin-bottom:24.0pt;
+	margin-left:.5in;
+	line-height:12.0pt;
+	font-size:10.0pt;
+	font-family:Arial;
+	font-weight:bold;}
+p.frontpagecolumn1, li.frontpagecolumn1, div.frontpagecolumn1
+	{margin-top:0in;
+	margin-right:0in;
+	margin-bottom:24.0pt;
+	margin-left:0in;
+	line-height:12.0pt;
+	font-size:10.0pt;
+	font-family:Arial;
+	font-weight:bold;}
+p.frontpagecolumn2, li.frontpagecolumn2, div.frontpagecolumn2
+	{margin-top:0in;
+	margin-right:0in;
+	margin-bottom:24.0pt;
+	margin-left:0in;
+	line-height:12.0pt;
+	font-size:10.0pt;
+	font-family:Arial;}
+p.insert, li.insert, div.insert
+	{margin-top:3.0pt;
+	margin-right:0in;
+	margin-bottom:3.0pt;
+	margin-left:0in;
+	text-align:center;
+	line-height:12.0pt;
+	font-size:10.0pt;
+	font-family:Arial;}
+p.super, li.super, div.super
+	{margin-top:6.0pt;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:0in;
+	margin-bottom:.0001pt;
+	font-size:10.0pt;
+	font-family:Arial;}
+p.application, li.application, div.application
+	{margin-top:0in;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:.1in;
+	margin-bottom:.0001pt;
+	text-indent:-.1in;
+	font-size:9.0pt;
+	font-family:"Courier New";}
+p.backaus, li.backaus, div.backaus
+	{margin-top:12.0pt;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:1.0in;
+	margin-bottom:.0001pt;
+	text-indent:-1.0in;
+	font-size:10.0pt;
+	font-family:"Courier New";}
+p.logic, li.logic, div.logic
+	{margin-top:0in;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:261.0pt;
+	margin-bottom:.0001pt;
+	text-indent:-261.0pt;
+	font-size:10.0pt;
+	font-family:"Courier New";}
+p.xmla, li.xmla, div.xmla
+	{margin-top:0in;
+	margin-right:-6.0pt;
+	margin-bottom:0in;
+	margin-left:12.0pt;
+	margin-bottom:.0001pt;
+	background:#E5E5E5;
+	font-size:8.0pt;
+	font-family:"Courier New";}
+p.outlinenumbered, li.outlinenumbered, div.outlinenumbered
+	{margin-top:6.0pt;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:.25in;
+	margin-bottom:.0001pt;
+	text-indent:-.25in;
+	font-size:10.0pt;
+	font-family:Arial;}
+p.reference, li.reference, div.reference
+	{margin-top:6.0pt;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:.5in;
+	margin-bottom:.0001pt;
+	text-indent:-.5in;
+	font-size:10.0pt;
+	font-family:Arial;}
+p.note, li.note, div.note
+	{margin-top:12.0pt;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:.35in;
+	margin-bottom:.0001pt;
+	text-indent:-.15in;
+	line-height:12.0pt;
+	font-size:12.0pt;
+	font-family:Courier;}
+p.notebullet, li.notebullet, div.notebullet
+	{margin-top:0in;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:57.35pt;
+	margin-bottom:.0001pt;
+	text-indent:-14.15pt;
+	line-height:12.0pt;
+	font-size:12.0pt;
+	font-family:Courier;}
+p.el, li.el, div.el
+	{margin-top:0in;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:.25in;
+	margin-bottom:.0001pt;
+	text-indent:-.25in;
+	font-size:10.0pt;
+	font-family:Arial;}
+p.elementstructure, li.elementstructure, div.elementstructure
+	{margin-top:0in;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:.25in;
+	margin-bottom:.0001pt;
+	text-indent:-.25in;
+	font-size:10.0pt;
+	font-family:Arial;}
+p.outlinenumbereddb, li.outlinenumbereddb, div.outlinenumbereddb
+	{margin-top:6.0pt;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:.25in;
+	margin-bottom:.0001pt;
+	text-indent:-.25in;
+	font-size:10.0pt;
+	font-family:Arial;}
+p.heading3bodytext, li.heading3bodytext, div.heading3bodytext
+	{margin-top:.25in;
+	margin-right:0in;
+	margin-bottom:3.0pt;
+	margin-left:.25in;
+	text-indent:-.25in;
+	line-height:12.0pt;
+	page-break-after:avoid;
+	font-size:10.0pt;
+	font-family:Arial;
+	color:navy;
+	font-weight:bold;}
+p.noteend, li.noteend, div.noteend
+	{margin-top:0in;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:.75in;
+	margin-bottom:.0001pt;
+	text-indent:-.75in;
+	line-height:12.0pt;
+	font-size:10.0pt;
+	font-family:Arial;}
+p.notecontinuation, li.notecontinuation, div.notecontinuation
+	{margin-top:12.0pt;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:.75in;
+	margin-bottom:.0001pt;
+	text-indent:-.15in;
+	line-height:12.0pt;
+	font-size:10.0pt;
+	font-family:Arial;}
+p.tableheading, li.tableheading, div.tableheading
+	{margin-top:6.0pt;
+	margin-right:0in;
+	margin-bottom:6.0pt;
+	margin-left:0in;
+	font-size:8.0pt;
+	font-family:"Book Antiqua";
+	font-weight:bold;}
+span.m1
+	{color:blue;}
+span.pi1
+	{color:blue;}
+span.d1
+	{color:blue;}
+span.b1
+	{font-family:"Courier New";
+	color:red;
+	font-weight:bold;
+	text-decoration:none none;}
+span.t1
+	{color:#990000;}
+span.tx1
+	{font-weight:bold;}
+span.note1
+	{color:gray;}
+span.headers1
+	{font-family:"Verdana\, Arial\, Helvetica";
+	font-weight:bold;}
+span.arrow
+	{font-weight:bold;
+	font-style:normal;}
+span.courier
+	{font-family:"Courier New";}
+@page Section1
+	{size:8.5in 11.0in;
+	margin:1.0in 1.0in .6in 1.0in;}
+div.Section1
+	{page:Section1;}
+ /* List Definitions */
+ ol
+	{margin-bottom:0in;}
+ul
+	{margin-bottom:0in;}
+-->
+</style>
+
+</head>
+
+<body lang=EN-US link=blue vlink=purple>
+
+<div class=Section1>
+
+<p class=MsoNormal><img width=281 height=87
+src="HRXMLExtension_files/image001.jpg">&nbsp;&nbsp; </p>
+
+<p class=MsoTitle>HR-XML Schema Extension </p>
+
+<p class=MsoTitle>Recommendation, 2007 April 15</p>
+
+<p class=heading3preface style='margin-top:6.0pt'>Editor:</p>
+
+<p class=prefacetext>Paul Kiel, HR-XML</p>
+
+<p class=heading3preface style='margin-top:6.0pt'>Authors:</p>
+
+<p class=prefacetext>Paul Kiel, HR-XML</p>
+
+<p class=heading3preface style='margin-top:6.0pt'>Contributors:</p>
+
+<p class=prefacetext>Members of Technical Steering Committee</p>
+
+<p class=prefacetext style='margin-left:0in'><b>&nbsp;</b></p>
+
+<p class=prefacetext style='margin-left:0in'><b>Copyright &copy; 2007 HR-XML
+Consortium, Inc.</b></p>
+
+<p class=prefacetext>&nbsp; </p>
+
+<div style='border:none;border-top:double windowtext 2.25pt;padding:24.0pt 0in 0in 0in'>
+
+<p class=heading2preface style='margin-top:12.0pt'>Abstract</p>
+
+</div>
+
+<p class=MsoPlainText><span style='font-family:Arial'>HR-XML Consortium
+specifications are meant to model specific business practices.&nbsp;
+Recognizing that it cannot satisfy the needs of all implementers all the time,
+the need for a standard way to extend schemas becomes clear.&nbsp; This
+document is aimed to provide guidance regarding the extension of XML Schemas so
+that trading partners can exchange information in the real world as well as
+experiment with new data that could be incorporated into a future
+specification.&nbsp; </span></p>
+
+<p class=heading2preface style='margin-top:12.0pt;margin-right:0in;margin-bottom:
+0in;margin-left:0in;margin-bottom:.0001pt'>&nbsp;</p>
+
+<p class=heading2preface style='margin-top:12.0pt;margin-right:0in;margin-bottom:
+0in;margin-left:0in;margin-bottom:.0001pt'>&nbsp;</p>
+
+<p class=heading2preface style='margin-top:12.0pt;margin-right:0in;margin-bottom:
+0in;margin-left:0in;margin-bottom:.0001pt'>Table of Contents</p>
+
+<p class=MsoToc1><span class=MsoHyperlink><a href="#_Toc127534863">1<span
+style='font-size:12.0pt;color:windowtext;font-weight:normal'>&nbsp;&nbsp;&nbsp;&nbsp;
+</span>Extending Schemas<span style='color:windowtext;display:none'>. 3</span></a></span></p>
+
+<p class=MsoToc2><span class=MsoHyperlink><a href="#_Toc127534864">1.1<span
+style='font-size:12.0pt;color:windowtext;font-style:normal'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span>Objective<span style='color:windowtext;display:none'>. 3</span></a></span></p>
+
+<p class=MsoToc2><span class=MsoHyperlink><a href="#_Toc127534865">1.2<span
+style='font-size:12.0pt;color:windowtext;font-style:normal'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span>Design Requirements<span style='color:windowtext;display:none'>. 3</span></a></span></p>
+
+<p class=MsoToc2><span class=MsoHyperlink><a href="#_Toc127534866">1.3<span
+style='font-size:12.0pt;color:windowtext;font-style:normal'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span>Extension Schema Design<span style='color:windowtext;display:none'>. 4</span></a></span></p>
+
+<p class=MsoToc1><span class=MsoHyperlink><a href="#_Toc127534867">2<span
+style='font-size:12.0pt;color:windowtext;font-weight:normal'>&nbsp;&nbsp;&nbsp;&nbsp;
+</span>Wrapper Extension Method<span style='color:windowtext;display:none'>. 4</span></a></span></p>
+
+<p class=MsoToc1><span class=MsoHyperlink><a href="#_Toc127534868">3<span
+style='font-size:12.0pt;color:windowtext;font-weight:normal'>&nbsp;&nbsp;&nbsp;&nbsp;
+</span>ANY Element Extension Method<span style='color:windowtext;display:none'>.
+5</span></a></span></p>
+
+<p class=MsoToc2><span class=MsoHyperlink><a href="#_Toc127534869">3.1<span
+style='font-size:12.0pt;color:windowtext;font-style:normal'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span>ANY element extension schema defined and declared<span style='color:
+windowtext;display:none'>. 6</span></a></span></p>
+
+<p class=MsoToc1><span class=MsoHyperlink><a href="#_Toc127534870">4<span
+style='font-size:12.0pt;color:windowtext;font-weight:normal'>&nbsp;&nbsp;&nbsp;&nbsp;
+</span>Extension Implementation Considerations<span style='color:windowtext;
+display:none'>. 7</span></a></span></p>
+
+<p class=MsoToc2><span class=MsoHyperlink><a href="#_Toc127534871">4.1<span
+style='font-size:12.0pt;color:windowtext;font-style:normal'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span>Wrapper Constraints<span style='color:windowtext;display:none'>. 7</span></a></span></p>
+
+<p class=MsoToc2><span class=MsoHyperlink><a href="#_Toc127534872">4.2<span
+style='font-size:12.0pt;color:windowtext;font-style:normal'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span>ANY Constraints<span style='color:windowtext;display:none'>. 7</span></a></span></p>
+
+<p class=MsoToc1><span class=MsoHyperlink><a href="#_Toc127534873">5<span
+style='font-size:12.0pt;color:windowtext;font-weight:normal'>&nbsp;&nbsp;&nbsp;&nbsp;
+</span>Appendix A - Namespace Extension Method<span style='color:windowtext;
+display:none'>. 8</span></a></span></p>
+
+<p class=MsoToc2><span class=MsoHyperlink><a href="#_Toc127534874">5.1<span
+style='font-size:12.0pt;color:windowtext;font-style:normal'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span>Position Statement<span style='color:windowtext;display:none'> 8</span></a></span></p>
+
+<p class=MsoToc2><span class=MsoHyperlink><a href="#_Toc127534875">5.2<span
+style='font-size:12.0pt;color:windowtext;font-style:normal'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span>Namespace Extension Method Explained<span style='color:windowtext;
+display:none'>. 8</span></a></span></p>
+
+<p class=MsoToc1><span class=MsoHyperlink><a href="#_Toc127534876">6<span
+style='font-size:12.0pt;color:windowtext;font-weight:normal'>&nbsp;&nbsp;&nbsp;&nbsp;
+</span>Appendix B &#8211; Document Version History<span style='color:windowtext;
+display:none'>. 9</span></a></span></p>
+
+<p class=MsoToc1><span style='font-family:Arial'>&nbsp;</span></p>
+
+<span style='font-size:14.0pt;font-family:Copperplate31ab'><br clear=all
+style='page-break-before:always'>
+</span>
+
+<h1><a name="_Toc3008793"></a><a name="_Toc127534863"></a><b>1</b><b><span
+style='font-size:7.0pt;font-family:"Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span>Extending Schemas</b></h1>
+
+<p class=MsoNormal>HR-XML Consortium specifications are meant to model specific
+business practices.&nbsp; Recognizing that it cannot satisfy the needs of all implementers
+all the time, the need for a standard way to extend schemas becomes
+clear.&nbsp; This document is aimed to provide guidance regarding the extension
+of XML Schemas so that trading partners can exchange information in the real
+world as well as experiment with new data that could be incorporated into a
+future specification.&nbsp; </p>
+
+<h2><a name="_Toc3008794"></a><a name="_Toc492656056"></a><a
+name="_Toc492655894"></a><a name="_Toc127534864"></a>1.1<span style='font-size:
+7.0pt;font-family:"Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span>Objective</h2>
+
+<p class=MsoNormal>HR-XML Schemas cannot be all things to all people.&nbsp; In
+the real world of data interchange, there arises the need to accommodate the
+special requirements of clients and trading partners.&nbsp; In addition, how
+can implementers experiment with new data structures that lie outside the
+existing approved specifications?&nbsp; The recognition of the first statement
+and the need to answer the question give rise to the background for extending
+schemas.&nbsp; </p>
+
+<p class=MsoNormal>Given that extension is a reality, how can we accommodate
+extensions without undermining the principle of open standards?&nbsp; This
+document is meant to provide guidance on the best practice for extending
+schemas.&nbsp; Its goal is to show:</p>
+
+<p class=MsoNormal style='margin-left:.5in;text-indent:-.25in'>1)<span
+style='font-size:7.0pt;font-family:"Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span>Official endorsement of different methods for implementation.</p>
+
+<p class=MsoNormal style='margin-left:.5in;text-indent:-.25in'>2)<span
+style='font-size:7.0pt;font-family:"Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span>Conventions for creating extensions to encourage consistency.</p>
+
+<h2><a name="_Toc3008796"></a><a name="_Toc127534865"></a>1.2<span
+style='font-size:7.0pt;font-family:"Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span>Design Requirements</h2>
+
+<p class=MsoNormal>All extensions to approved HR-XML standards SHOULD be done
+consistently across the Consortium.&nbsp; They MUST retain the basic values of
+XML, such as validation, especially in the context of any Certification
+process.&nbsp; Extension methods MUST not lead to an undermining of the open
+standards mission.</p>
+
+<p class=h4><a name="_Toc493471746"></a><a name="_Toc493472043"></a><a
+name="_Toc493472446"></a><a name="_Toc493472785"></a><a name="_Toc493471751"></a><a
+name="_Toc493472048"></a><a name="_Toc493472451"></a><a name="_Toc493472790"></a><a
+name="_Toc493471752"></a><a name="_Toc493472049"></a><a name="_Toc493472452"></a><a
+name="_Toc493472791"></a><a name="_Toc493471754"></a><a name="_Toc493472051"></a><a
+name="_Toc493472454"></a><a name="_Toc493472793"></a><a name="_Toc492655903"></a><a
+name="_Toc492656065"></a><a name="_Toc492868751"></a><a name="_Toc492868858"></a><a
+name="_Toc493463955"></a><a name="_Toc493471755"></a><a name="_Toc493472052"></a><a
+name="_Toc493472455"></a><a name="_Toc493472794"></a><a name="_Toc492655904"></a><a
+name="_Toc492656066"></a><a name="_Toc492868752"></a><a name="_Toc492868859"></a><a
+name="_Toc493463956"></a><a name="_Toc493471756"></a><a name="_Toc493472053"></a><a
+name="_Toc493472456"></a><a name="_Toc493472795"></a><a name="_Toc493471757"></a><a
+name="_Toc493472054"></a><a name="_Toc493472457"></a><a name="_Toc493472796"></a><a
+name="_Toc492655909"></a><a name="_Toc492656071"></a><a name="_Toc492868757"></a><a
+name="_Toc492868864"></a><a name="_Toc493463961"></a><a name="_Toc493471761"></a><a
+name="_Toc493472058"></a><a name="_Toc493472461"></a><a name="_Toc493472800"></a><a
+name="_Toc492655914"></a><a name="_Toc492656076"></a><a name="_Toc492868762"></a><a
+name="_Toc492868869"></a><a name="_Toc493463966"></a><a name="_Toc493471766"></a><a
+name="_Toc493472063"></a><a name="_Toc493472466"></a><a name="_Toc493472805"></a><a
+name="_Toc492655917"></a><a name="_Toc492656079"></a><a name="_Toc492868765"></a><a
+name="_Toc492868872"></a><a name="_Toc493463969"></a><a name="_Toc493471769"></a><a
+name="_Toc493472066"></a><a name="_Toc493472469"></a><a name="_Toc493472808"></a>Extension</p>
+
+<p class=MsoNormal>As discussed here, &#8220;extending&#8221; is meant to
+&#8220;add additional elements and attributes to an existing
+schema&#8221;.&nbsp; This is not to be confused with how it is used in the <b>XML
+Schemas: Best Practices</b> discussion, where &#8220;extending&#8221; means
+adding functionality to schema that does not currently exist.&nbsp; The latter
+is for such functionality as being able to verify that the value of element
+&lt;A&gt; is greater than the value of element &lt;B&gt;.&nbsp; This document
+refers to &#8220;extending&#8221; in the former usage only.</p>
+
+<h2><a name="_Toc127534866"></a><a name="_Toc3008797"></a><a
+name="_Toc493471782"></a><a name="_Toc493472079"></a><a name="_Toc493472482"></a><a
+name="_Toc493472820"></a><a name="_Toc493463983"></a><a name="_Toc493471784"></a><a
+name="_Toc493472081"></a><a name="_Toc493472484"></a><a name="_Toc493472822"></a><a
+name="_Toc493471785"></a><a name="_Toc493472082"></a><a name="_Toc493472485"></a><a
+name="_Toc493472823"></a><a name="_Toc493463987"></a><a name="_Toc493471786"></a><a
+name="_Toc493472083"></a><a name="_Toc493472486"></a><a name="_Toc493472824"></a><a
+name="_Toc493471794"></a><a name="_Toc493472091"></a><a name="_Toc493472494"></a><a
+name="_Toc493472832"></a><a name="_Toc493471795"></a><a name="_Toc493472092"></a><a
+name="_Toc493472495"></a><a name="_Toc493472833"></a><a name="_Toc493471796"></a><a
+name="_Toc493472093"></a><a name="_Toc493472496"></a><a name="_Toc493472834"></a><a
+name="_Toc492868799"></a><a name="_Toc492868906"></a><a name="_Toc493463999"></a><a
+name="_Toc493471798"></a><a name="_Toc493472095"></a><a name="_Toc493472498"></a><a
+name="_Toc493472836"></a><a name="_Toc493471799"></a><a name="_Toc493472096"></a><a
+name="_Toc493472499"></a><a name="_Toc493472837"></a><a name="_Toc493471800"></a><a
+name="_Toc493472097"></a><a name="_Toc493472500"></a><a name="_Toc493472838"></a><a
+name="_Toc493471801"></a><a name="_Toc493472098"></a><a name="_Toc493472501"></a><a
+name="_Toc493472839"></a>1.3<span style='font-size:7.0pt;font-family:"Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span>Extension Schema Design</h2>
+
+<p class=MsoNormal>The Technical Steering Committee has approved two methods
+that enable extension of HR-XML schemas without undermining an open standards
+mission.&nbsp; The &#8220;wrapper&#8221; and &#8220;ANY&#8221; techniques are
+explained herein.&nbsp; Additionally, a &#8220;Namespace&#8221; extension
+method was examined and not endorsed.</p>
+
+<h1><a name="_Toc3008798"></a><a name="_Toc127534867"></a><b>2</b><b><span
+style='font-size:7.0pt;font-family:"Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span>Wrapper Extension Method</b></h1>
+
+<p class=MsoNormal>This method consists of a schema that uses an HR-XML schema
+as an &lt;import&gt;.&nbsp; This enables the intact use of HR-XML schemas and
+can be implemented without any accommodation required by the work group during
+the design phase.&nbsp; A drawback is the potential for many different root
+elements in the real world of multiple trading partners.</p>
+
+<p class=MsoNormal>Example schema:</p>
+
+<p class=MsoNormal style='margin:0in;margin-bottom:.0001pt;text-autospace:none'><span
+style='font-size:8.5pt;color:blue;background:white'>&lt;</span><span
+style='font-size:8.5pt;color:maroon;background:white'>xsd:schema</span><span
+style='font-size:8.5pt;color:red;background:white'> </span></p>
+
+<p class=MsoNormal style='margin:0in;margin-bottom:.0001pt;text-autospace:none'><span
+style='font-size:8.5pt;color:red;background:white'>xmlns:xsd</span><span
+style='font-size:8.5pt;color:blue;background:white'>=&quot;</span><span
+style='font-size:8.5pt;color:black;background:white'>http://www.w3.org/2001/XMLSchema</span><span
+style='font-size:8.5pt;color:blue;background:white'>&quot;</span><span
+style='font-size:8.5pt;color:red;background:white'> </span></p>
+
+<p class=MsoNormal style='margin:0in;margin-bottom:.0001pt;text-autospace:none'><span
+style='font-size:8.5pt;color:red;background:white'>elementFormDefault</span><span
+style='font-size:8.5pt;color:blue;background:white'>=&quot;</span><span
+style='font-size:8.5pt;color:black;background:white'>qualified</span><span
+style='font-size:8.5pt;color:blue;background:white'>&quot;</span><span
+style='font-size:8.5pt;color:red;background:white'> </span></p>
+
+<p class=MsoNormal style='margin:0in;margin-bottom:.0001pt;text-autospace:none'><span
+style='font-size:8.5pt;color:red;background:white'>xmlns:hr</span><span
+style='font-size:8.5pt;color:blue;background:white'>=&quot;</span><span
+style='font-size:8.5pt;color:black;background:white'>http://ns.hr-xml.org/2007-04-15</span><span
+style='font-size:8.5pt;color:blue;background:white'>&quot;</span></p>
+
+<p class=MsoNormal style='margin:0in;margin-bottom:.0001pt;text-autospace:none'><span
+style='font-size:8.5pt;color:red;background:white'>targetNamespace</span><span
+style='font-size:8.5pt;color:blue;background:white'>=&quot;</span><span
+style='font-size:8.5pt;color:black;background:white'>BrilliantHRSoftware.com</span><span
+style='font-size:8.5pt;color:blue;background:white'>&quot;</span><span
+style='font-size:8.5pt;color:red;background:white'> </span></p>
+
+<p class=MsoNormal style='margin:0in;margin-bottom:.0001pt;text-autospace:none'><span
+style='font-size:8.5pt;color:red;background:white'>xmlns</span><span
+style='font-size:8.5pt;color:blue;background:white'>=&quot;</span><span
+style='font-size:8.5pt;color:black;background:white'>BrilliantHRSoftware.com</span><span
+style='font-size:8.5pt;color:blue;background:white'>&quot;&gt;</span></p>
+
+<p class=MsoNormal style='margin:0in;margin-bottom:.0001pt;text-autospace:none'><span
+style='font-size:8.5pt;color:blue;background:white'>&lt;</span><span
+style='font-size:8.5pt;color:maroon;background:white'>xsd:import</span><span
+style='font-size:8.5pt;color:red;background:white'> schemaLocation</span><span
+style='font-size:8.5pt;color:blue;background:white'>=&quot;</span><span
+style='font-size:8.5pt;color:black;background:white'>JobPositionSeeker-1_1.xsd</span><span
+style='font-size:8.5pt;color:blue;background:white'>&quot;</span><span
+style='font-size:8.5pt;color:red;background:white'> namespace</span><span
+style='font-size:8.5pt;color:blue;background:white'>=&quot;</span><span
+style='font-size:8.5pt;color:black;background:white'>http://ns.hr-xml.org</span><span
+style='font-size:8.5pt;color:blue;background:white'>&quot;/&gt;</span></p>
+
+<p class=MsoNormal style='margin:0in;margin-bottom:.0001pt;text-autospace:none'><span
+style='font-size:8.5pt;color:black;background:white'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span><span style='font-size:8.5pt;color:blue;background:white'>&lt;</span><span
+style='font-size:8.5pt;color:maroon;background:white'>xsd:element</span><span
+style='font-size:8.5pt;color:red;background:white'> name</span><span
+style='font-size:8.5pt;color:blue;background:white'>=&quot;</span><span
+style='font-size:8.5pt;color:black;background:white'>MyInternalDoc</span><span
+style='font-size:8.5pt;color:blue;background:white'>&quot;&gt;</span></p>
+
+<p class=MsoNormal style='margin:0in;margin-bottom:.0001pt;text-autospace:none'><span
+style='font-size:8.5pt;color:black;background:white'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span><span style='font-size:8.5pt;color:blue;background:white'>&lt;</span><span
+style='font-size:8.5pt;color:maroon;background:white'>xsd:complexType</span><span
+style='font-size:8.5pt;color:blue;background:white'>&gt;</span></p>
+
+<p class=MsoNormal style='margin:0in;margin-bottom:.0001pt;text-autospace:none'><span
+style='font-size:8.5pt;color:black;background:white'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span><span style='font-size:8.5pt;color:blue;background:white'>&lt;</span><span
+style='font-size:8.5pt;color:maroon;background:white'>xsd:sequence</span><span
+style='font-size:8.5pt;color:blue;background:white'>&gt;</span></p>
+
+<p class=MsoNormal style='margin:0in;margin-bottom:.0001pt;text-autospace:none'><span
+style='font-size:8.5pt;color:black;background:white'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span><span style='font-size:8.5pt;color:blue;background:white'>&lt;</span><span
+style='font-size:8.5pt;color:maroon;background:white'>xsd:element</span><span
+style='font-size:8.5pt;color:red;background:white'> ref</span><span
+style='font-size:8.5pt;color:blue;background:white'>=&quot;</span><span
+style='font-size:8.5pt;color:black;background:white'>hr:JobPositionSeeker</span><span
+style='font-size:8.5pt;color:blue;background:white'>&quot;</span><span
+style='font-size:8.5pt;color:red;background:white'> </span><span
+style='font-size:8.5pt;color:blue;background:white'>/&gt;</span></p>
+
+<p class=MsoNormal style='margin:0in;margin-bottom:.0001pt;text-autospace:none'><span
+style='font-size:8.5pt;color:black;background:white'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span><span style='font-size:8.5pt;color:blue;background:white'>&lt;</span><span
+style='font-size:8.5pt;color:maroon;background:white'>xsd:element</span><span
+style='font-size:8.5pt;color:red;background:white'> ref</span><span
+style='font-size:8.5pt;color:blue;background:white'>=&quot;</span><span
+style='font-size:8.5pt;color:black;background:white'>SomeSpecialInfo</span><span
+style='font-size:8.5pt;color:blue;background:white'>&quot;/&gt;</span></p>
+
+<p class=MsoNormal style='margin:0in;margin-bottom:.0001pt;text-autospace:none'><span
+style='font-size:8.5pt;color:black;background:white'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span><span style='font-size:8.5pt;color:blue;background:white'>&lt;/</span><span
+style='font-size:8.5pt;color:maroon;background:white'>xsd:sequence</span><span
+style='font-size:8.5pt;color:blue;background:white'>&gt;</span></p>
+
+<p class=MsoNormal style='margin:0in;margin-bottom:.0001pt;text-autospace:none'><span
+style='font-size:8.5pt;color:black;background:white'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span><span style='font-size:8.5pt;color:blue;background:white'>&lt;/</span><span
+style='font-size:8.5pt;color:maroon;background:white'>xsd:complexType</span><span
+style='font-size:8.5pt;color:blue;background:white'>&gt;</span></p>
+
+<p class=MsoNormal style='margin:0in;margin-bottom:.0001pt;text-autospace:none'><span
+style='font-size:8.5pt;color:black;background:white'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span><span style='font-size:8.5pt;color:blue;background:white'>&lt;/</span><span
+style='font-size:8.5pt;color:maroon;background:white'>xsd:element</span><span
+style='font-size:8.5pt;color:blue;background:white'>&gt;</span></p>
+
+<p class=MsoNormal style='margin:0in;margin-bottom:.0001pt;text-autospace:none'><span
+style='font-size:8.5pt;color:black;background:white'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span><span style='font-size:8.5pt;color:blue;background:white'>&lt;</span><span
+style='font-size:8.5pt;color:maroon;background:white'>xsd:element</span><span
+style='font-size:8.5pt;color:red;background:white'> name</span><span
+style='font-size:8.5pt;color:blue;background:white'>=&quot;</span><span
+style='font-size:8.5pt;color:black;background:white'>MyOpinionOfThisPerson</span><span
+style='font-size:8.5pt;color:blue;background:white'>&quot;</span><span
+style='font-size:8.5pt;color:red;background:white'> type</span><span
+style='font-size:8.5pt;color:blue;background:white'>=&quot;</span><span
+style='font-size:8.5pt;color:black;background:white'>xsd:string</span><span
+style='font-size:8.5pt;color:blue;background:white'>&quot;/&gt;</span></p>
+
+<p class=MsoNormal style='margin:0in;margin-bottom:.0001pt;text-autospace:none'><span
+style='font-size:8.5pt;color:black;background:white'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span><span style='font-size:8.5pt;color:blue;background:white'>&lt;</span><span
+style='font-size:8.5pt;color:maroon;background:white'>xsd:element</span><span
+style='font-size:8.5pt;color:red;background:white'> name</span><span
+style='font-size:8.5pt;color:blue;background:white'>=&quot;</span><span
+style='font-size:8.5pt;color:black;background:white'>SomeSpecialInfo</span><span
+style='font-size:8.5pt;color:blue;background:white'>&quot;&gt;</span></p>
+
+<p class=MsoNormal style='margin:0in;margin-bottom:.0001pt;text-autospace:none'><span
+style='font-size:8.5pt;color:black;background:white'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span><span style='font-size:8.5pt;color:blue;background:white'>&lt;</span><span
+style='font-size:8.5pt;color:maroon;background:white'>xsd:complexType</span><span
+style='font-size:8.5pt;color:blue;background:white'>&gt;</span></p>
+
+<p class=MsoNormal style='margin:0in;margin-bottom:.0001pt;text-autospace:none'><span
+style='font-size:8.5pt;color:black;background:white'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span><span style='font-size:8.5pt;color:blue;background:white'>&lt;</span><span
+style='font-size:8.5pt;color:maroon;background:white'>xsd:sequence</span><span
+style='font-size:8.5pt;color:blue;background:white'>&gt;</span></p>
+
+<p class=MsoNormal style='margin:0in;margin-bottom:.0001pt;text-autospace:none'><span
+style='font-size:8.5pt;color:black;background:white'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span><span style='font-size:8.5pt;color:blue;background:white'>&lt;</span><span
+style='font-size:8.5pt;color:maroon;background:white'>xsd:element</span><span
+style='font-size:8.5pt;color:red;background:white'> ref</span><span
+style='font-size:8.5pt;color:blue;background:white'>=&quot;</span><span
+style='font-size:8.5pt;color:black;background:white'>MyOpinionOfThisPerson</span><span
+style='font-size:8.5pt;color:blue;background:white'>&quot;/&gt;</span></p>
+
+<p class=MsoNormal style='margin:0in;margin-bottom:.0001pt;text-autospace:none'><span
+style='font-size:8.5pt;color:black;background:white'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span><span style='font-size:8.5pt;color:blue;background:white'>&lt;</span><span
+style='font-size:8.5pt;color:maroon;background:white'>xsd:element</span><span
+style='font-size:8.5pt;color:red;background:white'> ref</span><span
+style='font-size:8.5pt;color:blue;background:white'>=&quot;</span><span
+style='font-size:8.5pt;color:black;background:white'>WhatIThinkTheyAreWorth</span><span
+style='font-size:8.5pt;color:blue;background:white'>&quot;/&gt;</span></p>
+
+<p class=MsoNormal style='margin:0in;margin-bottom:.0001pt;text-autospace:none'><span
+style='font-size:8.5pt;color:black;background:white'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span><span style='font-size:8.5pt;color:blue;background:white'>&lt;/</span><span
+style='font-size:8.5pt;color:maroon;background:white'>xsd:sequence</span><span
+style='font-size:8.5pt;color:blue;background:white'>&gt;</span></p>
+
+<p class=MsoNormal style='margin:0in;margin-bottom:.0001pt;text-autospace:none'><span
+style='font-size:8.5pt;color:black;background:white'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span><span style='font-size:8.5pt;color:blue;background:white'>&lt;/</span><span
+style='font-size:8.5pt;color:maroon;background:white'>xsd:complexType</span><span
+style='font-size:8.5pt;color:blue;background:white'>&gt;</span></p>
+
+<p class=MsoNormal style='margin:0in;margin-bottom:.0001pt;text-autospace:none'><span
+style='font-size:8.5pt;color:black;background:white'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span><span style='font-size:8.5pt;color:blue;background:white'>&lt;/</span><span
+style='font-size:8.5pt;color:maroon;background:white'>xsd:element</span><span
+style='font-size:8.5pt;color:blue;background:white'>&gt;</span></p>
+
+<p class=MsoNormal style='margin:0in;margin-bottom:.0001pt;text-autospace:none'><span
+style='font-size:8.5pt;color:black;background:white'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span><span style='font-size:8.5pt;color:blue;background:white'>&lt;</span><span
+style='font-size:8.5pt;color:maroon;background:white'>xsd:element</span><span
+style='font-size:8.5pt;color:red;background:white'> name</span><span
+style='font-size:8.5pt;color:blue;background:white'>=&quot;</span><span
+style='font-size:8.5pt;color:black;background:white'>WhatIThinkTheyAreWorth</span><span
+style='font-size:8.5pt;color:blue;background:white'>&quot;</span><span
+style='font-size:8.5pt;color:red;background:white'> type</span><span
+style='font-size:8.5pt;color:blue;background:white'>=&quot;</span><span
+style='font-size:8.5pt;color:black;background:white'>xsd:string</span><span
+style='font-size:8.5pt;color:blue;background:white'>&quot;/&gt;</span></p>
+
+<p class=MsoNormal style='margin:0in;margin-bottom:.0001pt;text-autospace:none'><span
+style='font-size:8.5pt;color:blue;background:white'>&lt;/</span><span
+style='font-size:8.5pt;color:maroon;background:white'>xsd:schema</span><span
+style='font-size:8.5pt;color:blue;background:white'>&gt;</span></p>
+
+<p class=MsoNormal>Example instance:</p>
+
+<p class=MsoNormal style='margin:0in;margin-bottom:.0001pt;text-autospace:none'><span
+style='font-size:8.5pt;color:blue;background:white'>&lt;</span><span
+style='font-size:8.5pt;color:maroon;background:white'>MyInternalDoc</span><span
+style='font-size:8.5pt;color:red;background:white'> </span></p>
+
+<p class=MsoNormal style='margin:0in;margin-bottom:.0001pt;text-autospace:none'><span
+style='font-size:8.5pt;color:red;background:white'>xmlns:hr</span><span
+style='font-size:8.5pt;color:blue;background:white'>=&quot;</span><span
+style='font-size:8.5pt;color:black;background:white'>http://ns.hr-xml.org/2007-04-15</span><span
+style='font-size:8.5pt;color:blue;background:white'>&quot;</span><span
+style='font-size:8.5pt;color:red;background:white'> </span></p>
+
+<p class=MsoNormal style='margin:0in;margin-bottom:.0001pt;text-autospace:none'><span
+style='font-size:8.5pt;color:red;background:white'>xmlns:xsi</span><span
+style='font-size:8.5pt;color:blue;background:white'>=&quot;</span><span
+style='font-size:8.5pt;color:black;background:white'>http://www.w3.org/2001/XMLSchema-instance</span><span
+style='font-size:8.5pt;color:blue;background:white'>&quot;</span><span
+style='font-size:8.5pt;color:red;background:white'> </span></p>
+
+<p class=MsoNormal style='margin:0in;margin-bottom:.0001pt;text-autospace:none'><span
+style='font-size:8.5pt;color:red;background:white'>xmlns</span><span
+style='font-size:8.5pt;color:blue;background:white'>=&quot;</span><span
+style='font-size:8.5pt;color:black;background:white'>BrilliantHRSoftware.com</span><span
+style='font-size:8.5pt;color:blue;background:white'>&quot;</span></p>
+
+<p class=MsoNormal style='margin:0in;margin-bottom:.0001pt;text-autospace:none'><span
+style='font-size:8.5pt;color:red;background:white'>xsi:schemaLocation</span><span
+style='font-size:8.5pt;color:blue;background:white'>=&quot;</span><span
+style='font-size:8.5pt;color:black;background:white'>BrilliantHRSoftware.com</span></p>
+
+<p class=MsoNormal style='margin:0in;margin-bottom:.0001pt;text-autospace:none'><span
+style='font-size:8.5pt;color:black;background:white'>UserArea2.xsd</span><span
+style='font-size:8.5pt;color:blue;background:white'>&quot;&gt;</span></p>
+
+<p class=MsoNormal style='margin:0in;margin-bottom:.0001pt;text-autospace:none'><span
+style='font-size:8.5pt;color:black;background:white'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span><span style='font-size:8.5pt;color:blue;background:white'>&lt;</span><span
+style='font-size:8.5pt;color:maroon;background:white'>hr:JobPositionSeeker</span><span
+style='font-size:8.5pt;color:blue;background:white'>&gt;</span></p>
+
+<p class=MsoNormal style='margin:0in;margin-bottom:.0001pt;text-autospace:none'><span
+style='font-size:8.5pt;color:black;background:white'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span><span style='font-size:8.5pt;color:blue;background:white'>&lt;</span><span
+style='font-size:8.5pt;color:maroon;background:white'>hr:JobPositionSeekerId</span><span
+style='font-size:8.5pt;color:blue;background:white'>&gt;&lt;/</span><span
+style='font-size:8.5pt;color:maroon;background:white'>hr:JobPositionSeekerId</span><span
+style='font-size:8.5pt;color:blue;background:white'>&gt;</span></p>
+
+<p class=MsoNormal style='margin:0in;margin-bottom:.0001pt;text-autospace:none'><span
+style='font-size:8.5pt;color:black;background:white'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span><span style='font-size:8.5pt;color:blue;background:white'>&lt;</span><span
+style='font-size:8.5pt;color:maroon;background:white'>hr:PersonalData</span><span
+style='font-size:8.5pt;color:blue;background:white'>&gt;</span></p>
+
+<p class=MsoNormal style='margin:0in;margin-bottom:.0001pt;text-autospace:none'><span
+style='font-size:8.5pt;color:black;background:white'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span><span style='font-size:8.5pt;color:blue;background:white'>&lt;</span><span
+style='font-size:8.5pt;color:maroon;background:white'>hr:PersonName</span><span
+style='font-size:8.5pt;color:blue;background:white'>&gt;&lt;/</span><span
+style='font-size:8.5pt;color:maroon;background:white'>hr:PersonName</span><span
+style='font-size:8.5pt;color:blue;background:white'>&gt;</span></p>
+
+<p class=MsoNormal style='margin:0in;margin-bottom:.0001pt;text-autospace:none'><span
+style='font-size:8.5pt;color:black;background:white'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span><span style='font-size:8.5pt;color:blue;background:white'>&lt;</span><span
+style='font-size:8.5pt;color:maroon;background:white'>hr:VoiceNumber</span><span
+style='font-size:8.5pt;color:blue;background:white'>&gt;</span></p>
+
+<p class=MsoNormal style='margin:0in;margin-bottom:.0001pt;text-autospace:none'><span
+style='font-size:8.5pt;color:black;background:white'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span><span style='font-size:8.5pt;color:blue;background:white'>&lt;</span><span
+style='font-size:8.5pt;color:maroon;background:white'>hr:TelNumber</span><span
+style='font-size:8.5pt;color:blue;background:white'>&gt;&lt;/</span><span
+style='font-size:8.5pt;color:maroon;background:white'>hr:TelNumber</span><span
+style='font-size:8.5pt;color:blue;background:white'>&gt;</span></p>
+
+<p class=MsoNormal style='margin:0in;margin-bottom:.0001pt;text-autospace:none'><span
+style='font-size:8.5pt;color:black;background:white'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span><span style='font-size:8.5pt;color:blue;background:white'>&lt;/</span><span
+style='font-size:8.5pt;color:maroon;background:white'>hr:VoiceNumber</span><span
+style='font-size:8.5pt;color:blue;background:white'>&gt;</span></p>
+
+<p class=MsoNormal style='margin:0in;margin-bottom:.0001pt;text-autospace:none'><span
+style='font-size:8.5pt;color:black;background:white'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span><span style='font-size:8.5pt;color:blue;background:white'>&lt;/</span><span
+style='font-size:8.5pt;color:maroon;background:white'>hr:PersonalData</span><span
+style='font-size:8.5pt;color:blue;background:white'>&gt;</span></p>
+
+<p class=MsoNormal style='margin:0in;margin-bottom:.0001pt;text-autospace:none'><span
+style='font-size:8.5pt;color:black;background:white'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span><span style='font-size:8.5pt;color:blue;background:white'>&lt;/</span><span
+style='font-size:8.5pt;color:maroon;background:white'>hr:JobPositionSeeker</span><span
+style='font-size:8.5pt;color:blue;background:white'>&gt;</span></p>
+
+<p class=MsoNormal style='margin:0in;margin-bottom:.0001pt;text-autospace:none'><span
+style='font-size:8.5pt;color:black;background:white'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span><span style='font-size:8.5pt;color:blue;background:white'>&lt;</span><span
+style='font-size:8.5pt;color:maroon;background:white'>SomeSpecialInfo</span><span
+style='font-size:8.5pt;color:blue;background:white'>&gt;</span></p>
+
+<p class=MsoNormal style='margin:0in;margin-bottom:.0001pt;text-autospace:none'><span
+style='font-size:8.5pt;color:black;background:white'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span><span style='font-size:8.5pt;color:blue;background:white'>&lt;</span><span
+style='font-size:8.5pt;color:maroon;background:white'>MyOpinionOfThisPerson</span><span
+style='font-size:8.5pt;color:blue;background:white'>&gt;</span><span
+style='font-size:8.5pt;color:black;background:white'>Completely unqualified!</span><span
+style='font-size:8.5pt;color:blue;background:white'>&lt;/</span><span
+style='font-size:8.5pt;color:maroon;background:white'>MyOpinionOfThisPerson</span><span
+style='font-size:8.5pt;color:blue;background:white'>&gt;</span></p>
+
+<p class=MsoNormal style='margin:0in;margin-bottom:.0001pt;text-autospace:none'><span
+style='font-size:8.5pt;color:black;background:white'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span><span style='font-size:8.5pt;color:blue;background:white'>&lt;</span><span
+style='font-size:8.5pt;color:maroon;background:white'>WhatIThinkTheyAreWorth</span><span
+style='font-size:8.5pt;color:blue;background:white'>&gt;</span><span
+style='font-size:8.5pt;color:black;background:white'>He should pay us to work
+here!</span><span style='font-size:8.5pt;color:blue;background:white'>&lt;/</span><span
+style='font-size:8.5pt;color:maroon;background:white'>WhatIThinkTheyAreWorth</span><span
+style='font-size:8.5pt;color:blue;background:white'>&gt;</span></p>
+
+<p class=MsoNormal style='margin:0in;margin-bottom:.0001pt;text-autospace:none'><span
+style='font-size:8.5pt;color:black;background:white'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span><span style='font-size:8.5pt;color:blue;background:white'>&lt;/</span><span
+style='font-size:8.5pt;color:maroon;background:white'>SomeSpecialInfo</span><span
+style='font-size:8.5pt;color:blue;background:white'>&gt;</span></p>
+
+<p class=MsoNormal style='margin:0in;margin-bottom:.0001pt;text-autospace:none'><span
+style='font-size:8.5pt;color:blue;background:white'>&lt;/</span><span
+style='font-size:8.5pt;color:maroon;background:white'>MyInternalDoc</span><span
+style='font-size:8.5pt;color:blue;background:white'>&gt;</span></p>
+
+<p class=MsoNormal style='margin-top:0in;text-autospace:none'><span
+style='font-size:8.5pt;color:blue;background:white'>&nbsp;</span></p>
+
+<h1><a name="_Toc3008799"></a><a name="_Toc127534868"></a><b>3</b><b><span
+style='font-size:7.0pt;font-family:"Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span>ANY Element Extension Method </b></h1>
+
+<p class=MsoNormal>This method consists of an HR-XML schema that contains a
+single occurrence of a single element as a last child of the root element that
+is a data type of ANY.&nbsp; This element is used to house all extensions to
+the schema.&nbsp; Definitions of those extensions occur in a separate
+schema.&nbsp; This method overcomes a drawback of the wrapper technique in that
+it maintains a consistent root element, which is a standard HR-XML defined
+element.&nbsp; It does, however, require work groups to accommodate by
+including an extension element in their schema design.</p>
+
+<p class=MsoNormal>Example HR-XML schema:</p>
+
+<p class=MsoNormal style='margin:0in;margin-bottom:.0001pt;text-autospace:none'><span
+style='font-size:8.5pt;color:blue;background:white'>&lt;</span><span
+style='font-size:8.5pt;color:maroon;background:white'>xsd:schema</span><span
+style='font-size:8.5pt;color:red;background:white'> xmlns:xsd</span><span
+style='font-size:8.5pt;color:blue;background:white'>=&quot;</span><span
+style='font-size:8.5pt;color:black;background:white'>http://www.w3.org/2001/XMLSchema</span><span
+style='font-size:8.5pt;color:blue;background:white'>&quot;</span><span
+style='font-size:8.5pt;color:red;background:white'> </span></p>
+
+<p class=MsoNormal style='margin:0in;margin-bottom:.0001pt;text-autospace:none'><span
+style='font-size:8.5pt;color:red;background:white'>elementFormDefault</span><span
+style='font-size:8.5pt;color:blue;background:white'>=&quot;</span><span
+style='font-size:8.5pt;color:black;background:white'>qualified</span><span
+style='font-size:8.5pt;color:blue;background:white'>&quot;</span><span
+style='font-size:8.5pt;color:red;background:white'> </span></p>
+
+<p class=MsoNormal style='margin:0in;margin-bottom:.0001pt;text-autospace:none'><span
+style='font-size:8.5pt;color:red;background:white'>xmlns</span><span
+style='font-size:8.5pt;color:blue;background:white'>=&quot;</span><span
+style='font-size:8.5pt;color:black;background:white'>http://ns.hr-xml.org/2007-04-15</span><span
+style='font-size:8.5pt;color:blue;background:white'>&quot;</span><span
+style='font-size:8.5pt;color:red;background:white'> </span></p>
+
+<p class=MsoNormal style='margin:0in;margin-bottom:.0001pt;text-autospace:none'><span
+style='font-size:8.5pt;color:red;background:white'>targetNamespace</span><span
+style='font-size:8.5pt;color:blue;background:white'>=&quot;</span><span
+style='font-size:8.5pt;color:black;background:white'>http://ns.hr-xml.org/2007-04-15</span><span
+style='font-size:8.5pt;color:blue;background:white'>&quot;&gt;</span></p>
+
+<p class=MsoNormal style='margin:0in;margin-bottom:.0001pt;text-autospace:none'><span
+style='font-size:8.5pt;color:black;background:white'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span><span style='font-size:8.5pt;color:blue;background:white'>&lt;</span><span
+style='font-size:8.5pt;color:maroon;background:white'>xsd:element</span><span
+style='font-size:8.5pt;color:red;background:white'> name</span><span
+style='font-size:8.5pt;color:blue;background:white'>=&quot;</span><span
+style='font-size:8.5pt;color:black;background:white'>JobPositionSeeker</span><span
+style='font-size:8.5pt;color:blue;background:white'>&quot;&gt;</span></p>
+
+<p class=MsoNormal style='margin:0in;margin-bottom:.0001pt;text-autospace:none'><span
+style='font-size:8.5pt;color:black;background:white'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span><span style='font-size:8.5pt;color:blue;background:white'>&lt;</span><span
+style='font-size:8.5pt;color:maroon;background:white'>xsd:complexType</span><span
+style='font-size:8.5pt;color:blue;background:white'>&gt;</span></p>
+
+<p class=MsoNormal style='margin:0in;margin-bottom:.0001pt;text-autospace:none'><span
+style='font-size:8.5pt;color:black;background:white'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span><span style='font-size:8.5pt;color:blue;background:white'>&lt;</span><span
+style='font-size:8.5pt;color:maroon;background:white'>xsd:sequence</span><span
+style='font-size:8.5pt;color:blue;background:white'>&gt;</span></p>
+
+<p class=MsoNormal style='margin:0in;margin-bottom:.0001pt;text-autospace:none'><span
+style='font-size:8.5pt;color:black;background:white'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span><span style='font-size:8.5pt;color:blue;background:white'>&lt;</span><span
+style='font-size:8.5pt;color:maroon;background:white'>xsd:element</span><span
+style='font-size:8.5pt;color:red;background:white'> name</span><span
+style='font-size:8.5pt;color:blue;background:white'>=&quot;</span><span
+style='font-size:8.5pt;color:black;background:white'>JobPositionSeekerId</span><span
+style='font-size:8.5pt;color:blue;background:white'>&quot;</span><span
+style='font-size:8.5pt;color:red;background:white'> type</span><span
+style='font-size:8.5pt;color:blue;background:white'>=&quot;</span><span
+style='font-size:8.5pt;color:black;background:white'>xsd:string</span><span
+style='font-size:8.5pt;color:blue;background:white'>&quot;/&gt;</span></p>
+
+<p class=MsoNormal style='margin:0in;margin-bottom:.0001pt;text-autospace:none'><span
+style='font-size:8.5pt;color:black;background:white'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span><span style='font-size:8.5pt;color:blue;background:white'>&lt;</span><span
+style='font-size:8.5pt;color:maroon;background:white'>xsd:element</span><span
+style='font-size:8.5pt;color:red;background:white'> name</span><span
+style='font-size:8.5pt;color:blue;background:white'>=&quot;</span><span
+style='font-size:8.5pt;color:black;background:white'>PersonalData</span><span
+style='font-size:8.5pt;color:blue;background:white'>&quot;&gt;</span></p>
+
+<p class=MsoNormal style='margin:0in;margin-bottom:.0001pt;text-autospace:none'><span
+style='font-size:8.5pt;color:black;background:white'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span><span style='font-size:8.5pt;color:blue;background:white'>&lt;</span><span
+style='font-size:8.5pt;color:maroon;background:white'>xsd:complexType</span><span
+style='font-size:8.5pt;color:blue;background:white'>&gt;</span></p>
+
+<p class=MsoNormal style='margin:0in;margin-bottom:.0001pt;text-autospace:none'><span
+style='font-size:8.5pt;color:black;background:white'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span><span style='font-size:8.5pt;color:blue;background:white'>&lt;</span><span
+style='font-size:8.5pt;color:maroon;background:white'>xsd:sequence</span><span
+style='font-size:8.5pt;color:blue;background:white'>&gt;</span></p>
+
+<p class=MsoNormal style='margin:0in;margin-bottom:.0001pt;text-autospace:none'><span
+style='font-size:8.5pt;color:black;background:white'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span><span style='font-size:8.5pt;color:blue;background:white'>&lt;</span><span
+style='font-size:8.5pt;color:maroon;background:white'>xsd:element</span><span
+style='font-size:8.5pt;color:red;background:white'> name</span><span
+style='font-size:8.5pt;color:blue;background:white'>=&quot;</span><span
+style='font-size:8.5pt;color:black;background:white'>PersonName</span><span
+style='font-size:8.5pt;color:blue;background:white'>&quot;</span><span
+style='font-size:8.5pt;color:red;background:white'> type</span><span
+style='font-size:8.5pt;color:blue;background:white'>=&quot;</span><span
+style='font-size:8.5pt;color:black;background:white'>xsd:string</span><span
+style='font-size:8.5pt;color:blue;background:white'>&quot;/&gt;</span></p>
+
+<p class=MsoNormal style='margin:0in;margin-bottom:.0001pt;text-autospace:none'><span
+style='font-size:8.5pt;color:black;background:white'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span><span style='font-size:8.5pt;color:blue;background:white'>&lt;</span><span
+style='font-size:8.5pt;color:maroon;background:white'>xsd:element</span><span
+style='font-size:8.5pt;color:red;background:white'> name</span><span
+style='font-size:8.5pt;color:blue;background:white'>=&quot;</span><span
+style='font-size:8.5pt;color:black;background:white'>VoiceNumber</span><span
+style='font-size:8.5pt;color:blue;background:white'>&quot;&gt;</span></p>
+
+<p class=MsoNormal style='margin:0in;margin-bottom:.0001pt;text-autospace:none'><span
+style='font-size:8.5pt;color:black;background:white'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span><span style='font-size:8.5pt;color:blue;background:white'>&lt;</span><span
+style='font-size:8.5pt;color:maroon;background:white'>xsd:complexType</span><span
+style='font-size:8.5pt;color:blue;background:white'>&gt;</span></p>
+
+<p class=MsoNormal style='margin:0in;margin-bottom:.0001pt;text-autospace:none'><span
+style='font-size:8.5pt;color:black;background:white'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span><span style='font-size:8.5pt;color:blue;background:white'>&lt;</span><span
+style='font-size:8.5pt;color:maroon;background:white'>xsd:sequence</span><span
+style='font-size:8.5pt;color:blue;background:white'>&gt;</span></p>
+
+<p class=MsoNormal style='margin:0in;margin-bottom:.0001pt;text-autospace:none'><span
+style='font-size:8.5pt;color:black;background:white'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span><span style='font-size:8.5pt;color:blue;background:white'>&lt;</span><span
+style='font-size:8.5pt;color:maroon;background:white'>xsd:element</span><span
+style='font-size:8.5pt;color:red;background:white'> name</span><span
+style='font-size:8.5pt;color:blue;background:white'>=&quot;</span><span
+style='font-size:8.5pt;color:black;background:white'>TelNumber</span><span
+style='font-size:8.5pt;color:blue;background:white'>&quot;</span><span
+style='font-size:8.5pt;color:red;background:white'> type</span><span
+style='font-size:8.5pt;color:blue;background:white'>=&quot;</span><span
+style='font-size:8.5pt;color:black;background:white'>xsd:string</span><span
+style='font-size:8.5pt;color:blue;background:white'>&quot;/&gt;</span></p>
+
+<p class=MsoNormal style='margin:0in;margin-bottom:.0001pt;text-autospace:none'><span
+style='font-size:8.5pt;color:black;background:white'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span><span style='font-size:8.5pt;color:blue;background:white'>&lt;/</span><span
+style='font-size:8.5pt;color:maroon;background:white'>xsd:sequence</span><span
+style='font-size:8.5pt;color:blue;background:white'>&gt;</span></p>
+
+<p class=MsoNormal style='margin:0in;margin-bottom:.0001pt;text-autospace:none'><span
+style='font-size:8.5pt;color:black;background:white'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span><span style='font-size:8.5pt;color:blue;background:white'>&lt;/</span><span
+style='font-size:8.5pt;color:maroon;background:white'>xsd:complexType</span><span
+style='font-size:8.5pt;color:blue;background:white'>&gt;</span></p>
+
+<p class=MsoNormal style='margin:0in;margin-bottom:.0001pt;text-autospace:none'><span
+style='font-size:8.5pt;color:black;background:white'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span><span style='font-size:8.5pt;color:blue;background:white'>&lt;/</span><span
+style='font-size:8.5pt;color:maroon;background:white'>xsd:element</span><span
+style='font-size:8.5pt;color:blue;background:white'>&gt;</span></p>
+
+<p class=MsoNormal style='margin:0in;margin-bottom:.0001pt;text-autospace:none'><span
+style='font-size:8.5pt;color:black;background:white'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span><span style='font-size:8.5pt;color:blue;background:white'>&lt;/</span><span
+style='font-size:8.5pt;color:maroon;background:white'>xsd:sequence</span><span
+style='font-size:8.5pt;color:blue;background:white'>&gt;</span></p>
+
+<p class=MsoNormal style='margin:0in;margin-bottom:.0001pt;text-autospace:none'><span
+style='font-size:8.5pt;color:black;background:white'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span><span style='font-size:8.5pt;color:blue;background:white'>&lt;/</span><span
+style='font-size:8.5pt;color:maroon;background:white'>xsd:complexType</span><span
+style='font-size:8.5pt;color:blue;background:white'>&gt;</span></p>
+
+<p class=MsoNormal style='margin:0in;margin-bottom:.0001pt;text-autospace:none'><span
+style='font-size:8.5pt;color:black;background:white'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span><span style='font-size:8.5pt;color:blue;background:white'>&lt;/</span><span
+style='font-size:8.5pt;color:maroon;background:white'>xsd:element</span><span
+style='font-size:8.5pt;color:blue;background:white'>&gt;</span></p>
+
+<p class=MsoNormal style='margin:0in;margin-bottom:.0001pt;text-autospace:none'><span
+style='font-size:8.5pt;color:black;background:white'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span><span style='font-size:8.5pt;color:blue;background:white'>&lt;</span><span
+style='font-size:8.5pt;color:maroon;background:white'>xsd:element</span><span
+style='font-size:8.5pt;color:red;background:white'> ref</span><span
+style='font-size:8.5pt;color:blue;background:white'>=&quot;</span><span
+style='font-size:8.5pt;color:black;background:white'>UserArea</span><span
+style='font-size:8.5pt;color:blue;background:white'>&quot;</span><span
+style='font-size:8.5pt;color:red;background:white'> minOccurs</span><span
+style='font-size:8.5pt;color:blue;background:white'>=&quot;</span><span
+style='font-size:8.5pt;color:black;background:white'>0</span><span
+style='font-size:8.5pt;color:blue;background:white'>&quot;</span><span
+style='font-size:8.5pt;color:red;background:white'> maxOccurs</span><span
+style='font-size:8.5pt;color:blue;background:white'>=&quot;</span><span
+style='font-size:8.5pt;color:black;background:white'>1</span><span
+style='font-size:8.5pt;color:blue;background:white'>&quot;/&gt;</span></p>
+
+<p class=MsoNormal style='margin:0in;margin-bottom:.0001pt;text-autospace:none'><span
+style='font-size:8.5pt;color:black;background:white'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span
+style='font-size:8.5pt;color:blue;background:white'>&lt;/</span><span
+style='font-size:8.5pt;color:maroon;background:white'>xsd:sequence</span><span
+style='font-size:8.5pt;color:blue;background:white'>&gt;</span></p>
+
+<p class=MsoNormal style='margin:0in;margin-bottom:.0001pt;text-autospace:none'><span
+style='font-size:8.5pt;color:black;background:white'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span><span style='font-size:8.5pt;color:blue;background:white'>&lt;/</span><span
+style='font-size:8.5pt;color:maroon;background:white'>xsd:complexType</span><span
+style='font-size:8.5pt;color:blue;background:white'>&gt;</span></p>
+
+<p class=MsoNormal style='margin:0in;margin-bottom:.0001pt;text-autospace:none'><span
+style='font-size:8.5pt;color:black;background:white'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span><span style='font-size:8.5pt;color:blue;background:white'>&lt;/</span><span
+style='font-size:8.5pt;color:maroon;background:white'>xsd:element</span><span
+style='font-size:8.5pt;color:blue;background:white'>&gt;</span></p>
+
+<p class=MsoNormal style='margin:0in;margin-bottom:.0001pt;text-autospace:none'><span
+style='font-size:8.5pt;color:black;background:white'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span><span style='font-size:8.5pt;color:blue;background:white'>&lt;</span><span
+style='font-size:8.5pt;color:maroon;background:white'>xsd:element</span><span
+style='font-size:8.5pt;color:red;background:white'> name</span><span
+style='font-size:8.5pt;color:blue;background:white'>=&quot;</span><span
+style='font-size:8.5pt;color:black;background:white'>UserArea</span><span
+style='font-size:8.5pt;color:blue;background:white'>&quot;</span><span
+style='font-size:8.5pt;color:red;background:white'> type</span><span
+style='font-size:8.5pt;color:blue;background:white'>=&quot;</span><span
+style='font-size:8.5pt;color:black;background:white'>UserAreaType</span><span
+style='font-size:8.5pt;color:blue;background:white'>&quot;/&gt;</span></p>
+
+<p class=MsoNormal style='margin:0in;margin-bottom:.0001pt;text-autospace:none'><span
+style='font-size:8.5pt;color:black;background:white'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span><span style='font-size:8.5pt;color:blue;background:white'>&lt;</span><span
+style='font-size:8.5pt;color:maroon;background:white'>xsd:complexType</span><span
+style='font-size:8.5pt;color:red;background:white'> name</span><span
+style='font-size:8.5pt;color:blue;background:white'>=&quot;</span><span
+style='font-size:8.5pt;color:black;background:white'>UserAreaType</span><span
+style='font-size:8.5pt;color:blue;background:white'>&quot;&gt;</span></p>
+
+<p class=MsoNormal style='margin:0in;margin-bottom:.0001pt;text-autospace:none'><span
+style='font-size:8.5pt;color:black;background:white'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span><span style='font-size:8.5pt;color:blue;background:white'>&lt;</span><span
+style='font-size:8.5pt;color:maroon;background:white'>xsd:sequence</span><span
+style='font-size:8.5pt;color:red;background:white'> minOccurs</span><span
+style='font-size:8.5pt;color:blue;background:white'>=&quot;</span><span
+style='font-size:8.5pt;color:black;background:white'>0</span><span
+style='font-size:8.5pt;color:blue;background:white'>&quot;&gt;</span></p>
+
+<p class=MsoNormal style='margin:0in;margin-bottom:.0001pt;text-autospace:none'><span
+style='font-size:8.5pt;color:black;background:white'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span><span style='font-size:8.5pt;color:blue;background:white'>&lt;</span><span
+style='font-size:8.5pt;color:maroon;background:white'>xsd:any</span><span
+style='font-size:8.5pt;color:red;background:white'> namespace</span><span
+style='font-size:8.5pt;color:blue;background:white'>=&quot;</span><span
+style='font-size:8.5pt;color:black;background:white'>##any</span><span
+style='font-size:8.5pt;color:blue;background:white'>&quot;</span><span
+style='font-size:8.5pt;color:red;background:white'> minOccurs</span><span
+style='font-size:8.5pt;color:blue;background:white'>=&quot;</span><span
+style='font-size:8.5pt;color:black;background:white'>0</span><span
+style='font-size:8.5pt;color:blue;background:white'>&quot;</span><span
+style='font-size:8.5pt;color:red;background:white'> maxOccurs</span><span
+style='font-size:8.5pt;color:blue;background:white'>=&quot;</span><span
+style='font-size:8.5pt;color:black;background:white'>unbounded</span><span
+style='font-size:8.5pt;color:blue;background:white'>&quot;/&gt;</span></p>
+
+<p class=MsoNormal style='margin:0in;margin-bottom:.0001pt;text-autospace:none'><span
+style='font-size:8.5pt;color:black;background:white'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span><span style='font-size:8.5pt;color:blue;background:white'>&lt;/</span><span
+style='font-size:8.5pt;color:maroon;background:white'>xsd:sequence</span><span
+style='font-size:8.5pt;color:blue;background:white'>&gt;</span></p>
+
+<p class=MsoNormal style='margin:0in;margin-bottom:.0001pt;text-autospace:none'><span
+style='font-size:8.5pt;color:black;background:white'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span><span style='font-size:8.5pt;color:blue;background:white'>&lt;/</span><span
+style='font-size:8.5pt;color:maroon;background:white'>xsd:complexType</span><span
+style='font-size:8.5pt;color:blue;background:white'>&gt;</span></p>
+
+<p class=MsoNormal style='margin:0in;margin-bottom:.0001pt;text-autospace:none'><span
+style='font-size:8.5pt;color:blue;background:white'>&lt;/</span><span
+style='font-size:8.5pt;color:maroon;background:white'>xsd:schema</span><span
+style='font-size:8.5pt;color:blue;background:white'>&gt;</span></p>
+
+<p class=MsoNormal style='margin-top:0in;text-autospace:none'><span
+style='font-size:8.5pt;color:blue;background:white'>&nbsp;</span></p>
+
+<p class=MsoNormal style='margin-top:0in;text-autospace:none'><span
+style='font-size:8.5pt;color:blue;background:white'>&nbsp;</span></p>
+
+<p class=MsoNormal style='margin-top:0in;text-autospace:none'><span
+style='color:black;background:white'>Example extension definition:</span></p>
+
+<p class=MsoNormal style='margin-top:0in;text-autospace:none'><span
+style='color:black;background:white'>&nbsp;</span></p>
+
+<p class=MsoNormal style='margin:0in;margin-bottom:.0001pt;text-autospace:none'><span
+style='font-size:8.5pt;color:blue;background:white'>&lt;</span><span
+style='font-size:8.5pt;color:maroon;background:white'>xsd:schema</span><span
+style='font-size:8.5pt;color:red;background:white'> </span></p>
+
+<p class=MsoNormal style='margin:0in;margin-bottom:.0001pt;text-autospace:none'><span
+style='font-size:8.5pt;color:red;background:white'>targetNamespace</span><span
+style='font-size:8.5pt;color:blue;background:white'>=&quot;</span><span
+style='font-size:8.5pt;color:black;background:white'>BrilliantHRSoftware.com</span><span
+style='font-size:8.5pt;color:blue;background:white'>&quot;</span><span
+style='font-size:8.5pt;color:red;background:white'> </span></p>
+
+<p class=MsoNormal style='margin:0in;margin-bottom:.0001pt;text-autospace:none'><span
+style='font-size:8.5pt;color:red;background:white'>xmlns</span><span
+style='font-size:8.5pt;color:blue;background:white'>=&quot;</span><span
+style='font-size:8.5pt;color:black;background:white'>BrilliantHRSoftware.com</span><span
+style='font-size:8.5pt;color:blue;background:white'>&quot;</span><span
+style='font-size:8.5pt;color:red;background:white'> </span></p>
+
+<p class=MsoNormal style='margin:0in;margin-bottom:.0001pt;text-autospace:none'><span
+style='font-size:8.5pt;color:red;background:white'>xmlns:xsd</span><span
+style='font-size:8.5pt;color:blue;background:white'>=&quot;</span><span
+style='font-size:8.5pt;color:black;background:white'>http://www.w3.org/2001/XMLSchema</span><span
+style='font-size:8.5pt;color:blue;background:white'>&quot;</span><span
+style='font-size:8.5pt;color:red;background:white'> </span></p>
+
+<p class=MsoNormal style='margin:0in;margin-bottom:.0001pt;text-autospace:none'><span
+style='font-size:8.5pt;color:red;background:white'>elementFormDefault</span><span
+style='font-size:8.5pt;color:blue;background:white'>=&quot;</span><span
+style='font-size:8.5pt;color:black;background:white'>qualified</span><span
+style='font-size:8.5pt;color:blue;background:white'>&quot;&gt;</span></p>
+
+<p class=MsoNormal style='margin:0in;margin-bottom:.0001pt;text-autospace:none'><span
+style='font-size:8.5pt;color:black;background:white'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span><span style='font-size:8.5pt;color:blue;background:white'>&lt;</span><span
+style='font-size:8.5pt;color:maroon;background:white'>xsd:element</span><span
+style='font-size:8.5pt;color:red;background:white'> name</span><span
+style='font-size:8.5pt;color:blue;background:white'>=&quot;</span><span
+style='font-size:8.5pt;color:black;background:white'>JunkElement</span><span
+style='font-size:8.5pt;color:blue;background:white'>&quot;&gt;</span></p>
+
+<p class=MsoNormal style='margin:0in;margin-bottom:.0001pt;text-autospace:none'><span
+style='font-size:8.5pt;color:black;background:white'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span><span style='font-size:8.5pt;color:blue;background:white'>&lt;</span><span
+style='font-size:8.5pt;color:maroon;background:white'>xsd:complexType</span><span
+style='font-size:8.5pt;color:blue;background:white'>&gt;</span></p>
+
+<p class=MsoNormal style='margin:0in;margin-bottom:.0001pt;text-autospace:none'><span
+style='font-size:8.5pt;color:black;background:white'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span><span style='font-size:8.5pt;color:blue;background:white'>&lt;</span><span
+style='font-size:8.5pt;color:maroon;background:white'>xsd:simpleContent</span><span
+style='font-size:8.5pt;color:blue;background:white'>&gt;</span></p>
+
+<p class=MsoNormal style='margin:0in;margin-bottom:.0001pt;text-autospace:none'><span
+style='font-size:8.5pt;color:black;background:white'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span><span style='font-size:8.5pt;color:blue;background:white'>&lt;</span><span
+style='font-size:8.5pt;color:maroon;background:white'>xsd:restriction</span><span
+style='font-size:8.5pt;color:red;background:white'> base</span><span
+style='font-size:8.5pt;color:blue;background:white'>=&quot;</span><span
+style='font-size:8.5pt;color:black;background:white'>xsd:string</span><span
+style='font-size:8.5pt;color:blue;background:white'>&quot;&gt;</span></p>
+
+<p class=MsoNormal style='margin:0in;margin-bottom:.0001pt;text-autospace:none'><span
+style='font-size:8.5pt;color:black;background:white'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span><span style='font-size:8.5pt;color:blue;background:white'>&lt;</span><span
+style='font-size:8.5pt;color:maroon;background:white'>xsd:attribute</span><span
+style='font-size:8.5pt;color:red;background:white'> name</span><span
+style='font-size:8.5pt;color:blue;background:white'>=&quot;</span><span
+style='font-size:8.5pt;color:black;background:white'>contextXPath</span><span
+style='font-size:8.5pt;color:blue;background:white'>&quot;</span><span
+style='font-size:8.5pt;color:red;background:white'> type</span><span
+style='font-size:8.5pt;color:blue;background:white'>=&quot;</span><span
+style='font-size:8.5pt;color:black;background:white'>xsd:string</span><span
+style='font-size:8.5pt;color:blue;background:white'>&quot;/&gt;</span></p>
+
+<p class=MsoNormal style='margin:0in;margin-bottom:.0001pt;text-autospace:none'><span
+style='font-size:8.5pt;color:black;background:white'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span><span style='font-size:8.5pt;color:blue;background:white'>&lt;/</span><span
+style='font-size:8.5pt;color:maroon;background:white'>xsd:restriction</span><span
+style='font-size:8.5pt;color:blue;background:white'>&gt;</span></p>
+
+<p class=MsoNormal style='margin:0in;margin-bottom:.0001pt;text-autospace:none'><span
+style='font-size:8.5pt;color:black;background:white'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span><span style='font-size:8.5pt;color:blue;background:white'>&lt;/</span><span
+style='font-size:8.5pt;color:maroon;background:white'>xsd:simpleContent</span><span
+style='font-size:8.5pt;color:blue;background:white'>&gt;</span></p>
+
+<p class=MsoNormal style='margin:0in;margin-bottom:.0001pt;text-autospace:none'><span
+style='font-size:8.5pt;color:black;background:white'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span><span style='font-size:8.5pt;color:blue;background:white'>&lt;/</span><span
+style='font-size:8.5pt;color:maroon;background:white'>xsd:complexType</span><span
+style='font-size:8.5pt;color:blue;background:white'>&gt;</span></p>
+
+<p class=MsoNormal style='margin:0in;margin-bottom:.0001pt;text-autospace:none'><span
+style='font-size:8.5pt;color:black;background:white'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span><span style='font-size:8.5pt;color:blue;background:white'>&lt;/</span><span
+style='font-size:8.5pt;color:maroon;background:white'>xsd:element</span><span
+style='font-size:8.5pt;color:blue;background:white'>&gt;</span></p>
+
+<p class=MsoNormal style='margin:0in;margin-bottom:.0001pt;text-autospace:none'><span
+style='font-size:8.5pt;color:blue;background:white'>&lt;/</span><span
+style='font-size:8.5pt;color:maroon;background:white'>xsd:schema</span><span
+style='font-size:8.5pt;color:blue;background:white'>&gt;</span></p>
+
+<p class=MsoNormal style='margin-top:0in;text-autospace:none'><span
+style='font-size:8.5pt;color:blue;background:white'>&nbsp;</span></p>
+
+<p class=MsoNormal>Example instance:</p>
+
+<p class=MsoNormal style='margin:0in;margin-bottom:.0001pt;text-autospace:none'><span
+style='font-size:8.5pt;color:blue;background:white'>&lt;</span><span
+style='font-size:8.5pt;color:maroon;background:white'>JobPositionSeeker</span><span
+style='font-size:8.5pt;color:red;background:white'> </span></p>
+
+<p class=MsoNormal style='margin:0in;margin-bottom:.0001pt;text-autospace:none'><span
+style='font-size:8.5pt;color:red;background:white'>xmlns</span><span
+style='font-size:8.5pt;color:blue;background:white'>=&quot;</span><span
+style='font-size:8.5pt;color:black;background:white'>http://ns.hr-xml.org</span><span
+style='font-size:8.5pt;color:blue;background:white'>&quot;</span><span
+style='font-size:8.5pt;color:red;background:white'> </span></p>
+
+<p class=MsoNormal style='margin:0in;margin-bottom:.0001pt;text-autospace:none'><span
+style='font-size:8.5pt;color:red;background:white'>xmlns:xsi</span><span
+style='font-size:8.5pt;color:blue;background:white'>=&quot;</span><span
+style='font-size:8.5pt;color:black;background:white'>http://www.w3.org/2001/XMLSchema-instance</span><span
+style='font-size:8.5pt;color:blue;background:white'>&quot;</span><span
+style='font-size:8.5pt;color:red;background:white'> </span></p>
+
+<p class=MsoNormal style='margin:0in;margin-bottom:.0001pt;text-autospace:none'><span
+style='font-size:8.5pt;color:red;background:white'>xsi:schemaLocation</span><span
+style='font-size:8.5pt;color:blue;background:white'>=&quot;</span><span
+style='font-size:8.5pt;color:black;background:white'>http://ns.hr-xml.org/2007-04-15</span></p>
+
+<p class=MsoNormal style='margin:0in;margin-bottom:.0001pt;text-autospace:none'><span
+style='font-size:8.5pt;color:black;background:white'>JobPositionSeeker-1_1.xsd</span></p>
+
+<p class=MsoNormal style='margin:0in;margin-bottom:.0001pt;text-autospace:none'><span
+style='font-size:8.5pt;color:black;background:white'>BrilliantHRSoftware.com</span></p>
+
+<p class=MsoNormal style='margin:0in;margin-bottom:.0001pt;text-autospace:none'><span
+style='font-size:8.5pt;color:black;background:white'>UserArea1.xsd</span><span
+style='font-size:8.5pt;color:blue;background:white'>&quot;&gt;</span></p>
+
+<p class=MsoNormal style='margin:0in;margin-bottom:.0001pt;text-autospace:none'><span
+style='font-size:8.5pt;color:black;background:white'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span><span style='font-size:8.5pt;color:blue;background:white'>&lt;</span><span
+style='font-size:8.5pt;color:maroon;background:white'>JobPositionSeekerId</span><span
+style='font-size:8.5pt;color:blue;background:white'>/&gt;</span></p>
+
+<p class=MsoNormal style='margin:0in;margin-bottom:.0001pt;text-autospace:none'><span
+style='font-size:8.5pt;color:black;background:white'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span><span style='font-size:8.5pt;color:blue;background:white'>&lt;</span><span
+style='font-size:8.5pt;color:maroon;background:white'>PersonalData</span><span
+style='font-size:8.5pt;color:blue;background:white'>&gt;</span></p>
+
+<p class=MsoNormal style='margin:0in;margin-bottom:.0001pt;text-autospace:none'><span
+style='font-size:8.5pt;color:black;background:white'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span><span style='font-size:8.5pt;color:blue;background:white'>&lt;</span><span
+style='font-size:8.5pt;color:maroon;background:white'>PersonName</span><span
+style='font-size:8.5pt;color:blue;background:white'>/&gt;</span></p>
+
+<p class=MsoNormal style='margin:0in;margin-bottom:.0001pt;text-autospace:none'><span
+style='font-size:8.5pt;color:black;background:white'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span><span style='font-size:8.5pt;color:blue;background:white'>&lt;</span><span
+style='font-size:8.5pt;color:maroon;background:white'>VoiceNumber</span><span
+style='font-size:8.5pt;color:blue;background:white'>&gt;</span></p>
+
+<p class=MsoNormal style='margin:0in;margin-bottom:.0001pt;text-autospace:none'><span
+style='font-size:8.5pt;color:black;background:white'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span><span style='font-size:8.5pt;color:blue;background:white'>&lt;</span><span
+style='font-size:8.5pt;color:maroon;background:white'>TelNumber</span><span
+style='font-size:8.5pt;color:blue;background:white'>&gt;</span><span
+style='font-size:8.5pt;color:black;background:white'>567-5678</span><span
+style='font-size:8.5pt;color:blue;background:white'>&lt;/</span><span
+style='font-size:8.5pt;color:maroon;background:white'>TelNumber</span><span
+style='font-size:8.5pt;color:blue;background:white'>&gt;</span></p>
+
+<p class=MsoNormal style='margin:0in;margin-bottom:.0001pt;text-autospace:none'><span
+style='font-size:8.5pt;color:black;background:white'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span><span style='font-size:8.5pt;color:blue;background:white'>&lt;/</span><span
+style='font-size:8.5pt;color:maroon;background:white'>VoiceNumber</span><span
+style='font-size:8.5pt;color:blue;background:white'>&gt;</span></p>
+
+<p class=MsoNormal style='margin:0in;margin-bottom:.0001pt;text-autospace:none'><span
+style='font-size:8.5pt;color:black;background:white'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span><span style='font-size:8.5pt;color:blue;background:white'>&lt;/</span><span
+style='font-size:8.5pt;color:maroon;background:white'>PersonalData</span><span
+style='font-size:8.5pt;color:blue;background:white'>&gt;</span></p>
+
+<p class=MsoNormal style='margin:0in;margin-bottom:.0001pt;text-autospace:none'><span
+style='font-size:8.5pt;color:black;background:white'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span><span style='font-size:8.5pt;color:blue;background:white'>&lt;</span><span
+style='font-size:8.5pt;color:maroon;background:white'>UserArea</span><span
+style='font-size:8.5pt;color:blue;background:white'>&gt;</span></p>
+
+<p class=MsoNormal style='margin:0in;margin-bottom:.0001pt;text-autospace:none'><span
+style='font-size:8.5pt;color:black;background:white'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span><span style='font-size:8.5pt;color:blue;background:white'>&lt;</span><span
+style='font-size:8.5pt;color:maroon;background:white'>JunkElement</span><span
+style='font-size:8.5pt;color:red;background:white'> contextXPath</span><span
+style='font-size:8.5pt;color:blue;background:white'>=&quot;</span><span
+style='font-size:8.5pt;color:black;background:white'>//VoiceNumber/TelNumber</span><span
+style='font-size:8.5pt;color:blue;background:white'>&quot;</span><span
+style='font-size:8.5pt;color:red;background:white'> xmlns</span><span
+style='font-size:8.5pt;color:blue;background:white'>=&quot;</span><span
+style='font-size:8.5pt;color:black;background:white'>BrilliantHRSoftware.com</span><span
+style='font-size:8.5pt;color:blue;background:white'>&quot;&gt;</span><span
+style='font-size:8.5pt;color:black;background:white'>this is an emergency
+telephone number only</span><span style='font-size:8.5pt;color:blue;background:
+white'>&lt;/</span><span style='font-size:8.5pt;color:maroon;background:white'>JunkElement</span><span
+style='font-size:8.5pt;color:blue;background:white'>&gt;</span></p>
+
+<p class=MsoNormal style='margin:0in;margin-bottom:.0001pt;text-autospace:none'><span
+style='font-size:8.5pt;color:black;background:white'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span><span style='font-size:8.5pt;color:blue;background:white'>&lt;/</span><span
+style='font-size:8.5pt;color:maroon;background:white'>UserArea</span><span
+style='font-size:8.5pt;color:blue;background:white'>&gt;</span></p>
+
+<p class=MsoNormal style='margin:0in;margin-bottom:.0001pt;text-autospace:none'><span
+style='font-size:8.5pt;color:blue;background:white'>&lt;/</span><span
+style='font-size:8.5pt;color:maroon;background:white'>JobPositionSeeker</span><span
+style='font-size:8.5pt;color:blue;background:white'>&gt;</span></p>
+
+<h2><a name="_Toc127534869"></a><a name="_Toc3008800"></a>3.1<span
+style='font-size:7.0pt;font-family:"Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span>ANY element extension schema defined and declared</h2>
+
+<p class=MsoNormal>The HR-XML &#8220;ANY&#8221; element and complexType MUST be
+scoped globally and MUST be explicitly defined as:</p>
+
+<p class=MsoNormal style='margin:0in;margin-bottom:.0001pt;text-autospace:none'><span
+style='font-size:8.5pt;color:black;background:white'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span><span style='font-size:8.5pt;color:blue;background:white'>&lt;</span><span
+style='font-size:8.5pt;color:maroon;background:white'>xsd:element</span><span
+style='font-size:8.5pt;color:red;background:white'> name</span><span
+style='font-size:8.5pt;color:blue;background:white'>=&quot;</span><span
+style='font-size:8.5pt;color:black;background:white'>UserArea</span><span
+style='font-size:8.5pt;color:blue;background:white'>&quot;</span><span
+style='font-size:8.5pt;color:red;background:white'> type</span><span
+style='font-size:8.5pt;color:blue;background:white'>=&quot;</span><span
+style='font-size:8.5pt;color:black;background:white'>UserAreaType</span><span
+style='font-size:8.5pt;color:blue;background:white'>&quot;/&gt;</span></p>
+
+<p class=MsoNormal style='margin:0in;margin-bottom:.0001pt;text-autospace:none'><span
+style='font-size:8.5pt;color:black;background:white'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span><span style='font-size:8.5pt;color:blue;background:white'>&lt;</span><span
+style='font-size:8.5pt;color:maroon;background:white'>xsd:complexType</span><span
+style='font-size:8.5pt;color:red;background:white'> name</span><span
+style='font-size:8.5pt;color:blue;background:white'>=&quot;</span><span
+style='font-size:8.5pt;color:black;background:white'>UserAreaType</span><span
+style='font-size:8.5pt;color:blue;background:white'>&quot;&gt;</span></p>
+
+<p class=MsoNormal style='margin:0in;margin-bottom:.0001pt;text-autospace:none'><span
+style='font-size:8.5pt;color:black;background:white'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span><span style='font-size:8.5pt;color:blue;background:white'>&lt;</span><span
+style='font-size:8.5pt;color:maroon;background:white'>xsd:sequence</span><span
+style='font-size:8.5pt;color:red;background:white'> minOccurs</span><span
+style='font-size:8.5pt;color:blue;background:white'>=&quot;</span><span
+style='font-size:8.5pt;color:black;background:white'>0</span><span
+style='font-size:8.5pt;color:blue;background:white'>&quot;&gt;</span></p>
+
+<p class=MsoNormal style='margin:0in;margin-bottom:.0001pt;text-autospace:none'><span
+style='font-size:8.5pt;color:black;background:white'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span><span style='font-size:8.5pt;color:blue;background:white'>&lt;</span><span
+style='font-size:8.5pt;color:maroon;background:white'>xsd:any</span><span
+style='font-size:8.5pt;color:red;background:white'> namespace</span><span
+style='font-size:8.5pt;color:blue;background:white'>=&quot;</span><span
+style='font-size:8.5pt;color:black;background:white'>##any</span><span
+style='font-size:8.5pt;color:blue;background:white'>&quot;</span><span
+style='font-size:8.5pt;color:red;background:white'> minOccurs</span><span
+style='font-size:8.5pt;color:blue;background:white'>=&quot;</span><span
+style='font-size:8.5pt;color:black;background:white'>0</span><span
+style='font-size:8.5pt;color:blue;background:white'>&quot;</span><span
+style='font-size:8.5pt;color:red;background:white'> maxOccurs</span><span
+style='font-size:8.5pt;color:blue;background:white'>=&quot;</span><span
+style='font-size:8.5pt;color:black;background:white'>unbounded</span><span
+style='font-size:8.5pt;color:blue;background:white'>&quot;/&gt;</span></p>
+
+<p class=MsoNormal style='margin:0in;margin-bottom:.0001pt;text-autospace:none'><span
+style='font-size:8.5pt;color:black;background:white'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span><span style='font-size:8.5pt;color:blue;background:white'>&lt;/</span><span
+style='font-size:8.5pt;color:maroon;background:white'>xsd:sequence</span><span
+style='font-size:8.5pt;color:blue;background:white'>&gt;</span></p>
+
+<p class=MsoNormal style='margin:0in;margin-bottom:.0001pt;text-autospace:none'><span
+style='font-size:8.5pt;color:black;background:white'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span><span style='font-size:8.5pt;color:blue;background:white'>&lt;/</span><span
+style='font-size:8.5pt;color:maroon;background:white'>xsd:complexType</span><span
+style='font-size:8.5pt;color:blue;background:white'>&gt;</span></p>
+
+<p class=MsoNormal>&nbsp;</p>
+
+<p class=MsoNormal>&nbsp;</p>
+
+<h1><a name="_Toc127534870"><b>4</b></a><b><span style='font-size:7.0pt;
+font-family:"Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span>Extension Implementation Considerations</b></h1>
+
+<h2><a name="_Toc3008801"></a><a name="_Toc127534871"></a>4.1<span
+style='font-size:7.0pt;font-family:"Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span>Wrapper Constraints</h2>
+
+<p class=MsoNormal style='margin-left:.5in;text-indent:-.25in'>1)<span
+style='font-size:7.0pt;font-family:"Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span>If a pointer to a contextual node is used in an extension element, it
+MAY have the form of an XPath attribute or element with the name
+&#8220;contextXPath.&#8221;&nbsp; (Alternately, a DOM referencing node MAY be
+used with the name &#8220;contextDOMPath.&#8221;)&nbsp; </p>
+
+<p class=MsoNormal style='margin-top:0in;text-autospace:none'><span
+style='font-size:8.5pt;color:black;background:white'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span><span style='font-size:8.5pt;color:blue;background:white'>&lt;</span><span
+style='font-size:8.5pt;color:maroon;background:white'>xsd:attribute</span><span
+style='font-size:8.5pt;color:red;background:white'> name</span><span
+style='font-size:8.5pt;color:blue;background:white'>=&quot;</span><span
+style='font-size:8.5pt;color:black;background:white'>contextXPath</span><span
+style='font-size:8.5pt;color:blue;background:white'>&quot;</span><span
+style='font-size:8.5pt;color:red;background:white'> type</span><span
+style='font-size:8.5pt;color:blue;background:white'>=&quot;</span><span
+style='font-size:8.5pt;color:black;background:white'>xsd:string</span><span
+style='font-size:8.5pt;color:blue;background:white'>&quot;/&gt;</span></p>
+
+<p class=MsoNormal style='margin-top:0in;text-autospace:none'><span
+style='font-size:8.5pt;color:blue;background:white'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&lt;</span><span style='font-size:8.5pt;color:maroon;background:white'>xsd:attribute</span><span
+style='font-size:8.5pt;color:red;background:white'> name</span><span
+style='font-size:8.5pt;color:blue;background:white'>=&quot;</span><span
+style='font-size:8.5pt;color:black;background:white'>contextDOMPath</span><span
+style='font-size:8.5pt;color:blue;background:white'>&quot;</span><span
+style='font-size:8.5pt;color:red;background:white'> type</span><span
+style='font-size:8.5pt;color:blue;background:white'>=&quot;</span><span
+style='font-size:8.5pt;color:black;background:white'>xsd:string</span><span
+style='font-size:8.5pt;color:blue;background:white'>&quot;/&gt;</span></p>
+
+<p class=MsoNormal style='margin-left:.5in;text-indent:-.25in'>2)<span
+style='font-size:7.0pt;font-family:"Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span>Extension nodes defined separately MAY conform to a file naming
+convention of:</p>
+
+<p class=MsoNormal style='margin-left:.5in'>UserArea1.xsd &#8211; first
+extension file name (i.e. with trading partner A)</p>
+
+<p class=MsoNormal style='margin-left:.5in'>UserArea2.xsd &#8211; second
+extension file name (i.e. trading partner B)</p>
+
+<p class=MsoNormal style='margin-left:.5in'>And so on&#8230;.</p>
+
+<p class=number style='margin-top:6.0pt;margin-right:0in;margin-bottom:6.0pt;
+margin-left:.5in'>3)<span style='font-size:7.0pt;font-family:"Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span>Extensions MUST NOT be used in any certification process. </p>
+
+<p class=MsoNormal>&nbsp;</p>
+
+<h2><a name="_Toc3008803"></a><a name="_Toc127534872"></a>4.2<span
+style='font-size:7.0pt;font-family:"Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span>ANY Constraints</h2>
+
+<p class=number style='margin-top:6.0pt;margin-right:0in;margin-bottom:6.0pt;
+margin-left:.5in'>1)<span style='font-size:7.0pt;font-family:"Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span>The XSD declaration for this element MUST conform to accepted schema
+design guidelines and scoped globally as such:</p>
+
+<p class=MsoNormal style='margin:0in;margin-bottom:.0001pt;text-autospace:none'><span
+style='font-size:8.5pt;color:black;background:white'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span><span style='font-size:8.5pt;color:blue;background:white'>&lt;</span><span
+style='font-size:8.5pt;color:maroon;background:white'>xsd:element</span><span
+style='font-size:8.5pt;color:red;background:white'> name</span><span
+style='font-size:8.5pt;color:blue;background:white'>=&quot;</span><span
+style='font-size:8.5pt;color:black;background:white'>UserArea</span><span
+style='font-size:8.5pt;color:blue;background:white'>&quot;</span><span
+style='font-size:8.5pt;color:red;background:white'> type</span><span
+style='font-size:8.5pt;color:blue;background:white'>=&quot;</span><span
+style='font-size:8.5pt;color:black;background:white'>UserAreaType</span><span
+style='font-size:8.5pt;color:blue;background:white'>&quot;/&gt;</span></p>
+
+<p class=MsoNormal style='margin:0in;margin-bottom:.0001pt;text-autospace:none'><span
+style='font-size:8.5pt;color:blue;background:white'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&lt;</span><span style='font-size:8.5pt;color:maroon;background:white'>xsd:complexType</span><span
+style='font-size:8.5pt;color:red;background:white'> name</span><span
+style='font-size:8.5pt;color:blue;background:white'>=&quot;</span><span
+style='font-size:8.5pt;color:black;background:white'>UserAreaType</span><span
+style='font-size:8.5pt;color:blue;background:white'>&quot;&gt;</span></p>
+
+<p class=MsoNormal style='margin:0in;margin-bottom:.0001pt;text-autospace:none'><span
+style='font-size:8.5pt;color:black;background:white'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span><span style='font-size:8.5pt;color:blue;background:white'>&lt;</span><span
+style='font-size:8.5pt;color:maroon;background:white'>xsd:sequence</span><span
+style='font-size:8.5pt;color:red;background:white'> minOccurs</span><span
+style='font-size:8.5pt;color:blue;background:white'>=&quot;</span><span
+style='font-size:8.5pt;color:black;background:white'>0</span><span
+style='font-size:8.5pt;color:blue;background:white'>&quot;&gt;</span></p>
+
+<p class=MsoNormal style='margin:0in;margin-bottom:.0001pt;text-autospace:none'><span
+style='font-size:8.5pt;color:black;background:white'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span><span style='font-size:8.5pt;color:blue;background:white'>&lt;</span><span
+style='font-size:8.5pt;color:maroon;background:white'>xsd:any</span><span
+style='font-size:8.5pt;color:red;background:white'> namespace</span><span
+style='font-size:8.5pt;color:blue;background:white'>=&quot;</span><span
+style='font-size:8.5pt;color:black;background:white'>##any</span><span
+style='font-size:8.5pt;color:blue;background:white'>&quot;</span><span
+style='font-size:8.5pt;color:red;background:white'> minOccurs</span><span
+style='font-size:8.5pt;color:blue;background:white'>=&quot;</span><span
+style='font-size:8.5pt;color:black;background:white'>0</span><span
+style='font-size:8.5pt;color:blue;background:white'>&quot;</span><span
+style='font-size:8.5pt;color:red;background:white'> maxOccurs</span><span
+style='font-size:8.5pt;color:blue;background:white'>=&quot;</span><span
+style='font-size:8.5pt;color:black;background:white'>unbounded</span><span
+style='font-size:8.5pt;color:blue;background:white'>&quot;/&gt;</span></p>
+
+<p class=MsoNormal style='margin:0in;margin-bottom:.0001pt;text-autospace:none'><span
+style='font-size:8.5pt;color:black;background:white'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span><span style='font-size:8.5pt;color:blue;background:white'>&lt;/</span><span
+style='font-size:8.5pt;color:maroon;background:white'>xsd:sequence</span><span
+style='font-size:8.5pt;color:blue;background:white'>&gt;</span></p>
+
+<p class=MsoNormal style='margin:0in;margin-bottom:.0001pt;text-autospace:none'><span
+style='font-size:8.5pt;color:black;background:white'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span><span style='font-size:8.5pt;color:blue;background:white'>&lt;/</span><span
+style='font-size:8.5pt;color:maroon;background:white'>xsd:complexType</span><span
+style='font-size:8.5pt;color:blue;background:white'>&gt;</span></p>
+
+<p class=number style='margin-top:6.0pt;margin-right:0in;margin-bottom:6.0pt;
+margin-left:.5in'>2)<span style='font-size:7.0pt;font-family:"Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span>It must be named &#8220;UserArea&#8221;.</p>
+
+<p class=number style='margin-top:6.0pt;margin-right:0in;margin-bottom:6.0pt;
+margin-left:.5in'>3)<span style='font-size:7.0pt;font-family:"Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span>It MUST be the last child of the root element.</p>
+
+<p class=MsoNormal style='margin-left:.5in;text-indent:-.25in'>4)<span
+style='font-size:7.0pt;font-family:"Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span>It MUST have a minimum occurrence of zero and a maximum occurrence of
+one.</p>
+
+<p class=MsoNormal style='margin-top:0in;text-autospace:none'><span
+style='font-size:8.5pt;color:blue;background:white'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span><span lang=FR style='font-size:8.5pt;color:blue;background:white'>&lt;</span><span
+lang=FR style='font-size:8.5pt;color:maroon;background:white'>xsd:element</span><span
+lang=FR style='font-size:8.5pt;color:red;background:white'> ref</span><span
+lang=FR style='font-size:8.5pt;color:blue;background:white'>=&quot;</span><span
+lang=FR style='font-size:8.5pt;color:black;background:white'>UserArea</span><span
+lang=FR style='font-size:8.5pt;color:blue;background:white'>&quot;</span><span
+lang=FR style='font-size:8.5pt;color:red;background:white'> minOccurs</span><span
+lang=FR style='font-size:8.5pt;color:blue;background:white'>=&quot;</span><span
+lang=FR style='font-size:8.5pt;color:black;background:white'>0</span><span
+lang=FR style='font-size:8.5pt;color:blue;background:white'>&quot;</span><span
+lang=FR style='font-size:8.5pt;color:red;background:white'> maxOccurs</span><span
+lang=FR style='font-size:8.5pt;color:blue;background:white'>=&quot;</span><span
+lang=FR style='font-size:8.5pt;color:black;background:white'>1</span><span
+lang=FR style='font-size:8.5pt;color:blue;background:white'>&quot;/&gt;</span></p>
+
+<p class=MsoNormal style='margin-left:.5in;text-indent:-.25in'>5)<span
+style='font-size:7.0pt;font-family:"Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span>Its declaration MAY have a &#8220;processContents&#8221; value of
+&#8220;strict&#8221; indicated.</p>
+
+<p class=MsoNormal style='margin-left:.5in'>From the Schema spec:</p>
+
+<p class=MsoNormal style='margin-left:.5in'><b><span style='color:black'>lax</span></b><span
+style='color:black'> </span></p>
+
+<p class=MsoNormal style='margin-left:.5in'><span style='color:black'>&#8220;If
+the item, or any items among its [children] if it's an element information
+item, has a uniquely determined declaration available, it must be valid with
+respect to that definition, that is, validate where you can, don't worry when
+you can't.&#8221;</span></p>
+
+<p class=MsoNormal style='margin-left:.5in'><span style='color:black'>This
+functionality varies in implementation and is sometimes deceptively not
+implemented at all.&nbsp; It is recommended NOT to use &#8220;lax&#8221; as a
+processContents value. </span></p>
+
+<p class=MsoNormal style='margin-left:.5in'>&nbsp;</p>
+
+<p class=MsoNormal style='margin-left:.5in;text-indent:-.25in'>6)<span
+style='font-size:7.0pt;font-family:"Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span>&nbsp;If a pointer to a contextual node is used in an extension element,
+it SHOULD have the form of an XPath attribute or element with the name
+&#8220;contextXPath.&#8221; (Alternately, a DOM referencing node MAY be used
+with the name &#8220;contextDOMPath.&#8221;)</p>
+
+<p class=MsoNormal style='margin-top:0in;text-autospace:none'><span
+style='font-size:8.5pt;color:black;background:white'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span><span style='font-size:8.5pt;color:blue;background:white'>&lt;</span><span
+style='font-size:8.5pt;color:maroon;background:white'>xsd:attribute</span><span
+style='font-size:8.5pt;color:red;background:white'> name</span><span
+style='font-size:8.5pt;color:blue;background:white'>=&quot;</span><span
+style='font-size:8.5pt;color:black;background:white'>contextXPath</span><span
+style='font-size:8.5pt;color:blue;background:white'>&quot;</span><span
+style='font-size:8.5pt;color:red;background:white'> type</span><span
+style='font-size:8.5pt;color:blue;background:white'>=&quot;</span><span
+style='font-size:8.5pt;color:black;background:white'>xsd:string</span><span
+style='font-size:8.5pt;color:blue;background:white'>&quot;/&gt;</span></p>
+
+<p class=MsoNormal style='margin-top:0in;text-autospace:none'><span
+style='font-size:8.5pt;color:blue;background:white'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&lt;</span><span style='font-size:8.5pt;color:maroon;background:white'>xsd:attribute</span><span
+style='font-size:8.5pt;color:red;background:white'> name</span><span
+style='font-size:8.5pt;color:blue;background:white'>=&quot;</span><span
+style='font-size:8.5pt;color:black;background:white'>contextDOMPath</span><span
+style='font-size:8.5pt;color:blue;background:white'>&quot;</span><span
+style='font-size:8.5pt;color:red;background:white'> type</span><span
+style='font-size:8.5pt;color:blue;background:white'>=&quot;</span><span
+style='font-size:8.5pt;color:black;background:white'>xsd:string</span><span
+style='font-size:8.5pt;color:blue;background:white'>&quot;/&gt;</span></p>
+
+<p class=MsoNormal style='margin-left:.5in;text-indent:-.25in'>7)<span
+style='font-size:7.0pt;font-family:"Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span>Extension nodes defined separately (whether as an XSD include or as a DTD
+external entity), MAY conform to a file naming convention of:</p>
+
+<p class=MsoNormal style='margin-left:.5in'>UserArea1.xsd &#8211; first
+extension file name (i.e. with trading partner A)</p>
+
+<p class=MsoNormal style='margin-left:.5in'>UserArea2.xsd &#8211; second
+extension file name (i.e. trading partner B)</p>
+
+<p class=MsoNormal style='margin-left:.5in'>And so on&#8230;.</p>
+
+<p class=number style='margin-top:6.0pt;margin-right:0in;margin-bottom:6.0pt;
+margin-left:.5in'>8)<span style='font-size:7.0pt;font-family:"Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span>Extensions MUST NOT be used in any certification process. </p>
+
+<h1><a name="_Toc3008804"></a><a name="_Toc127534873"></a><b>5</b><b><span
+style='font-size:7.0pt;font-family:"Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span>Appendix A - Namespace Extension Method</b></h1>
+
+<h2><a name="_Toc127534874">5.1</a><span style='font-size:7.0pt;font-family:
+"Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>Position
+Statement</h2>
+
+<p class=MsoNormal>This method was examined by the Technical Steering Committee
+and was not endorsed.&nbsp; The central reason was due to the fact that
+&#8220;in context&#8221; extensions prevent a document from being properly
+valid.&nbsp; In essence, an XML parser cannot validate the data because
+extensions violate the content models of elements as defined in the
+schema.&nbsp; Since redefining elements was not an alternative, this method
+cannot be endorsed for use.</p>
+
+<h2><a name="_Toc3008805"></a><a name="_Toc127534875"></a>5.2<span
+style='font-size:7.0pt;font-family:"Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span>Namespace Extension Method Explained</h2>
+
+<p class=MsoNormal>This method uses <b>XML Namespaces</b> to differentiate
+elements of the HR-XML schema from extension elements.&nbsp; The elements are
+inserted in context within the HR-XML schema. Sample invalid instance:</p>
+
+<p class=MsoNormal style='margin:0in;margin-bottom:.0001pt;text-autospace:none'><span
+style='font-size:8.5pt;color:blue;background:white'>&nbsp;</span></p>
+
+<p class=MsoNormal style='margin:0in;margin-bottom:.0001pt;text-autospace:none'><span
+style='font-size:8.5pt;color:blue;background:white'>&lt;</span><span
+style='font-size:8.5pt;color:maroon;background:white'>JobPositionSeeker</span><span
+style='font-size:8.5pt;color:red;background:white'> </span></p>
+
+<p class=MsoNormal style='margin:0in;margin-bottom:.0001pt;text-autospace:none'><span
+style='font-size:8.5pt;color:red;background:white'>xmlns</span><span
+style='font-size:8.5pt;color:blue;background:white'>=&quot;</span><span
+style='font-size:8.5pt;color:black;background:white'>http://ns.hr-xml.org/2007-04-15</span><span
+style='font-size:8.5pt;color:blue;background:white'>&quot;</span><span
+style='font-size:8.5pt;color:red;background:white'> </span></p>
+
+<p class=MsoNormal style='margin:0in;margin-bottom:.0001pt;text-autospace:none'><span
+style='font-size:8.5pt;color:red;background:white'>xmlns:xsi</span><span
+style='font-size:8.5pt;color:blue;background:white'>=&quot;</span><span
+style='font-size:8.5pt;color:black;background:white'>http://www.w3.org/2001/XMLSchema-instance</span><span
+style='font-size:8.5pt;color:blue;background:white'>&quot;</span><span
+style='font-size:8.5pt;color:red;background:white'> </span></p>
+
+<p class=MsoNormal style='margin:0in;margin-bottom:.0001pt;text-autospace:none'><span
+style='font-size:8.5pt;color:red;background:white'>xsi:schemaLocation</span><span
+style='font-size:8.5pt;color:blue;background:white'>=&quot;</span><span
+style='font-size:8.5pt;color:black;background:white'>http://ns.hr-xml.org/2007-04-15</span></p>
+
+<p class=MsoNormal style='margin:0in;margin-bottom:.0001pt;text-autospace:none'><span
+style='font-size:8.5pt;color:black;background:white'>JobPositionSeeker-1_1.xsd</span></p>
+
+<p class=MsoNormal style='margin:0in;margin-bottom:.0001pt;text-autospace:none'><span
+style='font-size:8.5pt;color:black;background:white'>BrilliantHRSoftware.com</span></p>
+
+<p class=MsoNormal style='margin:0in;margin-bottom:.0001pt;text-autospace:none'><span
+style='font-size:8.5pt;color:black;background:white'>BrilliantHRSoftware.xsd</span><span
+style='font-size:8.5pt;color:blue;background:white'>&quot;&gt;</span></p>
+
+<p class=MsoNormal style='margin:0in;margin-bottom:.0001pt;text-autospace:none'><span
+style='font-size:8.5pt;color:black;background:white'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span><span style='font-size:8.5pt;color:blue;background:white'>&lt;</span><span
+style='font-size:8.5pt;color:maroon;background:white'>JobPositionSeekerId</span><span
+style='font-size:8.5pt;color:blue;background:white'>/&gt;</span></p>
+
+<p class=MsoNormal style='margin:0in;margin-bottom:.0001pt;text-autospace:none'><span
+style='font-size:8.5pt;color:black;background:white'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span><span style='font-size:8.5pt;color:blue;background:white'>&lt;</span><span
+style='font-size:8.5pt;color:maroon;background:white'>PersonalData</span><span
+style='font-size:8.5pt;color:blue;background:white'>&gt;</span></p>
+
+<p class=MsoNormal style='margin:0in;margin-bottom:.0001pt;text-autospace:none'><span
+style='font-size:8.5pt;color:black;background:white'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span><span style='font-size:8.5pt;color:blue;background:white'>&lt;</span><span
+style='font-size:8.5pt;color:maroon;background:white'>PersonName</span><span
+style='font-size:8.5pt;color:blue;background:white'>/&gt;</span></p>
+
+<p class=MsoNormal style='margin:0in;margin-bottom:.0001pt;text-autospace:none'><span
+style='font-size:8.5pt;color:black;background:white'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span><span style='font-size:8.5pt;color:blue;background:white'>&lt;</span><span
+style='font-size:8.5pt;color:maroon;background:white'>VoiceNumber</span><span
+style='font-size:8.5pt;color:blue;background:white'>&gt;</span></p>
+
+<p class=MsoNormal style='margin:0in;margin-bottom:.0001pt;text-autospace:none'><span
+style='font-size:8.5pt;color:black;background:white'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span><span style='font-size:8.5pt;color:blue;background:white'>&lt;</span><span
+style='font-size:8.5pt;color:maroon;background:white'>TelNumber</span><span
+style='font-size:8.5pt;color:blue;background:white'>&gt;</span><span
+style='font-size:8.5pt;color:black;background:white'>567-5678</span><span
+style='font-size:8.5pt;color:blue;background:white'>&lt;/</span><span
+style='font-size:8.5pt;color:maroon;background:white'>TelNumber</span><span
+style='font-size:8.5pt;color:blue;background:white'>&gt;</span></p>
+
+<p class=MsoNormal style='margin:0in;margin-bottom:.0001pt;text-autospace:none'><span
+style='font-size:8.5pt;color:black;background:white'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span><span style='font-size:8.5pt;color:blue;background:white'>&lt;</span><span
+style='font-size:8.5pt;color:maroon;background:white'>JunkElement</span><span
+style='font-size:8.5pt;color:red;background:white'> xmlns</span><span
+style='font-size:8.5pt;color:blue;background:white'>=&quot;</span><span
+style='font-size:8.5pt;color:black;background:white'>BrilliantHRSoftware.com</span><span
+style='font-size:8.5pt;color:blue;background:white'>&quot;&gt;</span><span
+style='font-size:8.5pt;color:black;background:white'>this is an emergency
+number only</span><span style='font-size:8.5pt;color:blue;background:white'>&lt;/</span><span
+style='font-size:8.5pt;color:maroon;background:white'>JunkElement</span><span
+style='font-size:8.5pt;color:blue;background:white'>&gt;</span></p>
+
+<p class=MsoNormal style='margin:0in;margin-bottom:.0001pt;text-autospace:none'><span
+style='font-size:8.5pt;color:black;background:white'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span><span style='font-size:8.5pt;color:blue;background:white'>&lt;/</span><span
+style='font-size:8.5pt;color:maroon;background:white'>VoiceNumber</span><span
+style='font-size:8.5pt;color:blue;background:white'>&gt;</span></p>
+
+<p class=MsoNormal style='margin:0in;margin-bottom:.0001pt;text-autospace:none'><span
+style='font-size:8.5pt;color:black;background:white'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span><span style='font-size:8.5pt;color:blue;background:white'>&lt;/</span><span
+style='font-size:8.5pt;color:maroon;background:white'>PersonalData</span><span
+style='font-size:8.5pt;color:blue;background:white'>&gt;</span></p>
+
+<p class=MsoNormal style='margin:0in;margin-bottom:.0001pt;text-autospace:none'><span
+style='font-size:8.5pt;color:blue;background:white'>&lt;/</span><span
+style='font-size:8.5pt;color:maroon;background:white'>JobPositionSeeker</span><span
+style='font-size:8.5pt;color:blue;background:white'>&gt;</span></p>
+
+<p class=MsoNormal>&nbsp;</p>
+
+<p class=MsoNormal>&lt;JunkElement&gt; is not in the content model of
+&lt;JobPositionSeeker&gt; even though it is part of a different namespace.</p>
+
+<h1><a name="_Toc5407312"></a><a name="_Toc127534876"></a><b>6</b><b><span
+style='font-size:7.0pt;font-family:"Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span>Appendix B &#8211; Document Version History</b></h1>
+
+<table class=MsoNormalTable border=0 cellspacing=0 cellpadding=0 width=534
+ style='width:400.5pt;margin-left:-.05in;border-collapse:collapse'>
+ <tr>
+  <td width=114 valign=top style='width:85.5pt;border:solid windowtext 1.0pt;
+  border-bottom:none;background:#E5E5E5;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=tabletext align=center style='text-align:center'>Date</p>
+  </td>
+  <td width=420 valign=top style='width:315.0pt;border-top:solid windowtext 1.0pt;
+  border-left:none;border-bottom:none;border-right:solid windowtext 1.0pt;
+  background:#E5E5E5;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=tabletext>Description</p>
+  </td>
+ </tr>
+ <tr style='height:6.65pt'>
+  <td width=114 valign=top style='width:85.5pt;border-top:none;border-left:
+  solid windowtext 1.0pt;border-bottom:none;border-right:solid windowtext 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt;height:6.65pt'>
+  <p class=tabletext>2002-April-30</p>
+  </td>
+  <td width=420 valign=top style='width:315.0pt;border:none;border-right:solid windowtext 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt;height:6.65pt'>
+  <p class=tabletext>Approved Recommendation</p>
+  </td>
+ </tr>
+ <tr style='height:6.65pt'>
+  <td width=114 valign=top style='width:85.5pt;border-top:none;border-left:
+  solid windowtext 1.0pt;border-bottom:none;border-right:solid windowtext 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt;height:6.65pt'>
+  <p class=tabletext>2003-Jan-31</p>
+  </td>
+  <td width=420 valign=top style='width:315.0pt;border:none;border-right:solid windowtext 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt;height:6.65pt'>
+  <p class=tabletext>Changed target/default namespace of UserArea.xsd</p>
+  </td>
+ </tr>
+ <tr style='height:6.65pt'>
+  <td width=114 valign=top style='width:85.5pt;border-top:none;border-left:
+  solid windowtext 1.0pt;border-bottom:none;border-right:solid windowtext 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt;height:6.65pt'>
+  <p class=tabletext>2003-Feb-26</p>
+  </td>
+  <td width=420 valign=top style='width:315.0pt;border:none;border-right:solid windowtext 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt;height:6.65pt'>
+  <p class=MsoNormal>Approved recommendation by HR-XML Consortium. <span
+  style='background:white'>The default and targetNamespaces of all HR-XML schemas
+  have been standardized to &quot;http://ns.hr-xml.org&quot;.</span> This
+  recommendation is available as part of the HR-XML 2_0 architecture.</p>
+  </td>
+ </tr>
+ <tr style='height:6.65pt'>
+  <td width=114 valign=top style='width:85.5pt;border:solid windowtext 1.0pt;
+  border-top:none;padding:0in 5.4pt 0in 5.4pt;height:6.65pt'>
+  <p class=tabletext>2006-Feb-28</p>
+  </td>
+  <td width=420 valign=top style='width:315.0pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt;height:6.65pt'>
+  <p class=MsoNormal>Approved by Consortium</p>
+  </td>
+ </tr>
+ <tr style='height:6.65pt'>
+  <td width=114 valign=top style='width:85.5pt;border:solid windowtext 1.0pt;
+  border-top:none;padding:0in 5.4pt 0in 5.4pt;height:6.65pt'>
+  <p class=tabletext>2007-Apr-15</p>
+  </td>
+  <td width=420 valign=top style='width:315.0pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt;height:6.65pt'>
+  <p class=MsoNormal>Approved by Consortium</p>
+  </td>
+ </tr>
+</table>
+
+<p class=xml><span style='font-family:Arial'>&nbsp;</span></p>
+
+</div>
+
+</body>
+
+</html>

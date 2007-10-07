@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Many times the intention of hiring an employee needs to be sent to
+     a third party.  The person is technically not an employee, but information
+     needs to be sent ahead of time.  Typically, this is so that the third party
+     can meet contractual obligations (e.g. allow the employee to do online benefit
+     enrollment on their first day of work.
+     
+     The <ProposedHireInfo> element is used to indicate when they are expected to
+     become an employee.  Notice that the <EmploymentStatus> is 'Not Employe', as
+     the potential employee has still not be 'hired' yet - that is is not yet and employee.
+
+
+	Scenario: This XML document represents a more detailed  information exchange.  Additional 
+			  information had to be sent (e.g. to allow eligibility calculations).  This
+			  information, when coupled with a <ProposedHireInfo> node, represents what is 
+			  believed to reflect the reality of their employee & employment information when
+			  they actually become an employee.  
+	
+	WARNING:  EmploymentInfo/HireInfo should not be sent as they have not been hired!  That is the
+	          purpose of the <ProposedHireInfo> node - to model the intention of becoming an employee
+	          without stating that they actually have!  HireInfo would typically be sent when they
+	          have actually become and employee.
+-->
+<IndicativeBatch xmlns="http://ns.hr-xml.org/2007-04-15" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://ns.hr-xml.org/2007-04-15
+ IndicativeBatch.xsd">
+	<TransactionType>Change</TransactionType>
+	<CreateDate>2004-09-16</CreateDate>
+	<BaselineDate>2004-09-16</BaselineDate>
+	<IndicativeData>
+		<Employer>
+			<OrganizationId>
+				<IdValue>12345</IdValue>
+			</OrganizationId>
+		</Employer>
+		<Employee>
+			<PersonInfo>
+				<!-- For now, using a legal id for identification (no employee id yet) -->
+				<PersonLegalId idOwner="US:SSA">
+					<IdValue name="SSN">555-11-1111</IdValue>
+				</PersonLegalId>
+				<PersonName>
+					<GivenName>Jimmy</GivenName>
+					<FamilyName>PreHire</FamilyName>
+				</PersonName>
+				<DateOfBirth>1961-04-05</DateOfBirth>
+				<GenderCode>1</GenderCode>
+				<MaritalStatus>
+					<StandardValue>Married</StandardValue>
+				</MaritalStatus>
+				<ContactInfo>
+					<Location>home</Location>
+					<WhenAvailable>evenings</WhenAvailable>
+					<Telephone>
+						<FormattedNumber>1 212 555 1212</FormattedNumber>
+					</Telephone>
+					<InternetEmailAddress>jimmy@home_domain.com</InternetEmailAddress>
+					<PostalAddress>
+						<CountryCode>US</CountryCode>
+						<PostalCode>11217</PostalCode>
+						<Region>NY</Region>
+						<Municipality>Brooklyn</Municipality>
+						<DeliveryAddress>
+							<AddressLine>5003 Progress Street</AddressLine>
+						</DeliveryAddress>
+					</PostalAddress>
+				</ContactInfo>
+			</PersonInfo>
+			<EmployeeInfo>
+				<!-- NOTE:  We did not include an employee id.  It is assumed in this scenario that
+				            employee will only be assigned an employee id on their first day of work,
+				            and that hasn't occurred yet
+				-->
+				<ContactInfo>
+					<Location>office</Location>
+					<WhenAvailable>day</WhenAvailable>
+					<Telephone>
+						<FormattedNumber>1 212 555 5555</FormattedNumber>
+					</Telephone>
+					<Mobile>
+						<FormattedNumber>1 212 555 2424</FormattedNumber>
+					</Mobile>
+					<InternetEmailAddress>jPrehire@widgetGlobal.com</InternetEmailAddress>
+					<PostalAddress>
+						<CountryCode>US</CountryCode>
+						<PostalCode>10021</PostalCode>
+						<Region>NY</Region>
+						<Municipality>New York</Municipality>
+						<DeliveryAddress>
+							<AddressLine>830 44th Street</AddressLine>
+							<AddressLine>Suite 100</AddressLine>
+						</DeliveryAddress>
+					</PostalAddress>
+				</ContactInfo>
+				<RemunerationBasis>Salaried</RemunerationBasis>
+				<FLSAStatus>exempt</FLSAStatus>
+				<EmploymentLevel>FullTime</EmploymentLevel>
+				<ResourceRelationship>Employee</ResourceRelationship>
+				<LaborBargainingUnitStatus>NonMember</LaborBargainingUnitStatus>
+			</EmployeeInfo>
+			<EmploymentInfo>
+				<IsEmployed>false</IsEmployed>
+				<ProposedHireInfo>
+					<ExpectedStartDate>2004-10-01</ExpectedStartDate>
+				</ProposedHireInfo>
+			</EmploymentInfo>
+			<OrganizationInfo>
+				<OrganizationalUnit>
+					<OrganizationalUnitId idOwner="employer">
+						<IdValue name="DivisionCode">11111</IdValue>
+					</OrganizationalUnitId>
+				</OrganizationalUnit>
+			</OrganizationInfo>
+			<RemunerationInfo>
+				<RemunerationDetail>
+					<PayRate currencyCode="USD">50000</PayRate>
+					<PayRateFrequency>
+						<StandardValue>Annually</StandardValue>
+					</PayRateFrequency>
+					<RemunerationType>
+						<StandardValue>BasePay</StandardValue>
+					</RemunerationType>
+				</RemunerationDetail>
+			</RemunerationInfo>
+		</Employee>
+	</IndicativeData>
+</IndicativeBatch>

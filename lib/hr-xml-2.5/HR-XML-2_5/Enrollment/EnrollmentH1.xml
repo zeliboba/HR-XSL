@@ -1,0 +1,57 @@
+<Enrollment xmlns="http://ns.hr-xml.org/2007-04-15" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://ns.hr-xml.org/2007-04-15
+Enrollment.xsd" creationDate="2004-04-01T13:20:00-05:00">
+	<Organization organizationName="Example Corporation">
+		<Subscriber>
+			<SubscriberType>
+				<SubscriberTypeCode>Employment</SubscriberTypeCode>
+			</SubscriberType>
+			<Person>
+				<IdentificationCode>
+					<IdValue name="Social Security Number">999-34-5678</IdValue>
+				</IdentificationCode>
+				<PersonName>
+					<GivenName>Lawrence</GivenName>
+					<MiddleName>Benjamin</MiddleName>
+					<FamilyName>Preston</FamilyName>
+				</PersonName>
+				<Gender>1</Gender>
+				<DateOfBirth>1968-04-02</DateOfBirth>
+				<PostalAddress>
+					<CountryCode>US</CountryCode>
+					<PostalCode>90038</PostalCode>
+					<Region>CA</Region>
+					<Municipality>Vine City</Municipality>
+					<DeliveryAddress>
+						<AddressLine>1897B Vapor Drive</AddressLine>
+					</DeliveryAddress>
+				</PostalAddress>
+			</Person>
+			<Coverage>
+				<TierCoverage type="Health Maintenance Organization">
+					<GroupNumber>741564M</GroupNumber>
+					<COBRAStatus>non-COBRA</COBRAStatus>
+					<StartDate>2004-01-01</StartDate>
+					<CoverageLevel>
+						<CoverageLevelCode>Employee Only</CoverageLevelCode>
+						<StartDate>2004-01-01</StartDate>
+					</CoverageLevel>
+				</TierCoverage>
+				<TierCoverage type="Dental">
+					<GroupNumber>741564D</GroupNumber>
+					<COBRAStatus>non-COBRA</COBRAStatus>
+					<StartDate>2004-01-01</StartDate>
+					<CoverageLevel>
+						<CoverageLevelCode>Employee Only</CoverageLevelCode>
+						<StartDate>2004-01-01</StartDate>
+					</CoverageLevel>
+				</TierCoverage>
+			</Coverage>
+			<Employment>
+				<EmploymentStatus>
+					<EmploymentStatusCode>Active</EmploymentStatusCode>
+					<StartDate>1999-04-14</StartDate>
+				</EmploymentStatus>
+			</Employment>
+		</Subscriber>
+	</Organization>
+</Enrollment>

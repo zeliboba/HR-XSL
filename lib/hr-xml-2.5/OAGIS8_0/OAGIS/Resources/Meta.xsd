@@ -1,0 +1,196 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+    License information for this file is provided in LICENSE.TXT
+    For support, more information, or to report implementation bugs, 
+    please contact the Open Applications Group at xml@openapplications.org 
+     
+    ** Revision: 8.0 **
+    ** Date: 05 April 2002 **
+    Open Applications Group XSD
+    Copyright 1998-2002, All Rights Reserved
+    
+    Name: Meta.xsd
+-->
+<xs:schema targetNamespace="http://www.openapplications.org/oagis" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns="http://www.openapplications.org/oagis" elementFormDefault="qualified" attributeFormDefault="unqualified" version="0.02">
+	<xs:complexType name="BusinessObjectDocument">
+		<xs:sequence>
+			<xs:element ref="ApplicationArea"/>
+		</xs:sequence>
+		<xs:attribute name="revision" use="required">
+			<xs:simpleType>
+				<xs:restriction base="xs:string">
+					<xs:pattern value="\p{N}\.\p{N}\.\p{N}"/>
+					<xs:pattern value="\p{N}\.\p{N}"/>
+					<xs:pattern value="\p{N}\p{N}\.\p{N}\.\p{N}"/>
+					<xs:pattern value="\p{N}\p{N}\.\p{N}"/>
+				</xs:restriction>
+			</xs:simpleType>
+		</xs:attribute>
+		<xs:attribute name="environment" use="optional" default="Production">
+			<xs:simpleType>
+				<xs:restriction base="xs:string">
+					<xs:enumeration value="Test"/>
+					<xs:enumeration value="Production"/>
+				</xs:restriction>
+			</xs:simpleType>
+		</xs:attribute>
+		<xs:attribute name="lang" type="xs:language" use="optional" default="en-US"/>
+	</xs:complexType>
+	<xs:element name="BusinessObjectDocument" type="BusinessObjectDocument" abstract="true"/>
+	<xs:complexType name="ApplicationArea">
+		<xs:sequence>
+			<xs:element name="Sender" type="Sender" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation source="http://www.openapplications.org/oagis">Identifies characteristics and control identifiers that relate to the application that created the Business Object Document.  The sender area can indicate the logical location of the application and/or database server, the application, and the task that was processing to create the BOD.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="CreationDateTime" type="xs:dateTime">
+				<xs:annotation>
+					<xs:documentation source="http://www.openapplications.org/oagis">is the date time stamp that the given instance of the Business Object Document was created.  This date must not be modified during the life of the Business Object Document.
+</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="Signature" type="Signature" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation source="http://www.openapplications.org/oagis">If the BOD is to be signed the signature element is included, otherwise it is not.
+Signature supports any digital signature that maybe used by an implementation of OAGIS. The qualifyingAgency identifies the agency that provided the format for the signature.
+
+This element supports any digital signature specification that is available today and in the future. This is accomplished by not actually defining the content but by allowing the implementation to specify the digital signature to be used via an external XML Schema namespace declaration. The Signature element is defined to have any content from any other namespace. 
+
+This allows the user to carry a digital signature in the xml instance of a BOD. The choice of which digital signature to use is left up to the user and their integration needs.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="BODId" type="xs:string" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation source="http://www.openapplications.org/oagis">The BODId provides a place to carry a Globally Unique Identifier (GUID) that will make each Business Object Document instance uniquely identifiable.
+
+This is a critical success factor to enable software developers to use the Globally Unique Identifier (GUID) to build the following services or capabilities:
+1. Legally binding transactions,
+2. Transaction logging,
+3. Exception handling,
+4. Re-sending,
+5. Reporting,
+6. Confirmations,
+7. Security.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element ref="UserArea" minOccurs="0"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:element name="ApplicationArea" type="ApplicationArea">
+		<xs:annotation>
+			<xs:documentation source="http://www.openapplications.org/oagis">Provides the information that an application may need to know in order to communicate in an integration of two or more business applications. The ApplicationArea is used at the applications layer of communication. While the integration frameworks web services and middleware provide the communication layer that OAGIS operates on top of.</xs:documentation>
+			<xs:documentation source="http://www.openapplications.org/oagis">Provides the information that an application may need to know in order to communicate in an integration of two or more business applications. The ApplicationArea is used at the applications layer of communication. While the integration frameworks web services and middleware provide the communication layer that OAGIS operates on top of.</xs:documentation>
+		</xs:annotation>
+	</xs:element>
+	<xs:complexType name="DataArea">
+		<xs:annotation>
+			<xs:documentation source="http://www.openapplications.org/oagis">Is where the information that the message carries is provided. This is done by using the Verb which indicates the action to be performed on the Noun and 1 or more Nouns, which is the object that the action is to be performed.</xs:documentation>
+		</xs:annotation>
+	</xs:complexType>
+	<xs:complexType name="Noun"/>
+	<xs:element name="Noun" type="Noun" abstract="true"/>
+	<xs:complexType name="UserArea" block="restriction">
+		<xs:sequence>
+			<xs:any namespace="##any" minOccurs="0" maxOccurs="unbounded"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:element name="UserArea" type="UserArea">
+		<xs:annotation>
+			<xs:documentation source="http://www.openapplications.org/oagis">Allows the user of OAGIS to extend the specification in order to provide additional information that is not captured in OAGIS.</xs:documentation>
+			<xs:documentation source="http://www.openapplications.org/oagis">This is done by defining the additional information in XML Schema and referencing the new schema in the xml instance document throught the use of namespaces. Once this is done the additional information defined there can be carried in the BOD XML instance document.</xs:documentation>
+			<xs:documentation source="http://www.openapplications.org/oagis">The Open Applications Group will make best efforts to quickly consider all proposed submissions.The USERAREA is always the last element in all components, except where the component has been extended inline.</xs:documentation>
+		</xs:annotation>
+	</xs:element>
+	<!-- ====================================================================================================-->
+	<!-- Start Application area specific elements.	-->
+	<xs:complexType name="Sender">
+		<xs:sequence>
+			<xs:element name="LogicalId" type="LogicalId" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation source="http://www.openapplications.org/oagis">Provides the logical location of the server and applications from which the Business Object Document originated. It can be used to establish a logical to physical mapping, however its use is optional.
+
+Each system or combination of systems should maintain an external central reference table containing the logical names or logical addresses of the application systems in the integration configuration.  This enables the logical names to be mapped to the physical network addresses of the resources needed on the network.  
+
+Note:  The technical implementation of this Domain Naming Service is not dictated by this specification. 
+
+This logical to physical mapping may be done at execution time by the application itself or by a middleware transport mechanism, depending on the integration architecture used.
+
+This provides for a simple but effective directory access capability while maintaining application independence from the physical location of those resources on the network</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="Component" type="xs:string" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation source="http://www.openapplications.org/oagis">Provides a finer level of control than Logical Identifier and represents the business application that issued the Business Object Document.  Its use is optional.
+
+The Open Applications Group has not constructed the list of valid Component names.  A suggestion for naming is to use the application component names used in the scenario diagrams in section two of OAGIS. Example Components may be Inventory, or Payroll.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="Task" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation source="http://www.openapplications.org/oagis">Describes the business event that initiated the need for the Business Object Document to be created. Its use is optional. Although the Task may differ depending on the specific implementation, it is important to enable drill back capability. Example Tasks may be Receipt or Adjustment.</xs:documentation>
+				</xs:annotation>
+				<xs:simpleType>
+					<xs:restriction base="Task"/>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="ReferenceId" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation source="http://www.openapplications.org/oagis">Enables the sending application to indicate the instance identifier of the event or task that caused the BOD to be created. This allows drill back from the BOD message into the sending application. The may be required in environments where an audit trail must be maintained for all transactions.</xs:documentation>
+				</xs:annotation>
+				<xs:simpleType>
+					<xs:restriction base="ReferenceId"/>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="Confirmation" type="Confirmation" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation source="http://www.openapplications.org/oagis">Is an option controlled by the Sender business application.  It is a request to the receiving application to send back a confirmation BOD to the sender. The confirmation Business Object Document may indicate the successful processing of the original Business Object Document or return error conditions if the original Business Object Document was unsuccessful.
+
+The confirmation request has the following valid values:
+
+0 - Never - No confirmation Business Object Document requested
+
+1 - OnError - OnError send back a confirmation Business Object Document only if an error has occurred
+
+2 - Always - Always send a confirmation Business Object Document regardless</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="AuthorizationId" type="AuthorizationId" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation source="http://www.openapplications.org/oagis">Identifyies the authorization level of the user or application that is sending the Business Object Document Message. This authorization level being recognized be the receiving system indicates what can be done on the receiving system(s).</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:simpleType name="LogicalId">
+		<xs:restriction base="xs:string"/>
+	</xs:simpleType>
+	<xs:simpleType name="Task">
+		<xs:restriction base="xs:string"/>
+	</xs:simpleType>
+	<xs:simpleType name="ReferenceId">
+		<xs:annotation>
+			<xs:documentation source="http://www.openapplications.org/oagis"/>
+		</xs:annotation>
+		<xs:restriction base="xs:string"/>
+	</xs:simpleType>
+	<xs:simpleType name="Confirmation">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="0"/>
+			<xs:enumeration value="1"/>
+			<xs:enumeration value="2"/>
+			<xs:enumeration value="Never"/>
+			<xs:enumeration value="OnError"/>
+			<xs:enumeration value="Always"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="AuthorizationId">
+		<xs:restriction base="xs:string"/>
+	</xs:simpleType>
+	<xs:complexType name="Signature">
+		<xs:sequence>
+			<xs:any namespace="##any" minOccurs="0"/>
+		</xs:sequence>
+		<xs:attribute name="qualifyingAgency" type="xs:string" use="optional"/>
+	</xs:complexType>
+</xs:schema>

@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EntityContactInfo xmlns="http://ns.hr-xml.org/2007-04-15" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://ns.hr-xml.org/2007-04-15
+ContactInfo.xsd">
+	<EntityName>Deutsch Bundesbank</EntityName>
+	<PersonName>
+		<FormattedName>Marcus Geller</FormattedName>
+	</PersonName>
+	<ContactMethod>
+		<Use>business</Use>
+		<Location>office</Location>
+		<WhenAvailable>Weekdays</WhenAvailable>
+		<Telephone>
+			<FormattedNumber>+49 (6236) 866725</FormattedNumber>
+		</Telephone>
+		<PostalAddress>
+			<CountryCode>DE</CountryCode>
+			<PostalCode>69110</PostalCode>
+			<Municipality>Tubingen</Municipality>
+			<DeliveryAddress>
+				<AddressLine>21</AddressLine>
+				<StreetName>Universitat Strasse</StreetName>
+			</DeliveryAddress>
+			<Recipient>
+				<PersonName>
+					<FormattedName>Marcus Geller</FormattedName>
+				</PersonName>
+			</Recipient>
+		</PostalAddress>
+	</ContactMethod>
+	<ContactMethod>
+		<Use>business</Use>
+		<WhenAvailable>Evenings</WhenAvailable>
+		<Pager>
+			<FormattedNumber>+49 (6236) 866725</FormattedNumber>
+		</Pager>
+	</ContactMethod>
+</EntityContactInfo>

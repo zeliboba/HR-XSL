@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<MetricsInterchange xmlns="http://ns.hr-xml.org/2007-04-15" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://ns.hr-xml.org/2007-04-15 MetricsInterchange.xsd">
+	<ReportingPeriod>
+		<StartDate>2001-01-01</StartDate>
+		<EndDate>2001-12-31</EndDate>
+	</ReportingPeriod>
+	<ReportDescription>
+		<Name>Time To Start - Total</Name>
+		<Description>Show the average number of calendar days between the receipt of a requisition and the data a new hire reports for work</Description>
+	</ReportDescription>
+	<PrincipalRespondentOrganization>
+		<Organization>
+			<OrganizationName>Acme Corporation</OrganizationName>
+		</Organization>
+	</PrincipalRespondentOrganization>
+	<ReportedMetrics>
+		<ReportedOrganization>
+			<IsRespondentOrganization>true</IsRespondentOrganization>
+			<OrganizationDescriptors/>
+			<ReportingData>
+				<ReportingCategory>Staffing and Hiring</ReportingCategory>
+				<ReportingPeriod>
+					<StartDate>2001-01-01</StartDate>
+					<EndDate>2001-12-31</EndDate>
+				</ReportingPeriod>
+				<DataElement type="Total Hires">
+					<Description>Total number of employees hired or internal transfers within the period</Description>
+					<DataValue>23</DataValue>
+					<DataElementSubType type="External Hires">
+						<Description>Total number of external hires</Description>
+						<DataValue>20</DataValue>
+					</DataElementSubType>
+					<DataElementSubType type="Internall Hires">
+						<Description>Total number of internal hires</Description>
+						<DataValue>3</DataValue>
+					</DataElementSubType>
+				</DataElement>
+				<DataElement type="Total Days To Start">
+					<Description>Total number of days between job posting approval and date employees start</Description>
+					<DataValue>1455</DataValue>
+					<DataElementSubType type="External Hires">
+						<Description>Total number of days to start for external hires</Description>
+						<DataValue>1320</DataValue>
+					</DataElementSubType>
+					<DataElementSubType type="Internall Hires">
+						<Description>Total number of days to start for internal hires</Description>
+						<DataValue>135</DataValue>
+					</DataElementSubType>
+				</DataElement>
+			</ReportingData>
+		</ReportedOrganization>
+	</ReportedMetrics>
+</MetricsInterchange>

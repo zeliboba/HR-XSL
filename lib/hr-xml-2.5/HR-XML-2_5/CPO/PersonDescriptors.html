@@ -1,0 +1,3473 @@
+<html>
+
+<head>
+<meta http-equiv=Content-Type content="text/html; charset=us-ascii">
+<meta name=Generator content="Microsoft Word 11 (filtered)">
+<title>PersonDescriptors</title>
+
+<style>
+<!--
+ /* Font Definitions */
+ @font-face
+	{font-family:Courier;
+	panose-1:2 7 4 9 2 2 5 2 4 4;}
+@font-face
+	{font-family:Wingdings;
+	panose-1:5 0 0 0 0 0 0 0 0 0;}
+@font-face
+	{font-family:"MS Mincho";
+	panose-1:2 2 6 9 4 2 5 8 3 4;}
+@font-face
+	{font-family:"Arial Unicode MS";
+	panose-1:2 11 6 4 2 2 2 2 2 4;}
+@font-face
+	{font-family:Tahoma;
+	panose-1:2 11 6 4 3 5 4 4 2 4;}
+@font-face
+	{font-family:"\@MS Mincho";
+	panose-1:2 2 6 9 4 2 5 8 3 4;}
+@font-face
+	{font-family:Verdana;
+	panose-1:2 11 6 4 3 5 4 4 2 4;}
+@font-face
+	{font-family:GillSans;}
+@font-face
+	{font-family:Copperplate31ab;}
+@font-face
+	{font-family:"Verdana\, Arial\, Helvetica";}
+ /* Style Definitions */
+ p.MsoNormal, li.MsoNormal, div.MsoNormal
+	{margin-top:6.0pt;
+	margin-right:0in;
+	margin-bottom:6.0pt;
+	margin-left:0in;
+	font-size:11.0pt;
+	font-family:Arial;}
+h1
+	{margin-top:24.0pt;
+	margin-right:0in;
+	margin-bottom:12.0pt;
+	margin-left:.3in;
+	text-align:justify;
+	text-justify:inter-ideograph;
+	text-indent:-.3in;
+	page-break-after:avoid;
+	font-size:14.0pt;
+	font-family:Copperplate31ab;
+	font-weight:normal;}
+h2
+	{margin-top:.25in;
+	margin-right:0in;
+	margin-bottom:6.0pt;
+	margin-left:.4in;
+	text-indent:-.4in;
+	page-break-after:avoid;
+	layout-grid-mode:char;
+	font-size:12.0pt;
+	font-family:Arial;
+	font-weight:bold;
+	font-style:italic;}
+h3
+	{margin-top:12.0pt;
+	margin-right:0in;
+	margin-bottom:6.0pt;
+	margin-left:.5in;
+	text-indent:-.5in;
+	page-break-after:avoid;
+	layout-grid-mode:char;
+	font-size:10.0pt;
+	font-family:Arial;
+	font-weight:bold;}
+h4
+	{margin-top:12.0pt;
+	margin-right:0in;
+	margin-bottom:3.0pt;
+	margin-left:0in;
+	page-break-after:avoid;
+	font-size:12.0pt;
+	font-family:Arial;
+	font-weight:bold;}
+h5
+	{margin-top:6.0pt;
+	margin-right:0in;
+	margin-bottom:6.0pt;
+	margin-left:.7in;
+	text-align:justify;
+	text-justify:inter-ideograph;
+	text-indent:-.7in;
+	page-break-after:avoid;
+	punctuation-wrap:simple;
+	text-autospace:none;
+	font-size:12.0pt;
+	font-family:GillSans;
+	font-weight:bold;}
+h6
+	{margin-top:12.0pt;
+	margin-right:0in;
+	margin-bottom:3.0pt;
+	margin-left:.8in;
+	text-align:justify;
+	text-justify:inter-ideograph;
+	text-indent:-.8in;
+	font-size:11.0pt;
+	font-family:GillSans;
+	font-weight:bold;}
+p.MsoHeading7, li.MsoHeading7, div.MsoHeading7
+	{margin-top:12.0pt;
+	margin-right:0in;
+	margin-bottom:3.0pt;
+	margin-left:.9in;
+	text-align:justify;
+	text-justify:inter-ideograph;
+	text-indent:-.9in;
+	font-size:12.0pt;
+	font-family:GillSans;}
+p.MsoHeading8, li.MsoHeading8, div.MsoHeading8
+	{margin-top:12.0pt;
+	margin-right:0in;
+	margin-bottom:3.0pt;
+	margin-left:1.0in;
+	text-align:justify;
+	text-justify:inter-ideograph;
+	text-indent:-1.0in;
+	font-size:12.0pt;
+	font-family:GillSans;
+	font-style:italic;}
+p.MsoHeading9, li.MsoHeading9, div.MsoHeading9
+	{margin-top:12.0pt;
+	margin-right:0in;
+	margin-bottom:3.0pt;
+	margin-left:1.1in;
+	text-align:justify;
+	text-justify:inter-ideograph;
+	text-indent:-1.1in;
+	font-size:11.0pt;
+	font-family:Arial;}
+p.MsoIndex1, li.MsoIndex1, div.MsoIndex1
+	{margin-top:6.0pt;
+	margin-right:0in;
+	margin-bottom:6.0pt;
+	margin-left:12.0pt;
+	text-align:justify;
+	text-justify:inter-ideograph;
+	text-indent:-12.0pt;
+	font-size:12.0pt;
+	font-family:GillSans;}
+p.MsoIndex2, li.MsoIndex2, div.MsoIndex2
+	{margin-top:6.0pt;
+	margin-right:0in;
+	margin-bottom:6.0pt;
+	margin-left:24.0pt;
+	text-align:justify;
+	text-justify:inter-ideograph;
+	text-indent:-12.0pt;
+	font-size:12.0pt;
+	font-family:GillSans;}
+p.MsoIndex3, li.MsoIndex3, div.MsoIndex3
+	{margin-top:6.0pt;
+	margin-right:0in;
+	margin-bottom:6.0pt;
+	margin-left:.5in;
+	text-align:justify;
+	text-justify:inter-ideograph;
+	text-indent:-12.0pt;
+	font-size:12.0pt;
+	font-family:GillSans;}
+p.MsoIndex4, li.MsoIndex4, div.MsoIndex4
+	{margin-top:6.0pt;
+	margin-right:0in;
+	margin-bottom:6.0pt;
+	margin-left:48.0pt;
+	text-align:justify;
+	text-justify:inter-ideograph;
+	text-indent:-12.0pt;
+	font-size:12.0pt;
+	font-family:GillSans;}
+p.MsoIndex5, li.MsoIndex5, div.MsoIndex5
+	{margin-top:6.0pt;
+	margin-right:0in;
+	margin-bottom:6.0pt;
+	margin-left:60.0pt;
+	text-align:justify;
+	text-justify:inter-ideograph;
+	text-indent:-12.0pt;
+	font-size:12.0pt;
+	font-family:GillSans;}
+p.MsoIndex6, li.MsoIndex6, div.MsoIndex6
+	{margin-top:6.0pt;
+	margin-right:0in;
+	margin-bottom:6.0pt;
+	margin-left:1.0in;
+	text-align:justify;
+	text-justify:inter-ideograph;
+	text-indent:-12.0pt;
+	font-size:12.0pt;
+	font-family:GillSans;}
+p.MsoIndex7, li.MsoIndex7, div.MsoIndex7
+	{margin-top:6.0pt;
+	margin-right:0in;
+	margin-bottom:6.0pt;
+	margin-left:84.0pt;
+	text-align:justify;
+	text-justify:inter-ideograph;
+	text-indent:-12.0pt;
+	font-size:12.0pt;
+	font-family:GillSans;}
+p.MsoIndex8, li.MsoIndex8, div.MsoIndex8
+	{margin-top:6.0pt;
+	margin-right:0in;
+	margin-bottom:6.0pt;
+	margin-left:96.0pt;
+	text-align:justify;
+	text-justify:inter-ideograph;
+	text-indent:-12.0pt;
+	font-size:12.0pt;
+	font-family:GillSans;}
+p.MsoIndex9, li.MsoIndex9, div.MsoIndex9
+	{margin-top:6.0pt;
+	margin-right:0in;
+	margin-bottom:6.0pt;
+	margin-left:1.5in;
+	text-align:justify;
+	text-justify:inter-ideograph;
+	text-indent:-12.0pt;
+	font-size:12.0pt;
+	font-family:GillSans;}
+p.MsoToc1, li.MsoToc1, div.MsoToc1
+	{margin-top:12.0pt;
+	margin-right:0in;
+	margin-bottom:6.0pt;
+	margin-left:0in;
+	font-size:11.0pt;
+	font-family:"Times New Roman";
+	font-weight:bold;}
+p.MsoToc2, li.MsoToc2, div.MsoToc2
+	{margin-top:6.0pt;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:11.0pt;
+	margin-bottom:.0001pt;
+	font-size:11.0pt;
+	font-family:"Times New Roman";
+	font-style:italic;}
+p.MsoToc3, li.MsoToc3, div.MsoToc3
+	{margin-top:0in;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:22.0pt;
+	margin-bottom:.0001pt;
+	font-size:11.0pt;
+	font-family:"Times New Roman";}
+p.MsoToc4, li.MsoToc4, div.MsoToc4
+	{margin-top:0in;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:33.0pt;
+	margin-bottom:.0001pt;
+	font-size:11.0pt;
+	font-family:"Times New Roman";}
+p.MsoToc5, li.MsoToc5, div.MsoToc5
+	{margin-top:0in;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:44.0pt;
+	margin-bottom:.0001pt;
+	font-size:11.0pt;
+	font-family:"Times New Roman";}
+p.MsoToc6, li.MsoToc6, div.MsoToc6
+	{margin-top:0in;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:55.0pt;
+	margin-bottom:.0001pt;
+	font-size:11.0pt;
+	font-family:"Times New Roman";}
+p.MsoToc7, li.MsoToc7, div.MsoToc7
+	{margin-top:0in;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:66.0pt;
+	margin-bottom:.0001pt;
+	font-size:11.0pt;
+	font-family:"Times New Roman";}
+p.MsoToc8, li.MsoToc8, div.MsoToc8
+	{margin-top:0in;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:77.0pt;
+	margin-bottom:.0001pt;
+	font-size:11.0pt;
+	font-family:"Times New Roman";}
+p.MsoToc9, li.MsoToc9, div.MsoToc9
+	{margin-top:0in;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:88.0pt;
+	margin-bottom:.0001pt;
+	font-size:11.0pt;
+	font-family:"Times New Roman";}
+p.MsoNormalIndent, li.MsoNormalIndent, div.MsoNormalIndent
+	{margin-top:6.0pt;
+	margin-right:0in;
+	margin-bottom:6.0pt;
+	margin-left:.5in;
+	font-size:11.0pt;
+	font-family:Arial;}
+p.MsoFootnoteText, li.MsoFootnoteText, div.MsoFootnoteText
+	{margin-top:6.0pt;
+	margin-right:0in;
+	margin-bottom:6.0pt;
+	margin-left:0in;
+	text-align:justify;
+	text-justify:inter-ideograph;
+	font-size:11.0pt;
+	font-family:GillSans;}
+p.MsoCommentText, li.MsoCommentText, div.MsoCommentText
+	{margin-top:6.0pt;
+	margin-right:0in;
+	margin-bottom:6.0pt;
+	margin-left:0in;
+	text-align:justify;
+	text-justify:inter-ideograph;
+	font-size:11.0pt;
+	font-family:GillSans;}
+p.MsoHeader, li.MsoHeader, div.MsoHeader
+	{margin-top:6.0pt;
+	margin-right:0in;
+	margin-bottom:6.0pt;
+	margin-left:0in;
+	text-align:justify;
+	text-justify:inter-ideograph;
+	font-size:11.0pt;
+	font-family:GillSans;}
+p.MsoFooter, li.MsoFooter, div.MsoFooter
+	{margin-top:6.0pt;
+	margin-right:0in;
+	margin-bottom:6.0pt;
+	margin-left:0in;
+	text-align:justify;
+	text-justify:inter-ideograph;
+	font-size:11.0pt;
+	font-family:GillSans;}
+p.MsoIndexHeading, li.MsoIndexHeading, div.MsoIndexHeading
+	{margin-top:6.0pt;
+	margin-right:0in;
+	margin-bottom:6.0pt;
+	margin-left:0in;
+	text-align:justify;
+	text-justify:inter-ideograph;
+	font-size:12.0pt;
+	font-family:Arial;
+	font-weight:bold;}
+p.MsoCaption, li.MsoCaption, div.MsoCaption
+	{margin-top:6.0pt;
+	margin-right:0in;
+	margin-bottom:6.0pt;
+	margin-left:0in;
+	text-align:center;
+	font-size:12.0pt;
+	font-family:GillSans;
+	font-weight:bold;}
+p.MsoTof, li.MsoTof, div.MsoTof
+	{margin-top:6.0pt;
+	margin-right:0in;
+	margin-bottom:6.0pt;
+	margin-left:24.0pt;
+	text-indent:-24.0pt;
+	font-size:11.0pt;
+	font-family:Arial;}
+p.MsoEnvelopeAddress, li.MsoEnvelopeAddress, div.MsoEnvelopeAddress
+	{margin-top:6.0pt;
+	margin-right:0in;
+	margin-bottom:6.0pt;
+	margin-left:2.0in;
+	text-align:justify;
+	text-justify:inter-ideograph;
+	font-size:12.0pt;
+	font-family:Arial;}
+p.MsoEnvelopeReturn, li.MsoEnvelopeReturn, div.MsoEnvelopeReturn
+	{margin-top:6.0pt;
+	margin-right:0in;
+	margin-bottom:6.0pt;
+	margin-left:0in;
+	text-align:justify;
+	text-justify:inter-ideograph;
+	font-size:11.0pt;
+	font-family:Arial;}
+span.MsoFootnoteReference
+	{vertical-align:super;}
+span.MsoCommentReference
+	{color:fuchsia;}
+p.MsoEndnoteText, li.MsoEndnoteText, div.MsoEndnoteText
+	{margin-top:6.0pt;
+	margin-right:0in;
+	margin-bottom:6.0pt;
+	margin-left:0in;
+	text-align:justify;
+	text-justify:inter-ideograph;
+	font-size:11.0pt;
+	font-family:GillSans;}
+p.MsoToa, li.MsoToa, div.MsoToa
+	{margin-top:6.0pt;
+	margin-right:0in;
+	margin-bottom:6.0pt;
+	margin-left:12.0pt;
+	text-indent:-12.0pt;
+	font-size:11.0pt;
+	font-family:Arial;}
+p.MsoMacroText, li.MsoMacroText, div.MsoMacroText
+	{margin:0in;
+	margin-bottom:.0001pt;
+	text-align:justify;
+	text-justify:inter-ideograph;
+	font-size:10.0pt;
+	font-family:"Courier New";}
+p.MsoToaHeading, li.MsoToaHeading, div.MsoToaHeading
+	{margin-top:6.0pt;
+	margin-right:0in;
+	margin-bottom:6.0pt;
+	margin-left:0in;
+	font-size:11.0pt;
+	font-family:Arial;
+	font-weight:bold;}
+p.MsoList, li.MsoList, div.MsoList
+	{margin-top:6.0pt;
+	margin-right:0in;
+	margin-bottom:6.0pt;
+	margin-left:.25in;
+	text-align:justify;
+	text-justify:inter-ideograph;
+	text-indent:-.25in;
+	font-size:12.0pt;
+	font-family:GillSans;}
+p.MsoListBullet, li.MsoListBullet, div.MsoListBullet
+	{margin-top:6.0pt;
+	margin-right:0in;
+	margin-bottom:6.0pt;
+	margin-left:.25in;
+	text-align:justify;
+	text-justify:inter-ideograph;
+	text-indent:-.25in;
+	font-size:12.0pt;
+	font-family:GillSans;}
+p.MsoListNumber, li.MsoListNumber, div.MsoListNumber
+	{margin-top:6.0pt;
+	margin-right:0in;
+	margin-bottom:6.0pt;
+	margin-left:.25in;
+	text-align:justify;
+	text-justify:inter-ideograph;
+	text-indent:-.25in;
+	font-size:12.0pt;
+	font-family:GillSans;}
+p.MsoList2, li.MsoList2, div.MsoList2
+	{margin-top:6.0pt;
+	margin-right:0in;
+	margin-bottom:6.0pt;
+	margin-left:.5in;
+	text-align:justify;
+	text-justify:inter-ideograph;
+	text-indent:-.25in;
+	font-size:12.0pt;
+	font-family:GillSans;}
+p.MsoList3, li.MsoList3, div.MsoList3
+	{margin-top:6.0pt;
+	margin-right:0in;
+	margin-bottom:6.0pt;
+	margin-left:.75in;
+	text-align:justify;
+	text-justify:inter-ideograph;
+	text-indent:-.25in;
+	font-size:12.0pt;
+	font-family:GillSans;}
+p.MsoList4, li.MsoList4, div.MsoList4
+	{margin-top:6.0pt;
+	margin-right:0in;
+	margin-bottom:6.0pt;
+	margin-left:1.0in;
+	text-align:justify;
+	text-justify:inter-ideograph;
+	text-indent:-.25in;
+	font-size:12.0pt;
+	font-family:GillSans;}
+p.MsoList5, li.MsoList5, div.MsoList5
+	{margin-top:6.0pt;
+	margin-right:0in;
+	margin-bottom:6.0pt;
+	margin-left:1.25in;
+	text-align:justify;
+	text-justify:inter-ideograph;
+	text-indent:-.25in;
+	font-size:12.0pt;
+	font-family:GillSans;}
+p.MsoListBullet2, li.MsoListBullet2, div.MsoListBullet2
+	{margin-top:6.0pt;
+	margin-right:0in;
+	margin-bottom:6.0pt;
+	margin-left:.5in;
+	text-align:justify;
+	text-justify:inter-ideograph;
+	text-indent:-.25in;
+	font-size:12.0pt;
+	font-family:GillSans;}
+p.MsoListBullet3, li.MsoListBullet3, div.MsoListBullet3
+	{margin-top:6.0pt;
+	margin-right:0in;
+	margin-bottom:6.0pt;
+	margin-left:.75in;
+	text-align:justify;
+	text-justify:inter-ideograph;
+	text-indent:-.25in;
+	font-size:12.0pt;
+	font-family:GillSans;}
+p.MsoListBullet4, li.MsoListBullet4, div.MsoListBullet4
+	{margin-top:6.0pt;
+	margin-right:0in;
+	margin-bottom:6.0pt;
+	margin-left:1.0in;
+	text-align:justify;
+	text-justify:inter-ideograph;
+	text-indent:-.25in;
+	font-size:12.0pt;
+	font-family:GillSans;}
+p.MsoListBullet5, li.MsoListBullet5, div.MsoListBullet5
+	{margin-top:6.0pt;
+	margin-right:0in;
+	margin-bottom:6.0pt;
+	margin-left:1.25in;
+	text-align:justify;
+	text-justify:inter-ideograph;
+	text-indent:-.25in;
+	font-size:12.0pt;
+	font-family:GillSans;}
+p.MsoListNumber2, li.MsoListNumber2, div.MsoListNumber2
+	{margin-top:6.0pt;
+	margin-right:0in;
+	margin-bottom:6.0pt;
+	margin-left:.5in;
+	text-align:justify;
+	text-justify:inter-ideograph;
+	text-indent:-.25in;
+	font-size:12.0pt;
+	font-family:GillSans;}
+p.MsoListNumber3, li.MsoListNumber3, div.MsoListNumber3
+	{margin-top:6.0pt;
+	margin-right:0in;
+	margin-bottom:6.0pt;
+	margin-left:.75in;
+	text-align:justify;
+	text-justify:inter-ideograph;
+	text-indent:-.25in;
+	font-size:12.0pt;
+	font-family:GillSans;}
+p.MsoListNumber4, li.MsoListNumber4, div.MsoListNumber4
+	{margin-top:6.0pt;
+	margin-right:0in;
+	margin-bottom:6.0pt;
+	margin-left:1.0in;
+	text-align:justify;
+	text-justify:inter-ideograph;
+	text-indent:-.25in;
+	font-size:12.0pt;
+	font-family:GillSans;}
+p.MsoListNumber5, li.MsoListNumber5, div.MsoListNumber5
+	{margin-top:6.0pt;
+	margin-right:0in;
+	margin-bottom:6.0pt;
+	margin-left:1.25in;
+	text-align:justify;
+	text-justify:inter-ideograph;
+	text-indent:-.25in;
+	font-size:12.0pt;
+	font-family:GillSans;}
+p.MsoTitle, li.MsoTitle, div.MsoTitle
+	{margin-top:12.0pt;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:0in;
+	margin-bottom:.0001pt;
+	font-size:18.0pt;
+	font-family:Arial;
+	color:navy;
+	font-weight:bold;}
+p.MsoClosing, li.MsoClosing, div.MsoClosing
+	{margin-top:6.0pt;
+	margin-right:0in;
+	margin-bottom:6.0pt;
+	margin-left:3.0in;
+	text-align:justify;
+	text-justify:inter-ideograph;
+	font-size:12.0pt;
+	font-family:GillSans;}
+p.MsoSignature, li.MsoSignature, div.MsoSignature
+	{margin-top:6.0pt;
+	margin-right:0in;
+	margin-bottom:6.0pt;
+	margin-left:3.0in;
+	font-size:11.0pt;
+	font-family:Arial;}
+p.MsoBodyText, li.MsoBodyText, div.MsoBodyText
+	{margin-top:6.0pt;
+	margin-right:0in;
+	margin-bottom:6.0pt;
+	margin-left:0in;
+	text-align:justify;
+	text-justify:inter-ideograph;
+	layout-grid-mode:char;
+	font-size:12.0pt;
+	font-family:GillSans;}
+p.MsoBodyTextIndent, li.MsoBodyTextIndent, div.MsoBodyTextIndent
+	{margin-top:6.0pt;
+	margin-right:0in;
+	margin-bottom:6.0pt;
+	margin-left:.25in;
+	text-align:justify;
+	text-justify:inter-ideograph;
+	font-size:12.0pt;
+	font-family:GillSans;}
+p.MsoListContinue, li.MsoListContinue, div.MsoListContinue
+	{margin-top:6.0pt;
+	margin-right:0in;
+	margin-bottom:6.0pt;
+	margin-left:.25in;
+	text-align:justify;
+	text-justify:inter-ideograph;
+	font-size:12.0pt;
+	font-family:GillSans;}
+p.MsoListContinue2, li.MsoListContinue2, div.MsoListContinue2
+	{margin-top:6.0pt;
+	margin-right:0in;
+	margin-bottom:6.0pt;
+	margin-left:.5in;
+	text-align:justify;
+	text-justify:inter-ideograph;
+	font-size:12.0pt;
+	font-family:GillSans;}
+p.MsoListContinue3, li.MsoListContinue3, div.MsoListContinue3
+	{margin-top:6.0pt;
+	margin-right:0in;
+	margin-bottom:6.0pt;
+	margin-left:.75in;
+	text-align:justify;
+	text-justify:inter-ideograph;
+	font-size:12.0pt;
+	font-family:GillSans;}
+p.MsoListContinue4, li.MsoListContinue4, div.MsoListContinue4
+	{margin-top:6.0pt;
+	margin-right:0in;
+	margin-bottom:6.0pt;
+	margin-left:1.0in;
+	text-align:justify;
+	text-justify:inter-ideograph;
+	font-size:12.0pt;
+	font-family:GillSans;}
+p.MsoListContinue5, li.MsoListContinue5, div.MsoListContinue5
+	{margin-top:6.0pt;
+	margin-right:0in;
+	margin-bottom:6.0pt;
+	margin-left:1.25in;
+	text-align:justify;
+	text-justify:inter-ideograph;
+	font-size:12.0pt;
+	font-family:GillSans;}
+p.MsoMessageHeader, li.MsoMessageHeader, div.MsoMessageHeader
+	{margin-top:6.0pt;
+	margin-right:0in;
+	margin-bottom:6.0pt;
+	margin-left:.75in;
+	text-align:justify;
+	text-justify:inter-ideograph;
+	text-indent:-.75in;
+	background:#CCCCCC;
+	font-size:12.0pt;
+	font-family:Arial;}
+p.MsoSubtitle, li.MsoSubtitle, div.MsoSubtitle
+	{margin:0in;
+	margin-bottom:.0001pt;
+	text-align:center;
+	font-size:14.0pt;
+	font-family:Copperplate31ab;
+	font-weight:bold;}
+p.MsoSalutation, li.MsoSalutation, div.MsoSalutation
+	{margin-top:6.0pt;
+	margin-right:0in;
+	margin-bottom:6.0pt;
+	margin-left:0in;
+	font-size:11.0pt;
+	font-family:Arial;}
+p.MsoDate, li.MsoDate, div.MsoDate
+	{margin-top:6.0pt;
+	margin-right:0in;
+	margin-bottom:6.0pt;
+	margin-left:0in;
+	text-align:justify;
+	text-justify:inter-ideograph;
+	font-size:12.0pt;
+	font-family:GillSans;}
+p.MsoBodyTextFirstIndent, li.MsoBodyTextFirstIndent, div.MsoBodyTextFirstIndent
+	{margin-top:6.0pt;
+	margin-right:0in;
+	margin-bottom:6.0pt;
+	margin-left:0in;
+	text-align:justify;
+	text-justify:inter-ideograph;
+	text-indent:10.5pt;
+	font-size:12.0pt;
+	font-family:GillSans;}
+p.MsoBodyTextFirstIndent2, li.MsoBodyTextFirstIndent2, div.MsoBodyTextFirstIndent2
+	{margin-top:6.0pt;
+	margin-right:0in;
+	margin-bottom:6.0pt;
+	margin-left:.25in;
+	text-align:justify;
+	text-justify:inter-ideograph;
+	text-indent:10.5pt;
+	font-size:12.0pt;
+	font-family:GillSans;}
+p.MsoNoteHeading, li.MsoNoteHeading, div.MsoNoteHeading
+	{margin-top:6.0pt;
+	margin-right:0in;
+	margin-bottom:6.0pt;
+	margin-left:0in;
+	font-size:11.0pt;
+	font-family:Arial;}
+p.MsoBodyText2, li.MsoBodyText2, div.MsoBodyText2
+	{margin-top:6.0pt;
+	margin-right:0in;
+	margin-bottom:6.0pt;
+	margin-left:0in;
+	text-align:justify;
+	text-justify:inter-ideograph;
+	line-height:200%;
+	font-size:12.0pt;
+	font-family:GillSans;}
+p.MsoBodyText3, li.MsoBodyText3, div.MsoBodyText3
+	{margin-top:6.0pt;
+	margin-right:0in;
+	margin-bottom:6.0pt;
+	margin-left:0in;
+	line-height:200%;
+	font-size:12.0pt;
+	font-family:Arial;}
+p.MsoBodyTextIndent2, li.MsoBodyTextIndent2, div.MsoBodyTextIndent2
+	{margin-top:6.0pt;
+	margin-right:0in;
+	margin-bottom:6.0pt;
+	margin-left:.25in;
+	text-align:justify;
+	text-justify:inter-ideograph;
+	line-height:200%;
+	font-size:12.0pt;
+	font-family:GillSans;}
+p.MsoBodyTextIndent3, li.MsoBodyTextIndent3, div.MsoBodyTextIndent3
+	{margin-top:6.0pt;
+	margin-right:0in;
+	margin-bottom:6.0pt;
+	margin-left:.25in;
+	text-align:justify;
+	text-justify:inter-ideograph;
+	font-size:8.0pt;
+	font-family:GillSans;}
+p.MsoBlockText, li.MsoBlockText, div.MsoBlockText
+	{margin-top:6.0pt;
+	margin-right:1.0in;
+	margin-bottom:6.0pt;
+	margin-left:1.0in;
+	text-align:justify;
+	text-justify:inter-ideograph;
+	font-size:12.0pt;
+	font-family:GillSans;}
+a:link, span.MsoHyperlink
+	{color:blue;
+	text-decoration:none none;}
+a:visited, span.MsoHyperlinkFollowed
+	{color:purple;
+	text-decoration:none none;}
+p.MsoDocumentMap, li.MsoDocumentMap, div.MsoDocumentMap
+	{margin-top:6.0pt;
+	margin-right:0in;
+	margin-bottom:6.0pt;
+	margin-left:0in;
+	text-align:justify;
+	text-justify:inter-ideograph;
+	background:navy;
+	font-size:12.0pt;
+	font-family:Tahoma;}
+p.MsoPlainText, li.MsoPlainText, div.MsoPlainText
+	{margin:0in;
+	margin-bottom:.0001pt;
+	font-size:10.0pt;
+	font-family:"Courier New";}
+p.MsoAutoSig, li.MsoAutoSig, div.MsoAutoSig
+	{margin-top:6.0pt;
+	margin-right:0in;
+	margin-bottom:6.0pt;
+	margin-left:0in;
+	text-align:justify;
+	text-justify:inter-ideograph;
+	font-size:12.0pt;
+	font-family:GillSans;}
+p
+	{margin:0in;
+	margin-bottom:.0001pt;
+	font-size:8.0pt;
+	font-family:"Times New Roman";}
+address
+	{margin-top:6.0pt;
+	margin-right:0in;
+	margin-bottom:6.0pt;
+	margin-left:0in;
+	text-align:justify;
+	text-justify:inter-ideograph;
+	font-size:12.0pt;
+	font-family:GillSans;
+	font-style:italic;}
+pre
+	{margin-top:6.0pt;
+	margin-right:0in;
+	margin-bottom:6.0pt;
+	margin-left:0in;
+	text-align:justify;
+	text-justify:inter-ideograph;
+	font-size:11.0pt;
+	font-family:"Courier New";}
+tt
+	{font-family:"Arial Unicode MS";}
+p.xml, li.xml, div.xml
+	{margin-top:6.0pt;
+	margin-right:0in;
+	margin-bottom:6.0pt;
+	margin-left:0in;
+	font-size:11.0pt;
+	font-family:"Courier New";}
+p.appendices, li.appendices, div.appendices
+	{margin-top:24.0pt;
+	margin-right:0in;
+	margin-bottom:12.0pt;
+	margin-left:.3in;
+	text-align:center;
+	text-indent:-.3in;
+	page-break-after:avoid;
+	font-size:14.0pt;
+	font-family:Copperplate31ab;
+	font-weight:bold;}
+p.bullet, li.bullet, div.bullet
+	{margin-top:3.0pt;
+	margin-right:4.3pt;
+	margin-bottom:3.0pt;
+	margin-left:.5in;
+	text-indent:-.25in;
+	layout-grid-mode:char;
+	font-size:11.0pt;
+	font-family:Arial;}
+p.footerlandscape, li.footerlandscape, div.footerlandscape
+	{margin-top:6.0pt;
+	margin-right:0in;
+	margin-bottom:6.0pt;
+	margin-left:0in;
+	text-align:justify;
+	text-justify:inter-ideograph;
+	font-size:11.0pt;
+	font-family:GillSans;}
+p.headerlandscape, li.headerlandscape, div.headerlandscape
+	{margin-top:6.0pt;
+	margin-right:0in;
+	margin-bottom:6.0pt;
+	margin-left:0in;
+	text-align:justify;
+	text-justify:inter-ideograph;
+	font-size:11.0pt;
+	font-family:GillSans;}
+p.number, li.number, div.number
+	{margin-top:3.0pt;
+	margin-right:0in;
+	margin-bottom:3.0pt;
+	margin-left:.5in;
+	text-indent:-.25in;
+	font-size:11.0pt;
+	font-family:Arial;}
+p.titlecover, li.titlecover, div.titlecover
+	{margin-top:1.25in;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:.75in;
+	margin-bottom:.0001pt;
+	page-break-after:avoid;
+	font-size:36.0pt;
+	font-family:Arial;
+	letter-spacing:-2.4pt;
+	font-weight:bold;}
+p.subtitlecover, li.subtitlecover, div.subtitlecover
+	{margin-top:76.0pt;
+	margin-right:84.0pt;
+	margin-bottom:0in;
+	margin-left:.75in;
+	margin-bottom:.0001pt;
+	page-break-after:avoid;
+	font-size:20.0pt;
+	font-family:"Times New Roman";
+	letter-spacing:-1.0pt;
+	font-style:italic;}
+p.tabletext, li.tabletext, div.tabletext
+	{margin:0in;
+	margin-bottom:.0001pt;
+	font-size:11.0pt;
+	font-family:Arial;}
+p.tablebullet, li.tablebullet, div.tablebullet
+	{margin-top:0in;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:.15in;
+	margin-bottom:.0001pt;
+	text-indent:-.15in;
+	font-size:11.0pt;
+	font-family:Arial;}
+p.tableheader, li.tableheader, div.tableheader
+	{margin:0in;
+	margin-bottom:.0001pt;
+	text-align:center;
+	font-size:11.0pt;
+	font-family:Copperplate31ab;
+	color:white;
+	font-weight:bold;}
+p.tablelist, li.tablelist, div.tablelist
+	{margin-top:0in;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:.25in;
+	margin-bottom:.0001pt;
+	text-indent:-.3in;
+	font-size:11.0pt;
+	font-family:Arial;}
+p.tablesubheader, li.tablesubheader, div.tablesubheader
+	{margin:0in;
+	margin-bottom:.0001pt;
+	text-align:center;
+	font-size:11.0pt;
+	font-family:Arial;
+	font-weight:bold;}
+p.version, li.version, div.version
+	{margin:0in;
+	margin-bottom:.0001pt;
+	text-align:center;
+	font-size:10.0pt;
+	font-family:Copperplate31ab;}
+p.style1, li.style1, div.style1
+	{margin-top:12.0pt;
+	margin-right:0in;
+	margin-bottom:6.0pt;
+	margin-left:.5in;
+	text-indent:-.5in;
+	page-break-after:avoid;
+	layout-grid-mode:char;
+	font-size:10.0pt;
+	font-family:Arial;
+	font-weight:bold;}
+p.h4, li.h4, div.h4
+	{margin-top:6.0pt;
+	margin-right:0in;
+	margin-bottom:6.0pt;
+	margin-left:0in;
+	font-size:11.0pt;
+	font-family:Arial;
+	font-weight:bold;}
+p.b, li.b, div.b
+	{margin:0in;
+	margin-bottom:.0001pt;
+	font-size:12.0pt;
+	font-family:"Courier New";
+	color:red;
+	font-weight:bold;}
+p.e, li.e, div.e
+	{margin-top:0in;
+	margin-right:12.0pt;
+	margin-bottom:0in;
+	margin-left:12.0pt;
+	margin-bottom:.0001pt;
+	text-indent:-12.0pt;
+	font-size:12.0pt;
+	font-family:"Times New Roman";}
+p.k, li.k, div.k
+	{margin-top:0in;
+	margin-right:12.0pt;
+	margin-bottom:0in;
+	margin-left:12.0pt;
+	margin-bottom:.0001pt;
+	text-indent:-12.0pt;
+	font-size:12.0pt;
+	font-family:"Times New Roman";}
+p.t, li.t, div.t
+	{margin:0in;
+	margin-bottom:.0001pt;
+	font-size:12.0pt;
+	font-family:"Times New Roman";
+	color:#990000;}
+p.xt, li.xt, div.xt
+	{margin:0in;
+	margin-bottom:.0001pt;
+	font-size:12.0pt;
+	font-family:"Times New Roman";
+	color:#990099;}
+p.ns, li.ns, div.ns
+	{margin:0in;
+	margin-bottom:.0001pt;
+	font-size:12.0pt;
+	font-family:"Times New Roman";
+	color:red;}
+p.m, li.m, div.m
+	{margin:0in;
+	margin-bottom:.0001pt;
+	font-size:12.0pt;
+	font-family:"Times New Roman";
+	color:blue;}
+p.tx, li.tx, div.tx
+	{margin:0in;
+	margin-bottom:.0001pt;
+	font-size:12.0pt;
+	font-family:"Times New Roman";
+	font-weight:bold;}
+p.db, li.db, div.db
+	{margin-top:0in;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:12.0pt;
+	margin-bottom:.0001pt;
+	font-size:12.0pt;
+	font-family:Courier;}
+p.di, li.di, div.di
+	{margin:0in;
+	margin-bottom:.0001pt;
+	font-size:12.0pt;
+	font-family:Courier;}
+p.d, li.d, div.d
+	{margin:0in;
+	margin-bottom:.0001pt;
+	font-size:12.0pt;
+	font-family:"Times New Roman";
+	color:blue;}
+p.pi, li.pi, div.pi
+	{margin:0in;
+	margin-bottom:.0001pt;
+	font-size:12.0pt;
+	font-family:"Times New Roman";
+	color:blue;}
+p.cb, li.cb, div.cb
+	{margin-top:0in;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:12.0pt;
+	margin-bottom:.0001pt;
+	font-size:12.0pt;
+	font-family:Courier;
+	color:#888888;}
+p.ci, li.ci, div.ci
+	{margin:0in;
+	margin-bottom:.0001pt;
+	font-size:12.0pt;
+	font-family:Courier;
+	color:#888888;}
+p.workingdraftdate, li.workingdraftdate, div.workingdraftdate
+	{margin-top:12.0pt;
+	margin-right:0in;
+	margin-bottom:12.0pt;
+	margin-left:0in;
+	font-size:16.0pt;
+	font-family:Arial;
+	color:navy;}
+p.heading3preface, li.heading3preface, div.heading3preface
+	{margin:0in;
+	margin-bottom:.0001pt;
+	font-size:10.0pt;
+	font-family:Arial;
+	font-weight:bold;}
+p.prefacetext, li.prefacetext, div.prefacetext
+	{margin-top:0in;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:.5in;
+	margin-bottom:.0001pt;
+	font-size:10.0pt;
+	font-family:Arial;}
+p.heading2preface, li.heading2preface, div.heading2preface
+	{margin-top:24.0pt;
+	margin-right:0in;
+	margin-bottom:3.0pt;
+	margin-left:0in;
+	font-size:14.0pt;
+	font-family:Arial;
+	color:navy;
+	font-weight:bold;}
+span.m1
+	{color:blue;}
+span.pi1
+	{color:blue;}
+span.d1
+	{color:blue;}
+span.b1
+	{font-family:"Courier New";
+	color:red;
+	font-weight:bold;
+	text-decoration:none none;}
+span.t1
+	{color:#990000;}
+span.tx1
+	{font-weight:bold;}
+span.note1
+	{color:gray;}
+span.headers1
+	{font-family:"Verdana\, Arial\, Helvetica";
+	font-weight:bold;}
+@page Section1
+	{size:8.5in 11.0in;
+	margin:1.0in 1.0in .6in 1.0in;}
+div.Section1
+	{page:Section1;}
+ /* List Definitions */
+ ol
+	{margin-bottom:0in;}
+ul
+	{margin-bottom:0in;}
+-->
+</style>
+
+</head>
+
+<body lang=EN-US link=blue vlink=purple>
+
+<div class=Section1>
+
+<p class=xml><span style='font-family:Arial'><img width=281 height=87
+src="PersonDescriptors_files/image001.jpg">&nbsp;</span></p>
+
+<p class=MsoTitle>Person Descriptors </p>
+
+<p class=MsoTitle>Recommendation, 2007 April 15</p>
+
+<p class=heading3preface style='margin-top:6.0pt'>Editor:</p>
+
+<p class=prefacetext>Kim Bartkus, HR-XML Consortium </p>
+
+<p class=prefacetext>Kathi Dolan, Manpower</p>
+
+<p class=heading3preface style='margin-top:6.0pt'>Contributors:</p>
+
+<p class=prefacetext>Members of the Recruiting and Staffing, Screening,
+Cross-Process Object and SIDES workgroups.</p>
+
+<p class=prefacetext style='margin-left:0in'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</p>
+
+<p class=prefacetext style='margin-left:0in'><b>Copyright &copy; 2007 HR-XML
+Consortium, Inc.</b></p>
+
+<p class=prefacetext style='margin-left:0in'>&nbsp;</p>
+
+<div style='border:none;border-top:double windowtext 2.25pt;padding:24.0pt 0in 0in 0in'>
+
+<p class=heading2preface style='margin-top:12.0pt'>Abstract</p>
+
+</div>
+
+<p class=MsoPlainText><span style='font-family:Arial'>This document describes
+the exchange of personal identifying or descriptive information, including
+legal identifiers, biological descriptors, and demographic data.</span></p>
+
+<span style='font-size:14.0pt;font-family:Arial;color:navy'><br clear=all
+style='page-break-before:always'>
+</span>
+
+<p class=heading2preface style='margin-top:12.0pt;margin-right:0in;margin-bottom:
+0in;margin-left:0in;margin-bottom:.0001pt'>Table of Contents</p>
+
+<p class=MsoToc1><span class=MsoHyperlink><a href="#_Toc127535773">1<span
+style='font-size:12.0pt;color:windowtext;font-weight:normal'>&nbsp;&nbsp;&nbsp;&nbsp;
+</span>Overview<span style='color:windowtext;display:none'>.. 3</span></a></span></p>
+
+<p class=MsoToc2><span class=MsoHyperlink><a href="#_Toc127535774">1.1<span
+style='font-size:12.0pt;color:windowtext;font-style:normal'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span>Objective<span style='color:windowtext;display:none'>. 3</span></a></span></p>
+
+<p class=MsoToc2><span class=MsoHyperlink><a href="#_Toc127535775">1.2<span
+style='font-size:12.0pt;color:windowtext;font-style:normal'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span>Design Requirements<span style='color:windowtext;display:none'>. 3</span></a></span></p>
+
+<p class=MsoToc2><span class=MsoHyperlink><a href="#_Toc127535776">1.3<span
+style='font-size:12.0pt;color:windowtext;font-style:normal'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span>Scope<span style='color:windowtext;display:none'>. 4</span></a></span></p>
+
+<p class=MsoToc3><span class=MsoHyperlink><a href="#_Toc127535777">1.3.1<span
+style='font-size:12.0pt;color:windowtext'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span>Items within the Design Scope<span style='color:windowtext;display:none'>.
+4</span></a></span></p>
+
+<p class=MsoToc3><span class=MsoHyperlink><a href="#_Toc127535778">1.3.2<span
+style='font-size:12.0pt;color:windowtext'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span>Items Outside of Design Scope<span style='color:windowtext;display:none'>.
+4</span></a></span></p>
+
+<p class=MsoToc1><span class=MsoHyperlink><a href="#_Toc127535779">2<span
+style='font-size:12.0pt;color:windowtext;font-weight:normal'>&nbsp;&nbsp;&nbsp;&nbsp;
+</span>Supported Business Processes<span style='color:windowtext;display:none'>.
+4</span></a></span></p>
+
+<p class=MsoToc2><span class=MsoHyperlink><a href="#_Toc127535780">2.1<span
+style='font-size:12.0pt;color:windowtext;font-style:normal'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span>Regulatory Compliance Reporting<span style='color:windowtext;display:
+none'>. 4</span></a></span></p>
+
+<p class=MsoToc2><span class=MsoHyperlink><a href="#_Toc127535781">2.2<span
+style='font-size:12.0pt;color:windowtext;font-style:normal'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span>Employment Screening<span style='color:windowtext;display:none'>. 4</span></a></span></p>
+
+<p class=MsoToc1><span class=MsoHyperlink><a href="#_Toc127535782">3<span
+style='font-size:12.0pt;color:windowtext;font-weight:normal'>&nbsp;&nbsp;&nbsp;&nbsp;
+</span>Schema Design<span style='color:windowtext;display:none'>. 5</span></a></span></p>
+
+<p class=MsoToc2><span class=MsoHyperlink><a href="#_Toc127535783">3.1<span
+style='font-size:12.0pt;color:windowtext;font-style:normal'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span>Schema Diagrams<span style='color:windowtext;display:none'>. 5</span></a></span></p>
+
+<p class=MsoToc3><span class=MsoHyperlink><a href="#_Toc127535784">3.1.1<span
+style='font-size:12.0pt;color:windowtext'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span>Schema Elements Explained<span style='color:windowtext;display:none'>. 6</span></a></span></p>
+
+<p class=MsoToc1><span class=MsoHyperlink><a href="#_Toc127535785">4<span
+style='font-size:12.0pt;color:windowtext;font-weight:normal'>&nbsp;&nbsp;&nbsp;&nbsp;
+</span>Implementation Considerations<span style='color:windowtext;display:none'>.
+12</span></a></span></p>
+
+<p class=MsoToc2><span class=MsoHyperlink><a href="#_Toc127535786">4.1<span
+style='font-size:12.0pt;color:windowtext;font-style:normal'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span>Terminology<span style='color:windowtext;display:none'>. 12</span></a></span></p>
+
+<p class=MsoToc2><span class=MsoHyperlink><a href="#_Toc127535787">4.2<span
+style='font-size:12.0pt;color:windowtext;font-style:normal'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span>Data Privacy<span style='color:windowtext;display:none'>. 14</span></a></span></p>
+
+<p class=MsoToc1><span class=MsoHyperlink><a href="#_Toc127535788">5<span
+style='font-size:12.0pt;color:windowtext;font-weight:normal'>&nbsp;&nbsp;&nbsp;&nbsp;
+</span>Appendix A - Document Version History<span style='color:windowtext;
+display:none'>. 14</span></a></span></p>
+
+<p class=MsoToc1><span class=MsoHyperlink><a href="#_Toc127535789">6<span
+style='font-size:12.0pt;color:windowtext;font-weight:normal'>&nbsp;&nbsp;&nbsp;&nbsp;
+</span>Appendix B &#8211; Related Documents<span style='color:windowtext;
+display:none'>. 14</span></a></span></p>
+
+<p class=MsoToc1><span class=MsoHyperlink><a href="#_Toc127535790">7<span
+style='font-size:12.0pt;color:windowtext;font-weight:normal'>&nbsp;&nbsp;&nbsp;&nbsp;
+</span>Appendix C &#8211; Example<span style='color:windowtext;display:none'>.
+15</span></a></span></p>
+
+<p class=MsoToc1>&nbsp;</p>
+
+<span style='font-size:14.0pt;font-family:Copperplate31ab'><br clear=all
+style='page-break-before:always'>
+</span>
+
+<h1 style='margin-top:12.0pt'><a name="_Toc127535773"><b>1</b></a><b><span
+style='font-size:7.0pt;font-family:"Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span>Overview</b><a name="_Toc492656056"></a><a name="_Toc492655894"></a><a
+name="_Toc493472395"></a><a name="_Toc493472734"></a><a name="_Toc493472396"></a><a
+name="_Toc493472735"></a><a name="_Toc493472034"></a><a name="_Toc493472399"></a><a
+name="_Toc493472738"></a><a name="_Toc493472400"></a><a name="_Toc493472739"></a><a
+name="_Toc493472401"></a><a name="_Toc493472740"></a><a name="_Toc493472436"></a><a
+name="_Toc493472775"></a><a name="_Toc493472437"></a><a name="_Toc493472776"></a><a
+name="_Toc492655893"></a><a name="_Toc492656055"></a><a name="_Toc493472438"></a><a
+name="_Toc493472777"></a></h1>
+
+<p class=MsoNormal style='margin:0in;margin-bottom:.0001pt'>The Person
+Descriptors schema allows the exchange of legal identifiers, biological descriptors,
+and demographic data. This schema may be used for a variety of business
+purposes, including recruiting, screening, and within the staffing industry. It
+was designed so that distinct descriptors could be used separately or as a
+group. For example, a particular background check may only be interested in the
+legal identifiers and not need the biological or demographic descriptors.</p>
+
+<h2><a name="_Toc127535774">1.1</a><span style='font-size:7.0pt;font-family:
+"Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>Objective</h2>
+
+<p class=MsoNormal>The DemographicDetail schema was developed for SEP 1.0 and included
+information about demographics of an individual. The SIDES and Screening
+workgroups adopted the schema, where other information was added. Eventually,
+the schema contained more than demographic data. </p>
+
+<p class=MsoNormal>This redesigned and renamed schema separates out the types
+of data into 3 distinct types (legal, demographic, biological) for both clarity
+and to allow its use in a more effective manner. Although the structure has
+changed, the contents are similar to the DemographicDetail schema.&nbsp; The
+following list delineates the enhancements to the PersonDescriptors schema.</p>
+
+<p class=MsoNormal>New components:</p>
+
+<ul style='margin-top:0in' type=square>
+ <li class=MsoNormal style='margin-top:0in;margin-bottom:0in;margin-bottom:
+     .0001pt'>Person Legal Id (use Entity Id Type with extensions)</li>
+</ul>
+
+<ul style='margin-top:0in' type=square>
+ <li class=MsoNormal style='margin-top:0in;margin-bottom:0in;margin-bottom:
+     .0001pt'>Citizenship</li>
+ <li class=MsoNormal style='margin-top:0in;margin-bottom:0in;margin-bottom:
+     .0001pt'>Residency</li>
+ <li class=MsoNormal style='margin-top:0in;margin-bottom:0in;margin-bottom:
+     .0001pt'>Marital Status</li>
+ <li class=MsoNormal style='margin-top:0in;margin-bottom:0in;margin-bottom:
+     .0001pt'>Children Information</li>
+ <li class=MsoNormal style='margin-top:0in;margin-bottom:0in;margin-bottom:
+     .0001pt'>MonthDayOfBirth</li>
+ <li class=MsoNormal style='margin-top:0in;margin-bottom:0in;margin-bottom:
+     .0001pt'>Other Descriptors </li>
+ <li class=MsoNormal style='margin-top:0in;margin-bottom:0in;margin-bottom:
+     .0001pt'>SupportingMaterials</li>
+ <li class=MsoNormal style='margin-top:0in;margin-bottom:0in;margin-bottom:
+     .0001pt'>User Areas</li>
+</ul>
+
+<p class=MsoNormal style='margin:0in;margin-bottom:.0001pt'>&nbsp;</p>
+
+<p class=MsoNormal style='margin:0in;margin-bottom:.0001pt'>Modified
+components:</p>
+
+<ul style='margin-top:0in' type=square>
+ <li class=MsoNormal style='margin-top:0in;margin-bottom:0in;margin-bottom:
+     .0001pt'>Military Status (combined with Veteran Status)</li>
+ <li class=MsoNormal style='margin-top:0in;margin-bottom:0in;margin-bottom:
+     .0001pt'>Visa Status (attributes added)</li>
+ <li class=MsoNormal style='margin-top:0in;margin-bottom:0in;margin-bottom:
+     .0001pt'>Nationality (changed from country code type to a string)</li>
+ <li class=MsoNormal style='margin-top:0in;margin-bottom:0in;margin-bottom:
+     .0001pt'>Race (change to allow multiple occurrences)</li>
+ <li class=MsoNormal style='margin-top:0in;margin-bottom:0in;margin-bottom:
+     .0001pt'>Ethinicity (change to allow multiple occurrences)</li>
+ <li class=MsoNormal style='margin-top:0in;margin-bottom:0in;margin-bottom:
+     .0001pt'>Disability Information (added more details)</li>
+ <li class=MsoNormal style='margin-top:0in;margin-bottom:0in;margin-bottom:
+     .0001pt'>Primary Language (renamed from Language)</li>
+</ul>
+
+<p class=MsoNormal style='margin:0in;margin-bottom:.0001pt'>&nbsp;</p>
+
+<p class=MsoNormal style='margin:0in;margin-bottom:.0001pt'>Removed components:</p>
+
+<p class=number style='margin-top:0in;margin-right:0in;margin-bottom:0in;
+margin-left:.5in;margin-bottom:.0001pt'><span style='font-family:Wingdings'>&sect;</span><span
+style='font-size:7.0pt;font-family:"Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span>Home Owner (replaced by Other Descriptors)</p>
+
+<p class=number style='margin-top:0in;margin-right:0in;margin-bottom:0in;
+margin-left:.5in;margin-bottom:.0001pt'><span style='font-family:Wingdings'>&sect;</span><span
+style='font-size:7.0pt;font-family:"Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span>Government Id, Other Id (replaced by Person Legal Id)</p>
+
+<h2><a name="_Toc127535775">1.2</a><span style='font-size:7.0pt;font-family:
+"Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>Design
+Requirements</h2>
+
+<p class=MsoNormal style='margin:0in;margin-bottom:.0001pt;text-autospace:none'>The
+schema:</p>
+
+<ul style='margin-top:0in' type=square>
+ <li class=MsoNormal style='margin-top:0in;margin-bottom:0in;margin-bottom:
+     .0001pt;text-autospace:none'>Must allow for the use of identifiers as a
+     group or separately.</li>
+ <li class=MsoNormal style='margin-top:0in;margin-bottom:0in;margin-bottom:
+     .0001pt;text-autospace:none'>Must provide for flexibility of data where it
+     is unlawful to collect in certain countries.&nbsp; </li>
+ <li class=MsoNormal style='margin-top:0in;margin-bottom:0in;margin-bottom:
+     .0001pt;text-autospace:none'>Must allow for extensions</li>
+</ul>
+
+<h2><a name="_Toc127535776"></a><a name="_Toc492656057"></a><a
+name="_Toc492655895"></a>1.3<span style='font-size:7.0pt;font-family:"Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span>Scope</h2>
+
+<h3><a name="_Toc127535777">1.3.1</a><span style='font-size:7.0pt;font-family:
+"Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>Items
+within the Design Scope</h3>
+
+<p class=MsoNormal>Redesign of Demographic Detail to exchange pre-hire
+information used in Recruiting, Screening and other employment related
+activities. Because HR-XML specifications are designed to be global, input on
+requirements was received from several countries. Therefore it is unlikely that
+any one country will use every element. The schema was designed to be flexible
+enough to allow implementers to use what they need and exclude what they
+don&#8217;t need or should not collect.</p>
+
+<h3><a name="_Toc127535778">1.3.2</a><span style='font-size:7.0pt;font-family:
+"Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>Items
+Outside of Design Scope</h3>
+
+<p class=MsoNormal><a name="_Toc492656080"></a><a name="_Toc492655918"></a><a
+name="_Toc493471746"></a><a name="_Toc493472043"></a><a name="_Toc493472446"></a><a
+name="_Toc493472785"></a><a name="_Toc493471751"></a><a name="_Toc493472048"></a><a
+name="_Toc493472451"></a><a name="_Toc493472790"></a><a name="_Toc493471752"></a><a
+name="_Toc493472049"></a><a name="_Toc493472452"></a><a name="_Toc493472791"></a><a
+name="_Toc493471754"></a><a name="_Toc493472051"></a><a name="_Toc493472454"></a><a
+name="_Toc493472793"></a><a name="_Toc492655903"></a><a name="_Toc492656065"></a><a
+name="_Toc492868751"></a><a name="_Toc492868858"></a><a name="_Toc493463955"></a><a
+name="_Toc493471755"></a><a name="_Toc493472052"></a><a name="_Toc493472455"></a><a
+name="_Toc493472794"></a><a name="_Toc492655904"></a><a name="_Toc492656066"></a><a
+name="_Toc492868752"></a><a name="_Toc492868859"></a><a name="_Toc493463956"></a><a
+name="_Toc493471756"></a><a name="_Toc493472053"></a><a name="_Toc493472456"></a><a
+name="_Toc493472795"></a><a name="_Toc493471757"></a><a name="_Toc493472054"></a><a
+name="_Toc493472457"></a><a name="_Toc493472796"></a><a name="_Toc492655909"></a><a
+name="_Toc492656071"></a><a name="_Toc492868757"></a><a name="_Toc492868864"></a><a
+name="_Toc493463961"></a><a name="_Toc493471761"></a><a name="_Toc493472058"></a><a
+name="_Toc493472461"></a><a name="_Toc493472800"></a><a name="_Toc492655914"></a><a
+name="_Toc492656076"></a><a name="_Toc492868762"></a><a name="_Toc492868869"></a><a
+name="_Toc493463966"></a><a name="_Toc493471766"></a><a name="_Toc493472063"></a><a
+name="_Toc493472466"></a><a name="_Toc493472805"></a><a name="_Toc492655917"></a><a
+name="_Toc492656079"></a><a name="_Toc492868765"></a><a name="_Toc492868872"></a><a
+name="_Toc493463969"></a><a name="_Toc493471769"></a><a name="_Toc493472066"></a><a
+name="_Toc493472469"></a><a name="_Toc493472808"></a>This schema is not
+designed to exchange highly detailed personal information. In the future, the
+specification may be reviewed for possible re-use in other areas (enrollment,
+etc.)</p>
+
+<p class=MsoNormal>This schema is designed to enable the exchange of
+information. It is not designed to restrict information. <u>It is the
+responsibility of implementers to understand and place the appropriate
+constrictions on which data is collected and/or exchanged or how that data is
+used. </u></p>
+
+<h1><a name="_Toc127535779">2</a><span style='font-size:7.0pt;font-family:"Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span>Supported Business Processes</h1>
+
+<h2><a name="_Toc127535780"></a><a name="_Toc493471771"></a><a
+name="_Toc493472068"></a><a name="_Toc493472471"></a><a name="_Toc493472810"></a><a
+name="_Toc493471772"></a><a name="_Toc493472069"></a><a name="_Toc493472472"></a><a
+name="_Toc493472811"></a>2.1<span style='font-size:7.0pt;font-family:"Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span>Regulatory Compliance Reporting</h2>
+
+<p class=MsoNormal>Many countries have established regulations and guidelines
+relating to &#8220;fair and equitable&#8221; hiring practices. These may relate
+to race, gender, religion, disability, age or other factors. Complicated and
+detailed tracking and reporting is often required to allow governments and
+regulatory agencies to monitor compliance. </p>
+
+<p class=MsoNormal>Another factor that is heavily regulated, although
+differently in different jurisdictions, is eligibility to work in a particular
+country. Information such as visa status, citizenship and residency are
+commonly used to determine this type of eligibility. </p>
+
+<p class=MsoNormal>PersonDescriptors will help facilitate these types of
+reporting, but its scope is not designed to capture every level of information
+that may ultimately go into a decision on eligibility or discriminatory hiring
+practices. </p>
+
+<h2><a name="_Toc127535781">2.2</a><span style='font-size:7.0pt;font-family:
+"Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>Employment
+Screening</h2>
+
+<p class=MsoNormal>In addition to the regulatory requirements, many companies
+attach other criteria to the hiring of workers. The criteria may vary by
+location, type of work or other factors. Some examples might include height or
+weight restrictions if working on a commercial airliner or a certain level of
+physical ability, if such is required to perform a particular job. In other
+situations, companies may be permitted to place restrictions on hiring people
+with particular events in their history. An example of this would be a
+financial institution excluding a candidate with a validated history of
+embezzlement. </p>
+
+<p class=MsoNormal>PersonDescriptors allow business partners to exchange this
+type of information, but again, it is the responsibility of these implementers
+to ensure the information is used appropriately.</p>
+
+<h1><a name="_Toc127535782">3</a><span style='font-size:7.0pt;font-family:"Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span>Schema Design</h1>
+
+<h2><a name="_Toc127535783">3.1</a><span style='font-size:7.0pt;font-family:
+"Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>Schema
+Diagrams</h2>
+
+<p class=MsoNormal style='margin:0in;margin-bottom:.0001pt'><img border=0
+width=623 height=293 src="PersonDescriptors_files/image002.jpg"></p>
+
+<p class=MsoNormal style='margin:0in;margin-bottom:.0001pt'>&nbsp;</p>
+
+<p class=MsoNormal style='margin:0in;margin-bottom:.0001pt'>&nbsp;</p>
+
+<p class=xml style='margin:0in;margin-bottom:.0001pt'><span style='font-family:
+Arial'>&nbsp;</span></p>
+
+<p class=xml style='margin:0in;margin-bottom:.0001pt'><span style='font-family:
+Arial'><img border=0 width=624 height=226
+src="PersonDescriptors_files/image003.jpg"></span></p>
+
+<p class=xml style='margin:0in;margin-bottom:.0001pt'><span style='font-family:
+Arial'>&nbsp;</span></p>
+
+<p class=xml style='margin:0in;margin-bottom:.0001pt'><span style='font-family:
+Arial'><img border=0 width=437 height=301
+src="PersonDescriptors_files/image004.jpg"></span></p>
+
+<p class=xml style='margin:0in;margin-bottom:.0001pt'><span style='font-family:
+Arial'>&nbsp;</span></p>
+
+<p class=xml style='margin:0in;margin-bottom:.0001pt'><span style='font-family:
+Arial'>&nbsp;</span></p>
+
+<p class=xml style='margin:0in;margin-bottom:.0001pt'><span style='font-family:
+Arial'>&nbsp;<img border=0 width=433 height=414
+src="PersonDescriptors_files/image005.jpg"></span></p>
+
+<p class=xml style='margin:0in;margin-bottom:.0001pt'><span style='font-family:
+Arial'>&nbsp;</span></p>
+
+<h3><a name="_Toc483985870"></a><a name="_Toc127535784"></a>3.1.1<span
+style='font-size:7.0pt;font-family:"Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span>Schema Elements Explained</h3>
+
+<table class=MsoNormalTable border=1 cellpadding=0 width="97%"
+ style='width:97.68%;margin-left:3.8pt'>
+ <tr style='page-break-inside:avoid'>
+  <td valign=top style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal align=center style='text-align:center'><b><span
+  style='font-size:8.0pt;font-family:Verdana'>Elements and Attributes</span></b><span
+  style='font-size:8.0pt;font-family:Verdana'> </span></p>
+  <p class=MsoNormal align=center style='text-align:center'><span
+  style='font-size:8.0pt;font-family:Verdana'>[Global types listed
+  alphabetically in following table.] </span></p>
+  </td>
+  <td valign=top style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal align=center style='text-align:center'><b><span
+  style='font-size:8.0pt;font-family:Verdana'>ContentModel</span></b><span
+  style='font-size:8.0pt;font-family:Verdana'>* <br>
+  <span style='color:green'>Data type</span><br>
+  </span><span style='font-size:8.0pt;color:blue'>Occurrence: <br>
+  <u>S</u>equence | <u>C</u>hoice | <u>A</u>ll </span><span style='font-size:
+  8.0pt;font-family:Verdana;color:blue'>(minOccurs/maxOccurs)</span><span
+  style='font-size:8.0pt;font-family:Verdana'><br>
+  <span style='color:red'>Attributes</span> </span></p>
+  </td>
+  <td width="38%" valign=top style='width:38.08%;padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal align=center style='margin-bottom:12.0pt;text-align:center'><b><span
+  style='font-size:8.0pt;font-family:Verdana'>Definition </span></b></p>
+  </td>
+ </tr>
+ <tr style='page-break-inside:avoid'>
+  <td valign=top style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal><span style='font-size:8.0pt;font-family:Verdana'>/<br>
+  <b>PersonDescriptors</b></span></p>
+  </td>
+  <td valign=top style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal><span style='font-size:8.0pt;font-family:Verdana'>- <span
+  style='color:green'>PersonDescriptorsType - </span><span style='color:blue'>(1/1)<br>
+  <br>
+  </span>LegalIdentifiers - <span style='color:green'>LegalIdentifiersType - </span><span
+  style='color:blue'>S (0/1)</span><br>
+  DemographicDescriptors - <span style='color:green'>DemographicDescriptorsType
+  - </span><span style='color:blue'>S (0/1)</span><br>
+  BiologicalDescriptors - <span style='color:green'>BiologicalDescriptorsType -
+  </span><span style='color:blue'>S (0/1)</span><br>
+  SupportingMaterials - <span style='color:green'>[see include/import] - </span><span
+  style='color:blue'>S (0/*)</span><br>
+  OtherDescriptors - <span style='color:green'>OtherDescriptorsType - </span><span
+  style='color:blue'>S (0/*)</span><br>
+  UserArea - <span style='color:green'>[see include/import] - </span><span
+  style='color:blue'>S (0/1)</span></span></p>
+  </td>
+  <td width="38%" valign=top style='width:38.08%;padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal><span style='font-size:8.0pt;font-family:Verdana'>Contains
+  legal, biological, and demographic descriptors for a person. </span></p>
+  </td>
+ </tr>
+ <tr style='page-break-inside:avoid'>
+  <td valign=top style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal><span style='font-size:8.0pt;font-family:Verdana'>/
+  PersonDescriptors/<br>
+  <b>LegalIdentifiers</b></span></p>
+  </td>
+  <td valign=top style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal><span style='font-size:8.0pt;font-family:Verdana'>- <span
+  style='color:green'>LegalIdentifiersType - </span><span style='color:blue'>S (0/1)<br>
+  <br>
+  </span>PersonLegalId - <span style='color:green'>PersonLegalIdType - </span><span
+  style='color:blue'>S (0/*)</span><br>
+  MilitaryStatus - <span style='color:green'>xsd:string - </span><span
+  style='color:blue'>S (0/*)</span><br>
+  VisaStatus - <span style='color:green'>xsd:string - </span><span
+  style='color:blue'>S (0/*)</span><br>
+  Citizenship - <span style='color:green'>CountryCodeType - </span><span
+  style='color:blue'>S (0/*)</span><br>
+  Residency - <span style='color:green'>CountryCodeType - </span><span
+  style='color:blue'>S (0/*)</span><br>
+  UserArea - <span style='color:green'>[see include/import] - </span><span
+  style='color:blue'>S (0/1)</span></span></p>
+  </td>
+  <td width="38%" valign=top style='width:38.08%;padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal><span style='font-size:8.0pt;font-family:Verdana'>A
+  collection of legal identifiers for a person. </span></p>
+  </td>
+ </tr>
+ <tr style='page-break-inside:avoid'>
+  <td valign=top style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal><span style='font-size:8.0pt;font-family:Verdana'>/
+  PersonDescriptors/ LegalIdentifiers/<br>
+  <b>PersonLegalId</b></span></p>
+  </td>
+  <td valign=top style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal><span style='font-size:8.0pt;font-family:Verdana'>- <span
+  style='color:green'>PersonLegalIdType - </span><span style='color:blue'>S
+  (0/*)<br>
+  <br>
+  </span><span style='color:green'>xsd:extension</span><b><span
+  style='color:black'> base: </span></b><span style='color:green'>EntityIdType</span><br>
+  <span style='color:red'>countryCode</span> - <span style='color:green'>CountryCodeType
+  - </span><span style='color:blue'>optional</span><br>
+  <span style='color:red'>jurisdiction</span> - <span style='color:green'>xsd:string
+  - </span><span style='color:blue'>optional</span><br>
+  <span style='color:red'>issuingRegion</span> - <span style='color:green'>xsd:string
+  - </span><span style='color:blue'>optional</span><br>
+  <span style='color:red'>documentType</span> - <span style='color:green'>xsd:string
+  - </span><span style='color:blue'>optional</span><br>
+  <span style='color:red'>idSource</span> - <span style='color:green'>xsd:string
+  - </span><span style='color:blue'>optional</span></span></p>
+  </td>
+  <td width="38%" valign=top style='width:38.08%;padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal><span style='font-size:8.0pt;font-family:Verdana'>A unique
+  government or other legal identifier for a person. </span></p>
+  </td>
+ </tr>
+ <tr style='page-break-inside:avoid'>
+  <td width="32%" valign=top style='width:32.32%;padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal><span style='font-size:8.0pt;font-family:Verdana'>/
+  [PersonLegalIdType] /<br>
+  <b><span style='color:red'>countryCode</span></b></span></p>
+  </td>
+  <td width="28%" valign=top style='width:28.3%;padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal><span style='font-size:8.0pt;font-family:Verdana'>- <span
+  style='color:green'>CountryCodeType - </span></span></p>
+  </td>
+  <td width="38%" valign=top style='width:38.08%;padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal><span style='font-size:8.0pt;font-family:Verdana'>Contains
+  the ISO 3166-1 two-character country code. </span></p>
+  </td>
+ </tr>
+ <tr style='page-break-inside:avoid'>
+  <td width="32%" valign=top style='width:32.32%;padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal><span style='font-size:8.0pt;font-family:Verdana'>/
+  [PersonLegalIdType] /<br>
+  <b><span style='color:red'>jurisdiction</span></b></span></p>
+  </td>
+  <td width="28%" valign=top style='width:28.3%;padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal><span style='font-size:8.0pt;font-family:Verdana'>- <span
+  style='color:green'>xsd:string - </span></span></p>
+  </td>
+  <td width="38%" valign=top style='width:38.08%;padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal><span style='font-size:8.0pt;font-family:Verdana'>Specifies
+  the geographical area of the issuing authority. </span></p>
+  </td>
+ </tr>
+ <tr style='page-break-inside:avoid'>
+  <td width="32%" valign=top style='width:32.32%;padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal><span style='font-size:8.0pt;font-family:Verdana'>/
+  [PersonLegalIdType] /<br>
+  <b><span style='color:red'>issuingRegion</span></b></span></p>
+  </td>
+  <td width="28%" valign=top style='width:28.3%;padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal><span style='font-size:8.0pt;font-family:Verdana'>- <span
+  style='color:green'>xsd:string - </span></span></p>
+  </td>
+  <td width="38%" valign=top style='width:38.08%;padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal><span style='font-size:8.0pt;font-family:Verdana'>Defines the
+  region where the issuing authority is located. </span></p>
+  </td>
+ </tr>
+ <tr style='page-break-inside:avoid'>
+  <td width="32%" valign=top style='width:32.32%;padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal><span style='font-size:8.0pt;font-family:Verdana'>/
+  [PersonLegalIdType] /<br>
+  <b><span style='color:red'>documentType</span></b></span></p>
+  </td>
+  <td width="28%" valign=top style='width:28.3%;padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal><span style='font-size:8.0pt;font-family:Verdana'>- <span
+  style='color:green'>xsd:string - </span></span></p>
+  </td>
+  <td width="38%" valign=top style='width:38.08%;padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal><span style='font-size:8.0pt;font-family:Verdana'>Specifies
+  the type of document tied to the Government Id. </span></p>
+  </td>
+ </tr>
+ <tr style='page-break-inside:avoid'>
+  <td width="32%" valign=top style='width:32.32%;padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal><span style='font-size:8.0pt;font-family:Verdana'>/
+  [PersonLegalIdType] /<br>
+  <b><span style='color:red'>idSource</span></b></span></p>
+  </td>
+  <td width="28%" valign=top style='width:28.3%;padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal><span style='font-size:8.0pt;font-family:Verdana'>- <span
+  style='color:green'>xsd:string - </span></span></p>
+  </td>
+  <td width="38%" valign=top style='width:38.08%;padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal><span style='font-size:8.0pt;font-family:Verdana'>The actual
+  source that is reporting the ID. </span></p>
+  </td>
+ </tr>
+ <tr style='page-break-inside:avoid'>
+  <td valign=top style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal><span style='font-size:8.0pt;font-family:Verdana'>/
+  PersonDescriptors/ LegalIdentifiers/<br>
+  <b>MilitaryStatus</b></span></p>
+  </td>
+  <td valign=top style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal><span style='font-size:8.0pt;font-family:Verdana;
+  color:green'>xsd:extension</span><b><span style='font-size:8.0pt;font-family:
+  Verdana;color:black'> base: </span></b><span style='font-size:8.0pt;
+  font-family:Verdana;color:green'>xsd:string</span><span style='font-size:
+  8.0pt;font-family:Verdana'><br>
+  <span style='color:red'>type</span> - <span style='color:green'>xsd:string - </span><span
+  style='color:blue'>optional</span></span></p>
+  </td>
+  <td valign=top style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal><span style='font-size:8.0pt;font-family:Verdana'>Defines
+  whether the person is currently a member of the military, or other specific
+  information regarding military status at the time of the transaction. </span></p>
+  </td>
+ </tr>
+ <tr style='page-break-inside:avoid'>
+  <td valign=top style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal><span style='font-size:8.0pt;font-family:Verdana'>/
+  PersonDescriptors/ LegalIdentifiers/ MilitaryStatus/<br>
+  <b><span style='color:red'>type</span></b></span></p>
+  </td>
+  <td valign=top style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal><span style='font-size:8.0pt;font-family:Verdana'>- <span
+  style='color:green'>xsd:string - </span></span></p>
+  </td>
+  <td valign=top style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal><span style='font-size:8.0pt;font-family:Verdana'>Further
+  defines the associated element in the context provided. </span></p>
+  </td>
+ </tr>
+ <tr style='page-break-inside:avoid'>
+  <td valign=top style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal><span style='font-size:8.0pt;font-family:Verdana'>/
+  PersonDescriptors/ LegalIdentifiers/<br>
+  <b>VisaStatus</b></span></p>
+  </td>
+  <td valign=top style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal><span style='font-size:8.0pt;font-family:Verdana;
+  color:green'>xsd:extension</span><b><span style='font-size:8.0pt;font-family:
+  Verdana;color:black'> base: </span></b><span style='font-size:8.0pt;
+  font-family:Verdana;color:green'>xsd:string</span><span style='font-size:
+  8.0pt;font-family:Verdana'><br>
+  <span style='color:red'>countryCode</span> - <span style='color:green'>CountryCodeType
+  - </span><span style='color:blue'>optional</span><br>
+  <span style='color:red'>validFrom</span> - <span style='color:green'>AnyDateTimeNkNaType
+  - </span><span style='color:blue'>optional</span><br>
+  <span style='color:red'>validTo</span> - <span style='color:green'>AnyDateTimeNkNaType
+  - </span><span style='color:blue'>optional</span></span></p>
+  </td>
+  <td valign=top style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal><span style='font-size:8.0pt;font-family:Verdana'>Describes
+  the person's visa status. </span></p>
+  </td>
+ </tr>
+ <tr style='page-break-inside:avoid'>
+  <td valign=top style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal><span style='font-size:8.0pt;font-family:Verdana'>/ PersonDescriptors/
+  LegalIdentifiers/ VisaStatus/<br>
+  <b><span style='color:red'>countryCode</span></b></span></p>
+  </td>
+  <td valign=top style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal><span style='font-size:8.0pt;font-family:Verdana'>- <span
+  style='color:green'>CountryCodeType - </span></span></p>
+  </td>
+  <td valign=top style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal><span style='font-size:8.0pt;font-family:Verdana'>Contains
+  the ISO 3166-1 two-character country code. </span></p>
+  </td>
+ </tr>
+ <tr style='page-break-inside:avoid'>
+  <td valign=top style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal><span style='font-size:8.0pt;font-family:Verdana'>/
+  PersonDescriptors/ LegalIdentifiers/ VisaStatus/<br>
+  <b><span style='color:red'>validFrom</span></b></span></p>
+  </td>
+  <td valign=top style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal><span style='font-size:8.0pt;font-family:Verdana'>- <span
+  style='color:green'>AnyDateTimeNkNaType - </span></span></p>
+  </td>
+  <td valign=top style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal><span style='font-size:8.0pt;font-family:Verdana'>The date
+  the event begins, is active or valid. </span></p>
+  </td>
+ </tr>
+ <tr style='page-break-inside:avoid'>
+  <td valign=top style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal><span style='font-size:8.0pt;font-family:Verdana'>/
+  PersonDescriptors/ LegalIdentifiers/ VisaStatus/<br>
+  <b><span style='color:red'>validTo</span></b></span></p>
+  </td>
+  <td valign=top style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal><span style='font-size:8.0pt;font-family:Verdana'>- <span
+  style='color:green'>AnyDateTimeNkNaType - </span></span></p>
+  </td>
+  <td valign=top style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal><span style='font-size:8.0pt;font-family:Verdana'>The date
+  through which the event is active or valid. &nbsp; </span></p>
+  </td>
+ </tr>
+ <tr style='page-break-inside:avoid'>
+  <td valign=top style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal><span style='font-size:8.0pt;font-family:Verdana'>/
+  PersonDescriptors/ LegalIdentifiers/<br>
+  <b>Citizenship</b></span></p>
+  </td>
+  <td valign=top style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal><span style='font-size:8.0pt;font-family:Verdana'>- <span
+  style='color:green'>CountryCodeType - </span><span style='color:blue'>S (0/*)</span></span></p>
+  </td>
+  <td valign=top style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal><span style='font-size:8.0pt;font-family:Verdana'>Specifies
+  the country or countries where a person retains legal citizenship. </span></p>
+  </td>
+ </tr>
+ <tr style='page-break-inside:avoid'>
+  <td valign=top style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal><span style='font-size:8.0pt;font-family:Verdana'>/
+  PersonDescriptors/ LegalIdentifiers/<br>
+  <b>Residency</b></span></p>
+  </td>
+  <td valign=top style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal><span style='font-size:8.0pt;font-family:Verdana'>- <span
+  style='color:green'>CountryCodeType - </span><span style='color:blue'>S (0/*)</span></span></p>
+  </td>
+  <td valign=top style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal><span style='font-size:8.0pt;font-family:Verdana'>Specifies
+  where a person maintains their current residence. </span></p>
+  </td>
+ </tr>
+ <tr style='page-break-inside:avoid'>
+  <td valign=top style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal><span style='font-size:8.0pt;font-family:Verdana'>/
+  PersonDescriptors/<br>
+  <b>DemographicDescriptors</b></span></p>
+  </td>
+  <td valign=top style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal><span style='font-size:8.0pt;font-family:Verdana'>- <span
+  style='color:green'>DemographicDescriptorsType - </span><span
+  style='color:blue'>S (0/1)<br>
+  <br>
+  </span>Race - <span style='color:green'>xsd:string - </span><span
+  style='color:blue'>S (0/*)</span><br>
+  Ethnicity - <span style='color:green'>xsd:string - </span><span
+  style='color:blue'>S (0/*)</span><br>
+  Nationality - <span style='color:green'>xsd:string - </span><span
+  style='color:blue'>S (0/*)</span><br>
+  PrimaryLanguage - <span style='color:green'>LanguageCodeType - </span><span
+  style='color:blue'>S (0/*)</span><br>
+  BirthPlace - <span style='color:green'>xsd:string - </span><span
+  style='color:blue'>S (0/1)</span><br>
+  Religion - <span style='color:green'>xsd:string - </span><span
+  style='color:blue'>S (0/1)</span><br>
+  MaritalStatus - <span style='color:green'>MaritalStatusType - </span><span
+  style='color:blue'>S (0/1)</span><br>
+  ChildrenInfo - <span style='color:green'>[complexType] - </span><span
+  style='color:blue'>S (0/1)</span><br>
+  UserArea - <span style='color:green'>[see include/import] - </span><span
+  style='color:blue'>S (0/1)</span></span></p>
+  </td>
+  <td valign=top style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal><span style='font-size:8.0pt;font-family:Verdana'>A
+  collection of demographic descriptors for a person. </span></p>
+  </td>
+ </tr>
+ <tr style='page-break-inside:avoid'>
+  <td valign=top style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal><span style='font-size:8.0pt;font-family:Verdana'>/
+  PersonDescriptors/ DemographicDescriptors/<br>
+  <b>Race</b></span></p>
+  </td>
+  <td valign=top style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal><span style='font-size:8.0pt;font-family:Verdana'>- <span
+  style='color:green'>xsd:string - </span><span style='color:blue'>S (0/*)</span></span></p>
+  </td>
+  <td valign=top style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal><span style='font-size:8.0pt;font-family:Verdana'>Describes
+  the race of the person, or other information regarding the race of the
+  person. </span></p>
+  </td>
+ </tr>
+ <tr style='page-break-inside:avoid'>
+  <td valign=top style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal><span style='font-size:8.0pt;font-family:Verdana'>/
+  PersonDescriptors/ DemographicDescriptors/<br>
+  <b>Ethnicity</b></span></p>
+  </td>
+  <td valign=top style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal><span style='font-size:8.0pt;font-family:Verdana'>- <span
+  style='color:green'>xsd:string - </span><span style='color:blue'>S (0/*)</span></span></p>
+  </td>
+  <td valign=top style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal><span style='font-size:8.0pt;font-family:Verdana'>The
+  ethnicity of the person, or other information regarding the ethnicity of the
+  person. [<b>Synonym(s): </b>EEOCCode, Race, RaceCode, Nationality ]</span></p>
+  </td>
+ </tr>
+ <tr style='page-break-inside:avoid'>
+  <td valign=top style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal><span style='font-size:8.0pt;font-family:Verdana'>/
+  PersonDescriptors/ DemographicDescriptors/<br>
+  <b>Nationality</b></span></p>
+  </td>
+  <td valign=top style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal><span style='font-size:8.0pt;font-family:Verdana'>- <span
+  style='color:green'>xsd:string - </span><span style='color:blue'>S (0/*)</span></span></p>
+  </td>
+  <td valign=top style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal><span style='font-size:8.0pt;font-family:Verdana'>The person's
+  status for belonging to a particular nation by origin, birth, or
+  naturalization. </span></p>
+  </td>
+ </tr>
+ <tr style='page-break-inside:avoid'>
+  <td valign=top style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal><span style='font-size:8.0pt;font-family:Verdana'>/
+  PersonDescriptors/ DemographicDescriptors/<br>
+  <b>PrimaryLanguage</b></span></p>
+  </td>
+  <td valign=top style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal><span style='font-size:8.0pt;font-family:Verdana'>- <span
+  style='color:green'>LanguageCodeType - </span><span style='color:blue'>S
+  (0/*)</span></span></p>
+  </td>
+  <td valign=top style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal><span style='font-size:8.0pt;font-family:Verdana'>The
+  language required or mandated. </span></p>
+  </td>
+ </tr>
+ <tr style='page-break-inside:avoid'>
+  <td valign=top style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal><span style='font-size:8.0pt;font-family:Verdana'>/ PersonDescriptors/
+  DemographicDescriptors/<br>
+  <b>BirthPlace</b></span></p>
+  </td>
+  <td valign=top style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal><span style='font-size:8.0pt;font-family:Verdana'>- <span
+  style='color:green'>xsd:string - </span><span style='color:blue'>S (0/1)</span></span></p>
+  </td>
+  <td valign=top style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal><span style='font-size:8.0pt;font-family:Verdana'>The
+  birth place of the person. </span></p>
+  </td>
+ </tr>
+ <tr style='page-break-inside:avoid'>
+  <td valign=top style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal><span style='font-size:8.0pt;font-family:Verdana'>/
+  PersonDescriptors/ DemographicDescriptors/<br>
+  <b>Religion</b></span></p>
+  </td>
+  <td valign=top style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal><span style='font-size:8.0pt;font-family:Verdana'>- <span
+  style='color:green'>xsd:string - </span><span style='color:blue'>S (0/1)</span></span></p>
+  </td>
+  <td valign=top style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal><span style='font-size:8.0pt;font-family:Verdana'>Describes
+  the religion of the person, or other information regarding the religion of
+  the person. </span></p>
+  </td>
+ </tr>
+ <tr style='page-break-inside:avoid'>
+  <td valign=top style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal><span style='font-size:8.0pt;font-family:Verdana'>/
+  PersonDescriptors/ DemographicDescriptors/<br>
+  <b>MaritalStatus</b></span></p>
+  </td>
+  <td valign=top style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal><span style='font-size:8.0pt;font-family:Verdana'>- <span
+  style='color:green'>MaritalStatusType - </span><span style='color:blue'>S
+  (0/1)</span></span></p>
+  </td>
+  <td valign=top style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal><span style='font-size:8.0pt;font-family:Verdana'>Contains
+  information on the marital status of the person. </span></p>
+  </td>
+ </tr>
+ <tr style='page-break-inside:avoid'>
+  <td valign=top style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal><span style='font-size:8.0pt;font-family:Verdana'>/
+  PersonDescriptors/ DemographicDescriptors/<br>
+  <b>ChildrenInfo</b></span></p>
+  </td>
+  <td valign=top style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal><span style='font-size:8.0pt;font-family:Verdana'>NumberOfChildren
+  - <span style='color:green'>xsd:nonNegativeInteger - </span><span
+  style='color:blue'>S (0/1)</span><br>
+  Comments - <span style='color:green'>xsd:string - </span><span
+  style='color:blue'>S (0/1)</span></span></p>
+  </td>
+  <td valign=top style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal><span style='font-size:8.0pt;font-family:Verdana'>Contains
+  information about a person's children. This may include the number of
+  children, ages, etc. </span></p>
+  </td>
+ </tr>
+ <tr style='page-break-inside:avoid'>
+  <td valign=top style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal><span style='font-size:8.0pt;font-family:Verdana'>/
+  PersonDescriptors/ DemographicDescriptors/ ChildrenInfo/<br>
+  <b>NumberOfChildren</b></span></p>
+  </td>
+  <td valign=top style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal><span style='font-size:8.0pt;font-family:Verdana'>- <span
+  style='color:green'>xsd:nonNegativeInteger - </span><span style='color:blue'>S
+  (0/1)</span></span></p>
+  </td>
+  <td valign=top style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal><span style='font-size:8.0pt;font-family:Verdana'>Specifies
+  the number of children associated with the higher level element. </span></p>
+  </td>
+ </tr>
+ <tr style='page-break-inside:avoid'>
+  <td valign=top style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal><span style='font-size:8.0pt;font-family:Verdana'>/
+  PersonDescriptors/ DemographicDescriptors/ ChildrenInfo/<br>
+  <b>Comments</b></span></p>
+  </td>
+  <td valign=top style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal><span style='font-size:8.0pt;font-family:Verdana'>- <span
+  style='color:green'>xsd:string - </span><span style='color:blue'>S (0/1)</span></span></p>
+  </td>
+  <td valign=top style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal><span style='font-size:8.0pt;font-family:Verdana'>Describes
+  the contextual information relating to a group of elements. </span></p>
+  </td>
+ </tr>
+ <tr style='page-break-inside:avoid'>
+  <td valign=top style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal><span style='font-size:8.0pt;font-family:Verdana'>/
+  PersonDescriptors/<br>
+  <b>BiologicalDescriptors</b></span></p>
+  </td>
+  <td valign=top style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal><span style='font-size:8.0pt;font-family:Verdana'>- <span
+  style='color:green'>BiologicalDescriptorsType - </span><span
+  style='color:blue'>S (0/1)<br>
+  <br>
+  </span>DateOfBirth - <span style='color:green'>LocalDateNkNaType - </span><span
+  style='color:blue'>C (0/1)</span><br>
+  MonthDayOfBirth - <span style='color:green'>xsd:gMonthDay - </span><span
+  style='color:blue'>C (0/1)</span><br>
+  Age - <span style='color:green'>xsd:nonNegativeInteger - </span><span
+  style='color:blue'>S (0/1)</span><br>
+  GenderCode - <span style='color:green'>GenderCodeType - </span><span
+  style='color:blue'>S (0/1)</span><br>
+  EyeColor - <span style='color:green'>EyeColorQualifiers - </span><span
+  style='color:blue'>S (0/1)</span><br>
+  HairColor - <span style='color:green'>HairColorQualifiers - </span><span
+  style='color:blue'>S (0/1)</span><br>
+  Height - <span style='color:green'>xsd:string - </span><span
+  style='color:blue'>S (0/1)</span><br>
+  Weight - <span style='color:green'>xsd:string - </span><span
+  style='color:blue'>S (0/1)</span><br>
+  IdentifyingMarks - <span style='color:green'>xsd:string - </span><span
+  style='color:blue'>S (0/*)</span><br>
+  DisabilityInfo - <span style='color:green'>DisabilityInfoType - </span><span
+  style='color:blue'>S (0/*)</span><br>
+  UserArea - <span style='color:green'>[see include/import] - </span><span
+  style='color:blue'>S (0/1)</span></span></p>
+  </td>
+  <td valign=top style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal><span style='font-size:8.0pt;font-family:Verdana'>A
+  collection of biological descriptors for a person. </span></p>
+  </td>
+ </tr>
+ <tr style='page-break-inside:avoid'>
+  <td valign=top style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal><span style='font-size:8.0pt;font-family:Verdana'>/
+  PersonDescriptors/ BiologicalDescriptors/<br>
+  <b>DateOfBirth</b></span></p>
+  </td>
+  <td valign=top style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal><span style='font-size:8.0pt;font-family:Verdana'>- <span
+  style='color:green'>LocalDateNkNaType - </span><span style='color:blue'>C
+  (0/1)</span></span></p>
+  </td>
+  <td valign=top style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal><span style='font-size:8.0pt;font-family:Verdana'>A
+  person's birth date. </span></p>
+  </td>
+ </tr>
+ <tr style='page-break-inside:avoid'>
+  <td valign=top style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal><span style='font-size:8.0pt;font-family:Verdana'>/ PersonDescriptors/
+  BiologicalDescriptors/<br>
+  <b>MonthDayOfBirth</b></span></p>
+  </td>
+  <td valign=top style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal><span style='font-size:8.0pt;font-family:Verdana'>- <span
+  style='color:green'>xsd:gMonthDay - </span><span style='color:blue'>C (0/1)</span></span></p>
+  </td>
+  <td valign=top style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal><span style='font-size:8.0pt;font-family:Verdana'>The
+  month and day of a person's birth date. </span></p>
+  </td>
+ </tr>
+ <tr style='page-break-inside:avoid'>
+  <td valign=top style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal><span style='font-size:8.0pt;font-family:Verdana'>/
+  PersonDescriptors/ BiologicalDescriptors/<br>
+  <b>Age</b></span></p>
+  </td>
+  <td valign=top style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal><span style='font-size:8.0pt;font-family:Verdana'>- <span
+  style='color:green'>xsd:nonNegativeInteger - </span><span style='color:blue'>S
+  (0/1)</span></span></p>
+  </td>
+  <td valign=top style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal><span style='font-size:8.0pt;font-family:Verdana'>The age
+  of a person, specified in years. </span></p>
+  </td>
+ </tr>
+ <tr style='page-break-inside:avoid'>
+  <td valign=top style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal><span style='font-size:8.0pt;font-family:Verdana'>/
+  PersonDescriptors/ BiologicalDescriptors/<br>
+  <b>GenderCode</b></span></p>
+  </td>
+  <td valign=top style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal><span style='font-size:8.0pt;font-family:Verdana'>- <span
+  style='color:green'>GenderCodeType - </span><span style='color:blue'>S (0/1)</span></span></p>
+  </td>
+  <td valign=top style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal><span style='font-size:8.0pt;font-family:Verdana'>Describes
+  the sex of the person based on representation of human sexes. Representation of
+  human sexes values are represented in accordance with ISO 5218. 0 = None; 1 =
+  Male; 2 = Female; 9 = None Specified</span></p>
+  </td>
+ </tr>
+ <tr style='page-break-inside:avoid'>
+  <td valign=top style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal><span style='font-size:8.0pt;font-family:Verdana'>/
+  PersonDescriptors/ BiologicalDescriptors/<br>
+  <b>EyeColor</b></span></p>
+  </td>
+  <td valign=top style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal><span style='font-size:8.0pt;font-family:Verdana'>- <span
+  style='color:green'>EyeColorQualifiers - </span><span style='color:blue'>S
+  (0/1)</span></span></p>
+  </td>
+  <td valign=top style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal><span style='font-size:8.0pt;font-family:Verdana'>The
+  person's eye color. </span></p>
+  </td>
+ </tr>
+ <tr style='page-break-inside:avoid'>
+  <td valign=top style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal><span style='font-size:8.0pt;font-family:Verdana'>/ PersonDescriptors/
+  BiologicalDescriptors/<br>
+  <b>HairColor</b></span></p>
+  </td>
+  <td valign=top style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal><span style='font-size:8.0pt;font-family:Verdana'>- <span
+  style='color:green'>HairColorQualifiers - </span><span style='color:blue'>S
+  (0/1)</span></span></p>
+  </td>
+  <td valign=top style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal><span style='font-size:8.0pt;font-family:Verdana'>The
+  person's hair color. </span></p>
+  </td>
+ </tr>
+ <tr style='page-break-inside:avoid'>
+  <td valign=top style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal><span style='font-size:8.0pt;font-family:Verdana'>/
+  PersonDescriptors/ BiologicalDescriptors/<br>
+  <b>Height</b></span></p>
+  </td>
+  <td valign=top style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal><span style='font-size:8.0pt;font-family:Verdana;
+  color:green'>xsd:extension</span><b><span style='font-size:8.0pt;font-family:
+  Verdana;color:black'> base: </span></b><span style='font-size:8.0pt;
+  font-family:Verdana;color:green'>xsd:string</span><span style='font-size:
+  8.0pt;font-family:Verdana'><br>
+  <span style='color:red'>unitOfMeasure</span> - <span style='color:green'>xsd:string
+  - </span></span></p>
+  </td>
+  <td valign=top style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal><span style='font-size:8.0pt;font-family:Verdana'>Specifies
+  the height of a person. </span></p>
+  </td>
+ </tr>
+ <tr style='page-break-inside:avoid'>
+  <td valign=top style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal><span style='font-size:8.0pt;font-family:Verdana'>/
+  PersonDescriptors/ BiologicalDescriptors/ Height/<br>
+  <b><span style='color:red'>unitOfMeasure</span></b></span></p>
+  </td>
+  <td valign=top style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal><span style='font-size:8.0pt;font-family:Verdana'>- <span
+  style='color:green'>xsd:string - </span></span></p>
+  </td>
+  <td valign=top style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal><span style='font-size:8.0pt;font-family:Verdana'>Unit in
+  which the quantity is measured. </span></p>
+  </td>
+ </tr>
+ <tr style='page-break-inside:avoid'>
+  <td valign=top style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal><span style='font-size:8.0pt;font-family:Verdana'>/
+  PersonDescriptors/ BiologicalDescriptors/<br>
+  <b>Weight</b></span></p>
+  </td>
+  <td valign=top style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal><span style='font-size:8.0pt;font-family:Verdana;
+  color:green'>xsd:extension</span><b><span style='font-size:8.0pt;font-family:
+  Verdana;color:black'> base: </span></b><span style='font-size:8.0pt;
+  font-family:Verdana;color:green'>xsd:string</span><span style='font-size:
+  8.0pt;font-family:Verdana'><br>
+  <span style='color:red'>unitOfMeasure</span> - <span style='color:green'>xsd:string
+  - </span></span></p>
+  </td>
+  <td valign=top style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal><span style='font-size:8.0pt;font-family:Verdana'>A number
+  to indicate the physical weight of the person. </span></p>
+  </td>
+ </tr>
+ <tr style='page-break-inside:avoid'>
+  <td valign=top style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal><span style='font-size:8.0pt;font-family:Verdana'>/
+  PersonDescriptors/ BiologicalDescriptors/ Weight/<br>
+  <b><span style='color:red'>unitOfMeasure</span></b></span></p>
+  </td>
+  <td valign=top style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal><span style='font-size:8.0pt;font-family:Verdana'>- <span
+  style='color:green'>xsd:string - </span></span></p>
+  </td>
+  <td valign=top style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal><span style='font-size:8.0pt;font-family:Verdana'>Unit in
+  which the quantity is measured. </span></p>
+  </td>
+ </tr>
+ <tr style='page-break-inside:avoid'>
+  <td valign=top style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal><span style='font-size:8.0pt;font-family:Verdana'>/
+  PersonDescriptors/ BiologicalDescriptors/<br>
+  <b>IdentifyingMarks</b></span></p>
+  </td>
+  <td valign=top style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal><span style='font-size:8.0pt;font-family:Verdana'>- <span
+  style='color:green'>xsd:string - </span><span style='color:blue'>S (0/*)</span></span></p>
+  </td>
+  <td valign=top style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal><span style='font-size:8.0pt;font-family:Verdana'>Information
+  about any identifying marks on a person. </span></p>
+  </td>
+ </tr>
+ <tr style='page-break-inside:avoid'>
+  <td valign=top style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal><span style='font-size:8.0pt;font-family:Verdana'>/
+  PersonDescriptors/ BiologicalDescriptors/<br>
+  <b>DisabilityInfo</b></span></p>
+  </td>
+  <td valign=top style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal><span style='font-size:8.0pt;font-family:Verdana'>- <span
+  style='color:green'>DisabilityInfoType - </span><span style='color:blue'>S
+  (0/*)<br>
+  <br>
+  </span>LevelOfDisability - <span style='color:green'>xsd:string - </span><span
+  style='color:blue'>S (0/1)</span><br>
+  Percentage - <span style='color:green'>xsd:integer - </span><span
+  style='color:blue'>S (0/1)</span><br>
+  Type - <span style='color:green'>xsd:string - </span><span style='color:blue'>S
+  (0/1)</span><br>
+  AccommodationsNeeded - <span style='color:green'>xsd:boolean - </span><span
+  style='color:blue'>S (0/1)</span></span></p>
+  </td>
+  <td valign=top style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal><span style='font-size:8.0pt;font-family:Verdana'>Contains
+  information about a person's physical or psychological impairment. </span></p>
+  </td>
+ </tr>
+ <tr style='page-break-inside:avoid'>
+  <td valign=top style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal><span style='font-size:8.0pt;font-family:Verdana'>/
+  PersonDescriptors/ BiologicalDescriptors/ DisabilityInfo/<br>
+  <b>LevelOfDisability</b></span></p>
+  </td>
+  <td valign=top style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal><span style='font-size:8.0pt;font-family:Verdana'>- <span
+  style='color:green'>xsd:string - </span><span style='color:blue'>S (0/1)</span></span></p>
+  </td>
+  <td valign=top style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal><span style='font-size:8.0pt;font-family:Verdana'>Describes
+  the level of a persons physical or psychological impairment. </span></p>
+  </td>
+ </tr>
+ <tr style='page-break-inside:avoid'>
+  <td valign=top style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal><span style='font-size:8.0pt;font-family:Verdana'>/
+  PersonDescriptors/ BiologicalDescriptors/ DisabilityInfo/<br>
+  <b>Percentage</b></span></p>
+  </td>
+  <td valign=top style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal><span style='font-size:8.0pt;font-family:Verdana'>- <span
+  style='color:green'>xsd:integer - </span><span style='color:blue'>S (0/1)</span></span></p>
+  </td>
+  <td valign=top style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal><span style='font-size:8.0pt;font-family:Verdana'>A
+  percentage. </span></p>
+  </td>
+ </tr>
+ <tr style='page-break-inside:avoid'>
+  <td valign=top style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal><span style='font-size:8.0pt;font-family:Verdana'>/
+  PersonDescriptors/ BiologicalDescriptors/ DisabilityInfo/<br>
+  <b>Type</b></span></p>
+  </td>
+  <td valign=top style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal><span style='font-size:8.0pt;font-family:Verdana'>- <span
+  style='color:green'>xsd:string - </span><span style='color:blue'>S (0/1)</span></span></p>
+  </td>
+  <td valign=top style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal><span style='font-size:8.0pt;font-family:Verdana'>Further
+  defines the associated element in the context provided. </span></p>
+  </td>
+ </tr>
+ <tr style='page-break-inside:avoid'>
+  <td valign=top style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal><span style='font-size:8.0pt;font-family:Verdana'>/
+  PersonDescriptors/ BiologicalDescriptors/ DisabilityInfo/<br>
+  <b>AccommodationsNeeded</b></span></p>
+  </td>
+  <td valign=top style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal><span style='font-size:8.0pt;font-family:Verdana'>- <span
+  style='color:green'>xsd:boolean - </span><span style='color:blue'>S (0/1)</span></span></p>
+  </td>
+  <td valign=top style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal><span style='font-size:8.0pt;font-family:Verdana'>Indicates
+  that special accommodations are needed in the workplace. </span></p>
+  </td>
+ </tr>
+ <tr style='page-break-inside:avoid'>
+  <td valign=top style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal><span style='font-size:8.0pt;font-family:Verdana'>/
+  PersonDescriptors/<br>
+  <b>OtherDescriptors</b></span></p>
+  </td>
+  <td valign=top style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal><span style='font-size:8.0pt;font-family:Verdana'>- <span
+  style='color:green'>OtherDescriptorsType - </span><span style='color:blue'>S
+  (0/*)<br>
+  <br>
+  </span>Name - <span style='color:green'>xsd:string - </span><span
+  style='color:blue'>S (0/1)</span><br>
+  Applicable - <span style='color:green'>xsd:boolean - </span><span
+  style='color:blue'>C (0/1)</span><br>
+  Value - <span style='color:green'>xsd:string - </span><span style='color:
+  blue'>C (0/1)</span><br>
+  List - <span style='color:green'>[complexType] - </span><span
+  style='color:blue'>C (0/1)</span></span></p>
+  </td>
+  <td valign=top style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal><span style='font-size:8.0pt;font-family:Verdana'>Allows
+  the exchange of identifying descriptors not explicitly defined as a legal,
+  biological, or demographic descriptor. </span></p>
+  </td>
+ </tr>
+ <tr style='page-break-inside:avoid'>
+  <td valign=top style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal><span style='font-size:8.0pt;font-family:Verdana'>/
+  PersonDescriptors/ OtherDescriptors/<br>
+  <b>Name</b></span></p>
+  </td>
+  <td valign=top style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal><span style='font-size:8.0pt;font-family:Verdana'>- <span
+  style='color:green'>xsd:string - </span><span style='color:blue'>S (0/1)</span></span></p>
+  </td>
+  <td valign=top style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal><span style='font-size:8.0pt;font-family:Verdana'>A
+  descriptive identifier within the given context. </span></p>
+  </td>
+ </tr>
+ <tr style='page-break-inside:avoid'>
+  <td valign=top style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal><span style='font-size:8.0pt;font-family:Verdana'>/
+  PersonDescriptors/ OtherDescriptors/<br>
+  <b>Applicable</b></span></p>
+  </td>
+  <td valign=top style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal><span style='font-size:8.0pt;font-family:Verdana'>- <span
+  style='color:green'>xsd:boolean - </span><span style='color:blue'>C (0/1)</span></span></p>
+  </td>
+  <td valign=top style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal><span style='font-size:8.0pt;font-family:Verdana'>Indicates
+  if the associated element applies to this transaction. </span></p>
+  </td>
+ </tr>
+ <tr style='page-break-inside:avoid'>
+  <td valign=top style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal><span style='font-size:8.0pt;font-family:Verdana'>/
+  PersonDescriptors/ OtherDescriptors/<br>
+  <b>Value</b></span></p>
+  </td>
+  <td valign=top style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal><span style='font-size:8.0pt;font-family:Verdana'>- <span
+  style='color:green'>xsd:string - </span><span style='color:blue'>C (0/1)</span></span></p>
+  </td>
+  <td valign=top style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal><span style='font-size:8.0pt;font-family:Verdana'>A numerical
+  quantity that is assigned or determined by calculation or measurement. </span></p>
+  </td>
+ </tr>
+ <tr style='page-break-inside:avoid'>
+  <td valign=top style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal><span style='font-size:8.0pt;font-family:Verdana'>/
+  PersonDescriptors/ OtherDescriptors/<br>
+  <b>List</b></span></p>
+  </td>
+  <td valign=top style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal><span style='font-size:8.0pt;font-family:Verdana'>Item - <span
+  style='color:green'>xsd:string - </span><span style='color:blue'>S (1/*)</span></span></p>
+  </td>
+  <td valign=top style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal><span style='font-size:8.0pt;font-family:Verdana'>A list
+  of items associated with the higher level element. </span></p>
+  </td>
+ </tr>
+ <tr style='page-break-inside:avoid'>
+  <td valign=top style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal><span style='font-size:8.0pt;font-family:Verdana'>/
+  PersonDescriptors/ OtherDescriptors/ List/<br>
+  <b>Item</b></span></p>
+  </td>
+  <td valign=top style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal><span style='font-size:8.0pt;font-family:Verdana'>- <span
+  style='color:green'>xsd:string - </span><span style='color:blue'>S (1/*)</span></span></p>
+  </td>
+  <td valign=top style='padding:.75pt .75pt .75pt .75pt'>
+  <p style='margin-top:6.0pt;margin-right:0in;margin-bottom:6.0pt;margin-left:
+  0in'><span style='font-family:Verdana'>A single item within a list.</span></p>
+  </td>
+ </tr>
+</table>
+
+<p class=MsoNormal style='margin-bottom:12.0pt'>&nbsp;</p>
+
+<table class=MsoNormalTable border=1 cellpadding=0 width="100%"
+ style='width:100.0%'>
+ <tr>
+  <td valign=top style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal align=center style='text-align:center'><b><span
+  style='font-size:8.0pt;font-family:Verdana'>Global types</span></b><span
+  style='font-size:8.0pt;font-family:Verdana'><br>
+  (alphabetically listed) </span></p>
+  </td>
+  <td width="41%" valign=top style='width:41.14%;padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal align=center style='text-align:center'><b><span
+  style='font-size:8.0pt;font-family:Verdana'>ContentModel</span></b><span
+  style='font-size:8.0pt;font-family:Verdana'>* <br>
+  <span style='color:green'>Data type</span><br>
+  </span><span style='font-size:8.0pt;color:blue'>Occurrence: <br>
+  <u>S</u>equence | <u>C</u>hoice | <u>A</u>ll </span><span style='font-size:
+  8.0pt;font-family:Verdana;color:blue'>(minOccurs/maxOccurs)</span><span
+  style='font-size:8.0pt;font-family:Verdana'><br>
+  <span style='color:red'>Attributes</span> </span></p>
+  </td>
+  <td width="29%" valign=top style='width:29.58%;padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal align=center style='text-align:center'><b><span
+  style='font-size:8.0pt;font-family:Verdana'>Definition</span></b></p>
+  </td>
+ </tr>
+ <tr>
+  <td valign=top style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal><span style='font-size:8.0pt;font-family:Verdana'>/<br>
+  <b>[EyeColorQualifiers]</b></span></p>
+  </td>
+  <td width="41%" valign=top style='width:41.14%;padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal><span style='font-size:8.0pt;font-family:Verdana;
+  color:green'>- [Union]: PersonEyeColorQualifiers,<br>
+  xStringPatternExtensionType</span><span style='font-size:8.0pt;font-family:
+  Verdana'> </span></p>
+  </td>
+  <td width="29%" valign=top style='width:29.58%;padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal><span style='font-size:8.0pt;font-family:Verdana'>Globally
+  scoped data type. See element or attribute declaration for definition.</span></p>
+  </td>
+ </tr>
+ <tr>
+  <td valign=top style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal><span style='font-size:8.0pt;font-family:Verdana'>/<br>
+  <b>[HairColorQualifiers]</b></span></p>
+  </td>
+  <td width="41%" valign=top style='width:41.14%;padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal><span style='font-size:8.0pt;font-family:Verdana;
+  color:green'>- [Union]: PersonHairColorQualifiers,<br>
+  xStringPatternExtensionType</span><span style='font-size:8.0pt;font-family:
+  Verdana'> </span></p>
+  </td>
+  <td width="29%" valign=top style='width:29.58%;padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal><span style='font-size:8.0pt;font-family:Verdana'>Globally
+  scoped data type. See element or attribute declaration for definition.</span></p>
+  </td>
+ </tr>
+ <tr>
+  <td valign=top style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal><span style='font-size:8.0pt;font-family:Verdana'>/<br>
+  <b>[MaritalStatusList]</b></span></p>
+  </td>
+  <td width="41%" valign=top style='width:41.14%;padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal><span style='font-size:8.0pt;font-family:Verdana;
+  color:green'>xsd:restriction</span><b><span style='font-size:8.0pt;
+  font-family:Verdana;color:black'> base: </span></b><span style='font-size:
+  8.0pt;font-family:Verdana;color:green'>xsd:string [Enumerations]: Domestic Partner,
+  Divorced, Married, Unreported, Separated, Unmarried, Widowed, Legally
+  Separated</span></p>
+  </td>
+  <td width="29%" valign=top style='width:29.58%;padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal><span style='font-size:8.0pt;font-family:Verdana'>Globally
+  scoped data type. See element or attribute declaration for definition.</span></p>
+  </td>
+ </tr>
+ <tr>
+  <td valign=top style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal><span style='font-size:8.0pt;font-family:Verdana'>/<br>
+  <b>[MaritalStatusType]</b></span></p>
+  </td>
+  <td width="41%" valign=top style='width:41.14%;padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal><span style='font-size:8.0pt;font-family:Verdana;
+  color:green'>- [Union]: MaritalStatusList,<br>
+  xStringPatternExtensionType</span><span style='font-size:8.0pt;font-family:
+  Verdana'> </span></p>
+  </td>
+  <td width="29%" valign=top style='width:29.58%;padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal><span style='font-size:8.0pt;font-family:Verdana'>Globally
+  scoped data type. See element or attribute declaration for definition.</span></p>
+  </td>
+ </tr>
+ <tr>
+  <td valign=top style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal><span style='font-size:8.0pt;font-family:Verdana'>/<br>
+  <b>[PersonEyeColorQualifiers]</b></span></p>
+  </td>
+  <td width="41%" valign=top style='width:41.14%;padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal><span style='font-size:8.0pt;font-family:Verdana;
+  color:green'>xsd:restriction</span><b><span style='font-size:8.0pt;
+  font-family:Verdana;color:black'> base: </span></b><span style='font-size:
+  8.0pt;font-family:Verdana;color:green'>xsd:string [Enumerations]: Black,
+  Hazel, Gray, Brown, Violet, Green, Blue, Maroon, Pink, Dichromatic, Unknown</span></p>
+  </td>
+  <td width="29%" valign=top style='width:29.58%;padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal><span style='font-size:8.0pt;font-family:Verdana'>Globally
+  scoped data type. See element or attribute declaration for definition.</span></p>
+  </td>
+ </tr>
+ <tr>
+  <td valign=top style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal><span style='font-size:8.0pt;font-family:Verdana'>/<br>
+  <b>[PersonHairColorQualifiers]</b></span></p>
+  </td>
+  <td width="41%" valign=top style='width:41.14%;padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal><span style='font-size:8.0pt;font-family:Verdana;
+  color:green'>xsd:restriction</span><b><span style='font-size:8.0pt;
+  font-family:Verdana;color:black'> base: </span></b><span style='font-size:
+  8.0pt;font-family:Verdana;color:green'>xsd:string [Enumerations]: Bald,
+  Brown, White, Blonde, Gray, Red, Auburn, Black, Silver, Unknown</span></p>
+  </td>
+  <td width="29%" valign=top style='width:29.58%;padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal><span style='font-size:8.0pt;font-family:Verdana'>Globally
+  scoped data type. See element or attribute declaration for definition.</span></p>
+  </td>
+ </tr>
+</table>
+
+<p class=MsoNormal><span style='font-family:Verdana;display:none'>&nbsp;</span></p>
+
+<p class=MsoNormal><span style='font-family:Verdana;display:none'>&nbsp;</span></p>
+
+<p class=MsoNormal><span style='font-family:Verdana;display:none'>&nbsp;</span></p>
+
+<p class=MsoNormal><span style='font-family:Verdana;display:none'>&nbsp;</span></p>
+
+<p class=MsoNormal><span style='font-family:Verdana;display:none'>&nbsp;</span></p>
+
+<p class=MsoNormal><span style='font-family:Verdana;display:none'>&nbsp;</span></p>
+
+<p class=MsoNormal><span style='font-family:Verdana;display:none'>&nbsp;</span></p>
+
+<h1><a name="_Toc127535785">4</a><span style='font-size:7.0pt;font-family:"Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span>Implementation Considerations</h1>
+
+<h2><a name="_Toc127535786"></a><a name="_Toc492656050"></a><a
+name="_Toc492655888"></a><a name="_Toc487469954"></a><a name="_Toc480517156"></a><a
+name="_Toc459726669"></a><a name="_Toc44746201"></a>4.1<span style='font-size:
+7.0pt;font-family:"Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span>Terminology</h2>
+
+<p class=MsoNormal>The following terms may be used differently based on organization
+or country. In many cases, they are used interchangeably. This specification
+delineates the terms as defined below: </p>
+
+<p class=MsoNormal><b><u>Race: </u></b>[French, from Old French, from Old
+Italian<tt><span style='font-size:10.0pt'> razza</span></tt>, <i>race, lineage</i>.]</p>
+
+<p class=MsoNormal>A local geographic or global human population distinguished
+as a more or less distinct group by genetically transmitted physical
+characteristics.</p>
+
+<p class=MsoNormal><em><b><span style='font-size:10.0pt;font-family:Arial'>Usage
+Note: </span></b></em><span style='font-size:10.0pt'>The notion of race is
+nearly as problematic from a scientific point of view as it is from a social
+one. European physical anthropologists of the 17th and 18th centuries proposed
+various systems of racial classifications based on such observable
+characteristics as skin color, hair type, body proportions, and skull
+measurements, essentially codifying the perceived differences among broad
+geographic populations of humans. The traditional terms for these populations <i>Caucasoid</i>
+(or <i>Caucasian</i>), <i>Mongoloid, Negroid,</i> and in some systems <i>Australoid</i>
+are now controversial in both technical and nontechnical usage, and in some
+cases they may well be considered offensive. (<i>Caucasian</i> does retain a
+certain currency in American English, but it is used almost exclusively to mean
+&#8220;white&#8221; or &#8220;European&#8221; rather than &#8220;belonging to
+the Caucasian race,&#8221; a group that includes a variety of peoples generally
+categorized as nonwhite.) The biological aspect of race is described today not
+in observable physical features but rather in such genetic characteristics as
+blood groups and metabolic processes, and the groupings indicated by these
+factors seldom coincide very neatly with those put forward by earlier physical
+anthropologists. Citing this and other points such as the fact that a person
+who is considered black in one society might be nonblack in another many
+cultural anthropologists now consider race to be more a social or mental
+construct than an objective biological fact.</span></p>
+
+<p class=MsoNormal><em><b><span style='font-size:10.0pt;font-family:Arial'>Usage
+Note: </span></b></em><span style='font-size:10.0pt'>Naturalists and
+ehnographers divide mankind into several distinct varieties, or races. Cuvier
+refers them all to three, Pritchard enumerates seven, Agassiz eight, Pickering describes eleven. One of the common classifications is that of Blumenbach, who
+makes five races: the Caucasian, or white race, to which belong the greater
+part of the European nations and those of Western Asia; the Mongolian, or yellow
+race, occupying Tartary, China, Japan, etc.; the Ethiopian, or negro race,
+occupying most of Africa (except the north), Australia, Papua, and other
+Pacific Islands; the American, or red race, comprising the Indians of North and
+South America; and the Malayan, or brown race, which occupies the islands of
+the Indian Archipelago, etc. Many recent writers classify the Malay and
+American races as branches of the Mongolian. </span></p>
+
+<p class=MsoNormal><b><u>Ethnic(ity): </u></b>from Greek<tt><span
+style='font-size:10.0pt'> ethnikos</span></tt>, from<tt><span style='font-size:
+10.0pt'> ethnos</span></tt>, <i>people, nation</i></p>
+
+<p class=MsoNormal>Of or relating to a sizable group of people sharing a common
+and distinctive racial, national, religious, linguistic, or cultural heritage. </p>
+
+<p class=MsoNormal><b><u>Nationality:</u></b></p>
+
+<ol style='margin-top:0in' start=1 type=1>
+ <li class=MsoNormal>The status of belonging to a particular nation by origin,
+     birth, or naturalization.</li>
+ <li class=MsoNormal>A community of persons bound by a common heritage.</li>
+</ol>
+
+<p class=MsoNormal><b><u><span style='font-size:10.0pt'>Nation: </span></u></b></p>
+
+<ol style='margin-top:0in' start=1 type=1>
+ <li class=MsoNormal><span style='font-size:10.0pt'>A relatively large group of
+     people organized under a single, usually independent government; a
+     country.</span></li>
+ <li class=MsoNormal><span style='font-size:10.0pt'>A people who share common
+     customs, origins, history, and frequently language; a nationality.</span></li>
+</ol>
+
+<p class=MsoNormal><b><u>Citizenship:</u></b></p>
+
+<p class=MsoNormal>The status of a citizen with its attendant duties, rights,
+and privileges.</p>
+
+<p class=MsoNormal><b><u><span style='font-size:10.0pt'>Citizen:</span></u></b></p>
+
+<p class=MsoNormal><span style='font-size:10.0pt'>A person owing loyalty to,
+and entitled by birth or naturalization to, the protection of a state or
+nation.</span></p>
+
+<p class=MsoNormal><span style='font-size:10.0pt'>&nbsp;</span></p>
+
+<p class=MsoNormal><i><span style='font-size:9.0pt'>Sources:</span></i><span
+style='font-size:10.0pt'> </span><cite><span style='font-size:9.0pt;font-family:
+Arial'>Webster's Revised Unabridged Dictionary, The American Heritage&reg;
+Dictionary of the English Language, Fourth Edition, WordNet &reg; 1.6, &copy;
+1997 Princeton University</span></cite></p>
+
+<h2><a name="_Toc127535787">4.2</a><span style='font-size:7.0pt;font-family:
+"Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>Data
+Privacy</h2>
+
+<p class=MsoNormal>Human resources data, by its very nature, is personal data.
+The laws of many jurisdictions as well as codes of fair information practice
+require organizations to handle personal data in a way that protects
+individuals from loss of privacy.</p>
+
+<p class=MsoNormal>The data exchange specifications developed by the HR-XML
+Consortium are designed to be useful across many jurisdictions and within a
+variety of business contexts. It is not feasible for the HR-XML Consortium to
+develop specific privacy guidance for every jurisdiction or business context in
+which the Consortium's specifications might be implemented. When implementing
+data exchanges using the HR-XML Consortium's data definitions (or, for that
+matter, using any other type of data exchange mechanism), organizations are
+advised to examine the privacy protections that may be required under
+applicable law and codes of fair information practice.</p>
+
+<p class=MsoNormal>For information on protecting personal data, general
+references include: European Union Data Protection Directive (95/46/EC); the
+Association Computing Machinery Code of Ethics&nbsp; (1992); Canadian Standards
+Association Model Code for the Protection of Personal Information (1995 &#8211;
+PIPEDA); and U.S.-EU Safe Harbor Principles and FAQs (2000).</p>
+
+<h1><a name="_Toc127535788">5</a><span style='font-size:7.0pt;font-family:"Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span>Appendix A - Document Version History</h1>
+
+<table class=MsoNormalTable border=0 cellspacing=0 cellpadding=0
+ style='margin-left:-.05in;border-collapse:collapse'>
+ <tr>
+  <td width=114 valign=top style='width:85.5pt;border:solid windowtext 1.0pt;
+  background:#E5E5E5;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=tabletext align=center style='text-align:center'><b>Date</b></p>
+  </td>
+  <td width=362 valign=top style='width:271.6pt;border:solid windowtext 1.0pt;
+  border-left:none;background:#E5E5E5;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=tabletext><b>Description</b></p>
+  </td>
+ </tr>
+ <tr>
+  <td width=114 valign=top style='width:85.5pt;border:solid windowtext 1.0pt;
+  border-top:none;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=tabletext align=center style='text-align:center'>2003-08-15</p>
+  </td>
+  <td width=362 valign=top style='width:271.6pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=tabletext>Initial draft</p>
+  </td>
+ </tr>
+ <tr>
+  <td width=114 valign=top style='width:85.5pt;border:solid windowtext 1.0pt;
+  border-top:none;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=tabletext align=center style='text-align:center'>2003-08-29</p>
+  </td>
+  <td width=362 valign=top style='width:271.6pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=tabletext>Added choice for birth date, removed Other Id.</p>
+  </td>
+ </tr>
+ <tr>
+  <td width=114 valign=top style='width:85.5pt;border:solid windowtext 1.0pt;
+  border-top:none;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=tabletext align=center style='text-align:center'>2003-09-18</p>
+  </td>
+  <td width=362 valign=top style='width:271.6pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=tabletext>Renamed schema and elements to Descriptors since they are
+  more descriptors and not identifiers. Left LegalIds as is. Added
+  SupportingMaterials. Changed Language to LanguageCode, Race to multiple
+  occurrence.</p>
+  <p class=tabletext>Approved by TSC/CPO with changes.</p>
+  </td>
+ </tr>
+ <tr>
+  <td width=114 valign=top style='width:85.5pt;border:solid windowtext 1.0pt;
+  border-top:none;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=tabletext align=center style='text-align:center'>2003-09-25</p>
+  </td>
+  <td width=362 valign=top style='width:271.6pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=tabletext>Use EntityIdType for Person Legal Id with extensions.
+  Renamed LanguageCode to PrimaryLanguage.</p>
+  </td>
+ </tr>
+ <tr>
+  <td width=114 valign=top style='width:85.5pt;border:solid windowtext 1.0pt;
+  border-top:none;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=tabletext align=center style='text-align:center'>2003-10-27</p>
+  </td>
+  <td width=362 valign=top style='width:271.6pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=tabletext>Changes from membership feedback. Removed
+  &#8216;single&#8217; enumeration and registered from domestic partner. Added
+  repeatable item to list. Changed number of children to nonNegativeInteger.
+  Changed DisabilityInfo and PersonLegalId to global types.</p>
+  </td>
+ </tr>
+ <tr>
+  <td width=114 valign=top style='width:85.5pt;border:solid windowtext 1.0pt;
+  border-top:none;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=tabletext align=center style='text-align:center'>2006-Feb-28</p>
+  </td>
+  <td width=362 valign=top style='width:271.6pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=tabletext>Approved by Consortium</p>
+  </td>
+ </tr>
+ <tr>
+  <td width=114 valign=top style='width:85.5pt;border:solid windowtext 1.0pt;
+  border-top:none;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=tabletext align=center style='text-align:center'>2007-Apr-15</p>
+  </td>
+  <td width=362 valign=top style='width:271.6pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=tabletext>Approved by Consortium</p>
+  </td>
+ </tr>
+</table>
+
+<h1><a name="_Toc127535789">6</a><span style='font-size:7.0pt;font-family:"Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span>Appendix B &#8211; Related Documents</h1>
+
+<table class=MsoNormalTable border=0 cellspacing=0 cellpadding=0 width=606
+ style='width:454.5pt;margin-left:-.05in;border-collapse:collapse'>
+ <tr style='height:13.95pt'>
+  <td width=216 valign=top style='width:2.25in;border:solid windowtext 1.0pt;
+  background:#E5E5E5;padding:0in 5.4pt 0in 5.4pt;height:13.95pt'>
+  <p class=tabletext><b>Reference</b></p>
+  </td>
+  <td width=390 valign=top style='width:292.5pt;border:solid windowtext 1.0pt;
+  border-left:none;background:#E5E5E5;padding:0in 5.4pt 0in 5.4pt;height:13.95pt'>
+  <p class=tabletext><b>Link</b></p>
+  </td>
+ </tr>
+ <tr style='height:14.85pt'>
+  <td width=216 valign=top style='width:2.25in;border:solid windowtext 1.0pt;
+  border-top:none;padding:0in 5.4pt 0in 5.4pt;height:14.85pt'>
+  <p class=tabletext>Person Descriptors schema</p>
+  </td>
+  <td width=390 valign=top style='width:292.5pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt;height:14.85pt'>
+  <p class=tabletext><a
+  href="http://ns.hr-xml.org/2_5/HR-XML-2_5/CPO/PersonDescriptors.xsd">http://ns.hr-xml.org/2_5/HR-XML-2_5/CPO/PersonDescriptors.xsd</a></p>
+  </td>
+ </tr>
+</table>
+
+<h1><a name="_Toc127535790">7</a><span style='font-size:7.0pt;font-family:"Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span>Appendix C &#8211; Example</h1>
+
+<p class=MsoNormal>This sample schema might be used in the candidate profile for
+an individual seeking volunteer employment. </p>
+
+<p class=MsoNormal style='margin:0in;margin-bottom:.0001pt;text-autospace:none'><span
+style='font-size:9.0pt;color:blue;background:white'>&lt;</span><span
+style='font-size:9.0pt;color:maroon;background:white'>PersonDescriptors</span><span
+style='font-size:9.0pt;color:blue;background:white'>&gt;</span></p>
+
+<p class=MsoNormal style='margin:0in;margin-bottom:.0001pt;text-autospace:none'><span
+style='font-size:9.0pt;color:black;background:white'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span><span style='font-size:9.0pt;color:blue;background:white'>&lt;</span><span
+style='font-size:9.0pt;color:maroon;background:white'>LegalIdentifiers</span><span
+style='font-size:9.0pt;color:blue;background:white'>&gt;</span></p>
+
+<p class=MsoNormal style='margin:0in;margin-bottom:.0001pt;text-autospace:none'><span
+style='font-size:9.0pt;color:black;background:white'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span><span style='font-size:9.0pt;color:blue;background:white'>&lt;</span><span
+style='font-size:9.0pt;color:maroon;background:white'>PersonLegalId</span><span
+style='font-size:9.0pt;color:red;background:white'> validFrom</span><span
+style='font-size:9.0pt;color:blue;background:white'>=&quot;</span><span
+style='font-size:9.0pt;color:black;background:white'>1928-01-01</span><span
+style='font-size:9.0pt;color:blue;background:white'>&quot;</span><span
+style='font-size:9.0pt;color:red;background:white'> countryCode</span><span
+style='font-size:9.0pt;color:blue;background:white'>=&quot;</span><span
+style='font-size:9.0pt;color:black;background:white'>CA</span><span
+style='font-size:9.0pt;color:blue;background:white'>&quot;&gt;</span></p>
+
+<p class=MsoNormal style='margin:0in;margin-bottom:.0001pt;text-autospace:none'><span
+style='font-size:9.0pt;color:black;background:white'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span><span style='font-size:9.0pt;color:blue;background:white'>&lt;</span><span
+style='font-size:9.0pt;color:maroon;background:white'>IdValue</span><span
+style='font-size:9.0pt;color:red;background:white'> name</span><span
+style='font-size:9.0pt;color:blue;background:white'>=&quot;</span><span
+style='font-size:9.0pt;color:black;background:white'>SIN</span><span
+style='font-size:9.0pt;color:blue;background:white'>&quot;&gt;</span><span
+style='font-size:9.0pt;color:black;background:white'>123456789</span><span
+style='font-size:9.0pt;color:blue;background:white'>&lt;/</span><span
+style='font-size:9.0pt;color:maroon;background:white'>IdValue</span><span
+style='font-size:9.0pt;color:blue;background:white'>&gt;</span></p>
+
+<p class=MsoNormal style='margin:0in;margin-bottom:.0001pt;text-autospace:none'><span
+style='font-size:9.0pt;color:black;background:white'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span><span style='font-size:9.0pt;color:blue;background:white'>&lt;/</span><span
+style='font-size:9.0pt;color:maroon;background:white'>PersonLegalId</span><span
+style='font-size:9.0pt;color:blue;background:white'>&gt;</span></p>
+
+<p class=MsoNormal style='margin:0in;margin-bottom:.0001pt;text-autospace:none'><span
+style='font-size:9.0pt;color:black;background:white'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span><span style='font-size:9.0pt;color:blue;background:white'>&lt;</span><span
+style='font-size:9.0pt;color:maroon;background:white'>PersonLegalId</span><span
+style='font-size:9.0pt;color:red;background:white'> validFrom</span><span
+style='font-size:9.0pt;color:blue;background:white'>=&quot;</span><span
+style='font-size:9.0pt;color:black;background:white'>2000-01-01</span><span
+style='font-size:9.0pt;color:blue;background:white'>&quot;</span><span
+style='font-size:9.0pt;color:red;background:white'> validTo</span><span
+style='font-size:9.0pt;color:blue;background:white'>=&quot;</span><span
+style='font-size:9.0pt;color:black;background:white'>2005-01-01</span><span
+style='font-size:9.0pt;color:blue;background:white'>&quot;</span><span
+style='font-size:9.0pt;color:red;background:white'> idOwner</span><span
+style='font-size:9.0pt;color:blue;background:white'>=&quot;</span><span
+style='font-size:9.0pt;color:black;background:white'>Ministry of Transportation</span><span
+style='font-size:9.0pt;color:blue;background:white'>&quot;</span><span
+style='font-size:9.0pt;color:red;background:white'> countryCode</span><span
+style='font-size:9.0pt;color:blue;background:white'>=&quot;</span><span
+style='font-size:9.0pt;color:black;background:white'>CA</span><span
+style='font-size:9.0pt;color:blue;background:white'>&quot;</span><span
+style='font-size:9.0pt;color:red;background:white'> issuingRegion</span><span
+style='font-size:9.0pt;color:blue;background:white'>=&quot;</span><span
+style='font-size:9.0pt;color:black;background:white'>Greater Toronto Area</span><span
+style='font-size:9.0pt;color:blue;background:white'>&quot;&gt;</span></p>
+
+<p class=MsoNormal style='margin:0in;margin-bottom:.0001pt;text-autospace:none'><span
+style='font-size:9.0pt;color:black;background:white'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span><span style='font-size:9.0pt;color:blue;background:white'>&lt;</span><span
+style='font-size:9.0pt;color:maroon;background:white'>IdValue</span><span
+style='font-size:9.0pt;color:red;background:white'> name</span><span
+style='font-size:9.0pt;color:blue;background:white'>=&quot;</span><span
+style='font-size:9.0pt;color:black;background:white'>Driver's License</span><span
+style='font-size:9.0pt;color:blue;background:white'>&quot;&gt;</span><span
+style='font-size:9.0pt;color:black;background:white'>CA711546</span><span
+style='font-size:9.0pt;color:blue;background:white'>&lt;/</span><span
+style='font-size:9.0pt;color:maroon;background:white'>IdValue</span><span
+style='font-size:9.0pt;color:blue;background:white'>&gt;</span></p>
+
+<p class=MsoNormal style='margin:0in;margin-bottom:.0001pt;text-autospace:none'><span
+style='font-size:9.0pt;color:black;background:white'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span><span style='font-size:9.0pt;color:blue;background:white'>&lt;/</span><span
+style='font-size:9.0pt;color:maroon;background:white'>PersonLegalId</span><span
+style='font-size:9.0pt;color:blue;background:white'>&gt;</span></p>
+
+<p class=MsoNormal style='margin:0in;margin-bottom:.0001pt;text-autospace:none'><span
+style='font-size:9.0pt;color:black;background:white'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span><span style='font-size:9.0pt;color:blue;background:white'>&lt;</span><span
+style='font-size:9.0pt;color:maroon;background:white'>MilitaryStatus</span><span
+style='font-size:9.0pt;color:blue;background:white'>&gt;</span><span
+style='font-size:9.0pt;color:black;background:white'>Retired</span><span
+style='font-size:9.0pt;color:blue;background:white'>&lt;/</span><span
+style='font-size:9.0pt;color:maroon;background:white'>MilitaryStatus</span><span
+style='font-size:9.0pt;color:blue;background:white'>&gt;</span></p>
+
+<p class=MsoNormal style='margin:0in;margin-bottom:.0001pt;text-autospace:none'><span
+style='font-size:9.0pt;color:black;background:white'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span><span style='font-size:9.0pt;color:blue;background:white'>&lt;</span><span
+style='font-size:9.0pt;color:maroon;background:white'>MilitaryStatus</span><span
+style='font-size:9.0pt;color:red;background:white'> type</span><span
+style='font-size:9.0pt;color:blue;background:white'>=&quot;</span><span
+style='font-size:9.0pt;color:black;background:white'>Veteran</span><span
+style='font-size:9.0pt;color:blue;background:white'>&quot;&gt;</span><span
+style='font-size:9.0pt;color:black;background:white'>WWII</span><span
+style='font-size:9.0pt;color:blue;background:white'>&lt;/</span><span
+style='font-size:9.0pt;color:maroon;background:white'>MilitaryStatus</span><span
+style='font-size:9.0pt;color:blue;background:white'>&gt;</span></p>
+
+<p class=MsoNormal style='margin:0in;margin-bottom:.0001pt;text-autospace:none'><span
+style='font-size:9.0pt;color:black;background:white'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span><span style='font-size:9.0pt;color:blue;background:white'>&lt;</span><span
+style='font-size:9.0pt;color:maroon;background:white'>VisaStatus</span><span
+style='font-size:9.0pt;color:red;background:white'> countryCode</span><span
+style='font-size:9.0pt;color:blue;background:white'>=&quot;</span><span
+style='font-size:9.0pt;color:black;background:white'>FR</span><span
+style='font-size:9.0pt;color:blue;background:white'>&quot;</span><span
+style='font-size:9.0pt;color:red;background:white'> validFrom</span><span
+style='font-size:9.0pt;color:blue;background:white'>=&quot;</span><span
+style='font-size:9.0pt;color:black;background:white'>2000-01-01</span><span
+style='font-size:9.0pt;color:blue;background:white'>&quot;</span><span
+style='font-size:9.0pt;color:red;background:white'> validTo</span><span
+style='font-size:9.0pt;color:blue;background:white'>=&quot;</span><span
+style='font-size:9.0pt;color:black;background:white'>2005-01-01</span><span
+style='font-size:9.0pt;color:blue;background:white'>&quot;&gt;</span><span
+style='font-size:9.0pt;color:black;background:white'>Active</span><span
+style='font-size:9.0pt;color:blue;background:white'>&lt;/</span><span
+style='font-size:9.0pt;color:maroon;background:white'>VisaStatus</span><span
+style='font-size:9.0pt;color:blue;background:white'>&gt;</span></p>
+
+<p class=MsoNormal style='margin:0in;margin-bottom:.0001pt;text-autospace:none'><span
+style='font-size:9.0pt;color:black;background:white'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span><span style='font-size:9.0pt;color:blue;background:white'>&lt;</span><span
+style='font-size:9.0pt;color:maroon;background:white'>Citizenship</span><span
+style='font-size:9.0pt;color:blue;background:white'>&gt;</span><span
+style='font-size:9.0pt;color:black;background:white'>CA</span><span
+style='font-size:9.0pt;color:blue;background:white'>&lt;/</span><span
+style='font-size:9.0pt;color:maroon;background:white'>Citizenship</span><span
+style='font-size:9.0pt;color:blue;background:white'>&gt;</span></p>
+
+<p class=MsoNormal style='margin:0in;margin-bottom:.0001pt;text-autospace:none'><span
+style='font-size:9.0pt;color:black;background:white'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span><span style='font-size:9.0pt;color:blue;background:white'>&lt;</span><span
+style='font-size:9.0pt;color:maroon;background:white'>Residency</span><span
+style='font-size:9.0pt;color:blue;background:white'>&gt;</span><span
+style='font-size:9.0pt;color:black;background:white'>FR</span><span
+style='font-size:9.0pt;color:blue;background:white'>&lt;/</span><span
+style='font-size:9.0pt;color:maroon;background:white'>Residency</span><span
+style='font-size:9.0pt;color:blue;background:white'>&gt;</span></p>
+
+<p class=MsoNormal style='margin:0in;margin-bottom:.0001pt;text-autospace:none'><span
+style='font-size:9.0pt;color:black;background:white'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span><span style='font-size:9.0pt;color:blue;background:white'>&lt;</span><span
+style='font-size:9.0pt;color:maroon;background:white'>UserArea</span><span
+style='font-size:9.0pt;color:blue;background:white'>/&gt;</span></p>
+
+<p class=MsoNormal style='margin:0in;margin-bottom:.0001pt;text-autospace:none'><span
+style='font-size:9.0pt;color:black;background:white'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span><span style='font-size:9.0pt;color:blue;background:white'>&lt;/</span><span
+style='font-size:9.0pt;color:maroon;background:white'>LegalIdentifiers</span><span
+style='font-size:9.0pt;color:blue;background:white'>&gt;</span></p>
+
+<p class=MsoNormal style='margin:0in;margin-bottom:.0001pt;text-autospace:none'><span
+style='font-size:9.0pt;color:black;background:white'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span><span style='font-size:9.0pt;color:blue;background:white'>&lt;</span><span
+style='font-size:9.0pt;color:maroon;background:white'>DemographicDescriptors</span><span
+style='font-size:9.0pt;color:blue;background:white'>&gt;</span></p>
+
+<p class=MsoNormal style='margin:0in;margin-bottom:.0001pt;text-autospace:none'><span
+style='font-size:9.0pt;color:black;background:white'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span><span style='font-size:9.0pt;color:blue;background:white'>&lt;</span><span
+style='font-size:9.0pt;color:maroon;background:white'>Race</span><span
+style='font-size:9.0pt;color:blue;background:white'>&gt;</span><span
+style='font-size:9.0pt;color:black;background:white'>Asian</span><span
+style='font-size:9.0pt;color:blue;background:white'>&lt;/</span><span
+style='font-size:9.0pt;color:maroon;background:white'>Race</span><span
+style='font-size:9.0pt;color:blue;background:white'>&gt;</span></p>
+
+<p class=MsoNormal style='margin:0in;margin-bottom:.0001pt;text-autospace:none'><span
+style='font-size:9.0pt;color:black;background:white'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span><span style='font-size:9.0pt;color:blue;background:white'>&lt;</span><span
+style='font-size:9.0pt;color:maroon;background:white'>Ethnicity</span><span
+style='font-size:9.0pt;color:blue;background:white'>&gt;</span><span
+style='font-size:9.0pt;color:black;background:white'>Malaysian</span><span
+style='font-size:9.0pt;color:blue;background:white'>&lt;/</span><span
+style='font-size:9.0pt;color:maroon;background:white'>Ethnicity</span><span
+style='font-size:9.0pt;color:blue;background:white'>&gt;</span></p>
+
+<p class=MsoNormal style='margin:0in;margin-bottom:.0001pt;text-autospace:none'><span
+style='font-size:9.0pt;color:black;background:white'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span><span style='font-size:9.0pt;color:blue;background:white'>&lt;</span><span
+style='font-size:9.0pt;color:maroon;background:white'>Nationality</span><span
+style='font-size:9.0pt;color:blue;background:white'>&gt;</span><span
+style='font-size:9.0pt;color:black;background:white'>CA</span><span
+style='font-size:9.0pt;color:blue;background:white'>&lt;/</span><span
+style='font-size:9.0pt;color:maroon;background:white'>Nationality</span><span
+style='font-size:9.0pt;color:blue;background:white'>&gt;</span></p>
+
+<p class=MsoNormal style='margin:0in;margin-bottom:.0001pt;text-autospace:none'><span
+style='font-size:9.0pt;color:black;background:white'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span><span style='font-size:9.0pt;color:blue;background:white'>&lt;</span><span
+style='font-size:9.0pt;color:maroon;background:white'>PrimaryLanguage</span><span
+style='font-size:9.0pt;color:blue;background:white'>&gt;</span><span
+style='font-size:9.0pt;color:black;background:white'>EN</span><span
+style='font-size:9.0pt;color:blue;background:white'>&lt;/</span><span
+style='font-size:9.0pt;color:maroon;background:white'>PrimaryLanguage</span><span
+style='font-size:9.0pt;color:blue;background:white'>&gt;</span></p>
+
+<p class=MsoNormal style='margin:0in;margin-bottom:.0001pt;text-autospace:none'><span
+style='font-size:9.0pt;color:black;background:white'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span><span style='font-size:9.0pt;color:blue;background:white'>&lt;</span><span
+style='font-size:9.0pt;color:maroon;background:white'>PrimaryLanguage</span><span
+style='font-size:9.0pt;color:blue;background:white'>&gt;</span><span
+style='font-size:9.0pt;color:black;background:white'>FR</span><span
+style='font-size:9.0pt;color:blue;background:white'>&lt;/</span><span
+style='font-size:9.0pt;color:maroon;background:white'>PrimaryLanguage</span><span
+style='font-size:9.0pt;color:blue;background:white'>&gt;</span></p>
+
+<p class=MsoNormal style='margin:0in;margin-bottom:.0001pt;text-autospace:none'><span
+style='font-size:9.0pt;color:black;background:white'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span><span style='font-size:9.0pt;color:blue;background:white'>&lt;</span><span
+style='font-size:9.0pt;color:maroon;background:white'>BirthPlace</span><span
+style='font-size:9.0pt;color:blue;background:white'>&gt;</span><span style='font-size:9.0pt;color:black;background:white'>Toronto</span><span
+ style='font-size:9.0pt;color:black;background:white'>, Canada</span><span style='font-size:9.0pt;color:blue;background:white'>&lt;/</span><span
+style='font-size:9.0pt;color:maroon;background:white'>BirthPlace</span><span
+style='font-size:9.0pt;color:blue;background:white'>&gt;</span></p>
+
+<p class=MsoNormal style='margin:0in;margin-bottom:.0001pt;text-autospace:none'><span
+style='font-size:9.0pt;color:black;background:white'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span><span style='font-size:9.0pt;color:blue;background:white'>&lt;</span><span
+style='font-size:9.0pt;color:maroon;background:white'>Religion</span><span
+style='font-size:9.0pt;color:blue;background:white'>&gt;</span><span
+style='font-size:9.0pt;color:black;background:white'>Druid</span><span
+style='font-size:9.0pt;color:blue;background:white'>&lt;/</span><span
+style='font-size:9.0pt;color:maroon;background:white'>Religion</span><span
+style='font-size:9.0pt;color:blue;background:white'>&gt;</span></p>
+
+<p class=MsoNormal style='margin:0in;margin-bottom:.0001pt;text-autospace:none'><span
+style='font-size:9.0pt;color:black;background:white'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span><span style='font-size:9.0pt;color:blue;background:white'>&lt;</span><span
+style='font-size:9.0pt;color:maroon;background:white'>MaritalStatus</span><span
+style='font-size:9.0pt;color:blue;background:white'>&gt;</span><span
+style='font-size:9.0pt;color:black;background:white'>Widowed</span><span
+style='font-size:9.0pt;color:blue;background:white'>&lt;/</span><span
+style='font-size:9.0pt;color:maroon;background:white'>MaritalStatus</span><span
+style='font-size:9.0pt;color:blue;background:white'>&gt;</span></p>
+
+<p class=MsoNormal style='margin:0in;margin-bottom:.0001pt;text-autospace:none'><span
+style='font-size:9.0pt;color:black;background:white'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span><span style='font-size:9.0pt;color:blue;background:white'>&lt;</span><span
+style='font-size:9.0pt;color:maroon;background:white'>ChildrenInfo</span><span
+style='font-size:9.0pt;color:blue;background:white'>&gt;</span></p>
+
+<p class=MsoNormal style='margin:0in;margin-bottom:.0001pt;text-autospace:none'><span
+style='font-size:9.0pt;color:black;background:white'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span><span style='font-size:9.0pt;color:blue;background:white'>&lt;</span><span
+style='font-size:9.0pt;color:maroon;background:white'>NumberOfChildren</span><span
+style='font-size:9.0pt;color:blue;background:white'>&gt;</span><span
+style='font-size:9.0pt;color:black;background:white'>2</span><span
+style='font-size:9.0pt;color:blue;background:white'>&lt;/</span><span
+style='font-size:9.0pt;color:maroon;background:white'>NumberOfChildren</span><span
+style='font-size:9.0pt;color:blue;background:white'>&gt;</span></p>
+
+<p class=MsoNormal style='margin:0in;margin-bottom:.0001pt;text-autospace:none'><span
+style='font-size:9.0pt;color:black;background:white'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span><span style='font-size:9.0pt;color:blue;background:white'>&lt;</span><span
+style='font-size:9.0pt;color:maroon;background:white'>Comments</span><span
+style='font-size:9.0pt;color:blue;background:white'>&gt;</span><span
+style='font-size:9.0pt;color:black;background:white'>Both children are adult
+non-dependents.</span><span style='font-size:9.0pt;color:blue;background:white'>&lt;/</span><span
+style='font-size:9.0pt;color:maroon;background:white'>Comments</span><span
+style='font-size:9.0pt;color:blue;background:white'>&gt;</span></p>
+
+<p class=MsoNormal style='margin:0in;margin-bottom:.0001pt;text-autospace:none'><span
+style='font-size:9.0pt;color:black;background:white'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span><span style='font-size:9.0pt;color:blue;background:white'>&lt;/</span><span
+style='font-size:9.0pt;color:maroon;background:white'>ChildrenInfo</span><span
+style='font-size:9.0pt;color:blue;background:white'>&gt;</span></p>
+
+<p class=MsoNormal style='margin:0in;margin-bottom:.0001pt;text-autospace:none'><span
+style='font-size:9.0pt;color:black;background:white'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span><span style='font-size:9.0pt;color:blue;background:white'>&lt;</span><span
+style='font-size:9.0pt;color:maroon;background:white'>UserArea</span><span
+style='font-size:9.0pt;color:blue;background:white'>/&gt;</span></p>
+
+<p class=MsoNormal style='margin:0in;margin-bottom:.0001pt;text-autospace:none'><span
+style='font-size:9.0pt;color:black;background:white'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span><span style='font-size:9.0pt;color:blue;background:white'>&lt;/</span><span
+style='font-size:9.0pt;color:maroon;background:white'>DemographicDescriptors</span><span
+style='font-size:9.0pt;color:blue;background:white'>&gt;</span></p>
+
+<p class=MsoNormal style='margin:0in;margin-bottom:.0001pt;text-autospace:none'><span
+style='font-size:9.0pt;color:black;background:white'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span><span style='font-size:9.0pt;color:blue;background:white'>&lt;</span><span
+style='font-size:9.0pt;color:maroon;background:white'>BiologicalDescriptors</span><span
+style='font-size:9.0pt;color:blue;background:white'>&gt;</span></p>
+
+<p class=MsoNormal style='margin:0in;margin-bottom:.0001pt;text-autospace:none'><span
+style='font-size:9.0pt;color:black;background:white'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span><span style='font-size:9.0pt;color:blue;background:white'>&lt;</span><span
+style='font-size:9.0pt;color:maroon;background:white'>DateOfBirth</span><span
+style='font-size:9.0pt;color:blue;background:white'>&gt;</span><span
+style='font-size:9.0pt;color:black;background:white'>1928-01-01</span><span
+style='font-size:9.0pt;color:blue;background:white'>&lt;/</span><span
+style='font-size:9.0pt;color:maroon;background:white'>DateOfBirth</span><span
+style='font-size:9.0pt;color:blue;background:white'>&gt;</span></p>
+
+<p class=MsoNormal style='margin:0in;margin-bottom:.0001pt;text-autospace:none'><span
+style='font-size:9.0pt;color:black;background:white'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span><span style='font-size:9.0pt;color:blue;background:white'>&lt;</span><span
+style='font-size:9.0pt;color:maroon;background:white'>Age</span><span
+style='font-size:9.0pt;color:blue;background:white'>&gt;</span><span
+style='font-size:9.0pt;color:black;background:white'>75</span><span
+style='font-size:9.0pt;color:blue;background:white'>&lt;/</span><span
+style='font-size:9.0pt;color:maroon;background:white'>Age</span><span
+style='font-size:9.0pt;color:blue;background:white'>&gt;</span></p>
+
+<p class=MsoNormal style='margin:0in;margin-bottom:.0001pt;text-autospace:none'><span
+style='font-size:9.0pt;color:black;background:white'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span><span style='font-size:9.0pt;color:blue;background:white'>&lt;</span><span
+style='font-size:9.0pt;color:maroon;background:white'>GenderCode</span><span
+style='font-size:9.0pt;color:blue;background:white'>&gt;</span><span
+style='font-size:9.0pt;color:black;background:white'>1</span><span
+style='font-size:9.0pt;color:blue;background:white'>&lt;/</span><span
+style='font-size:9.0pt;color:maroon;background:white'>GenderCode</span><span
+style='font-size:9.0pt;color:blue;background:white'>&gt;</span></p>
+
+<p class=MsoNormal style='margin:0in;margin-bottom:.0001pt;text-autospace:none'><span
+style='font-size:9.0pt;color:black;background:white'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span><span style='font-size:9.0pt;color:blue;background:white'>&lt;</span><span
+style='font-size:9.0pt;color:maroon;background:white'>EyeColor</span><span
+style='font-size:9.0pt;color:blue;background:white'>&gt;</span><span
+style='font-size:9.0pt;color:black;background:white'>Brown</span><span
+style='font-size:9.0pt;color:blue;background:white'>&lt;/</span><span
+style='font-size:9.0pt;color:maroon;background:white'>EyeColor</span><span
+style='font-size:9.0pt;color:blue;background:white'>&gt;</span></p>
+
+<p class=MsoNormal style='margin:0in;margin-bottom:.0001pt;text-autospace:none'><span
+style='font-size:9.0pt;color:black;background:white'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span><span style='font-size:9.0pt;color:blue;background:white'>&lt;</span><span
+style='font-size:9.0pt;color:maroon;background:white'>HairColor</span><span
+style='font-size:9.0pt;color:blue;background:white'>&gt;</span><span
+style='font-size:9.0pt;color:black;background:white'>Gray</span><span
+style='font-size:9.0pt;color:blue;background:white'>&lt;/</span><span
+style='font-size:9.0pt;color:maroon;background:white'>HairColor</span><span
+style='font-size:9.0pt;color:blue;background:white'>&gt;</span></p>
+
+<p class=MsoNormal style='margin:0in;margin-bottom:.0001pt;text-autospace:none'><span
+style='font-size:9.0pt;color:black;background:white'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span><span style='font-size:9.0pt;color:blue;background:white'>&lt;</span><span
+style='font-size:9.0pt;color:maroon;background:white'>Height</span><span
+style='font-size:9.0pt;color:red;background:white'> unitOfMeasure</span><span
+style='font-size:9.0pt;color:blue;background:white'>=&quot;</span><span
+style='font-size:9.0pt;color:black;background:white'>inches</span><span
+style='font-size:9.0pt;color:blue;background:white'>&quot;&gt;</span><span
+style='font-size:9.0pt;color:black;background:white'>61</span><span
+style='font-size:9.0pt;color:blue;background:white'>&lt;/</span><span
+style='font-size:9.0pt;color:maroon;background:white'>Height</span><span
+style='font-size:9.0pt;color:blue;background:white'>&gt;</span></p>
+
+<p class=MsoNormal style='margin:0in;margin-bottom:.0001pt;text-autospace:none'><span
+style='font-size:9.0pt;color:black;background:white'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span><span style='font-size:9.0pt;color:blue;background:white'>&lt;</span><span
+style='font-size:9.0pt;color:maroon;background:white'>Weight</span><span
+style='font-size:9.0pt;color:red;background:white'> unitOfMeasure</span><span
+style='font-size:9.0pt;color:blue;background:white'>=&quot;</span><span
+style='font-size:9.0pt;color:black;background:white'>pounds</span><span
+style='font-size:9.0pt;color:blue;background:white'>&quot;&gt;</span><span
+style='font-size:9.0pt;color:black;background:white'>130</span><span
+style='font-size:9.0pt;color:blue;background:white'>&lt;/</span><span
+style='font-size:9.0pt;color:maroon;background:white'>Weight</span><span
+style='font-size:9.0pt;color:blue;background:white'>&gt;</span></p>
+
+<p class=MsoNormal style='margin:0in;margin-bottom:.0001pt;text-autospace:none'><span
+style='font-size:9.0pt;color:black;background:white'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span><span style='font-size:9.0pt;color:blue;background:white'>&lt;</span><span
+style='font-size:9.0pt;color:maroon;background:white'>IdentifyingMarks</span><span
+style='font-size:9.0pt;color:blue;background:white'>&gt;</span><span
+style='font-size:9.0pt;color:black;background:white'>Tattoo of a sailing ship
+on right arm</span><span style='font-size:9.0pt;color:blue;background:white'>&lt;/</span><span
+style='font-size:9.0pt;color:maroon;background:white'>IdentifyingMarks</span><span
+style='font-size:9.0pt;color:blue;background:white'>&gt;</span></p>
+
+<p class=MsoNormal style='margin:0in;margin-bottom:.0001pt;text-autospace:none'><span
+style='font-size:9.0pt;color:black;background:white'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span><span style='font-size:9.0pt;color:blue;background:white'>&lt;</span><span
+style='font-size:9.0pt;color:maroon;background:white'>DisabilityInfo</span><span
+style='font-size:9.0pt;color:blue;background:white'>&gt;</span></p>
+
+<p class=MsoNormal style='margin:0in;margin-bottom:.0001pt;text-autospace:none'><span
+style='font-size:9.0pt;color:black;background:white'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span><span style='font-size:9.0pt;color:blue;background:white'>&lt;</span><span
+style='font-size:9.0pt;color:maroon;background:white'>LevelOfDisability</span><span
+style='font-size:9.0pt;color:blue;background:white'>&gt;</span><span
+style='font-size:9.0pt;color:black;background:white'>Mild</span><span
+style='font-size:9.0pt;color:blue;background:white'>&lt;/</span><span
+style='font-size:9.0pt;color:maroon;background:white'>LevelOfDisability</span><span
+style='font-size:9.0pt;color:blue;background:white'>&gt;</span></p>
+
+<p class=MsoNormal style='margin:0in;margin-bottom:.0001pt;text-autospace:none'><span
+style='font-size:9.0pt;color:black;background:white'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span><span style='font-size:9.0pt;color:blue;background:white'>&lt;</span><span
+style='font-size:9.0pt;color:maroon;background:white'>Percentage</span><span
+style='font-size:9.0pt;color:blue;background:white'>&gt;</span><span
+style='font-size:9.0pt;color:black;background:white'>35</span><span
+style='font-size:9.0pt;color:blue;background:white'>&lt;/</span><span
+style='font-size:9.0pt;color:maroon;background:white'>Percentage</span><span
+style='font-size:9.0pt;color:blue;background:white'>&gt;</span></p>
+
+<p class=MsoNormal style='margin:0in;margin-bottom:.0001pt;text-autospace:none'><span
+style='font-size:9.0pt;color:black;background:white'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span><span style='font-size:9.0pt;color:blue;background:white'>&lt;</span><span
+style='font-size:9.0pt;color:maroon;background:white'>Type</span><span
+style='font-size:9.0pt;color:blue;background:white'>&gt;</span><span
+style='font-size:9.0pt;color:black;background:white'>Vision Impairment</span><span
+style='font-size:9.0pt;color:blue;background:white'>&lt;/</span><span
+style='font-size:9.0pt;color:maroon;background:white'>Type</span><span
+style='font-size:9.0pt;color:blue;background:white'>&gt;</span></p>
+
+<p class=MsoNormal style='margin:0in;margin-bottom:.0001pt;text-autospace:none'><span
+style='font-size:9.0pt;color:black;background:white'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span><span style='font-size:9.0pt;color:blue;background:white'>&lt;</span><span
+style='font-size:9.0pt;color:maroon;background:white'>AccommodationsNeeded</span><span
+style='font-size:9.0pt;color:blue;background:white'>&gt;</span><span
+style='font-size:9.0pt;color:black;background:white'>false</span><span
+style='font-size:9.0pt;color:blue;background:white'>&lt;/</span><span
+style='font-size:9.0pt;color:maroon;background:white'>AccommodationsNeeded</span><span
+style='font-size:9.0pt;color:blue;background:white'>&gt;</span></p>
+
+<p class=MsoNormal style='margin:0in;margin-bottom:.0001pt;text-autospace:none'><span
+style='font-size:9.0pt;color:black;background:white'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span><span style='font-size:9.0pt;color:blue;background:white'>&lt;/</span><span
+style='font-size:9.0pt;color:maroon;background:white'>DisabilityInfo</span><span
+style='font-size:9.0pt;color:blue;background:white'>&gt;</span></p>
+
+<p class=MsoNormal style='margin:0in;margin-bottom:.0001pt;text-autospace:none'><span
+style='font-size:9.0pt;color:black;background:white'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span><span style='font-size:9.0pt;color:blue;background:white'>&lt;</span><span
+style='font-size:9.0pt;color:maroon;background:white'>UserArea</span><span
+style='font-size:9.0pt;color:blue;background:white'>/&gt;</span></p>
+
+<p class=MsoNormal style='margin:0in;margin-bottom:.0001pt;text-autospace:none'><span
+style='font-size:9.0pt;color:black;background:white'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span><span style='font-size:9.0pt;color:blue;background:white'>&lt;/</span><span
+style='font-size:9.0pt;color:maroon;background:white'>BiologicalDescriptors</span><span
+style='font-size:9.0pt;color:blue;background:white'>&gt;</span></p>
+
+<p class=MsoNormal style='margin:0in;margin-bottom:.0001pt;text-autospace:none'><span
+style='font-size:9.0pt;color:black;background:white'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span><span style='font-size:9.0pt;color:blue;background:white'>&lt;</span><span
+style='font-size:9.0pt;color:maroon;background:white'>SupportingMaterials</span><span
+style='font-size:9.0pt;color:blue;background:white'>&gt;</span></p>
+
+<p class=MsoNormal style='margin:0in;margin-bottom:.0001pt;text-autospace:none'><span
+style='font-size:9.0pt;color:black;background:white'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span><span style='font-size:9.0pt;color:blue;background:white'>&lt;</span><span
+style='font-size:9.0pt;color:maroon;background:white'>AttachmentReference</span><span
+style='font-size:9.0pt;color:red;background:white'> mimeType</span><span
+style='font-size:9.0pt;color:blue;background:white'>=&quot;</span><span
+style='font-size:9.0pt;color:black;background:white'>application/msword</span><span
+style='font-size:9.0pt;color:blue;background:white'>&quot;&gt;</span><span
+style='font-size:9.0pt;color:black;background:white'>VeteranReport.doc</span><span
+style='font-size:9.0pt;color:blue;background:white'>&lt;/</span><span
+style='font-size:9.0pt;color:maroon;background:white'>AttachmentReference</span><span
+style='font-size:9.0pt;color:blue;background:white'>&gt;</span></p>
+
+<p class=MsoNormal style='margin:0in;margin-bottom:.0001pt;text-autospace:none'><span
+style='font-size:9.0pt;color:black;background:white'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span><span style='font-size:9.0pt;color:blue;background:white'>&lt;</span><span
+style='font-size:9.0pt;color:maroon;background:white'>Description</span><span
+style='font-size:9.0pt;color:blue;background:white'>&gt;</span><span
+style='font-size:9.0pt;color:black;background:white'>Report of Veteran Status
+in Microsoft Word</span><span style='font-size:9.0pt;color:blue;background:
+white'>&lt;/</span><span style='font-size:9.0pt;color:maroon;background:white'>Description</span><span
+style='font-size:9.0pt;color:blue;background:white'>&gt;</span></p>
+
+<p class=MsoNormal style='margin:0in;margin-bottom:.0001pt;text-autospace:none'><span
+style='font-size:9.0pt;color:black;background:white'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span><span style='font-size:9.0pt;color:blue;background:white'>&lt;/</span><span
+style='font-size:9.0pt;color:maroon;background:white'>SupportingMaterials</span><span
+style='font-size:9.0pt;color:blue;background:white'>&gt;</span></p>
+
+<p class=MsoNormal style='margin:0in;margin-bottom:.0001pt;text-autospace:none'><span
+style='font-size:9.0pt;color:black;background:white'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span><span style='font-size:9.0pt;color:blue;background:white'>&lt;</span><span
+style='font-size:9.0pt;color:maroon;background:white'>OtherDescriptors</span><span
+style='font-size:9.0pt;color:blue;background:white'>&gt;</span></p>
+
+<p class=MsoNormal style='margin:0in;margin-bottom:.0001pt;text-autospace:none'><span
+style='font-size:9.0pt;color:black;background:white'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span><span style='font-size:9.0pt;color:blue;background:white'>&lt;</span><span
+style='font-size:9.0pt;color:maroon;background:white'>Name</span><span
+style='font-size:9.0pt;color:blue;background:white'>&gt;</span><span
+style='font-size:9.0pt;color:black;background:white'>Home Owner</span><span
+style='font-size:9.0pt;color:blue;background:white'>&lt;/</span><span
+style='font-size:9.0pt;color:maroon;background:white'>Name</span><span
+style='font-size:9.0pt;color:blue;background:white'>&gt;</span></p>
+
+<p class=MsoNormal style='margin:0in;margin-bottom:.0001pt;text-autospace:none'><span
+style='font-size:9.0pt;color:black;background:white'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span><span style='font-size:9.0pt;color:blue;background:white'>&lt;</span><span
+style='font-size:9.0pt;color:maroon;background:white'>Applicable</span><span
+style='font-size:9.0pt;color:blue;background:white'>&gt;</span><span
+style='font-size:9.0pt;color:black;background:white'>true</span><span
+style='font-size:9.0pt;color:blue;background:white'>&lt;/</span><span
+style='font-size:9.0pt;color:maroon;background:white'>Applicable</span><span
+style='font-size:9.0pt;color:blue;background:white'>&gt;</span></p>
+
+<p class=MsoNormal style='margin:0in;margin-bottom:.0001pt;text-autospace:none'><span
+style='font-size:9.0pt;color:black;background:white'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span><span style='font-size:9.0pt;color:blue;background:white'>&lt;/</span><span
+style='font-size:9.0pt;color:maroon;background:white'>OtherDescriptors</span><span
+style='font-size:9.0pt;color:blue;background:white'>&gt;</span></p>
+
+<p class=MsoNormal style='margin:0in;margin-bottom:.0001pt;text-autospace:none'><span
+style='font-size:9.0pt;color:black;background:white'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span><span style='font-size:9.0pt;color:blue;background:white'>&lt;</span><span
+style='font-size:9.0pt;color:maroon;background:white'>OtherDescriptors</span><span
+style='font-size:9.0pt;color:blue;background:white'>&gt;</span></p>
+
+<p class=MsoNormal style='margin:0in;margin-bottom:.0001pt;text-autospace:none'><span
+style='font-size:9.0pt;color:black;background:white'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span><span style='font-size:9.0pt;color:blue;background:white'>&lt;</span><span
+style='font-size:9.0pt;color:maroon;background:white'>Name</span><span
+style='font-size:9.0pt;color:blue;background:white'>&gt;</span><span
+style='font-size:9.0pt;color:black;background:white'>Credit Rating</span><span
+style='font-size:9.0pt;color:blue;background:white'>&lt;/</span><span
+style='font-size:9.0pt;color:maroon;background:white'>Name</span><span
+style='font-size:9.0pt;color:blue;background:white'>&gt;</span></p>
+
+<p class=MsoNormal style='margin:0in;margin-bottom:.0001pt;text-autospace:none'><span
+style='font-size:9.0pt;color:black;background:white'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span><span style='font-size:9.0pt;color:blue;background:white'>&lt;</span><span
+style='font-size:9.0pt;color:maroon;background:white'>Value</span><span
+style='font-size:9.0pt;color:blue;background:white'>&gt;</span><span
+style='font-size:9.0pt;color:black;background:white'>Excellent</span><span
+style='font-size:9.0pt;color:blue;background:white'>&lt;/</span><span
+style='font-size:9.0pt;color:maroon;background:white'>Value</span><span
+style='font-size:9.0pt;color:blue;background:white'>&gt;</span></p>
+
+<p class=MsoNormal style='margin:0in;margin-bottom:.0001pt;text-autospace:none'><span
+style='font-size:9.0pt;color:black;background:white'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span><span style='font-size:9.0pt;color:blue;background:white'>&lt;/</span><span
+style='font-size:9.0pt;color:maroon;background:white'>OtherDescriptors</span><span
+style='font-size:9.0pt;color:blue;background:white'>&gt;</span></p>
+
+<p class=MsoNormal style='margin:0in;margin-bottom:.0001pt;text-autospace:none'><span
+style='font-size:9.0pt;color:black;background:white'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span><span style='font-size:9.0pt;color:blue;background:white'>&lt;</span><span
+style='font-size:9.0pt;color:maroon;background:white'>OtherDescriptors</span><span
+style='font-size:9.0pt;color:blue;background:white'>&gt;</span></p>
+
+<p class=MsoNormal style='margin:0in;margin-bottom:.0001pt;text-autospace:none'><span
+style='font-size:9.0pt;color:black;background:white'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span><span style='font-size:9.0pt;color:blue;background:white'>&lt;</span><span
+style='font-size:9.0pt;color:maroon;background:white'>Name</span><span
+style='font-size:9.0pt;color:blue;background:white'>&gt;</span><span
+style='font-size:9.0pt;color:black;background:white'>Tabacco User</span><span
+style='font-size:9.0pt;color:blue;background:white'>&lt;/</span><span
+style='font-size:9.0pt;color:maroon;background:white'>Name</span><span
+style='font-size:9.0pt;color:blue;background:white'>&gt;</span></p>
+
+<p class=MsoNormal style='margin:0in;margin-bottom:.0001pt;text-autospace:none'><span
+style='font-size:9.0pt;color:black;background:white'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span><span style='font-size:9.0pt;color:blue;background:white'>&lt;</span><span
+style='font-size:9.0pt;color:maroon;background:white'>List</span><span
+style='font-size:9.0pt;color:blue;background:white'>&gt;</span></p>
+
+<p class=MsoNormal style='margin:0in;margin-bottom:.0001pt;text-autospace:none'><span
+style='font-size:9.0pt;color:black;background:white'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span><span style='font-size:9.0pt;color:blue;background:white'>&lt;</span><span
+style='font-size:9.0pt;color:maroon;background:white'>Item</span><span
+style='font-size:9.0pt;color:blue;background:white'>&gt;</span><span
+style='font-size:9.0pt;color:black;background:white'>Cigarettes</span><span
+style='font-size:9.0pt;color:blue;background:white'>&lt;/</span><span
+style='font-size:9.0pt;color:maroon;background:white'>Item</span><span
+style='font-size:9.0pt;color:blue;background:white'>&gt;</span></p>
+
+<p class=MsoNormal style='margin:0in;margin-bottom:.0001pt;text-autospace:none'><span
+style='font-size:9.0pt;color:black;background:white'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span><span style='font-size:9.0pt;color:blue;background:white'>&lt;</span><span
+style='font-size:9.0pt;color:maroon;background:white'>Item</span><span
+style='font-size:9.0pt;color:blue;background:white'>&gt;</span><span
+style='font-size:9.0pt;color:black;background:white'>Pipe</span><span
+style='font-size:9.0pt;color:blue;background:white'>&lt;/</span><span
+style='font-size:9.0pt;color:maroon;background:white'>Item</span><span
+style='font-size:9.0pt;color:blue;background:white'>&gt;</span></p>
+
+<p class=MsoNormal style='margin:0in;margin-bottom:.0001pt;text-autospace:none'><span
+style='font-size:9.0pt;color:black;background:white'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span><span style='font-size:9.0pt;color:blue;background:white'>&lt;/</span><span
+style='font-size:9.0pt;color:maroon;background:white'>List</span><span
+style='font-size:9.0pt;color:blue;background:white'>&gt;</span></p>
+
+<p class=MsoNormal style='margin:0in;margin-bottom:.0001pt;text-autospace:none'><span
+style='font-size:9.0pt;color:black;background:white'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span><span style='font-size:9.0pt;color:blue;background:white'>&lt;/</span><span
+style='font-size:9.0pt;color:maroon;background:white'>OtherDescriptors</span><span
+style='font-size:9.0pt;color:blue;background:white'>&gt;</span></p>
+
+<p class=MsoNormal style='margin:0in;margin-bottom:.0001pt;text-autospace:none'><span
+style='font-size:9.0pt;color:black;background:white'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span><span style='font-size:9.0pt;color:blue;background:white'>&lt;</span><span
+style='font-size:9.0pt;color:maroon;background:white'>UserArea</span><span
+style='font-size:9.0pt;color:blue;background:white'>/&gt;</span></p>
+
+<p class=MsoNormal style='margin:0in;margin-bottom:.0001pt;text-autospace:none'><span
+style='font-size:9.0pt;color:blue;background:white'>&lt;/</span><span
+style='font-size:9.0pt;color:maroon;background:white'>PersonDescriptors</span><span
+style='font-size:9.0pt;color:blue;background:white'>&gt;</span></p>
+
+<p class=MsoNormal style='margin:0in;margin-bottom:.0001pt;text-autospace:none'><span
+style='font-size:9.0pt'>&nbsp;</span></p>
+
+<p class=MsoNormal style='margin:0in;margin-bottom:.0001pt;text-autospace:none'>&nbsp;</p>
+
+</div>
+
+</body>
+
+</html>

@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema targetNamespace="http://ns.hr-xml.org/2007-04-15" xmlns="http://ns.hr-xml.org/2007-04-15" xmlns:xsd="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" version="2007-04-15">
+	<xsd:annotation>
+		<xsd:documentation>
+"Copyright  The HR-XML Consortium. All Rights Reserved. http://www.hr-xml.org"
+Name: TransactionCodes.xsd
+Status: Recommendation
+Date this version: 2007-04-15
+Purpose: Defines transaction codes.
+Author(s): Jason Brown, Payroll work group
+Documentation: PayrollInstructions.html
+
+Terms of license can be found in license.txt.
+
+</xsd:documentation>
+	</xsd:annotation>
+	<xsd:include schemaLocation="../CPO/xStringPatternExtensionType.xsd"/>
+	<!-- the transaction code type -->
+	<xsd:simpleType name="TransactionCodeType">
+		<xsd:union memberTypes="BasicTransactionCodeType xStringPatternExtensionType"/>
+	</xsd:simpleType>
+	<xsd:simpleType name="BasicTransactionCodeType">
+		<xsd:restriction base="xsd:string">
+			<xsd:enumeration value="Add"/>
+			<xsd:enumeration value="Audit"/>
+			<xsd:enumeration value="Change"/>
+			<xsd:enumeration value="Correction"/>
+			<xsd:enumeration value="Delete"/>
+			<xsd:enumeration value="Suspend"/>
+			<xsd:enumeration value="Terminate"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<!-- the Transaction Code -->
+	<xsd:element name="TransactionCode" type="TransactionCodeType"/>
+</xsd:schema>

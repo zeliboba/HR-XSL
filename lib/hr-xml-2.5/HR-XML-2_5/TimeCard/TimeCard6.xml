@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TimeCard xmlns="http://ns.hr-xml.org/2007-04-15" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://ns.hr-xml.org/2007-04-15
+TimeCard.xsd">
+	<ReportedResource>
+		<Resource type="car">
+			<Id>
+				<IdValue>A4513585</IdValue>
+			</Id>
+			<ResourceName>ABC1 Corporate Limo</ResourceName>
+			<AdditionalData type="owner"> Office of the president</AdditionalData>
+		</Resource>
+	</ReportedResource>
+	<ReportedTime status="Raw">
+		<PeriodStartDate>2001-08-06</PeriodStartDate>
+		<PeriodEndDate>2001-08-12</PeriodEndDate>
+		<TimeInterval type="Regular" dayAssignment="current" billable="true">
+			<Id>
+				<IdValue>4501</IdValue>
+			</Id>
+			<StartDateTime>2001-08-06</StartDateTime>
+			<EndDateTime>2001-08-06</EndDateTime>
+			<Duration>PT2H</Duration>
+			<RateOrAmount currency="USD" type="Hourly" period="Hour">250.00</RateOrAmount>
+			<AdditionalData type="Project">19004-A17W1</AdditionalData>
+			<ApprovalInfo approverType="Manager">
+				<Person>
+					<Id>
+						<IdValue>000001</IdValue>
+					</Id>
+					<PersonName>
+						<FormattedName>Maxwell Short</FormattedName>
+					</PersonName>
+				</Person>
+				<ApprovedDateTime>2001-08-13T10:00:00</ApprovedDateTime>
+				<Comment>Confirmed that previous verbal approval of the limo's use was given by the CEO and should be charged against this project.</Comment>
+			</ApprovalInfo>
+			<Comment>Limo was used for this emergency with verbal approval of the CEO.</Comment>
+		</TimeInterval>
+		<ApprovalInfo approverType="CEO">
+			<Person>
+				<Id>
+					<IdValue>00003</IdValue>
+				</Id>
+				<PersonName>
+					<FormattedName>Quinn Montgomery</FormattedName>
+				</PersonName>
+			</Person>
+			<ApprovedDateTime>2001-08-13T11:23:00+05:00</ApprovedDateTime>
+		</ApprovalInfo>
+	</ReportedTime>
+	<SubmitterInfo>
+		<Person>
+			<Id>
+				<IdValue>125549</IdValue>
+			</Id>
+			<PersonName>
+				<FormattedName>Lucy Henderson</FormattedName>
+			</PersonName>
+		</Person>
+		<Source>QATimes</Source>
+		<SubmittedDateTime>2001-08-10T16:47:00+05:00</SubmittedDateTime>
+	</SubmitterInfo>
+</TimeCard>

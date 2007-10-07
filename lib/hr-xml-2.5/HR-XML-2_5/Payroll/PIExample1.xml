@@ -1,0 +1,43 @@
+<?xml version="1.0"?>
+<PayrollInstructions xmlns="http://ns.hr-xml.org/2007-04-15" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://ns.hr-xml.org/2007-04-15
+PayrollInstructions.xsd">
+	<PayrollEmployer>
+		<EmployerId>
+			<IdValue name="Employer Group Number">I12LENGINEER</IdValue>
+		</EmployerId>
+		<EmployerName>International Engineering, Inc.</EmployerName>
+	</PayrollEmployer>
+	<PersonInstruction>
+		<PayrollPerson>
+			<PersonId>
+				<IdValue name="Employee ID">12345</IdValue>
+			</PersonId>
+			<PersonName>
+				<GivenName>John</GivenName>
+				<MiddleName>A.</MiddleName>
+				<FamilyName>Smith</FamilyName>
+			</PersonName>
+			<PersonGovernmentId>
+				<IdValue name="Social Security Number">123-45-6789</IdValue>
+			</PersonGovernmentId>
+		</PayrollPerson>
+		<Instruction mode="Add">
+			<Deduction>
+				<DeductionPlan>
+					<DeductionCategory>x:Automobile Insurance</DeductionCategory>
+				</DeductionPlan>
+				<DeductionStartDate>2002-08-01</DeductionStartDate>
+			</Deduction>
+			<Amount currency="USD">
+				<AmountStartDate>2002-08-23</AmountStartDate>
+				<AmountValue>
+					<Fixed>
+						<Value>28.85</Value>
+					</Fixed>
+				</AmountValue>
+			</Amount>
+		</Instruction>
+		<UserArea/>
+	</PersonInstruction>
+	<UserArea/>
+</PayrollInstructions>

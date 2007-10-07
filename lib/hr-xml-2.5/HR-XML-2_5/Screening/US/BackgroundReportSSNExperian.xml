@@ -1,0 +1,287 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<BackgroundReports xmlns="http://ns.hr-xml.org/2007-04-15" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://ns.hr-xml.org/2007-04-15  BackgroundReports.xsd" userId="" password="" account="" location="" version="2007-04-15" xml:lang="en">
+	<ProviderReferenceId idOwner="Hirecheck">
+		<IdValue>0178567</IdValue>
+	</ProviderReferenceId>
+	<!--
+Sample XML depicting the text and parsed results of a SSN  Search. 
+-->
+	<BackgroundReportPackage type="report">
+		<ClientReferenceId>
+			<IdValue>bec61f0f-aaa9-4211-8e49-18d603c76cd0</IdValue>
+		</ClientReferenceId>
+		<CopyToApplicant>false</CopyToApplicant>
+		<ScreeningsSummary>
+			<Organization type="Vendor">
+				<OrganizationName>First Advantage</OrganizationName>
+				<ContactMethod>
+					<Use>business</Use>
+					<Location>office</Location>
+					<Telephone>
+						<FormattedNumber>1-800-321-4473</FormattedNumber>
+					</Telephone>
+				</ContactMethod>
+			</Organization>
+			<PersonalData type="Current">
+				<PersonName type="Subject">
+					<GivenName>STEPHANIE</GivenName>
+					<MiddleName>J</MiddleName>
+					<FamilyName>DOE</FamilyName>
+				</PersonName>
+				<!--  Home Address -->
+				<PostalAddress type="streetAddress" validFrom="2001-04-01">
+					<CountryCode>US</CountryCode>
+					<PostalCode>20170</PostalCode>
+					<Region>VA</Region>
+					<Municipality>HERNDON</Municipality>
+					<DeliveryAddress>
+						<AddressLine>15555 GARBERRY CT</AddressLine>
+					</DeliveryAddress>
+				</PostalAddress>
+				<ContactMethod>
+					<Use>personal</Use>
+					<Location>home</Location>
+					<Telephone>
+						<FormattedNumber>555-123-4567</FormattedNumber>
+					</Telephone>
+					<!--  Mailing Address -->
+					<PostalAddress type="postOfficeBoxAddress">
+						<CountryCode>US</CountryCode>
+						<PostalCode>20171</PostalCode>
+						<Region>VA</Region>
+						<Municipality>Oak Hill</Municipality>
+						<DeliveryAddress>
+							<PostOfficeBox>50</PostOfficeBox>
+						</DeliveryAddress>
+					</PostalAddress>
+				</ContactMethod>
+				<DemographicDetail>
+					<GovernmentId countryCode="US" issuingAuthority="SSN">555-55-5555</GovernmentId>
+					<DateOfBirth>1974-01-14</DateOfBirth>
+					<Race>W</Race>
+					<GenderCode>1</GenderCode>
+				</DemographicDetail>
+			</PersonalData>
+			<PersonalData type="Prior">
+				<PersonName type="Subject">
+					<GivenName>STEPHANIE</GivenName>
+					<MiddleName>J</MiddleName>
+					<FamilyName>DOUGHNUT</FamilyName>
+				</PersonName>
+				<!--  Home Address -->
+				<PostalAddress type="streetAddress" validFrom="2000-04-01" validTo="2001-04-01">
+					<CountryCode>US</CountryCode>
+					<PostalCode>20878</PostalCode>
+					<Region>VA</Region>
+					<Municipality>North Potomac</Municipality>
+				</PostalAddress>
+				<PostalAddress type="streetAddress" validFrom="1996-11-01" validTo="2000-04-01">
+					<CountryCode>US</CountryCode>
+					<PostalCode>20737</PostalCode>
+					<Region>VA</Region>
+					<Municipality>Riverdale</Municipality>
+				</PostalAddress>
+			</PersonalData>
+			<ClientReferences>
+				<IdValue name="BillingCode">176-345</IdValue>
+			</ClientReferences>
+		</ScreeningsSummary>
+		<Screenings>
+			<Screening type="license" qualifier="mvPersonal" xml:lang="en">
+				<ProviderReferenceId>
+					<IdValue>6069481</IdValue>
+				</ProviderReferenceId>
+				<ClientReferenceId>
+					<IdValue>B0019474MV</IdValue>
+				</ClientReferenceId>
+				<ScreeningStatus>
+					<OrderStatus>Completed</OrderStatus>
+					<ResultStatus>Review</ResultStatus>
+					<DateOrderReceived>2003-01-21</DateOrderReceived>
+				</ScreeningStatus>
+				<CountryCode>US</CountryCode>
+				<Region>VA</Region>
+				<LegalText type="Disclaimer" fontSize="16" fontColor="Red">
+					<Text>
+                                DISCLAIMER
+
+     Information contained herein should not be the sole determination in 
+     evaluation of this individual.  All other factors, references and 
+     current situations should be considered.  Human error in compiling 
+     this information is possible.  The FCRA requires certain actions if 
+     you take adverse action based in whole or in part on this report.
+     See your Help File, the FCRA or call for procedures.</Text>
+				</LegalText>
+				<ScreeningResults type="results" mediaType="txt" resultType="report">
+					<Text>                                DISCLAIMER
+
+     Information contained herein should not be the sole determination in 
+     evaluation of this individual.  All other factors, references and 
+     current situations should be considered.  Human error in compiling 
+     this information is possible.  The FCRA requires certain actions if 
+     you take adverse action based in whole or in part on this report.
+     See your Help File, the FCRA or call for procedures.
+
+
+                       SOCIAL SECURITY SEARCH - EXPERIAN
+
+PAGE 1   DATE 12-04-2001  TIME 11:58:54  P@FEP  V401      
+
+STEPHANIE DOE                    SS: 555-44-5555 15X
+ 2702 HUNGARY SPRING RD           DOB: 01/14/74
+ RICHMOND VA 23294-6321
+ RPTD: 2-97 TO 10-01 U 11X
+ LAST SUB: 1304310  
+
+ 611 STATION SQUARE LN
+ CHESAPEAKE VA 23320-3173
+ RPTD: 1-97 TO 9-00 U 2X
+ LAST SUB: 3308810  
+
+ 2309 CECIL RD APT A
+ RICHMOND VA 23220-1421
+ RPTD: 10-96 TO 12-96 U
+ LAST SUB: 1993260  
+
+ 3836 BRENTWOOD CRES
+ VIRGINIA BEACH VA 23452-2303
+ RPTD: 8-93 TO 11-96 U
+ LAST SUB: 9994280  
+
+ 3836 FORESTWOOD CT
+ VIRGINIA BEACH VA 23456-2103
+ RPTD: 5-96 U
+ LAST SUB: 1304310  
+
+ PO BOX 8377
+ PETERSBURG VA 23806-0001
+ RPTD: 12-95 TO 1-96 U
+ LAST SUB: 2980585  
+
+ PO BOX 8424
+ PETERSBURG VA 23806-0001
+ RPTD: 12-93 U
+ LAST SUB: 1223066  
+
+ POST OFFICE BOX
+ PETERSBURG VA 23806
+ RPTD: 3-01 U
+ LAST SUB: 0940579  
+
+ STEPHANIE SMITH
+
+ +++++ MORE
+
+
+
+
+
+
+
+
+PAGE 2   DATE 12-04-2001  TIME 11:58:54  P@FEP  V401      
+
+ ------------------------------- FACS+ SUMMARY --------------------------------
+ INPUT SSN ISSUED 1980-1982                FILE: COMMERCIAL BUSINESS ADDRESS:
+ FROM  9-01-01 INQ COUNT FOR SSN=1               COMMERCIAL BUSINESS ADDRESS
+                                                 ELIZABETH
+                                                 PETERSBURG VA 23806
+                                                 804.733.8753
+
+</Text>
+				</ScreeningResults>
+				<SSNReport vendor="experian">
+					<ProcessedDate>
+						<AnyDate>2001-12-04T11:58:54</AnyDate>
+					</ProcessedDate>
+					<CreditFile vendor="experian">
+						<PersonalData>
+							<PersonName type="Subject">
+								<GivenName>STEPHANIE</GivenName>
+								<FamilyName>DOE</FamilyName>
+							</PersonName>
+							<!--All addresses where not included for sake of brevity. -->
+							<PostalAddress type="undefined" enteredOnInquiry="false">
+								<CountryCode>US</CountryCode>
+								<PostalCode>23294-6321</PostalCode>
+								<Region>VA</Region>
+								<Municipality>RICHMOND</Municipality>
+								<DeliveryAddress>
+									<AddressLine>2702 HUNGARY SPRING RD</AddressLine>
+								</DeliveryAddress>
+								<ReportedDate type="Update" timesReported="11">
+									<EffectiveDate>
+										<StartDate>
+											<YearMonth>1997-02</YearMonth>
+										</StartDate>
+										<EndDate>
+											<YearMonth>2001-10</YearMonth>
+										</EndDate>
+									</EffectiveDate>
+								</ReportedDate>
+								<LastReportedBy>1304310</LastReportedBy>
+							</PostalAddress>
+							<PostalAddress type="undefined" enteredOnInquiry="false">
+								<CountryCode>US</CountryCode>
+								<PostalCode>23320-3173</PostalCode>
+								<Region>VA</Region>
+								<Municipality>CHESAPEAKE</Municipality>
+								<DeliveryAddress>
+									<AddressLine>611 STATION SQUARE LN</AddressLine>
+								</DeliveryAddress>
+								<ReportedDate type="Update" timesReported="2">
+									<EffectiveDate>
+										<StartDate>
+											<YearMonth>1997-01</YearMonth>
+										</StartDate>
+										<EndDate>
+											<YearMonth>2000-09</YearMonth>
+										</EndDate>
+									</EffectiveDate>
+								</ReportedDate>
+								<LastReportedBy>3308810</LastReportedBy>
+							</PostalAddress>
+							<DemographicDetail>
+								<GovernmentId countryCode="US" issuingAuthority="SSN" validFrom="1980" validTo="1982"></GovernmentId>
+								<DateOfBirth>1974-01-14</DateOfBirth>
+							</DemographicDetail>
+						</PersonalData>
+						<ReportedAliases>
+							<PersonName type="Alias">
+								<GivenName>STEPHANIE</GivenName>
+								<FamilyName>SMITH</FamilyName>
+							</PersonName>
+						</ReportedAliases>
+					</CreditFile>
+					<CreditConsumerReferral type="Vendor" qualifier="File">
+						<OrganizationName>COMMERCIAL BUSINESS ADDRESS</OrganizationName>
+						<ContactMethod>
+							<Use>business</Use>
+							<Location>office</Location>
+							<WhenAvailable>String</WhenAvailable>
+							<Telephone>
+								<FormattedNumber>804-555-5555</FormattedNumber>
+							</Telephone>
+							<PostalAddress type="undefined">
+								<CountryCode>US</CountryCode>
+								<PostalCode>23806</PostalCode>
+								<Region>VA</Region>
+								<Municipality>PETERSBURG</Municipality>
+								<Recipient>
+									<PersonName>
+										<FormattedName>ELIZABETH</FormattedName>
+									</PersonName>
+								</Recipient>
+							</PostalAddress>
+						</ContactMethod>
+						<CreditBusinessType>
+							<RepositoryValue>COMMERCIAL BUSINESS ADDRESS</RepositoryValue>
+						</CreditBusinessType>
+					</CreditConsumerReferral>
+				</SSNReport>
+				<UserArea></UserArea>
+			</Screening>
+		</Screenings>
+	</BackgroundReportPackage>
+	<UserArea></UserArea>
+</BackgroundReports>

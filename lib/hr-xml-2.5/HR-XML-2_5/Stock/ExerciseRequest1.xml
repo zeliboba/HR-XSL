@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ExerciseRequest xmlns="http://ns.hr-xml.org/2007-04-15" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://ns.hr-xml.org/2007-04-15
+ExerciseRequest.xsd">
+	<Id>
+		<IdValue>ER-1</IdValue>
+	</Id>
+	<ParticipantId>
+		<IdValue>P-1</IdValue>
+	</ParticipantId>
+	<RequestDate>2002-07-13</RequestDate>
+	<ExerciseDate>2002-07-14</ExerciseDate>
+	<ExerciseInfo>
+		<GrantId>
+			<IdValue>G-1</IdValue>
+		</GrantId>
+		<OptionsToBeExercised>200</OptionsToBeExercised>
+		<SharesToBeSold>0</SharesToBeSold>
+		<SARPercentCashRequested>0</SARPercentCashRequested>
+	</ExerciseInfo>
+	<ExerciseInstructions>
+		<SellToCoverOptions>true</SellToCoverOptions>
+		<SellToCoverTaxes>false</SellToCoverTaxes>
+		<SellToCoverFees>false</SellToCoverFees>
+		<UseSharesForTaxes>false</UseSharesForTaxes>
+		<UseSharesFirst>false</UseSharesFirst>
+		<SharesSwapped>0</SharesSwapped>
+		<SaleType>
+			<MarketOrder>true</MarketOrder>
+		</SaleType>
+	</ExerciseInstructions>
+</ExerciseRequest>

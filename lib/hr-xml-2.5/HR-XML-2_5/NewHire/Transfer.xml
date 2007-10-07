@@ -1,0 +1,391 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<NewHire xmlns="http://ns.hr-xml.org/2007-04-15" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://ns.hr-xml.org/2007-04-15
+NewHire.xsd">
+	<TypeOfHire>
+		<StandardValue>Transfer</StandardValue>
+	</TypeOfHire>
+	<EmployeeInfo>
+		<PersonName>
+			<FormattedName>String</FormattedName>
+			<LegalName>Jane Doe</LegalName>
+			<GivenName>Jane</GivenName>
+			<FamilyName>Doe</FamilyName>
+		</PersonName>
+		<ApplicantId idOwner="Applicant Tracking System">
+			<IdValue name="CandidateId">124578</IdValue>
+		</ApplicantId>
+		<EmployeeId idOwner="myERP">
+			<IdValue name="CentralId">jdoe0258</IdValue>
+			<IdValue name="EmployeeId">65982</IdValue>
+		</EmployeeId>
+	</EmployeeInfo>
+	<ApplicationInfo>
+		<ApplicationHistory>
+			<HiringProcessActivity>
+				<Type>Application submitted</Type>
+				<ActivityPerformer>
+					<PersonName>
+						<FormattedName>String</FormattedName>
+						<GivenName>Jane</GivenName>
+						<MiddleName>P</MiddleName>
+						<FamilyName>Doe</FamilyName>
+					</PersonName>
+					<Role>Candidate</Role>
+				</ActivityPerformer>
+				<Date>2005-01-18</Date>
+			</HiringProcessActivity>
+			<HiringProcessActivity>
+				<Type>Application reviewed</Type>
+				<ActivityPerformer>
+					<PersonName>
+						<GivenName>John</GivenName>
+						<FamilyName>Clark</FamilyName>
+					</PersonName>
+					<PersonId>
+						<IdValue name="EmployeeId">789654</IdValue>
+					</PersonId>
+					<Role>Recruiter</Role>
+					<Comments>Seems like a perfect fit
+We need to contact her asap before the competition does.</Comments>
+				</ActivityPerformer>
+				<Date>2005-01-18</Date>
+				<ActivityResults>Candidate moved to 1st Interview</ActivityResults>
+			</HiringProcessActivity>
+			<HiringProcessActivity>
+				<Type>1st Interview</Type>
+				<ActivityPerformer>
+					<PersonName>
+						<GivenName>John</GivenName>
+						<FamilyName>Clark</FamilyName>
+					</PersonName>
+					<PersonId>
+						<IdValue name="EmployeeId">789654</IdValue>
+					</PersonId>
+					<Role>Recruiter</Role>
+					<Comments>Very articulated candidate.
+Good fit with the corporate culture
+Careful with non-compete clause</Comments>
+				</ActivityPerformer>
+				<ActivityPerformer>
+					<PersonName>
+						<GivenName>Rachel</GivenName>
+						<FamilyName>Lang</FamilyName>
+					</PersonName>
+					<PersonId>
+						<IdValue name="EmployeeId">659832</IdValue>
+					</PersonId>
+					<Role>Manager</Role>
+					<Comments>Knows the job. She actually did it for one of our competitor.</Comments>
+				</ActivityPerformer>
+				<Date>2005-01-25</Date>
+				<ActivityResults>Initiates background check and deeper assessment</ActivityResults>
+			</HiringProcessActivity>
+			<HiringProcessActivity>
+				<Type>Background Check Requested</Type>
+				<ActivityPerformer>
+					<PersonName>
+						<GivenName>John</GivenName>
+						<FamilyName>Clark</FamilyName>
+					</PersonName>
+					<PersonId>
+						<IdValue name="EmployeeId">789654</IdValue>
+					</PersonId>
+					<Role>Recruiter</Role>
+				</ActivityPerformer>
+				<Date>2005-01-25</Date>
+				<ActivityResults>Credit Report</ActivityResults>
+			</HiringProcessActivity>
+			<HiringProcessActivity>
+				<Type>Assessment Requested</Type>
+				<ActivityPerformer>
+					<PersonName>
+						<GivenName>John</GivenName>
+						<FamilyName>Clark</FamilyName>
+					</PersonName>
+					<PersonId>
+						<IdValue name="EmployeeId">789654</IdValue>
+					</PersonId>
+					<Role>Recruiter</Role>
+				</ActivityPerformer>
+				<Date>2005-01-25</Date>
+				<ActivityResults>Leadership
+UI Design
+Project management
+Dreamweaver</ActivityResults>
+			</HiringProcessActivity>
+			<HiringProcessActivity>
+				<Type>Background Check</Type>
+				<Date>2005-01-26</Date>
+				<ActivityResults>Passed</ActivityResults>
+			</HiringProcessActivity>
+			<HiringProcessActivity>
+				<Type>Assessment</Type>
+				<Date>2005-01-26</Date>
+				<ActivityResults>Behavioural: 68
+UI Design: 86
+DreamWeaver: 90
+Project Management: 58</ActivityResults>
+			</HiringProcessActivity>
+			<HiringProcessActivity>
+				<Type>2nd Interview</Type>
+				<ActivityPerformer>
+					<PersonName>
+						<GivenName>John</GivenName>
+						<FamilyName>Clark</FamilyName>
+					</PersonName>
+					<PersonId>
+						<IdValue name="EmployeeId">789654</IdValue>
+					</PersonId>
+					<Role>Recruiter</Role>
+					<Comments>I recommend some leadership training if she is selected.</Comments>
+				</ActivityPerformer>
+				<ActivityPerformer>
+					<PersonName>
+						<GivenName>Rachel</GivenName>
+						<FamilyName>Lang</FamilyName>
+					</PersonName>
+					<PersonId>
+						<IdValue name="EmployeeId">659832</IdValue>
+					</PersonId>
+					<Role>Manager</Role>
+					<Comments>Good team player. Seems to have leadership capabilities. May be the technical lead we need</Comments>
+				</ActivityPerformer>
+				<ActivityPerformer>
+					<PersonName>
+						<GivenName>Tom</GivenName>
+						<FamilyName>Skolch</FamilyName>
+					</PersonName>
+					<PersonId>
+						<IdValue name="EmployeeId">123987</IdValue>
+					</PersonId>
+					<Role>Employee</Role>
+					<Comments>Knows the job. She actually did it for our own corporate intranet.</Comments>
+				</ActivityPerformer>
+				<Date>2005-01-28</Date>
+				<ActivityResults>Offer issued</ActivityResults>
+			</HiringProcessActivity>
+			<HiringProcessActivity>
+				<Type>Offer approval submitted</Type>
+				<ActivityPerformer>
+					<PersonName>
+						<GivenName>John</GivenName>
+						<FamilyName>Clark</FamilyName>
+					</PersonName>
+					<PersonId>
+						<IdValue name="EmployeeId">789654</IdValue>
+					</PersonId>
+					<Role>Recruiter</Role>
+					<Comments>Salary within regional and industry norms.
+Requested vacation for this spring.</Comments>
+				</ActivityPerformer>
+				<Date>2005-01-29</Date>
+			</HiringProcessActivity>
+			<HiringProcessActivity>
+				<Type>Offer approved</Type>
+				<ActivityPerformer>
+					<PersonName>
+						<GivenName>Rachel</GivenName>
+						<FamilyName>Lang</FamilyName>
+					</PersonName>
+					<PersonId>
+						<IdValue name="EmployeeId">659832</IdValue>
+					</PersonId>
+					<Role>Manager</Role>
+				</ActivityPerformer>
+				<Date>2005-01-29</Date>
+			</HiringProcessActivity>
+			<HiringProcessActivity>
+				<Type>Offer approved</Type>
+				<ActivityPerformer>
+					<PersonName>
+						<GivenName>Mike</GivenName>
+						<FamilyName>McFinch</FamilyName>
+					</PersonName>
+					<PersonId>
+						<IdValue name="EmployeeId">451296</IdValue>
+					</PersonId>
+					<Role>Director</Role>
+					<Comments>OK for me</Comments>
+				</ActivityPerformer>
+				<Date>2005-01-29</Date>
+			</HiringProcessActivity>
+			<HiringProcessActivity>
+				<Type>Offer submitted</Type>
+				<ActivityPerformer>
+					<PersonName>
+						<GivenName>John</GivenName>
+						<FamilyName>Clark</FamilyName>
+					</PersonName>
+					<PersonId>
+						<IdValue name="EmployeeId">789654</IdValue>
+					</PersonId>
+					<Role>Recruiter</Role>
+				</ActivityPerformer>
+				<Date>2005-01-29</Date>
+			</HiringProcessActivity>
+			<HiringProcessActivity>
+				<Type>Offer accepted</Type>
+				<ActivityPerformer>
+					<PersonName>
+						<GivenName>John</GivenName>
+						<FamilyName>Clark</FamilyName>
+					</PersonName>
+					<PersonId>
+						<IdValue name="EmployeeId">789654</IdValue>
+					</PersonId>
+					<Role>Recruiter</Role>
+					<Comments>Expected start date 03/01/2005</Comments>
+				</ActivityPerformer>
+				<Date>2005-01-30</Date>
+				<ActivityResults>New Hire</ActivityResults>
+			</HiringProcessActivity>
+		</ApplicationHistory>
+		<ScreeningResults>
+			<MedicalResults>Vision Test: Passed</MedicalResults>
+		</ScreeningResults>
+		<TaxCreditInfo countryCode="US">
+			<Jurisdiction>Federal</Jurisdiction>
+			<IsApplicable>true</IsApplicable>
+			<Description>This employer might be eligible for federal tax credits for this candidate</Description>
+		</TaxCreditInfo>
+		<TaxCreditInfo countryCode="US">
+			<Jurisdiction>State</Jurisdiction>
+			<IsApplicable>false</IsApplicable>
+			<Description>This employer is not eligible for state tax credits for this candidate</Description>
+		</TaxCreditInfo>
+		<WorkEligibilityInfo>
+			<DocumentId validFrom="2005-01-08" idOwner="DMV" validTo="2009-05-26">
+				<IdValue name="License Id">D123456</IdValue>
+			</DocumentId>
+			<DocumentName>Driver License</DocumentName>
+			<VerificationInfo>
+				<OrganizationName/>
+				<Status>Complete</Status>
+				<Date>2005-05-15</Date>
+				<PersonName>
+					<FormattedName>Marion Millheiser</FormattedName>
+				</PersonName>
+			</VerificationInfo>
+			<IssuingAuthority>California Department of Motor Vehicle</IssuingAuthority>
+			<IsDocumentSignedByCandidate>true</IsDocumentSignedByCandidate>
+		</WorkEligibilityInfo>
+		<WorkEligibilityInfo>
+			<DocumentId validFrom="2004-06-15" idOwner="SSD">
+				<IdValue name="SSN">123-45-6789</IdValue>
+			</DocumentId>
+			<DocumentName>Social Security Card</DocumentName>
+			<VerificationInfo>
+				<Status>Complete</Status>
+				<Date>2005-05-17</Date>
+				<PersonName>
+					<FormattedName>Bob Smith</FormattedName>
+				</PersonName>
+			</VerificationInfo>
+			<IssuingAuthority>Social Security Department</IssuingAuthority>
+			<IsDocumentSignedByCandidate>true</IsDocumentSignedByCandidate>
+		</WorkEligibilityInfo>
+		<CandidateSupplier>
+			<SupplierId idOwner="myERP">
+				<IdValue name="EmployeeId">789456</IdValue>
+			</SupplierId>
+			<EntityName>Lori Stihl</EntityName>
+			<SourceType>
+				<StandardValue>Referrer</StandardValue>
+			</SourceType>
+		</CandidateSupplier>
+	</ApplicationInfo>
+	<PositionInfo>
+		<ReferenceInfo>
+			<RequisitionId idOwner="myATS">
+				<IdValue name="ContestNumber">RD-123456</IdValue>
+			</RequisitionId>
+			<PositionId idOwner="myHRMS">
+				<IdValue name="PositionId">456789</IdValue>
+			</PositionId>
+		</ReferenceInfo>
+		<OfferInfo>
+			<NegotiatedPositionTitle>Senior UI Designer</NegotiatedPositionTitle>
+			<NegotiatedPositionDescription>Refer to Standard Job Description</NegotiatedPositionDescription>
+			<OfferMade>
+				<OfferedBy>
+					<PersonName>
+						<GivenName>Hans</GivenName>
+						<FamilyName>Loehm</FamilyName>
+					</PersonName>
+					<PersonId>
+						<IdValue name="EmployeeId">659847</IdValue>
+					</PersonId>
+				</OfferedBy>
+				<OfferedOnDate>2005-01-29</OfferedOnDate>
+			</OfferMade>
+			<DateJobAccepted>2005-01-30</DateJobAccepted>
+			<EmploymentStartDate>2005-02-15</EmploymentStartDate>
+			<RemunerationInfo>
+				<BasePay baseInterval="Annually" currencyCode="USD">100000</BasePay>
+				<OtherPay baseInterval="Annually" type="Bonus" currencyCode="USD">10000.00</OtherPay>
+				<Benefits>
+					<Insurance type="Dental">true</Insurance>
+					<Insurance type="Life">true</Insurance>
+					<Insurance type="Vision">true</Insurance>
+					<Insurance type="Medical">true</Insurance>
+					<RetirementOrSavingsPlan>true</RetirementOrSavingsPlan>
+					<CompanyVehicle companyOffered="false"/>
+					<RelocationAssistance companyOffered="true">
+						<Description>Company takes in charge all relocation costs
+Marriott Executive suites for the first two months
+Help in finding house + school</Description>
+					</RelocationAssistance>
+					<VisaSponsorship>false</VisaSponsorship>
+					<TimeOffAllowance>
+						<Description>Following the corporate policies</Description>
+					</TimeOffAllowance>
+				</Benefits>
+			</RemunerationInfo>
+			<Shift shiftPeriod="Daily">
+				<Name>Day</Name>
+				<Hours>8</Hours>
+				<StartTime>09:00:00</StartTime>
+				<EndTime>17:00:00</EndTime>
+				<PayTypeHours>Regular</PayTypeHours>
+			</Shift>
+			<EmploymentLevel>FullTime</EmploymentLevel>
+			<ResourceRelationship>Employee</ResourceRelationship>
+			<EmploymentTerm isSeasonal="false" isInternship="false">Regular</EmploymentTerm>
+		</OfferInfo>
+		<OrganizationalUnit typeOfGroup="Division" hierarchicalRole="Logical">
+			<OrganizationalUnitName>Los Angeles</OrganizationalUnitName>
+			<Description>Los Angeles office is now attached to RD</Description>
+			<AccountingCode description="business unit">333991231LA</AccountingCode>
+		</OrganizationalUnit>
+		<OrganizationalUnit typeOfGroup="Team" hierarchicalRole="Functional">
+			<OrganizationalUnitName>UXP</OrganizationalUnitName>
+			<Description>User Experience Group is responsible for the user-interface of the application</Description>
+			<WorkSite>
+				<WorkSiteName>LA-Santa Monica</WorkSiteName>
+				<ParkingInstructions>Parking underground</ParkingInstructions>
+				<WorkSiteEnvironment>
+					<Considerations>
+						<DressCode suppliedByOrganization="false">Business Casual</DressCode>
+					</Considerations>
+				</WorkSiteEnvironment>
+			</WorkSite>
+		</OrganizationalUnit>
+		<ManagerInfo role="Manager">
+			<ContactInfo>
+				<PersonName>
+					<GivenName>Rachel</GivenName>
+					<FamilyName>Lang</FamilyName>
+				</PersonName>
+				<ContactMethod>
+					<Telephone>
+						<FormattedNumber>355-789-1556</FormattedNumber>
+					</Telephone>
+				</ContactMethod>
+			</ContactInfo>
+			<ManagerId>
+				<IdValue name="EmployeeId">659832</IdValue>
+			</ManagerId>
+		</ManagerInfo>
+		<MultipleJobIndicator>false</MultipleJobIndicator>
+	</PositionInfo>
+</NewHire>

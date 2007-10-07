@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sch:schema xmlns="http://www.ascc.net/xml/schematron" xmlns:oa="http://www.openapplications.org/oagis" xmlns:sch="http://www.ascc.net/xml/schematron" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.ascc.net/xml/schematron ../../../Utility/Schematron/schematron1-5.xsd">
+	<sch:title>Schematron Validator for OAGI Constraints</sch:title>
+	<sch:ns prefix="oa" uri="http://www.openapplications.org/oagis"/>
+	<sch:pattern name="Noun Level">
+		<sch:rule context="oa:Invoice">
+			<sch:assert test="oa:Header">Must have a Header component.</sch:assert>
+		</sch:rule>
+	</sch:pattern>
+	<sch:pattern name="Header Level">
+		<sch:rule context="oa:Header">
+			<sch:assert test="oa:DocumentIds/oa:DocumentId">Must have a DocumentId to identify the document.</sch:assert>
+		</sch:rule>
+	</sch:pattern>
+	<sch:pattern name="Line Level">
+		<sch:rule context="oa:Line">
+			<sch:assert test="oa:LineNumber">Must identify the LineNumber of the Invoice</sch:assert>
+			<sch:assert test="oa:ExtendedPrice">Must have the extended price of the InvoiceLine.</sch:assert>
+		</sch:rule>
+	</sch:pattern>
+	<sch:pattern name="AllowanceLevel">
+		<sch:rule context="oa:Allowance">
+			<sch:assert test="oa:Total">Required to have the Total of the Allowance.</sch:assert>
+		</sch:rule>
+	</sch:pattern>
+	<sch:pattern name="Charge Level">
+		<sch:rule context="oa:Charge">
+			<sch:assert test="oa:Total">Required to have the Total of the Charge.</sch:assert>
+		</sch:rule>
+	</sch:pattern>
+	<sch:pattern name="Tax Level">
+		<sch:rule context="oa:Tax">
+			<sch:assert test="oa:TaxAmount">Required to have the TaxAmount of the Tax.</sch:assert>
+		</sch:rule>
+	</sch:pattern>
+</sch:schema>

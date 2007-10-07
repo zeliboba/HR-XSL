@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TimeCard xmlns="http://ns.hr-xml.org/2007-04-15" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://ns.hr-xml.org/2007-04-15
+TimeCard.xsd">
+	<ReportedResource>
+		<Person>
+			<Id>
+				<IdValue>d026194</IdValue>
+			</Id>
+		</Person>
+	</ReportedResource>
+	<ReportedTime>
+		<PeriodStartDate>2001-05-01</PeriodStartDate>
+		<PeriodEndDate>2001-05-18</PeriodEndDate>
+		<TimeInterval type="Regular" billable="true">
+			<StartDateTime>2001-05-07</StartDateTime>
+			<EndDateTime>2001-05-07</EndDateTime>
+			<Duration>PT8H</Duration>
+			<AdditionalData type="Task">Repair</AdditionalData>
+			<AdditionalData type="Order">1212</AdditionalData>
+			<AdditionalData type="CostCenter">700</AdditionalData>
+			<Comment>Aaabbbccc</Comment>
+		</TimeInterval>
+		<Expense type="Meal" billable="true">
+			<ExpenseDate>2001-05-07</ExpenseDate>
+			<ExpenseAmount currency="USD">10</ExpenseAmount>
+			<AdditionalData type="Order">1212</AdditionalData>
+			<AdditionalData type="CostCenter">700</AdditionalData>
+		</Expense>
+		<TimeInterval type="Vacation">
+			<StartDateTime>2001-05-08</StartDateTime>
+			<EndDateTime>2001-05-11</EndDateTime>
+		</TimeInterval>
+		<TimeInterval type="Regular">
+			<StartDateTime>2001-05-14</StartDateTime>
+			<EndDateTime>2001-05-14</EndDateTime>
+			<Duration>PT4H</Duration>
+			<AdditionalData type="Task">Production</AdditionalData>
+			<AdditionalData type="CostCenter">800</AdditionalData>
+		</TimeInterval>
+		<TimeInterval type="Sickness">
+			<StartDateTime>2001-05-14</StartDateTime>
+			<EndDateTime>2001-05-14</EndDateTime>
+			<Duration>PT4H</Duration>
+		</TimeInterval>
+		<TimeInterval type="Sickness">
+			<StartDateTime>2001-05-15</StartDateTime>
+			<EndDateTime>2001-05-18</EndDateTime>
+		</TimeInterval>
+	</ReportedTime>
+</TimeCard>

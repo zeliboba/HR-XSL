@@ -1,0 +1,486 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<BackgroundReports xmlns="http://ns.hr-xml.org/2007-04-15" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://ns.hr-xml.org/2007-04-15  BackgroundReports.xsd" userId="" password="" account="" location="" version="2007-04-15" xml:lang="en">
+	<ProviderReferenceId idOwner="Hirecheck">
+		<IdValue>0178567</IdValue>
+	</ProviderReferenceId>
+	<!--
+Sample XML depicting the text and parsed results of a Equifax Credit Search. 
+-->
+	<BackgroundReportPackage type="report">
+		<ClientReferenceId>
+			<IdValue>bec61f0f-aaa9-4211-8e49-18d603c76cd0</IdValue>
+		</ClientReferenceId>
+		<CopyToApplicant>true</CopyToApplicant>
+		<ScreeningsSummary>
+			<Organization type="Vendor">
+				<OrganizationName>First Advantage</OrganizationName>
+				<ContactMethod>
+					<Use>business</Use>
+					<Location>office</Location>
+					<Telephone>
+						<FormattedNumber>1-800-321-4473</FormattedNumber>
+					</Telephone>
+				</ContactMethod>
+			</Organization>
+			<PersonalData type="Current">
+				<PersonName type="Subject">
+					<GivenName>MIRIAM</GivenName>
+					<MiddleName>M</MiddleName>
+					<FamilyName primary="undefined" prefix="">DOE</FamilyName>
+				</PersonName>
+				<PostalAddress type="undefined">
+					<CountryCode>US</CountryCode>
+					<PostalCode>22311</PostalCode>
+					<Region>VA</Region>
+					<Municipality>ALEXANDRIA</Municipality>
+					<DeliveryAddress>
+						<StreetName>3714 N ROSSER ST</StreetName>
+						<Unit>APT 301</Unit>
+					</DeliveryAddress>
+				</PostalAddress>
+				<DemographicDetail>
+					<GovernmentId countryCode="US" issuingAuthority="SSN">228515555</GovernmentId>
+				</DemographicDetail>
+			</PersonalData>
+			<ClientReferences>
+				<IdValue name="BillingCode">176-345</IdValue>
+			</ClientReferences>
+		</ScreeningsSummary>
+		<Screenings>
+			<Screening type="credit">
+				<ProviderReferenceId>
+					<IdValue>900XXX0C0</IdValue>
+				</ProviderReferenceId>
+				<ClientReferenceId>
+					<IdValue>B0019474MV</IdValue>
+				</ClientReferenceId>
+				<ScreeningStatus>
+					<OrderStatus>Completed</OrderStatus>
+					<ResultStatus>Fail</ResultStatus>
+					<DateOrderReceived>2002-07-26</DateOrderReceived>
+				</ScreeningStatus>
+				<CountryCode>US</CountryCode>
+				<Region>VA</Region>
+				<Vendor>equifax</Vendor>
+				<ScreeningResults type="results" mediaType="txt" resultType="report">
+					<Text>                                DISCLAIMER
+
+     Information contained herein should not be the sole determination in 
+     evaluation of this individual.  All other factors, references and 
+     current situations should be considered.  Human error in compiling 
+     this information is possible.  The FCRA requires certain actions if 
+     you take adverse action based in whole or in part on this report.
+     See your Help File, the FCRA or call for procedures.
+
+
+                        CREDIT BUREAU  SEARCH - EQUIFAX
+
+   
+**PERSONA-FILE FOR EMPLOYMENT PURPOSES**
+           
+
+*  007 EQUIFAX CREDIT INFORMATION SERVICES,               P O BOX 740241,     
+       ,ATLANTA,GA,30374-0241,800/685-1111                                    
+
+*DOE,MIRIAM,M   SINCE 01/23/90  FAD 09/04/01          FN-787
+ 3714,N ROSSER,ST APT 301,ALEXANDRIA,VA,22311,TAPE RPTD 09/00
+ 6210,ROSE HILL,DR APT 2A,ALEXANDRIA,VA,22310,TAPE RPTD 09/01
+ 5013,SUNNY RIDGE,CT APT 103,WOODRIDGE,VA,22191,DAT RPTD 04/01
+ SSS-228-51-5555
+01 ES-DATA ANALYST,SPRINT
+02 EF-PROJECT COORDINATOR,NEXTEL
+03 E2-PROJECT MGR,ACVITY TECHNOLOGY
+
+*SUM-01/89-11/01,PR/OI-YES,FB-NO, ACCTS:24,HC$0-20820, 13-ONES, 1-TWO, 3-THREES
+   , 3-FIVES, 3-NINES, 1-OTHER.
+
+****** PUBLIC RECORDS OR OTHER INFORMATION ******
+04 12/00*COLL 01/98 155YC2562 KCAFINANCE FOR GTE     VIRGINI                   
+   AMT:$157 BAL:$0 PAID  DLA:02/96, I,36366466
+05 12/00*ST JD,851VC82915, $3431,DEF-DOE MIRIAM M,B00 P8764,DEPT OF SOC SVCS
+             ,SATISFIED,08/01
+06 03/97 BKRPT 178VF26, 9741871-DSP-07/97,INDIVID, PERSONAL,DSCHG CH-7 
+07 03/99*JUDG,178VS491, $684,DEF-MIRIAM DOE,9922SC185,WOMENS HEALTH CARE
+
+ ************************************************
+
+*INQS-BELL ATL   910UT6905  09/04/01     WINDSOR AP 851RA80323 08/29/01     
+      CINGU-WAS  910UT21752 08/19/01     PARADISE   857RE2145  06/08/01     
+      MAZDA      484FA112   05/22/01     MALLOY MZD 491AN91986 05/21/01     
+      WASH GAS   910UG1357  05/10/01     BELL ATL   910UT6905  04/27/01     
+      REGISTRY   152ZB00253 04/24/01     CAVALIER   496RA47    04/23/01     
+      MALLOY MZD 491AN91986 03/26/01     MAZDA      484FA112   03/26/01     
+      ERAC-16U4  491AZ96709 12/23/00     ENTERPRISE 491AZ96692 12/05/00     
+      SHEEHY MAN 851AN84    12/04/00     VA-NC PWR  910UE1037  10/12/00     
+      REGISTRY   491ZB80226 10/02/00     REGISTRY   152ZB00295 09/30/00     
+      BELL ATL   910UT6905  08/22/00     UNITEDONE  496ZB00079 08/03/00     
+      SHEEHY MAN 851AN84    07/26/00     FORD MO CR 491FA78058 07/26/00     
+      HENDRICK   851AN340   07/22/00     FORD MO CR 491FA78058 07/14/00     
+      KOONS FD   491AN82601 07/13/00     MCYW/FDSB  152DC11138 06/05/00     
+      WORLDCOM   910UT25197 05/19/00     EUROTEL    180PZ1494  05/18/00     
+      AWS-WAS-DC 910UT23000 05/10/00     CELLULAR 1 491ZZ10965 05/08/00     
+      BELL ATLAN 910UT19916 02/17/00     
+
+*   FIRM/ID CODE       RPTD  OPND  H/C TRM  BAL P/D CS MR ECOA  ACCOUNT NUMBER 
+RNB-TARGET*613DC15367 11/01 10/98  665 26   510     R1 24 I
+   30(03)60(01)90+(03) 08/01-R5,07/01-R5,06/01-R4               DLA 11/01
+   CHARGE
+   
+KFS       *772FA32920 11/01 05/01  15K 315  14K     I1 06 I
+   AUTO
+   
+MIDLAND   *683FY48    11/01        113        0     O5 10 I
+   PAID COLLECTION
+   
+US DEPT ED*438ZZ10480 10/01 01/97 1610 50   882 450 I5 10 I
+   30(00)60(00)90+(05) 09/01-I5,08/01-I5,07/01-I5               DLA 01/00
+   STUDENT LOAN
+   
+CHILD SPRT*850VS196   11/01 08/96      400 1614 1K+ O5 63 I
+   30(00)60(00)90+(29) 10/01-O5,09/01-O5,08/01-O5
+   CHILD/FAMILY SUPPORT OBLIGATION
+   
+CITIBANK  *906BB115   10/01 03/92 3500 20   450 400 R9    I
+   30(00)60(01)90+(03) 02/97-R5,01/97-R5,12/96-R4               DLA 09/96
+   CHARGED OFF ACCOUNT
+   AMOUNT IN H/C COLUMN IS CREDIT LIMIT
+   
+CAP 1 BANK*850BB1498  11/01 05/00  498 15   512  25 R2 18 I
+   30(01)60(00)90+(00) 08/01-R2                                 DLA 10/01
+   CREDIT CARD
+   
+FFELP     *845FZ120   10/01 03/01 2625 50  1140     I1 02 I
+   STUDENT LOAN
+   
+MBNA AMER *801ON119   11/01 08/95 2500 17   776  46 R3 75 I
+   30(06)60(04)90+(10) 10/01-R2,07/01-R3,09/00-R5               DLA 07/01
+   ACCOUNT CLOSED BY CREDIT GRANTOR
+   CREDIT CARD
+   
+WACHVBL   *848BB83507 10/01 01/00  592      592 592 R9    J
+   30(00)60(00)90+(01) 09/00-R5                                 DLA 01/00
+   CHARGED OFF ACCOUNT
+   LINE OF CREDIT
+   
+CHRYSLER  *906FA26    09/01 01/96  11K 48M    0     I1 67 I
+   PAID ACCOUNT/ZERO BALANCE
+   AUTO
+   
+USAG LOAN *655FZ28868 04/01 02/96    0        0     I     I
+   30(00)60(00)90+(00)
+   ACCOUNT TRANSFERRED OR SOLD
+   STUDENT LOAN
+   
+USAG LOAN *655FZ28868 04/01 11/94    0 45M    0     I1 40 I
+   30(00)60(01)90+(04) 04/97-I5,03/97-I5,02/97-I5               DLA 01/98
+   STUDENT LOAN
+   ACCOUNT TRANSFERRED OR SOLD
+   
+USAG LOAN *655FZ28868 04/01 11/94 1313 43M    0     I3 05 I
+   30(00)60(02)90+(04) 03/01-I3,04/97-I5,03/97-I5               DLA 01/00
+   STUDENT LOAN
+   ACCOUNT TRANSFERRED OR SOLD
+   
+PEEBLES   *852DC105   07/01 01/96 2000        0     R1 65 J
+   AMOUNT IN H/C COLUMN IS CREDIT LIMIT
+   CHARGE
+   
+WARDS/MWCC*404DC1888  02/98 02/95  113        0     R9 07 I
+   30(02)60(01)90+(09) 05/97-R5,04/97-R5,03/97-R5               DLA 05/96
+   ACCOUNT TRANSFERRED OR SOLD
+   
+SUN TRUST *484BB920   12/00 09/91    0        0     R3 99 S
+   30(02)60(00)90+(00) 09/00-R2,08/00-R2                        DLA 06/00
+   PAID ACCOUNT/ZERO BALANCE
+   ACCOUNT CLOSED BY CREDIT GRANTOR
+   
+JCP/MCCBG *404FF3555  05/00 11/89  766        0     R1 94 J
+   CHARGE
+   
+FLEET CC  *496ON309   06/99 02/96  600        0     R1 40 I
+   30(01)60(01)90+(04) 01/97-R5,12/96-R5,11/96-R5               DLA 04/96
+   PAID ACCOUNT/ZERO BALANCE
+   ACCOUNT CLOSED BY CREDIT GRANTOR
+   
+HSBC BANK *100BB61    03/99 01/96    0        0     R1 37 I
+   PAID ACCOUNT/ZERO BALANCE
+   CLOSED ACCOUNT
+   
+FORD MO CR*491FA78058 11/95 11/90  21K 347    0     I1 60 J
+   PAID ACCOUNT/ZERO BALANCE
+   AUTO
+   
+HECHI/MBGA*404BB4028  10/93 01/89   30        0     R1 17 J
+   
+ITT/THORPE*851FP99    09/92 01/92  242 40     0     I1 07 I
+   CLOSED ACCOUNT
+   
+SOANB/FBUG*444DC10817 05/00 02/95  300        0     R1    I
+   CHARGE
+   
+                                                                               
+
+
+                               END-OF-REPORT
+</Text>
+				</ScreeningResults>
+				<CreditReport>
+					<ProcessedDate>
+						<AnyDate>2001-12-03T11:44:04</AnyDate>
+					</ProcessedDate>
+					<CreditFile vendor="equifax">
+						<FileDate>
+							<AnyDate>1990-01-23</AnyDate>
+						</FileDate>
+						<LastActivityDate>
+							<AnyDate>2001-09-04</AnyDate>
+						</LastActivityDate>
+						<FileReference idOwner="equifax">
+							<IdValue>787</IdValue>
+						</FileReference>
+						<PersonalData type="Current" enteredOnInquiry="false">
+							<PersonName type="Subject">
+								<GivenName>MIRIAM</GivenName>
+								<MiddleName>M</MiddleName>
+								<FamilyName primary="undefined" prefix="">DOE</FamilyName>
+							</PersonName>
+							<PostalAddress type="undefined" enteredOnInquiry="false">
+								<CountryCode>US</CountryCode>
+								<PostalCode>22311</PostalCode>
+								<Region>VA</Region>
+								<Municipality>ALEXANDRIA</Municipality>
+								<DeliveryAddress>
+									<StreetName>3714 N ROSSER ST</StreetName>
+									<Unit>APT 301</Unit>
+								</DeliveryAddress>
+								<ReportedDate type="Tape">
+									<EffectiveDate>
+										<StartDate>
+											<YearMonth>2000-09</YearMonth>
+										</StartDate>
+									</EffectiveDate>
+								</ReportedDate>
+							</PostalAddress>
+							<PostalAddress type="undefined" enteredOnInquiry="false">
+								<CountryCode>US</CountryCode>
+								<PostalCode>22191</PostalCode>
+								<Region>VA</Region>
+								<Municipality>WOODRIDGE</Municipality>
+								<DeliveryAddress>
+									<StreetName>5013 SUNNY RIDGE CT</StreetName>
+									<Unit>APT 103</Unit>
+								</DeliveryAddress>
+								<ReportedDate type="DAT">
+									<EffectiveDate>
+										<StartDate>
+											<YearMonth>2001-04</YearMonth>
+										</StartDate>
+									</EffectiveDate>
+								</ReportedDate>
+							</PostalAddress>
+							<DemographicDetail>
+								<GovernmentId countryCode="US" issuingAuthority="SSN">228515555</GovernmentId>
+							</DemographicDetail>
+						</PersonalData>
+						<EmploymentInformation type="Unknown">
+							<OrganizationName>SPRINT</OrganizationName>
+							<Title>DATA ANALYST</Title>
+						</EmploymentInformation>
+						<EmploymentInformation type="Prior">
+							<OrganizationName>NEXTEL</OrganizationName>
+							<Title>PROJECT COORDINATOR</Title>
+						</EmploymentInformation>
+						<EmploymentInformation type="Prior">
+							<OrganizationName>ACVITY TECHNOLOGY</OrganizationName>
+							<Title>PROJECT MGR</Title>
+						</EmploymentInformation>
+					</CreditFile>
+					<CreditConsumerReferral type="Vendor" qualifier="Equifax">
+						<OrganizationName>EQUIFAX CREDIT INFORMATION SERVICES</OrganizationName>
+						<ContactMethod>
+							<Use>business</Use>
+							<Location>office</Location>
+							<Telephone>
+								<FormattedNumber>800-685-1111</FormattedNumber>
+							</Telephone>
+							<PostalAddress type="undefined">
+								<CountryCode>US</CountryCode>
+								<PostalCode>30374-0241</PostalCode>
+								<Region>GA</Region>
+								<Municipality>ATLANTA</Municipality>
+								<DeliveryAddress>
+									<AddressLine></AddressLine>
+									<StreetName></StreetName>
+									<BuildingNumber></BuildingNumber>
+									<Unit></Unit>
+									<PostOfficeBox>P O BOX 740241</PostOfficeBox>
+								</DeliveryAddress>
+							</PostalAddress>
+						</ContactMethod>
+					</CreditConsumerReferral>
+					<!--
+For brevity,  all Liabilities were not included.  
+-->
+					<CreditLiability vendor="equifax">
+						<FurtherReviewRequired>true</FurtherReviewRequired>
+						<Creditor>
+							<!--FIRM-->
+							<OrganizationName>RNB-TARGET</OrganizationName>
+							<!--ID CODE-->
+							<OrganizationId idOwner="equifax">
+								<IdValue>613DC15367</IdValue>
+							</OrganizationId>
+							<CreditBusinessType>
+								<RepositoryCode>AV</RepositoryCode>
+								<RepositoryValue>CHARGE</RepositoryValue>
+							</CreditBusinessType>
+						</Creditor>
+						<!--OPND-->
+						<AccountOpenedDate>
+							<YearMonth>1998-10</YearMonth>
+						</AccountOpenedDate>
+						<!-- ECOA -->
+						<AccountOwnershipType>
+							<Value>Individual</Value>
+							<RepositoryCode>I</RepositoryCode>
+							<RepositoryValue>Individual</RepositoryValue>
+						</AccountOwnershipType>
+						<!-- RPTD -->
+						<AccountReportedDate>
+							<YearMonth>2001-11</YearMonth>
+						</AccountReportedDate>
+						<!--CS(1) -->
+						<AccountType>
+							<RepositoryCode>R</RepositoryCode>
+							<RepositoryValue>Revolving or Option (open-end account)</RepositoryValue>
+						</AccountType>
+						<!--CS(2) -->
+						<CurrentRating>
+							<Code>1</Code>
+							<Type>AsAgreed</Type>
+						</CurrentRating>
+						<!--H/C-->
+						<HighCreditAmount currency="USD">665</HighCreditAmount>
+						<!--DLA-->
+						<LastActivityDate>
+							<YearMonth>2001-11</YearMonth>
+						</LastActivityDate>
+						<LateCount duration="P30D">3</LateCount>
+						<LateCount duration="P60D">1</LateCount>
+						<LateCount duration="P90D">3</LateCount>
+						<PriorAdverseRating>
+							<Code>R5</Code>
+							<Type>LateOver120Days</Type>
+							<Date>
+								<YearMonth>2001-08</YearMonth>
+							</Date>
+						</PriorAdverseRating>
+						<PriorAdverseRating>
+							<Code>R5</Code>
+							<Type>LateOver120Days</Type>
+							<Date>
+								<YearMonth>2001-07</YearMonth>
+							</Date>
+						</PriorAdverseRating>
+						<PriorAdverseRating>
+							<Code>R4</Code>
+							<Type>Late90Days</Type>
+							<Date>
+								<YearMonth>2001-06</YearMonth>
+							</Date>
+						</PriorAdverseRating>
+						<!-- MR -->
+						<MonthsReviewedCount>24</MonthsReviewedCount>
+						<!--TRM -->
+						<TermsDescription>26</TermsDescription>
+						<UnpaidBalanceAmount currency="USD">510</UnpaidBalanceAmount>
+						<InformationalMessage type="Comment" vendor="equifax">
+							<MessageClassification>Unknown</MessageClassification>
+							<Text>CHARGE</Text>
+						</InformationalMessage>
+					</CreditLiability>
+					<PublicRecord vendor="equifax">
+						<AgencyReference type="Case">
+							<IdValue name="">9922SC185</IdValue>
+						</AgencyReference>
+						<CourtNumber>178VS491</CourtNumber>
+						<FilingDate>
+							<YearMonth>1999-03</YearMonth>
+						</FilingDate>
+						<DefendantName>MIRIAM DOE</DefendantName>
+						<LegalObligationAmount currency="USD">684</LegalObligationAmount>
+						<PlaintiffName>WOMENS HEALTH CARE</PlaintiffName>
+						<PublicRecordType>Judgment</PublicRecordType>
+					</PublicRecord>
+					<!-- Segment 13 -->
+					<PublicRecord vendor="equifax">
+						<AgencyReference type="Case">
+							<IdValue>9741871</IdValue>
+						</AgencyReference>
+						<BankruptcyType>Individual</BankruptcyType>
+						<BankruptcyFilingMethod>Individual</BankruptcyFilingMethod>
+						<CourtNumber>178VF26</CourtNumber>
+						<FilingDate>
+							<YearMonth>1997-03</YearMonth>
+						</FilingDate>
+						<DispositionDate>
+							<YearMonth>1997-07</YearMonth>
+						</DispositionDate>
+						<DispositionType>Discharged</DispositionType>
+						<PublicRecordType>BankruptcyChapter7</PublicRecordType>
+					</PublicRecord>
+					<PublicRecord vendor="equifax">
+						<AgencyReference type="Case">
+							<IdValue name="">B00 P8764</IdValue>
+						</AgencyReference>
+						<CourtNumber>851VC82915</CourtNumber>
+						<FilingDate>
+							<YearMonth>2000-12</YearMonth>
+						</FilingDate>
+						<DefendantName>MIRIAM DOE</DefendantName>
+						<DispositionType>Satisfied</DispositionType>
+						<LegalObligationAmount currency="USD">3431</LegalObligationAmount>
+						<PlaintiffName>DEPT OF SOC SVCS</PlaintiffName>
+						<PublicRecordType>Judgment</PublicRecordType>
+						<StatusDate>
+							<YearMonth>2001-08</YearMonth>
+						</StatusDate>
+					</PublicRecord>
+					<!--
+For brevity,  all Inquiries were not included.  
+-->
+					<CreditInquiry vendor="equifax">
+						<InquiryDate>
+							<AnyDate>2001-09-04</AnyDate>
+						</InquiryDate>
+						<InquiringOrganization>
+							<OrganizationName>BELL ATL</OrganizationName>
+							<OrganizationId idOwner="equifax">
+								<IdValue>910UT6905</IdValue>
+							</OrganizationId>
+						</InquiringOrganization>
+					</CreditInquiry>
+					<CreditSummary vendor="equifax">
+						<ForeignBureauInfo>false</ForeignBureauInfo>
+						<MostRecentTradeDate>
+							<YearMonth>2001-01</YearMonth>
+						</MostRecentTradeDate>
+						<OldestTradeDate>
+							<YearMonth>1989-01</YearMonth>
+						</OldestTradeDate>
+						<PublicRecords>3</PublicRecords>
+						<TradesOrOther>24</TradesOrOther>
+						<TradeRatings>
+							<TradeRating ratingType="1">13</TradeRating>
+							<TradeRating ratingType="2">1</TradeRating>
+							<TradeRating ratingType="3">3</TradeRating>
+							<TradeRating ratingType="5">3</TradeRating>
+							<TradeRating ratingType="9">3</TradeRating>
+							<TradeRating ratingType="Other">1</TradeRating>
+						</TradeRatings>
+					</CreditSummary>
+				</CreditReport>
+			</Screening>
+		</Screenings>
+	</BackgroundReportPackage>
+</BackgroundReports>

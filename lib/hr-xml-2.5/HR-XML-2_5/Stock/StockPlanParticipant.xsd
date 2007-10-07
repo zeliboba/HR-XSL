@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema xmlns="http://ns.hr-xml.org/2007-04-15" targetNamespace="http://ns.hr-xml.org/2007-04-15" xmlns:xsd="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" version="2007-04-15">
+	<xsd:annotation>
+		<xsd:documentation>
+"Copyright  The HR-XML Consortium. All Rights Reserved. http://www.hr-xml.org"
+Name: StockPlanParticipant.xsd
+Status: Recommendation
+Date this version: 2007-04-15
+Author(s): Andreas Bold - SAP, Stock Work Group
+Documentation: EmployeeStocksPlanInterface.html
+
+Terms of license can be found in license.txt.
+
+Change History:
+2005-01
+As per Schema Design Guidelines, all default values have been removed.
+
+
+		</xsd:documentation>
+	</xsd:annotation>
+	<xsd:include schemaLocation="../CPO/IdentifierTypes.xsd"/>
+	<xsd:include schemaLocation="../CPO/ContactMethod.xsd"/>
+	<xsd:include schemaLocation="../CPO/UserArea.xsd"/>
+	<xsd:include schemaLocation="../CPO/ISOUtilities.xsd"/>
+	<xsd:complexType name="StockPlanParticipantType">
+		<xsd:sequence>
+			<xsd:element name="Id" type="EntityIdType"/>
+			<xsd:element name="Account" type="EntityIdType" minOccurs="0"/>
+			<xsd:element name="CompanyId" type="EntityIdType"/>
+			<xsd:element name="Name" type="PersonNameType"/>
+			<xsd:element name="ContactInfo" type="ContactMethodType"/>
+			<xsd:element name="AdditionalInfo" minOccurs="0">
+				<xsd:complexType>
+					<xsd:sequence>
+						<xsd:element name="DateOfBirth" type="LocalDateType" minOccurs="0"/>
+						<xsd:element name="Nationality" type="CountryCodeType" minOccurs="0" maxOccurs="unbounded"/>
+						<xsd:element name="HireDate" type="LocalDateType" minOccurs="0"/>
+						<xsd:element name="EmploymentInfo" minOccurs="0">
+							<xsd:complexType mixed="true">
+								<xsd:choice>
+									<xsd:element name="FullTimeEquivalence" type="xsd:decimal"/>
+									<xsd:element name="WorktimeInfo" maxOccurs="unbounded">
+										<xsd:complexType>
+											<xsd:sequence>
+												<xsd:element name="Duration" type="xsd:duration"/>
+												<xsd:element name="Period" type="xsd:duration"/>
+											</xsd:sequence>
+										</xsd:complexType>
+									</xsd:element>
+								</xsd:choice>
+							</xsd:complexType>
+						</xsd:element>
+						<xsd:element name="Termination" minOccurs="0">
+							<xsd:complexType>
+								<xsd:sequence>
+									<xsd:element name="Date" type="LocalDateType"/>
+									<xsd:element name="Reason" type="xsd:string"/>
+								</xsd:sequence>
+							</xsd:complexType>
+						</xsd:element>
+						<xsd:element name="Employee" minOccurs="0" maxOccurs="unbounded">
+							<xsd:complexType>
+								<xsd:simpleContent>
+									<xsd:extension base="xsd:boolean">
+										<xsd:attribute name="validFrom" type="LocalDateType"/>
+										<xsd:attribute name="validTo" type="LocalDateType"/>
+									</xsd:extension>
+								</xsd:simpleContent>
+							</xsd:complexType>
+						</xsd:element>
+						<xsd:element name="Director" minOccurs="0" maxOccurs="unbounded">
+							<xsd:complexType>
+								<xsd:simpleContent>
+									<xsd:extension base="xsd:boolean">
+										<xsd:attribute name="validFrom" type="LocalDateType"/>
+										<xsd:attribute name="validTo" type="LocalDateType"/>
+									</xsd:extension>
+								</xsd:simpleContent>
+							</xsd:complexType>
+						</xsd:element>
+						<xsd:element name="Insider" minOccurs="0" maxOccurs="unbounded">
+							<xsd:complexType>
+								<xsd:simpleContent>
+									<xsd:extension base="xsd:boolean">
+										<xsd:attribute name="validFrom" type="LocalDateType"/>
+										<xsd:attribute name="validTo" type="LocalDateType"/>
+									</xsd:extension>
+								</xsd:simpleContent>
+							</xsd:complexType>
+						</xsd:element>
+						<xsd:element name="PercentOwner" minOccurs="0" maxOccurs="unbounded">
+							<xsd:complexType>
+								<xsd:simpleContent>
+									<xsd:extension base="xsd:decimal">
+										<xsd:attribute name="validFrom" type="LocalDateType"/>
+										<xsd:attribute name="validTo" type="LocalDateType"/>
+									</xsd:extension>
+								</xsd:simpleContent>
+							</xsd:complexType>
+						</xsd:element>
+						<xsd:element name="WorkLocation" minOccurs="0" maxOccurs="unbounded">
+							<xsd:complexType>
+								<xsd:sequence>
+									<xsd:element name="CountryCode" type="CountryCodeType" minOccurs="0"/>
+									<xsd:element name="Region" type="xsd:string" minOccurs="0"/>
+									<xsd:element name="Municipality" type="xsd:string" minOccurs="0"/>
+									<xsd:element name="PostalCode" type="xsd:string" minOccurs="0"/>
+								</xsd:sequence>
+								<xsd:attribute name="validFrom" type="LocalDateType"/>
+								<xsd:attribute name="validTo" type="LocalDateType"/>
+							</xsd:complexType>
+						</xsd:element>
+						<xsd:element name="TaxInfo" minOccurs="0" maxOccurs="unbounded">
+							<xsd:complexType>
+								<xsd:sequence>
+									<xsd:element name="TaxType" type="xsd:string"/>
+									<xsd:element name="TaxationLocation">
+										<xsd:complexType>
+											<xsd:sequence>
+												<xsd:element name="CountryCode" type="CountryCodeType" minOccurs="0"/>
+												<xsd:element name="Region" type="xsd:string" minOccurs="0"/>
+												<xsd:element name="Municipality" type="xsd:string" minOccurs="0"/>
+												<xsd:element name="PostalCode" type="xsd:string" minOccurs="0"/>
+											</xsd:sequence>
+										</xsd:complexType>
+									</xsd:element>
+									<xsd:element name="Percentage" type="xsd:decimal"/>
+								</xsd:sequence>
+								<xsd:attribute name="validFrom" type="LocalDateType"/>
+								<xsd:attribute name="validTo" type="LocalDateType"/>
+							</xsd:complexType>
+						</xsd:element>
+					</xsd:sequence>
+				</xsd:complexType>
+			</xsd:element>
+			<xsd:element ref="UserArea" minOccurs="0"/>
+		</xsd:sequence>
+	</xsd:complexType>
+	<xsd:element name="StockPlanParticipant" type="StockPlanParticipantType"/>
+</xsd:schema>

@@ -1,0 +1,217 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Candidate xmlns="http://ns.hr-xml.org/2007-04-15" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://ns.hr-xml.org/2007-04-15
+Candidate.xsd">
+	<CandidateRecordInfo>
+		<Id validFrom="1995-02-01" validTo="1995-02-02" idOwner="12345">
+			<IdValue>456789</IdValue>
+		</Id>
+		<Status validFrom="1995-02-01" validTo="1995-02-01">Active</Status>
+	</CandidateRecordInfo>
+	<RelatedPositionPostings>
+<PositionPosting>
+	<Id>
+		<IdValue>98767-12345</IdValue>
+	</Id>
+</PositionPosting>
+	</RelatedPositionPostings>
+	<CandidateSupplier relationship="x:Recruiter">
+		<SupplierId>
+			<IdValue>456789</IdValue>
+		</SupplierId>
+		<EntityName>USA Staffing, Inc.</EntityName>
+		<ContactMethod>
+			<Telephone>
+				<InternationalCountryCode>1</InternationalCountryCode>
+				<AreaCityCode>925</AreaCityCode>
+				<SubscriberNumber>598-5209</SubscriberNumber>
+			</Telephone>
+			<Fax>
+				<InternationalCountryCode>33</InternationalCountryCode>
+				<AreaCityCode>1</AreaCityCode>
+				<SubscriberNumber>40 20 50 50</SubscriberNumber>
+			</Fax>
+		</ContactMethod>
+	</CandidateSupplier>
+	<DistributionGuidelines>
+		<DistributeTo validFrom="2003-04-15">
+			<Name>Elliott Laboratories</Name>
+			<ContactMethod>
+				<Telephone>
+					<FormattedNumber>254-444-8976</FormattedNumber>
+				</Telephone>
+			</ContactMethod>
+		</DistributeTo>
+		<DoNotDistributeTo validFrom="2003-04-15">
+			<Name>Marrion Resource Center</Name>
+		</DoNotDistributeTo>
+	</DistributionGuidelines>
+	<CandidateProfile xml:lang="en-US">
+		<ProfileId>
+			<IdValue>98999</IdValue>
+		</ProfileId>
+		<ProfileName>PositionSubmittal</ProfileName>
+		<PersonalData>
+			<PersonName>
+				<FormattedName>Ruth Jenre</FormattedName>
+			</PersonName>
+		</PersonalData>
+		<PreferredPosition>
+			<Company>
+				<Id validFrom="1995-02-02" validTo="2005-02-02" idOwner="Global Staffing">
+					<IdValue name="String">125899</IdValue>
+				</Id>
+			</Company>
+			<CompanyScale>Global</CompanyScale>
+			<IndustryCode primaryIndicator="1" classificationName="Employment">1235-5</IndustryCode>
+			<PhysicalLocation>
+				<Area type="municipality">
+					<Value>Orange</Value>
+				</Area>
+			</PhysicalLocation>
+			<JobCategory>
+				<TaxonomyName version="String">String</TaxonomyName>
+				<CategoryCode>String</CategoryCode>
+				<CategoryDescription>String</CategoryDescription>
+				<Comments>String</Comments>
+			</JobCategory>
+			<PositionTitle>Programmer</PositionTitle>
+			<PositionClassification>Direct Hire</PositionClassification>
+			<PositionSchedule>Full Time</PositionSchedule>
+			<Shift shiftPeriod="On Call">
+				<Id validFrom="1992-02-02" validTo="2005-02-02" idOwner="Towers Publishing">
+					<IdValue name="String">197354</IdValue>
+				</Id>
+				<Name>Morning</Name>
+				<Hours>40.00</Hours>
+				<StartTime>06:00:00</StartTime>
+				<EndTime>13:00:00</EndTime>
+				<PayTypeHours>Regular</PayTypeHours>
+				<Comments>This position is exempt.</Comments>
+			</Shift>
+			<Competency name="Written Communication Skills">
+				<CompetencyEvidence name="WRITTENTEST1-A" dateOfIncident="1995-01-01" lastUsed="2000-01-01">
+					<NumericValue minValue="3" maxValue="5" description="SEP-equivalent Skill-Level Range">5</NumericValue>
+				</CompetencyEvidence>
+				<CompetencyWeight>
+					<NumericValue minValue="0" maxValue="100">35</NumericValue>
+				</CompetencyWeight>
+			</Competency>
+			<Competency name="Oral Communication Skills">
+				<CompetencyEvidence name="ManagerObservation" dateOfIncident="1996-01-01" lastUsed="2000-01-01">
+					<NumericValue minValue="1" maxValue="5" description="Company XYZ Skill Range">5</NumericValue>
+				</CompetencyEvidence>
+				<CompetencyWeight>
+					<NumericValue minValue="0" maxValue="100">65</NumericValue>
+				</CompetencyWeight>
+			</Competency>
+			<RemunerationPackage>
+				<BasePay currencyCode="AAA" baseInterval="Hourly">
+					<BasePayAmountMin>3.1415926</BasePayAmountMin>
+					<BasePayAmountMax>3.1415926</BasePayAmountMax>
+				</BasePay>
+				<OtherPay currencyCode="AAA" otherInterval="Hourly" otherPayType="Bonus">
+					<OtherPayAmountMin>3.1415926</OtherPayAmountMin>
+					<OtherPayAmountMax>3.1415926</OtherPayAmountMax>
+					<Comments>String</Comments>
+				</OtherPay>
+				<Benefits>
+					<Insurance type="Medical">1</Insurance>
+					<RetirementOrSavingsPlan>1</RetirementOrSavingsPlan>
+					<CompanyVehicle companyOffered="1"/>
+					<RelocationAssistance companyOffered="1"/>
+					<VisaSponsorship>1</VisaSponsorship>
+					<TimeOffAllowance timeOffType="PaidHoliday"/>
+					<ExpatriateBenefits>
+						<ExpatriateBenefitsOffered>1</ExpatriateBenefitsOffered>
+					</ExpatriateBenefits>
+				</Benefits>
+			</RemunerationPackage>
+			<WorkStyle>Independent</WorkStyle>
+			<DressCode suppliedByOrganization="1">Professional</DressCode>
+			<Travel>
+				<Applicable>1</Applicable>
+			</Travel>
+			<Relocation relocationConsidered="1">
+				<Comments>Only if covered by company as part of the package.</Comments>
+			</Relocation>
+			<PreferredLanguage>en-us</PreferredLanguage>
+			<Commute>
+				<TimeMax unitOfMeasure="Minutes">30</TimeMax>
+			</Commute>
+		</PreferredPosition>
+		<EmploymentHistory>
+			<EmployerOrg>
+				<EmployerOrgName>IBM</EmployerOrgName>
+				<EmployerContactInfo>
+					<LocationSummary>
+						<Municipality>Yorktown Heights</Municipality>
+						<Region>NY</Region>
+					</LocationSummary>
+				</EmployerContactInfo>
+				<PositionHistory positionType="internship">
+					<Title/>
+					<OrgName>
+						<OrganizationName>T.J. Watson Research Center</OrganizationName>
+					</OrgName>
+					<Description>Designed and prototyped extensions to Babble, a distributed workgroup support system developed at IBM Research. Babble allows members of a workgroup to stay in contact through semi-synchronous textual discussion (both public and private) and variety of awareness aids. Performed an in-depth analysis of the system as it currently exists and created a number of design sketches, prototypes, and working versions of an improved Babble that supports much richer interaction. Two patents are pending on this work. </Description>
+					<StartDate>
+						<YearMonth>1998-06</YearMonth>
+					</StartDate>
+					<EndDate>
+						<YearMonth>1998-08</YearMonth>
+					</EndDate>
+				</PositionHistory>
+			</EmployerOrg>
+		</EmploymentHistory>
+		<EducationHistory>
+			<SchoolOrInstitution schoolType="university">
+				<School>
+					<SchoolName>UCLA</SchoolName>
+				</School>
+			</SchoolOrInstitution>
+		</EducationHistory>
+		<MilitaryHistory>
+			<CountryServed>US</CountryServed>
+			<ServiceDetail branch="Army">
+				<UnitOrDivision>Fort Sill, OK</UnitOrDivision>
+				<RankAchieved>
+					<CurrentOrEndRank>Captain</CurrentOrEndRank>
+				</RankAchieved>
+				<DatesOfService>
+					<StartDate>
+						<AnyDate>1995-02-01</AnyDate>
+					</StartDate>
+					<EndDate>
+						<AnyDate>1998-06-01</AnyDate>
+					</EndDate>
+				</DatesOfService>
+				<AreaOfExpertise>Successfully led field logistics and maintenance operation centers and developed operational and combat standard operation procedures (SOP). Developed and implemented a battalion recovery operation procedure, which saved critical training time and funds. Led maintenance teams to win Corps level awards in maintenance excellence four different times. As both a battery operations officer and battalion maintenance officer I successfully led the tactical deployments of my respective units.</AreaOfExpertise>
+			</ServiceDetail>
+		</MilitaryHistory>
+		<Associations>
+			<Association type="Professional">
+				<Name>HR-XML Consortium</Name>
+				<Link>www.hr-xml.org</Link>
+				<StartDate>
+					<YearMonth>2000-01</YearMonth>
+				</StartDate>
+				<Role>
+					<Name>Recruiting and Staffing Project Lead</Name>
+					<Deliverable>Resume 2.0 Specification</Deliverable>
+					<StartDate>
+						<YearMonth>2002-03</YearMonth>
+					</StartDate>
+					<EndDate>
+						<YearMonth>2003-07</YearMonth>
+					</EndDate>
+				</Role>
+				<Comments>Membership through current employer.</Comments>
+			</Association>
+		</Associations>
+		<SupportingMaterials>
+			<Link>http://www.my-documents.com</Link>
+			<Description>Link to my online documents</Description>
+		</SupportingMaterials>
+		<UserArea/>
+	</CandidateProfile>
+</Candidate>

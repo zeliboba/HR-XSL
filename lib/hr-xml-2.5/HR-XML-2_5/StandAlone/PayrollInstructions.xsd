@@ -1,0 +1,617 @@
+<?xml version="1.0"?>
+<!-- edited with XMLSpy v2006 rel. 3 sp1 (http://www.altova.com) by Chuck Allen (HR-XML Consortium, Inc.) -->
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="http://ns.hr-xml.org/2007-04-15" xmlns:oa="http://www.openapplications.org/oagis" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:ds="http://www.w3.org/2000/09/xmldsig#" targetNamespace="http://ns.hr-xml.org/2007-04-15" elementFormDefault="qualified" version="2007-04-15">
+	<xsd:annotation>
+		<xsd:documentation>"Copyright  The HR-XML Consortium. All Rights Reserved. http://www.hr-xml.org"
+
+Terms of license can be found in license.txt.
+</xsd:documentation>
+		<xsd:documentation>Stand alone (but non-normative) version of schema, with all "includes" inserted explicitly.  This file is auto-generated.  It should be considered a "convenience" alternative to the normative versions.</xsd:documentation>
+		<xsd:documentation>After merging all includes, the result is passed through a stylesheet which deletes any duplicative global components as well as any unused global types.  Finally, it sorts by component name.  Be sure to check the Xml Namespaces to ensure this result is what you requested.</xsd:documentation>
+	</xsd:annotation>
+	<xsd:import namespace="http://www.w3.org/XML/1998/namespace" schemaLocation="xml.xsd"/>
+	<xsd:element name="PayrollInstructions">
+		<xsd:complexType>
+			<xsd:sequence>
+				<xsd:element ref="PayrollEmployer"/>
+				<xsd:element ref="PersonInstruction" maxOccurs="unbounded"/>
+				<xsd:element ref="RequestTotal" minOccurs="0" maxOccurs="unbounded"/>
+				<xsd:element ref="UserArea" minOccurs="0"/>
+			</xsd:sequence>
+			<xsd:attribute name="version" type="xsd:string" fixed="00.00"/>
+			<xsd:attribute name="currency" type="CurrencyCodeType"/>
+			<xsd:attribute ref="xml:lang"/>
+		</xsd:complexType>
+	</xsd:element>
+	<xsd:simpleType name="AnyDateTimeNkNaType">
+		<xsd:union memberTypes="LocalDateType DateType LocalDateTimeType DateTimeType NotKnownLiteral NotApplicableLiteral"/>
+	</xsd:simpleType>
+	<xsd:simpleType name="ApplyToCompensationBasicType">
+		<xsd:restriction base="xsd:string">
+			<xsd:enumeration value="Base"/>
+			<xsd:enumeration value="Bonus"/>
+			<xsd:enumeration value="Commission"/>
+			<xsd:enumeration value="Overtime"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="ApplyToCompensationType">
+		<xsd:union memberTypes="ApplyToCompensationBasicType xStringPatternExtensionType"/>
+	</xsd:simpleType>
+	<xsd:simpleType name="BasicFrequencyType">
+		<xsd:restriction base="xsd:string">
+			<xsd:enumeration value="Hourly"/>
+			<xsd:enumeration value="Daily"/>
+			<xsd:enumeration value="Weekly"/>
+			<xsd:enumeration value="Bi-Weekly"/>
+			<xsd:enumeration value="Semi-Monthly"/>
+			<xsd:enumeration value="Monthly"/>
+			<xsd:enumeration value="Month-Week-1"/>
+			<xsd:enumeration value="Month-Week-2"/>
+			<xsd:enumeration value="Month-Week-3"/>
+			<xsd:enumeration value="Month-Week-4"/>
+			<xsd:enumeration value="Month-Week-5"/>
+			<xsd:enumeration value="Month-Week-Last"/>
+			<xsd:enumeration value="Bi-Monthly"/>
+			<xsd:enumeration value="Quarterly"/>
+			<xsd:enumeration value="Semi-Annually"/>
+			<xsd:enumeration value="Annually"/>
+			<xsd:enumeration value="Once"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="BasicPayrollLimitTypes">
+		<xsd:restriction base="xsd:string">
+			<xsd:enumeration value="PerPayRun"/>
+			<xsd:enumeration value="PerMonth"/>
+			<xsd:enumeration value="PerQuarter"/>
+			<xsd:enumeration value="PerYear"/>
+			<xsd:enumeration value="PerLife"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="BasicTransactionCodeType">
+		<xsd:restriction base="xsd:string">
+			<xsd:enumeration value="Add"/>
+			<xsd:enumeration value="Audit"/>
+			<xsd:enumeration value="Change"/>
+			<xsd:enumeration value="Correction"/>
+			<xsd:enumeration value="Delete"/>
+			<xsd:enumeration value="Suspend"/>
+			<xsd:enumeration value="Terminate"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="BenefitBasicTaxTreatmentType">
+		<xsd:restriction base="xsd:string">
+			<xsd:enumeration value="PreTax"/>
+			<xsd:enumeration value="PostTax"/>
+			<xsd:enumeration value="PreAndPostTax"/>
+			<xsd:enumeration value="PostAfterPreTaxLimit"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="BenefitDeductionCategoryType">
+		<xsd:union memberTypes="USBenefitDeductionCategoryType xStringPatternExtensionType"/>
+	</xsd:simpleType>
+	<xsd:simpleType name="BenefitTaxTreatmentType">
+		<xsd:union memberTypes="BenefitBasicTaxTreatmentType xStringPatternExtensionType"/>
+	</xsd:simpleType>
+	<xsd:simpleType name="CalculatedPercentType">
+		<xsd:restriction base="xsd:decimal">
+			<xsd:maxInclusive value="100.0"/>
+			<xsd:minInclusive value="-100.0"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="CountryCodeType">
+		<xsd:annotation>
+			<xsd:documentation>Must conform to ISO 3166 Representation of Countries.</xsd:documentation>
+		</xsd:annotation>
+		<xsd:restriction base="xsd:string">
+			<xsd:pattern value="[A-Z][A-Z]"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="CurrencyCodeType">
+		<xsd:annotation>
+			<xsd:documentation>Must conform to ISO 4217 - Representation of Currency and Funds</xsd:documentation>
+		</xsd:annotation>
+		<xsd:restriction base="xsd:string">
+			<xsd:pattern value="[A-Z][A-Z][A-Z]"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="DateTimeType">
+		<xsd:restriction base="xsd:dateTime">
+			<xsd:pattern value="\d\d\d\d-\d\d-\d\dT\d\d:\d\d:\d\d(Z|(\+|-)\d\d:\d\d)"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="DateType">
+		<xsd:restriction base="xsd:date">
+			<xsd:pattern value="\d\d\d\d-\d\d-\d\d(Z|(\+|-)\d\d:\d\d)"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="FrequencyType">
+		<xsd:union memberTypes="BasicFrequencyType xStringPatternExtensionType"/>
+	</xsd:simpleType>
+	<xsd:simpleType name="GenderCodeType">
+		<xsd:annotation>
+			<xsd:documentation>Must conform to ISO 5218 - Representation of Human Sexes (0 - Not Known; 1 - Male; 2 - Female; 9 - Not specified)</xsd:documentation>
+		</xsd:annotation>
+		<xsd:restriction base="xsd:integer">
+			<xsd:pattern value="[0129]"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="InfinityType">
+		<xsd:restriction base="xsd:string">
+			<xsd:enumeration value="PositiveInfinity"/>
+			<xsd:enumeration value="NegativeInfinity"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="LanguageCodeType">
+		<xsd:annotation>
+			<xsd:documentation>ISO 639-1 two character code is preferred, but not required.</xsd:documentation>
+		</xsd:annotation>
+		<xsd:restriction base="xsd:language"/>
+	</xsd:simpleType>
+	<xsd:simpleType name="LocalDateTimeType">
+		<xsd:restriction base="xsd:dateTime">
+			<xsd:pattern value="\d\d\d\d-\d\d-\d\dT\d\d:\d\d:\d\d"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="LocalDateType">
+		<xsd:restriction base="xsd:date">
+			<xsd:pattern value="\d\d\d\d-\d\d-\d\d"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="LocalTimeType">
+		<xsd:restriction base="xsd:time">
+			<xsd:pattern value="\d\d:\d\d:\d\d"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="NotApplicableLiteral">
+		<xsd:restriction base="xsd:string">
+			<xsd:enumeration value="notApplicable"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="NotKnownLiteral">
+		<xsd:restriction base="xsd:string">
+			<xsd:enumeration value="notKnown"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="PayrollAmountDurationType">
+		<xsd:union memberTypes="PayrollBasicAmountDurationType xStringPatternExtensionType"/>
+	</xsd:simpleType>
+	<xsd:simpleType name="PayrollBasicAmountDurationType">
+		<xsd:restriction base="xsd:string">
+			<xsd:enumeration value="Regular"/>
+			<xsd:enumeration value="One-time"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="PayrollBasicDateType">
+		<xsd:restriction base="xsd:string">
+			<xsd:enumeration value="WaitingPeriodStart"/>
+			<xsd:enumeration value="WaitingPeriodEnd"/>
+			<xsd:enumeration value="Eligibility"/>
+			<xsd:enumeration value="Enrollment"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="PayrollLimitTypes">
+		<xsd:union memberTypes="BasicPayrollLimitTypes xStringPatternExtensionType"/>
+	</xsd:simpleType>
+	<xsd:simpleType name="PayrollOtherDateType">
+		<xsd:union memberTypes="PayrollBasicDateType xStringPatternExtensionType"/>
+	</xsd:simpleType>
+	<xsd:simpleType name="ScheduleIntervalType">
+		<xsd:union memberTypes="xsd:decimal InfinityType"/>
+	</xsd:simpleType>
+	<xsd:simpleType name="TimeType">
+		<xsd:restriction base="xsd:time">
+			<xsd:pattern value="\d\d:\d\d:\d\d(Z|(\+|-)\d\d:\d\d)"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="TransactionCodeType">
+		<xsd:union memberTypes="BasicTransactionCodeType xStringPatternExtensionType"/>
+	</xsd:simpleType>
+	<xsd:simpleType name="USBenefitDeductionCategoryType">
+		<xsd:restriction base="xsd:string">
+			<xsd:enumeration value="Before-Tax Deferral"/>
+			<xsd:enumeration value="After-Tax Deferral"/>
+			<xsd:enumeration value="Garnishment"/>
+			<xsd:enumeration value="Loan"/>
+			<xsd:enumeration value="Health Care FSA"/>
+			<xsd:enumeration value="Dependent Care FSA"/>
+			<xsd:enumeration value="Medical"/>
+			<xsd:enumeration value="Medical Credit"/>
+			<xsd:enumeration value="Medical Imputed Income"/>
+			<xsd:enumeration value="Dental"/>
+			<xsd:enumeration value="Dental Credit"/>
+			<xsd:enumeration value="Dental Imputed Income"/>
+			<xsd:enumeration value="Employee Life"/>
+			<xsd:enumeration value="Employee Life Credit"/>
+			<xsd:enumeration value="Employee Life Imputed Income"/>
+			<xsd:enumeration value="Accident"/>
+			<xsd:enumeration value="Accident Credit"/>
+			<xsd:enumeration value="Accident Imputed Income"/>
+			<xsd:enumeration value="LTD"/>
+			<xsd:enumeration value="LTD Credit"/>
+			<xsd:enumeration value="LTD Imputed Income"/>
+			<xsd:enumeration value="STD"/>
+			<xsd:enumeration value="STD Credit"/>
+			<xsd:enumeration value="STD Imputed Income"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="xStringPatternExtensionType">
+		<xsd:restriction base="xsd:string">
+			<xsd:pattern value="x:\S.*"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:complexType name="ArgumentType">
+		<xsd:complexContent>
+			<xsd:extension base="CalculatedArgumentType">
+				<xsd:attribute name="index" type="xsd:integer"/>
+			</xsd:extension>
+		</xsd:complexContent>
+	</xsd:complexType>
+	<xsd:complexType name="ArgumentValueType">
+		<xsd:simpleContent>
+			<xsd:extension base="xsd:decimal">
+				<xsd:attribute name="name" type="xsd:string"/>
+				<xsd:attribute name="multiplier" type="xsd:decimal"/>
+			</xsd:extension>
+		</xsd:simpleContent>
+	</xsd:complexType>
+	<xsd:complexType name="ArgumentVariableType">
+		<xsd:simpleContent>
+			<xsd:extension base="xsd:string">
+				<xsd:attribute name="name" type="xsd:string"/>
+				<xsd:attribute name="multiplier" type="xsd:decimal"/>
+			</xsd:extension>
+		</xsd:simpleContent>
+	</xsd:complexType>
+	<xsd:complexType name="BasisType">
+		<xsd:choice>
+			<xsd:element name="BasisValue" type="ArgumentValueType"/>
+			<xsd:element name="BasisVariableName" type="ArgumentVariableType"/>
+		</xsd:choice>
+	</xsd:complexType>
+	<xsd:complexType name="BenefitPlanType">
+		<xsd:sequence>
+			<xsd:element name="BenefitCategory" type="BenefitDeductionCategoryType"/>
+			<xsd:element name="BenefitPlanName" type="xsd:string" minOccurs="0"/>
+			<xsd:element name="BenefitPlanId" type="EntityIdType" minOccurs="0"/>
+		</xsd:sequence>
+	</xsd:complexType>
+	<xsd:complexType name="BenefitType">
+		<xsd:sequence>
+			<xsd:element name="ApplyToCompensation" type="ApplyToCompensationType" minOccurs="0" maxOccurs="unbounded"/>
+			<xsd:element name="BenefitPlan" type="BenefitPlanType"/>
+			<xsd:element name="BenefitStartDate" type="LocalDateType"/>
+			<xsd:element name="BenefitEndDate" type="LocalDateType" minOccurs="0"/>
+			<xsd:element name="BenefitFrequency" type="FrequencyType" minOccurs="0" maxOccurs="unbounded"/>
+			<xsd:element name="BenefitCaseNumber" type="xsd:string" minOccurs="0"/>
+			<xsd:element name="BenefitOptionalDate" type="PayrollDateType" minOccurs="0" maxOccurs="unbounded"/>
+		</xsd:sequence>
+		<xsd:attribute name="benefitTaxTreatment" type="BenefitTaxTreatmentType"/>
+		<xsd:attribute name="reportOnly" type="xsd:boolean"/>
+	</xsd:complexType>
+	<xsd:complexType name="CalculatedArgumentType">
+		<xsd:choice>
+			<xsd:element name="ArgumentValue" type="ArgumentValueType"/>
+			<xsd:element name="ArgumentVariableName" type="ArgumentVariableType"/>
+		</xsd:choice>
+	</xsd:complexType>
+	<xsd:complexType name="CalculatedLookupTableEntryType">
+		<xsd:sequence>
+			<xsd:element name="Key" type="xsd:string"/>
+			<xsd:element name="Value" type="ArgumentValueType"/>
+		</xsd:sequence>
+	</xsd:complexType>
+	<xsd:complexType name="CalculatedLookupTableType">
+		<xsd:sequence>
+			<xsd:element name="LookupTableId" type="EntityIdType" minOccurs="0"/>
+			<xsd:element name="LookupTableName" type="xsd:string" minOccurs="0"/>
+			<xsd:element name="LookupTableEntry" type="CalculatedLookupTableEntryType" maxOccurs="unbounded"/>
+		</xsd:sequence>
+	</xsd:complexType>
+	<xsd:complexType name="CalculatedScheduleIntervalValueType">
+		<xsd:simpleContent>
+			<xsd:extension base="ScheduleIntervalType">
+				<xsd:attribute name="inclusive" type="xsd:boolean"/>
+			</xsd:extension>
+		</xsd:simpleContent>
+	</xsd:complexType>
+	<xsd:complexType name="CalculatedScheduleTableEntryType">
+		<xsd:sequence>
+			<xsd:element name="IntervalLow" type="CalculatedScheduleIntervalValueType" minOccurs="0"/>
+			<xsd:element name="IntervalHigh" type="CalculatedScheduleIntervalValueType" minOccurs="0"/>
+			<xsd:choice>
+				<xsd:element name="Fixed" type="CalculatedValueFixedType"/>
+				<xsd:element name="Percent" type="CalculatedValuePercentType"/>
+				<xsd:element name="Linear" type="CalculatedValueLinearType"/>
+				<xsd:element name="Lookup" type="CalculatedValueLookupType"/>
+			</xsd:choice>
+		</xsd:sequence>
+	</xsd:complexType>
+	<xsd:complexType name="CalculatedScheduleTableType">
+		<xsd:sequence>
+			<xsd:element name="ScheduleTableId" type="EntityIdType" minOccurs="0"/>
+			<xsd:element name="ScheduleTableName" type="xsd:string" minOccurs="0"/>
+			<xsd:element name="ScheduleTableEntry" type="CalculatedScheduleTableEntryType" maxOccurs="unbounded"/>
+		</xsd:sequence>
+	</xsd:complexType>
+	<xsd:complexType name="CalculatedValueExtendedType">
+		<xsd:sequence>
+			<xsd:element name="Function" type="xsd:string"/>
+			<xsd:element name="Argument" type="ArgumentType" minOccurs="0" maxOccurs="unbounded"/>
+		</xsd:sequence>
+	</xsd:complexType>
+	<xsd:complexType name="CalculatedValueFixedType">
+		<xsd:sequence>
+			<xsd:element name="Value" type="xsd:decimal" minOccurs="0"/>
+		</xsd:sequence>
+	</xsd:complexType>
+	<xsd:complexType name="CalculatedValueLinearType">
+		<xsd:sequence>
+			<xsd:element name="YIntercept" type="xsd:decimal" minOccurs="0"/>
+			<xsd:element name="Argument" type="ArgumentType" maxOccurs="unbounded"/>
+		</xsd:sequence>
+	</xsd:complexType>
+	<xsd:complexType name="CalculatedValueLookupType">
+		<xsd:sequence>
+			<xsd:choice>
+				<xsd:element name="LookupTableId" type="EntityIdType" minOccurs="0"/>
+				<xsd:element name="LookupTable" type="CalculatedLookupTableType" minOccurs="0"/>
+			</xsd:choice>
+			<xsd:element name="LookupKey" type="xsd:string"/>
+		</xsd:sequence>
+		<xsd:attribute name="notFoundValue" type="xsd:decimal"/>
+	</xsd:complexType>
+	<xsd:complexType name="CalculatedValuePercentType">
+		<xsd:sequence>
+			<xsd:element name="Basis" type="BasisType"/>
+			<xsd:element name="Percentage" type="CalculatedPercentType"/>
+		</xsd:sequence>
+	</xsd:complexType>
+	<xsd:complexType name="CalculatedValueScheduleType">
+		<xsd:sequence>
+			<xsd:choice>
+				<xsd:element name="ScheduleTableId" type="EntityIdType" minOccurs="0"/>
+				<xsd:element name="ScheduleTable" type="CalculatedScheduleTableType" minOccurs="0"/>
+			</xsd:choice>
+			<xsd:element name="ScheduleValue" type="CalculatedScheduleIntervalValueType"/>
+		</xsd:sequence>
+		<xsd:attribute name="notFoundValue" type="xsd:decimal"/>
+	</xsd:complexType>
+	<xsd:complexType name="CalculatedValueType">
+		<xsd:choice>
+			<xsd:element name="Fixed" type="CalculatedValueFixedType"/>
+			<xsd:element name="Percent" type="CalculatedValuePercentType"/>
+			<xsd:element name="Linear" type="CalculatedValueLinearType"/>
+			<xsd:element name="Lookup" type="CalculatedValueLookupType"/>
+			<xsd:element name="Schedule" type="CalculatedValueScheduleType"/>
+			<xsd:element name="Extended" type="CalculatedValueExtendedType"/>
+		</xsd:choice>
+	</xsd:complexType>
+	<xsd:complexType name="DeductionPlanType">
+		<xsd:sequence>
+			<xsd:element name="DeductionCategory" type="BenefitDeductionCategoryType"/>
+			<xsd:element name="DeductionPlanName" type="xsd:string" minOccurs="0"/>
+			<xsd:element name="DeductionPlanId" type="EntityIdType" minOccurs="0"/>
+		</xsd:sequence>
+	</xsd:complexType>
+	<xsd:complexType name="DeductionType">
+		<xsd:sequence>
+			<xsd:element name="ApplyToCompensation" type="ApplyToCompensationType" minOccurs="0" maxOccurs="unbounded"/>
+			<xsd:element name="DeductionPlan" type="DeductionPlanType"/>
+			<xsd:element name="DeductionStartDate" type="LocalDateType"/>
+			<xsd:element name="DeductionOrder" type="xsd:integer" minOccurs="0"/>
+			<xsd:element name="DeductionEndDate" type="LocalDateType" minOccurs="0"/>
+			<xsd:element name="DeductionFrequency" type="FrequencyType" minOccurs="0"/>
+			<xsd:element name="DeductionCaseNumber" type="EntityIdType" minOccurs="0"/>
+			<xsd:element name="DeductionOptionalDate" type="PayrollDateType" minOccurs="0" maxOccurs="unbounded"/>
+			<xsd:element name="DeductionPreTaxFlag" type="xsd:boolean" minOccurs="0"/>
+		</xsd:sequence>
+		<xsd:attribute name="reportOnly" type="xsd:boolean"/>
+	</xsd:complexType>
+	<xsd:complexType name="EntityIdType">
+		<xsd:sequence>
+			<xsd:element name="IdValue" maxOccurs="unbounded">
+				<xsd:complexType>
+					<xsd:simpleContent>
+						<xsd:extension base="xsd:string">
+							<xsd:attribute name="name" type="xsd:string" use="optional"/>
+						</xsd:extension>
+					</xsd:simpleContent>
+				</xsd:complexType>
+			</xsd:element>
+		</xsd:sequence>
+		<xsd:attribute name="validFrom" type="AnyDateTimeNkNaType" use="optional"/>
+		<xsd:attribute name="validTo" type="AnyDateTimeNkNaType" use="optional"/>
+		<xsd:attribute name="idOwner" type="xsd:string" use="optional"/>
+	</xsd:complexType>
+	<xsd:complexType name="PayrollAmountType">
+		<xsd:sequence>
+			<xsd:element name="AmountStartDate" type="LocalDateType"/>
+			<xsd:element name="AmountEndDate" type="LocalDateType" minOccurs="0"/>
+			<xsd:element name="AmountValue" type="CalculatedValueType"/>
+			<xsd:element name="AmountLimit" type="PayrollLimitType" minOccurs="0" maxOccurs="unbounded"/>
+		</xsd:sequence>
+		<xsd:attribute name="duration" type="PayrollAmountDurationType"/>
+		<xsd:attribute name="count" type="xsd:integer"/>
+		<xsd:attribute name="currency" type="CurrencyCodeType"/>
+	</xsd:complexType>
+	<xsd:complexType name="PayrollDateType">
+		<xsd:simpleContent>
+			<xsd:extension base="LocalDateType">
+				<xsd:attribute name="type" type="PayrollOtherDateType"/>
+			</xsd:extension>
+		</xsd:simpleContent>
+	</xsd:complexType>
+	<xsd:complexType name="PayrollLimitType">
+		<xsd:sequence>
+			<xsd:element name="LimitMaxValue" type="xsd:decimal"/>
+			<xsd:element name="LimitMinValue" type="xsd:decimal"/>
+		</xsd:sequence>
+		<xsd:attribute name="type" type="PayrollLimitTypes"/>
+	</xsd:complexType>
+	<xsd:complexType name="PersonNameType">
+		<xsd:sequence>
+			<xsd:element name="FormattedName" type="xsd:string" minOccurs="0"/>
+			<xsd:element name="LegalName" type="xsd:string" minOccurs="0"/>
+			<xsd:element name="GivenName" type="xsd:string" minOccurs="0" maxOccurs="unbounded"/>
+			<xsd:element name="PreferredGivenName" type="xsd:string" minOccurs="0"/>
+			<xsd:element name="MiddleName" type="xsd:string" minOccurs="0"/>
+			<xsd:element name="FamilyName" minOccurs="0" maxOccurs="unbounded">
+				<xsd:complexType>
+					<xsd:simpleContent>
+						<xsd:extension base="xsd:string">
+							<xsd:attribute name="primary">
+								<xsd:simpleType>
+									<xsd:restriction base="xsd:string">
+										<xsd:enumeration value="true"/>
+										<xsd:enumeration value="false"/>
+										<xsd:enumeration value="undefined"/>
+									</xsd:restriction>
+								</xsd:simpleType>
+							</xsd:attribute>
+							<xsd:attribute name="prefix" type="xsd:string"/>
+						</xsd:extension>
+					</xsd:simpleContent>
+				</xsd:complexType>
+			</xsd:element>
+			<xsd:element name="Affix" minOccurs="0" maxOccurs="unbounded">
+				<xsd:complexType>
+					<xsd:simpleContent>
+						<xsd:extension base="xsd:string">
+							<xsd:attribute name="type" use="required">
+								<xsd:simpleType>
+									<xsd:restriction base="xsd:string">
+										<xsd:enumeration value="aristocraticTitle"/>
+										<xsd:enumeration value="formOfAddress"/>
+										<xsd:enumeration value="generation"/>
+										<xsd:enumeration value="qualification"/>
+									</xsd:restriction>
+								</xsd:simpleType>
+							</xsd:attribute>
+						</xsd:extension>
+					</xsd:simpleContent>
+				</xsd:complexType>
+			</xsd:element>
+			<xsd:element name="AlternateScript" minOccurs="0" maxOccurs="unbounded">
+				<xsd:complexType>
+					<xsd:sequence>
+						<xsd:element name="FormattedName" type="xsd:string" minOccurs="0"/>
+						<xsd:element name="LegalName" type="xsd:string" minOccurs="0"/>
+						<xsd:element name="GivenName" type="xsd:string" minOccurs="0" maxOccurs="unbounded"/>
+						<xsd:element name="PreferredGivenName" type="xsd:string" minOccurs="0"/>
+						<xsd:element name="MiddleName" type="xsd:string" minOccurs="0"/>
+						<xsd:element name="FamilyName" minOccurs="0" maxOccurs="unbounded">
+							<xsd:complexType>
+								<xsd:simpleContent>
+									<xsd:extension base="xsd:string">
+										<xsd:attribute name="primary">
+											<xsd:simpleType>
+												<xsd:restriction base="xsd:string">
+													<xsd:enumeration value="true"/>
+													<xsd:enumeration value="false"/>
+													<xsd:enumeration value="undefined"/>
+												</xsd:restriction>
+											</xsd:simpleType>
+										</xsd:attribute>
+										<xsd:attribute name="prefix" type="xsd:string"/>
+									</xsd:extension>
+								</xsd:simpleContent>
+							</xsd:complexType>
+						</xsd:element>
+						<xsd:element name="Affix" minOccurs="0" maxOccurs="unbounded">
+							<xsd:complexType>
+								<xsd:simpleContent>
+									<xsd:extension base="xsd:string">
+										<xsd:attribute name="type" use="required">
+											<xsd:simpleType>
+												<xsd:restriction base="xsd:string">
+													<xsd:enumeration value="aristocraticTitle"/>
+													<xsd:enumeration value="formOfAddress"/>
+													<xsd:enumeration value="generation"/>
+													<xsd:enumeration value="qualification"/>
+												</xsd:restriction>
+											</xsd:simpleType>
+										</xsd:attribute>
+									</xsd:extension>
+								</xsd:simpleContent>
+							</xsd:complexType>
+						</xsd:element>
+					</xsd:sequence>
+					<xsd:attribute name="script" type="xsd:string"/>
+				</xsd:complexType>
+			</xsd:element>
+		</xsd:sequence>
+		<xsd:attribute name="script" type="xsd:string"/>
+	</xsd:complexType>
+	<xsd:complexType name="UserAreaType">
+		<xsd:sequence minOccurs="0" maxOccurs="unbounded">
+			<xsd:annotation>
+				<xsd:documentation>In order to prevent a possible "ambiguous content model" errors in an instance, unbounded sequences were either eliminated from or deprecated in all HR-XML schemas. Removing unbounded sequences ensures that ambiguous errors are not found in an instance.  The unbounded sequence here is officially deprecated and will be changed to a single sequence.</xsd:documentation>
+			</xsd:annotation>
+			<xsd:any namespace="##any" minOccurs="0" maxOccurs="unbounded"/>
+		</xsd:sequence>
+	</xsd:complexType>
+	<xsd:element name="CalculatedLookupTable" type="CalculatedLookupTableType"/>
+	<xsd:element name="CalculatedScheduleTable" type="CalculatedScheduleTableType"/>
+	<xsd:element name="CalculatedValue" type="CalculatedValueType"/>
+	<xsd:element name="CountryCode" type="CountryCodeType"/>
+	<xsd:element name="CurrencyCode" type="CurrencyCodeType"/>
+	<xsd:element name="Frequency" type="FrequencyType"/>
+	<xsd:element name="GenderCode" type="GenderCodeType"/>
+	<xsd:element name="Instruction">
+		<xsd:complexType>
+			<xsd:sequence>
+				<xsd:element name="PaymentDate" type="LocalDateType" minOccurs="0"/>
+				<xsd:choice>
+					<xsd:element name="Deduction" type="DeductionType"/>
+					<xsd:element name="Benefit" type="BenefitType"/>
+				</xsd:choice>
+				<xsd:element name="Amount" type="PayrollAmountType" minOccurs="0"/>
+				<xsd:element ref="UserArea" minOccurs="0"/>
+			</xsd:sequence>
+			<xsd:attribute name="mode" type="TransactionCodeType" use="required"/>
+		</xsd:complexType>
+	</xsd:element>
+	<xsd:element name="LanguageCode" type="LanguageCodeType"/>
+	<xsd:element name="PayrollEmployer">
+		<xsd:complexType>
+			<xsd:sequence>
+				<xsd:element name="EmployerId" type="EntityIdType" maxOccurs="unbounded"/>
+				<xsd:element name="EmployerName" type="xsd:string" minOccurs="0"/>
+				<xsd:element name="EmployerGovernmentId" type="EntityIdType" minOccurs="0" maxOccurs="unbounded"/>
+			</xsd:sequence>
+		</xsd:complexType>
+	</xsd:element>
+	<xsd:element name="PayrollPerson">
+		<xsd:complexType>
+			<xsd:sequence>
+				<xsd:element name="PersonId" type="EntityIdType" maxOccurs="unbounded"/>
+				<xsd:element name="PersonName" type="PersonNameType" minOccurs="0" maxOccurs="unbounded"/>
+				<xsd:element name="PersonGovernmentId" type="EntityIdType" minOccurs="0" maxOccurs="unbounded"/>
+			</xsd:sequence>
+		</xsd:complexType>
+	</xsd:element>
+	<xsd:element name="PersonInstruction">
+		<xsd:complexType>
+			<xsd:sequence>
+				<xsd:element ref="PayrollPerson"/>
+				<xsd:element ref="Instruction" maxOccurs="unbounded"/>
+				<xsd:element ref="UserArea" minOccurs="0"/>
+			</xsd:sequence>
+		</xsd:complexType>
+	</xsd:element>
+	<xsd:element name="PersonName" type="PersonNameType"/>
+	<xsd:element name="RequestTotal">
+		<xsd:complexType>
+			<xsd:sequence>
+				<xsd:element name="Deduction" type="DeductionType" minOccurs="0"/>
+				<xsd:element name="Amount" type="PayrollAmountType"/>
+			</xsd:sequence>
+		</xsd:complexType>
+	</xsd:element>
+	<xsd:element name="TransactionCode" type="TransactionCodeType"/>
+	<xsd:element name="UserArea" type="UserAreaType">
+		<xsd:annotation>
+			<xsd:documentation>HR-XML Technical Steering Committee endorsed extension element.</xsd:documentation>
+		</xsd:annotation>
+	</xsd:element>
+</xsd:schema>

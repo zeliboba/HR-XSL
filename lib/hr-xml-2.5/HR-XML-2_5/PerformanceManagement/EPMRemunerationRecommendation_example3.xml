@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EPMRemunerationResult xmlns="http://ns.hr-xml.org/2007-04-15" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://ns.hr-xml.org/2007-04-15
+ EPMRemunerationResult.xsd">
+	<ResultDate>2006-03-05</ResultDate>
+	<AppraisalPeriod>
+		<StartDate>2005-04-17</StartDate>
+		<EndDate>2006-04-17</EndDate>
+	</AppraisalPeriod>
+	<PreparedBy>
+		<PersonName>
+			<GivenName>Bob</GivenName>
+			<FamilyName>Mangler</FamilyName>
+		</PersonName>
+	</PreparedBy>
+	<AppraisalSubject>
+		<PersonName>
+			<GivenName>Anne</GivenName>
+			<FamilyName>Empee</FamilyName>
+		</PersonName>
+	</AppraisalSubject>
+	<ReasonCode>
+		<StandardValue>scheduled</StandardValue>
+	</ReasonCode>
+	<ScheduleType>
+		<StandardValue>annual</StandardValue>
+	</ScheduleType>
+	<!-- Overall Rating Section -->
+	<OverallRating>
+		<Score>
+			<NumericValue>3.8</NumericValue>
+		</Score>
+	</OverallRating>
+	<!-- Begin Objectives Section -->
+	<ObjectivesSection>
+		<SectionSummaryResult>
+			<Weight>25</Weight>
+			<Score>
+				<NumericValue>4</NumericValue>
+			</Score>
+		</SectionSummaryResult>
+		<ObjectiveSingleResult>
+				<ObjectiveName>Build a barn</ObjectiveName>
+				<ObjectiveDescription>Build a 2000 sq. foot barn on the office parking lot.</ObjectiveDescription>
+			<Weight>25</Weight>
+				<ObjectiveStatus><StandardValue>canceled</StandardValue></ObjectiveStatus>
+			<Score>
+				<NumericValue>1</NumericValue>
+			</Score>
+			<Comments>Hired the contractor. Problem getting permit.</Comments>
+		</ObjectiveSingleResult>
+		<ObjectiveSingleResult>
+				<ObjectiveName>Throw a party.</ObjectiveName>
+				<ObjectiveDescription>Throw a New Years Eve party.</ObjectiveDescription>
+			<Weight>75</Weight>
+				<ObjectiveStatus><StandardValue>canceled</StandardValue></ObjectiveStatus>
+			<Score>
+				<NumericValue>5</NumericValue>
+			</Score>
+			<Comments>A good time was had by all.</Comments>
+		</ObjectiveSingleResult>
+	</ObjectivesSection>
+	<!-- Pay Recommendation -->
+	<RemunerationRecommendationDetail>
+	<CurrentBasePay>74500.00</CurrentBasePay>
+	<NewBasePay>
+		<PercentageIncrease>3.0</PercentageIncrease>
+	</NewBasePay>
+	</RemunerationRecommendationDetail>
+</EPMRemunerationResult>

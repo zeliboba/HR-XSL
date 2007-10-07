@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TimeCardConfiguration xmlns="http://ns.hr-xml.org/2007-04-15" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://ns.hr-xml.org/2007-04-15
+TimeCardConfiguration.xsd">
+	<Resources>
+		<Person>
+			<Id>d026194</Id>
+		</Person>
+		<Person preferredLanguage="de">
+			<Id>c04711</Id>
+			<PersonName>
+				<GivenName>Peter</GivenName>
+				<FamilyName>Mustermann</FamilyName>
+			</PersonName>
+		</Person>
+		<Person>
+			<PersonName>
+				<GivenName>John</GivenName>
+				<MiddleName>William</MiddleName>
+				<FamilyName>Smith</FamilyName>
+			</PersonName>
+			<Assignment>A1</Assignment>
+			<Assignment>A2</Assignment>
+		</Person>
+	</Resources>
+	<TimeIntervalTypes>
+		<Type>
+			<Id>RegWork</Id>
+			<ShortDescription xml:lang="en">Regular Work</ShortDescription>
+		</Type>
+		<Type validFrom="2001-01-01" validTo="2001-12-31">
+			<Id>OT</Id>
+			<ShortDescription xml:lang="en">Overtime</ShortDescription>
+			<ShortDescription xml:lang="de">Mehrarbeit</ShortDescription>
+		</Type>
+		<Type>
+			<Id>SICK</Id>
+			<ShortDescription xml:lang="en">Sickness</ShortDescription>
+		</Type>
+	</TimeIntervalTypes>
+	<TimeEventTypes>
+		<Type>
+			<Id>IN</Id>
+			<ShortDescription xml:lang="en">Clock In</ShortDescription>
+		</Type>
+		<Type>
+			<Id>OUT</Id>
+			<ShortDescription xml:lang="en">Clock Out</ShortDescription>
+		</Type>
+	</TimeEventTypes>
+	<AdditionalDataTypesAndValues>
+		<Type>
+			<Id>CC</Id>
+			<ShortDescription xml:lang="en">CostCenter</ShortDescription>
+		</Type>
+		<Value>
+			<Id>CCA</Id>
+			<ShortDescription xml:lang="en">Cost Center A</ShortDescription>
+		</Value>
+		<Value>
+			<Id>CCB</Id>
+			<ShortDescription xml:lang="en">CostCenter B</ShortDescription>
+		</Value>
+		<Value>
+			<Id>CCC</Id>
+			<ShortDescription xml:lang="en">Costcenter C</ShortDescription>
+		</Value>
+	</AdditionalDataTypesAndValues>
+</TimeCardConfiguration>

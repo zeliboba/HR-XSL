@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+    License information for this file is provided in LICENSE.TXT
+    For support, more information, or to report implementation bugs, 
+    please contact the Open Applications Group at xml@openapplications.org 
+     
+    ** Revision: 8.0 **
+    ** Date: 05 April 2002 **
+    Open Applications Group XML IndustryA Overlay Example
+    Copyright 1998-2002, All Rights Reserved
+    
+    Name: IndustryA ProcessTimeCard.xml
+-->
+<ProcessTimeCard xmlns="http://www.oagi.net/oagis/ia" xmlns:oa="http://www.openapplications.org/oagis" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.oagi.net/oagis/ia
+../BODs/ProcessTimeCard.xsd" revision="8.0" environment="Test" lang="en-US">
+	<oa:ApplicationArea>
+		<oa:Sender>
+			<oa:LogicalId>String</oa:LogicalId>
+			<oa:Component>String</oa:Component>
+			<oa:Task>String</oa:Task>
+			<oa:ReferenceId>String</oa:ReferenceId>
+			<oa:Confirmation>0</oa:Confirmation>
+			<oa:AuthorizationId>String</oa:AuthorizationId>
+		</oa:Sender>
+		<oa:CreationDateTime>2001-09-11T09:30:47-05:00</oa:CreationDateTime>
+		<oa:Signature qualifyingAgency="String"/>
+		<oa:BODId>String</oa:BODId>
+		<oa:UserArea/>
+	</oa:ApplicationArea>
+	<DataArea>
+		<oa:Process acknowledge="Always"/>
+		<TimeCard/>
+	</DataArea>
+</ProcessTimeCard>

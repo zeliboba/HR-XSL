@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema xmlns="http://ns.hr-xml.org/2007-04-15" xmlns:xsd="http://www.w3.org/2001/XMLSchema" targetNamespace="http://ns.hr-xml.org/2007-04-15" elementFormDefault="qualified" attributeFormDefault="unqualified">
+	<xsd:include schemaLocation="../CPO/IdentifierTypes.xsd"/>
+	<xsd:include schemaLocation="../CPO/UserArea.xsd"/>
+	<xsd:include schemaLocation="../Indicative/IndicativeReusableTypes.xsd"/>
+
+	<xsd:complexType name="IndJobPositionInfoType">
+		<xsd:sequence>
+			<xsd:element name="JobPositionDetail" type="IndJobPositionDetailType" minOccurs="0" maxOccurs="unbounded"/>
+			<xsd:element name="ShiftId" type="EntityIdType" minOccurs="0"/>
+			<xsd:element name="ScheduledHours" type="IndJobScheduledHoursType" minOccurs="0" maxOccurs="unbounded"/>
+			<xsd:element name="UserArea" type="UserAreaType" minOccurs="0"/>
+		</xsd:sequence>
+	</xsd:complexType>
+
+	<xsd:complexType name="IndBaseJobPositionDetailType">
+		<xsd:sequence>
+			<xsd:element name="PositionId" type="EntityIdType" minOccurs="0"/>
+			<xsd:element name="PositionTitle" type="xsd:string" minOccurs="0"/>
+			<xsd:element name="JobLevel" type="IndJobLevelInfoType" minOccurs="0"/>
+			<xsd:element name="JobCategory" type="xsd:string" minOccurs="0"/>
+		</xsd:sequence>
+		<xsd:attribute name="validFrom" type="LocalDateType" use="optional"/>
+		<xsd:attribute name="validTo" type="LocalDateType" use="optional"/>
+	</xsd:complexType>
+
+	<xsd:complexType name="IndJobPositionDetailType">
+		<xsd:complexContent>
+			<xsd:extension base="IndBaseJobPositionDetailType">
+				<xsd:sequence>
+					<xsd:element name="JobEntryReason" type="IndJobEntryReasonEnumExtensionType"/>
+				</xsd:sequence>
+			</xsd:extension>
+		</xsd:complexContent>
+	</xsd:complexType>
+
+	<xsd:complexType name="IndJobLevelInfoType">
+		<xsd:sequence>
+			<xsd:element name="JobPlan" type="xsd:string" minOccurs="0"/>
+			<xsd:element name="JobGrade" type="xsd:string" minOccurs="0"/>
+			<xsd:element name="JobStep" type="xsd:string" minOccurs="0"/>
+		</xsd:sequence>
+	</xsd:complexType>
+
+	<xsd:simpleType name="IndJobEntryReasonEnumType">
+		<xsd:restriction base="xsd:string">
+			<xsd:enumeration value="Acquisition"/>
+			<xsd:enumeration value="Demotion"/>
+			<xsd:enumeration value="Hire"/>
+			<xsd:enumeration value="Lateral"/>
+			<xsd:enumeration value="Promotion"/>
+			<xsd:enumeration value="Transfer"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+
+	<xsd:complexType name="IndJobEntryReasonEnumExtensionType">
+		<xsd:choice>
+			<xsd:element name="StandardValue" type="IndJobEntryReasonEnumType" minOccurs="0"/>
+			<xsd:element name="NonStandardValue" type="xsd:string" minOccurs="0"/>
+		</xsd:choice>
+	</xsd:complexType>
+
+	<xsd:complexType name="IndJobScheduledHoursType">
+		<xsd:simpleContent>
+			<xsd:extension base="xsd:decimal">
+				<xsd:attribute name="baseInterval" type="IndScheduledHoursBasisEnumType" use="required"/>
+			</xsd:extension>
+		</xsd:simpleContent>
+	</xsd:complexType>
+
+	<xsd:simpleType name="IndScheduledHoursBasisEnumType">
+		<xsd:restriction base="xsd:string">
+			<xsd:enumeration value="Daily"/>
+			<xsd:enumeration value="Weekly"/>
+			<xsd:enumeration value="Every2Weeks"/>
+			<xsd:enumeration value="Monthly"/>
+			<xsd:enumeration value="SemiMonthly"/>
+			<xsd:enumeration value="Every2Months"/>
+			<xsd:enumeration value="Quarterly"/>
+			<xsd:enumeration value="Annually"/>
+			<xsd:enumeration value="SemiAnnually"/>
+			<xsd:enumeration value="Every4Weeks"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+</xsd:schema>

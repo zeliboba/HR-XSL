@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Widgets Manufacturing Company hired William Jones on January 1, 1987.   This document represents the indicative information that may be used by a benefits outsourcer or payroll vendor. -->
+<IndicativeBatch xmlns="http://ns.hr-xml.org/2007-04-15" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://ns.hr-xml.org/2007-04-15  IndicativeBatch.xsd">
+	<TransactionType>Full</TransactionType>
+	<CreateDate>1987-01-31</CreateDate>
+	<BaselineDate>1987-01-31</BaselineDate>
+	<IndicativeData>
+		<Employer>
+			<OrganizationName>Widget Manufacturing</OrganizationName>
+			<OrganizationId idOwner="Dunn &amp; Bradstreet">
+				<IdValue name="DUNNS">72241</IdValue>
+			</OrganizationId>
+		</Employer>
+		<Employee>
+			<PersonInfo>
+				<PersonLegalId validFrom="1961-04-05" validTo="2000-05-11" idOwner="Canadian Social Insurance">
+					<IdValue name="SIN">123-456-789</IdValue>
+				</PersonLegalId>
+				<PersonName>
+					<GivenName>William</GivenName>
+					<FamilyName>Jones</FamilyName>
+				</PersonName>
+				<DateOfBirth>1961-04-05</DateOfBirth>
+				<GenderCode>1</GenderCode>
+				<MaritalStatus>
+					<StandardValue>Unmarried</StandardValue>
+				</MaritalStatus>
+				<ContactInfo validFrom="1987-01-01">
+					<Location>home</Location>
+					<WhenAvailable>evenings</WhenAvailable>
+					<Telephone>
+						<FormattedNumber>(418)555-9876</FormattedNumber>
+					</Telephone>
+					<PostalAddress>
+						<CountryCode>CA</CountryCode>
+						<PostalCode>G1R 5C7</PostalCode>
+						<Region>Quebec</Region>
+						<Municipality>Quebec City</Municipality>
+						<DeliveryAddress>
+							<AddressLine>875, rue Fraser</AddressLine>
+						</DeliveryAddress>
+					</PostalAddress>
+				</ContactInfo>
+			</PersonInfo>
+			<EmployeeInfo>
+				<EmployeeId validFrom="1987-01-01" idOwner="Widget Manufacturing">
+					<IdValue name="EE Id">320</IdValue>
+				</EmployeeId>
+				<ContactInfo validFrom="1987-01-01">
+					<Location>office</Location>
+					<WhenAvailable>weekdays</WhenAvailable>
+					<Telephone>
+						<FormattedNumber>(418)555-1000</FormattedNumber>
+					</Telephone>
+					<PostalAddress>
+						<CountryCode>CA</CountryCode>
+						<PostalCode>G1R 5C7</PostalCode>
+						<Region>Quebec</Region>
+						<Municipality>Quebec City</Municipality>
+						<DeliveryAddress>
+							<AddressLine>100, rue Monte</AddressLine>
+						</DeliveryAddress>
+					</PostalAddress>
+				</ContactInfo>
+				<RemunerationBasis>Salaried</RemunerationBasis>
+				<FLSAStatus>exempt</FLSAStatus>
+				<EmploymentLevel>FullTime</EmploymentLevel>
+				<ResourceRelationship>Employee</ResourceRelationship>
+				<EmploymentTerm>Regular</EmploymentTerm>
+				<LaborBargainingUnitStatus>NonMember</LaborBargainingUnitStatus>
+				<ForeignStatus>Domestic</ForeignStatus>
+				<EmployeeGroup validFrom="1987-01-01" idOwner="Widget Manufacturing">
+					<IdValue name="StatusCode">Y17LT6</IdValue>
+				</EmployeeGroup>
+			</EmployeeInfo>
+			<EmploymentInfo>
+				<IsEmployed>true</IsEmployed>
+				<Employment>
+					<HireInfo typeOfHire="NewHire">
+						<HireDate>1987-01-01</HireDate>
+						<!-- Note: no original hire dates or adjusted hire dates need to be sent for a new hire -->
+					</HireInfo>
+				</Employment>
+			</EmploymentInfo>
+			<JobPositionInfo>
+				<JobPositionDetail validFrom="1987-01-01">
+					<PositionId idOwner="Widget Manufacturing">
+						<IdValue name="Job Id">20</IdValue>
+					</PositionId>
+					<PositionTitle>Assembly Line Worker</PositionTitle>
+					<JobLevel>
+						<JobPlan>Assembly Line</JobPlan>
+						<JobGrade>B17</JobGrade>
+						<JobStep>1</JobStep>
+					</JobLevel>
+					<JobCategory>Shop Floor</JobCategory>
+					<JobEntryReason>
+						<StandardValue>Hire</StandardValue>
+					</JobEntryReason>
+				</JobPositionDetail>
+				<ScheduledHours baseInterval="Daily">8</ScheduledHours>
+				<ScheduledHours baseInterval="Weekly">40</ScheduledHours>
+			</JobPositionInfo>
+			<OrganizationInfo>
+				<Organization validFrom="1987-01-01">
+					<OrganizationName>Widget Manufacturing</OrganizationName>
+					<OrganizationId idOwner="Dunn &amp; Bradstreet">
+						<IdValue name="DUNNS">72241</IdValue>
+					</OrganizationId>
+				</Organization>
+				<OrganizationalUnit validFrom="1987-01-01">
+					<OrganizationalUnitName>Quebec Plant</OrganizationalUnitName>
+					<OrganizationalUnitId idOwner="Widget Manufacturing">
+						<IdValue name="Division Id">01</IdValue>
+					</OrganizationalUnitId>
+				</OrganizationalUnit>
+				<WorkLocation allocationPercentage="100">
+					<Id>
+						<IdValue name="location code">87609</IdValue>
+					</Id>
+				</WorkLocation>
+			</OrganizationInfo>
+			<RemunerationInfo>
+				<RemunerationDetail validFrom="1987-01-01">
+					<PayRate currencyCode="CAD">15</PayRate>
+					<PayRateFrequency>
+						<StandardValue>Hourly</StandardValue>
+					</PayRateFrequency>
+					<RemunerationType>
+						<StandardValue>BasePay</StandardValue>
+					</RemunerationType>
+				</RemunerationDetail>
+			</RemunerationInfo>
+			<AffiliationInfo>
+				<LaborBargainingUnitMembership>
+					<OrganizationName>Canadian Shop Floor Workers Union</OrganizationName>
+					<MemberId validFrom="1987-01-01" validTo="1998-06-05">
+						<IdValue>P71154</IdValue>
+					</MemberId>
+				</LaborBargainingUnitMembership>
+			</AffiliationInfo>
+		</Employee>
+	</IndicativeData>
+</IndicativeBatch>

@@ -1,0 +1,1632 @@
+<HTML>
+  <HEAD>
+    <TITLE>HR-XML Consortium Library</TITLE>
+    <meta name="robots" content="noindex,nofollow">
+    <LINK REL="stylesheet" HREF="css/hr-xml-v2.css">
+  </HEAD>
+
+<style type="text/css"><!--
+#containerul, #containerul ul{
+  text-align:left;
+  margin:0; /* Removes browser default margins applied to the lists. */
+  padding:0; /* Removes browser default padding applied to the lists. */
+}
+
+#containerul li{
+  margin:0 0 0 30px; /* A left margin to indent the list items and give the menu a sense of structure. */
+  padding:0; /* Removes browser default padding applied to the list items. */
+  list-style-type:none; /* Removes the bullet point that usually goes next to each item in a list. */
+}
+
+#containerul .symbols{ /* Various styles to position the symbols next to the items in the menu. */
+  float:left;
+  width:12px;
+  height:1em;
+  background-position:0 50%;
+  background-repeat:no-repeat;
+}
+--></style>
+
+<script type="text/javascript">
+<!--
+var temp, temp2, cookieArray, cookieArray2, cookieCount;
+function initiate(){
+  cookieCount=0;
+  if(document.cookie){
+    cookieArray=document.cookie.split(";");
+    cookieArray2=new Array();
+    for(i in cookieArray){
+      cookieArray2[cookieArray[i].split("=")[0].replace(/ /g,"")]=cookieArray[i].split("=")[1].replace(/ /g,"");
+    }
+  }
+  cookieArray=(document.cookie.indexOf("state=")>=0)?cookieArray2["state"].split(","):new Array();
+  temp=document.getElementById("containerul");
+  for(var o=0;o<temp.getElementsByTagName("li").length;o++){
+    if(temp.getElementsByTagName("li")[o].getElementsByTagName("ul").length>0){
+      temp2 = document.createElement("span");
+      temp2.className = "symbols";
+      temp2.style.backgroundImage = (cookieArray.length>0)?((cookieArray[cookieCount]=="true")?"url(images/minus.png)":"url(images/plus.png)"):"url(images/plus.png)";
+      temp2.onclick=function(){
+        showhide(this.parentNode);
+        writeCookie();
+      }
+      temp.getElementsByTagName("li")[o].insertBefore(temp2,temp.getElementsByTagName("li")[o].firstChild)
+      temp.getElementsByTagName("li")[o].getElementsByTagName("ul")[0].style.display = "none";
+      if(cookieArray[cookieCount]=="true"){
+        showhide(temp.getElementsByTagName("li")[o]);
+      }
+      cookieCount++;
+    }
+    else{
+      temp2 = document.createElement("span");
+      temp2.className = "symbols";
+      temp2.style.backgroundImage = "url(images/page.png)";
+      temp.getElementsByTagName("li")[o].insertBefore(temp2,temp.getElementsByTagName("li")[o].firstChild);
+    }
+  }
+}
+
+function showhide(el){
+  el.getElementsByTagName("ul")[0].style.display=(el.getElementsByTagName("ul")[0].style.display=="block")?"none":"block";
+  el.getElementsByTagName("span")[0].style.backgroundImage=(el.getElementsByTagName("ul")[0].style.display=="block")?"url(images/minus.png)":"url(images/plus.png)";
+}
+
+function writeCookie(){ // Runs through the menu and puts the "states" of each nested list into an array, the array is then joined together and assigned to a cookie.
+  cookieArray=new Array()
+  for(var q=0;q<temp.getElementsByTagName("li").length;q++){
+    if(temp.getElementsByTagName("li")[q].childNodes.length>0){
+      if(temp.getElementsByTagName("li")[q].childNodes[0].nodeName=="SPAN" && temp.getElementsByTagName("li")[q].getElementsByTagName("ul").length>0){
+        cookieArray[cookieArray.length]=(temp.getElementsByTagName("li")[q].getElementsByTagName("ul")[0].style.display=="block");
+      }
+    }
+  }
+  document.cookie="state="+cookieArray.join(",")+";expires="+new Date(new Date().getTime() + 365*24*60*60*1000).toGMTString();
+}
+//-->
+</script>
+  </HEAD>
+  <BODY LEFTMARGIN="0" TOPMARGIN="0" BGCOLOR="#FFFFFF">
+
+<div style="width:901px;"><A HREF="http://www.hr-xml.org" TARGET="_blank"><IMG SRC="images/header_org_01.gif" border="0"><img src="images/header_org_02.gif" border="0"></A></div>
+<div style="width:735px; position: absolute; left: 75px;top:70px;">
+<P class="fineprint">Note: Does an alert appear at the top of your browser window? Your browser may be
+blocking scripting necessary to make use of the fold-out menus on this page. To use the menus,
+follow your browser's instructions for removing this restriction.</P></div>
+
+
+ <div style="position:absolute;left:20px;width:875px;top:100px;">
+
+<!-- <div style="position:absolute;left:20px;width:875px;top:67px;"> -->
+
+      <H3>HR-XML Consortium Library, 2007 April 15</H3>
+
+      <P ALIGN="CENTER"><B><A HREF="http://ns.hr-xml.org/AllHRXML/200704/HRXML200704.zip">[ Download Distribution Package ]</A></B></P>
+
+<div id="navpage_menu3">
+    <P class="navpage">Shortcuts</P>
+<UL>
+ <LI><A HREF="readme.html" TARGET="_BLANK">Read Me - New In This Release</A></LI>
+ <LI><A HREF="HR-XML-2_5/CPO/ApplicationAcknowledgement.html" TARGET="_BLANK">Application Acknowledgement</A></LI>
+ <LI><A HREF="HR-XML-2_5/Assessment/Assessments.html" TARGET="_BLANK">Assessments</A></LI>
+ <LI><A HREF="HR-XML-2_5/Assessment/AssessmentCatalog.html" TARGET="_BLANK">AssessmentCatalog</A></LI>
+ <LI><A HREF="HR-XML-2_5/Screening/US/BackgroundChecking.html" TARGET="_BLANK">Background Checks / Screening</A></LI>
+ <LI><A HREF="HR-XML-2_5/Enrollment/Enrollment.html" TARGET="_BLANK">Benefits Enrollment</A></LI>
+ <LI><A HREF="HR-XML-2_5/CPO/Competencies.html" TARGET="_BLANK">Competencies</A></LI>
+ <LI><A HREF="HR-XML-2_5/PerformanceManagement/EPMCompensationSystemScenarios.html" TARGET="_BLANK">Compensation Sys. Scenarios</A></LI>
+ <LI><A HREF="HR-XML-2_5/PerformanceManagement/EPMLMSScenarios.html" TARGET="_BLANK">Learning Mgt. Sys. Scenarios</A></LI>
+ <LI><A HREF="HR-XML-2_5/Indicative/IndicativeData.html" TARGET="_BLANK">Indicative Data</A></LI>
+ <LI><A HREF="HR-XML-2_5/Metrics/MetricsInterchange.html" TARGET="_BLANK">Metrics</A></LI>
+ <LI><A HREF="HR-XML-2_5/NewHire/NewHire.html" TARGET="_BLANK">New Hire</A></LI>
+ <LI><A HREF="HR-XML-2_5/Payroll/PayrollBenefitContributions.html" TARGET="_BLANK">Payroll Benefits Contributions</A></LI>
+ <LI><A HREF="HR-XML-2_5/Payroll/PayrollInstructions.html" TARGET="_BLANK">Payroll Instructions</A></LI>
+ <LI><A HREF="HR-XML-2_5/PerformanceManagement/EPMResultsOverview.html" TARGET="_BLANK">Performance Management</A></LI>
+ <LI><A HREF="HR-XML-2_5/CPO/PersonName.html" TARGET="_BLANK">Person Name</A></LI>
+ <LI><A HREF="HR-XML-2_5/CPO/PostalAddress.html" TARGET="_BLANK">Postal Address</A></LI>
+ <LI><A HREF="HR-XML-2_5/SEP/Resume.html" TARGET="_BLANK">Resume</A></LI>
+ <LI><A HREF="HR-XML-2_5/SEP/StaffingExchangeProtocol.html" TARGET="_BLANK">Staffing Exchange Protocol</A></LI>
+ <LI><A HREF="HR-XML-2_5/SIDES/SIDES.html" TARGET="_BLANK">Staffing Industry Data Exchange Standards</A></LI>
+ <LI><A HREF="HR-XML-2_5/Stock/EmployeeStockPlansInterface.html" TARGET="_BLANK">Stock Plans</A></LI>
+ <LI><A HREF="HR-XML-2_5/TimeCard/TimeCard.html" TARGET="_BLANK">Time Card</A></LI>
+  <LI><B><A HREF="HR-XML-2_5/index.html">[ Comprehensive Index ]</A></B></LI>
+ </UL>
+</div>
+
+
+<div id="navpage_menu">
+<P class="navpage">Access By Actor and Use Case</P>
+
+<P>Below is a simple index to HR-XML specifications organized by common use cases. Additional actors and use cases may be supported.
+If you do not find what you are looking for,
+consult the <B><A HREF="HR-XML-2_5/index.html">comprehensive index</A></B> or <A HREF="mailto:info@hr-xml.org">contact us</A>.
+</P>
+
+
+<ul id="containerul">
+  <li>
+    <B>Applicant Tracking System</B>
+    <ul id="containerul">
+      <li>
+        <B>Post a Job</B><ul id="containerul">
+<!-- Begin Template -->
+                       <li>
+                        <B>Documentation</B><ul>
+                                         <li><a href="HR-XML-2_5/SEP/StaffingExchangeProtocol.html" TARGET="_BLANK">Staffing Exchange Protocol</a></li>
+                                      </ul>
+                       </li>
+                       <li>
+                        <B>Standalone Schemas</B><ul>
+                                              <li><a href="HR-XML-2_5/StandAlone/PositionOpening.xsd" TARGET="_BLANK">PositionOpening.xsd</a></li>
+                                                </ul>
+                       </li>
+                       <li>
+					    <B>Examples</B><ul>
+					              <li><a href="HR-XML-2_5/SEP/PositionOpeningExample.xml" TARGET="_BLANK">PositionOpeningExample.xml</a></li>
+					              </ul>
+                       </li>
+<!-- End Template -->
+                  </ul>
+      </li>
+
+      <li>
+        <B>Process Candidate</B><ul id="containerul">
+<!-- Begin Template -->
+                       <li>
+                        <B>Documentation</B><ul>
+                                         <li><a href="HR-XML-2_5/SEP/StaffingExchangeProtocol.html" TARGET="_BLANK">Staffing Exchange Protocol</a></li>
+                                      </ul>
+                       </li>
+                       <li>
+                        <B>Standalone Schemas</B><ul>
+                                              <li><a href="HR-XML-2_5/StandAlone/Candidate.xsd" TARGET="_BLANK">Candidate.xsd</a></li>
+                                                </ul>
+                       </li>
+                       <li>
+					    <B>Examples</B><ul>
+					              <li><a href="HR-XML-2_5/SEP/CandidateExample.xml" TARGET="_BLANK">CandidateExample.xml</a></li>
+					              </ul>
+                       </li>
+<!-- End Template -->
+                  </ul>
+      </li>
+
+
+
+      <li>
+        <B>Extract / Process Resume</B><ul id="containerul">
+<!-- Begin Template -->
+                       <li>
+                        <B>Documentation</B><ul>
+                                         <li><a href="HR-XML-2_5/SEP/Resume.html" TARGET="_BLANK">Resume</a></li>
+                                      </ul>
+                       </li>
+                       <li>
+                        <B>Standalone Schemas</B><ul>
+                                              <li><a href="HR-XML-2_5/StandAlone/Resume.xsd" TARGET="_BLANK">Resume.xsd</a></li>
+                                                </ul>
+                       </li>
+                       <li>
+					    <B>Examples</B><ul>
+					              <li><a href="HR-XML-2_5/SEP/ResumeExample.xml" TARGET="_BLANK">ResumeExample.xml</a></li>
+					              </ul>
+                       </li>
+<!-- End Template -->
+                  </ul>
+      </li>
+
+
+
+      <li>
+	          <B>Query / Identify Assessments</B><ul id="containerul">
+<!-- Begin Template -->
+                       <li>
+                        <B>Documentation</B><ul>
+                                         <li><a href="HR-XML-2_5/Assessment/AssessmentCatalog.html" TARGET="_BLANK">Assessment Catalog</a></li>
+                                      </ul>
+                       </li>
+                       <li>
+                        <B>Standalone Schemas</B><ul>
+                                              <li><a href="HR-XML-2_5/StandAlone/AssessmentCatalogQuery.xsd" TARGET="_BLANK">AssessmentCatalogQuery.xsd</a></li>
+                                              <li><a href="HR-XML-2_5/StandAlone/AssessmentCatalog.xsd" TARGET="_BLANK">AssessmentCatalog.xsd</a></li>
+                                              </ul>
+                       </li>
+                       <li>
+					    <B>Examples</B><ul>
+					              <li><a href="HR-XML-2_5/Assessment/AssessmentCatalogQuery.xml" TARGET="_BLANK">AssessmentCatalogQuery.xml</a></li>
+					              <li><a href="HR-XML-2_5/Assessment/AssessmentCatalogQuery2.xml" TARGET="_BLANK">AssessmentCatalogQuery2.xml</a></li>
+					              <li><a href="HR-XML-2_5/Assessment/AssessmentCatalog.xml" TARGET="_BLANK">AssessmentCatalog.xml</a></li>
+					              <li><a href="HR-XML-2_5/Assessment/AssessmentCatalog2.xml" TARGET="_BLANK">AssessmentCatalog2.xml</a></li>
+					              <li><a href="HR-XML-2_5/Assessment/AssessmentCatalog3.xml" TARGET="_BLANK">AssessmentCatalog3.xml</a></li>
+					              </ul>
+                       </li>
+<!-- End Template -->
+
+	                    </ul>
+      </li>
+      <li>
+	         <B>Order an Assessment / Process Assessment Results</B><ul id="containerul">
+<!-- Begin Template -->
+                       <li>
+                        <B>Documentation</B><ul>
+                                         <li><a href="HR-XML-2_5/Assessment/Assessments.html" TARGET="_BLANK">Assessments</a></li>
+                                      </ul>
+                       </li>
+                       <li>
+                        <B>Standalone Schemas</B><ul>
+                                              <li><a href="HR-XML-2_5/StandAlone/AssessmentOrderRequest.xsd" TARGET="_BLANK">AssessmentOrderRequest.xsd</a></li>
+                                              <li><a href="HR-XML-2_5/StandAlone/AssessmentOrderAcknowledgement.xsd" TARGET="_BLANK">AssessmentOrderAcknowledgement.xsd</a></li>
+                                              <li><a href="HR-XML-2_5/StandAlone/AssessmentStatusRequest.xsd" TARGET="_BLANK">AssessmentStatusRequest.xsd</a></li>
+                                              <li><a href="HR-XML-2_5/StandAlone/AssessmentCancelRequest.xsd" TARGET="_BLANK">AssessmentCancelRequest.xsd</a></li>
+                                              <li><a href="HR-XML-2_5/StandAlone/AssessmentResult.xsd" TARGET="_BLANK">AssessmentResult.xsd</a></li>
+                                              </ul>
+                       </li>
+                       <li>
+					    <B>Examples</B><ul>
+					              <li><a href="HR-XML-2_5/Assessment/AssessmentOrderRequest.xml" TARGET="_BLANK">AssessmentOrderRequest.xml</a></li>
+					              <li><a href="HR-XML-2_5/Assessment/AssessmentOrderAcknowledgement.xml" TARGET="_BLANK">AssessmentOrderAcknowledgement.xml</a></li>
+					              <li><a href="HR-XML-2_5/Assessment/AssessmentStatusRequest.xml" TARGET="_BLANK">AssessmentStatusRequest.xml</a></li>
+					              <li><a href="HR-XML-2_5/Assessment/AssessmentCancelRequest.xml" TARGET="_BLANK">AssessmentCancelRequest.xml</a></li>
+					              <li><a href="HR-XML-2_5/Assessment/AssessmentResult.xml" TARGET="_BLANK">AssessmentResult.xml</a></li>
+					              </ul>
+                       </li>
+<!-- End Template -->	  	                    </ul>
+      </li>
+     <li>
+	         <B>Order Pre-Employment Screening / Process Screening Report</B><ul id="containerul">
+
+
+
+<!-- Begin Template -->
+                       <li>
+                        <B>Documentation</B><ul>
+                                         <li><a href="HR-XML-2_5/Screening/US/BackgroundChecking.html" TARGET="_BLANK">Background Checking</a>
+                                         <li><a href="HR-XML-2_5/Screening/US/BackgroundRequests.html" TARGET="_BLANK">Background Requests</a>
+                                         <li><a href="HR-XML-2_5/Screening/US/BackgroundReports.html" TARGET="_BLANK">Background Reports</a>
+                                         <li><a href="HR-XML-2_5/Screening/US/CreditReport.html" TARGET="_BLANK">Credit Report</a>
+                                      </ul>
+                       </li>
+                       <li>
+                        <B>Standalone Schemas</B><ul>
+                                              <li><a href="HR-XML-2_5/StandAlone/BackgroundCheck.xsd" TARGET="_BLANK">BackgroundCheck.xsd</a></li>
+                                              <li><a href="HR-XML-2_5/StandAlone/BackgroundReports.xsd" TARGET="_BLANK">BackgroundReports.xsd</a></li>
+                                              <li><a href="HR-XML-2_5/StandAlone/Candidate.xsd" TARGET="_BLANK">Candidate.xsd</a></li>
+                                              <li><a href="HR-XML-2_5/StandAlone/Credit.xsd" TARGET="_BLANK">Credit.xsd</a></li>
+                                                </ul>
+                       </li>
+                       <li>
+					    <B>Examples</B><ul>
+					              <li><a href="HR-XML-2_5/Screening/US/BackgroundCheck.xml" TARGET="_BLANK">BackgroundCheck.xml</a></li>
+					              <li><a href="HR-XML-2_5/Screening/US/BackgroundReportCreditEquifax.xml" TARGET="_BLANK">BackgroundReportCreditEquifax.xml</a></li>
+					              <li><a href="HR-XML-2_5/Screening/US/BackgroundReportCreditExperian.xml" TARGET="_BLANK">BackgroundReportCreditExperian.xml</a></li>
+					              <li><a href="HR-XML-2_5/Screening/US/BackgroundReportCreditTansUnion.xml" TARGET="_BLANK">BackgroundReportCreditTansUnion.xml</a></li>
+					              <li><a href="HR-XML-2_5/Screening/US/BackgroundReportCriminal.xml" TARGET="_BLANK">BackgroundReportCriminal.xml</a></li>
+					              <li><a href="HR-XML-2_5/Screening/US/BackgroundReportDrug.xml" TARGET="_BLANK">BackgroundReportDrug.xml</a></li>
+					              <li><a href="HR-XML-2_5/Screening/US/BackgroundReportMVR.xml" TARGET="_BLANK">BackgroundReportMVR.xml</a></li>
+					              <li><a href="HR-XML-2_5/Screening/US/BackgroundReports.xml" TARGET="_BLANK">BackgroundReports.xml</a></li>
+					              <li><a href="HR-XML-2_5/Screening/US/BackgroundReports2_0.xml" TARGET="_BLANK">BackgroundReports2_0.xml</a></li>
+					              <li><a href="HR-XML-2_5/Screening/US/BackgroundReportsErrors.xml" TARGET="_BLANK">BackgroundReportsErrors.xml</a></li>
+					              <li><a href="HR-XML-2_5/Screening/US/BackgroundReportsErrors2_0.xml" TARGET="_BLANK">BackgroundReportsErrors2_0.xml</a></li>
+					              <li><a href="HR-XML-2_5/Screening/US/BackgroundReportSSNExperian.xml" TARGET="_BLANK">BackgroundReportSSNExperian.xml</a></li>
+					              <li><a href="HR-XML-2_5/Screening/US/BackgroundReportsStatus.xml" TARGET="_BLANK">BackgroundReportsStatus.xml</a></li>
+					              <li><a href="HR-XML-2_5/Screening/US/BackgroundReportsStatus2_0.xml" TARGET="_BLANK">BackgroundReportsStatus2_0.xml</a></li>
+					              </ul>
+                       </li>
+<!-- End Template -->
+
+
+
+
+	  	                         </ul>
+	  	                         </li>
+
+     <li>
+	         <B>Submit New Hire to Core HR System</B><ul id="containerul">
+
+
+
+<!-- Begin Template -->
+                       <li>
+                        <B>Documentation</B><ul>
+                                         <li><a href="HR-XML-2_5/NewHire/NewHire.html" TARGET="_BLANK">New Hire</a>
+                                      </ul>
+                       </li>
+                       <li>
+                        <B>Standalone Schemas</B><ul>
+                                              <li><a href="HR-XML-2_5/StandAlone/NewHire.xsd" TARGET="_BLANK">NewHire.xsd</a></li>
+                                               </ul>
+                       </li>
+                       <li>
+					    <B>Examples</B><ul>
+					              <li><a href="HR-XML-2_5/NewHire/NewHire.xml" TARGET="_BLANK">NewHire.xml</a></li>
+					              <li><a href="HR-XML-2_5/NewHire/ReHire.xml" TARGET="_BLANK">ReHire.xml</a></li>
+					              <li><a href="HR-XML-2_5/NewHire/Transfer.xml" TARGET="_BLANK">Transfer.xml</a></li>
+					              </ul>
+                       </li>
+<!-- End Template -->
+
+
+
+
+	  	                         </ul>
+	  	                         </li>
+
+
+    </ul>
+  </li>
+
+  <li>
+    <B>Assessment Provider</B>
+    <ul id="containerul">
+      <li>
+        <B>Provide Assessment Catalog / Package Ids</B><ul id="containerul">
+
+        <!-- Begin Template -->
+		                       <li>
+		                        <B>Documentation</B><ul>
+		                                         <li><a href="HR-XML-2_5/Assessment/AssessmentCatalog.html" TARGET="_BLANK">Assessment Catalog</a></li>
+		                                      </ul>
+		                       </li>
+		                       <li>
+		                        <B>Standalone Schemas</B><ul>
+		                                              <li><a href="HR-XML-2_5/StandAlone/AssessmentCatalogQuery.xsd" TARGET="_BLANK">AssessmentCatalogQuery.xsd</a></li>
+		                                              <li><a href="HR-XML-2_5/StandAlone/AssessmentCatalog.xsd" TARGET="_BLANK">AssessmentCatalog.xsd</a></li>
+		                                              </ul>
+		                       </li>
+		                       <li>
+							    <B>Examples</B><ul>
+							              <li><a href="HR-XML-2_5/Assessment/AssessmentCatalogQuery.xml" TARGET="_BLANK">AssessmentCatalogQuery.xml</a></li>
+							              <li><a href="HR-XML-2_5/Assessment/AssessmentCatalogQuery2.xml" TARGET="_BLANK">AssessmentCatalogQuery2.xml</a></li>
+							              <li><a href="HR-XML-2_5/Assessment/AssessmentCatalog.xml" TARGET="_BLANK">AssessmentCatalog.xml</a></li>
+							              <li><a href="HR-XML-2_5/Assessment/AssessmentCatalog2.xml" TARGET="_BLANK">AssessmentCatalog2.xml</a></li>
+							              <li><a href="HR-XML-2_5/Assessment/AssessmentCatalog3.xml" TARGET="_BLANK">AssessmentCatalog3.xml</a></li>
+							              </ul>
+		                       </li>
+		<!-- End Template -->
+
+
+        </ul>
+
+      </li>
+ <li>
+	         <B>Fullfill An Assessment Order</B><ul id="containerul">
+<!-- Begin Template -->
+                       <li>
+                        <B>Documentation</B><ul>
+                                         <li><a href="HR-XML-2_5/Assessment/Assessments.html" TARGET="_BLANK">Assessments</a></li>
+                                      </ul>
+                       </li>
+                       <li>
+                        <B>Standalone Schemas</B><ul>
+                                              <li><a href="HR-XML-2_5/StandAlone/AssessmentOrderRequest.xsd" TARGET="_BLANK">AssessmentOrderRequest.xsd</a></li>
+                                              <li><a href="HR-XML-2_5/StandAlone/AssessmentOrderAcknowledgement.xsd" TARGET="_BLANK">AssessmentOrderAcknowledgement.xsd</a></li>
+                                              <li><a href="HR-XML-2_5/StandAlone/AssessmentStatusRequest.xsd" TARGET="_BLANK">AssessmentStatusRequest.xsd</a></li>
+                                              <li><a href="HR-XML-2_5/StandAlone/AssessmentCancelRequest.xsd" TARGET="_BLANK">AssessmentCancelRequest.xsd</a></li>
+                                              <li><a href="HR-XML-2_5/StandAlone/AssessmentResult.xsd" TARGET="_BLANK">AssessmentResult.xsd</a></li>
+                                              </ul>
+                       </li>
+                       <li>
+					    <B>Examples</B><ul>
+					              <li><a href="HR-XML-2_5/Assessment/AssessmentOrderRequest.xml" TARGET="_BLANK">AssessmentOrderRequest.xml</a></li>
+					              <li><a href="HR-XML-2_5/Assessment/AssessmentOrderAcknowledgement.xml" TARGET="_BLANK">AssessmentOrderAcknowledgement.xml</a></li>
+					              <li><a href="HR-XML-2_5/Assessment/AssessmentStatusRequest.xml" TARGET="_BLANK">AssessmentStatusRequest.xml</a></li>
+					              <li><a href="HR-XML-2_5/Assessment/AssessmentCancelRequest.xml" TARGET="_BLANK">AssessmentCancelRequest.xml</a></li>
+					              <li><a href="HR-XML-2_5/Assessment/AssessmentResult.xml" TARGET="_BLANK">AssessmentResult.xml</a></li>
+					              </ul>
+                       </li>
+
+
+<!-- End Template -->	  	                    </ul>
+      </li>
+
+          <li> <B>Process Performance Appraisal Result</B>
+            <ul id="containerul">
+<!-- Begin Template -->
+                       <li>
+                        <B>Documentation</B><ul>
+                                         <li><a href="HR-XML-2_5/PerformanceManagement/EPMResultsOverview.html" TARGET="_BLANK">EPM Results: Overview</a></li>
+                                         <li><a href="HR-XML-2_5/PerformanceManagement/EPMFullResultScenarios.html" TARGET="_BLANK">EPM Results: Full Result Scenarios</a></li>
+                                      </ul>
+                       </li>
+                       <li>
+                        <B>Standalone Schemas</B><ul>
+                                              <li><a href="HR-XML-2_5/StandAlone/EPMResult.xsd" TARGET="_BLANK">EPMResult.xsd</a></li>
+                                              </ul>
+                       </li>
+                       <li>
+					    <B>Examples</B><ul>
+					              <li><a href="HR-XML-2_5/PerformanceManagement/EPMFullResult_example1.xml" TARGET="_BLANK">EPMFullResult_example1.xml</a></li>
+					              </ul>
+                       </li>
+					   <li>
+					    <B>WSDL Template</B><ul>
+					              <li><a href="HR-XML-2_5/ws/PerformanceManagement/EPMFullResult_wsdl.html" TARGET="_BLANK">WSDL Documentation</a></li>
+					              <li><a href="HR-XML-2_5/ws/PerformanceManagement/EPMFullResult.wsdl" TARGET="_BLANK">EPMFullResult.wsdl</a></li>
+
+					              </ul>
+                       </li>
+
+
+<!-- End Template -->	  	                    </ul>
+      </li>
+
+    </ul>
+</li>
+ <li>
+    <B>Background Check / Screening Services Provider</B><ul id="containerul">
+
+<li>
+	         <B>Fullfill Screening Order</B><ul id="containerul">
+
+
+
+<!-- Begin Template -->
+                       <li>
+                        <B>Documentation</B><ul>
+                                         <li><a href="HR-XML-2_5/Screening/US/BackgroundChecking.html" TARGET="_BLANK">Background Checking</a>
+                                         <li><a href="HR-XML-2_5/Screening/US/BackgroundRequests.html" TARGET="_BLANK">Background Requests</a>
+                                         <li><a href="HR-XML-2_5/Screening/US/BackgroundReports.html" TARGET="_BLANK">Background Reports</a>
+                                         <li><a href="HR-XML-2_5/Screening/US/CreditReport.html" TARGET="_BLANK">Credit Report</a>
+                                      </ul>
+                       </li>
+                       <li>
+                        <B>Standalone Schemas</B><ul>
+                                              <li><a href="HR-XML-2_5/StandAlone/BackgroundCheck.xsd" TARGET="_BLANK">BackgroundCheck.xsd</a></li>
+                                              <li><a href="HR-XML-2_5/StandAlone/BackgroundReports.xsd" TARGET="_BLANK">BackgroundReports.xsd</a></li>
+                                              <li><a href="HR-XML-2_5/StandAlone/Candidate.xsd" TARGET="_BLANK">Candidate.xsd</a></li>
+                                              <li><a href="HR-XML-2_5/StandAlone/Credit.xsd" TARGET="_BLANK">Credit.xsd</a></li>
+                                                </ul>
+                       </li>
+                       <li>
+					    <B>Examples</B><ul>
+					              <li><a href="HR-XML-2_5/Screening/US/BackgroundCheck.xml" TARGET="_BLANK">BackgroundCheck.xml</a></li>
+					              <li><a href="HR-XML-2_5/Screening/US/BackgroundReportCreditEquifax.xml" TARGET="_BLANK">BackgroundReportCreditEquifax.xml</a></li>
+					              <li><a href="HR-XML-2_5/Screening/US/BackgroundReportCreditExperian.xml" TARGET="_BLANK">BackgroundReportCreditExperian.xml</a></li>
+					              <li><a href="HR-XML-2_5/Screening/US/BackgroundReportCreditTansUnion.xml" TARGET="_BLANK">BackgroundReportCreditTansUnion.xml</a></li>
+					              <li><a href="HR-XML-2_5/Screening/US/BackgroundReportCriminal.xml" TARGET="_BLANK">BackgroundReportCriminal.xml</a></li>
+					              <li><a href="HR-XML-2_5/Screening/US/BackgroundReportDrug.xml" TARGET="_BLANK">BackgroundReportDrug.xml</a></li>
+					              <li><a href="HR-XML-2_5/Screening/US/BackgroundReportMVR.xml" TARGET="_BLANK">BackgroundReportMVR.xml</a></li>
+					              <li><a href="HR-XML-2_5/Screening/US/BackgroundReports.xml" TARGET="_BLANK">BackgroundReports.xml</a></li>
+					              <li><a href="HR-XML-2_5/Screening/US/BackgroundReports2_0.xml" TARGET="_BLANK">BackgroundReports2_0.xml</a></li>
+					              <li><a href="HR-XML-2_5/Screening/US/BackgroundReportsErrors.xml" TARGET="_BLANK">BackgroundReportsErrors.xml</a></li>
+					              <li><a href="HR-XML-2_5/Screening/US/BackgroundReportsErrors2_0.xml" TARGET="_BLANK">BackgroundReportsErrors2_0.xml</a></li>
+					              <li><a href="HR-XML-2_5/Screening/US/BackgroundReportSSNExperian.xml" TARGET="_BLANK">BackgroundReportSSNExperian.xml</a></li>
+					              <li><a href="HR-XML-2_5/Screening/US/BackgroundReportsStatus.xml" TARGET="_BLANK">BackgroundReportsStatus.xml</a></li>
+					              <li><a href="HR-XML-2_5/Screening/US/BackgroundReportsStatus2_0.xml" TARGET="_BLANK">BackgroundReportsStatus2_0.xml</a></li>
+					              </ul>
+                       </li>
+<!-- End Template -->
+
+
+
+
+	  	                         </ul>
+	  	                         </li>
+
+    </ul>
+</li>
+<li>
+    <B>Benefits Services Outsourcer</B>
+
+    <ul>
+
+          <li>
+	        <B>Enroll Employees</B><ul id="containerul">
+	<!-- Begin Template -->
+	                       <li>
+	                        <B>Documentation</B><ul>
+	                                         <li><a href="HR-XML-2_5/Enrollment/Enrollment.html" TARGET="_BLANK">Benefits Enrollment</a></li>
+	                                         <li><a href="HR-XML-2_5/Enrollment/EnrollmentAuditGuidelines.html" TARGET="_BLANK">Enrollment Audit Guidelines</a></li>
+
+
+										  </ul>
+	                       </li>
+	                       <li>
+	                        <B>Standalone Schemas</B><ul>
+	                                              <li><a href="HR-XML-2_5/StandAlone/Enrollment.xsd" TARGET="_BLANK">Enrollment.xsd</a></li>
+
+	                                                </ul>
+	                       </li>
+	                       <li>
+						    <B>Examples</B><ul>
+
+						              <li><a href="HR-XML-2_5/Enrollment/EnrollmentReferenceExamples.html" TARGET="_BLANK">Enrollment Reference Examples</a></li>
+						              <li><a href="HR-XML-2_5/Enrollment/EnrollmentA1.xml" TARGET="_BLANK">EnrollmentA1.xml</a></li>
+						              <li><a href="HR-XML-2_5/Enrollment/EnrollmentA2.xml" TARGET="_BLANK">EnrollmentA2.xml</a></li>
+						              <li><a href="HR-XML-2_5/Enrollment/EnrollmentA3.xml" TARGET="_BLANK">EnrollmentA3.xml</a></li>
+						              <li><a href="HR-XML-2_5/Enrollment/EnrollmentA4.xml" TARGET="_BLANK">EnrollmentA4.xml</a></li>
+						              <li><a href="HR-XML-2_5/Enrollment/EnrollmentA5.xml" TARGET="_BLANK">EnrollmentA5.xml</a></li>
+						              <li><a href="HR-XML-2_5/Enrollment/EnrollmentA6.xml" TARGET="_BLANK">EnrollmentA6.xml</a></li>
+						              <li><a href="HR-XML-2_5/Enrollment/EnrollmentA7.xml" TARGET="_BLANK">EnrollmentA7.xml</a></li>
+						              <li><a href="HR-XML-2_5/Enrollment/EnrollmentB1.xml" TARGET="_BLANK">EnrollmentB1.xml</a></li>
+						              <li><a href="HR-XML-2_5/Enrollment/EnrollmentB2.xml" TARGET="_BLANK">EnrollmentB2.xml</a></li>
+						              <li><a href="HR-XML-2_5/Enrollment/EnrollmentB3.xml" TARGET="_BLANK">EnrollmentB3.xml</a></li>
+						              <li><a href="HR-XML-2_5/Enrollment/EnrollmentC1.xml" TARGET="_BLANK">EnrollmentC1.xml</a></li>
+						              <li><a href="HR-XML-2_5/Enrollment/EnrollmentC2.xml" TARGET="_BLANK">EnrollmentC2.xml</a></li>
+						              <li><a href="HR-XML-2_5/Enrollment/EnrollmentC3.xml" TARGET="_BLANK">EnrollmentC3.xml</a></li>
+						              <li><a href="HR-XML-2_5/Enrollment/EnrollmentD1.xml" TARGET="_BLANK">EnrollmentD1.xml</a></li>
+						              <li><a href="HR-XML-2_5/Enrollment/EnrollmentD2.xml" TARGET="_BLANK">EnrollmentD2.xml</a></li>
+						              <li><a href="HR-XML-2_5/Enrollment/EnrollmentD3.xml" TARGET="_BLANK">EnrollmentD3.xml</a></li>
+						              <li><a href="HR-XML-2_5/Enrollment/EnrollmentD4.xml" TARGET="_BLANK">EnrollmentD4.xml</a></li>
+						              <li><a href="HR-XML-2_5/Enrollment/EnrollmentD5.xml" TARGET="_BLANK">EnrollmentD5.xml</a></li>
+						              <li><a href="HR-XML-2_5/Enrollment/EnrollmentE1.xml" TARGET="_BLANK">EnrollmentE1.xml</a></li>
+						              <li><a href="HR-XML-2_5/Enrollment/EnrollmentE2.xml" TARGET="_BLANK">EnrollmentE2.xml</a></li>
+						              <li><a href="HR-XML-2_5/Enrollment/EnrollmentF1.xml" TARGET="_BLANK">EnrollmentF1.xml</a></li>
+						              <li><a href="HR-XML-2_5/Enrollment/EnrollmentF2.xml" TARGET="_BLANK">EnrollmentF2.xml</a></li>
+						              <li><a href="HR-XML-2_5/Enrollment/EnrollmentF3.xml" TARGET="_BLANK">EnrollmentF3.xml</a></li>
+						              <li><a href="HR-XML-2_5/Enrollment/EnrollmentG1.xml" TARGET="_BLANK">EnrollmentG1.xml</a></li>
+						              <li><a href="HR-XML-2_5/Enrollment/EnrollmentG2.xml" TARGET="_BLANK">EnrollmentG2.xml</a></li>
+						              <li><a href="HR-XML-2_5/Enrollment/EnrollmentG3.xml" TARGET="_BLANK">EnrollmentG3.xml</a></li>
+						              <li><a href="HR-XML-2_5/Enrollment/EnrollmentG4.xml" TARGET="_BLANK">EnrollmentG4.xml</a></li>
+						              <li><a href="HR-XML-2_5/Enrollment/EnrollmentH1.xml" TARGET="_BLANK">EnrollmentH1.xml</a></li>
+						              <li><a href="HR-XML-2_5/Enrollment/EnrollmentH2.xml" TARGET="_BLANK">EnrollmentH2.xml</a></li>
+						              <li><a href="HR-XML-2_5/Enrollment/EnrollmentH3.xml" TARGET="_BLANK">EnrollmentH3.xml</a></li>
+						              </ul>
+	                       </li>
+	<!-- End Template -->
+	                  </ul>
+	      </li>
+
+          <li>
+	        <B>Provision / Maintain Outsourced System</B><ul id="containerul">
+	<!-- Begin Template -->
+	                       <li>
+	                        <B>Documentation</B><ul>
+	                                         <li><a href="HR-XML-2_5/Indicative/IndicativeData.html" TARGET="_BLANK">Indicative Data</a></li>
+	                                      </ul>
+	                       </li>
+	                       <li>
+	                        <B>Standalone Schemas</B><ul>
+	                                              <li><a href="HR-XML-2_5/StandAlone/IndicativeBatch.xsd" TARGET="_BLANK">IndicativeBatch.xsd</a></li>
+	                                              <li><a href="HR-XML-2_5/StandAlone/IndicativeData.xsd" TARGET="_BLANK">IndicativeData.xsd</a></li>
+	             </ul>
+
+	             </li>
+	                       <li>
+						    <B>Examples</B><ul>
+						              <li><a href="HR-XML-2_5/Indicative/IndicativeDataReferenceExamples.html" TARGET="_BLANK">IndicativeDataReferenceExamples.html</a></li>
+						              <li><a href="HR-XML-2_5/Indicative/WilliamNewHire.xml" TARGET="_BLANK">WilliamNewHire.xml</a></li>
+						              <li><a href="HR-XML-2_5/Indicative/WilliamAddressChange.xml" TARGET="_BLANK">WilliamAddressChange.xml</a></li>
+						              <li><a href="HR-XML-2_5/Indicative/WilliamLeaveStart.xml" TARGET="_BLANK">WilliamLeaveStart.xml</a></li>
+						              <li><a href="HR-XML-2_5/Indicative/WilliamLeaveExtend.xml" TARGET="_BLANK">WilliamLeaveExtend.xml</a></li>
+						              <li><a href="HR-XML-2_5/Indicative/WilliamLeaveReturn.xml" TARGET="_BLANK">WilliamLeaveReturn.xml</a></li>
+						              <li><a href="HR-XML-2_5/Indicative/WilliamTermination.xml" TARGET="_BLANK">WilliamTermination.xml</a></li>
+						              <li><a href="HR-XML-2_5/Indicative/WilliamRehire.xml" TARGET="_BLANK">WilliamRehire.xml</a></li>
+						              <li><a href="HR-XML-2_5/Indicative/WilliamAcquisitionSnapshot.xml" TARGET="_BLANK">WilliamAcquisitionSnapshot.xml</a></li>
+						              <li><a href="HR-XML-2_5/Indicative/WilliamAcquisitionHistory.xml" TARGET="_BLANK">WilliamAcquisitionHistory.xml</a></li>
+						              <li><a href="HR-XML-2_5/Indicative/DeathOfAnActive.xml" TARGET="_BLANK">DeathOfAnActive.xml</a></li>
+						              <li><a href="HR-XML-2_5/Indicative/DeathOfARetiree.xml" TARGET="_BLANK">DeathOfARetiree.xml</a></li>
+						              <li><a href="HR-XML-2_5/Indicative/JimmyPreHire.xml" TARGET="_BLANK">JimmyPreHire.xml</a></li>
+						              <li><a href="HR-XML-2_5/Indicative/JimmyPreHireCancel.xml" TARGET="_BLANK">JimmyPreHireCancel.xml</a></li>
+
+
+
+						              </ul>
+	                       </li>
+	<!-- End Template -->
+	                  </ul>
+	      </li>
+
+     <li>
+        <B>Administer Employee Stock Plan</B><ul id="containerul">
+<!-- Begin Template -->
+                       <li>
+                        <B>Documentation</B><ul>
+                                         <li><a href="HR-XML-2_5/Stock/EmployeeStockPlansInterface.html" TARGET="_BLANK">Employee Stock Plans Interface</a></li>
+                                      </ul>
+                       </li>
+                       <li>
+                        <B>Standalone Schemas</B><ul>
+                                              <li><a href="HR-XML-2_5/StandAlone/ExerciseConfirmation.xsd" TARGET="_BLANK">ExerciseConfirmation.xsd</a></li>
+                                              <li><a href="HR-XML-2_5/StandAlone/ExerciseRequest.xsd" TARGET="_BLANK">ExerciseRequest.xsd</a></li>
+                                              <li><a href="HR-XML-2_5/StandAlone/RemoveExerciseConfirmations.xsd" TARGET="_BLANK">RemoveExerciseConfirmations.xsd</a></li>
+                                              <li><a href="HR-XML-2_5/StandAlone/RemoveExerciseRequests.xsd" TARGET="_BLANK">RemoveExerciseRequests.xsd</a></li>
+                                              <li><a href="HR-XML-2_5/StandAlone/RemoveGrants.xsd" TARGET="_BLANK">RemoveGrants.xsd</a></li>
+                                              <li><a href="HR-XML-2_5/StandAlone/RemoveStockDeposits.xsd" TARGET="_BLANK">RemoveStockDeposits.xsd</a></li>
+                                              <li><a href="HR-XML-2_5/StandAlone/RemoveStockPlanParticipants.xsd" TARGET="_BLANK">RemoveStockPlanParticipants.xsd</a></li>
+                                              <li><a href="HR-XML-2_5/StandAlone/RemoveStockPlans.xsd" TARGET="_BLANK">RemoveStockPlans.xsd</a></li>
+                                              <li><a href="HR-XML-2_5/StandAlone/RemoveStockSaleConfirmations.xsd" TARGET="_BLANK">RemoveStockSaleConfirmations.xsd</a></li>
+                                              <li><a href="HR-XML-2_5/StandAlone/StockDeposit.xsd" TARGET="_BLANK">StockDeposit.xsd</a></li>
+                                              <li><a href="HR-XML-2_5/StandAlone/StockPlan.xsd" TARGET="_BLANK">StockPlan.xsd</a></li>
+                                              <li><a href="HR-XML-2_5/StandAlone/StockPlanParticipant.xsd" TARGET="_BLANK">StockPlanParticipant.xsd</a></li>
+                                              <li><a href="HR-XML-2_5/StandAlone/StockPurchasePlanCoverage.xsd" TARGET="_BLANK">StockPurchasePlanCoverage.xsd</a></li>
+                                              <li><a href="HR-XML-2_5/StandAlone/StockSaleConfirmation.xsd" TARGET="_BLANK">StockSaleConfirmation.xsd</a></li>
+                                              </ul>
+                       </li>
+                       <li>
+					    <B>Examples</B><ul>
+					              <li><a href="HR-XML-2_5/Stock/ExerciseConfirmation1.xml" TARGET="_BLANK">ExerciseConfirmation1.xml</a></li>
+					              <li><a href="HR-XML-2_5/Stock/ExerciseRequest1.xml" TARGET="_BLANK">ExerciseRequest1.xml</a></li>
+					              <li><a href="HR-XML-2_5/Stock/Grant1.xml" TARGET="_BLANK">Grant1.xml</a></li>
+					              <li><a href="HR-XML-2_5/Stock/Grant2.xml" TARGET="_BLANK">Grant2.xml</a></li>
+					              <li><a href="HR-XML-2_5/Stock/RemoveExerciseConfirmations1.xml" TARGET="_BLANK">RemoveExerciseConfirmations1.xml</a></li>
+					              <li><a href="HR-XML-2_5/Stock/RemoveExerciseRequests1.xml" TARGET="_BLANK">RemoveExerciseRequests1.xml</a></li>
+					              <li><a href="HR-XML-2_5/Stock/RemoveGrants1.xml" TARGET="_BLANK">RemoveGrants1.xml</a></li>
+					              <li><a href="HR-XML-2_5/Stock/RemoveStockPlanParticipants1.xml" TARGET="_BLANK">RemoveStockPlanParticipants1.xml</a></li>
+					              <li><a href="HR-XML-2_5/Stock/RemoveStockPlans1.xml" TARGET="_BLANK">RemoveStockPlans1.xml</a></li>
+					              <li><a href="HR-XML-2_5/Stock/StockPlan1.xml" TARGET="_BLANK">StockPlan1.xml</a></li>
+					              <li><a href="HR-XML-2_5/Stock/StockPlan2.xml" TARGET="_BLANK">StockPlan2.xml</a></li>
+					              <li><a href="HR-XML-2_5/Stock/StockPlanParticipant1.xml" TARGET="_BLANK">StockPlanParticipant1.xml</a></li>
+					              <li><a href="HR-XML-2_5/Stock/StockPlanParticipant2.xml" TARGET="_BLANK">StockPlanParticipant2.xml</a></li>
+					              </ul>
+                       </li>
+<!-- End Template -->
+                  </ul>
+      </li>
+
+     <li>
+        <B>Request Payroll Deduction / Adjustment</B><ul id="containerul">
+<!-- Begin Template -->
+                       <li>
+                        <B>Documentation</B><ul>
+                                         <li><a href="HR-XML-2_5/Payroll/PayrollInstructions.html" TARGET="_BLANK">Payroll Instructions</a></li>
+                                      </ul>
+                       </li>
+                       <li>
+                        <B>Standalone Schemas</B><ul>
+                                              <li><a href="HR-XML-2_5/StandAlone/PayrollInstructions.xsd" TARGET="_BLANK">PayrollInstructions.xsd</a></li>
+
+
+                                              </ul>
+                       </li>
+                       <li>
+					    <B>Examples</B><ul>
+					              <li><a href="HR-XML-2_5/Payroll/PayrollInstructions-eg.xml "_BLANK">PayrollInstructions-eg.xml</a></li>
+					              <li><a href="HR-XML-2_5/Payroll/PIExample1.xml" TARGET="_BLANK">PIExample1.xml</a></li>
+					              <li><a href="HR-XML-2_5/Payroll/PIExample2.xml" TARGET="_BLANK">PIExample2.xml</a></li>
+					              <li><a href="HR-XML-2_5/Payroll/PIExample3.xml" TARGET="_BLANK">PIExample3.xml</a></li>
+					              </ul>
+                       </li>
+<!-- End Template -->
+                  </ul>
+      </li>
+
+
+    </ul>
+</li>
+ <li>
+    <B>Benefits Plan / Carrier</B><ul>
+
+
+              <li>
+		        <B>Process Enrollments</B><ul id="containerul">
+		<!-- Begin Template -->
+		                       <li>
+		                        <B>Documentation</B><ul>
+		                                         <li><a href="HR-XML-2_5/Enrollment/Enrollment.html" TARGET="_BLANK">Benefits Enrollment</a></li>
+												  <li><a href="HR-XML-2_5/Enrollment/EnrollmentAuditGuidelines.html" TARGET="_BLANK">Enrollment Audit Guidelines</a></li>
+		                                      </ul>
+		                       </li>
+		                       <li>
+		                        <B>Standalone Schemas</B><ul>
+		                                              <li><a href="HR-XML-2_5/StandAlone/Enrollment.xsd" TARGET="_BLANK">Enrollment.xsd</a></li>
+		                                                </ul>
+		                       </li>
+		                       <li>
+							    <B>Examples</B><ul>
+
+							              <li><a href="HR-XML-2_5/Enrollment/EnrollmentReferenceExamples.html" TARGET="_BLANK">EnrollmentReferenceExamples.html</a></li>
+							              <li><a href="HR-XML-2_5/Enrollment/EnrollmentA1.xml" TARGET="_BLANK">EnrollmentA1.xml</a></li>
+							              <li><a href="HR-XML-2_5/Enrollment/EnrollmentA2.xml" TARGET="_BLANK">EnrollmentA2.xml</a></li>
+							              <li><a href="HR-XML-2_5/Enrollment/EnrollmentA3.xml" TARGET="_BLANK">EnrollmentA3.xml</a></li>
+							              <li><a href="HR-XML-2_5/Enrollment/EnrollmentA4.xml" TARGET="_BLANK">EnrollmentA4.xml</a></li>
+							              <li><a href="HR-XML-2_5/Enrollment/EnrollmentA5.xml" TARGET="_BLANK">EnrollmentA5.xml</a></li>
+							              <li><a href="HR-XML-2_5/Enrollment/EnrollmentA6.xml" TARGET="_BLANK">EnrollmentA6.xml</a></li>
+							              <li><a href="HR-XML-2_5/Enrollment/EnrollmentA7.xml" TARGET="_BLANK">EnrollmentA7.xml</a></li>
+							              <li><a href="HR-XML-2_5/Enrollment/EnrollmentB1.xml" TARGET="_BLANK">EnrollmentB1.xml</a></li>
+							              <li><a href="HR-XML-2_5/Enrollment/EnrollmentB2.xml" TARGET="_BLANK">EnrollmentB2.xml</a></li>
+							              <li><a href="HR-XML-2_5/Enrollment/EnrollmentB3.xml" TARGET="_BLANK">EnrollmentB3.xml</a></li>
+							              <li><a href="HR-XML-2_5/Enrollment/EnrollmentC1.xml" TARGET="_BLANK">EnrollmentC1.xml</a></li>
+							              <li><a href="HR-XML-2_5/Enrollment/EnrollmentC2.xml" TARGET="_BLANK">EnrollmentC2.xml</a></li>
+							              <li><a href="HR-XML-2_5/Enrollment/EnrollmentC3.xml" TARGET="_BLANK">EnrollmentC3.xml</a></li>
+							              <li><a href="HR-XML-2_5/Enrollment/EnrollmentD1.xml" TARGET="_BLANK">EnrollmentD1.xml</a></li>
+							              <li><a href="HR-XML-2_5/Enrollment/EnrollmentD2.xml" TARGET="_BLANK">EnrollmentD2.xml</a></li>
+							              <li><a href="HR-XML-2_5/Enrollment/EnrollmentD3.xml" TARGET="_BLANK">EnrollmentD3.xml</a></li>
+							              <li><a href="HR-XML-2_5/Enrollment/EnrollmentD4.xml" TARGET="_BLANK">EnrollmentD4.xml</a></li>
+							              <li><a href="HR-XML-2_5/Enrollment/EnrollmentD5.xml" TARGET="_BLANK">EnrollmentD5.xml</a></li>
+							              <li><a href="HR-XML-2_5/Enrollment/EnrollmentE1.xml" TARGET="_BLANK">EnrollmentE1.xml</a></li>
+							              <li><a href="HR-XML-2_5/Enrollment/EnrollmentE2.xml" TARGET="_BLANK">EnrollmentE2.xml</a></li>
+							              <li><a href="HR-XML-2_5/Enrollment/EnrollmentF1.xml" TARGET="_BLANK">EnrollmentF1.xml</a></li>
+							              <li><a href="HR-XML-2_5/Enrollment/EnrollmentF2.xml" TARGET="_BLANK">EnrollmentF2.xml</a></li>
+							              <li><a href="HR-XML-2_5/Enrollment/EnrollmentF3.xml" TARGET="_BLANK">EnrollmentF3.xml</a></li>
+							              <li><a href="HR-XML-2_5/Enrollment/EnrollmentG1.xml" TARGET="_BLANK">EnrollmentG1.xml</a></li>
+							              <li><a href="HR-XML-2_5/Enrollment/EnrollmentG2.xml" TARGET="_BLANK">EnrollmentG2.xml</a></li>
+							              <li><a href="HR-XML-2_5/Enrollment/EnrollmentG3.xml" TARGET="_BLANK">EnrollmentG3.xml</a></li>
+							              <li><a href="HR-XML-2_5/Enrollment/EnrollmentG4.xml" TARGET="_BLANK">EnrollmentG4.xml</a></li>
+							              <li><a href="HR-XML-2_5/Enrollment/EnrollmentH1.xml" TARGET="_BLANK">EnrollmentH1.xml</a></li>
+							              <li><a href="HR-XML-2_5/Enrollment/EnrollmentH2.xml" TARGET="_BLANK">EnrollmentH2.xml</a></li>
+							              <li><a href="HR-XML-2_5/Enrollment/EnrollmentH3.xml" TARGET="_BLANK">EnrollmentH3.xml</a></li>
+							              </ul>
+		                       </li>
+		<!-- End Template -->
+		                  </ul>
+		      </li>
+
+
+    </ul>
+</li>
+
+<li>
+    <B>Compensation Management System</B><ul>
+    <li>
+	         <B>Manage Objectives Plans / Results</B><ul id="containerul">
+<!-- Begin Template -->
+                       <li>
+                        <B>Documentation</B><ul>
+                                         <li><a href="HR-XML-2_5/PerformanceManagement/EPMResultsOverview.html" TARGET="_BLANK">EPM Results: Overview</a>
+										 <li><a href="HR-XML-2_5/PerformanceManagement/EPMCompensationSystemScenarios.html" TARGET="_BLANK">EPM Results: Compensation System Scenarios</a>
+                                      </ul>
+                       </li>
+                       <li>
+                        <B>Standalone Schemas</B><ul>
+                                              <li><a href="HR-XML-2_5/StandAlone/EPMObjectivesPlan.xsd" TARGET="_BLANK">EPMObjectivesPlan.xsd</a></li>
+											  <li><a href="HR-XML-2_5/StandAlone/EPMObjectivesResult.xsd" TARGET="_BLANK">EPMObjectivesResult.xsd</a></li>
+                                               </ul>
+                       </li>
+                       <li>
+					    <B>Examples</B><ul>
+					              <li><a href="HR-XML-2_5/PerformanceManagement/artifacts/ObjectivePlanSampleData.pdf" TARGET="_BLANK">ObjectivePlanSampleData.pdf</a></li>
+					              <li><a href="HR-XML-2_5/PerformanceManagement/EPMObjectivePlan_example4.xml" TARGET="_BLANK">EPMObjectivePlan_example4.xml</a></li>
+					              <li><a href="HR-XML-2_5/PerformanceManagement/artifacts/ObjectiveResultSampleData.pdf" TARGET="_BLANK">ObjectiveResultSampleData.pdf</a></li>
+					              <li><a href="HR-XML-2_5/PerformanceManagement/EPMObjectiveResult_example4.xml" TARGET="_BLANK">EPMObjectiveResult_example4.xml</a></li>
+					         </ul>
+                       </li>
+
+
+
+					   <li>
+					    <B>WSDL Template</B><ul>
+					              <li><a href="HR-XML-2_5/ws/PerformanceManagement/EPMObjectives_wsdl.html" TARGET="_BLANK">WSDL Documentation</a></li>
+								    <li><a href="HR-XML-2_5/ws/PerformanceManagement/EPMObjectives.wsdl" TARGET="_BLANK">EPMObjectives.wsdl</a></li>
+					         </ul>
+                       </li>
+
+
+
+<!-- End Template -->
+
+                      </ul>
+                      </li>
+
+  <li>
+	         <B>Process Remuneration Recommendation</B><ul id="containerul">
+<!-- Begin Template -->
+                       <li>
+                        <B>Documentation</B><ul>
+                                         <li><a href="HR-XML-2_5/NewHire/NewHire.html" TARGET="_BLANK">EPM Results: Overview</a>
+										 <li><a href="HR-XML-2_5/NewHire/NewHire.html" TARGET="_BLANK">EPM Results: Compensation System Scenarios</a>
+                                      </ul>
+                       </li>
+                       <li>
+                        <B>Standalone Schemas</B><ul>
+                                              <li><a href="HR-XML-2_5/StandAlone/EPMRemunerationResult.xsd" TARGET="_BLANK">EPMRemunerationResult.xsd</a></li>
+                                               </ul>
+                       </li>
+                       <li>
+					    <B>Examples</B><ul>
+					              <li><a href="HR-XML-2_5/PerformanceManagement/EPMRemunerationRecommendation_example3.xml" TARGET="_BLANK">EPMRemunerationRecommendation_example3.xml</a></li>
+					         </ul>
+                       </li>
+
+
+
+					   <li>
+					    <B>WSDL Template</B><ul>
+					              <li><a href="HR-XML-2_5/ws/PerformanceManagement/EPMRemunerationResult_wsdl.html" TARGET="_BLANK">WSDL Documentation</a></li>
+								    <li><a href="HR-XML-2_5/ws/PerformanceManagement/EPMRemunerationResult.wsdl" TARGET="_BLANK">EPMRemunerationResult.wsdl</a></li>
+					         </ul>
+                       </li>
+
+
+
+<!-- End Template -->
+
+                      </ul>
+                      </li>
+
+
+
+                      </ul>
+                      </li>
+
+
+<li>
+    <B>Employer / Core HR System</B><ul>
+
+
+    <li>
+	         <B>Create / Process New Hire</B><ul id="containerul">
+
+
+
+<!-- Begin Template -->
+                       <li>
+                        <B>Documentation</B><ul>
+                                         <li><a href="HR-XML-2_5/NewHire/NewHire.html" TARGET="_BLANK">New Hire</a>
+                                      </ul>
+                       </li>
+                       <li>
+                        <B>Standalone Schemas</B><ul>
+                                              <li><a href="HR-XML-2_5/StandAlone/NewHire.xsd" TARGET="_BLANK">NewHire.xsd</a></li>
+                                               </ul>
+                       </li>
+                       <li>
+					    <B>Examples</B><ul>
+					              <li><a href="HR-XML-2_5/NewHire/NewHire.xml" TARGET="_BLANK">NewHire.xml</a></li>
+					              <li><a href="HR-XML-2_5/NewHire/ReHire.xml" TARGET="_BLANK">ReHire.xml</a></li>
+					              <li><a href="HR-XML-2_5/NewHire/Transfer.xml" TARGET="_BLANK">Transfer.xml</a></li>
+					              </ul>
+                       </li>
+<!-- End Template -->
+
+                      </ul>
+                      </li>
+
+          <li>
+	        <B>Provision / Maintain Outsourced System</B><ul id="containerul">
+	<!-- Begin Template -->
+	                       <li>
+	                        <B>Documentation</B><ul>
+	                                         <li><a href="HR-XML-2_5/Indicative/IndicativeData.html" TARGET="_BLANK">Indicative Data</a></li>
+	                                      </ul>
+	                       </li>
+	                       <li>
+	                        <B>Standalone Schemas</B><ul>
+	                                              <li><a href="HR-XML-2_5/StandAlone/IndicativeBatch.xsd" TARGET="_BLANK">IndicativeBatch.xsd</a></li>
+	                                              <li><a href="HR-XML-2_5/StandAlone/IndicativeData.xsd" TARGET="_BLANK">IndicativeData.xsd</a></li>
+	             </ul>
+
+	             </li>
+	                       <li>
+						    <B>Examples</B><ul>
+						              <li><a href="HR-XML-2_5/Indicative/IndicativeDataReferenceExamples.html" TARGET="_BLANK">Indicative Data Reference Examples</a></li>
+						              <li><a href="HR-XML-2_5/Indicative/WilliamNewHire.xml" TARGET="_BLANK">WilliamNewHire.xml</a></li>
+						              <li><a href="HR-XML-2_5/Indicative/WilliamAddressChange.xml" TARGET="_BLANK">WilliamAddressChange.xml</a></li>
+						              <li><a href="HR-XML-2_5/Indicative/WilliamLeaveStart.xml" TARGET="_BLANK">WilliamLeaveStart.xml</a></li>
+						              <li><a href="HR-XML-2_5/Indicative/WilliamLeaveExtend.xml" TARGET="_BLANK">WilliamLeaveExtend.xml</a></li>
+						              <li><a href="HR-XML-2_5/Indicative/WilliamLeaveReturn.xml" TARGET="_BLANK">WilliamLeaveReturn.xml</a></li>
+						              <li><a href="HR-XML-2_5/Indicative/WilliamTermination.xml" TARGET="_BLANK">WilliamTermination.xml</a></li>
+						              <li><a href="HR-XML-2_5/Indicative/WilliamRehire.xml" TARGET="_BLANK">WilliamRehire.xml</a></li>
+						              <li><a href="HR-XML-2_5/Indicative/WilliamAcquisitionSnapshot.xml" TARGET="_BLANK">WilliamAcquisitionSnapshot.xml</a></li>
+						              <li><a href="HR-XML-2_5/Indicative/WilliamAcquisitionHistory.xml" TARGET="_BLANK">WilliamAcquisitionHistory.xml</a></li>
+						              <li><a href="HR-XML-2_5/Indicative/DeathOfAnActive.xml" TARGET="_BLANK">DeathOfAnActive.xml</a></li>
+						              <li><a href="HR-XML-2_5/Indicative/DeathOfARetiree.xml" TARGET="_BLANK">DeathOfARetiree.xml</a></li>
+						              <li><a href="HR-XML-2_5/Indicative/JimmyPreHire.xml" TARGET="_BLANK">JimmyPreHire.xml</a></li>
+						              <li><a href="HR-XML-2_5/Indicative/JimmyPreHireCancel.xml" TARGET="_BLANK">JimmyPreHireCancel.xml</a></li>
+
+
+
+						              </ul>
+	                       </li>
+	<!-- End Template -->
+	                  </ul>
+	      </li>
+     <li>
+		        <B>Submit Timesheet(s)</B><ul id="containerul">
+		<!-- Begin Template -->
+		                       <li>
+		                        <B>Documentation</B><ul>
+		                                         <li><a href="HR-XML-2_5/TimeCard/TimeCard.html" TARGET="_BLANK">Time Card</a></li>
+		                                         <li><a href="HR-XML-2_5/TimeCard/TimeCardConfiguration.html" TARGET="_BLANK">Time Card Configuration</a></li>
+		                                      </ul>
+		                       </li>
+		                       <li>
+		                        <B>Standalone Schemas</B><ul>
+		                                              <li><a href="HR-XML-2_5/StandAlone/TimeCard.xsd" TARGET="_BLANK">TimeCard.xsd</a></li>
+		                                                </ul>
+		                       </li>
+		                       <li>
+							    <B>Examples</B><ul>
+							              <li><a href="HR-XML-2_5/TimeCard/TimeCard1.xml" TARGET="_BLANK">TimeCard1.xml</a></li>
+							              <li><a href="HR-XML-2_5/TimeCard/TimeCard2.xml" TARGET="_BLANK">TimeCard2.xml</a></li>
+							              <li><a href="HR-XML-2_5/TimeCard/TimeCard3.xml" TARGET="_BLANK">TimeCard3.xml</a></li>
+							              <li><a href="HR-XML-2_5/TimeCard/TimeCard4.xml" TARGET="_BLANK">TimeCard4.xml</a></li>
+							              <li><a href="HR-XML-2_5/TimeCard/TimeCard5.xml" TARGET="_BLANK">TimeCard5.xml</a></li>
+							              <li><a href="HR-XML-2_5/TimeCard/TimeCard6.xml" TARGET="_BLANK">TimeCard6.xml</a></li>
+							              <li><a href="HR-XML-2_5/TimeCard/TimeCardConfiguration1.xml" TARGET="_BLANK">TimeCardConfiguration1.xml</a></li>
+							              </ul>
+		                       </li>
+		<!-- End Template -->
+		                  </ul>
+	      </li>
+
+
+          <li> <B>Process Performance Appraisal Summary Result</B>
+            <ul id="containerul">
+<!-- Begin Template -->
+                       <li>
+                        <B>Documentation</B><ul>
+                                         <li><a href="HR-XML-2_5/PerformanceManagement/EPMResultsOverview.html" TARGET="_BLANK">EPM Results: Overview</a></li>
+                                         <li><a href="HR-XML-2_5/PerformanceManagement/EPMSummaryResultScenarios.html" TARGET="_BLANK">EPM Results: HRIS Scenarios</a></li>
+                                      </ul>
+                       </li>
+                       <li>
+                        <B>Standalone Schemas</B><ul>
+                                              <li><a href="HR-XML-2_5/StandAlone/EPMSummaryResult.xsd" TARGET="_BLANK">EPMSummaryResult.xsd</a></li>
+                                              </ul>
+                       </li>
+                       <li>
+					    <B>Examples</B><ul>
+					              <li><a href="HR-XML-2_5/PerformanceManagement/EPMSummaryResult_example_1.xml" TARGET="_BLANK">EPMSummaryResult_example_1.xml</a></li>
+					              </ul>
+                       </li>
+					   <li>
+					    <B>WSDL Template</B><ul>
+					              <li><a href="HR-XML-2_5/ws/PerformanceManagement/EPMSummaryResult_wsdl.html" TARGET="_BLANK">EPMSummaryResult_wsdl.html</a></li>
+					              <li><a href="HR-XML-2_5/ws/PerformanceManagement/EPMSummaryResult.wsdl" TARGET="_BLANK">EPMSummaryResult.wsdl</a></li>
+					              </ul>
+                       </li>
+
+
+<!-- End Template -->	  	                    </ul>
+      </li>
+
+
+
+
+    </ul>
+</li>
+ <li>
+    <B>Job Board / Career Site</B><ul>
+
+
+    <li>
+	        <B>Receive Job Posting</B><ul id="containerul">
+	<!-- Begin Template -->
+	                       <li>
+	                        <B>Documentation</B><ul>
+	                                         <li><a href="HR-XML-2_5/SEP/StaffingExchangeProtocol.html" TARGET="_BLANK">Staffing Exchange Protocol</a></li>
+	                                      </ul>
+	                       </li>
+	                       <li>
+	                        <B>Standalone Schemas</B><ul>
+	                                              <li><a href="HR-XML-2_5/StandAlone/PositionOpening.xsd" TARGET="_BLANK">PositionOpening.xsd</a></li>
+	                                                </ul>
+	                       </li>
+	                       <li>
+						    <B>Examples</B><ul>
+						              <li><a href="HR-XML-2_5/SEP/PositionOpeningExample.xml" TARGET="_BLANK">PositionOpeningExample.xml</a></li>
+						              </ul>
+	                       </li>
+	<!-- End Template -->
+	                  </ul>
+      </li>
+
+
+      <li>
+        <B>Extract / Process Resume</B><ul id="containerul">
+<!-- Begin Template -->
+                       <li>
+                        <B>Documentation</B><ul>
+                                         <li><a href="HR-XML-2_5/SEP/Resume.html" TARGET="_BLANK">Resume</a></li>
+                                      </ul>
+                       </li>
+                       <li>
+                        <B>Standalone Schemas</B><ul>
+                                              <li><a href="HR-XML-2_5/StandAlone/Resume.xsd" TARGET="_BLANK">Resume.xsd</a></li>
+                                                </ul>
+                       </li>
+                       <li>
+					    <B>Examples</B><ul>
+					              <li><a href="HR-XML-2_5/SEP/ResumeExample.xml" TARGET="_BLANK">ResumeExample.xml</a></li>
+					              </ul>
+                       </li>
+<!-- End Template -->
+                  </ul>
+      </li>
+
+     <li>
+        <B>Submit / Process Candidate</B><ul id="containerul">
+<!-- Begin Template -->
+                       <li>
+                        <B>Documentation</B><ul>
+                                         <li><a href="HR-XML-2_5/SEP/StaffingExchangeProtocol.html" TARGET="_BLANK">Staffing Exchange Protocol</a></li>
+                                      </ul>
+                       </li>
+                       <li>
+                        <B>Standalone Schemas</B><ul>
+                                              <li><a href="HR-XML-2_5/StandAlone/Candidate.xsd" TARGET="_BLANK">Candidate.xsd</a></li>
+                                                </ul>
+                       </li>
+                       <li>
+					    <B>Examples</B><ul>
+					              <li><a href="HR-XML-2_5/SEP/CandidateExample.xml" TARGET="_BLANK">CandidateExample.xml</a></li>
+					              </ul>
+                       </li>
+<!-- End Template -->
+                  </ul>
+      </li>
+    </ul>
+</li>
+
+
+<li>
+    <B>Learning Management System</B>
+    <ul>
+    <li>
+	         <B>Manage Development Plans</B><ul id="containerul">
+		<!-- Begin Template -->
+		                       <li>
+		                        <B>Documentation</B><ul>
+		                                         <li><a href="HR-XML-2_5/PerformanceManagement/EPMResultsOverview.html" TARGET="_BLANK">EPM Results Overview</a></li>
+		                                         <li><a href="HR-XML-2_5/PerformanceManagement/EPMLMSScenarios.html" TARGET="_BLANK">EPM Results: LMS Scenarios</a></li>
+		                                      </ul>
+		                       </li>
+		                       <li>
+		                        <B>Standalone Schemas</B><ul>
+		                                              <li><a href="HR-XML-2_5/StandAlone/EPMDevelopmentPlan.xsd" TARGET="_BLANK">EPMDevelopmentPlan.xsd</a></li>
+		                                                </ul>
+		                       </li>
+		                       <li>
+							    <B>Examples</B>
+							    <ul>
+<li><a href="HR-XML-2_5/PerformanceManagement/EPMDevelopmentPlan_eg1.xml" TARGET="_BLANK">EPMDevelopmentPlan_eg1.xml</a></li>
+</ul>
+		                       </li>
+
+<li>
+							    <B>WSDL Template</B>
+							    <ul>
+<li><a href="HR-XML-2_5/ws/PerformanceManagement/EPMDevelopmentPlan_wsdl.html" TARGET="_BLANK">EPMDevelopmentPlan_wsdl.html</a></li>
+<li><a href="HR-XML-2_5/ws/PerformanceManagement/EPMDevelopmentPlan.wsdl" TARGET="_BLANK">EPMDevelopmentPlan.wsdl</a></li>
+<li><a href="HR-XML-2_5/ws/PerformanceManagement/GetEPMDevelopmentPlan_wsdl.html" TARGET="_BLANK">GetEPMDevelopmentPlan_wsdl.html</a></li>
+<li><a href="HR-XML-2_5/ws/PerformanceManagement/GetEPMDevelopmentPlan.wsdl" TARGET="_BLANK">GetEPMDevelopmentPlan.wsdl</a></li>
+</ul>
+		                       </li>
+		<!-- End Template -->
+
+	                  </ul>
+
+</li>
+
+  </ul>
+
+</li>
+
+
+<li>
+    <B>Payroll Services Outsourcer</B><ul>
+
+   <li>
+	         <B>Report Benefit Contributions</B><ul id="containerul">
+
+
+
+<!-- Begin Template -->
+                       <li>
+                        <B>Documentation</B><ul>
+                                         <li><a href="HR-XML-2_5/Payroll/PayrollBenefitContributions.html" TARGET="_BLANK">Payroll Benefit Contributions</a>
+                                      </ul>
+                       </li>
+                       <li>
+                        <B>Standalone Schemas</B><ul>
+                                              <li><a href="HR-XML-2_5/StandAlone/PayrollBenefitContributions.xsd" TARGET="_BLANK">PayrollBenefitContributions.xsd</a></li>
+                                               </ul>
+                       </li>
+                       <li>
+					    <B>Examples</B><ul>
+					              <li><a href="HR-XML-2_5/Payroll/PayrollBenefitContributions1.xml" TARGET="_BLANK">PayrollBenefitContributions1.xml</a></li>
+					               </ul>
+                       </li>
+<!-- End Template -->
+
+                      </ul>
+                      </li>
+
+          <li>
+	        <B>Provision / Maintain Outsourced System</B><ul id="containerul">
+	<!-- Begin Template -->
+	                       <li>
+	                        <B>Documentation</B><ul>
+	                                         <li><a href="HR-XML-2_5/Indicative/IndicativeData.html" TARGET="_BLANK">Indicative Data</a></li>
+	                                      </ul>
+	                       </li>
+	                       <li>
+	                        <B>Standalone Schemas</B><ul>
+	                                              <li><a href="HR-XML-2_5/StandAlone/IndicativeBatch.xsd" TARGET="_BLANK">IndicativeBatch.xsd</a></li>
+	                                              <li><a href="HR-XML-2_5/StandAlone/IndicativeData.xsd" TARGET="_BLANK">IndicativeData.xsd</a></li>
+	             </ul>
+
+	             </li>
+	                       <li>
+						    <B>Examples</B><ul>
+						              <li><a href="HR-XML-2_5/Indicative/IndicativeDataReferenceExamples.html" TARGET="_BLANK">Indicative Data Reference Examples</a></li>
+						              <li><a href="HR-XML-2_5/Indicative/WilliamNewHire.xml" TARGET="_BLANK">WilliamNewHire.xml</a></li>
+						              <li><a href="HR-XML-2_5/Indicative/WilliamAddressChange.xml" TARGET="_BLANK">WilliamAddressChange.xml</a></li>
+						              <li><a href="HR-XML-2_5/Indicative/WilliamLeaveStart.xml" TARGET="_BLANK">WilliamLeaveStart.xml</a></li>
+						              <li><a href="HR-XML-2_5/Indicative/WilliamLeaveExtend.xml" TARGET="_BLANK">WilliamLeaveExtend.xml</a></li>
+						              <li><a href="HR-XML-2_5/Indicative/WilliamLeaveReturn.xml" TARGET="_BLANK">WilliamLeaveReturn.xml</a></li>
+						              <li><a href="HR-XML-2_5/Indicative/WilliamTermination.xml" TARGET="_BLANK">WilliamTermination.xml</a></li>
+						              <li><a href="HR-XML-2_5/Indicative/WilliamRehire.xml" TARGET="_BLANK">WilliamRehire.xml</a></li>
+						              <li><a href="HR-XML-2_5/Indicative/WilliamAcquisitionSnapshot.xml" TARGET="_BLANK">WilliamAcquisitionSnapshot.xml</a></li>
+						              <li><a href="HR-XML-2_5/Indicative/WilliamAcquisitionHistory.xml" TARGET="_BLANK">WilliamAcquisitionHistory.xml</a></li>
+						              <li><a href="HR-XML-2_5/Indicative/DeathOfAnActive.xml" TARGET="_BLANK">DeathOfAnActive.xml</a></li>
+						              <li><a href="HR-XML-2_5/Indicative/DeathOfARetiree.xml" TARGET="_BLANK">DeathOfARetiree.xml</a></li>
+						              <li><a href="HR-XML-2_5/Indicative/JimmyPreHire.xml" TARGET="_BLANK">JimmyPreHire.xml</a></li>
+						              <li><a href="HR-XML-2_5/Indicative/JimmyPreHireCancel.xml" TARGET="_BLANK">JimmyPreHireCancel.xml</a></li>
+
+
+
+						              </ul>
+	                       </li>
+	<!-- End Template -->
+	                  </ul>
+	      </li>
+
+
+    </ul>
+</li>
+
+ <li>
+    <B>Performance Management System</B>
+    <ul>
+
+    <li>
+	         <B>Manage Objectives Plans / Results</B><ul id="containerul">
+<!-- Begin Template -->
+                       <li>
+                        <B>Documentation</B><ul>
+                                         <li><a href="HR-XML-2_5/PerformanceManagement/EPMResultsOverview.html" TARGET="_BLANK">EPM Results: Overview</a>
+										 <li><a href="HR-XML-2_5/PerformanceManagement/EPMCompensationSystemScenarios.html" TARGET="_BLANK">EPM Results: Compensation System Scenarios</a>
+                                      </ul>
+                       </li>
+                       <li>
+                        <B>Standalone Schemas</B><ul>
+                                              <li><a href="HR-XML-2_5/StandAlone/EPMObjectivesPlan.xsd" TARGET="_BLANK">EPMObjectivesPlan.xsd</a></li>
+											  <li><a href="HR-XML-2_5/StandAlone/EPMObjectivesResult.xsd" TARGET="_BLANK">EPMObjectivesResult.xsd</a></li>
+                                               </ul>
+                       </li>
+                       <li>
+					    <B>Examples</B><ul>
+					              <li><a href="HR-XML-2_5/PerformanceManagement/artifacts/ObjectivePlanSampleData.pdf" TARGET="_BLANK">ObjectivePlanSampleData.pdf</a></li>
+					              <li><a href="HR-XML-2_5/PerformanceManagement/EPMObjectivePlan_example4.xml" TARGET="_BLANK">EPMObjectivePlan_example4.xml</a></li>
+					              <li><a href="HR-XML-2_5/PerformanceManagement/artifacts/ObjectiveResultSampleData.pdf" TARGET="_BLANK">ObjectiveResultSampleData.pdf</a></li>
+					              <li><a href="HR-XML-2_5/PerformanceManagement/EPMObjectiveResult_example4.xml" TARGET="_BLANK">EPMObjectiveResult_example4.xml</a></li>
+					         </ul>
+                       </li>
+
+
+
+					   <li>
+					    <B>WSDL Template</B><ul>
+					              <li><a href="HR-XML-2_5/ws/PerformanceManagement/EPMObjectives_wsdl.html" TARGET="_BLANK">EPMObjectives_wsdl.html</a></li>
+								    <li><a href="HR-XML-2_5/ws/PerformanceManagement/EPMObjectives.wsdl" TARGET="_BLANK">EPMObjectives.wsdl</a></li>
+					              <li><a href="HR-XML-2_5/ws/PerformanceManagement/GetEPMObjectivesResult_wsdl.html" TARGET="_BLANK">GetEPMObjectivesResult_wsdl.html</a></li>
+					              <li><a href="HR-XML-2_5/ws/PerformanceManagement/GetEPMObjectives.wsdl" TARGET="_BLANK">GetEPMObjectives.wsdl</a></li>
+
+					         </ul>
+                       </li>
+
+
+
+<!-- End Template -->
+
+                      </ul>
+                      </li>
+
+<li>
+		        <B>Process Development Plan</B><ul id="containerul">
+		<!-- Begin Template -->
+		                       <li>
+		                        <B>Documentation</B><ul>
+		                                         <li><a href="HR-XML-2_5/PerformanceManagement/EPMResultsOverview.html" TARGET="_BLANK">EPM Results Overview</a></li>
+		                                         <li><a href="HR-XML-2_5/PerformanceManagement/EPMLMSScenarios.html" TARGET="_BLANK">EPM Results: LMS Scenarios</a></li>
+		                                      </ul>
+		                       </li>
+		                       <li>
+		                        <B>Standalone Schemas</B><ul>
+		                                              <li><a href="HR-XML-2_5/StandAlone/EPMDevelopmentPlan.xsd" TARGET="_BLANK">EPMDevelopmentPlan.xsd</a></li>
+		                                                </ul>
+		                       </li>
+		                       <li>
+							    <B>Examples</B>
+							    <ul>
+<li><a href="HR-XML-2_5/PerformanceManagement/EPMDevelopmentPlan_eg1.xml" TARGET="_BLANK">EPMDevelopmentPlan_eg1.xml</a></li>
+</ul>
+		                       </li>
+
+<li>
+							    <B>WSDL Template</B>
+							    <ul>
+<li><a href="HR-XML-2_5/ws/PerformanceManagement/EPMDevelopmentPlan_wsdl.html" TARGET="_BLANK">WSDL Documentation</a></li>
+<li><a href="HR-XML-2_5/ws/PerformanceManagement/EPMDevelopmentPlan.wsdl" TARGET="_BLANK">EPMDevelopmentPlan.wsdl</a></li>
+<li><a href="HR-XML-2_5/ws/PerformanceManagement/GetEPMDevelopmentPlan_wsdl.html" TARGET="_BLANK">GetEPMDevelopmentPlan_wsdl.html</a></li>
+<li><a href="HR-XML-2_5/ws/PerformanceManagement/GetEPMDevelopmentPlan.wsdl" TARGET="_BLANK">GetEPMDevelopmentPlan.wsdl</a></li>
+
+</ul>
+		                       </li>
+		<!-- End Template -->
+
+	                  </ul>
+
+	      </li>
+
+  <li>
+	         <B>Process Remuneration Recommendation</B><ul id="containerul">
+<!-- Begin Template -->
+                       <li>
+                        <B>Documentation</B><ul>
+                                         <li><a href="HR-XML-2_5/PerformanceManagement/EPMResultsOverview.html" TARGET="_BLANK">EPM Results: Overview</a>
+										 <li><a href="HR-XML-2_5/PerformanceManagement/EPMCompensationSystemScenarios.html" TARGET="_BLANK">EPM Results: Compensation System Scnarios</a>
+                                      </ul>
+                       </li>
+                       <li>
+                        <B>Standalone Schemas</B><ul>
+                                              <li><a href="HR-XML-2_5/StandAlone/EPMRemunerationResult.xsd" TARGET="_BLANK">EPMRemunerationResult.xsd</a></li>
+                                               </ul>
+                       </li>
+                       <li>
+					    <B>Examples</B><ul>
+					              <li><a href="HR-XML-2_5/PerformanceManagement/EPMRemunerationRecommendation_example3.xml" TARGET="_BLANK">EPMRemunerationRecommendation_example3.xml</a></li>
+					         </ul>
+                       </li>
+
+					   <li>
+					    <B>WSDL Template</B><ul>
+					              <li><a href="HR-XML-2_5/ws/PerformanceManagement/EPMRemunerationResult_wsdl.html" TARGET="_BLANK">WSDL Documentation</a></li>
+								    <li><a href="HR-XML-2_5/ws/PerformanceManagement/EPMRemunerationResult.wsdl" TARGET="_BLANK">EPMRemunerationResult.wsdl</a></li>
+					         </ul>
+                       </li>
+
+<!-- End Template -->
+
+                      </ul>
+                      </li>
+
+                      </ul>
+                      </li>
+
+<li>
+    <B>Staffing Customer</B><ul>
+
+            <li>
+		        <B>Submit a Staffing Order / Requisition</B><ul id="containerul">
+		<!-- Begin Template -->
+		                       <li>
+		                        <B>Documentation</B><ul>
+		                                         <li><a href="HR-XML-2_5/SIDES/SIDES.html" TARGET="_BLANK">SIDES</a></li>
+		                                         <li><a href="HR-XML-2_5/SIDES/StaffingOrder.html" TARGET="_BLANK">Staffing Order</a></li>
+		                                      </ul>
+		                       </li>
+		                       <li>
+		                        <B>Standalone Schemas</B><ul>
+		                                              <li><a href="HR-XML-2_5/StandAlone/StaffingOrder.xsd" TARGET="_BLANK">StaffingOrder.xsd</a></li>
+		                                                </ul>
+		                       </li>
+		                       <li>
+							    <B>Examples</B><ul>
+							              <li><a href="HR-XML-2_5/SIDES/StaffingOrder.xml" TARGET="_BLANK">StaffingOrder.xml</a></li>
+							              </ul>
+		                       </li>
+		<!-- End Template -->
+		                  </ul>
+	      </li>
+
+     <li>
+		        <B>Process Staffing Action</B><ul id="containerul">
+		<!-- Begin Template -->
+		                       <li>
+		                        <B>Documentation</B><ul>
+		                                         <li><a href="HR-XML-2_5/SIDES/SIDES.html" TARGET="_BLANK">SIDES</a></li>
+		                                         <li><a href="HR-XML-2_5/SIDES/StaffingAction.html" TARGET="_BLANK">Staffing Action</a></li>
+		                                      </ul>
+		                       </li>
+		                       <li>
+		                        <B>Standalone Schemas</B><ul>
+		                                              <li><a href="HR-XML-2_5/StandAlone/StaffingAction.xsd" TARGET="_BLANK">StaffingAction.xsd</a></li>
+		                                                </ul>
+		                       </li>
+		                       <li>
+							    <B>Examples</B><ul>
+							              <li><a href="HR-XML-2_5/SIDES/StaffingAction.xml" TARGET="_BLANK">StaffingAction.xml</a></li>
+							              </ul>
+		                       </li>
+		<!-- End Template -->
+		                  </ul>
+	      </li>
+     <li>
+		        <B>Submit Timesheet(s)</B><ul id="containerul">
+		<!-- Begin Template -->
+		                       <li>
+		                        <B>Documentation</B><ul>
+		                                         <li><a href="HR-XML-2_5/TimeCard/TimeCard.html" TARGET="_BLANK">Time Card</a></li>
+		                                         <li><a href="HR-XML-2_5/TimeCard/TimeCardConfiguration.html" TARGET="_BLANK">Time Card Configuration</a></li>
+		                                      </ul>
+		                       </li>
+		                       <li>
+		                        <B>Standalone Schemas</B><ul>
+		                                              <li><a href="HR-XML-2_5/StandAlone/TimeCard.xsd" TARGET="_BLANK">TimeCard.xsd</a></li>
+		                                                </ul>
+		                       </li>
+		                       <li>
+							    <B>Examples</B><ul>
+							              <li><a href="HR-XML-2_5/TimeCard/TimeCard1.xml" TARGET="_BLANK">TimeCard1.xml</a></li>
+							              <li><a href="HR-XML-2_5/TimeCard/TimeCard2.xml" TARGET="_BLANK">TimeCard2.xml</a></li>
+							              <li><a href="HR-XML-2_5/TimeCard/TimeCard3.xml" TARGET="_BLANK">TimeCard3.xml</a></li>
+							              <li><a href="HR-XML-2_5/TimeCard/TimeCard4.xml" TARGET="_BLANK">TimeCard4.xml</a></li>
+							              <li><a href="HR-XML-2_5/TimeCard/TimeCard5.xml" TARGET="_BLANK">TimeCard5.xml</a></li>
+							              <li><a href="HR-XML-2_5/TimeCard/TimeCard6.xml" TARGET="_BLANK">TimeCard6.xml</a></li>
+							              <li><a href="HR-XML-2_5/TimeCard/TimeCardConfiguration1.xml" TARGET="_BLANK">TimeCardConfiguration1.xml</a></li>
+							              </ul>
+		                       </li>
+		<!-- End Template -->
+		                  </ul>
+	      </li>
+
+
+    </ul>
+
+</li>
+
+<li>
+    <B>Staffing Supplier</B>
+	<ul>
+    <li>
+		        <B>Process Staffing Order / Requisition</B><ul id="containerul">
+		<!-- Begin Template -->
+		                       <li>
+		                        <B>Documentation</B><ul>
+		                                         <li><a href="HR-XML-2_5/SIDES/SIDES.html" TARGET="_BLANK">SIDES</a></li>
+		                                         <li><a href="HR-XML-2_5/SIDES/StaffingOrder.html" TARGET="_BLANK">Staffing Order</a></li>
+		                                      </ul>
+		                       </li>
+		                       <li>
+		                        <B>Standalone Schemas</B><ul>
+		                                              <li><a href="HR-XML-2_5/StandAlone/StaffingOrder.xsd" TARGET="_BLANK">StaffingOrder.xsd</a></li>
+		                                                </ul>
+		                       </li>
+		                       <li>
+							    <B>Examples</B><ul>
+							              <li><a href="HR-XML-2_5/SIDES/StaffingOrder.xml" TARGET="_BLANK">StaffingOrder.xml</a></li>
+							              </ul>
+		                       </li>
+		<!-- End Template -->
+		                  </ul>
+	      </li>
+          <li>
+	        <B>Post a Job</B><ul id="containerul">
+	<!-- Begin Template -->
+	                       <li>
+	                        <B>Documentation</B><ul>
+	                                         <li><a href="HR-XML-2_5/SEP/StaffingExchangeProtocol.html" TARGET="_BLANK">Staffing Exchange Protocol</a></li>
+	                                      </ul>
+	                       </li>
+	                       <li>
+	                        <B>Standalone Schemas</B><ul>
+	                                              <li><a href="HR-XML-2_5/StandAlone/PositionOpening.xsd" TARGET="_BLANK">PositionOpening.xsd</a></li>
+	                                                </ul>
+	                       </li>
+	                       <li>
+						    <B>Examples</B><ul>
+						              <li><a href="HR-XML-2_5/SEP/PositionOpeningExample.xml" TARGET="_BLANK">PositionOpeningExample.xml</a></li>
+						              </ul>
+	                       </li>
+	<!-- End Template -->
+	                  </ul>
+      </li>
+      <li>
+	         <B>Order an Assessment / Process Assessment Results</B><ul id="containerul">
+   <!-- Begin Template -->
+                       <li>
+                        <B>Documentation</B><ul>
+                                         <li><a href="HR-XML-2_5/Assessment/Assessments.html" TARGET="_BLANK">Assessments</a></li>
+                                      </ul>
+                       </li>
+                       <li>
+                        <B>Standalone Schemas</B><ul>
+                                              <li><a href="HR-XML-2_5/StandAlone/AssessmentOrderRequest.xsd" TARGET="_BLANK">AssessmentOrderRequest.xsd</a></li>
+                                              <li><a href="HR-XML-2_5/StandAlone/AssessmentOrderAcknowledgement.xsd" TARGET="_BLANK">AssessmentOrderAcknowledgement.xsd</a></li>
+                                              <li><a href="HR-XML-2_5/StandAlone/AssessmentStatusRequest.xsd" TARGET="_BLANK">AssessmentStatusRequest.xsd</a></li>
+                                              <li><a href="HR-XML-2_5/StandAlone/AssessmentCancelRequest.xsd" TARGET="_BLANK">AssessmentCancelRequest.xsd</a></li>
+                                              <li><a href="HR-XML-2_5/StandAlone/AssessmentResult.xsd" TARGET="_BLANK">AssessmentResult.xsd</a></li>
+                                              </ul>
+                       </li>
+                       <li>
+					    <B>Examples</B><ul>
+					              <li><a href="HR-XML-2_5/Assessment/AssessmentOrderRequest.xml" TARGET="_BLANK">AssessmentOrderRequest.xml</a></li>
+					              <li><a href="HR-XML-2_5/Assessment/AssessmentOrderAcknowledgement.xml" TARGET="_BLANK">AssessmentOrderAcknowledgement.xml</a></li>
+					              <li><a href="HR-XML-2_5/Assessment/AssessmentStatusRequest.xml" TARGET="_BLANK">AssessmentStatusRequest.xml</a></li>
+					              <li><a href="HR-XML-2_5/Assessment/AssessmentCancelRequest.xml" TARGET="_BLANK">AssessmentCancelRequest.xml</a></li>
+					              <li><a href="HR-XML-2_5/Assessment/AssessmentResult.xml" TARGET="_BLANK">AssessmentResult.xml</a></li>
+					              </ul>
+                       </li>
+<!-- End Template -->
+            </ul>
+      </li>
+
+     <li>
+	         <B>Order Pre-Employment Screening / Process Screening Report</B><ul id="containerul">
+
+<!-- Begin Template -->
+                       <li>
+                        <B>Documentation</B><ul>
+                                         <li><a href="HR-XML-2_5/Screening/US/BackgroundChecking.html" TARGET="_BLANK">Background Checking</a>
+                                         <li><a href="HR-XML-2_5/Screening/US/BackgroundRequests.html" TARGET="_BLANK">Background Requests</a>
+                                         <li><a href="HR-XML-2_5/Screening/US/BackgroundReports.html" TARGET="_BLANK">Background Reports</a>
+                                         <li><a href="HR-XML-2_5/Screening/US/CreditReport.html" TARGET="_BLANK">Credit Report</a>
+                                      </ul>
+                       </li>
+                       <li>
+                        <B>Standalone Schemas</B><ul>
+                                              <li><a href="HR-XML-2_5/StandAlone/BackgroundCheck.xsd" TARGET="_BLANK">BackgroundCheck.xsd</a></li>
+                                              <li><a href="HR-XML-2_5/StandAlone/BackgroundReports.xsd" TARGET="_BLANK">BackgroundReports.xsd</a></li>
+                                              <li><a href="HR-XML-2_5/StandAlone/Candidate.xsd" TARGET="_BLANK">Candidate.xsd</a></li>
+                                              <li><a href="HR-XML-2_5/StandAlone/Credit.xsd" TARGET="_BLANK">Credit.xsd</a></li>
+                                                </ul>
+                       </li>
+                       <li>
+					    <B>Examples</B><ul>
+					              <li><a href="HR-XML-2_5/Screening/US/BackgroundCheck.xml" TARGET="_BLANK">BackgroundCheck.xml</a></li>
+					              <li><a href="HR-XML-2_5/Screening/US/BackgroundReportCreditEquifax.xml" TARGET="_BLANK">BackgroundReportCreditEquifax.xml</a></li>
+					              <li><a href="HR-XML-2_5/Screening/US/BackgroundReportCreditExperian.xml" TARGET="_BLANK">BackgroundReportCreditExperian.xml</a></li>
+					              <li><a href="HR-XML-2_5/Screening/US/BackgroundReportCreditTansUnion.xml" TARGET="_BLANK">BackgroundReportCreditTansUnion.xml</a></li>
+					              <li><a href="HR-XML-2_5/Screening/US/BackgroundReportCriminal.xml" TARGET="_BLANK">BackgroundReportCriminal.xml</a></li>
+					              <li><a href="HR-XML-2_5/Screening/US/BackgroundReportDrug.xml" TARGET="_BLANK">BackgroundReportDrug.xml</a></li>
+					              <li><a href="HR-XML-2_5/Screening/US/BackgroundReportMVR.xml" TARGET="_BLANK">BackgroundReportMVR.xml</a></li>
+					              <li><a href="HR-XML-2_5/Screening/US/BackgroundReports.xml" TARGET="_BLANK">BackgroundReports.xml</a></li>
+					              <li><a href="HR-XML-2_5/Screening/US/BackgroundReports2_0.xml" TARGET="_BLANK">BackgroundReports2_0.xml</a></li>
+					              <li><a href="HR-XML-2_5/Screening/US/BackgroundReportsErrors.xml" TARGET="_BLANK">BackgroundReportsErrors.xml</a></li>
+					              <li><a href="HR-XML-2_5/Screening/US/BackgroundReportsErrors2_0.xml" TARGET="_BLANK">BackgroundReportsErrors2_0.xml</a></li>
+					              <li><a href="HR-XML-2_5/Screening/US/BackgroundReportSSNExperian.xml" TARGET="_BLANK">BackgroundReportSSNExperian.xml</a></li>
+					              <li><a href="HR-XML-2_5/Screening/US/BackgroundReportsStatus.xml" TARGET="_BLANK">BackgroundReportsStatus.xml</a></li>
+					              <li><a href="HR-XML-2_5/Screening/US/BackgroundReportsStatus2_0.xml" TARGET="_BLANK">BackgroundReportsStatus2_0.xml</a></li>
+					              </ul>
+                       </li>
+<!-- End Template -->
+	  	                         </ul>
+	  	                         </li>
+
+   <li>
+	        <B>Submit Resource</B><ul id="containerul">
+	<!-- Begin Template -->
+	                       <li>
+	                        <B>Documentation</B><ul>
+	                                         <li><a href="HR-XML-2_5/SIDES/SIDES.html" TARGET="_BLANK">SIDES</a></li>
+	                                         <li><a href="HR-XML-2_5/SIDES/HumanResource.html" TARGET="_BLANK">Human Resource</a></li>
+	                                      </ul>
+	                       </li>
+	                       <li>
+	                        <B>Standalone Schemas</B><ul>
+	                                              <li><a href="HR-XML-2_5/StandAlone/HumanResource.xsd" TARGET="_BLANK">HumanResource.xsd</a></li>
+	                                                </ul>
+	                       </li>
+	                       <li>
+						    <B>Examples</B><ul>
+						              <li><a href="HR-XML-2_5/SIDES/HumanResource.xml" TARGET="_BLANK">HumanResource.xml</a></li>
+						              </ul>
+	                       </li>
+	<!-- End Template -->
+	                  </ul>
+      </li>
+
+
+ <li>
+	        <B>Submit Assignment</B><ul id="containerul">
+	<!-- Begin Template -->
+	                       <li>
+	                        <B>Documentation</B><ul>
+	                                         <li><a href="HR-XML-2_5/SIDES/SIDES.html" TARGET="_BLANK">SIDES</a></li>
+	                                         <li><a href="HR-XML-2_5/SIDES/Assignment.html" TARGET="_BLANK">Assignment</a></li>
+	                                      </ul>
+	                       </li>
+	                       <li>
+	                        <B>Standalone Schemas</B><ul>
+	                                              <li><a href="HR-XML-2_5/StandAlone/Assignment.xsd" TARGET="_BLANK">Assignment.xsd</a></li>
+	                                                </ul>
+	                       </li>
+	                       <li>
+						    <B>Examples</B><ul>
+						              <li><a href="HR-XML-2_5/SIDES/Assignment.xml" TARGET="_BLANK">Assignment.xml</a></li>
+						              </ul>
+	                       </li>
+	<!-- End Template -->
+	                  </ul>
+      </li>
+
+        <li>
+		        <B>Process Timesheet(s)</B><ul id="containerul">
+		<!-- Begin Template -->
+		                       <li>
+		                        <B>Documentation</B><ul>
+		                                         <li><a href="HR-XML-2_5/TimeCard/TimeCard.html" TARGET="_BLANK">Time Card</a></li>
+		                                         <li><a href="HR-XML-2_5/TimeCard/TimeCardConfiguration.html" TARGET="_BLANK">Time Card Configuration</a></li>
+		                                      </ul>
+		                       </li>
+		                       <li>
+		                        <B>Standalone Schemas</B><ul>
+		                                              <li><a href="HR-XML-2_5/StandAlone/TimeCard.xsd" TARGET="_BLANK">TimeCard.xsd</a></li>
+		                                                </ul>
+		                       </li>
+		                       <li>
+							    <B>Examples</B><ul>
+							              <li><a href="HR-XML-2_5/TimeCard/TimeCard1.xml" TARGET="_BLANK">TimeCard1.xml</a></li>
+							              <li><a href="HR-XML-2_5/TimeCard/TimeCard2.xml" TARGET="_BLANK">TimeCard2.xml</a></li>
+							              <li><a href="HR-XML-2_5/TimeCard/TimeCard3.xml" TARGET="_BLANK">TimeCard3.xml</a></li>
+							              <li><a href="HR-XML-2_5/TimeCard/TimeCard4.xml" TARGET="_BLANK">TimeCard4.xml</a></li>
+							              <li><a href="HR-XML-2_5/TimeCard/TimeCard5.xml" TARGET="_BLANK">TimeCard5.xml</a></li>
+							              <li><a href="HR-XML-2_5/TimeCard/TimeCard6.xml" TARGET="_BLANK">TimeCard6.xml</a></li>
+							              <li><a href="HR-XML-2_5/TimeCard/TimeCardConfiguration1.xml" TARGET="_BLANK">TimeCardConfiguration1.xml</a></li>
+							              </ul>
+		                       </li>
+		<!-- End Template -->
+		                  </ul>
+	      </li>
+
+ <li>
+	        <B>Submit Invoice</B><ul id="containerul">
+	<!-- Begin Template -->
+	                       <li>
+	                        <B>Documentation</B><ul>
+	                                         <li><a href="HR-XML-2_5/SIDES/SIDES.html" TARGET="_BLANK">SIDES</a></li>
+	                                         <li><a href="HR-XML-2_5/SIDES/StaffingInvoice.html" TARGET="_BLANK">Staffing Invoice</a></li>
+	                                           </ul>
+	                       </li>
+	                       <li>
+	                        <B>Standalone Schemas</B><ul>
+	                                              <li><a href="HR-XML-2_5/StandAlone/Invoice.xsd" TARGET="_BLANK">Invoice.xsd</a></li>
+	                                                </ul>
+	                       </li>
+	                       <li>
+						    <B>Examples</B><ul>
+						              <li><a href="HR-XML-2_5/SIDES/Invoice.xml" TARGET="_BLANK">Invoice.xml</a></li>
+						              </ul>
+	                       </li>
+	<!-- End Template -->
+	                  </ul>
+      </li>
+
+
+     <li>
+		        <B>Process Staffing Action</B><ul id="containerul">
+		<!-- Begin Template -->
+		                       <li>
+		                        <B>Documentation</B><ul>
+		                                         <li><a href="HR-XML-2_5/SIDES/SIDES.html" TARGET="_BLANK">SIDES</a></li>
+		                                         <li><a href="HR-XML-2_5/SIDES/StaffingAction.html" TARGET="_BLANK">Staffing Action</a></li>
+		                                      </ul>
+		                       </li>
+		                       <li>
+		                        <B>Standalone Schemas</B><ul>
+		                                              <li><a href="HR-XML-2_5/StandAlone/StaffingAction.xsd" TARGET="_BLANK">StaffingAction.xsd</a></li>
+		                                                </ul>
+		                       </li>
+		                       <li>
+							    <B>Examples</B><ul>
+							              <li><a href="HR-XML-2_5/SIDES/StaffingAction.xml" TARGET="_BLANK">StaffingAction.xml</a></li>
+							              </ul>
+		                       </li>
+		<!-- End Template -->
+		                  </ul>
+	      </li>
+
+		                  </ul>
+
+</li>
+
+</ul>
+
+<script type="text/javascript">
+initiate();		// This must be placed immediately after the menu in order to format it properly.
+</script>
+
+<P class="navpage">Online Resources</P>
+<UL>
+ <LI><A HREF="http://www.hr-xml.org/forms/join" TARGET="_BLANK">Join HR-XML</A></LI>
+ <LI><A HREF="http://www.hr-xml.org/members-only" TARGET="_BLANK">Members-Only Resources</A></LI>
+ <LI><A HREF="http://www.hrcertify.org/" TARGET="_BLANK">HR-XML Certification</A></LI>
+ <LI><A HREF="http://testbed.hr-xml.org" TARGET="_BLANK">HR-XML Testbed</A></LI>
+ <LI><A HREF="http://mr.hr-xml.org/main/index" TARGET="_BLANK">Submit Maintenance Request</A></LI>
+</UL>
+
+</div>
+
+
+
+</div>
+
+
+
+
+
+  </BODY>
+</HTML>
+
+

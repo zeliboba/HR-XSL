@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--Sample Name: Death of a Retiree -->
+<!--Description:  This file is used to exchange the basic data for the death of an inactive employee.  In this example, Lisa Meyer died after she retired from the company.   Since Lisa was inactive, we only need to send the DateOfDeath tied to PersonalInfo.  -->
+<!--Assumptions:  We assume the receiving system already has Lisa Meyer on their system and would either use SSN or empl_ID to identify for whom the change was made.  We also assume that all other data for this employee is correct on the receiving system and that this document is only transmitting those elements that have changed.  In this case only information directly impacted by the death of this former employee..-->
+<IndicativeBatch xmlns="http://ns.hr-xml.org/2007-04-15" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://ns.hr-xml.org/2007-04-15  IndicativeBatch.xsd">
+	<TransactionType>Change</TransactionType>
+	<CreateDate>2005-03-21</CreateDate>
+	<OriginatorId idOwner="Maypole Energy">
+		<IdValue name="System Name">HRMS System Production</IdValue>
+	</OriginatorId>
+	<OriginatorName>Maypole Energy</OriginatorName>
+	<BaselineDate>2005-03-21</BaselineDate>
+	<RecipientId>
+		<IdValue>0RECEIVE</IdValue>
+	</RecipientId>
+	<RecipientName>Receiving Company Inc  Benefits System</RecipientName>
+	<IndicativeData>
+		<Employer>
+			<OrganizationId>
+				<IdValue>0873055</IdValue>
+			</OrganizationId>
+		</Employer>
+		<Employee>
+			<PersonInfo>
+				<PersonLegalId idOwner="US">
+					<IdValue name="SSN">123-45-6789</IdValue>
+				</PersonLegalId>
+				<PersonName>
+					<GivenName>Lisa</GivenName>
+					<FamilyName>Meyer</FamilyName>
+				</PersonName>
+				<DateOfDeath>2005-02-14</DateOfDeath>
+			</PersonInfo>
+			<EmployeeInfo>
+				<EmployeeId>
+					<IdValue name="empl_ID">15501</IdValue>
+				</EmployeeId>
+			</EmployeeInfo>
+		</Employee>
+	</IndicativeData>
+</IndicativeBatch>

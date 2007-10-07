@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TimeCard xmlns="http://ns.hr-xml.org/2007-04-15" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://ns.hr-xml.org/2007-04-15
+TimeCard.xsd">
+	<ReportedResource>
+		<Person>
+			<Id>
+				<IdValue>77598</IdValue>
+			</Id>
+			<PersonName>
+				<FormattedName>Michelle Hartwick</FormattedName>
+			</PersonName>
+		</Person>
+	</ReportedResource>
+	<ReportedTime status="Raw">
+		<PeriodStartDate>2001-07-01</PeriodStartDate>
+		<PeriodEndDate>2001-07-31</PeriodEndDate>
+		<ReportedPersonAssignment>
+			<Id>
+				<IdValue>DUP1899</IdValue>
+			</Id>
+		</ReportedPersonAssignment>
+		<Expense type="Meal" billable="true">
+			<Id>
+				<IdValue>55588</IdValue>
+			</Id>
+			<ExpenseDate>2001-07-19</ExpenseDate>
+			<ExpenseAmount currency="CAD">123.95</ExpenseAmount>
+			<AdditionalData type="Task">17W9</AdditionalData>
+			<Comment>Dinner with Consultants</Comment>
+		</Expense>
+		<Expense type="Misc." billable="true">
+			<Id>
+				<IdValue>55589</IdValue>
+			</Id>
+			<ExpenseDate>2001-07-20</ExpenseDate>
+			<ExpenseAmount currency="CAD">77.21</ExpenseAmount>
+			<AdditionalData type="Task">17W8</AdditionalData>
+			<Comment>Book: XML for Simpletons</Comment>
+		</Expense>
+	</ReportedTime>
+	<SubmitterInfo>
+		<Person>
+			<PersonName>
+				<FormattedName>Amanda Hardaway</FormattedName>
+			</PersonName>
+		</Person>
+		<SubmittedDateTime>2001-07-31T11:00:00</SubmittedDateTime>
+	</SubmitterInfo>
+	<ApprovalInfo approverType="1st Level">
+		<Person/>
+		<ApprovedDateTime>2001-08-03</ApprovedDateTime>
+	</ApprovalInfo>
+</TimeCard>

@@ -1,0 +1,512 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema xmlns="http://ns.hr-xml.org/2007-04-15" xmlns:xsd="http://www.w3.org/2001/XMLSchema" targetNamespace="http://ns.hr-xml.org/2007-04-15" elementFormDefault="qualified" version="2007-04-15">
+	<xsd:annotation>
+		<xsd:documentation>
+"Copyright  The HR-XML Consortium. All Rights Reserved. http://www.hr-xml.org"
+Status: Recommendation
+Date this version: 2007-04-15
+Purpose: Defines the Screenings Schema
+Author(s):  Screening Workgroup
+Documentation: BackgroundChecking.html, BackgroundRequests.html, BackgroundReports.html
+
+Terms of license can be found in license.txt.
+
+Change History:
+2004-Jun-24: 
+ Added optional element SearchDrugs
+ Added optional AdmittedChargeSummary
+ Refer to additional changes to ScreeningTypes.xsd
+
+</xsd:documentation>
+	</xsd:annotation>
+	<xsd:import namespace="http://www.w3.org/XML/1998/namespace" schemaLocation="../../../W3C/xml.xsd"/>
+	<xsd:include schemaLocation="../US/ScreeningTypes.xsd"/>
+	<xsd:include schemaLocation="../../CPO/SharedStaffingModules.xsd"/>
+	<xsd:complexType name="ScreeningRequestType">
+		<xsd:sequence>
+			<xsd:element name="ReferenceId" type="EntityIdType" minOccurs="0">
+				<xsd:annotation>
+					<xsd:documentation>Reference Number associated with all screenings for the Search Subject specified in the PersonalData Element in the parent schema.</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+			<xsd:element name="PackageId" type="EntityIdType" minOccurs="0">
+				<xsd:annotation>
+					<xsd:documentation>Identifies the search package agreed to by the trading partners that will be used as a basis for generating the searches. </xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+			<xsd:element name="PriorPersonalData" type="ScreeningPersonalDataType" minOccurs="0" maxOccurs="unbounded">
+				<xsd:annotation>
+					<xsd:documentation>The primary Search Subject information will be supplied in the PersonalData group element of the parent schema.  The Purpose of this element is to provide additional personal data information that searches are to be performed upon.  Note that any previous name information will be located here.</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+			<xsd:element name="ClientReferences" type="EntityIdType" minOccurs="0" maxOccurs="unbounded">
+				<xsd:annotation>
+					<xsd:documentation>Contains Client provided information pertinent to the search.  i.e. Billing information.</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+			<xsd:element name="SupportingDocumentation" type="DocumentationType" minOccurs="0">
+				<xsd:annotation>
+					<xsd:documentation>Root element to provide additional screening related information specific to all searchs for the specified Search Subject. i.e. Link to FAX image that contains the Search Subject information that the search package will be constructed from.</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+			<xsd:element name="CopyToApplicant" type="xsd:boolean" minOccurs="0">
+				<xsd:annotation>
+					<xsd:documentation>Indicates if Search Subject has requested a copy of the screening results.</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+			<xsd:element name="AdditionalItems" type="FlexibleDetailType" minOccurs="0" maxOccurs="unbounded"/>
+			<xsd:element name="Screening" minOccurs="0" maxOccurs="unbounded">
+				<xsd:annotation>
+					<xsd:documentation>Root element to provide additional screening related information specific to individual search types.</xsd:documentation>
+				</xsd:annotation>
+				<xsd:complexType>
+					<xsd:sequence>
+						<xsd:element name="ReferenceId" type="EntityIdType" minOccurs="0">
+							<xsd:annotation>
+								<xsd:documentation>Reference Number associated with this screening.</xsd:documentation>
+							</xsd:annotation>
+						</xsd:element>
+						<xsd:element name="QuestionSetId" type="EntityIdType" minOccurs="0">
+							<xsd:annotation>
+								<xsd:documentation>The question set identifier associated with this screening.</xsd:documentation>
+							</xsd:annotation>
+						</xsd:element>
+						<xsd:element name="CountryCode" type="CountryCodeType" minOccurs="0">
+							<xsd:annotation>
+								<xsd:documentation>ISO 3166 2 character country code identifying the country that the screeing applies to.</xsd:documentation>
+							</xsd:annotation>
+						</xsd:element>
+						<xsd:element name="Region" type="xsd:string" minOccurs="0">
+							<xsd:annotation>
+								<xsd:documentation>Represents the state, province, territory, etc. where the screening is to be performed.
+</xsd:documentation>
+							</xsd:annotation>
+						</xsd:element>
+						<xsd:element name="ServiceLevel" type="ServiceLevelTypes" minOccurs="0">
+							<xsd:annotation>
+								<xsd:documentation>Service level of the screening. </xsd:documentation>
+							</xsd:annotation>
+						</xsd:element>
+						<xsd:element name="PermissiblePurpose" type="PermissiblePurposeQualifiers" minOccurs="0">
+							<xsd:annotation>
+								<xsd:documentation>Specifies the purpose on the screening.</xsd:documentation>
+							</xsd:annotation>
+						</xsd:element>
+						<xsd:element name="EndUser" type="xsd:string" minOccurs="0">
+							<xsd:annotation>
+								<xsd:documentation> It specifies the name of the company that has requested the screening.</xsd:documentation>
+							</xsd:annotation>
+						</xsd:element>
+						<xsd:element name="Vendor" type="VendorType" minOccurs="0">
+							<xsd:annotation>
+								<xsd:documentation>Specifies the source of the screening information. </xsd:documentation>
+							</xsd:annotation>
+						</xsd:element>
+						<xsd:element name="Duration" type="xsd:duration" minOccurs="0">
+							<xsd:annotation>
+								<xsd:documentation>Specifies the duration of the screening.</xsd:documentation>
+							</xsd:annotation>
+						</xsd:element>
+						<xsd:element name="ClientReferences" type="EntityIdType" minOccurs="0" maxOccurs="unbounded">
+							<xsd:annotation>
+								<xsd:documentation>Contains Client provided information pertinent to the search.  i.e. Billing information.</xsd:documentation>
+							</xsd:annotation>
+						</xsd:element>
+						<xsd:element name="Comments" type="xsd:string" minOccurs="0" maxOccurs="unbounded"/>
+						<xsd:element name="AdditionalItems" type="FlexibleDetailType" minOccurs="0" maxOccurs="unbounded"/>
+						<xsd:element name="SupportingDocumentation" type="DocumentationType" minOccurs="0">
+							<xsd:annotation>
+								<xsd:documentation>Root element to provide additional screening related information regarding the specified search.</xsd:documentation>
+							</xsd:annotation>
+						</xsd:element>
+						<xsd:choice minOccurs="0" maxOccurs="unbounded">
+							<xsd:element ref="SearchCriminal" minOccurs="0"/>
+							<xsd:element ref="SearchDrugs" minOccurs="0"/>
+							<xsd:element ref="SearchEducation" minOccurs="0"/>
+							<xsd:element ref="SearchEmployment" minOccurs="0"/>
+							<xsd:element ref="SearchLicense" minOccurs="0"/>
+							<xsd:element ref="SearchMilitary" minOccurs="0"/>
+							<xsd:element ref="SearchOther" minOccurs="0"/>
+							<xsd:element ref="SearchReference" minOccurs="0"/>
+						</xsd:choice>
+						<xsd:element ref="UserArea" minOccurs="0"/>
+					</xsd:sequence>
+					<xsd:attribute name="type" type="SearchTypes"/>
+					<xsd:attribute name="qualifier" type="SearchQualifierType"/>
+					<xsd:attribute ref="xml:lang" use="optional"/>
+				</xsd:complexType>
+			</xsd:element>
+			<xsd:element ref="UserArea" minOccurs="0"/>
+		</xsd:sequence>
+	</xsd:complexType>
+	<xsd:complexType name="LicenseType">
+		<xsd:sequence>
+			<xsd:element name="LicenseNumber" type="xsd:string"/>
+			<xsd:element name="LicensingAgency" type="xsd:string"/>
+			<xsd:element name="LicenseName" type="LicenseNameType" minOccurs="0"/>
+			<xsd:element name="LicenseDescription" type="xsd:string" minOccurs="0"/>
+			<xsd:element name="EffectiveDate" type="EffectiveDateType" minOccurs="0"/>
+		</xsd:sequence>
+	</xsd:complexType>
+	<xsd:simpleType name="NAPermissiblePurposeQualifiers">
+		<xsd:restriction base="xsd:string">
+			<xsd:enumeration value="To acquire/service/insure account"/>
+			<xsd:enumeration value="Consumer initiated transaction"/>
+			<xsd:enumeration value="Written authorization"/>
+			<xsd:enumeration value="Collection"/>
+			<xsd:enumeration value="Child support"/>
+			<xsd:enumeration value="Credit Transaction"/>
+			<xsd:enumeration value="Employment"/>
+			<xsd:enumeration value="Government license of benefit"/>
+			<xsd:enumeration value="Insurance Underwriting"/>
+			<xsd:enumeration value="Account Review"/>
+			<xsd:enumeration value="Court Order/subpoena"/>
+			<xsd:enumeration value="Tenant Screening"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="PermissiblePurposeQualifiers">
+		<xsd:union memberTypes="NAPermissiblePurposeQualifiers xStringPatternExtensionType"/>
+	</xsd:simpleType>
+	<xsd:element name="SearchCriminal">
+		<xsd:complexType>
+			<xsd:sequence>
+				<xsd:element name="Municipality" type="xsd:string" minOccurs="0">
+					<xsd:annotation>
+						<xsd:documentation>City within region to be searched.</xsd:documentation>
+					</xsd:annotation>
+				</xsd:element>
+				<xsd:element name="County" type="xsd:string" minOccurs="0">
+					<xsd:annotation>
+						<xsd:documentation>County within region to be searched. If county and/or court is not available, then PostalCode and Municipality must be supplied.  In all cases,  Region and CountryCode in the parent element must be supplied.</xsd:documentation>
+					</xsd:annotation>
+				</xsd:element>
+				<xsd:element name="PostalCode" type="xsd:string" minOccurs="0">
+					<xsd:annotation>
+						<xsd:documentation>Postal code within region to be searched.</xsd:documentation>
+					</xsd:annotation>
+				</xsd:element>
+				<xsd:element name="CourtName" type="xsd:string" minOccurs="0">
+					<xsd:annotation>
+						<xsd:documentation>Name of court to be searched. If court and/or country is not available, then PostalCode and Municipality must be supplied.  In all cases,  Region and CountryCode in the parent element must be supplied.</xsd:documentation>
+					</xsd:annotation>
+				</xsd:element>
+				<xsd:element name="CourtType" minOccurs="0">
+					<xsd:annotation>
+						<xsd:documentation>Jurisdiction of court to be searched.  i.e. Felony, Misdemeanor, Both.</xsd:documentation>
+					</xsd:annotation>
+					<xsd:complexType>
+						<xsd:simpleContent>
+							<xsd:extension base="xsd:string">
+								<xsd:attribute name="type">
+									<xsd:simpleType>
+										<xsd:restriction base="xsd:string">
+											<xsd:enumeration value="felony"/>
+											<xsd:enumeration value="misdemeanor"/>
+											<xsd:enumeration value="felonyMisdemeanor"/>
+										</xsd:restriction>
+									</xsd:simpleType>
+								</xsd:attribute>
+							</xsd:extension>
+						</xsd:simpleContent>
+					</xsd:complexType>
+				</xsd:element>
+				<xsd:element name="Database" type="xsd:string" minOccurs="0">
+					<xsd:annotation>
+						<xsd:documentation>Private database to be searched. Primarily for statewide searches.</xsd:documentation>
+					</xsd:annotation>
+				</xsd:element>
+				<xsd:element name="AdmittedAliases" type="ScreeningPersonalDataType" minOccurs="0" maxOccurs="unbounded">
+					<xsd:annotation>
+						<xsd:documentation>Client provided information to enable scoring of results based upon Search Subject provided information.</xsd:documentation>
+					</xsd:annotation>
+				</xsd:element>
+				<xsd:choice minOccurs="0" maxOccurs="unbounded">
+					<xsd:element name="AdmittedChargeSummary" type="xsd:string" minOccurs="0">
+						<xsd:annotation>
+							<xsd:documentation>Summary of AdmittedCharges.</xsd:documentation>
+						</xsd:annotation>
+					</xsd:element>
+					<xsd:element name="AdmittedCharges" minOccurs="0" maxOccurs="unbounded">
+						<xsd:annotation>
+							<xsd:documentation>Client provided information to enable scoring of results based upon Search Subject provided information.</xsd:documentation>
+						</xsd:annotation>
+						<xsd:complexType>
+							<xsd:sequence>
+								<xsd:element name="CriminalCase" minOccurs="0" maxOccurs="unbounded">
+									<xsd:complexType>
+										<xsd:sequence>
+											<xsd:element name="CaseNumber" type="xsd:string" minOccurs="0">
+												<xsd:annotation>
+													<xsd:documentation>Case number assigned by the court.</xsd:documentation>
+												</xsd:annotation>
+											</xsd:element>
+											<xsd:element name="OtherCaseId" minOccurs="0" maxOccurs="unbounded">
+												<xsd:annotation>
+													<xsd:documentation>Other ID to identify the criminal activity such as a Department of Corrections Id.</xsd:documentation>
+												</xsd:annotation>
+												<xsd:complexType>
+													<xsd:simpleContent>
+														<xsd:extension base="xsd:string">
+															<xsd:attribute name="type" type="xsd:string"/>
+														</xsd:extension>
+													</xsd:simpleContent>
+												</xsd:complexType>
+											</xsd:element>
+											<xsd:element name="ArrestingAgency" type="xsd:string" minOccurs="0">
+												<xsd:annotation>
+													<xsd:documentation>Originating arrest agency ID
+</xsd:documentation>
+												</xsd:annotation>
+											</xsd:element>
+											<xsd:element name="Jurisdiction" type="xsd:string" minOccurs="0">
+												<xsd:annotation>
+													<xsd:documentation>Name, division and district of the Court. </xsd:documentation>
+												</xsd:annotation>
+											</xsd:element>
+											<xsd:element name="CountryCode" type="CountryCodeType" minOccurs="0"/>
+											<xsd:element name="Region" type="xsd:string" minOccurs="0"/>
+											<xsd:element name="County" type="xsd:string" minOccurs="0"/>
+											<xsd:element name="Municipality" type="xsd:string" minOccurs="0"/>
+											<xsd:element name="FileDate" type="FlexibleDatesType" minOccurs="0"/>
+											<xsd:element name="Charges" maxOccurs="unbounded">
+												<xsd:complexType>
+													<xsd:sequence>
+														<xsd:element name="ChargeOrComplaint" type="xsd:string">
+															<xsd:annotation>
+																<xsd:documentation>Identifies a crime, offense, infraction or violation for which the defendant was arrested.</xsd:documentation>
+															</xsd:annotation>
+														</xsd:element>
+														<xsd:element name="ChargeTypeClassification" type="ChargeQualifiers" minOccurs="0">
+															<xsd:annotation>
+																<xsd:documentation>Identifies the seriousness of the offense:felony,misdemeanor, infraction,etc</xsd:documentation>
+															</xsd:annotation>
+														</xsd:element>
+														<xsd:element name="ArrestDate" type="FlexibleDatesType" minOccurs="0">
+															<xsd:annotation>
+																<xsd:documentation>Date of the arrest/summons served</xsd:documentation>
+															</xsd:annotation>
+														</xsd:element>
+														<xsd:element name="OffenseDate" type="FlexibleDatesType" minOccurs="0">
+															<xsd:annotation>
+																<xsd:documentation>Date offense was committed</xsd:documentation>
+															</xsd:annotation>
+														</xsd:element>
+														<xsd:element name="Sentence" type="xsd:string" minOccurs="0">
+															<xsd:annotation>
+																<xsd:documentation>Information regarding the penalty for a given offense
+including Length of sentence,  fines, restitution, etc.</xsd:documentation>
+															</xsd:annotation>
+														</xsd:element>
+														<xsd:element name="SentenceDate" type="FlexibleDatesType" minOccurs="0">
+															<xsd:annotation>
+																<xsd:documentation>Date of sentencing</xsd:documentation>
+															</xsd:annotation>
+														</xsd:element>
+														<xsd:element name="Disposition" type="xsd:string" minOccurs="0">
+															<xsd:annotation>
+																<xsd:documentation>Guilty, not guilty, pled guilty, mistrial, etc</xsd:documentation>
+															</xsd:annotation>
+														</xsd:element>
+														<xsd:element name="DispositionDate" type="FlexibleDatesType" minOccurs="0">
+															<xsd:annotation>
+																<xsd:documentation>Date of disposition</xsd:documentation>
+															</xsd:annotation>
+														</xsd:element>
+														<xsd:element name="ProbationStatus" type="xsd:string" minOccurs="0"/>
+													</xsd:sequence>
+												</xsd:complexType>
+											</xsd:element>
+										</xsd:sequence>
+									</xsd:complexType>
+								</xsd:element>
+							</xsd:sequence>
+						</xsd:complexType>
+					</xsd:element>
+				</xsd:choice>
+				<xsd:element name="AdditionalItems" type="FlexibleDetailType" minOccurs="0" maxOccurs="unbounded"/>
+			</xsd:sequence>
+		</xsd:complexType>
+	</xsd:element>
+	<xsd:element name="SearchEducation">
+		<xsd:complexType>
+			<xsd:sequence>
+				<xsd:element ref="EducationHistory"/>
+				<xsd:element name="OtherApplicantInformation" type="EntityIdType" minOccurs="0">
+					<xsd:annotation>
+						<xsd:documentation>For capturing additional search related information associated with a specific question.</xsd:documentation>
+					</xsd:annotation>
+				</xsd:element>
+				<xsd:element name="AdditionalItems" type="FlexibleDetailType" minOccurs="0" maxOccurs="unbounded"/>
+			</xsd:sequence>
+		</xsd:complexType>
+	</xsd:element>
+	<xsd:element name="SearchEmployment">
+		<xsd:complexType>
+			<xsd:sequence>
+				<xsd:element name="EmploymentHistory" type="EmploymentHistoryType"/>
+				<xsd:element name="OtherApplicantInformation" type="EntityIdType" minOccurs="0">
+					<xsd:annotation>
+						<xsd:documentation>For capturing additional search related information associated with a specific question.</xsd:documentation>
+					</xsd:annotation>
+				</xsd:element>
+				<xsd:element name="AdditionalItems" type="FlexibleDetailType" minOccurs="0" maxOccurs="unbounded"/>
+			</xsd:sequence>
+			<xsd:attribute name="type" type="EmploymentType"/>
+		</xsd:complexType>
+	</xsd:element>
+	<xsd:element name="SearchDrugs">
+		<xsd:complexType>
+			<xsd:sequence>
+				<xsd:element name="ReasonForTest" type="ReasonForTestType" minOccurs="0">
+					<xsd:annotation>
+						<xsd:documentation>Reason the test was performed.</xsd:documentation>
+					</xsd:annotation>
+				</xsd:element>
+				<xsd:element name="TestType" minOccurs="0">
+					<xsd:annotation>
+						<xsd:documentation>Identifies the type of test to be performed and optionally, the substances or panels to be tested.</xsd:documentation>
+					</xsd:annotation>
+					<xsd:complexType>
+						<xsd:sequence>
+							<xsd:element name="Substance" minOccurs="0" maxOccurs="unbounded">
+								<xsd:complexType>
+									<xsd:sequence>
+										<xsd:element name="SubstanceType" type="SubstanceTypeType">
+											<xsd:annotation>
+												<xsd:documentation>Name of the substance being tested for.</xsd:documentation>
+											</xsd:annotation>
+										</xsd:element>
+									</xsd:sequence>
+								</xsd:complexType>
+							</xsd:element>
+						</xsd:sequence>
+						<xsd:attribute name="type" type="xsd:string"/>
+					</xsd:complexType>
+				</xsd:element>
+				<xsd:element name="CollectionDate" type="FlexibleDatesType" minOccurs="0">
+					<xsd:annotation>
+						<xsd:documentation>The date the specimen will be collected.</xsd:documentation>
+					</xsd:annotation>
+				</xsd:element>
+				<xsd:element name="CollectionSite" minOccurs="0">
+					<xsd:annotation>
+						<xsd:documentation>The place designated where individuals present themselves for the purpose of providing a specimen to be analyzed for the presence of drugs.</xsd:documentation>
+					</xsd:annotation>
+					<xsd:complexType>
+						<xsd:sequence>
+							<xsd:element name="OrganizationName" type="xsd:string" minOccurs="0">
+								<xsd:annotation>
+									<xsd:documentation>The name of the organization responsible for collecting the specimen.</xsd:documentation>
+								</xsd:annotation>
+							</xsd:element>
+							<xsd:element name="PostalAddress" type="PostalAddressType" minOccurs="0">
+								<xsd:annotation>
+									<xsd:documentation>The address where the search subject will provide the specimen.</xsd:documentation>
+								</xsd:annotation>
+							</xsd:element>
+						</xsd:sequence>
+						<xsd:attribute name="type" type="xsd:string"/>
+					</xsd:complexType>
+				</xsd:element>
+				<xsd:element name="SpecimenIdNumber" type="EntityIdType" minOccurs="0">
+					<xsd:annotation>
+						<xsd:documentation>Identifier related to the procedures to account for the integrity of each  specimen by tracking its handling and storage from point of specimen collection to final disposition of the specimen. </xsd:documentation>
+					</xsd:annotation>
+				</xsd:element>
+				<xsd:element name="Organization" type="ReferralType" minOccurs="0" maxOccurs="unbounded">
+					<xsd:annotation>
+						<xsd:documentation>Contains contact information relating to the organizationsinvolved with this request for Drug testing.  i.e. Requesting Organization or Organization reviewing the results.</xsd:documentation>
+					</xsd:annotation>
+				</xsd:element>
+				<xsd:element name="OtherApplicantInformation" type="EntityIdType" minOccurs="0">
+					<xsd:annotation>
+						<xsd:documentation>For capturing additional search related information associated with a specific question.</xsd:documentation>
+					</xsd:annotation>
+				</xsd:element>
+				<xsd:element name="AdditionalItems" type="FlexibleDetailType" minOccurs="0" maxOccurs="unbounded"/>
+			</xsd:sequence>
+		</xsd:complexType>
+	</xsd:element>
+	<xsd:element name="SearchLicense">
+		<xsd:complexType>
+			<xsd:sequence>
+				<xsd:element name="License" type="LicenseType"/>
+				<xsd:element name="OtherApplicantInformation" type="EntityIdType" minOccurs="0">
+					<xsd:annotation>
+						<xsd:documentation>For capturing additional search related information associated with a specific question.</xsd:documentation>
+					</xsd:annotation>
+				</xsd:element>
+				<xsd:element name="AdditionalItems" type="FlexibleDetailType" minOccurs="0" maxOccurs="unbounded"/>
+			</xsd:sequence>
+		</xsd:complexType>
+	</xsd:element>
+	<xsd:element name="SearchMilitary">
+		<xsd:complexType>
+			<xsd:sequence>
+				<xsd:element name="MilitaryHistory" type="ScreeningsMilitaryHistoryType"/>
+				<xsd:element name="OtherApplicantInformation" type="EntityIdType" minOccurs="0">
+					<xsd:annotation>
+						<xsd:documentation>For capturing additional search related information associated with a specific question.</xsd:documentation>
+					</xsd:annotation>
+				</xsd:element>
+				<xsd:element name="AdditionalItems" type="FlexibleDetailType" minOccurs="0" maxOccurs="unbounded"/>
+			</xsd:sequence>
+			<xsd:attribute name="type" type="EmploymentType"/>
+		</xsd:complexType>
+	</xsd:element>
+	<xsd:element name="SearchOther">
+		<xsd:complexType>
+			<xsd:sequence>
+				<xsd:element name="GovernmentId" minOccurs="0">
+					<xsd:complexType>
+						<xsd:simpleContent>
+							<xsd:extension base="xsd:string">
+								<xsd:attribute name="countryCode" type="xsd:string"/>
+								<xsd:attribute name="jurisdiction" type="xsd:string"/>
+								<xsd:attribute name="issuingAuthority" type="xsd:string"/>
+								<xsd:attribute name="document" type="xsd:string"/>
+							</xsd:extension>
+						</xsd:simpleContent>
+					</xsd:complexType>
+				</xsd:element>
+				<xsd:element name="EffectiveDate" type="EffectiveDateType" minOccurs="0"/>
+				<xsd:element name="Organization" type="ReferralType" minOccurs="0">
+					<xsd:annotation>
+						<xsd:documentation>Identifies the organization that  the search(s) will be performed upon.</xsd:documentation>
+					</xsd:annotation>
+				</xsd:element>
+				<xsd:element name="AdditionalText" minOccurs="0">
+					<xsd:complexType>
+						<xsd:simpleContent>
+							<xsd:extension base="xsd:string">
+								<xsd:attribute name="type" type="xsd:string" use="required"/>
+							</xsd:extension>
+						</xsd:simpleContent>
+					</xsd:complexType>
+				</xsd:element>
+				<xsd:element ref="Competency" minOccurs="0" maxOccurs="unbounded"/>
+				<xsd:element name="OtherApplicantInformation" type="EntityIdType" minOccurs="0">
+					<xsd:annotation>
+						<xsd:documentation>For capturing additional search related information associated with a specific question.</xsd:documentation>
+					</xsd:annotation>
+				</xsd:element>
+				<xsd:element name="AdditionalItems" type="FlexibleDetailType" minOccurs="0" maxOccurs="unbounded"/>
+				<xsd:element ref="UserArea" minOccurs="0"/>
+			</xsd:sequence>
+		</xsd:complexType>
+	</xsd:element>
+	<xsd:element name="SearchReference">
+		<xsd:complexType>
+			<xsd:sequence>
+				<xsd:element name="Contact" type="ContactType"/>
+				<xsd:element ref="Competency" minOccurs="0" maxOccurs="unbounded"/>
+				<xsd:element name="OtherApplicantInformation" type="EntityIdType" minOccurs="0">
+					<xsd:annotation>
+						<xsd:documentation>For capturing additional search related information associated with a specific question.</xsd:documentation>
+					</xsd:annotation>
+				</xsd:element>
+				<xsd:element name="AdditionalItems" type="FlexibleDetailType" minOccurs="0" maxOccurs="unbounded"/>
+			</xsd:sequence>
+		</xsd:complexType>
+	</xsd:element>
+</xsd:schema>

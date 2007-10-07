@@ -1,0 +1,2713 @@
+<html>
+
+<head>
+<meta http-equiv=Content-Type content="text/html; charset=us-ascii">
+<meta name=Generator content="Microsoft Word 11 (filtered)">
+<title>Time Card Configuration</title>
+
+<style>
+<!--
+ /* Font Definitions */
+ @font-face
+	{font-family:Courier;
+	panose-1:2 7 4 9 2 2 5 2 4 4;}
+@font-face
+	{font-family:"MS Mincho";
+	panose-1:2 2 6 9 4 2 5 8 3 4;}
+@font-face
+	{font-family:Tahoma;
+	panose-1:2 11 6 4 3 5 4 4 2 4;}
+@font-face
+	{font-family:Verdana;
+	panose-1:2 11 6 4 3 5 4 4 2 4;}
+@font-face
+	{font-family:Copperplate31ab;}
+@font-face
+	{font-family:GillSans;}
+@font-face
+	{font-family:"Verdana\, Arial\, Helvetica";}
+@font-face
+	{font-family:"\@MS Mincho";
+	panose-1:2 2 6 9 4 2 5 8 3 4;}
+ /* Style Definitions */
+ p.MsoNormal, li.MsoNormal, div.MsoNormal
+	{margin-top:6.0pt;
+	margin-right:0in;
+	margin-bottom:6.0pt;
+	margin-left:0in;
+	font-size:11.0pt;
+	font-family:Arial;}
+h1
+	{margin-top:24.0pt;
+	margin-right:0in;
+	margin-bottom:12.0pt;
+	margin-left:.3in;
+	text-align:justify;
+	text-justify:inter-ideograph;
+	text-indent:-.3in;
+	page-break-after:avoid;
+	font-size:14.0pt;
+	font-family:Arial;
+	font-weight:normal;}
+h2
+	{margin-top:.25in;
+	margin-right:0in;
+	margin-bottom:6.0pt;
+	margin-left:.4in;
+	text-indent:-.4in;
+	page-break-after:avoid;
+	layout-grid-mode:char;
+	font-size:12.0pt;
+	font-family:Arial;
+	font-weight:bold;
+	font-style:italic;}
+h3
+	{margin-top:12.0pt;
+	margin-right:0in;
+	margin-bottom:6.0pt;
+	margin-left:.5in;
+	text-indent:-.5in;
+	page-break-after:avoid;
+	layout-grid-mode:char;
+	font-size:10.0pt;
+	font-family:Arial;
+	font-weight:bold;}
+h4
+	{margin-top:12.0pt;
+	margin-right:0in;
+	margin-bottom:3.0pt;
+	margin-left:0in;
+	page-break-after:avoid;
+	font-size:12.0pt;
+	font-family:Arial;
+	font-weight:bold;}
+h5
+	{margin-top:6.0pt;
+	margin-right:0in;
+	margin-bottom:6.0pt;
+	margin-left:.7in;
+	text-align:justify;
+	text-justify:inter-ideograph;
+	text-indent:-.7in;
+	page-break-after:avoid;
+	punctuation-wrap:simple;
+	text-autospace:none;
+	font-size:12.0pt;
+	font-family:GillSans;
+	font-weight:bold;}
+h6
+	{margin-top:12.0pt;
+	margin-right:0in;
+	margin-bottom:3.0pt;
+	margin-left:.8in;
+	text-align:justify;
+	text-justify:inter-ideograph;
+	text-indent:-.8in;
+	font-size:11.0pt;
+	font-family:GillSans;
+	font-weight:bold;}
+p.MsoHeading7, li.MsoHeading7, div.MsoHeading7
+	{margin-top:12.0pt;
+	margin-right:0in;
+	margin-bottom:3.0pt;
+	margin-left:.9in;
+	text-align:justify;
+	text-justify:inter-ideograph;
+	text-indent:-.9in;
+	font-size:12.0pt;
+	font-family:GillSans;}
+p.MsoHeading8, li.MsoHeading8, div.MsoHeading8
+	{margin-top:12.0pt;
+	margin-right:0in;
+	margin-bottom:3.0pt;
+	margin-left:1.0in;
+	text-align:justify;
+	text-justify:inter-ideograph;
+	text-indent:-1.0in;
+	font-size:12.0pt;
+	font-family:GillSans;
+	font-style:italic;}
+p.MsoHeading9, li.MsoHeading9, div.MsoHeading9
+	{margin-top:12.0pt;
+	margin-right:0in;
+	margin-bottom:3.0pt;
+	margin-left:1.1in;
+	text-align:justify;
+	text-justify:inter-ideograph;
+	text-indent:-1.1in;
+	font-size:11.0pt;
+	font-family:Arial;}
+p.MsoIndex1, li.MsoIndex1, div.MsoIndex1
+	{margin-top:6.0pt;
+	margin-right:0in;
+	margin-bottom:6.0pt;
+	margin-left:12.0pt;
+	text-align:justify;
+	text-justify:inter-ideograph;
+	text-indent:-12.0pt;
+	font-size:12.0pt;
+	font-family:GillSans;}
+p.MsoIndex2, li.MsoIndex2, div.MsoIndex2
+	{margin-top:6.0pt;
+	margin-right:0in;
+	margin-bottom:6.0pt;
+	margin-left:24.0pt;
+	text-align:justify;
+	text-justify:inter-ideograph;
+	text-indent:-12.0pt;
+	font-size:12.0pt;
+	font-family:GillSans;}
+p.MsoIndex3, li.MsoIndex3, div.MsoIndex3
+	{margin-top:6.0pt;
+	margin-right:0in;
+	margin-bottom:6.0pt;
+	margin-left:.5in;
+	text-align:justify;
+	text-justify:inter-ideograph;
+	text-indent:-12.0pt;
+	font-size:12.0pt;
+	font-family:GillSans;}
+p.MsoIndex4, li.MsoIndex4, div.MsoIndex4
+	{margin-top:6.0pt;
+	margin-right:0in;
+	margin-bottom:6.0pt;
+	margin-left:48.0pt;
+	text-align:justify;
+	text-justify:inter-ideograph;
+	text-indent:-12.0pt;
+	font-size:12.0pt;
+	font-family:GillSans;}
+p.MsoIndex5, li.MsoIndex5, div.MsoIndex5
+	{margin-top:6.0pt;
+	margin-right:0in;
+	margin-bottom:6.0pt;
+	margin-left:60.0pt;
+	text-align:justify;
+	text-justify:inter-ideograph;
+	text-indent:-12.0pt;
+	font-size:12.0pt;
+	font-family:GillSans;}
+p.MsoIndex6, li.MsoIndex6, div.MsoIndex6
+	{margin-top:6.0pt;
+	margin-right:0in;
+	margin-bottom:6.0pt;
+	margin-left:1.0in;
+	text-align:justify;
+	text-justify:inter-ideograph;
+	text-indent:-12.0pt;
+	font-size:12.0pt;
+	font-family:GillSans;}
+p.MsoIndex7, li.MsoIndex7, div.MsoIndex7
+	{margin-top:6.0pt;
+	margin-right:0in;
+	margin-bottom:6.0pt;
+	margin-left:84.0pt;
+	text-align:justify;
+	text-justify:inter-ideograph;
+	text-indent:-12.0pt;
+	font-size:12.0pt;
+	font-family:GillSans;}
+p.MsoIndex8, li.MsoIndex8, div.MsoIndex8
+	{margin-top:6.0pt;
+	margin-right:0in;
+	margin-bottom:6.0pt;
+	margin-left:96.0pt;
+	text-align:justify;
+	text-justify:inter-ideograph;
+	text-indent:-12.0pt;
+	font-size:12.0pt;
+	font-family:GillSans;}
+p.MsoIndex9, li.MsoIndex9, div.MsoIndex9
+	{margin-top:6.0pt;
+	margin-right:0in;
+	margin-bottom:6.0pt;
+	margin-left:1.5in;
+	text-align:justify;
+	text-justify:inter-ideograph;
+	text-indent:-12.0pt;
+	font-size:12.0pt;
+	font-family:GillSans;}
+p.MsoToc1, li.MsoToc1, div.MsoToc1
+	{margin-top:12.0pt;
+	margin-right:0in;
+	margin-bottom:6.0pt;
+	margin-left:0in;
+	font-size:11.0pt;
+	font-family:"Times New Roman";
+	font-weight:bold;}
+p.MsoToc2, li.MsoToc2, div.MsoToc2
+	{margin-top:6.0pt;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:11.0pt;
+	margin-bottom:.0001pt;
+	font-size:11.0pt;
+	font-family:"Times New Roman";
+	font-style:italic;}
+p.MsoToc3, li.MsoToc3, div.MsoToc3
+	{margin-top:0in;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:22.0pt;
+	margin-bottom:.0001pt;
+	font-size:11.0pt;
+	font-family:"Times New Roman";}
+p.MsoToc4, li.MsoToc4, div.MsoToc4
+	{margin-top:0in;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:33.0pt;
+	margin-bottom:.0001pt;
+	font-size:11.0pt;
+	font-family:"Times New Roman";}
+p.MsoToc5, li.MsoToc5, div.MsoToc5
+	{margin-top:0in;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:44.0pt;
+	margin-bottom:.0001pt;
+	font-size:11.0pt;
+	font-family:"Times New Roman";}
+p.MsoToc6, li.MsoToc6, div.MsoToc6
+	{margin-top:0in;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:55.0pt;
+	margin-bottom:.0001pt;
+	font-size:11.0pt;
+	font-family:"Times New Roman";}
+p.MsoToc7, li.MsoToc7, div.MsoToc7
+	{margin-top:0in;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:66.0pt;
+	margin-bottom:.0001pt;
+	font-size:11.0pt;
+	font-family:"Times New Roman";}
+p.MsoToc8, li.MsoToc8, div.MsoToc8
+	{margin-top:0in;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:77.0pt;
+	margin-bottom:.0001pt;
+	font-size:11.0pt;
+	font-family:"Times New Roman";}
+p.MsoToc9, li.MsoToc9, div.MsoToc9
+	{margin-top:0in;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:88.0pt;
+	margin-bottom:.0001pt;
+	font-size:11.0pt;
+	font-family:"Times New Roman";}
+p.MsoNormalIndent, li.MsoNormalIndent, div.MsoNormalIndent
+	{margin-top:6.0pt;
+	margin-right:0in;
+	margin-bottom:6.0pt;
+	margin-left:.5in;
+	font-size:11.0pt;
+	font-family:Arial;}
+p.MsoFootnoteText, li.MsoFootnoteText, div.MsoFootnoteText
+	{margin-top:6.0pt;
+	margin-right:0in;
+	margin-bottom:6.0pt;
+	margin-left:0in;
+	text-align:justify;
+	text-justify:inter-ideograph;
+	font-size:11.0pt;
+	font-family:GillSans;}
+p.MsoCommentText, li.MsoCommentText, div.MsoCommentText
+	{margin-top:6.0pt;
+	margin-right:0in;
+	margin-bottom:6.0pt;
+	margin-left:0in;
+	text-align:justify;
+	text-justify:inter-ideograph;
+	font-size:11.0pt;
+	font-family:GillSans;}
+p.MsoHeader, li.MsoHeader, div.MsoHeader
+	{margin-top:6.0pt;
+	margin-right:0in;
+	margin-bottom:6.0pt;
+	margin-left:0in;
+	text-align:justify;
+	text-justify:inter-ideograph;
+	font-size:11.0pt;
+	font-family:GillSans;}
+p.MsoFooter, li.MsoFooter, div.MsoFooter
+	{margin-top:6.0pt;
+	margin-right:0in;
+	margin-bottom:6.0pt;
+	margin-left:0in;
+	text-align:justify;
+	text-justify:inter-ideograph;
+	font-size:11.0pt;
+	font-family:GillSans;}
+p.MsoIndexHeading, li.MsoIndexHeading, div.MsoIndexHeading
+	{margin-top:6.0pt;
+	margin-right:0in;
+	margin-bottom:6.0pt;
+	margin-left:0in;
+	text-align:justify;
+	text-justify:inter-ideograph;
+	font-size:12.0pt;
+	font-family:Arial;
+	font-weight:bold;}
+p.MsoCaption, li.MsoCaption, div.MsoCaption
+	{margin-top:6.0pt;
+	margin-right:0in;
+	margin-bottom:6.0pt;
+	margin-left:0in;
+	text-align:center;
+	font-size:12.0pt;
+	font-family:GillSans;
+	font-weight:bold;}
+p.MsoTof, li.MsoTof, div.MsoTof
+	{margin-top:6.0pt;
+	margin-right:0in;
+	margin-bottom:6.0pt;
+	margin-left:24.0pt;
+	text-indent:-24.0pt;
+	font-size:11.0pt;
+	font-family:Arial;}
+p.MsoEnvelopeAddress, li.MsoEnvelopeAddress, div.MsoEnvelopeAddress
+	{margin-top:6.0pt;
+	margin-right:0in;
+	margin-bottom:6.0pt;
+	margin-left:2.0in;
+	text-align:justify;
+	text-justify:inter-ideograph;
+	font-size:12.0pt;
+	font-family:Arial;}
+p.MsoEnvelopeReturn, li.MsoEnvelopeReturn, div.MsoEnvelopeReturn
+	{margin-top:6.0pt;
+	margin-right:0in;
+	margin-bottom:6.0pt;
+	margin-left:0in;
+	text-align:justify;
+	text-justify:inter-ideograph;
+	font-size:11.0pt;
+	font-family:Arial;}
+span.MsoFootnoteReference
+	{vertical-align:super;}
+span.MsoCommentReference
+	{color:fuchsia;}
+p.MsoEndnoteText, li.MsoEndnoteText, div.MsoEndnoteText
+	{margin-top:6.0pt;
+	margin-right:0in;
+	margin-bottom:6.0pt;
+	margin-left:0in;
+	text-align:justify;
+	text-justify:inter-ideograph;
+	font-size:11.0pt;
+	font-family:GillSans;}
+p.MsoToa, li.MsoToa, div.MsoToa
+	{margin-top:6.0pt;
+	margin-right:0in;
+	margin-bottom:6.0pt;
+	margin-left:12.0pt;
+	text-indent:-12.0pt;
+	font-size:11.0pt;
+	font-family:Arial;}
+p.MsoMacroText, li.MsoMacroText, div.MsoMacroText
+	{margin:0in;
+	margin-bottom:.0001pt;
+	text-align:justify;
+	text-justify:inter-ideograph;
+	font-size:10.0pt;
+	font-family:"Courier New";}
+p.MsoToaHeading, li.MsoToaHeading, div.MsoToaHeading
+	{margin-top:6.0pt;
+	margin-right:0in;
+	margin-bottom:6.0pt;
+	margin-left:0in;
+	font-size:11.0pt;
+	font-family:Arial;
+	font-weight:bold;}
+p.MsoList, li.MsoList, div.MsoList
+	{margin-top:6.0pt;
+	margin-right:0in;
+	margin-bottom:6.0pt;
+	margin-left:.25in;
+	text-align:justify;
+	text-justify:inter-ideograph;
+	text-indent:-.25in;
+	font-size:12.0pt;
+	font-family:GillSans;}
+p.MsoListBullet, li.MsoListBullet, div.MsoListBullet
+	{margin-top:6.0pt;
+	margin-right:0in;
+	margin-bottom:6.0pt;
+	margin-left:.25in;
+	text-align:justify;
+	text-justify:inter-ideograph;
+	text-indent:-.25in;
+	font-size:12.0pt;
+	font-family:GillSans;}
+p.MsoListNumber, li.MsoListNumber, div.MsoListNumber
+	{margin-top:6.0pt;
+	margin-right:0in;
+	margin-bottom:6.0pt;
+	margin-left:.25in;
+	text-align:justify;
+	text-justify:inter-ideograph;
+	text-indent:-.25in;
+	font-size:12.0pt;
+	font-family:GillSans;}
+p.MsoList2, li.MsoList2, div.MsoList2
+	{margin-top:6.0pt;
+	margin-right:0in;
+	margin-bottom:6.0pt;
+	margin-left:.5in;
+	text-align:justify;
+	text-justify:inter-ideograph;
+	text-indent:-.25in;
+	font-size:12.0pt;
+	font-family:GillSans;}
+p.MsoList3, li.MsoList3, div.MsoList3
+	{margin-top:6.0pt;
+	margin-right:0in;
+	margin-bottom:6.0pt;
+	margin-left:.75in;
+	text-align:justify;
+	text-justify:inter-ideograph;
+	text-indent:-.25in;
+	font-size:12.0pt;
+	font-family:GillSans;}
+p.MsoList4, li.MsoList4, div.MsoList4
+	{margin-top:6.0pt;
+	margin-right:0in;
+	margin-bottom:6.0pt;
+	margin-left:1.0in;
+	text-align:justify;
+	text-justify:inter-ideograph;
+	text-indent:-.25in;
+	font-size:12.0pt;
+	font-family:GillSans;}
+p.MsoList5, li.MsoList5, div.MsoList5
+	{margin-top:6.0pt;
+	margin-right:0in;
+	margin-bottom:6.0pt;
+	margin-left:1.25in;
+	text-align:justify;
+	text-justify:inter-ideograph;
+	text-indent:-.25in;
+	font-size:12.0pt;
+	font-family:GillSans;}
+p.MsoListBullet2, li.MsoListBullet2, div.MsoListBullet2
+	{margin-top:6.0pt;
+	margin-right:0in;
+	margin-bottom:6.0pt;
+	margin-left:.5in;
+	text-align:justify;
+	text-justify:inter-ideograph;
+	text-indent:-.25in;
+	font-size:12.0pt;
+	font-family:GillSans;}
+p.MsoListBullet3, li.MsoListBullet3, div.MsoListBullet3
+	{margin-top:6.0pt;
+	margin-right:0in;
+	margin-bottom:6.0pt;
+	margin-left:.75in;
+	text-align:justify;
+	text-justify:inter-ideograph;
+	text-indent:-.25in;
+	font-size:12.0pt;
+	font-family:GillSans;}
+p.MsoListBullet4, li.MsoListBullet4, div.MsoListBullet4
+	{margin-top:6.0pt;
+	margin-right:0in;
+	margin-bottom:6.0pt;
+	margin-left:1.0in;
+	text-align:justify;
+	text-justify:inter-ideograph;
+	text-indent:-.25in;
+	font-size:12.0pt;
+	font-family:GillSans;}
+p.MsoListBullet5, li.MsoListBullet5, div.MsoListBullet5
+	{margin-top:6.0pt;
+	margin-right:0in;
+	margin-bottom:6.0pt;
+	margin-left:1.25in;
+	text-align:justify;
+	text-justify:inter-ideograph;
+	text-indent:-.25in;
+	font-size:12.0pt;
+	font-family:GillSans;}
+p.MsoListNumber2, li.MsoListNumber2, div.MsoListNumber2
+	{margin-top:6.0pt;
+	margin-right:0in;
+	margin-bottom:6.0pt;
+	margin-left:.5in;
+	text-align:justify;
+	text-justify:inter-ideograph;
+	text-indent:-.25in;
+	font-size:12.0pt;
+	font-family:GillSans;}
+p.MsoListNumber3, li.MsoListNumber3, div.MsoListNumber3
+	{margin-top:6.0pt;
+	margin-right:0in;
+	margin-bottom:6.0pt;
+	margin-left:.75in;
+	text-align:justify;
+	text-justify:inter-ideograph;
+	text-indent:-.25in;
+	font-size:12.0pt;
+	font-family:GillSans;}
+p.MsoListNumber4, li.MsoListNumber4, div.MsoListNumber4
+	{margin-top:6.0pt;
+	margin-right:0in;
+	margin-bottom:6.0pt;
+	margin-left:1.0in;
+	text-align:justify;
+	text-justify:inter-ideograph;
+	text-indent:-.25in;
+	font-size:12.0pt;
+	font-family:GillSans;}
+p.MsoListNumber5, li.MsoListNumber5, div.MsoListNumber5
+	{margin-top:6.0pt;
+	margin-right:0in;
+	margin-bottom:6.0pt;
+	margin-left:1.25in;
+	text-align:justify;
+	text-justify:inter-ideograph;
+	text-indent:-.25in;
+	font-size:12.0pt;
+	font-family:GillSans;}
+p.MsoTitle, li.MsoTitle, div.MsoTitle
+	{margin-top:12.0pt;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:0in;
+	margin-bottom:.0001pt;
+	font-size:18.0pt;
+	font-family:Arial;
+	color:navy;
+	font-weight:bold;}
+p.MsoClosing, li.MsoClosing, div.MsoClosing
+	{margin-top:6.0pt;
+	margin-right:0in;
+	margin-bottom:6.0pt;
+	margin-left:3.0in;
+	text-align:justify;
+	text-justify:inter-ideograph;
+	font-size:12.0pt;
+	font-family:GillSans;}
+p.MsoSignature, li.MsoSignature, div.MsoSignature
+	{margin-top:6.0pt;
+	margin-right:0in;
+	margin-bottom:6.0pt;
+	margin-left:3.0in;
+	font-size:11.0pt;
+	font-family:Arial;}
+p.MsoBodyText, li.MsoBodyText, div.MsoBodyText
+	{margin-top:6.0pt;
+	margin-right:0in;
+	margin-bottom:6.0pt;
+	margin-left:0in;
+	text-align:justify;
+	text-justify:inter-ideograph;
+	layout-grid-mode:char;
+	font-size:12.0pt;
+	font-family:GillSans;}
+p.MsoBodyTextIndent, li.MsoBodyTextIndent, div.MsoBodyTextIndent
+	{margin-top:6.0pt;
+	margin-right:0in;
+	margin-bottom:6.0pt;
+	margin-left:.25in;
+	text-align:justify;
+	text-justify:inter-ideograph;
+	font-size:12.0pt;
+	font-family:GillSans;}
+p.MsoListContinue, li.MsoListContinue, div.MsoListContinue
+	{margin-top:6.0pt;
+	margin-right:0in;
+	margin-bottom:6.0pt;
+	margin-left:.25in;
+	text-align:justify;
+	text-justify:inter-ideograph;
+	font-size:12.0pt;
+	font-family:GillSans;}
+p.MsoListContinue2, li.MsoListContinue2, div.MsoListContinue2
+	{margin-top:6.0pt;
+	margin-right:0in;
+	margin-bottom:6.0pt;
+	margin-left:.5in;
+	text-align:justify;
+	text-justify:inter-ideograph;
+	font-size:12.0pt;
+	font-family:GillSans;}
+p.MsoListContinue3, li.MsoListContinue3, div.MsoListContinue3
+	{margin-top:6.0pt;
+	margin-right:0in;
+	margin-bottom:6.0pt;
+	margin-left:.75in;
+	text-align:justify;
+	text-justify:inter-ideograph;
+	font-size:12.0pt;
+	font-family:GillSans;}
+p.MsoListContinue4, li.MsoListContinue4, div.MsoListContinue4
+	{margin-top:6.0pt;
+	margin-right:0in;
+	margin-bottom:6.0pt;
+	margin-left:1.0in;
+	text-align:justify;
+	text-justify:inter-ideograph;
+	font-size:12.0pt;
+	font-family:GillSans;}
+p.MsoListContinue5, li.MsoListContinue5, div.MsoListContinue5
+	{margin-top:6.0pt;
+	margin-right:0in;
+	margin-bottom:6.0pt;
+	margin-left:1.25in;
+	text-align:justify;
+	text-justify:inter-ideograph;
+	font-size:12.0pt;
+	font-family:GillSans;}
+p.MsoMessageHeader, li.MsoMessageHeader, div.MsoMessageHeader
+	{margin-top:6.0pt;
+	margin-right:0in;
+	margin-bottom:6.0pt;
+	margin-left:.75in;
+	text-align:justify;
+	text-justify:inter-ideograph;
+	text-indent:-.75in;
+	background:#CCCCCC;
+	font-size:12.0pt;
+	font-family:Arial;}
+p.MsoSubtitle, li.MsoSubtitle, div.MsoSubtitle
+	{margin:0in;
+	margin-bottom:.0001pt;
+	text-align:center;
+	font-size:14.0pt;
+	font-family:Copperplate31ab;
+	font-weight:bold;}
+p.MsoSalutation, li.MsoSalutation, div.MsoSalutation
+	{margin-top:6.0pt;
+	margin-right:0in;
+	margin-bottom:6.0pt;
+	margin-left:0in;
+	font-size:11.0pt;
+	font-family:Arial;}
+p.MsoDate, li.MsoDate, div.MsoDate
+	{margin-top:6.0pt;
+	margin-right:0in;
+	margin-bottom:6.0pt;
+	margin-left:0in;
+	text-align:justify;
+	text-justify:inter-ideograph;
+	font-size:12.0pt;
+	font-family:GillSans;}
+p.MsoBodyTextFirstIndent, li.MsoBodyTextFirstIndent, div.MsoBodyTextFirstIndent
+	{margin-top:6.0pt;
+	margin-right:0in;
+	margin-bottom:6.0pt;
+	margin-left:0in;
+	text-align:justify;
+	text-justify:inter-ideograph;
+	text-indent:10.5pt;
+	font-size:12.0pt;
+	font-family:GillSans;}
+p.MsoBodyTextFirstIndent2, li.MsoBodyTextFirstIndent2, div.MsoBodyTextFirstIndent2
+	{margin-top:6.0pt;
+	margin-right:0in;
+	margin-bottom:6.0pt;
+	margin-left:.25in;
+	text-align:justify;
+	text-justify:inter-ideograph;
+	text-indent:10.5pt;
+	font-size:12.0pt;
+	font-family:GillSans;}
+p.MsoNoteHeading, li.MsoNoteHeading, div.MsoNoteHeading
+	{margin-top:6.0pt;
+	margin-right:0in;
+	margin-bottom:6.0pt;
+	margin-left:0in;
+	font-size:11.0pt;
+	font-family:Arial;}
+p.MsoBodyText2, li.MsoBodyText2, div.MsoBodyText2
+	{margin-top:6.0pt;
+	margin-right:0in;
+	margin-bottom:6.0pt;
+	margin-left:0in;
+	text-align:justify;
+	text-justify:inter-ideograph;
+	line-height:200%;
+	font-size:12.0pt;
+	font-family:GillSans;}
+p.MsoBodyText3, li.MsoBodyText3, div.MsoBodyText3
+	{margin-top:6.0pt;
+	margin-right:0in;
+	margin-bottom:6.0pt;
+	margin-left:0in;
+	line-height:200%;
+	font-size:12.0pt;
+	font-family:Arial;}
+p.MsoBodyTextIndent2, li.MsoBodyTextIndent2, div.MsoBodyTextIndent2
+	{margin-top:6.0pt;
+	margin-right:0in;
+	margin-bottom:6.0pt;
+	margin-left:.25in;
+	text-align:justify;
+	text-justify:inter-ideograph;
+	line-height:200%;
+	font-size:12.0pt;
+	font-family:GillSans;}
+p.MsoBodyTextIndent3, li.MsoBodyTextIndent3, div.MsoBodyTextIndent3
+	{margin-top:6.0pt;
+	margin-right:0in;
+	margin-bottom:6.0pt;
+	margin-left:.25in;
+	text-align:justify;
+	text-justify:inter-ideograph;
+	font-size:8.0pt;
+	font-family:GillSans;}
+p.MsoBlockText, li.MsoBlockText, div.MsoBlockText
+	{margin-top:6.0pt;
+	margin-right:1.0in;
+	margin-bottom:6.0pt;
+	margin-left:1.0in;
+	text-align:justify;
+	text-justify:inter-ideograph;
+	font-size:12.0pt;
+	font-family:GillSans;}
+a:link, span.MsoHyperlink
+	{color:blue;
+	text-decoration:none none;}
+a:visited, span.MsoHyperlinkFollowed
+	{color:purple;
+	text-decoration:none none;}
+p.MsoDocumentMap, li.MsoDocumentMap, div.MsoDocumentMap
+	{margin-top:6.0pt;
+	margin-right:0in;
+	margin-bottom:6.0pt;
+	margin-left:0in;
+	text-align:justify;
+	text-justify:inter-ideograph;
+	background:navy;
+	font-size:12.0pt;
+	font-family:Tahoma;}
+p.MsoPlainText, li.MsoPlainText, div.MsoPlainText
+	{margin:0in;
+	margin-bottom:.0001pt;
+	font-size:10.0pt;
+	font-family:"Courier New";}
+p.MsoAutoSig, li.MsoAutoSig, div.MsoAutoSig
+	{margin-top:6.0pt;
+	margin-right:0in;
+	margin-bottom:6.0pt;
+	margin-left:0in;
+	text-align:justify;
+	text-justify:inter-ideograph;
+	font-size:12.0pt;
+	font-family:GillSans;}
+p
+	{margin:0in;
+	margin-bottom:.0001pt;
+	font-size:8.0pt;
+	font-family:"Times New Roman";}
+address
+	{margin-top:6.0pt;
+	margin-right:0in;
+	margin-bottom:6.0pt;
+	margin-left:0in;
+	text-align:justify;
+	text-justify:inter-ideograph;
+	font-size:12.0pt;
+	font-family:GillSans;
+	font-style:italic;}
+pre
+	{margin-top:6.0pt;
+	margin-right:0in;
+	margin-bottom:6.0pt;
+	margin-left:0in;
+	text-align:justify;
+	text-justify:inter-ideograph;
+	font-size:11.0pt;
+	font-family:"Courier New";}
+p.xml, li.xml, div.xml
+	{margin-top:6.0pt;
+	margin-right:0in;
+	margin-bottom:6.0pt;
+	margin-left:0in;
+	font-size:11.0pt;
+	font-family:"Courier New";}
+p.appendices, li.appendices, div.appendices
+	{margin-top:24.0pt;
+	margin-right:0in;
+	margin-bottom:12.0pt;
+	margin-left:.3in;
+	text-align:center;
+	text-indent:-.3in;
+	page-break-after:avoid;
+	font-size:14.0pt;
+	font-family:Copperplate31ab;
+	font-weight:bold;}
+p.bullet, li.bullet, div.bullet
+	{margin-top:3.0pt;
+	margin-right:4.3pt;
+	margin-bottom:3.0pt;
+	margin-left:.5in;
+	text-align:justify;
+	text-justify:inter-ideograph;
+	text-indent:-.25in;
+	layout-grid-mode:char;
+	font-size:12.0pt;
+	font-family:GillSans;}
+p.footerlandscape, li.footerlandscape, div.footerlandscape
+	{margin-top:6.0pt;
+	margin-right:0in;
+	margin-bottom:6.0pt;
+	margin-left:0in;
+	text-align:justify;
+	text-justify:inter-ideograph;
+	font-size:11.0pt;
+	font-family:GillSans;}
+p.headerlandscape, li.headerlandscape, div.headerlandscape
+	{margin-top:6.0pt;
+	margin-right:0in;
+	margin-bottom:6.0pt;
+	margin-left:0in;
+	text-align:justify;
+	text-justify:inter-ideograph;
+	font-size:11.0pt;
+	font-family:GillSans;}
+p.number, li.number, div.number
+	{margin-top:3.0pt;
+	margin-right:0in;
+	margin-bottom:3.0pt;
+	margin-left:.5in;
+	text-indent:-.25in;
+	font-size:11.0pt;
+	font-family:Arial;}
+p.titlecover, li.titlecover, div.titlecover
+	{margin-top:1.25in;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:.75in;
+	margin-bottom:.0001pt;
+	page-break-after:avoid;
+	font-size:36.0pt;
+	font-family:Arial;
+	letter-spacing:-2.4pt;
+	font-weight:bold;}
+p.subtitlecover, li.subtitlecover, div.subtitlecover
+	{margin-top:76.0pt;
+	margin-right:84.0pt;
+	margin-bottom:0in;
+	margin-left:.75in;
+	margin-bottom:.0001pt;
+	page-break-after:avoid;
+	font-size:20.0pt;
+	font-family:"Times New Roman";
+	letter-spacing:-1.0pt;
+	font-style:italic;}
+p.tabletext, li.tabletext, div.tabletext
+	{margin:0in;
+	margin-bottom:.0001pt;
+	font-size:11.0pt;
+	font-family:Arial;}
+p.tablebullet, li.tablebullet, div.tablebullet
+	{margin-top:0in;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:.15in;
+	margin-bottom:.0001pt;
+	text-indent:-.15in;
+	font-size:11.0pt;
+	font-family:Arial;}
+p.tableheader, li.tableheader, div.tableheader
+	{margin:0in;
+	margin-bottom:.0001pt;
+	text-align:center;
+	font-size:11.0pt;
+	font-family:Copperplate31ab;
+	color:white;
+	font-weight:bold;}
+p.tablelist, li.tablelist, div.tablelist
+	{margin-top:0in;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:.25in;
+	margin-bottom:.0001pt;
+	text-indent:-.3in;
+	font-size:11.0pt;
+	font-family:Arial;}
+p.tablesubheader, li.tablesubheader, div.tablesubheader
+	{margin:0in;
+	margin-bottom:.0001pt;
+	text-align:center;
+	font-size:11.0pt;
+	font-family:Arial;
+	font-weight:bold;}
+p.version, li.version, div.version
+	{margin:0in;
+	margin-bottom:.0001pt;
+	text-align:center;
+	font-size:10.0pt;
+	font-family:Copperplate31ab;}
+p.style1, li.style1, div.style1
+	{margin-top:12.0pt;
+	margin-right:0in;
+	margin-bottom:6.0pt;
+	margin-left:.5in;
+	text-indent:-.5in;
+	page-break-after:avoid;
+	layout-grid-mode:char;
+	font-size:10.0pt;
+	font-family:Arial;
+	font-weight:bold;}
+p.h4, li.h4, div.h4
+	{margin-top:6.0pt;
+	margin-right:0in;
+	margin-bottom:6.0pt;
+	margin-left:0in;
+	font-size:11.0pt;
+	font-family:Arial;
+	font-weight:bold;}
+p.b, li.b, div.b
+	{margin:0in;
+	margin-bottom:.0001pt;
+	font-size:12.0pt;
+	font-family:"Courier New";
+	color:red;
+	font-weight:bold;}
+p.e, li.e, div.e
+	{margin-top:0in;
+	margin-right:12.0pt;
+	margin-bottom:0in;
+	margin-left:12.0pt;
+	margin-bottom:.0001pt;
+	text-indent:-12.0pt;
+	font-size:12.0pt;
+	font-family:"Times New Roman";}
+p.k, li.k, div.k
+	{margin-top:0in;
+	margin-right:12.0pt;
+	margin-bottom:0in;
+	margin-left:12.0pt;
+	margin-bottom:.0001pt;
+	text-indent:-12.0pt;
+	font-size:12.0pt;
+	font-family:"Times New Roman";}
+p.t, li.t, div.t
+	{margin:0in;
+	margin-bottom:.0001pt;
+	font-size:12.0pt;
+	font-family:"Times New Roman";
+	color:#990000;}
+p.xt, li.xt, div.xt
+	{margin:0in;
+	margin-bottom:.0001pt;
+	font-size:12.0pt;
+	font-family:"Times New Roman";
+	color:#990099;}
+p.ns, li.ns, div.ns
+	{margin:0in;
+	margin-bottom:.0001pt;
+	font-size:12.0pt;
+	font-family:"Times New Roman";
+	color:red;}
+p.m, li.m, div.m
+	{margin:0in;
+	margin-bottom:.0001pt;
+	font-size:12.0pt;
+	font-family:"Times New Roman";
+	color:blue;}
+p.tx, li.tx, div.tx
+	{margin:0in;
+	margin-bottom:.0001pt;
+	font-size:12.0pt;
+	font-family:"Times New Roman";
+	font-weight:bold;}
+p.db, li.db, div.db
+	{margin-top:0in;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:12.0pt;
+	margin-bottom:.0001pt;
+	font-size:12.0pt;
+	font-family:Courier;}
+p.di, li.di, div.di
+	{margin:0in;
+	margin-bottom:.0001pt;
+	font-size:12.0pt;
+	font-family:Courier;}
+p.d, li.d, div.d
+	{margin:0in;
+	margin-bottom:.0001pt;
+	font-size:12.0pt;
+	font-family:"Times New Roman";
+	color:blue;}
+p.pi, li.pi, div.pi
+	{margin:0in;
+	margin-bottom:.0001pt;
+	font-size:12.0pt;
+	font-family:"Times New Roman";
+	color:blue;}
+p.cb, li.cb, div.cb
+	{margin-top:0in;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:12.0pt;
+	margin-bottom:.0001pt;
+	font-size:12.0pt;
+	font-family:Courier;
+	color:#888888;}
+p.ci, li.ci, div.ci
+	{margin:0in;
+	margin-bottom:.0001pt;
+	font-size:12.0pt;
+	font-family:Courier;
+	color:#888888;}
+p.workingdraftdate, li.workingdraftdate, div.workingdraftdate
+	{margin-top:12.0pt;
+	margin-right:0in;
+	margin-bottom:12.0pt;
+	margin-left:0in;
+	font-size:16.0pt;
+	font-family:Arial;
+	color:navy;}
+p.heading3preface, li.heading3preface, div.heading3preface
+	{margin:0in;
+	margin-bottom:.0001pt;
+	font-size:10.0pt;
+	font-family:Arial;
+	font-weight:bold;}
+p.prefacetext, li.prefacetext, div.prefacetext
+	{margin-top:0in;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:.5in;
+	margin-bottom:.0001pt;
+	font-size:10.0pt;
+	font-family:Arial;}
+p.heading2preface, li.heading2preface, div.heading2preface
+	{margin-top:24.0pt;
+	margin-right:0in;
+	margin-bottom:3.0pt;
+	margin-left:0in;
+	font-size:14.0pt;
+	font-family:Arial;
+	color:navy;
+	font-weight:bold;}
+span.m1
+	{color:blue;}
+span.pi1
+	{color:blue;}
+span.d1
+	{color:blue;}
+span.b1
+	{font-family:"Courier New";
+	color:red;
+	font-weight:bold;
+	text-decoration:none none;}
+span.t1
+	{color:#990000;}
+span.tx1
+	{font-weight:bold;}
+span.note1
+	{color:gray;}
+span.headers1
+	{font-family:"Verdana\, Arial\, Helvetica";
+	font-weight:bold;}
+@page Section1
+	{size:8.5in 11.0in;
+	margin:56.7pt 53.85pt 43.1pt 1.0in;}
+div.Section1
+	{page:Section1;}
+ /* List Definitions */
+ ol
+	{margin-bottom:0in;}
+ul
+	{margin-bottom:0in;}
+-->
+</style>
+
+</head>
+
+<body lang=EN-US link=blue vlink=purple>
+
+<div class=Section1>
+
+<p class=xml><img width=281 height=87
+src="TimeCardConfiguration_files/image001.jpg">&nbsp;&nbsp; </p>
+
+<p class=MsoTitle>Time Card Configuration </p>
+
+<p class=MsoTitle>Recommendation, 2007 April 15</p>
+
+<p class=heading3preface style='margin-top:6.0pt'>Editor: </p>
+
+<p class=prefacetext>Andreas Bold, SAP AG</p>
+
+<p class=heading3preface style='margin-top:6.0pt'>Authors:</p>
+
+<p class=prefacetext>Bill Kerr, Oracle Corporation</p>
+
+<p class=prefacetext>John Black, Deltek Systems, Inc.</p>
+
+<p class=prefacetext>Andreas Bold, SAP AG</p>
+
+<p class=prefacetext><span lang=DE>Eva Decker, SAP AG</span></p>
+
+<p class=heading3preface style='margin-top:6.0pt'>Contributors:</p>
+
+<p class=prefacetext>Members of Time Expense Reporting workgroup</p>
+
+<p class=prefacetext>&nbsp;</p>
+
+<p class=prefacetext style='margin-left:0in'><b>Copyright &copy; 2007 HR-XML
+Consortium, Inc.&nbsp;</b></p>
+
+<p class=prefacetext style='margin-left:0in'>&nbsp;</p>
+
+<div style='border:none;border-top:double windowtext 2.25pt;padding:24.0pt 0in 0in 0in'>
+
+<p class=heading2preface style='margin-top:12.0pt'>Abstract</p>
+
+</div>
+
+<p class=MsoPlainText><span style='font-family:Arial'>The HR-XML Time Expense
+Reporting Workgroup has produced a simple, flexible definition of the elements
+required to express time and expense data. This document describes an
+additional schema that allows the trading partners to describe the allowed
+values for the single elements of a time card. This additional schema is called
+Timecard Configuration.</span></p>
+
+<span style='font-size:14.0pt;font-family:Arial;color:navy'><br clear=all
+style='page-break-before:always'>
+</span>
+
+<p class=heading2preface style='margin-top:12.0pt;margin-right:0in;margin-bottom:
+0in;margin-left:0in;margin-bottom:.0001pt'>Table of Contents</p>
+
+<p class=MsoToc1><span class=MsoHyperlink><a href="#_Toc33523480">1<span
+style='font-size:12.0pt;color:windowtext;font-weight:normal'>&nbsp;&nbsp;&nbsp;&nbsp;
+</span>Overview<span style='color:windowtext;display:none'>.. 3</span></a></span></p>
+
+<p class=MsoToc2><span class=MsoHyperlink><a href="#_Toc33523481">1.1<span
+style='font-size:12.0pt;color:windowtext;font-style:normal'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span>Objective<span style='color:windowtext;display:none'>. 3</span></a></span></p>
+
+<p class=MsoToc2><span class=MsoHyperlink><a href="#_Toc33523482">1.2<span
+style='font-size:12.0pt;color:windowtext;font-style:normal'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span>Design Requirements<span style='color:windowtext;display:none'>. 3</span></a></span></p>
+
+<p class=MsoToc2><span class=MsoHyperlink><a href="#_Toc33523483">1.3<span
+style='font-size:12.0pt;color:windowtext;font-style:normal'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span>Scope<span style='color:windowtext;display:none'>. 4</span></a></span></p>
+
+<p class=MsoToc1><span class=MsoHyperlink><a href="#_Toc33523484">2<span
+style='font-size:12.0pt;color:windowtext;font-weight:normal'>&nbsp;&nbsp;&nbsp;&nbsp;
+</span>Supported Business Processes<span style='color:windowtext;display:none'>.
+4</span></a></span></p>
+
+<p class=MsoToc2><span class=MsoHyperlink><a href="#_Toc33523485">2.1<span
+style='font-size:12.0pt;color:windowtext;font-style:normal'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span>Introduction and Actors<span style='color:windowtext;display:none'>. 4</span></a></span></p>
+
+<p class=MsoToc3><span class=MsoHyperlink><a href="#_Toc33523486">2.1.1<span
+style='font-size:12.0pt;color:windowtext'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span>Overview Activity Diagram<span style='color:windowtext;display:none'>..
+5</span></a></span></p>
+
+<p class=MsoToc2><span class=MsoHyperlink><a href="#_Toc33523487">2.2<span
+style='font-size:12.0pt;color:windowtext;font-style:normal'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span>Process:<span style='color:windowtext;display:none'> 6</span></a></span></p>
+
+<p class=MsoToc1><span class=MsoHyperlink><a href="#_Toc33523488">3<span
+style='font-size:12.0pt;color:windowtext;font-weight:normal'>&nbsp;&nbsp;&nbsp;&nbsp;
+</span>Schema Design<span style='color:windowtext;display:none'>. 6</span></a></span></p>
+
+<p class=MsoToc2><span class=MsoHyperlink><a href="#_Toc33523489">3.1<span
+style='font-size:12.0pt;color:windowtext;font-style:normal'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span>Time Card Configuration<span style='color:windowtext;display:none'>. 6</span></a></span></p>
+
+<p class=MsoToc3><span class=MsoHyperlink><a href="#_Toc33523490">3.1.1<span
+style='font-size:12.0pt;color:windowtext'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span>Schema Diagram<span style='color:windowtext;display:none'>.. 6</span></a></span></p>
+
+<p class=MsoToc3><span class=MsoHyperlink><a href="#_Toc33523491">3.1.2<span
+style='font-size:12.0pt;color:windowtext'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span>Schema Elements Explained<span style='color:windowtext;display:none'>. 6</span></a></span></p>
+
+<p class=MsoToc3><span class=MsoHyperlink><a href="#_Toc33523492">3.1.3<span
+style='font-size:12.0pt;color:windowtext'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span>Cross Process Object included schema: PersonName-1_2<span
+style='color:windowtext;display:none'>. 9</span></a></span></p>
+
+<p class=MsoToc1><span class=MsoHyperlink><a href="#_Toc33523493">4<span
+style='font-size:12.0pt;color:windowtext;font-weight:normal'>&nbsp;&nbsp;&nbsp;&nbsp;
+</span>Open Issues List<span style='color:windowtext;display:none'> 11</span></a></span></p>
+
+<p class=MsoToc1><span class=MsoHyperlink><a href="#_Toc33523494">5<span
+style='font-size:12.0pt;color:windowtext;font-weight:normal'>&nbsp;&nbsp;&nbsp;&nbsp;
+</span>Appendix A - Document Version History<span style='color:windowtext;
+display:none'>. 11</span></a></span></p>
+
+<p class=MsoToc1><span class=MsoHyperlink><a href="#_Toc33523495">6<span
+style='font-size:12.0pt;color:windowtext;font-weight:normal'>&nbsp;&nbsp;&nbsp;&nbsp;
+</span>Appendix B &#8211; Related Documents<span style='color:windowtext;
+display:none'>. 12</span></a></span></p>
+
+<p class=MsoToc1><span class=MsoHyperlink><a href="#_Toc33523496">7<span
+style='font-size:12.0pt;color:windowtext;font-weight:normal'>&nbsp;&nbsp;&nbsp;&nbsp;
+</span>Appendix C &#8211; Reference Examples<span style='color:windowtext;
+display:none'>. 12</span></a></span></p>
+
+<p class=MsoToc1>&nbsp;</p>
+
+<span style='font-size:14.0pt;font-family:Arial'><br clear=all
+style='page-break-before:always'>
+</span>
+
+<h1><a name="_Toc33523480">1</a><span style='font-size:7.0pt;font-family:"Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span>Overview<a name="_Toc492656056"></a><a name="_Toc492655894"></a><a
+name="_Toc493472395"></a><a name="_Toc493472734"></a><a name="_Toc493472396"></a><a
+name="_Toc493472735"></a><a name="_Toc493472034"></a><a name="_Toc493472399"></a><a
+name="_Toc493472738"></a><a name="_Toc493472400"></a><a name="_Toc493472739"></a><a
+name="_Toc493472401"></a><a name="_Toc493472740"></a><a name="_Toc493472436"></a><a
+name="_Toc493472775"></a><a name="_Toc493472437"></a><a name="_Toc493472776"></a><a
+name="_Toc492655893"></a><a name="_Toc492656055"></a><a name="_Toc493472438"></a><a
+name="_Toc493472777"></a></h1>
+
+<h2><a name="_Toc33523481">1.1</a><span style='font-size:7.0pt;font-family:
+"Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>Objective</h2>
+
+<p class=MsoNormal>This document is an add-on to the specification about Time
+Card (a reference is given in the appendix). It describes the basic process of
+sending time cards. This basic Time Card process is done in a one-way
+direction.</p>
+
+<p class=MsoNormal>The content of a time card (time intervals, time events and
+expenses) consists of various elements (e.g. person id, time interval types,
+additional information such as cost center ids, project ids) for which both
+sender and receiver have to know the allowed values.</p>
+
+<p class=MsoNormal>Usually, enumerations are a standard method in order to
+specify allowed values for the schema elements. But enumerations do not work
+properly in our scenario due to the following reasons: </p>
+
+<ul style='margin-top:0in' type=disc>
+ <li class=MsoNormal>Enumerations are static in the schema. But a lot of
+     information in the schema elements has a &quot;transactional&quot;
+     characteristic rather than a static characteristic. It changes with the
+     time. Typical examples are the list of all allowed project ids, order ids,
+     even cost center ids. Also the list of all person ids is changing with the
+     time.</li>
+ <li class=MsoNormal>Even in the case of more static values such as time
+     interval types, a standard enumeration would be very difficult. At least
+     it would be incomplete in almost all cases. For example, absence codes as
+     time interval types may depend from country specific legal regulations
+     (e.g. FMLA is only known in US and would not be a valuable or meaningful
+     value in Europe). Other time interval types may depend on union or company
+     specific rules. In addition, with new regulations, even time interval
+     types may change with the time being. </li>
+</ul>
+
+<p class=MsoNormal>In the area of connecting Time and Attendance applications
+to time clock subsystems (in order to transfer time punches such as clock-in,
+clock-out, start of a project&#8230;), since years, it is very common to
+provide information on allowed values from the receiver of the time events
+(time and attendance application) to the sender (time clock subsystem) via
+&quot;downloaded files&quot;. </p>
+
+<p class=MsoNormal>This is our motivation to add a new schema to our business
+process. This schema has the intention to post information on allowed values
+for the time card (list of person ids, list of time interval types, list of
+project ids&#8230;) to the sender of the time card. The new schema is called
+&quot;Time Card Configuration&quot;. </p>
+
+<h2><a name="_Toc33523482">1.2</a><span style='font-size:7.0pt;font-family:
+"Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>Design
+Requirements</h2>
+
+<p class=MsoNormal>All main elements of the Time Card Configuration schema are
+already known in the Time Card schema itself. Please see the corresponding
+specification document. </p>
+
+<p class=MsoNormal>Additional elements typically occur in the area of short and
+long descriptions for element ids. Short and long descriptions are needed in
+order to automate a value selection that is more meaningful to the end user
+than just ids. They can be used in the sending application for usability
+aspects. The time card itself would only (have to) contain the element ids. </p>
+
+<p class=MsoNormal>Descriptions or text are always connected to the language
+issue. We have to consider both the (probably multiple) languages of the
+descriptions as well as the standard language of the user (the person). </p>
+
+<h2><a name="_Toc33523483"></a><a name="_Toc492656057"></a><a
+name="_Toc492655895"></a>1.3<span style='font-size:7.0pt;font-family:"Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span>Scope </h2>
+
+<p class=MsoNormal>The main scope is already described under <i>Objectives</i>.
+</p>
+
+<p class=MsoNormal>Please notice that Timecard Configuration only intends to
+describe the allowed values of a time card. It is important to note that
+although the sender of a time card may not only be a &#8220;simple&#8221; time
+capturing device but also a more sophisticated Time &amp; Attendance
+Application, this new schema Timecard Configuration <i>has not the intention to
+cover all aspects of a complete configuration of a Time &amp; Attendance system</i>.
+In order to extensively automate the configuration of a Time &amp; Attendance
+system, more data flow from the Final Receiver Applications to the Time &amp;
+Attendance systems may take place. For example: extraction of the
+organizational structure, extraction of special personnel master data
+information out of the HR system such as address, telephone numbers, regulation
+from union contracts&#8230; </p>
+
+<h1><a name="_Toc33523484"></a><a name="_Toc492656080"></a><a
+name="_Toc492655918"></a><a name="_Toc493471746"></a><a name="_Toc493472043"></a><a
+name="_Toc493472446"></a><a name="_Toc493472785"></a><a name="_Toc493471751"></a><a
+name="_Toc493472048"></a><a name="_Toc493472451"></a><a name="_Toc493472790"></a><a
+name="_Toc493471752"></a><a name="_Toc493472049"></a><a name="_Toc493472452"></a><a
+name="_Toc493472791"></a><a name="_Toc493471754"></a><a name="_Toc493472051"></a><a
+name="_Toc493472454"></a><a name="_Toc493472793"></a><a name="_Toc492655903"></a><a
+name="_Toc492656065"></a><a name="_Toc492868751"></a><a name="_Toc492868858"></a><a
+name="_Toc493463955"></a><a name="_Toc493471755"></a><a name="_Toc493472052"></a><a
+name="_Toc493472455"></a><a name="_Toc493472794"></a><a name="_Toc492655904"></a><a
+name="_Toc492656066"></a><a name="_Toc492868752"></a><a name="_Toc492868859"></a><a
+name="_Toc493463956"></a><a name="_Toc493471756"></a><a name="_Toc493472053"></a><a
+name="_Toc493472456"></a><a name="_Toc493472795"></a><a name="_Toc493471757"></a><a
+name="_Toc493472054"></a><a name="_Toc493472457"></a><a name="_Toc493472796"></a><a
+name="_Toc492655909"></a><a name="_Toc492656071"></a><a name="_Toc492868757"></a><a
+name="_Toc492868864"></a><a name="_Toc493463961"></a><a name="_Toc493471761"></a><a
+name="_Toc493472058"></a><a name="_Toc493472461"></a><a name="_Toc493472800"></a><a
+name="_Toc492655914"></a><a name="_Toc492656076"></a><a name="_Toc492868762"></a><a
+name="_Toc492868869"></a><a name="_Toc493463966"></a><a name="_Toc493471766"></a><a
+name="_Toc493472063"></a><a name="_Toc493472466"></a><a name="_Toc493472805"></a><a
+name="_Toc492655917"></a><a name="_Toc492656079"></a><a name="_Toc492868765"></a><a
+name="_Toc492868872"></a><a name="_Toc493463969"></a><a name="_Toc493471769"></a><a
+name="_Toc493472066"></a><a name="_Toc493472469"></a><a name="_Toc493472808"></a>2<span
+style='font-size:7.0pt;font-family:"Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span>Supported Business Processes</h1>
+
+<h2><a name="_Toc33523485"></a><a name="_Toc493471782"></a><a
+name="_Toc493472079"></a><a name="_Toc493472482"></a><a name="_Toc493472820"></a><a
+name="_Toc493463983"></a><a name="_Toc493471784"></a><a name="_Toc493472081"></a><a
+name="_Toc493472484"></a><a name="_Toc493472822"></a><a name="_Toc493471785"></a><a
+name="_Toc493472082"></a><a name="_Toc493472485"></a><a name="_Toc493472823"></a><a
+name="_Toc493463987"></a><a name="_Toc493471786"></a><a name="_Toc493472083"></a><a
+name="_Toc493472486"></a><a name="_Toc493472824"></a><a name="_Toc493471794"></a><a
+name="_Toc493472091"></a><a name="_Toc493472494"></a><a name="_Toc493472832"></a><a
+name="_Toc493471795"></a><a name="_Toc493472092"></a><a name="_Toc493472495"></a><a
+name="_Toc493472833"></a><a name="_Toc493471796"></a><a name="_Toc493472093"></a><a
+name="_Toc493472496"></a><a name="_Toc493472834"></a><a name="_Toc492868799"></a><a
+name="_Toc492868906"></a><a name="_Toc493463999"></a><a name="_Toc493471798"></a><a
+name="_Toc493472095"></a><a name="_Toc493472498"></a><a name="_Toc493472836"></a><a
+name="_Toc493471799"></a><a name="_Toc493472096"></a><a name="_Toc493472499"></a><a
+name="_Toc493472837"></a><a name="_Toc493471800"></a><a name="_Toc493472097"></a><a
+name="_Toc493472500"></a><a name="_Toc493472838"></a><a name="_Toc493471801"></a><a
+name="_Toc493472098"></a><a name="_Toc493472501"></a><a name="_Toc493472839"></a><a
+name="_Toc480517156"></a>2.1<span style='font-size:7.0pt;font-family:"Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span>Introduction and Actors </h2>
+
+<p class=MsoNormal style='text-autospace:none'>For the actors see the TimeCard
+document.</p>
+
+<h3><a name="_Toc33523486">2.1.1</a><span style='font-size:7.0pt;font-family:
+"Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>Overview
+Activity Diagram</h3>
+
+<p class=MsoNormal><img border=0 width=647 height=616
+src="TimeCardConfiguration_files/image002.gif"></p>
+
+<p class=MsoNormal>Shown are the complete activities for configuring time cards
+and sending time cards. This document only describes the configuration process
+and schema. The lower part of the activity is only included for completeness.</p>
+
+<span style='font-size:12.0pt;font-family:Arial;layout-grid-mode:line'><br
+clear=all style='page-break-before:always'>
+</span>
+
+<h2><a name="_Toc33523487">2.2</a><span style='font-size:7.0pt;font-family:
+"Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>Process: </h2>
+
+<h1><a name="_Toc33523488">3</a><span style='font-size:7.0pt;font-family:"Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span>Schema Design</h1>
+
+<h2><a name="_Toc33523489">3.1</a><span style='font-size:7.0pt;font-family:
+"Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>Time Card
+Configuration</h2>
+
+<h3><a name="_Toc33523490">3.1.1</a><span style='font-size:7.0pt;font-family:
+"Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>Schema
+Diagram</h3>
+
+<p class=MsoNormal>A high level diagram can be found below.</p>
+
+<p class=MsoNormal><img border=0 width=647 height=476
+src="TimeCardConfiguration_files/image003.jpg"></p>
+
+<h3><a name="_Toc483985870"></a><a name="_Toc33523491"></a>3.1.2<span
+style='font-size:7.0pt;font-family:"Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span>Schema Elements Explained</h3>
+
+<table class=MsoNormalTable border=1 cellpadding=0 width="100%"
+ style='width:100.0%'>
+ <tr>
+  <td width="29%" valign=top style='width:29.18%;padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal align=center style='text-align:center'><b><span
+  style='font-size:8.0pt;font-family:Verdana'>Component Name</span></b></p>
+  </td>
+  <td width="25%" valign=top style='width:25.88%;padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal align=center style='text-align:center'><b><span
+  style='font-size:8.0pt;font-family:Verdana'>ContentModel</span></b><span
+  style='font-size:8.0pt;font-family:Verdana'><br>
+  <span style='color:green'>Data type</span><br>
+  </span><span style='font-size:8.0pt;color:blue'>Occurrence: <br>
+  <u>S</u>equence | <u>C</u>hoice | <u>A</u>ll </span><span style='font-size:
+  8.0pt;font-family:Verdana;color:blue'>(minOccurs/maxOccurs)</span><span
+  style='font-size:8.0pt;font-family:Verdana'><br>
+  <span style='color:red'>Attributes</span> </span></p>
+  </td>
+  <td width="43%" valign=top style='width:43.72%;padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal align=center style='text-align:center'><b><span
+  style='font-size:8.0pt;font-family:Verdana'>Definition</span></b></p>
+  </td>
+ </tr>
+ <tr>
+  <td width="29%" valign=top style='width:29.18%;padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal><span style='font-size:8.0pt;font-family:Verdana'>/<br>
+  <b>TimeCardConfiguration</b></span></p>
+  </td>
+  <td width="25%" valign=top style='width:25.88%;padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal><span style='font-size:8.0pt;font-family:Verdana'>Resources
+  - <span style='color:green'>[complexType] - </span><span style='color:blue'>S
+  (0/1) </span><br>
+  TimeIntervalTypes - <span style='color:green'>[complexType] - </span><span
+  style='color:blue'>S (0/1) </span><br>
+  TimeEventTypes - <span style='color:green'>[complexType] - </span><span
+  style='color:blue'>S (0/1) </span><br>
+  TimeExpenseTypes - <span style='color:green'>[complexType] - </span><span
+  style='color:blue'>S (0/1) </span><br>
+  AdditionalDataTypesAndValues - <span style='color:green'>xsd:string - </span><span
+  style='color:blue'>S (0/*) </span></span></p>
+  </td>
+  <td width="43%" valign=top style='width:43.72%;padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal><span style='font-size:8.0pt;font-family:Verdana'>Information
+  about the allowed values for a Time Card. </span></p>
+  </td>
+ </tr>
+ <tr>
+  <td width="29%" valign=top style='width:29.18%;padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal><span style='font-size:8.0pt;font-family:Verdana'>/
+  TimeCardConfiguration/<br>
+  <b>Resources</b></span></p>
+  </td>
+  <td width="25%" valign=top style='width:25.88%;padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal><span style='font-size:8.0pt;font-family:Verdana'>Person -
+  <span style='color:green'>[complexType] - </span><span style='color:blue'>S
+  (0/*) </span><br>
+  Resource - <span style='color:green'>[complexType] - </span><span
+  style='color:blue'>S (0/*) </span></span></p>
+  </td>
+  <td width="43%" valign=top style='width:43.72%;padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal><span style='font-size:8.0pt;font-family:Verdana'>Container
+  that holds the information about the resources (human and non-human), for
+  which times and expenses may be reported. </span></p>
+  </td>
+ </tr>
+ <tr>
+  <td width="29%" valign=top style='width:29.18%;padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal><span style='font-size:8.0pt;font-family:Verdana'>/
+  TimeCardConfiguration/ Resources/<br>
+  <b>Person</b></span></p>
+  </td>
+  <td width="25%" valign=top style='width:25.88%;padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal><span style='font-size:8.0pt;font-family:Verdana'>Id - <span
+  style='color:green'>xsd:string - </span><span style='color:blue'>S (0/1)<br
+  clear=all>
+  </span>PersonName - <span style='color:green'>[PersonNameType] - </span><span
+  style='color:blue'>S (0/1)</span><br>
+  Assignment - <span style='color:green'>xsd:string - </span><span
+  style='color:blue'>S (0/*) </span><br>
+  <span style='color:red'>validFrom</span> <span style='color:green'>AnyDateTimeType</span><br>
+  <span style='color:red'>validTo</span> <span style='color:green'>AnyDateTimeType</span><br>
+  <span style='color:red'>preferredLanguage</span> <span style='color:green'>xsd:language</span>
+  <span style='color:blue'>- optional</span></span></p>
+  </td>
+  <td width="43%" valign=top style='width:43.72%;padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal><span style='font-size:8.0pt;font-family:Verdana'>A person
+  for which times and expenses may be reported. </span></p>
+  </td>
+ </tr>
+ <tr>
+  <td width="29%" valign=top style='width:29.18%;padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal><span style='font-size:8.0pt;font-family:Verdana'>/
+  TimeCardConfiguration/ Resources/ Person/<br>
+  <span style='color:red'>validFrom</span> </span></p>
+  </td>
+  <td width="25%" valign=top style='width:25.88%;padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal><span style='font-size:8.0pt;font-family:Verdana'>- <span
+  style='color:green'>AnyDateTimeType - </span></span></p>
+  </td>
+  <td width="43%" valign=top style='width:43.72%;padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal><span style='font-size:8.0pt;font-family:Verdana'>The
+  date/time this person comes into effect to be used in Time Cards. </span></p>
+  </td>
+ </tr>
+ <tr>
+  <td width="29%" valign=top style='width:29.18%;padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal><span style='font-size:8.0pt;font-family:Verdana'>/
+  TimeCardConfiguration/ Resources/ Person/<br>
+  <span style='color:red'>validTo</span> </span></p>
+  </td>
+  <td width="25%" valign=top style='width:25.88%;padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal><span style='font-size:8.0pt;font-family:Verdana'>- <span
+  style='color:green'>AnyDateTimeType - </span></span></p>
+  </td>
+  <td width="43%" valign=top style='width:43.72%;padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal><span style='font-size:8.0pt;font-family:Verdana'>The last
+  date/time (inclusive) this&nbsp;person is valid to be used in Time Cards. </span></p>
+  </td>
+ </tr>
+ <tr>
+  <td width="29%" valign=top style='width:29.18%;padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal><span style='font-size:8.0pt;font-family:Verdana'>/ TimeCardConfiguration/
+  Resources/ Person/<br>
+  <span style='color:red'>preferredLanguage</span> </span></p>
+  </td>
+  <td width="25%" valign=top style='width:25.88%;padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal><span style='font-size:8.0pt;font-family:Verdana'>- <span
+  style='color:green'>xsd:language - </span></span></p>
+  </td>
+  <td width="43%" valign=top style='width:43.72%;padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal><span style='font-size:8.0pt;font-family:Verdana'>The
+  preferred language of that person. This is only descriptive information to
+  allow the receiving system to present text in that language to the user.</span></p>
+  </td>
+ </tr>
+ <tr>
+  <td width="29%" valign=top style='width:29.18%;padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal><span style='font-size:8.0pt;font-family:Verdana'>/
+  TimeCardConfiguration/ Resources/ Person/<br>
+  <b>Id</b></span></p>
+  </td>
+  <td width="25%" valign=top style='width:25.88%;padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal><span style='font-size:8.0pt;font-family:Verdana'>- <span
+  style='color:green'>xsd:string - </span><span style='color:blue'>S (0/1) </span></span></p>
+  </td>
+  <td width="43%" valign=top style='width:43.72%;padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal><span style='font-size:8.0pt;font-family:Verdana'>The
+  identity of a person, for which times and expenses may be reported. This
+  element restricts the allowed values for the attribute id of the Person
+  element of the Time Card. </span></p>
+  </td>
+ </tr>
+ <tr>
+  <td width="29%" valign=top style='width:29.18%;padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal><span style='font-size:8.0pt;font-family:Verdana'>/ TimeCardConfiguration/
+  Resources/ Person/<br>
+  <b>Assignment</b></span></p>
+  </td>
+  <td width="25%" valign=top style='width:25.88%;padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal><span style='font-size:8.0pt;font-family:Verdana'>- <span
+  style='color:green'>xsd:string - </span><span style='color:blue'>S (0/*) </span></span></p>
+  </td>
+  <td width="43%" valign=top style='width:43.72%;padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal><span style='font-size:8.0pt;font-family:Verdana'>The work
+  assignment of a person, for which times and expenses may be reported. This
+  element restricts the allowed values for the attribute id of the
+  ReportedPersonAssignment element of the Time Card. </span></p>
+  </td>
+ </tr>
+ <tr>
+  <td width="29%" valign=top style='width:29.18%;padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal><span style='font-size:8.0pt;font-family:Verdana'>/
+  TimeCardConfiguration/ Resources/<br>
+  <b>Resource</b></span></p>
+  </td>
+  <td width="25%" valign=top style='width:25.88%;padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal><span style='font-size:8.0pt;font-family:Verdana'>Id - <span
+  style='color:green'>xsd:string - </span><span style='color:blue'>S (0/1) </span><br>
+  ResourceName - <span style='color:green'>xsd:string - </span><span
+  style='color:blue'>S (0/1) </span><br>
+  <span style='color:red'>validFrom</span> <span style='color:green'>AnyDateTimeType</span><br>
+  <span style='color:red'>validTo</span> <span style='color:green'>AnyDateTimeType</span></span></p>
+  </td>
+  <td width="43%" valign=top style='width:43.72%;padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal><span style='font-size:8.0pt;font-family:Verdana'>A
+  resource (non human), for which times and expenses may be reported. </span></p>
+  </td>
+ </tr>
+ <tr>
+  <td width="29%" valign=top style='width:29.18%;padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal><span style='font-size:8.0pt;font-family:Verdana'>/
+  TimeCardConfiguration/ Resources/ Resource/<br>
+  <span style='color:red'>validFrom</span> </span></p>
+  </td>
+  <td width="25%" valign=top style='width:25.88%;padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal><span style='font-size:8.0pt;font-family:Verdana'>- <span
+  style='color:green'>AnyDateTimeType - </span></span></p>
+  </td>
+  <td width="43%" valign=top style='width:43.72%;padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal><span style='font-size:8.0pt;font-family:Verdana'>The
+  date/time this resource comes into effect to be used in Time Cards.</span></p>
+  </td>
+ </tr>
+ <tr>
+  <td width="29%" valign=top style='width:29.18%;padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal><span style='font-size:8.0pt;font-family:Verdana'>/
+  TimeCardConfiguration/ Resources/ Resource/<br>
+  <span style='color:red'>validTo</span> </span></p>
+  </td>
+  <td width="25%" valign=top style='width:25.88%;padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal><span style='font-size:8.0pt;font-family:Verdana'>- <span
+  style='color:green'>AnyDateTimeType - </span></span></p>
+  </td>
+  <td width="43%" valign=top style='width:43.72%;padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal><span style='font-size:8.0pt;font-family:Verdana'>The last
+  date/time (inclusive) this&nbsp;resource is valid to be used in Time Cards. </span></p>
+  </td>
+ </tr>
+ <tr>
+  <td width="29%" valign=top style='width:29.18%;padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal><span style='font-size:8.0pt;font-family:Verdana'>/
+  TimeCardConfiguration/ Resources/ Resource/<br>
+  <b>Id</b></span></p>
+  </td>
+  <td width="25%" valign=top style='width:25.88%;padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal><span style='font-size:8.0pt;font-family:Verdana'>- <span
+  style='color:green'>xsd:string - </span><span style='color:blue'>S (0/1) </span></span></p>
+  </td>
+  <td width="43%" valign=top style='width:43.72%;padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal><span style='font-size:8.0pt;font-family:Verdana'>The id
+  of a resource (non human), for which times and expenses may be
+  reported.&nbsp; This element restricts the allowed values for the attribute
+  of the Resource element of the Time Card. </span></p>
+  </td>
+ </tr>
+ <tr>
+  <td width="29%" valign=top style='width:29.18%;padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal><span style='font-size:8.0pt;font-family:Verdana'>/
+  TimeCardConfiguration/ Resources/ Resource/<br>
+  <b>ResourceName</b></span></p>
+  </td>
+  <td width="25%" valign=top style='width:25.88%;padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal><span style='font-size:8.0pt;font-family:Verdana'>- <span
+  style='color:green'>xsd:string - </span><span style='color:blue'>S (0/1) </span></span></p>
+  </td>
+  <td width="43%" valign=top style='width:43.72%;padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal><span style='font-size:8.0pt;font-family:Verdana'>The name
+  of a resource (non human), for which times and expenses may be reported. This
+  element restricts the allowed values for the element ResourceName of the
+  Resource element for the Time Card. </span></p>
+  </td>
+ </tr>
+ <tr>
+  <td width="29%" valign=top style='width:29.18%;padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal><span style='font-size:8.0pt;font-family:Verdana'>/
+  TimeCardConfiguration/<br>
+  <b>TimeIntervalTypes</b></span></p>
+  </td>
+  <td width="25%" valign=top style='width:25.88%;padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal><span style='font-size:8.0pt;font-family:Verdana'>Type - <span
+  style='color:green'>NamedEntityType - </span><span style='color:blue'>S (1/*)
+  </span></span></p>
+  </td>
+  <td width="43%" valign=top style='width:43.72%;padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal><span style='font-size:8.0pt;font-family:Verdana'>Container
+  that holds the information about the time interval types that are allowed in
+  a Time Card. </span></p>
+  </td>
+ </tr>
+ <tr>
+  <td width="29%" valign=top style='width:29.18%;padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal><span style='font-size:8.0pt;font-family:Verdana'>/
+  TimeCardConfiguration/ TimeIntervalTypes/<br>
+  <b>Type</b></span></p>
+  </td>
+  <td width="25%" valign=top style='width:25.88%;padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal><span style='font-size:8.0pt;font-family:Verdana'>- <span
+  style='color:green'>NamedEntityType - </span><span style='color:blue'>S (1/*)
+  </span></span></p>
+  </td>
+  <td width="43%" valign=top style='width:43.72%;padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal><span style='font-size:8.0pt;font-family:Verdana'>The Id,
+  the effective date, and description of one allowed time interval type. </span></p>
+  </td>
+ </tr>
+ <tr>
+  <td width="29%" valign=top style='width:29.18%;padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal><span style='font-size:8.0pt;font-family:Verdana'>/ TimeCardConfiguration/
+  TimeIntervalTypes/<br>
+  <b>Type [NamedEntityType]</b></span></p>
+  </td>
+  <td width="25%" valign=top style='width:25.88%;padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal style='margin:0in;margin-bottom:.0001pt'><span
+  style='font-size:8.0pt;font-family:Verdana'>Id</span></p>
+  <p class=MsoNormal style='margin:0in;margin-bottom:.0001pt'><span
+  style='font-size:8.0pt;font-family:Verdana'>ShortDescription</span></p>
+  <p class=MsoNormal style='margin:0in;margin-bottom:.0001pt'><span
+  style='font-size:8.0pt;font-family:Verdana'>Description</span></p>
+  <p class=MsoNormal style='margin:0in;margin-bottom:.0001pt'><span
+  style='font-size:8.0pt;font-family:Verdana;color:red'>validFrom</span></p>
+  <p class=MsoNormal style='margin:0in;margin-bottom:.0001pt'><span
+  style='font-size:8.0pt;font-family:Verdana;color:red'>validTo</span></p>
+  </td>
+  <td width="43%" valign=top style='width:43.72%;padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal><span style='font-size:8.0pt;font-family:Verdana'>Named
+  type for reuse of common data structure.</span></p>
+  </td>
+ </tr>
+ <tr>
+  <td width="29%" valign=top style='width:29.18%;padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal><span style='font-size:8.0pt;font-family:Verdana'>/
+  TimeCardConfiguration/ TimeIntervalTypes/ Type/<br>
+  <span style='color:red'>validFrom</span> </span></p>
+  </td>
+  <td width="25%" valign=top style='width:25.88%;padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal><span style='font-size:8.0pt;font-family:Verdana'>- <span
+  style='color:green'>AnyDateTimeType - </span></span></p>
+  </td>
+  <td width="43%" valign=top style='width:43.72%;padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal><span style='font-size:8.0pt;font-family:Verdana'>The
+  date/time the type comes into effect to be used in Time Cards.</span></p>
+  </td>
+ </tr>
+ <tr>
+  <td width="29%" valign=top style='width:29.18%;padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal><span style='font-size:8.0pt;font-family:Verdana'>/
+  TimeCardConfiguration/ TimeIntervalTypes/ Type/<br>
+  <span style='color:red'>validTo</span> </span></p>
+  </td>
+  <td width="25%" valign=top style='width:25.88%;padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal><span style='font-size:8.0pt;font-family:Verdana'>- <span
+  style='color:green'>AnyDateTimeType - </span></span></p>
+  </td>
+  <td width="43%" valign=top style='width:43.72%;padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal><span style='font-size:8.0pt;font-family:Verdana'>The last
+  date/time (inclusive) this&nbsp;type is valid to be used in Time Cards. </span></p>
+  </td>
+ </tr>
+ <tr>
+  <td width="29%" valign=top style='width:29.18%;padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal><span style='font-size:8.0pt;font-family:Verdana'>/ TimeCardConfiguration/
+  TimeIntervalTypes/ Type/<br>
+  <b>Id</b></span></p>
+  </td>
+  <td width="25%" valign=top style='width:25.88%;padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal><span style='font-size:8.0pt;font-family:Verdana'>- <span
+  style='color:green'>xsd:string - </span><span style='color:blue'>S (1/1) </span></span></p>
+  </td>
+  <td width="43%" valign=top style='width:43.72%;padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal><span style='font-size:8.0pt;font-family:Verdana'>The id
+  of a time interval type. This element restricts the allowed values for the
+  attribute &#8220;type&#8221; of the element &#8220;TimeInterval&#8221; of a
+  Time Card. </span></p>
+  </td>
+ </tr>
+ <tr>
+  <td width="29%" valign=top style='width:29.18%;padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal><span style='font-size:8.0pt;font-family:Verdana'>/ TimeCardConfiguration/
+  TimeIntervalTypes/ Type/<br>
+  <b>ShortDescription</b></span></p>
+  </td>
+  <td width="25%" valign=top style='width:25.88%;padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal><span style='font-size:8.0pt;font-family:Verdana;
+  color:green'>xsd:extension</span><b><span style='font-size:8.0pt;font-family:
+  Verdana;color:black'> base: </span></b><span style='font-size:8.0pt;
+  font-family:Verdana;color:green'>xsd:string</span><span style='font-size:
+  8.0pt;font-family:Verdana'> </span></p>
+  </td>
+  <td width="43%" valign=top style='width:43.72%;padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal><span style='font-size:8.0pt;font-family:Verdana'>The
+  short description of the time interval type. This is only descriptive text,
+  to be presented to an end user.&nbsp; The xml:lang attribute indicates the
+  language of the text.</span></p>
+  </td>
+ </tr>
+ <tr>
+  <td width="29%" valign=top style='width:29.18%;padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal><span style='font-size:8.0pt;font-family:Verdana'>/
+  TimeCardConfiguration/ TimeIntervalTypes/ Type/<br>
+  <b>Description</b></span></p>
+  </td>
+  <td width="25%" valign=top style='width:25.88%;padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal><span style='font-size:8.0pt;font-family:Verdana;
+  color:green'>xsd:extension</span><b><span style='font-size:8.0pt;font-family:
+  Verdana;color:black'> base: </span></b><span style='font-size:8.0pt;
+  font-family:Verdana;color:green'>xsd:string</span><span style='font-size:
+  8.0pt;font-family:Verdana'> </span></p>
+  </td>
+  <td width="43%" valign=top style='width:43.72%;padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal><span style='font-size:8.0pt;font-family:Verdana'>The
+  description of the time interval type. This is only a descriptive text, to be
+  presented to an end user.&nbsp; The xml:lang attribute indicates the language
+  of the text.</span></p>
+  </td>
+ </tr>
+ <tr>
+  <td width="29%" valign=top style='width:29.18%;padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal><span style='font-size:8.0pt;font-family:Verdana'>/
+  TimeCardConfiguration/<br>
+  <b>TimeEventTypes</b></span></p>
+  </td>
+  <td width="25%" valign=top style='width:25.88%;padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal><span style='font-size:8.0pt;font-family:Verdana'>Type - <span
+  style='color:green'>NamedEntityType - </span><span style='color:blue'>S (1/*)
+  </span></span></p>
+  </td>
+  <td width="43%" valign=top style='width:43.72%;padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal><span style='font-size:8.0pt;font-family:Verdana'>Container
+  that holds the information about the time event types that are allowed in a
+  Time Card. </span></p>
+  </td>
+ </tr>
+ <tr>
+  <td width="29%" valign=top style='width:29.18%;padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal><span style='font-size:8.0pt;font-family:Verdana'>/
+  TimeCardConfiguration/ TimeEventTypes/<br>
+  <b>Type</b></span></p>
+  </td>
+  <td width="25%" valign=top style='width:25.88%;padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal><span style='font-size:8.0pt;font-family:Verdana'>- <span
+  style='color:green'>NamedEntityType - </span><span style='color:blue'>S (1/*)
+  </span></span></p>
+  </td>
+  <td width="43%" valign=top style='width:43.72%;padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal><span style='font-size:8.0pt;font-family:Verdana'>The Id,
+  the effective date, and description of one allowed time event type. </span></p>
+  </td>
+ </tr>
+ <tr>
+  <td width="29%" valign=top style='width:29.18%;padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal><span style='font-size:8.0pt;font-family:Verdana'>/
+  TimeCardConfiguration/<br>
+  <b>TimeExpenseTypes</b></span></p>
+  </td>
+  <td width="25%" valign=top style='width:25.88%;padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal><span style='font-size:8.0pt;font-family:Verdana'>Type - <span
+  style='color:green'>NamedEntityType - </span><span style='color:blue'>S (1/*)
+  </span></span></p>
+  </td>
+  <td width="43%" valign=top style='width:43.72%;padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal><span style='font-size:8.0pt;font-family:Verdana'>Container
+  that holds the information about the time expense types that are allowed in a
+  Time Card. </span></p>
+  </td>
+ </tr>
+ <tr>
+  <td width="29%" valign=top style='width:29.18%;padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal><span style='font-size:8.0pt;font-family:Verdana'>/
+  TimeCardConfiguration/ TimeExpenseTypes/<br>
+  <b>Type</b></span></p>
+  </td>
+  <td width="25%" valign=top style='width:25.88%;padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal><span style='font-size:8.0pt;font-family:Verdana'>- <span
+  style='color:green'>NamedEntityType - </span><span style='color:blue'>S (1/*)
+  </span></span></p>
+  </td>
+  <td width="43%" valign=top style='width:43.72%;padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal><span style='font-size:8.0pt;font-family:Verdana'>The Id,
+  the effective date, and description of one allowed time expense
+  type.&nbsp;&nbsp; </span></p>
+  </td>
+ </tr>
+ <tr>
+  <td width="29%" valign=top style='width:29.18%;padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal><span style='font-size:8.0pt;font-family:Verdana'>/
+  TimeCardConfiguration/<br>
+  <b>AdditionalDataTypesAndValues</b></span></p>
+  </td>
+  <td width="25%" valign=top style='width:25.88%;padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal><span style='font-size:8.0pt;font-family:Verdana'>Type - <span
+  style='color:green'>NamedEntityType - </span><span style='color:blue'>S (1/1)
+  </span><br>
+  Value - <span style='color:green'>NamedEntityType - </span><span
+  style='color:blue'>S (0/*) </span><br>
+  <span style='color:red'>scope</span> </span></p>
+  </td>
+  <td width="43%" valign=top style='width:43.72%;padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal><span style='font-size:8.0pt;font-family:Verdana'>Container
+  that holds information about the allowed additional data that may be reported
+  with time intervals, time events, or time expenses of a Time Card. </span></p>
+  </td>
+ </tr>
+ <tr>
+  <td width="29%" valign=top style='width:29.18%;padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal><span style='font-size:8.0pt;font-family:Verdana'>/
+  TimeCardConfiguration/ AdditionalDataTypesAndValues/<br>
+  <span style='color:red'>scope</span> </span></p>
+  </td>
+  <td width="25%" valign=top style='width:25.88%;padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal><span style='font-size:8.0pt;font-family:Verdana;
+  color:green'>xsd:restriction</span><b><span style='font-size:8.0pt;
+  font-family:Verdana;color:black'> base: </span></b><span style='font-size:
+  8.0pt;font-family:Verdana;color:green'>xsd:string (enumeration)</span><span
+  style='font-size:8.0pt;font-family:Verdana'> </span></p>
+  </td>
+  <td width="43%" valign=top style='width:43.72%;padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal><span style='font-size:8.0pt;font-family:Verdana'>Defines
+  whether the element is for time intervals, time events, time expenses or a
+  combination of these. </span></p>
+  </td>
+ </tr>
+ <tr>
+  <td width="29%" valign=top style='width:29.18%;padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal><span style='font-size:8.0pt;font-family:Verdana'>/
+  TimeCardConfiguration/ AdditionalDataTypesAndValues/<br>
+  <b>Type</b></span></p>
+  </td>
+  <td width="25%" valign=top style='width:25.88%;padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal><span style='font-size:8.0pt;font-family:Verdana'>- <span
+  style='color:green'>NamedEntityType - </span><span style='color:blue'>S (1/1)
+  </span></span></p>
+  </td>
+  <td width="43%" valign=top style='width:43.72%;padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal><span style='font-size:8.0pt;font-family:Verdana'>Defines
+  a type for the additional data in the Time Card. This defines one allowed
+  value for the attribute &#8220;type&#8221; of the element
+  &#8220;AdditionalData&#8221; of the Time Card. Descriptive information is
+  also included. </span></p>
+  </td>
+ </tr>
+ <tr>
+  <td width="29%" valign=top style='width:29.18%;padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal><span style='font-size:8.0pt;font-family:Verdana'>/
+  TimeCardConfiguration/ AdditionalDataTypesAndValues/<br>
+  <b>Value</b></span></p>
+  </td>
+  <td width="25%" valign=top style='width:25.88%;padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal><span style='font-size:8.0pt;font-family:Verdana'>- <span
+  style='color:green'>NamedEntityType - </span><span style='color:blue'>S (0/*)
+  </span></span></p>
+  </td>
+  <td width="43%" valign=top style='width:43.72%;padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal><span style='font-size:8.0pt;font-family:Verdana'>Defines a
+  value for the additional data in the Time Card. This defines one allowed
+  value for the content of the element &quot;AdditionalData&quot; of the Time
+  Card. Descriptive information and effective dating are included. </span></p>
+  </td>
+ </tr>
+</table>
+
+<p class=MsoNormal>&nbsp;</p>
+
+<h3><a name="_Toc33523492">3.1.3</a><span style='font-size:7.0pt;font-family:
+"Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>Cross
+Process Object included schema: PersonName-1_2</h3>
+
+<table class=MsoNormalTable border=1 cellpadding=0 width="100%"
+ style='width:100.0%'>
+ <tr>
+  <td width="25%" valign=top style='width:25.0%;padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal align=center style='text-align:center'><b><span
+  style='font-size:8.0pt;font-family:Verdana'>Component Name</span></b></p>
+  </td>
+  <td width="25%" valign=top style='width:25.0%;padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal align=center style='text-align:center'><b><span
+  style='font-size:8.0pt;font-family:Verdana'>ContentModel</span></b><span
+  style='font-size:8.0pt;font-family:Verdana'><br>
+  <span style='color:green'>Data type</span><br>
+  </span><span style='font-size:8.0pt;color:blue'>Occurrence: <br>
+  <u>S</u>equence | <u>C</u>hoice | <u>A</u>ll </span><span style='font-size:
+  8.0pt;font-family:Verdana;color:blue'>(minOccurs/maxOccurs)</span><span
+  style='font-size:8.0pt;font-family:Verdana'><br>
+  <span style='color:red'>Attributes</span> </span></p>
+  </td>
+  <td width="50%" valign=top style='width:50.0%;padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal align=center style='text-align:center'><b><span
+  style='font-size:8.0pt;font-family:Verdana'>Definition</span></b></p>
+  </td>
+ </tr>
+ <tr>
+  <td width="25%" valign=top style='width:25.0%;padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal><span style='font-size:8.0pt;font-family:Verdana'>/<br>
+  <b>PersonName</b></span></p>
+  </td>
+  <td width="25%" valign=top style='width:25.0%;padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal><span style='font-size:8.0pt;font-family:Verdana'>- <span
+  style='color:green'>PersonNameType - </span><span style='color:blue'>(1/1) </span></span></p>
+  </td>
+  <td width="50%" valign=top style='width:50.0%;padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal><span style='font-size:8.0pt;font-family:Verdana'>The name
+  of a person. </span></p>
+  </td>
+ </tr>
+ <tr>
+  <td width="25%" valign=top style='width:25.0%;padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal><span style='font-size:8.0pt;font-family:Verdana'>/ PersonName/<br>
+  <b>FormattedName</b></span></p>
+  </td>
+  <td width="25%" valign=top style='width:25.0%;padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal><span style='font-size:8.0pt;font-family:Verdana;
+  color:green'>xsd:extension</span><b><span style='font-size:8.0pt;font-family:
+  Verdana;color:black'> base: </span></b><span style='font-size:8.0pt;
+  font-family:Verdana;color:green'>xsd:string</span><span style='font-size:
+  8.0pt;font-family:Verdana'> </span></p>
+  </td>
+  <td width="50%" valign=top style='width:50.0%;padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal><span style='font-size:8.0pt;font-family:Verdana'>Contains,
+  in one string, a fully formatted name with all of its pieces in their proper
+  place. This includes all of the necessary punctuation. This de-normalized form
+  of the name cannot be easily parsed. The use of multiple occurrences are
+  officially deprecated in this release and will be removed in a future
+  version. </span></p>
+  </td>
+ </tr>
+ <tr>
+  <td width="25%" valign=top style='width:25.0%;padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal><span style='font-size:8.0pt;font-family:Verdana'>/
+  PersonName/ FormattedName/<br>
+  <span style='color:red'>type</span> </span></p>
+  </td>
+  <td width="25%" valign=top style='width:25.0%;padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal><span style='font-size:8.0pt;font-family:Verdana;
+  color:green'>xsd:restriction</span><b><span style='font-size:8.0pt;
+  font-family:Verdana;color:black'> base: </span></b><span style='font-size:
+  8.0pt;font-family:Verdana;color:green'>xsd:string (enumeration)</span><span
+  style='font-size:8.0pt;font-family:Verdana'> </span></p>
+  </td>
+  <td width="50%" valign=top style='width:50.0%;padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal><span style='font-size:8.0pt;font-family:Verdana'>Do not use.
+  This attribute will be deprecated in v1.1 and completely removed in a future
+  version. Defines the purpose of the formatted name.</span></p>
+  </td>
+ </tr>
+ <tr>
+  <td width="25%" valign=top style='width:25.0%;padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal><span style='font-size:8.0pt;font-family:Verdana'>/
+  PersonName/<br>
+  <b>LegalName</b></span></p>
+  </td>
+  <td width="25%" valign=top style='width:25.0%;padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal><span style='font-size:8.0pt;font-family:Verdana'>- <span
+  style='color:green'>xsd:string - </span><span style='color:blue'>S (0/1) </span></span></p>
+  </td>
+  <td width="50%" valign=top style='width:50.0%;padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal><span style='font-size:8.0pt;font-family:Verdana'>Legal name
+  used for legal documentation or other legal purposes. Contains, in one
+  string, a fully formatted name with all of its pieces in their proper place.
+  This includes all of the necessary punctuation. </span></p>
+  </td>
+ </tr>
+ <tr>
+  <td width="25%" valign=top style='width:25.0%;padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal><span style='font-size:8.0pt;font-family:Verdana'>/
+  PersonName/<br>
+  <b>GivenName</b></span></p>
+  </td>
+  <td width="25%" valign=top style='width:25.0%;padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal><span style='font-size:8.0pt;font-family:Verdana'>- <span
+  style='color:green'>xsd:string - </span><span style='color:blue'>S (0/*) </span></span></p>
+  </td>
+  <td width="50%" valign=top style='width:50.0%;padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal><span style='font-size:8.0pt;font-family:Verdana'>Contains
+  the given or chosen name. Also known as a person&#8217;s first name. If
+  multiple givenNames are used, the order is implied. </span></p>
+  </td>
+ </tr>
+ <tr>
+  <td width="25%" valign=top style='width:25.0%;padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal><span style='font-size:8.0pt;font-family:Verdana'>/
+  PersonName/<br>
+  <b>PreferredGivenName</b></span></p>
+  </td>
+  <td width="25%" valign=top style='width:25.0%;padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal><span style='font-size:8.0pt;font-family:Verdana'>- <span
+  style='color:green'>xsd:string - </span><span style='color:blue'>S (0/1) </span></span></p>
+  </td>
+  <td width="50%" valign=top style='width:50.0%;padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal><span style='font-size:8.0pt;font-family:Verdana'>Contains
+  the chosen name by which the person prefers to be addressed. Note: This name
+  may be a name other than a given name, such as a nickname. </span></p>
+  </td>
+ </tr>
+ <tr>
+  <td width="25%" valign=top style='width:25.0%;padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal><span style='font-size:8.0pt;font-family:Verdana'>/
+  PersonName/<br>
+  <b>MiddleName</b></span></p>
+  </td>
+  <td width="25%" valign=top style='width:25.0%;padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal><span style='font-size:8.0pt;font-family:Verdana'>- <span
+  style='color:green'>xsd:string - </span><span style='color:blue'>S (0/1) </span></span></p>
+  </td>
+  <td width="50%" valign=top style='width:50.0%;padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal><span style='font-size:8.0pt;font-family:Verdana'>Contains
+  a person&#8217;s middle name or initial. </span></p>
+  </td>
+ </tr>
+ <tr>
+  <td width="25%" valign=top style='width:25.0%;padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal><span style='font-size:8.0pt;font-family:Verdana'>/
+  PersonName/<br>
+  <b>FamilyName</b></span></p>
+  </td>
+  <td width="25%" valign=top style='width:25.0%;padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal><span style='font-size:8.0pt;font-family:Verdana;
+  color:green'>xsd:extension</span><b><span style='font-size:8.0pt;font-family:
+  Verdana;color:black'> base: </span></b><span style='font-size:8.0pt;
+  font-family:Verdana;color:green'>xsd:string</span><span style='font-size:
+  8.0pt;font-family:Verdana'> </span></p>
+  </td>
+  <td width="50%" valign=top style='width:50.0%;padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal><span style='font-size:8.0pt;font-family:Verdana'>Contains
+  the non-chosen or inherited name. Also known as a person&#8217;s last name in
+  the Western context. The order is implied by the order of appearance of the
+  FamilyName elements in the XML document. </span></p>
+  </td>
+ </tr>
+ <tr>
+  <td width="25%" valign=top style='width:25.0%;padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal><span style='font-size:8.0pt;font-family:Verdana'>/ PersonName/
+  FamilyName/<br>
+  <span style='color:red'>primary</span> </span></p>
+  </td>
+  <td width="25%" valign=top style='width:25.0%;padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal><span style='font-size:8.0pt;font-family:Verdana;
+  color:green'>xsd:restriction</span><b><span style='font-size:8.0pt;
+  font-family:Verdana;color:black'> base: </span></b><span style='font-size:
+  8.0pt;font-family:Verdana;color:green'>xsd:string (enumeration)</span><span
+  style='font-size:8.0pt;font-family:Verdana'> </span></p>
+  </td>
+  <td width="50%" valign=top style='width:50.0%;padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal><span style='font-size:8.0pt;font-family:Verdana'>Defines
+  the order when multiple family names are used. </span></p>
+  </td>
+ </tr>
+ <tr>
+  <td width="25%" valign=top style='width:25.0%;padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal><span style='font-size:8.0pt;font-family:Verdana'>/
+  PersonName/ FamilyName/<br>
+  <span style='color:red'>prefix</span> </span></p>
+  </td>
+  <td width="25%" valign=top style='width:25.0%;padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal><span style='font-size:8.0pt;font-family:Verdana'>- <span
+  style='color:green'>xsd:string - </span></span></p>
+  </td>
+  <td width="50%" valign=top style='width:50.0%;padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal><span style='font-size:8.0pt;font-family:Verdana'>Defines
+  the context for the PersonName prefix, such as family name prefix or
+  aristocratic prefix.</span></p>
+  </td>
+ </tr>
+ <tr>
+  <td width="25%" valign=top style='width:25.0%;padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal><span style='font-size:8.0pt;font-family:Verdana'>/
+  PersonName/<br>
+  <b>Affix</b></span></p>
+  </td>
+  <td width="25%" valign=top style='width:25.0%;padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal><span style='font-size:8.0pt;font-family:Verdana;
+  color:green'>xsd:extension</span><b><span style='font-size:8.0pt;font-family:
+  Verdana;color:black'> base: </span></b><span style='font-size:8.0pt;
+  font-family:Verdana;color:green'>xsd:string</span><span style='font-size:
+  8.0pt;font-family:Verdana'> </span></p>
+  </td>
+  <td width="50%" valign=top style='width:50.0%;padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal><span style='font-size:8.0pt;font-family:Verdana'>Contains
+  the remaining parts of the PersonName as defined by the type attribute. </span></p>
+  </td>
+ </tr>
+ <tr>
+  <td width="25%" valign=top style='width:25.0%;padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal><span style='font-size:8.0pt;font-family:Verdana'>/
+  PersonName/ Affix/<br>
+  <span style='color:red'>type</span> </span></p>
+  </td>
+  <td width="25%" valign=top style='width:25.0%;padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal><span style='font-size:8.0pt;font-family:Verdana;
+  color:green'>xsd:restriction</span><b><span style='font-size:8.0pt;
+  font-family:Verdana;color:black'> base: </span></b><span style='font-size:
+  8.0pt;font-family:Verdana;color:green'>xsd:string (enumeration)</span><span
+  style='font-size:8.0pt;font-family:Verdana'> </span></p>
+  </td>
+  <td width="50%" valign=top style='width:50.0%;padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal><span style='font-size:8.0pt;font-family:Verdana'>Defines
+  the context for the affix.</span></p>
+  </td>
+ </tr>
+</table>
+
+<p class=MsoNormal><span style='font-size:12.0pt;font-family:"Times New Roman"'>&nbsp;</span></p>
+
+<span style='font-size:14.0pt;font-family:Arial'><br clear=all
+style='page-break-before:always'>
+</span>
+
+<h1 style='margin-top:12.0pt'><a name="_Toc33523493"></a><a name="_Toc492656050"></a><a
+name="_Toc492655888"></a><a name="_Toc487469954"></a><a name="_Toc459726669"></a>4<span
+style='font-size:7.0pt;font-family:"Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span>Open Issues List</h1>
+
+<table class=MsoNormalTable border=0 cellspacing=0 cellpadding=0
+ style='margin-left:-.05in;border-collapse:collapse'>
+ <tr>
+  <td width=420 valign=top style='width:315.0pt;background:#E5E5E5;padding:
+  0in 5.4pt 0in 5.4pt'>
+  <p class=tabletext align=center style='text-align:center'><b>Issue</b></p>
+  </td>
+  <td width=210 valign=top style='width:157.5pt;background:#E5E5E5;padding:
+  0in 5.4pt 0in 5.4pt'>
+  <p class=tabletext align=center style='text-align:center'><b>Anticipated</b></p>
+  <p class=tabletext align=center style='text-align:center'><b>Resolution</b></p>
+  </td>
+ </tr>
+ <tr>
+  <td width=420 valign=top style='width:315.0pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=number style='margin-top:6.0pt;margin-right:0in;margin-bottom:6.0pt;
+  margin-left:.5in'>1.<span style='font-size:7.0pt;font-family:"Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  </span>&quot;<b>Delta synchronization</b>&quot;: especially in the area of
+  &quot;transactional&quot; elements such as the probably very long list of
+  allowed person ids, project id's or order id's, it may be interesting to
+  think about mechanisms that allow to send only the changing information (no
+  full update). Currently, we think that this topic should be handled
+  synchronously with the same question for the sending process of a time card.
+  At the moment, that schema only supports full updates, too.</p>
+  </td>
+  <td width=210 valign=top style='width:157.5pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=tabletext align=center style='text-align:center'>Version 1.1</p>
+  </td>
+ </tr>
+ <tr>
+  <td width=420 valign=top style='width:315.0pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=number style='margin-top:6.0pt;margin-right:0in;margin-bottom:6.0pt;
+  margin-left:.5in'>2.<span style='font-size:7.0pt;font-family:"Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  </span>&#8220;<b>Configuration at resource level</b>&#8221;: Some of the
+  allowed types and values are not allowed in combination with all resources.
+  E.g. a person is only allowed to report for some projects. The schema should
+  support the definition of allowed types and values per resource.</p>
+  </td>
+  <td width=210 valign=top style='width:157.5pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=tabletext align=center style='text-align:center'>Version 1.1</p>
+  </td>
+ </tr>
+ <tr>
+  <td width=420 valign=top style='width:315.0pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=number style='margin-top:6.0pt;margin-right:0in;margin-bottom:6.0pt;
+  margin-left:.5in'>3.<span style='font-size:7.0pt;font-family:"Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  </span>&#8220;<b>Grouping</b>&#8221;: Typically there are groups of persons where
+  the same restrictions (allowed types and values) are valid. The schema should
+  support the definition of such a group plus the assignment of resources to
+  such a group.</p>
+  </td>
+  <td width=210 valign=top style='width:157.5pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=tabletext align=center style='text-align:center'>Version 1.1</p>
+  </td>
+ </tr>
+</table>
+
+<h1><a name="_Toc33523494"><span lang=FR>5</span></a><span lang=FR
+style='font-size:7.0pt;font-family:"Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span><span lang=FR>Appendix A - Document Version History</span></h1>
+
+<table class=MsoNormalTable border=0 cellspacing=0 cellpadding=0
+ style='margin-left:-.05in;border-collapse:collapse'>
+ <tr>
+  <td width=102 valign=top style='width:76.5pt;border:solid windowtext 1.0pt;
+  background:#E5E5E5;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=tabletext align=center style='text-align:center'><b><span lang=FR>Date</span></b></p>
+  </td>
+  <td width=486 valign=top style='width:364.5pt;border:solid windowtext 1.0pt;
+  border-left:none;background:#E5E5E5;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=tabletext><b><span lang=FR>Description</span></b></p>
+  </td>
+ </tr>
+ <tr>
+  <td width=102 valign=top style='width:76.5pt;border:solid windowtext 1.0pt;
+  border-top:none;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=tabletext>2001-11-27</p>
+  </td>
+  <td width=486 valign=top style='width:364.5pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=tabletext>First Version</p>
+  </td>
+ </tr>
+ <tr>
+  <td width=102 valign=top style='width:76.5pt;border:solid windowtext 1.0pt;
+  border-top:none;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=tabletext>2001-11-29</p>
+  </td>
+  <td width=486 valign=top style='width:364.5pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=tabletext>Include 1<sup>st</sup> Feedback from phone call</p>
+  </td>
+ </tr>
+ <tr>
+  <td width=102 valign=top style='width:76.5pt;border:solid windowtext 1.0pt;
+  border-top:none;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=tabletext>2001-12-12</p>
+  </td>
+  <td width=486 valign=top style='width:364.5pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=tabletext>Added elements resource, resource id and assignment</p>
+  </td>
+ </tr>
+ <tr>
+  <td width=102 valign=top style='width:76.5pt;border:solid windowtext 1.0pt;
+  border-top:none;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=tabletext>2001-12-13</p>
+  </td>
+  <td width=486 valign=top style='width:364.5pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=tabletext>Added links to references, fixed some typos, added
+  namespace.</p>
+  </td>
+ </tr>
+ <tr>
+  <td width=102 valign=top style='width:76.5pt;border:solid windowtext 1.0pt;
+  border-top:none;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=tabletext>2001-12-18</p>
+  </td>
+  <td width=486 valign=top style='width:364.5pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=tabletext>Fixed some typos, removed appendix D and E, expanded info
+  in the high level schema diagram, clarified definition of validFrom and
+  validTo</p>
+  </td>
+ </tr>
+ <tr>
+  <td width=102 valign=top style='width:76.5pt;border:solid windowtext 1.0pt;
+  border-top:none;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=tabletext>2001-Dec-20</p>
+  </td>
+  <td width=486 valign=top style='width:364.5pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=tabletext>Recommendation to membership review.</p>
+  </td>
+ </tr>
+ <tr>
+  <td width=102 valign=top style='width:76.5pt;border:solid windowtext 1.0pt;
+  border-top:none;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=tabletext>2002-Jan-18</p>
+  </td>
+  <td width=486 valign=top style='width:364.5pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=tabletext>Corrected definition of validTo.</p>
+  </td>
+ </tr>
+ <tr>
+  <td width=102 valign=top style='width:76.5pt;border:solid windowtext 1.0pt;
+  border-top:none;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=tabletext align=center style='text-align:center'>30 Jan 2002 </p>
+  </td>
+  <td width=486 valign=top style='width:364.5pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=tabletext>Target/default namespaces changed.</p>
+  </td>
+ </tr>
+ <tr>
+  <td width=102 valign=top style='width:76.5pt;border:solid windowtext 1.0pt;
+  border-top:none;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=tabletext align=center style='text-align:center'>2003-Feb-26</p>
+  </td>
+  <td width=486 valign=top style='width:364.5pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=tabletext>Approved recommendation by HR-XML Consortium. <span
+  style='background:white'>The default and targetNamespaces of all HR-XML
+  schemas have been standardized to &quot;http://ns.hr-xml.org&quot;.</span>
+  This recommendation is available as part of the HR-XML 2_4 architecture.</p>
+  </td>
+ </tr>
+ <tr>
+  <td width=102 valign=top style='width:76.5pt;border:solid windowtext 1.0pt;
+  border-top:none;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=tabletext align=center style='text-align:center'>2006-Feb-28</p>
+  </td>
+  <td width=486 valign=top style='width:364.5pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=tabletext>Approved by Consortium</p>
+  </td>
+ </tr>
+ <tr>
+  <td width=102 valign=top style='width:76.5pt;border:solid windowtext 1.0pt;
+  border-top:none;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=tabletext align=center style='text-align:center'>2007-Apr-15</p>
+  </td>
+  <td width=486 valign=top style='width:364.5pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=tabletext>Approved by Consortium</p>
+  </td>
+ </tr>
+</table>
+
+<h1><a name="_Toc33523495">6</a><span style='font-size:7.0pt;font-family:"Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span>Appendix B &#8211; Related Documents</h1>
+
+<table class=MsoNormalTable border=0 cellspacing=0 cellpadding=0
+ style='margin-left:-.05in;border-collapse:collapse'>
+ <tr style='height:13.95pt'>
+  <td width=168 valign=top style='width:1.75in;background:#E5E5E5;padding:0in 5.4pt 0in 5.4pt;
+  height:13.95pt'>
+  <p class=tabletext><b>Reference</b></p>
+  </td>
+  <td width=474 valign=top style='width:355.5pt;background:#E5E5E5;padding:
+  0in 5.4pt 0in 5.4pt;height:13.95pt'>
+  <p class=tabletext><b>Link</b></p>
+  </td>
+ </tr>
+ <tr style='height:14.85pt'>
+  <td width=168 valign=top style='width:1.75in;padding:0in 5.4pt 0in 5.4pt;
+  height:14.85pt'>
+  <p class=tabletext>TimeCard Conf&iacute;guration Schema</p>
+  </td>
+  <td width=474 valign=top style='width:355.5pt;padding:0in 5.4pt 0in 5.4pt;
+  height:14.85pt'>
+  <p class=MsoNormal><a
+  href="http://ns.hr-xml.org/2_5/HR-XML-2_5/TimeCard/TimeCardConfiguration.xsd">http://ns.hr-xml.org/2_5/HR-XML-2_5/TimeCard/TimeCardConfiguration.xsd</a></p>
+  </td>
+ </tr>
+ <tr style='height:14.85pt'>
+  <td width=168 valign=top style='width:1.75in;padding:0in 5.4pt 0in 5.4pt;
+  height:14.85pt'>
+  <p class=tabletext>&nbsp;CPO PersonName Document</p>
+  </td>
+  <td width=474 valign=top style='width:355.5pt;padding:0in 5.4pt 0in 5.4pt;
+  height:14.85pt'>
+  <p class=MsoNormal><span style='color:black;background:white'><a
+  href="http://ns.hr-xml.org/2_5/HR-XML-2_5/CPO/PersonName.html">http://ns.hr-xml.org/2_5/HR-XML-2_5/CPO/PersonName.html
+  </a></span></p>
+  </td>
+ </tr>
+ <tr style='height:14.85pt'>
+  <td width=168 valign=top style='width:1.75in;padding:0in 5.4pt 0in 5.4pt;
+  height:14.85pt'>
+  <p class=tabletext>CPO DateTimeTypes Document</p>
+  </td>
+  <td width=474 valign=top style='width:355.5pt;padding:0in 5.4pt 0in 5.4pt;
+  height:14.85pt'>
+  <p class=tabletext><span style='color:black;background:white'><a
+  href="http://ns.hr-xml.org/2_5/HR-XML-2_5/CPO/DateTimeDataTypes.html">http://ns.hr-xml.org/2_5/HR-XML-2_5/CPO/DateTimeDataTypes.html</a></span><span
+  style='color:black'> </span></p>
+  <p class=tabletext>&nbsp;</p>
+  </td>
+ </tr>
+</table>
+
+<h1 style='margin-top:0in;margin-right:0in;margin-bottom:12.0pt;margin-left:
+0in;text-indent:0in'>&nbsp;</h1>
+
+<h1 style='margin-top:0in'><a name="_Toc33523496">7</a><span style='font-size:
+7.0pt;font-family:"Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span>Appendix C &#8211; Reference Examples</h1>
+
+<p class=MsoNormal style='margin:0in;margin-bottom:.0001pt'>&lt;?xml version =
+&quot;1.0&quot; encoding = &quot;UTF-8&quot;?&gt;<br>
+<span style='color:black'>&lt;TimeCardConfiguration <span style='background:
+white'>&nbsp;xmlns=&quot;http://ns.hr-xml.org/2007-04-15&quot;</span>&gt;</span></p>
+
+<p class=MsoNormal style='margin:0in;margin-bottom:.0001pt'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&lt;Resources&gt;</p>
+
+<p class=MsoNormal style='margin:0in;margin-bottom:.0001pt'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&lt;Person&gt;</p>
+
+<p class=MsoNormal style='margin:0in;margin-bottom:.0001pt'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&lt;Id&gt;d026194&lt;/Id&gt;</p>
+
+<p class=MsoNormal style='margin:0in;margin-bottom:.0001pt'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&lt;/Person&gt;</p>
+
+<p class=MsoNormal style='margin:0in;margin-bottom:.0001pt'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&lt;Person preferredLanguage = &quot;de&quot;&gt;</p>
+
+<p class=MsoNormal style='margin:0in;margin-bottom:.0001pt'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&lt;Id&gt;c04711&lt;/Id&gt;</p>
+
+<p class=MsoNormal style='margin:0in;margin-bottom:.0001pt'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&lt;PersonName&gt;</p>
+
+<p class=MsoNormal style='margin:0in;margin-bottom:.0001pt'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&lt;GivenName&gt;Peter&lt;/GivenName&gt;</p>
+
+<p class=MsoNormal style='margin:0in;margin-bottom:.0001pt'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&lt;FamilyName&gt;Mustermann&lt;/FamilyName&gt;</p>
+
+<p class=MsoNormal style='margin:0in;margin-bottom:.0001pt'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&lt;/PersonName&gt;</p>
+
+<p class=MsoNormal style='margin:0in;margin-bottom:.0001pt'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&lt;/Person&gt;</p>
+
+<p class=MsoNormal style='margin:0in;margin-bottom:.0001pt'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&lt;Person&gt;</p>
+
+<p class=MsoNormal style='margin:0in;margin-bottom:.0001pt'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&lt;PersonName&gt;</p>
+
+<p class=MsoNormal style='margin:0in;margin-bottom:.0001pt'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&lt;GivenName&gt;John&lt;/GivenName&gt;</p>
+
+<p class=MsoNormal style='margin:0in;margin-bottom:.0001pt'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&lt;MiddleName&gt;William&lt;/MiddleName&gt;</p>
+
+<p class=MsoNormal style='margin:0in;margin-bottom:.0001pt'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&lt;FamilyName&gt;Smith&lt;/FamilyName&gt;</p>
+
+<p class=MsoNormal style='margin:0in;margin-bottom:.0001pt'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&lt;/PersonName&gt;</p>
+
+<p class=MsoNormal style='margin:0in;margin-bottom:.0001pt'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&lt;Assignment&gt;A1&lt;/Assignment&gt;</p>
+
+<p class=MsoNormal style='margin:0in;margin-bottom:.0001pt'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&lt;Assignment&gt;A2&lt;/Assignment&gt;</p>
+
+<p class=MsoNormal style='margin:0in;margin-bottom:.0001pt'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&lt;/Person&gt;</p>
+
+<p class=MsoNormal style='margin:0in;margin-bottom:.0001pt'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&lt;/Resources&gt;</p>
+
+<p class=MsoNormal style='margin:0in;margin-bottom:.0001pt'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&lt;TimeIntervalTypes&gt;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</p>
+
+<p class=MsoNormal style='margin:0in;margin-bottom:.0001pt'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&lt;Type&gt;</p>
+
+<p class=MsoNormal style='margin:0in;margin-bottom:.0001pt'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&lt;Id&gt;RegWork&lt;/Id&gt;</p>
+
+<p class=MsoNormal style='margin:0in;margin-bottom:.0001pt'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&lt;ShortDescription xml:lang = &quot;en&quot;&gt;Regular
+Work&lt;/ShortDescription&gt;</p>
+
+<p class=MsoNormal style='margin:0in;margin-bottom:.0001pt'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&lt;/Type&gt;</p>
+
+<p class=MsoNormal style='margin:0in;margin-bottom:.0001pt'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&lt;Type validFrom = &quot;2001-01-01&quot; validTo =
+&quot;2001-12-31&quot;&gt;</p>
+
+<p class=MsoNormal style='margin:0in;margin-bottom:.0001pt'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&lt;Id&gt;OT&lt;/Id&gt;</p>
+
+<p class=MsoNormal style='margin:0in;margin-bottom:.0001pt'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&lt;ShortDescription xml:lang = &quot;en&quot;&gt;Overtime&lt;/ShortDescription&gt;</p>
+
+<p class=MsoNormal style='margin:0in;margin-bottom:.0001pt'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&lt;ShortDescription xml:lang =
+&quot;de&quot;&gt;Mehrarbeit&lt;/ShortDescription&gt;</p>
+
+<p class=MsoNormal style='margin:0in;margin-bottom:.0001pt'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&lt;/Type&gt;</p>
+
+<p class=MsoNormal style='margin:0in;margin-bottom:.0001pt'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&lt;Type&gt;</p>
+
+<p class=MsoNormal style='margin:0in;margin-bottom:.0001pt'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&lt;Id&gt;SICK&lt;/Id&gt;</p>
+
+<p class=MsoNormal style='margin:0in;margin-bottom:.0001pt'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&lt;ShortDescription xml:lang = &quot;en&quot;&gt;Sickness&lt;/ShortDescription&gt;</p>
+
+<p class=MsoNormal style='margin:0in;margin-bottom:.0001pt'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&lt;/Type&gt;</p>
+
+<p class=MsoNormal style='margin:0in;margin-bottom:.0001pt'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&lt;/TimeIntervalTypes&gt;</p>
+
+<p class=MsoNormal style='margin:0in;margin-bottom:.0001pt'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&lt;TimeEventTypes&gt;</p>
+
+<p class=MsoNormal style='margin:0in;margin-bottom:.0001pt'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&lt;Type&gt;</p>
+
+<p class=MsoNormal style='margin:0in;margin-bottom:.0001pt'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&lt;Id&gt;IN&lt;/Id&gt;</p>
+
+<p class=MsoNormal style='margin:0in;margin-bottom:.0001pt'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&lt;ShortDescription xml:lang = &quot;en&quot;&gt;Clock In&lt;/ShortDescription&gt;</p>
+
+<p class=MsoNormal style='margin:0in;margin-bottom:.0001pt'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&lt;/Type&gt;</p>
+
+<p class=MsoNormal style='margin:0in;margin-bottom:.0001pt'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&lt;Type&gt;</p>
+
+<p class=MsoNormal style='margin:0in;margin-bottom:.0001pt'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&lt;Id&gt;OUT&lt;/Id&gt;</p>
+
+<p class=MsoNormal style='margin:0in;margin-bottom:.0001pt'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&lt;ShortDescription xml:lang = &quot;en&quot;&gt;Clock
+Out&lt;/ShortDescription&gt;</p>
+
+<p class=MsoNormal style='margin:0in;margin-bottom:.0001pt'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&lt;/Type&gt;</p>
+
+<p class=MsoNormal style='margin:0in;margin-bottom:.0001pt'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&lt;/TimeEventTypes&gt;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </p>
+
+<p class=MsoNormal style='margin:0in;margin-bottom:.0001pt'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&lt;AdditionalDataTypesAndValues&gt;</p>
+
+<p class=MsoNormal style='margin:0in;margin-bottom:.0001pt'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&lt;Type&gt;</p>
+
+<p class=MsoNormal style='margin:0in;margin-bottom:.0001pt'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&lt;Id&gt;CC&lt;/Id&gt;</p>
+
+<p class=MsoNormal style='margin:0in;margin-bottom:.0001pt'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&lt;ShortDescription xml:lang = &quot;en&quot;&gt;CostCenter&lt;/ShortDescription&gt;</p>
+
+<p class=MsoNormal style='margin:0in;margin-bottom:.0001pt'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&lt;/Type&gt;</p>
+
+<p class=MsoNormal style='margin:0in;margin-bottom:.0001pt'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&lt;Value&gt;</p>
+
+<p class=MsoNormal style='margin:0in;margin-bottom:.0001pt'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&lt;Id&gt;CCA&lt;/Id&gt;</p>
+
+<p class=MsoNormal style='margin:0in;margin-bottom:.0001pt'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&lt;ShortDescription xml:lang = &quot;en&quot;&gt;Cost Center
+A&lt;/ShortDescription&gt;</p>
+
+<p class=MsoNormal style='margin:0in;margin-bottom:.0001pt'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&lt;/Value&gt;</p>
+
+<p class=MsoNormal style='margin:0in;margin-bottom:.0001pt'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&lt;Value&gt;</p>
+
+<p class=MsoNormal style='margin:0in;margin-bottom:.0001pt'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&lt;Id&gt;CCB&lt;/Id&gt;</p>
+
+<p class=MsoNormal style='margin:0in;margin-bottom:.0001pt'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&lt;ShortDescription xml:lang = &quot;en&quot;&gt;CostCenter
+B&lt;/ShortDescription&gt;</p>
+
+<p class=MsoNormal style='margin:0in;margin-bottom:.0001pt'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&lt;/Value&gt;</p>
+
+<p class=MsoNormal style='margin:0in;margin-bottom:.0001pt'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&lt;Value&gt;</p>
+
+<p class=MsoNormal style='margin:0in;margin-bottom:.0001pt'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&lt;Id&gt;CCC&lt;/Id&gt;</p>
+
+<p class=MsoNormal style='margin:0in;margin-bottom:.0001pt'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&lt;ShortDescription xml:lang = &quot;en&quot;&gt;Costcenter
+C&lt;/ShortDescription&gt;</p>
+
+<p class=MsoNormal style='margin:0in;margin-bottom:.0001pt'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&lt;/Value&gt;</p>
+
+<p class=MsoNormal style='margin:0in;margin-bottom:.0001pt'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&lt;/AdditionalDataTypesAndValues&gt;</p>
+
+<p class=MsoNormal style='margin:0in;margin-bottom:.0001pt'>&lt;/TimeCardConfiguration&gt;</p>
+
+<p class=MsoNormal style='margin:0in;margin-bottom:.0001pt'>&nbsp;</p>
+
+</div>
+
+</body>
+
+</html>

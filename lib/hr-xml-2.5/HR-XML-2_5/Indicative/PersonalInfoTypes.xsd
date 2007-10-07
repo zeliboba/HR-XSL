@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema xmlns="http://ns.hr-xml.org/2007-04-15" xmlns:xsd="http://www.w3.org/2001/XMLSchema" targetNamespace="http://ns.hr-xml.org/2007-04-15" elementFormDefault="qualified" attributeFormDefault="unqualified">
+
+	<xsd:include schemaLocation="../CPO/IdentifierTypes.xsd"/>
+	<xsd:include schemaLocation="../CPO/PersonName.xsd"/>
+	<xsd:include schemaLocation="../CPO/PostalAddress.xsd"/>
+	<xsd:include schemaLocation="../CPO/ContactMethod.xsd"/>
+	<xsd:include schemaLocation="../CPO/ISOUtilities.xsd"/>
+	<xsd:include schemaLocation="../CPO/UserArea.xsd"/>
+	<xsd:include schemaLocation="../Indicative/IndicativeReusableTypes.xsd"/>
+	<xsd:include schemaLocation="../Indicative/Localizations.xsd"/>
+
+	<xsd:complexType name="IndBasePersonalInfoType">
+		<xsd:sequence>
+			<xsd:element name="PersonLegalId" type="EntityIdType" minOccurs="0" maxOccurs="unbounded"/>
+			<xsd:element name="PriorIncorrectPersonLegalId" type="EntityIdType" minOccurs="0" maxOccurs="unbounded"/>
+			<xsd:element name="PersonId" type="EntityIdType" minOccurs="0" maxOccurs="unbounded"/>
+			<xsd:element name="PriorIncorrectPersonId" type="EntityIdType" minOccurs="0" maxOccurs="unbounded"/>
+			<xsd:element name="PersonName" type="EffectiveDatedPersonNameType" minOccurs="0" maxOccurs="unbounded"/>
+			<xsd:element name="DateOfBirth" type="LocalDateType" minOccurs="0"/>
+			<xsd:element name="DateOfDeath" type="LocalDateCertifiedType" minOccurs="0"/>
+			<xsd:element name="GenderCode" type="GenderCodeType" minOccurs="0"/>
+			<xsd:element name="MaritalStatus" type="IndMaritalStatusType" minOccurs="0" maxOccurs="unbounded"/>
+			<xsd:element name="ContactInfo" type="EffectiveDatedContactMethodWithPrecedenceType" minOccurs="0" maxOccurs="unbounded"/>
+			<xsd:element name="Citizenship" type="CitizenshipType" minOccurs="0" maxOccurs="unbounded"/>
+			<xsd:element ref="IsVeteran" minOccurs="0">
+				<xsd:annotation>
+					<xsd:documentation>Localized content.</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+			<xsd:element ref="IsDisabled" minOccurs="0">
+				<xsd:annotation>
+					<xsd:documentation>Localized content.</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+			<xsd:element ref="IsTobaccoUser" minOccurs="0"/>
+		</xsd:sequence>
+	</xsd:complexType>
+
+	<xsd:complexType name="EffectiveDatedPersonNameType">
+		<xsd:complexContent>
+			<xsd:extension base="PersonNameType">
+				<xsd:attribute name="validFrom" type="LocalDateType" use="optional"/>
+				<xsd:attribute name="validTo" type="LocalDateType" use="optional"/>
+			</xsd:extension>
+		</xsd:complexContent>
+	</xsd:complexType>
+
+	<xsd:complexType name="IndPersonalInfoType">
+		<xsd:complexContent>
+			<xsd:extension base="IndBasePersonalInfoType">
+				<xsd:sequence>
+					<xsd:element name="Dependent" type="IndDependentInfoType" minOccurs="0" maxOccurs="unbounded"/>
+					<xsd:element name="UserArea" type="UserAreaType" minOccurs="0"/>
+				</xsd:sequence>
+			</xsd:extension>
+		</xsd:complexContent>
+	</xsd:complexType>
+
+	<xsd:complexType name="IndDependentInfoType">
+		<xsd:complexContent>
+			<xsd:extension base="IndBasePersonalInfoType">
+				<xsd:sequence>
+					<xsd:element name="Relationship" type="IndDependentRelationshipEnumExtensionType"/>
+				</xsd:sequence>
+			</xsd:extension>
+		</xsd:complexContent>
+	</xsd:complexType>
+
+	<xsd:simpleType name="IndDependentRelationshipEnumType">
+		<xsd:restriction base="xsd:string">
+			<xsd:enumeration value="AdoptedChild"/>
+			<xsd:enumeration value="Brother"/>
+			<xsd:enumeration value="Child"/>
+			<xsd:enumeration value="ExSpouse"/>
+			<xsd:enumeration value="Father"/>
+			<xsd:enumeration value="Granddaughter"/>
+			<xsd:enumeration value="Grandson"/>
+			<xsd:enumeration value="Grandfather"/>
+			<xsd:enumeration value="Grandmother"/>
+			<xsd:enumeration value="LifePartner"/>
+			<xsd:enumeration value="Mother"/>
+			<xsd:enumeration value="Sister"/>
+			<xsd:enumeration value="Spouse"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+
+	<xsd:complexType name="IndDependentRelationshipEnumExtensionType">
+		<xsd:choice>
+			<xsd:element name="StandardValue" type="IndDependentRelationshipEnumType" minOccurs="0"/>
+			<xsd:element name="NonStandardValue" type="xsd:string" minOccurs="0"/>
+		</xsd:choice>
+	</xsd:complexType>
+	
+	<xsd:complexType name="CitizenshipType">
+		<xsd:sequence>
+			<xsd:element name="CountryCode" type="CountryCodeType"/>
+		</xsd:sequence>
+		<xsd:attribute name="validFrom" type="LocalDateType" use="optional"/>
+		<xsd:attribute name="validTo" type="LocalDateType" use="optional"/>
+	</xsd:complexType>
+
+	<xsd:complexType name="IndMaritalStatusType">
+		<xsd:complexContent>
+			<xsd:extension base="IndMaritalStatusEnumExtensionType">
+				<xsd:attribute name="validFrom" type="LocalDateType" use="optional"/>
+				<xsd:attribute name="validTo" type="LocalDateType" use="optional"/>
+				<xsd:attribute name="certifiedDate" type="LocalDateType" use="optional"/>
+			</xsd:extension>
+		</xsd:complexContent>
+	</xsd:complexType>
+
+	<xsd:simpleType name="IndMaritalStatusEnumType">
+		<xsd:restriction base="xsd:string">
+			<xsd:enumeration value="Domestic Partner"/>
+			<xsd:enumeration value="Divorced"/>
+			<xsd:enumeration value="Married"/>
+			<xsd:enumeration value="Separated"/>
+			<xsd:enumeration value="Unmarried"/>
+			<xsd:enumeration value="Unreported"/>
+			<xsd:enumeration value="Widowed"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+
+	<xsd:complexType name="IndMaritalStatusEnumExtensionType">
+		<xsd:choice>
+			<xsd:element name="StandardValue" type="IndMaritalStatusEnumType" minOccurs="0"/>
+			<xsd:element name="NonStandardValue" type="xsd:string" minOccurs="0"/>
+		</xsd:choice>
+	</xsd:complexType>
+
+</xsd:schema>

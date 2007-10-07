@@ -1,0 +1,25 @@
+<?xml version="1.0"?>
+<Competency name="Communication Skills" description="" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://ns.hr-xml.org/2007-04-15" xsi:schemaLocation="http://ns.hr-xml.org/2007-04-15
+Competencies.xsd">
+	<CompetencyId id="" idOwner="" description=""/>
+	<TaxonomyId id="" idOwner="" description=""/>
+	<CompetencyEvidence dateOfIncident="2002-02-02" name="test" typeDescription="" expirationDate="2002-01-01">
+		<NumericValue>70</NumericValue>
+	</CompetencyEvidence>
+	<Competency name="Written Communication Skills">
+		<CompetencyEvidence name="WRITTENTEST1-A" dateOfIncident="1995-01-01" lastUsed="2000-01-01">
+			<NumericValue minValue="3" maxValue="5" description="SEP-equivalent Skill-Level Range">5</NumericValue>
+		</CompetencyEvidence>
+		<CompetencyWeight>
+			<NumericValue minValue="0" maxValue="100">35</NumericValue>
+		</CompetencyWeight>
+	</Competency>
+	<Competency name="Oral Communication Skills">
+		<CompetencyEvidence name="ManagerObservation" dateOfIncident="1996-01-01" lastUsed="2000-01-01">
+			<NumericValue minValue="1" maxValue="5" description="Company XYZ Skill Range">5</NumericValue>
+		</CompetencyEvidence>
+		<CompetencyWeight>
+			<NumericValue minValue="0" maxValue="100">65</NumericValue>
+		</CompetencyWeight>
+	</Competency>
+</Competency>

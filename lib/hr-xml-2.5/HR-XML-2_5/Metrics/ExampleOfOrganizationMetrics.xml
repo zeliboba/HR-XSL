@@ -1,0 +1,162 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<MetricsInterchange xmlns="http://ns.hr-xml.org/2007-04-15" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://ns.hr-xml.org/2007-04-15 MetricsInterchange.xsd">
+	<ReportingPeriod>
+		<StartDate>2002-01-01</StartDate>
+		<EndDate>2003-03-31</EndDate>
+	</ReportingPeriod>
+	<ReportDescription>
+		<Name>2003 Recruiting Metrics and Performance Benchmark</Name>
+		<Description>Survery Response</Description>
+	</ReportDescription>
+	<PrincipalRespondentOrganization>
+		<Organization>
+			<OrganizationId idOwner="Staffing.org">
+				<IdValue>respondentNo1234790</IdValue>
+			</OrganizationId>
+		</Organization>
+	</PrincipalRespondentOrganization>
+	<ReportedMetrics>
+		<ReportedOrganization>
+			<IsRespondentOrganization>true</IsRespondentOrganization>
+			<OrganizationDescriptors>
+				<GeographicalScope type="countrycode">
+					<Description>CA</Description>
+						<Area type="region">
+							<Description>BC</Description>
+						</Area>
+					</GeographicalScope>
+				<OrganizationSize>
+					<Headcount>5,000 - 9,999</Headcount>
+				</OrganizationSize>
+				<DataElement>
+					<Id idOwner="HCMC">
+						<IdValue>7</IdValue>
+					</Id>
+					<Description>Referred By</Description>
+					<DataValue>Recruiters Network</DataValue>
+				</DataElement>
+				<DataElement>
+					<Id idOwner="HCMC">
+						<IdValue>9</IdValue>
+					</Id>
+					<Description>Reporting for</Description>
+					<DataValue>Parent</DataValue>
+				</DataElement>
+				<DataElement>
+					<Id idOwner="HCMC">
+						<IdValue>11</IdValue>
+					</Id>
+					<Description>Organization Category</Description>
+					<DataValue> Computer &amp; Data Services</DataValue>
+				</DataElement>
+				<DataElement>
+					<Id idOwner="HCMC">
+						<IdValue>12</IdValue>
+					</Id>
+					<Description>Organization Category (Other)</Description>
+					<DataValue>Professional Publishing</DataValue>
+				</DataElement>
+			</OrganizationDescriptors>
+			<ReportingData>
+				<DataElement>
+					<Id idOwner="HCMC">
+						<IdValue>16.1</IdValue>
+					</Id>
+					<Description>Positions filled internally: Jan-Dec 200_</Description>
+					<DataValue>300</DataValue>
+				</DataElement>
+				<DataElement>
+					<Id idOwner="HCMC">
+						<IdValue>17.11</IdValue>
+					</Id>
+					<Description>External New Hires: Total nonexempt: Jan-Dec 200_</Description>
+					<DataValue>1650</DataValue>
+				</DataElement>
+				<DataElement>
+					<Id idOwner="HCMC">
+						<IdValue>17.12</IdValue>
+					</Id>
+					<Description>External New Hires: Total exempt: Jan-Dec 200_</Description>
+					<DataValue>50</DataValue>
+				</DataElement>
+				<DataElement>
+					<Id idOwner="HCMC">
+						<IdValue>17.13</IdValue>
+					</Id>
+					<Description>External New Hires: Total hires: Jan-Dec 200_</Description>
+					<DataValue>1700</DataValue>
+				</DataElement>
+				<DataElement>
+					<Id idOwner="HCMC">
+						<IdValue>18.11</IdValue>
+					</Id>
+					<Description>Compensation Required: Average New Hire: Jan-Dec 2002</Description>
+					<MonetaryValue currencyCode="USD">30000</MonetaryValue>
+				</DataElement>
+				<DataElement>
+					<Id idOwner="HCMC">
+						<IdValue>18.12</IdValue>
+					</Id>
+					<Description>Compensation Required: Total Compensation: Jan-Dec 2002</Description>
+					<MonetaryValue currencyCode="USD">51000000</MonetaryValue>
+				</DataElement>
+				<DataElement>
+					<Id idOwner="HCMC">
+						<IdValue>19.11</IdValue>
+					</Id>
+					<Description>Recruiting Costs: Internal: Jan-Dec 200_</Description>
+					<MonetaryValue currencyCode="USD">200</MonetaryValue>
+				</DataElement>
+				<DataElement>
+					<Id idOwner="HCMC">
+						<IdValue>19.12</IdValue>
+					</Id>
+					<Description>Recruiting Costs: External: Jan-Dec 2002</Description>
+					<MonetaryValue currencyCode="USD">15000</MonetaryValue>
+				</DataElement>
+				<DataElement>
+					<Id idOwner="HCMC">
+						<IdValue>19.13</IdValue>
+					</Id>
+					<Description>Recruiting Costs: Total Costs: Jan-Dec 200_</Description>
+					<MonetaryValue currencyCode="USD">15200</MonetaryValue>
+				</DataElement>
+				<DataElement>
+					<Id idOwner="HCMC">
+						<IdValue>20.1</IdValue>
+					</Id>
+					<Description>Cost-Per-Hire: Jan-Dec 200_</Description>
+					<MonetaryValue currencyCode="USD">8.941176471</MonetaryValue>
+				</DataElement>
+				<DataElement>
+					<Id idOwner="HCMC">
+						<IdValue>21.1</IdValue>
+					</Id>
+					<Description>Recruiting Efficiency Index: Jan-Dec 2002</Description>
+					<DataValue>0.029803922</DataValue>
+				</DataElement>
+				<DataElement>
+					<Id idOwner="HCMC">
+						<IdValue>22.1</IdValue>
+					</Id>
+					<Description>Signing Bonuses: Jan-Dec 2002</Description>
+					<MonetaryValue currencyCode="USD">0</MonetaryValue>
+				</DataElement>
+				<DataElement>
+					<Id idOwner="HCMC">
+						<IdValue>23.1</IdValue>
+					</Id>
+					<Description>Travel, Relocation, and Visa Expenses: Jan-Dec 200_</Description>
+					<MonetaryValue currencyCode="USD">0</MonetaryValue>
+				</DataElement>
+				<DataElement>
+					<Id idOwner="HCMC">
+						<IdValue>25.1</IdValue>
+					</Id>
+					<Description>Average Time to Start: Jan-Dec 2002</Description>
+					<DataValue>15</DataValue>
+				</DataElement>
+			</ReportingData>
+		</ReportedOrganization>
+	</ReportedMetrics>
+</MetricsInterchange>

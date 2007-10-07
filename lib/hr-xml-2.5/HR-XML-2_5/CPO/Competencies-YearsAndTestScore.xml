@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Competency xmlns="http://ns.hr-xml.org/2007-04-15" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://ns.hr-xml.org/2007-04-15 Competencies.xsd" description="Java is an object oriented computer language" name="Java">            
+	<CompetencyId description="Competency id is based on Acme internal taxonomy" id="574" idOwner="Acme Company"/>             
+	<TaxonomyId description="My ids are based on Acme Company Taxonomy" idOwner="Acme Company" id="1"/>             
+	<CompetencyEvidence dateOfIncident="2001-08-23" name="Test Score" typeDescription="Test Score from internal test" typeId="54">                            
+		<EvidenceId description="Java Test from internally administered test" id="547" idOwner="Acme Company"/>                            
+		<NumericValue description="100 point scale" maxValue="100" minValue="0">89</NumericValue>               
+	</CompetencyEvidence>               
+	<CompetencyEvidence dateOfIncident="2001-08-23" name="Years of Experience" typeDescription="Years of Experience" typeId="7">                             
+		<EvidenceId description="Years of Experience in Competency" id="7" idOwner="Acme Company"/>                             
+		<NumericValue description="Range in years for experience">4</NumericValue>                
+	</CompetencyEvidence>                
+	<CompetencyWeight type="levelOfInterest">                             
+		<NumericValue description="Acme Company Scale 100 point" maxValue="100" minValue="0">90</NumericValue>                
+	</CompetencyWeight>
+</Competency>

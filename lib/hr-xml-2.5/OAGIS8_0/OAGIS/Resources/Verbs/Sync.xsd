@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+    License information for this file is provided in LICENSE.TXT
+    For support, more information, or to report implementation bugs, 
+    please contact the Open Applications Group at xml@openapplications.org 
+     
+    ** Revision: 8.0 **
+    ** Date: 05 April 2002 **
+    Open Applications Group XSD
+    Copyright 1998-2002, All Rights Reserved
+    
+    Name: Verbs/Sync.xsd
+-->
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns="http://www.openapplications.org/oagis" targetNamespace="http://www.openapplications.org/oagis" elementFormDefault="qualified" attributeFormDefault="unqualified">
+        <xs:include schemaLocation="Verb.xsd"/>
+        <xs:complexType name="SyncExpressionCriteria">
+                <xs:sequence>
+                        <xs:element name="SyncExpression" maxOccurs="unbounded">
+                                <xs:complexType>
+                                        <xs:simpleContent>
+                                                <xs:extension base="Expression">
+                                                        <xs:attribute name="action" use="required">
+                                                                <xs:simpleType>
+                                                                        <xs:restriction base="xs:string">
+                                                                                <xs:enumeration value="Add"/>
+                                                                                <xs:enumeration value="Change"/>
+                                                                                <xs:enumeration value="Delete"/>
+                                                                                <xs:enumeration value="Replace"/>
+                                                                        </xs:restriction>
+                                                                </xs:simpleType>
+                                                        </xs:attribute>
+                                                </xs:extension>
+                                        </xs:simpleContent>
+                                </xs:complexType>
+                        </xs:element>
+                </xs:sequence>
+                <xs:attribute name="expressionLanguage" default="XPath"/>
+        </xs:complexType>
+        <xs:complexType name="Sync">
+                <xs:complexContent>
+                        <xs:extension base="ConfirmableVerb">
+                                <xs:sequence>
+                                        <xs:element name="SyncCriteria" type="SyncExpressionCriteria"/>
+                                </xs:sequence>
+                        </xs:extension>
+                </xs:complexContent>
+        </xs:complexType>
+        <xs:element name="Sync" type="Sync" substitutionGroup="Verb">
+                <xs:annotation>
+                        <xs:documentation source="http://www.openapplications.org/oagis">The Sync verb is used when the owner of the data is passing or publishing that information or change in information to other software components.  This is to be used when the receiver of the SyncBOD does not own the data.  This verb is commonly used when mass changes are necessary or when a publish and subscribe mechanism is used in the integration architecture.The purposes of this verb include application integrity and ease of data entry for the business user by enabling a single point of input.  </xs:documentation>
+                </xs:annotation>
+        </xs:element>
+</xs:schema>

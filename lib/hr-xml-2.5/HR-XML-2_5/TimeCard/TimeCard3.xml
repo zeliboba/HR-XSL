@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TimeCard xmlns="http://ns.hr-xml.org/2007-04-15" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://ns.hr-xml.org/2007-04-15
+TimeCard.xsd">
+	<ReportedResource>
+		<Person>
+			<Id>
+				<IdValue>d026194</IdValue>
+			</Id>
+		</Person>
+	</ReportedResource>
+	<ReportedTime>
+		<PeriodStartDate>2001-05-01</PeriodStartDate>
+		<PeriodEndDate>2001-05-18</PeriodEndDate>
+		<TimeEvent type="Clock-in">
+			<EventDateTime>2001-05-07T08:01:00Z</EventDateTime>
+			<AdditionalData type="Order">1212</AdditionalData>
+		</TimeEvent>
+		<TimeEvent type="Clock-out">
+			<EventDateTime>2001-05-07T12:03:00Z</EventDateTime>
+		</TimeEvent>
+		<TimeEvent type="Clock-in">
+			<EventDateTime>2001-05-07T12:32:00Z</EventDateTime>
+			<AdditionalData type="Order">1213</AdditionalData>
+		</TimeEvent>
+		<TimeEvent type="Clock-out">
+			<EventDateTime>2001-05-07T17:05:00Z</EventDateTime>
+		</TimeEvent>
+		<TimeEvent type="Clock-in">
+			<EventDateTime>2001-05-08T07:59:00Z</EventDateTime>
+			<AdditionalData type="Order">1213</AdditionalData>
+		</TimeEvent>
+		<TimeEvent type="Clock-out">
+			<EventDateTime>2001-05-08T10:04:00Z</EventDateTime>
+		</TimeEvent>
+	</ReportedTime>
+</TimeCard>

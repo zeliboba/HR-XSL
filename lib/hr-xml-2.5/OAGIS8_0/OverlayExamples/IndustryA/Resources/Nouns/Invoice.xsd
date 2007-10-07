@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+    License information for this file is provided in LICENSE.TXT
+    For support, more information, or to report implementation bugs, 
+    please contact the Open Applications Group at xml@openapplications.org 
+     
+    ** Revision: 8.0 **
+    ** Date: 05 April 2002 **
+    Open Applications Group XSD IndustryA Overlay Example
+    Copyright 1998-2002, All Rights Reserved
+    
+    Name: IndustryA Invoice.xsd
+-->
+<xs:schema targetNamespace="http://www.oagi.net/oagis/ia" xmlns:ia="http://www.oagi.net/oagis/ia" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:oa="http://www.openapplications.org/oagis" elementFormDefault="qualified" attributeFormDefault="unqualified">
+	<xs:import namespace="http://www.openapplications.org/oagis" schemaLocation="../../../../OAGIS/Resources/Nouns/Invoice.xsd"/>
+	<xs:include schemaLocation="../IndustryA.xsd"/>
+	<xs:include schemaLocation="TimeCard.xsd"/>
+	<xs:complexType name="Invoice">
+		<xs:annotation>
+			<xs:documentation>p</xs:documentation>
+		</xs:annotation>
+		<xs:complexContent>
+			<xs:extension base="oa:Invoice">
+				<xs:sequence>
+					<xs:element name="GrandTotal" type="xs:string"/>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="InvoiceHeader">
+		<xs:complexContent>
+			<xs:extension base="oa:InvoiceHeader">
+				<xs:sequence>
+					<xs:element name="TimeCard" type="ia:TimeCard"/>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<!--   Noun, Noun Component, and Component  bindings-->
+	<xs:element name="Invoice" type="ia:Invoice" substitutionGroup="oa:Invoice"/>
+	<xs:element name="Header" type="ia:InvoiceHeader" substitutionGroup="oa:Header"/>
+</xs:schema>

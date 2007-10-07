@@ -1,0 +1,221 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- edited with XMLSpy v2005 sp1 U (http://www.xmlspy.com) by Chuck Allen (HR-XML Consortium, Inc.) -->
+<xsd:schema xmlns="http://ns.hr-xml.org/2007-04-15" xmlns:xsd="http://www.w3.org/2001/XMLSchema" targetNamespace="http://ns.hr-xml.org/2007-04-15" elementFormDefault="qualified" version="2007-04-15">
+	<xsd:annotation>
+		<xsd:documentation>
+"Copyright  The HR-XML Consortium. All Rights Reserved. http://www.hr-xml.org"
+Name: USTierCoverage.xsd
+Status: Recommendation
+Date this version: 2007-04-15
+Purpose: 
+Author(s): 
+Documentation: Enrollment.html
+
+		</xsd:documentation>
+	</xsd:annotation>
+	<xsd:import namespace="http://www.w3.org/XML/1998/namespace" schemaLocation="../../../W3C/xml.xsd"/>
+	<xsd:include schemaLocation="../../CPO/PersonName.xsd"/>
+	<xsd:include schemaLocation="../../CPO/PostalAddress.xsd"/>
+	<xsd:include schemaLocation="../../CPO/DateTimeDataTypes.xsd"/>
+	<xsd:include schemaLocation="../../CPO/ContactMethod.xsd"/>
+	<xsd:include schemaLocation="../../CPO/TelcomNumber.xsd"/>
+	<xsd:include schemaLocation="../../CPO/OnlineAddress.xsd"/>
+	<xsd:include schemaLocation="../../CPO/EntityIdType.xsd"/>
+	<xsd:include schemaLocation="../../CPO/UserArea.xsd"/>
+	<xsd:include schemaLocation="../../CPO/ISOUtilities.xsd"/>
+	<xsd:include schemaLocation="../../Enrollment/EnrollmentTypes.xsd"/>
+	<xsd:complexType name="USTierCoverage">
+		<xsd:sequence>
+			<xsd:element name="TransactionCode" minOccurs="0">
+				<xsd:simpleType>
+					<xsd:restriction base="xsd:string">
+						<xsd:enumeration value="Add"/>
+						<xsd:enumeration value="Audit"/>
+						<xsd:enumeration value="Change"/>
+						<xsd:enumeration value="Correction"/>
+						<xsd:enumeration value="Delete"/>
+						<xsd:enumeration value="Employee Information Not Available"/>
+						<xsd:enumeration value="Reinstatement"/>
+						<xsd:enumeration value="Termination"/>
+					</xsd:restriction>
+				</xsd:simpleType>
+			</xsd:element>
+			<xsd:element name="ElectedPlanCode" type="xsd:string" minOccurs="0"/>
+			<xsd:element name="GroupNumber" type="xsd:string" minOccurs="0"/>
+			<xsd:element name="COBRAStatus">
+				<xsd:simpleType>
+					<xsd:restriction base="xsd:string">
+						<xsd:enumeration value="COBRA"/>
+						<xsd:enumeration value="non-COBRA"/>
+					</xsd:restriction>
+				</xsd:simpleType>
+			</xsd:element>
+			<xsd:element name="StartDate" type="LocalDateType"/>
+			<xsd:element name="COBRAInformation" minOccurs="0">
+				<xsd:complexType>
+					<xsd:sequence>
+						<xsd:element name="COBRAStartDate" type="LocalDateType" minOccurs="0"/>
+						<xsd:element name="COBRAEndDate" type="LocalDateType" minOccurs="0"/>
+						<xsd:element name="PaidThroughDate" type="LocalDateType" minOccurs="0"/>
+						<xsd:element name="QualifyingEventDate" type="LocalDateType" minOccurs="0"/>
+						<xsd:element name="QualifyingEventCode" minOccurs="0">
+							<xsd:simpleType>
+								<xsd:restriction base="xsd:string">
+									<xsd:enumeration value="Bankruptcy of a Retired Employee"/>
+									<xsd:enumeration value="Death"/>
+									<xsd:enumeration value="Divorce"/>
+									<xsd:enumeration value="Ineligible Child"/>
+									<xsd:enumeration value="Medicare"/>
+									<xsd:enumeration value="Reduction of work hours"/>
+									<xsd:enumeration value="Separation"/>
+									<xsd:enumeration value="Termination of Employment"/>
+								</xsd:restriction>
+							</xsd:simpleType>
+						</xsd:element>
+						<xsd:element name="AdditionalQualifyingEventData" type="xsd:string" minOccurs="0"/>
+					</xsd:sequence>
+				</xsd:complexType>
+			</xsd:element>
+			<xsd:element name="EndDate" type="LocalDateType" minOccurs="0"/>
+			<xsd:element name="CoverageLevel" maxOccurs="unbounded">
+				<xsd:complexType>
+					<xsd:sequence>
+						<xsd:element name="CoverageLevelCode">
+							<xsd:simpleType>
+								<xsd:union memberTypes="CoverageLevelCodeType xStringPatternExtensionType"/>
+							</xsd:simpleType>
+						</xsd:element>
+						<xsd:element name="StartDate" type="LocalDateType"/>
+					</xsd:sequence>
+				</xsd:complexType>
+			</xsd:element>
+			<xsd:element name="Provider" minOccurs="0" maxOccurs="unbounded">
+				<xsd:complexType>
+					<xsd:sequence>
+						<xsd:element name="StartDate" type="LocalDateType" minOccurs="0"/>
+						<xsd:choice minOccurs="0">
+							<xsd:element name="OrganizationName" type="xsd:string" minOccurs="0"/>
+							<xsd:element name="PersonName" type="PersonNameType" minOccurs="0"/>
+						</xsd:choice>
+						<xsd:element name="ContactInformation" type="ContactMethodType" minOccurs="0" maxOccurs="unbounded"/>
+						<xsd:element name="ProviderId" minOccurs="0">
+							<xsd:complexType>
+								<xsd:simpleContent>
+									<xsd:extension base="xsd:string">
+										<xsd:attribute name="providerIdQualifier" use="required">
+											<xsd:simpleType>
+												<xsd:restriction base="xsd:string">
+													<xsd:enumeration value="Social Security Number"/>
+													<xsd:enumeration value="Federal Taxpayer Identification Number"/>
+													<xsd:enumeration value="HCFA National Provider Identifier"/>
+													<xsd:enumeration value="Mutually Defined"/>
+												</xsd:restriction>
+											</xsd:simpleType>
+										</xsd:attribute>
+									</xsd:extension>
+								</xsd:simpleContent>
+							</xsd:complexType>
+						</xsd:element>
+						<xsd:element name="ProviderRelationshipCode" minOccurs="0">
+							<xsd:simpleType>
+								<xsd:restriction base="xsd:string">
+									<xsd:enumeration value="Established Patient"/>
+									<xsd:enumeration value="Not Established Patient"/>
+									<xsd:enumeration value="Not Known"/>
+								</xsd:restriction>
+							</xsd:simpleType>
+						</xsd:element>
+						<xsd:element name="ProviderChangeReason" minOccurs="0">
+							<xsd:simpleType>
+								<xsd:restriction base="xsd:string">
+									<xsd:enumeration value="Appointment Times Not Met in a Timely Manner"/>
+									<xsd:enumeration value="Current Customer Information File in Error"/>
+									<xsd:enumeration value="Dissatisfaction with Medical Care/Services Rendered">
+										<xsd:annotation>
+											<xsd:documentation>This enumeration has been deprecated and replaced with an enumeration without the "/".</xsd:documentation>
+										</xsd:annotation>
+									</xsd:enumeration>
+									<xsd:enumeration value="Dissatisfaction with Office Staff"/>
+									<xsd:enumeration value="Dissatisfaction with Physician's Referral Policy">
+										<xsd:annotation>
+											<xsd:documentation>This enumeration has been deprecated and replaced with an enumeration without the apostrophe.</xsd:documentation>
+										</xsd:annotation>
+									</xsd:enumeration>
+									<xsd:enumeration value="Dissatisfied with Office Hours"/>
+									<xsd:enumeration value="Inconvenient Office Location"/>
+									<xsd:enumeration value="Less Respect/Attention/Time Given Than to Other Patients">
+										<xsd:annotation>
+											<xsd:documentation>This enumeration has been deprecated and replaced with an enumeration without the "/".</xsd:documentation>
+										</xsd:annotation>
+									</xsd:enumeration>
+									<xsd:enumeration value="No Reason Given"/>
+									<xsd:enumeration value="Patient Moved to a New Location"/>
+									<xsd:enumeration value="Plan Change"/>
+									<xsd:enumeration value="Unable to Scheduled Appointments in a Timely Manner"/>
+									<xsd:enumeration value="Voluntary Withdrawal"/>
+									<xsd:enumeration value="Dissatisfaction with Medical Care or Services Rendered"/>
+									<xsd:enumeration value="Dissatisfaction with Physician Referral Policy"/>
+									<xsd:enumeration value="Less Respect or Attention or Time Given Than to Other Patients"/>
+								</xsd:restriction>
+							</xsd:simpleType>
+						</xsd:element>
+					</xsd:sequence>
+					<xsd:attribute name="providerType">
+						<xsd:simpleType>
+							<xsd:restriction base="xsd:string">
+								<xsd:enumeration value="Obstetrics and Gynecology Facility"/>
+								<xsd:enumeration value="Doctor of Optometry"/>
+								<xsd:enumeration value="Primary Care Provider"/>
+								<xsd:enumeration value="Pharmacy"/>
+								<xsd:enumeration value="Dentist"/>
+								<xsd:enumeration value="Managed Care Organization"/>
+							</xsd:restriction>
+						</xsd:simpleType>
+					</xsd:attribute>
+					<xsd:attribute name="providerTypeQualifier">
+						<xsd:simpleType>
+							<xsd:restriction base="xsd:string">
+								<xsd:enumeration value="Person"/>
+								<xsd:enumeration value="Non Person Entity"/>
+							</xsd:restriction>
+						</xsd:simpleType>
+					</xsd:attribute>
+				</xsd:complexType>
+			</xsd:element>
+			<xsd:element name="PlanParticipationSuspensionDate" type="LocalDateType" minOccurs="0"/>
+			<xsd:element name="EnrollmentSignatureDate" type="LocalDateType" minOccurs="0"/>
+			<xsd:element name="Carrier" type="CarrierData" minOccurs="0"/>
+			<xsd:element name="HSAVendor" type="HSAVendorType" minOccurs="0"/>
+			<xsd:element name="EligibilityPostalCode" type="xsd:string" minOccurs="0"/>
+			<xsd:element name="IdCard" type="IdCardData" minOccurs="0"/>
+			<xsd:element name="EligibilityRegion" type="xsd:string" minOccurs="0"/>
+			<xsd:element name="OriginalEffectiveDate" type="LocalDateType" minOccurs="0"/>
+			<xsd:element name="LateEntrantIndicator" type="xsd:boolean" minOccurs="0"/>
+		</xsd:sequence>
+		<xsd:attribute name="type" type="USTierCoveragePlanType" use="required"/>
+	</xsd:complexType>
+	<xsd:simpleType name="USTierCoveragePlanType">
+		<xsd:restriction base="xsd:string">
+			<xsd:enumeration value="24 Care"/>
+			<xsd:enumeration value="Dental"/>
+			<xsd:enumeration value="Dental Capitation"/>
+			<xsd:enumeration value="Exclusive Provider Organization"/>
+			<xsd:enumeration value="Health"/>
+			<xsd:enumeration value="Health Maintenance Organization"/>
+			<xsd:enumeration value="Hearing"/>
+			<xsd:enumeration value="Long Term Care"/>
+			<xsd:enumeration value="Long Term Disability"/>
+			<xsd:enumeration value="Mail Order Drug"/>
+			<xsd:enumeration value="Major Medical"/>
+			<xsd:enumeration value="Medicare Risk"/>
+			<xsd:enumeration value="Mental Health"/>
+			<xsd:enumeration value="Point of Service"/>
+			<xsd:enumeration value="Preferred Provider Organization"/>
+			<xsd:enumeration value="Prescription Drug"/>
+			<xsd:enumeration value="Preventative Care"/>
+			<xsd:enumeration value="Short Term Disability"/>
+			<xsd:enumeration value="Utilization Review"/>
+			<xsd:enumeration value="Vision"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+</xsd:schema>

@@ -1,0 +1,155 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema xmlns="http://ns.hr-xml.org/2007-04-15" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:ds="http://www.w3.org/2000/09/xmldsig#" targetNamespace="http://ns.hr-xml.org/2007-04-15" elementFormDefault="qualified" version="2007-04-15">
+	<xsd:annotation>
+		<xsd:documentation>
+"Copyright  The HR-XML Consortium. All Rights Reserved. http://www.hr-xml.org"
+Name: BackgroundReports.xsd
+Status: Recommendation
+Date this version: 2007-04-15
+Purpose: Defines the BackgroundReports Schema
+Author(s):  Screening Workgroup
+Documentation: BackgroundReports.html
+
+Terms of license can be found in license.txt.
+
+Change History:
+2005-01
+- As per Schema Design Guidelines, all default values have been removed.
+- ScreeningReportType renamed to ScreeningReportDataType so as not to collide with data type already defined in BackgroundReports.xsd
+
+
+
+</xsd:documentation>
+	</xsd:annotation>
+	<xsd:import namespace="http://www.w3.org/XML/1998/namespace" schemaLocation="../../../W3C/xml.xsd"/>
+	<xsd:include schemaLocation="../US/Credit.xsd"/>
+	<xsd:element name="BackgroundCheckStatusRequest" type="BackgroundCheckStatusRequestType">
+		<xsd:annotation>
+			<xsd:documentation>Parent Element for  specifying Search Subject specfic data for Standalone Searches.</xsd:documentation>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:complexType name="BackgroundCheckStatusRequestType">
+		<xsd:sequence>
+			<xsd:element name="ProviderReferenceId" type="EntityIdType" minOccurs="0">
+				<xsd:annotation>
+					<xsd:documentation>Reference Number for all screenings contained in the XML Document.  It is assigned by the  company providing the screening service.</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+			<xsd:element name="BackgroundCheckStatusPackage" maxOccurs="unbounded">
+				<xsd:annotation>
+					<xsd:documentation>Root element containing all screening related information for a single Search Subject.</xsd:documentation>
+				</xsd:annotation>
+				<xsd:complexType>
+					<xsd:sequence>
+						<xsd:element name="ProviderReferenceId" type="EntityIdType" minOccurs="0">
+							<xsd:annotation>
+								<xsd:documentation>Reference Number for all screenings in this package.  It is assigned by the  company providing the screening service.</xsd:documentation>
+							</xsd:annotation>
+						</xsd:element>
+						<xsd:element name="ClientReferenceId" type="EntityIdType" minOccurs="0">
+							<xsd:annotation>
+								<xsd:documentation>Reference Number for all screenings in this package.  It is assigned by the  company requesting the screening service.</xsd:documentation>
+							</xsd:annotation>
+						</xsd:element>
+						<xsd:element name="PackageId" type="EntityIdType" minOccurs="0">
+							<xsd:annotation>
+								<xsd:documentation>The package identifier associated with all screenings contained in this package.</xsd:documentation>
+							</xsd:annotation>
+						</xsd:element>
+						<xsd:element name="PersonalData" type="ScreeningStatusPersonalDataType" minOccurs="0" maxOccurs="unbounded">
+							<xsd:annotation>
+								<xsd:documentation>Personal data related to the Search Subject that the search(s) was be performed upon. Intended usage is primarily for confirmation of Search Subject details.</xsd:documentation>
+							</xsd:annotation>
+						</xsd:element>
+						<xsd:element name="AdditionalItems" type="FlexibleDetailType" minOccurs="0" maxOccurs="unbounded"/>
+						<xsd:element name="Screenings" type="ScreeningReportDataType" minOccurs="0"/>
+					</xsd:sequence>
+					<xsd:attribute name="type" type="ResultDataTypes"/>
+				</xsd:complexType>
+			</xsd:element>
+			<xsd:element ref="UserArea" minOccurs="0"/>
+		</xsd:sequence>
+		<xsd:attribute name="userId" type="xsd:string" use="required">
+			<xsd:annotation>
+				<xsd:documentation>Client identification.  This will be provided to the client by the organization performing the screenings.</xsd:documentation>
+			</xsd:annotation>
+		</xsd:attribute>
+		<xsd:attribute name="password" type="xsd:string" use="optional">
+			<xsd:annotation>
+				<xsd:documentation>Client password.  This will be provided to the client by the organization performing the screenings.</xsd:documentation>
+			</xsd:annotation>
+		</xsd:attribute>
+		<xsd:attribute name="account" type="xsd:string" use="optional">
+			<xsd:annotation>
+				<xsd:documentation>Optional attribute to further identify a  specific account withing the Client's Userid.  This will be provided to the client by the organization performing the screenings.</xsd:documentation>
+			</xsd:annotation>
+		</xsd:attribute>
+		<xsd:attribute name="location" type="xsd:string" use="optional"/>
+		<xsd:attribute name="version" type="xsd:string" use="optional"/>
+		<xsd:attribute ref="xml:lang" use="optional"/>
+	</xsd:complexType>
+	<xsd:complexType name="ScreeningReportDataType">
+		<xsd:annotation>
+			<xsd:documentation>Element to return order status to client. Used as a confirmation to the client that the order was received.</xsd:documentation>
+		</xsd:annotation>
+		<xsd:sequence>
+			<xsd:element name="Screening" minOccurs="0" maxOccurs="unbounded">
+				<xsd:annotation>
+					<xsd:documentation>Provides container for the basic screening summary information.  </xsd:documentation>
+				</xsd:annotation>
+				<xsd:complexType>
+					<xsd:sequence>
+						<xsd:element name="ProviderReferenceId" type="EntityIdType" minOccurs="0">
+							<xsd:annotation>
+								<xsd:documentation>Reference Number for this screening as assigned by the  company providing the screening service.</xsd:documentation>
+							</xsd:annotation>
+						</xsd:element>
+						<xsd:element name="ClientReferenceId" type="EntityIdType" minOccurs="0">
+							<xsd:annotation>
+								<xsd:documentation>Reference Number as provided by the requestor of this screening.</xsd:documentation>
+							</xsd:annotation>
+						</xsd:element>
+						<xsd:element name="ClientReferences" type="EntityIdType" minOccurs="0" maxOccurs="unbounded">
+							<xsd:annotation>
+								<xsd:documentation>Contains Client provided information pertinent to the search.  i.e. Billing information.</xsd:documentation>
+							</xsd:annotation>
+						</xsd:element>
+						<xsd:element ref="UserArea" minOccurs="0"/>
+					</xsd:sequence>
+					<xsd:attribute name="type" type="SearchTypes"/>
+					<xsd:attribute name="qualifier" type="SearchQualifierType"/>
+					<xsd:attribute ref="xml:lang" use="optional"/>
+				</xsd:complexType>
+			</xsd:element>
+		</xsd:sequence>
+	</xsd:complexType>
+	<xsd:complexType name="ScreeningStatusPersonalDataType">
+		<xsd:sequence>
+			<xsd:element name="PersonName" minOccurs="0" maxOccurs="unbounded">
+				<xsd:complexType>
+					<xsd:complexContent>
+						<xsd:extension base="PersonNameType">
+							<xsd:attribute name="type" type="PersonNameTypeType" use="optional"/>
+							<xsd:attribute name="validFrom" type="AnyLocalYearMonthDateNkNaType" use="optional"/>
+							<xsd:attribute name="validTo" type="AnyLocalYearMonthDateNkNaType" use="optional"/>
+						</xsd:extension>
+					</xsd:complexContent>
+				</xsd:complexType>
+			</xsd:element>
+			<xsd:element name="DemographicDetail" type="DemographicDetailType" minOccurs="0"/>
+		</xsd:sequence>
+		<xsd:attribute name="type" use="optional">
+			<xsd:simpleType>
+				<xsd:restriction base="xsd:string">
+					<xsd:enumeration value="Alias"/>
+					<xsd:enumeration value="Other"/>
+					<xsd:enumeration value="Current"/>
+					<xsd:enumeration value="Prior"/>
+					<xsd:enumeration value="NotSpecified"/>
+				</xsd:restriction>
+			</xsd:simpleType>
+		</xsd:attribute>
+		<xsd:attribute name="idReference" type="xsd:string" use="optional"/>
+		<xsd:attribute name="idSource" type="xsd:string" use="optional"/>
+	</xsd:complexType>
+</xsd:schema>

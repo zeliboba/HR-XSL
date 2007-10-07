@@ -1,0 +1,163 @@
+<Enrollment xmlns="http://ns.hr-xml.org/2007-04-15" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://ns.hr-xml.org/2007-04-15
+Enrollment.xsd" creationDate="2004-04-01T13:20:00-05:00">
+<!--
+EnrollmentD5.xml
+
+Contributed to HR-XML by Mike Hall, Hewitt Associates, Nov. 4 2005
+
+See also examples EnrollmentD3-new.xml  and EnrollmentD4-new.xml
+
+EXAMPLE D5,  Spouse enrolls in Medicare Part D and loses subsidy.   
+
+On Nov. 1 2008, Bernadette's husband enrolled in a Medicare Part D plan.   
+Centers for Medicare and Medicaid Services (CMS) reports the Medicare 
+Part D enrollment to the employer and the employer reports the loss of 
+subsidy to the health plan. 
+-->
+	<Organization organizationName="Example Corporation">
+		<Subscriber>
+			<SubscriberType>
+				<SubscriberTypeCode>Employment</SubscriberTypeCode>
+			</SubscriberType>
+			<Person>
+				<IdentificationCode>
+					<IdValue name="Social Security Number">999-01-2345</IdValue>
+				</IdentificationCode>
+				<PersonName>
+					<GivenName>Bernadette</GivenName>
+					<MiddleName>Ruth</MiddleName>
+					<FamilyName>Kleghorn</FamilyName>
+				</PersonName>
+				<Gender>2</Gender>
+				<DateOfBirth>1942-02-16</DateOfBirth>
+				<MaritalStatus>
+					<MaritalStatusCode>Married</MaritalStatusCode>
+					<StartDate>1962-08-03</StartDate>
+				</MaritalStatus>
+				<PostalAddress>
+					<CountryCode>US</CountryCode>
+					<PostalCode>45198</PostalCode>
+					<Region>AZ</Region>
+					<Municipality>Jonesburg</Municipality>
+					<DeliveryAddress>
+						<AddressLine>84 Jonesburg Street</AddressLine>
+					</DeliveryAddress>
+				</PostalAddress>
+			</Person>
+			<Coverage>
+					<TierCoverage type="Medicare Risk">
+					<GroupNumber>MC6705</GroupNumber>
+					<COBRAStatus>non-COBRA</COBRAStatus>
+					<StartDate>2007-02-16</StartDate>
+					<CoverageLevel>
+						<CoverageLevelCode>Employee Only</CoverageLevelCode>
+						<StartDate>2007-02-16</StartDate>
+					</CoverageLevel>
+					<CoverageLevel>
+						<CoverageLevelCode>Employee and Spouse</CoverageLevelCode>
+						<StartDate>2008-10-02</StartDate>
+					</CoverageLevel>
+				</TierCoverage>
+			</Coverage>
+			<Employment>
+				<EmploymentStatus>
+					<EmploymentStatusCode>Retired</EmploymentStatusCode>
+					<StartDate>2004-02-16</StartDate>
+				</EmploymentStatus>
+			</Employment>
+		<!-- 
+
+        Bernadette's Medicare Status and Part D Info 
+
+-->
+			<Medicare>
+								<MedicareEntitlement>
+								
+						<IsEligible>yes</IsEligible>
+				<EntitlementReason>age</EntitlementReason>					
+						<StartDate>2007-02-01</StartDate>
+					</MedicareEntitlement>
+
+				<MedicarePartA>
+						<IsEnrolled>unknown</IsEnrolled>
+				</MedicarePartA>
+				<MedicarePartB>
+						<IsEnrolled>unknown</IsEnrolled>
+				</MedicarePartB>
+				<MedicarePartD>
+						<IsEnrolled>yes</IsEnrolled>
+					<MedicareDrugPlanInfo>
+						<UniqueBenefitOptionId validFrom="2007-02-01">
+							<IdValue>MEDOPTION001</IdValue>
+						</UniqueBenefitOptionId>
+						<DrugPlanCoverage>
+							<DrugPlanCoverageType>Part D Subsidy Program</DrugPlanCoverageType>
+							<StartDate>2007-02-01</StartDate>
+						</DrugPlanCoverage>
+					</MedicareDrugPlanInfo>
+				</MedicarePartD>
+			</Medicare>
+<!--    End    Bernadette's Medicare Status and Part D Info  -->			
+			<Dependent relationshipCode="Spouse">
+				<Person>
+					<IdentificationCode>
+						<IdValue name="Social Security Number">999-01-2346</IdValue>
+					</IdentificationCode>
+					<PersonName>
+						<GivenName>Jacob</GivenName>
+						<MiddleName>Lewis</MiddleName>
+						<FamilyName>Kleghorn</FamilyName>
+					</PersonName>
+					<Gender>1</Gender>
+					<DateOfBirth>1943-10-02</DateOfBirth>
+					<MaritalStatus>
+						<MaritalStatusCode>Married</MaritalStatusCode>
+						<StartDate>1962-08-03</StartDate>
+					</MaritalStatus>
+				</Person>
+				<Coverage>
+					<TierCoverage type="Health Maintenance Organization">
+						<GroupNumber>RB6705</GroupNumber>
+						<COBRAStatus>non-COBRA</COBRAStatus>
+						<StartDate>2004-02-16</StartDate>
+						<EndDate>2008-10-02</EndDate>
+						<CoverageLevel>
+							<CoverageLevelCode>Employee and Spouse</CoverageLevelCode>
+							<StartDate>2004-02-16</StartDate>
+						</CoverageLevel>
+						<CoverageLevel>
+							<CoverageLevelCode>Spouse Only</CoverageLevelCode>
+							<StartDate>2007-02-16</StartDate>
+						</CoverageLevel>
+					</TierCoverage>
+					<TierCoverage type="Medicare Risk">
+						<GroupNumber>MC6705</GroupNumber>
+						<COBRAStatus>non-COBRA</COBRAStatus>
+						<StartDate>2008-10-02</StartDate>
+						<CoverageLevel>
+							<CoverageLevelCode>Employee and Spouse</CoverageLevelCode>
+							<StartDate>2008-10-02</StartDate>
+						</CoverageLevel>
+					</TierCoverage>
+				</Coverage>
+         <Medicare>
+					<MedicareEntitlement>
+						<IsEligible>yes</IsEligible>
+				<EntitlementReason>age</EntitlementReason>
+						<StartDate>2008-10-01</StartDate>
+					</MedicareEntitlement>
+				<MedicarePartD>
+						<IsEnrolled>yes</IsEnrolled>
+						<StartDate>2008-11-01</StartDate>
+					<MedicareDrugPlanInfo>
+						<DrugPlanCoverage>
+							<DrugPlanCoverageType>Not Participating Subsidy</DrugPlanCoverageType>
+							<StartDate>2008-11-01</StartDate>
+						</DrugPlanCoverage>
+					</MedicareDrugPlanInfo>
+				</MedicarePartD>
+			</Medicare>			
+			</Dependent>
+		</Subscriber>
+	</Organization>
+</Enrollment>

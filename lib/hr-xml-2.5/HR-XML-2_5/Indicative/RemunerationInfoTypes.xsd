@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema xmlns="http://ns.hr-xml.org/2007-04-15" xmlns:xsd="http://www.w3.org/2001/XMLSchema" targetNamespace="http://ns.hr-xml.org/2007-04-15" elementFormDefault="qualified" attributeFormDefault="unqualified">
+
+	<xsd:include schemaLocation="../CPO/DateTimeDataTypes.xsd"/>
+	<xsd:include schemaLocation="../CPO/ISOUtilities.xsd"/>
+	<xsd:include schemaLocation="../CPO/UserArea.xsd"/>
+
+	<xsd:complexType name="IndRemunerationInfoType">
+		<xsd:sequence>
+			<xsd:element name="RemunerationDetail" type="IndRemunerationDetailType" minOccurs="0" maxOccurs="unbounded"/>
+			<xsd:element name="PayCycleFrequency" type="IndPayrollCycleFrequencyType" minOccurs="0"/>
+			<xsd:element name="PayGroup" type="IndPayGroupType" minOccurs="0"/>
+			<xsd:element name="UserArea" type="UserAreaType" minOccurs="0"/>
+		</xsd:sequence>
+	</xsd:complexType>
+
+	<xsd:complexType name="IndRemunerationDetailType">
+		<xsd:sequence>
+			<xsd:element name="PayRate" type="IndPayRateType"/>
+			<xsd:element name="PayRateFrequency" type="IndPayRateFrequencyEnumExtensionType"/>
+			<xsd:element name="RemunerationType" type="IndRemunerationEnumExtensionType"/>
+		</xsd:sequence>
+		<xsd:attribute name="validFrom" type="LocalDateType"/>
+		<xsd:attribute name="validTo" type="LocalDateType"/>
+	</xsd:complexType>
+
+	<xsd:complexType name="IndPayRateType">
+		<xsd:simpleContent>
+			<xsd:extension base="xsd:decimal">
+				<xsd:attribute name="currencyCode" type="CurrencyCodeType"/>
+			</xsd:extension>
+		</xsd:simpleContent>
+	</xsd:complexType>
+
+	<xsd:simpleType name="IndPayRateFrequencyEnumType">
+		<xsd:restriction base="xsd:string">
+			<xsd:enumeration value="Hourly"/>
+			<xsd:enumeration value="Daily"/>
+			<xsd:enumeration value="Weekly"/>
+			<xsd:enumeration value="Every2Weeks"/>
+			<xsd:enumeration value="SemiMonthly"/>
+			<xsd:enumeration value="Monthly"/>
+			<xsd:enumeration value="Every2Months"/>
+			<xsd:enumeration value="Every4Weeks"/>
+			<xsd:enumeration value="Quarterly"/>
+			<xsd:enumeration value="SemiAnnually"/>
+			<xsd:enumeration value="Annually"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+
+	<xsd:complexType name="IndPayRateFrequencyEnumExtensionType">
+		<xsd:choice>
+			<xsd:element name="StandardValue" type="IndPayRateFrequencyEnumType" minOccurs="0"/>
+			<xsd:element name="NonStandardValue" type="xsd:string" minOccurs="0"/>
+		</xsd:choice>
+	</xsd:complexType>
+
+	<xsd:simpleType name="IndRemunerationEnumType">
+		<xsd:restriction base="xsd:string">
+			<xsd:enumeration value="BasePay"/>
+			<xsd:enumeration value="Commission"/>
+			<xsd:enumeration value="Bonus"/>
+			<xsd:enumeration value="Incentive"/>
+			<xsd:enumeration value="ShiftDifferential"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+
+	<xsd:complexType name="IndRemunerationEnumExtensionType">
+		<xsd:choice>
+			<xsd:element name="StandardValue" type="IndRemunerationEnumType" minOccurs="0"/>
+			<xsd:element name="NonStandardValue" type="xsd:string" minOccurs="0"/>
+		</xsd:choice>
+	</xsd:complexType>
+
+	<xsd:complexType name="IndPayGroupType">
+		<xsd:simpleContent>
+			<xsd:extension base="xsd:string">
+				<xsd:attribute name="validFrom" type="LocalDateType"/>
+				<xsd:attribute name="validTo" type="LocalDateType"/>
+			</xsd:extension>
+		</xsd:simpleContent>
+	</xsd:complexType>
+
+	<xsd:simpleType name="IndPayrollCycleFrequencyEnumType">
+		<xsd:restriction base="xsd:string">
+			<xsd:enumeration value="Weekly"/>
+			<xsd:enumeration value="Every2Weeks"/>
+			<xsd:enumeration value="SemiMonthly"/>
+			<xsd:enumeration value="Monthly"/>
+			<xsd:enumeration value="Every 2 months"/>
+			<xsd:enumeration value="MonthWeek1"/>
+			<xsd:enumeration value="MonthWeek2"/>
+			<xsd:enumeration value="MonthWeek3"/>
+			<xsd:enumeration value="MonthWeek4"/>
+			<xsd:enumeration value="MonthWeek5"/>
+			<xsd:enumeration value="MonthWeekLast"/>
+			<xsd:enumeration value="Quarterly"/>
+			<xsd:enumeration value="SemiAnnually"/>
+			<xsd:enumeration value="Annually"/>
+			<xsd:enumeration value="Once"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+
+	<xsd:complexType name="IndPayrollCycleFrequencyEnumExtensionType">
+		<xsd:choice>
+			<xsd:element name="StandardValue" type="IndPayrollCycleFrequencyEnumType" minOccurs="0"/>
+			<xsd:element name="NonStandardValue" type="xsd:string" minOccurs="0"/>
+		</xsd:choice>
+	</xsd:complexType>
+
+	<xsd:complexType name="IndPayrollCycleFrequencyType">
+		<xsd:complexContent>
+			<xsd:extension base="IndPayrollCycleFrequencyEnumExtensionType">
+				<xsd:attribute name="validFrom" type="LocalDateType"/>
+				<xsd:attribute name="validTo" type="LocalDateType"/>
+			</xsd:extension>
+		</xsd:complexContent>
+	</xsd:complexType>
+
+</xsd:schema>

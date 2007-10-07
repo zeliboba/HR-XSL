@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--This example portrays a pizza restaurant with its parent company (Pizza Corp). It also contains two organizational units. One shows the logical relationship between the pizza restaurant and a supplier. The other shows a functional relationship between the pizza restaurant and its staff.-->
+<Organization xmlns="http://ns.hr-xml.org/2007-04-15" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://ns.hr-xml.org/2007-04-15
+Organization.xsd">
+	<OrganizationName>Joe Ricci Restaurant</OrganizationName>
+	<OrganizationId>
+		<IdValue>333-99-1234</IdValue>
+	</OrganizationId>
+	<TaxId>
+		<IdValue>333-88-5678</IdValue>
+	</TaxId>
+	<DunsNumber dunsNumberType="standard Duns">911780201</DunsNumber>
+	<IsPublicCompany>true</IsPublicCompany>
+	<Stock>
+		<Id>
+			<IdValue name="CUSIP">554100210</IdValue>
+		</Id>
+		<Symbol>AAA</Symbol>
+		<Exchange>NYSE</Exchange>
+	</Stock>
+	<MissionStatement>To provide a quality product while increasing our bottom line.</MissionStatement>
+	<ValueStatement>We value our customers and will make the best pizza.</ValueStatement>
+	<InternetDomainName primaryIndicator="true">pizzacorp.com</InternetDomainName>
+	<InternetDomainName primaryIndicator="false">joespizza.com</InternetDomainName>
+	<DoingBusinessAs>Joe's Pizza</DoingBusinessAs>
+	<LegalClassification countryCode="US" ownership="Public">Franchise</LegalClassification>
+	<IndustryCode primaryIndicator="true" classificationName="NAICS">722110</IndustryCode>
+	<Headcount>21</Headcount>
+	<Description>Joe's Pizza was formerly known as Joe Ricci Restaurant until it was sold to Pizza Corp in 1992.</Description>
+	<ContactInfo purpose="x:Owner">
+		<ContactName>
+			<FormattedName>Joe Ricci</FormattedName>
+		</ContactName>
+	</ContactInfo>
+	<RelatedOrganization relationship="Parent">
+		<OrganizationName>Pizza Corp.</OrganizationName>
+		<TaxId>
+			<IdValue>444-91-1010</IdValue>
+		</TaxId>
+		<DunsNumber dunsNumberType="standard Duns">911780201</DunsNumber>
+		<InternetDomainName primaryIndicator="true">pizzacorp.com</InternetDomainName>
+		<LegalClassification countryCode="US" ownership="Public">Corporation</LegalClassification>
+		<IndustryCode primaryIndicator="true" classificationName="NAICS">722110</IndustryCode>
+		<Headcount>8653</Headcount>
+		<Description>Pizza Corp. was founded in 1978 and operates 63 franchises.</Description>
+		<ContactInfo purpose="x:Owner">
+			<ContactName>
+				<FormattedName>Susan Marriott</FormattedName>
+			</ContactName>
+		</ContactInfo>
+	</RelatedOrganization>
+	<OrganizationalUnit typeOfGroup="Division" hierarchicalRole="Logical">
+		<OrganizationalUnitName>Chicago</OrganizationalUnitName>
+		<Description>Sales and inventory of the north and south divisions may be combined in some cases. </Description>
+		<AccountingCode description="business unit">333991234CHI</AccountingCode>
+	</OrganizationalUnit>
+	<OrganizationalUnit typeOfGroup="Team" hierarchicalRole="Functional">
+		<OrganizationalUnitName>Wait Staff</OrganizationalUnitName>
+		<Description>Wait staff for Joe's Pizza</Description>
+		<WorkSite>
+			<WorkSiteName>Restaurant</WorkSiteName>
+			<ParkingInstructions>Park behind restaurant.</ParkingInstructions>
+			<WorkSiteEnvironment>
+				<EnvironmentName>Dining Area</EnvironmentName>
+				<Considerations>
+					<DressCode suppliedByOrganization="true">x:Apron</DressCode>
+					<DressCode suppliedByOrganization="false">x:Long Hair Pulled Back</DressCode>
+				</Considerations>
+			</WorkSiteEnvironment>
+		</WorkSite>
+		<PersonMember>
+			<PersonName>
+				<FormattedName>Mary Smith</FormattedName>
+			</PersonName>
+			<PersonRole leader="true">
+				<RoleName>Evening Shift Supervisor</RoleName>
+			</PersonRole>
+		</PersonMember>
+	</OrganizationalUnit>
+</Organization>

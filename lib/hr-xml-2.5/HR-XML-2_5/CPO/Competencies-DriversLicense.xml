@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Competency description="Licensed to drive" name="Drivers License" xmlns="http://ns.hr-xml.org/2007-04-15" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://ns.hr-xml.org/2007-04-15
+Competencies.xsd">
+	<CompetencyId description="Competency id is based on Acme internal taxonomy" id="233" idOwner="Acme Company"/>
+	<TaxonomyId description="My ids are based on Acme Company Taxonomy" idOwner="Acme Company" id="1"/>
+	<CompetencyEvidence dateOfIncident="1986-12-23" name="License" typeDescription="Drivers License" typeId="231">
+		<EvidenceId description="Valid Minnesota Drivers License" id="W9D X8S8" idOwner="Minnesota DMV"/>
+		<NumericValue description="Scale of 0 or 1" maxValue="1" minValue="0">1</NumericValue>
+	</CompetencyEvidence>
+</Competency>

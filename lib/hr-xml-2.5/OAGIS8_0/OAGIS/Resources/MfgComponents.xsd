@@ -1,0 +1,992 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+    License information for this file is provided in LICENSE.TXT
+    For support, more information, or to report implementation bugs, 
+    please contact the Open Applications Group at xml@openapplications.org 
+     
+    ** Revision: 8.0 **
+    ** Date: 05 April 2002 **
+    Open Applications Group XSD
+    Copyright 1998-2002, All Rights Reserved
+    
+    Name: MfgComponents.xsd
+-->
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns="http://www.openapplications.org/oagis" targetNamespace="http://www.openapplications.org/oagis" elementFormDefault="qualified">
+        <xs:include schemaLocation="Components.xsd"/>
+<!--Manufacturing Components-->
+<!--Manufacturing Fields-->
+        <xs:simpleType name="KindOfResource">
+                <xs:restriction base="xs:string"/>
+        </xs:simpleType>
+        <xs:simpleType name="MachineId">
+                <xs:restriction base="xs:string"/>
+        </xs:simpleType>
+        <xs:simpleType name="ToolId">
+                <xs:restriction base="xs:string"/>
+        </xs:simpleType>
+        <xs:simpleType name="ToolClassification">
+                <xs:restriction base="Classification"/>
+        </xs:simpleType>
+        <xs:simpleType name="MachineClassification">
+                <xs:restriction base="Classification"/>
+        </xs:simpleType>
+        <xs:complexType name="OperationId">
+                <xs:annotation>
+                        <xs:documentation source="http://www.openapplications.org/oagis">Uniquly identifies an operation.</xs:documentation>
+                </xs:annotation>
+                <xs:simpleContent>
+                        <xs:extension base="Id"/>
+                </xs:simpleContent>
+        </xs:complexType>
+        <xs:complexType name="OperationName">
+                <xs:annotation>
+                        <xs:documentation source="http://www.openapplications.org/oagis">Is the formal name of a Manufacturing Shop Floor Operation.</xs:documentation>
+                </xs:annotation>
+                <xs:simpleContent>
+                        <xs:extension base="Name"/>
+                </xs:simpleContent>
+        </xs:complexType>
+        <xs:complexType name="OperationGroupType">
+                <xs:annotation>
+                        <xs:documentation source="http://www.openapplications.org/oagis">Is the operational grouping type.
+
+Examples:
+Alternate – any of these may be used,
+Parallel – non-sequential – all must be done but order does not matter,	Sequential – these items must be done one after the other and time is critical</xs:documentation>
+                </xs:annotation>
+        </xs:complexType>
+        <xs:simpleType name="SequenceCode">
+                <xs:restriction base="Code"/>
+        </xs:simpleType>
+        <xs:simpleType name="OperationSequenceCode">
+                <xs:annotation>
+                        <xs:documentation source="http://www.openapplications.org/oagis">Is the sequence code associated with a operation.</xs:documentation>
+                </xs:annotation>
+                <xs:restriction base="SequenceCode"/>
+        </xs:simpleType>
+        <xs:complexType name="StepId">
+                <xs:annotation>
+                        <xs:documentation source="http://www.openapplications.org/oagis">Uniquily identifies the Step of an Operation.  (typically am Manufacturing Operation).</xs:documentation>
+                </xs:annotation>
+                <xs:simpleContent>
+                        <xs:extension base="Id"/>
+                </xs:simpleContent>
+        </xs:complexType>
+        <xs:simpleType name="StepType">
+                <xs:annotation>
+                        <xs:documentation source="http://www.openapplications.org/oagis">Identifies the type of step with in an Operation. (typically am Manufacturing Operation).</xs:documentation>
+                </xs:annotation>
+                <xs:restriction base="Type"/>
+        </xs:simpleType>
+        <xs:simpleType name="Kanban">
+                <xs:annotation>
+                        <xs:documentation source="http://www.openapplications.org/oagis">Is the reference number associated with in-plant routing information.</xs:documentation>
+                </xs:annotation>
+                <xs:restriction base="Code"/>
+        </xs:simpleType>
+        <xs:simpleType name="BucketName">
+                <xs:restriction base="xs:string"/>
+        </xs:simpleType>
+        <xs:complexType name="Dependences">
+                <xs:simpleContent>
+                        <xs:extension base="xs:string"/>
+                </xs:simpleContent>
+        </xs:complexType>
+<!---->
+<!---->
+        <xs:complexType name="WIPOperationReference">
+                <xs:annotation>
+                        <xs:documentation source="http://www.openapplications.org/oagis">Is a reference to a work-in-process operation.</xs:documentation>
+                </xs:annotation>
+                <xs:complexContent>
+                        <xs:extension base="DocumentReference">
+                                <xs:sequence>
+                                        <xs:element name="OperationId" type="OperationId" minOccurs="0">
+                                                <xs:annotation>
+                                                        <xs:documentation source="http://www.openapplications.org/oagis">Is the identifier of a specific operation.  Possible examples of use are in the Manufacturing Routing or the Maintenance Order. or WorkINProcessOperation. </xs:documentation>
+                                                </xs:annotation>
+                                        </xs:element>
+                                        <xs:element name="OperationName" type="OperationName" minOccurs="0">
+                                                <xs:annotation>
+                                                        <xs:documentation source="http://www.openapplications.org/oagis">Is the name of the operation.</xs:documentation>
+                                                </xs:annotation>
+                                        </xs:element>
+                                        <xs:element name="OperationGroupName" type="OperationName" minOccurs="0">
+                                                <xs:annotation>
+                                                        <xs:documentation source="http://www.openapplications.org/oagis">Is the name of an Operation Group.</xs:documentation>
+                                                </xs:annotation>
+                                        </xs:element>
+                                        <xs:element name="OperationSequence" type="OperationSequenceCode" minOccurs="0">
+                                                <xs:annotation>
+                                                        <xs:documentation source="http://www.openapplications.org/oagis">Identifies the operation sequence.</xs:documentation>
+                                                </xs:annotation>
+                                        </xs:element>
+                                        <xs:element name="SuffixId" type="Id" minOccurs="0">
+                                                <xs:annotation>
+                                                        <xs:documentation source="http://www.openapplications.org/oagis">This identifies a sub-component of the Production Order, Job Order, or Work Order, etc. being performed. The sub-component may have been split from the original Order. For Example:An order for 30 widgets, where 20 can be billed as "completed" and the remaining 10 can be moved to a sub-component of the same Order to be finished and billed for at a later time.  The sub-component may identify one of many sub-components (each an Order in its own right) that may make up a "master" Order. Kind of a parent/child relationship related collection</xs:documentation>
+                                                </xs:annotation>
+                                        </xs:element>
+                                        <xs:element name="StepType" type="StepType" minOccurs="0">
+                                                <xs:annotation>
+                                                        <xs:documentation source="http://www.openapplications.org/oagis">Identifies the step of the operation being performed.</xs:documentation>
+                                                </xs:annotation>
+                                        </xs:element>
+                                        <xs:element ref="UserArea" minOccurs="0"/>
+                                </xs:sequence>
+                        </xs:extension>
+                </xs:complexContent>
+        </xs:complexType>
+        <xs:element name="OperationReference" type="WIPOperationReference" substitutionGroup="MfgDocumentReference">
+                <xs:annotation>
+                        <xs:documentation source="http://www.openapplications.org/oagis">Is a reference to an associated work-in-process operation.</xs:documentation>
+                </xs:annotation>
+        </xs:element>
+        <xs:complexType name="WIPOperationBase">
+                <xs:sequence>
+                        <xs:choice>
+                                <xs:sequence>
+                                        <xs:element name="OperationId" type="Id" minOccurs="0">
+                                                <xs:annotation>
+                                                        <xs:documentation source="http://www.openapplications.org/oagis">Is the uniques Operation identifier.</xs:documentation>
+                                                </xs:annotation>
+                                        </xs:element>
+                                        <xs:element name="Sequence" type="OperationSequenceCode" minOccurs="0">
+                                                <xs:annotation>
+                                                        <xs:documentation source="http://www.openapplications.org/oagis">Is the sequence code in which this operation is to be performed.</xs:documentation>
+                                                </xs:annotation>
+                                        </xs:element>
+                                </xs:sequence>
+                                <xs:element name="OperationGroupName" type="OperationName" minOccurs="0">
+                                        <xs:annotation>
+                                                <xs:documentation source="http://www.openapplications.org/oagis">Is the name of an Operation Group.</xs:documentation>
+                                        </xs:annotation>
+                                </xs:element>
+                        </xs:choice>
+                        <xs:element name="ContainerId" type="Id" minOccurs="0">
+                                <xs:annotation>
+                                        <xs:documentation source="http://www.openapplications.org/oagis">Identifies the container that the Operation uses.</xs:documentation>
+                                </xs:annotation>
+                        </xs:element>
+                        <xs:element name="ContainerType" type="Type" minOccurs="0">
+                                <xs:annotation>
+                                        <xs:documentation source="http://www.openapplications.org/oagis">Identifies the type of the container that the operation uses.</xs:documentation>
+                                </xs:annotation>
+                        </xs:element>
+                        <xs:element name="Note" type="Note" minOccurs="0" maxOccurs="unbounded">
+                                <xs:annotation>
+                                        <xs:documentation source="http://www.openapplications.org/oagis">Free form notes about the operation.</xs:documentation>
+                                </xs:annotation>
+                        </xs:element>
+                        <xs:element name="InQueueId" type="LocationId" minOccurs="0">
+                                <xs:annotation>
+                                        <xs:documentation source="http://www.openapplications.org/oagis">Is the identifier of a location that the operation receives items from.</xs:documentation>
+                                </xs:annotation>
+                        </xs:element>
+                        <xs:element name="OutQueueId" type="LocationId" minOccurs="0">
+                                <xs:annotation>
+                                        <xs:documentation source="http://www.openapplications.org/oagis">Is the identifier of a location that the operation places items to.</xs:documentation>
+                                </xs:annotation>
+                        </xs:element>
+                        <xs:element name="Multiplier" type="Factor" minOccurs="0">
+                                <xs:annotation>
+                                        <xs:documentation source="http://www.openapplications.org/oagis">The multiplier indicates the number of times a particular operation step is performed.  For example, it is typically used to indicate testing of some subset of the total quantity to be produced on a production/manufacturing order.A specific example is a Multiplier value of 0.10 in operation TEST-CIRCUIT-BOARD would indicate that 10 per cent of the total order quantity is to be tested.It could also be used to indicate that an operation is performed more than once, e.g. HEAT-TREAT with a Multiplier value of 2.0 would indicate that the entire order quantity is to be HEAT-TREATED two times.The multiplier can also indicate a conversion factor or the number of times something occurs or is to be performed.  The value may be a whole or fractional number.</xs:documentation>
+                                </xs:annotation>
+                        </xs:element>
+                        <xs:element name="TerminationInd" type="Indicator" minOccurs="0">
+                                <xs:annotation>
+                                        <xs:documentation source="http://www.openapplications.org/oagis">Indicates whether this is a terminating opreation for this routing,</xs:documentation>
+                                </xs:annotation>
+                        </xs:element>
+                </xs:sequence>
+        </xs:complexType>
+<!---->
+<!--Mfg Document References-->
+        <xs:element name="MfgDocumentReferences" type="MfgDocumentReferences">
+                <xs:annotation>
+                        <xs:documentation source="http://www.openapplications.org/oagis">Provides references to other manufacturing related documents.</xs:documentation>
+                </xs:annotation>
+        </xs:element>
+        <xs:complexType name="MfgDocumentReferences">
+                <xs:complexContent>
+                        <xs:extension base="DocumentReference">
+                                <xs:sequence>
+                                        <xs:element ref="MfgDocumentReference" minOccurs="0" maxOccurs="unbounded"/>
+                                </xs:sequence>
+                        </xs:extension>
+                </xs:complexContent>
+        </xs:complexType>
+        <xs:element name="MfgDocumentReference" type="DocumentReference" abstract="true" substitutionGroup="DocumentReference"/>
+        <xs:complexType name="RouteDocumentReference">
+                <xs:complexContent>
+                        <xs:extension base="DocumentReference">
+                                <xs:sequence>
+                                        <xs:element name="DocumentId" type="PartyRouteIdType" minOccurs="0"/>
+                                        <xs:element name="DocumentDate" type="DateTimeAny" minOccurs="0">
+                                                <xs:annotation>
+                                                        <xs:documentation source="http://www.openapplications.org/oagis">The Datetime of the referenced document.</xs:documentation>
+                                                </xs:annotation>
+                                        </xs:element>
+                                        <xs:group ref="CommonReference" minOccurs="0"/>
+                                        <xs:element ref="OperationReference" minOccurs="0" maxOccurs="unbounded"/>
+                                        <xs:element ref="UserArea" minOccurs="0"/>
+                                </xs:sequence>
+                        </xs:extension>
+                </xs:complexContent>
+        </xs:complexType>
+        <xs:complexType name="ProductionOrderDocumentReference">
+                <xs:complexContent>
+                        <xs:extension base="DocumentReference">
+                                <xs:sequence>
+                                        <xs:element name="DocumentId" type="PartyProductionOrderIdType" minOccurs="0"/>
+                                        <xs:element name="DocumentDate" type="DateTimeAny" minOccurs="0">
+                                                <xs:annotation>
+                                                        <xs:documentation source="http://www.openapplications.org/oagis">The Datetime of the referenced document.</xs:documentation>
+                                                </xs:annotation>
+                                        </xs:element>
+                                        <xs:element name="SuffixId" type="Id" minOccurs="0">
+                                                <xs:annotation>
+                                                        <xs:documentation source="http://www.openapplications.org/oagis">This identifies a sub-component of the Production Order, Job Order, or Work Order, etc. being performed. The sub-component may have been split from the original Order. For Example:An order for 30 widgets, where 20 can be billed as "completed" and the remaining 10 can be moved to a sub-component of the same Order to be finished and billed for at a later time.  The sub-component may identify one of many sub-components (each an Order in its own right) that may make up a "master" Order. Kind of a parent/child relationship related collection</xs:documentation>
+                                                </xs:annotation>
+                                        </xs:element>
+                                        <xs:group ref="CommonReference" minOccurs="0"/>
+                                        <xs:element name="LineNumber" type="LineNumber" minOccurs="0"/>
+                                        <xs:element name="ItemId" type="PartyAssignedItemId" minOccurs="0"/>
+                                        <xs:element ref="Site" minOccurs="0" maxOccurs="unbounded"/>
+                                        <xs:element ref="LotSerial" minOccurs="0"/>
+                                        <xs:element ref="UserArea" minOccurs="0"/>
+                                </xs:sequence>
+                        </xs:extension>
+                </xs:complexContent>
+        </xs:complexType>
+        <xs:complexType name="BOMDocumentReference">
+                <xs:complexContent>
+                        <xs:extension base="DocumentReference">
+                                <xs:sequence>
+                                        <xs:element name="DocumentId" type="PartyGenericIdType" minOccurs="0">
+                                                <xs:annotation>
+                                                        <xs:documentation source="http://www.openapplications.org/oagis">Is the BOM identification of the BOM reference.</xs:documentation>
+                                                </xs:annotation>
+                                        </xs:element>
+                                        <xs:element name="EffectivePeriod" type="TimePeriod" minOccurs="0">
+                                                <xs:annotation>
+                                                        <xs:documentation source="http://www.openapplications.org/oagis">Is the effective time period for the BOM being referenced.</xs:documentation>
+                                                </xs:annotation>
+                                        </xs:element>
+                                        <xs:element ref="AlternateBOMReference" minOccurs="0"/>
+                                        <xs:group ref="CommonReference" minOccurs="0"/>
+                                        <xs:element ref="UserArea" minOccurs="0"/>
+                                </xs:sequence>
+                        </xs:extension>
+                </xs:complexContent>
+        </xs:complexType>
+        <xs:element name="AlternateBOMReference" type="BOMDocumentReference">
+                <xs:annotation>
+                        <xs:documentation source="http://www.openapplications.org/oagis">Identifies an alternate BOM that maybe used in place of the one being referenced in this particular instance.</xs:documentation>
+                </xs:annotation>
+        </xs:element>
+        <xs:element name="BOMDocumentReference" type="BOMDocumentReference" substitutionGroup="MfgDocumentReference">
+                <xs:annotation>
+                        <xs:documentation source="http://www.openapplications.org/oagis">Is a reference to a Bill-O-Material Document.</xs:documentation>
+                </xs:annotation>
+        </xs:element>
+        <xs:element name="ProductionOrderReference" type="ProductionOrderDocumentReference" substitutionGroup="MfgDocumentReference">
+                <xs:annotation>
+                        <xs:documentation source="http://www.openapplications.org/oagis">Is reference to a ProductionOrder</xs:documentation>
+                </xs:annotation>
+        </xs:element>
+        <xs:element name="RouteDocumentReference" type="RouteDocumentReference" substitutionGroup="MfgDocumentReference">
+                <xs:annotation>
+                        <xs:documentation source="http://www.openapplications.org/oagis">Reference to a Routing.</xs:documentation>
+                </xs:annotation>
+        </xs:element>
+        <xs:element name="WorkScheduleReference" type="GenericDocumentReference" substitutionGroup="MfgDocumentReference"/>
+<!---->
+<!--Operation Components-->
+        <xs:element name="Operation" type="Operation">
+                <xs:annotation>
+                        <xs:documentation source="http://www.openapplications.org/oagis">Information that describes the operation to be performed. </xs:documentation>
+                </xs:annotation>
+        </xs:element>
+        <xs:complexType name="Operation">
+                <xs:sequence>
+                        <xs:element name="OperationId" type="OperationId" minOccurs="0">
+                                <xs:annotation>
+                                        <xs:documentation source="http://www.openapplications.org/oagis">Is the identifier of the operation.</xs:documentation>
+                                </xs:annotation>
+                        </xs:element>
+                        <xs:element name="CostType" type="CostType" minOccurs="0">
+                                <xs:annotation>
+                                        <xs:documentation source="http://www.openapplications.org/oagis">Is the.methodology by which the value of an item is determined.
+
+Values are:
+Standard
+Moving Average
+LIFO - last in first out.
+FIFO - first in first out.</xs:documentation>
+                                </xs:annotation>
+                        </xs:element>
+                        <xs:element name="ContainerType" type="Type" minOccurs="0">
+                                <xs:annotation>
+                                        <xs:documentation source="http://www.openapplications.org/oagis">Identifies the type of container used to place the items that result from the operation.</xs:documentation>
+                                </xs:annotation>
+                        </xs:element>
+                        <xs:element name="Department" type="Department" minOccurs="0">
+                                <xs:annotation>
+                                        <xs:documentation source="http://www.openapplications.org/oagis">Indicates the department in which the operation is performed.</xs:documentation>
+                                </xs:annotation>
+                        </xs:element>
+                        <xs:element name="Description" type="Description" minOccurs="0" maxOccurs="unbounded">
+                                <xs:annotation>
+                                        <xs:documentation source="http://www.openapplications.org/oagis">Free-form description of the operation.</xs:documentation>
+                                </xs:annotation>
+                        </xs:element>
+                        <xs:element name="Note" type="Note" minOccurs="0" maxOccurs="unbounded">
+                                <xs:annotation>
+                                        <xs:documentation source="http://www.openapplications.org/oagis">Is a free-form note about the operation.</xs:documentation>
+                                </xs:annotation>
+                        </xs:element>
+                        <xs:element name="MachineSetupDependencies" type="Dependences" minOccurs="0">
+                                <xs:annotation>
+                                        <xs:documentation source="http://www.openapplications.org/oagis">Indicates whether the machine can be setup for the operation early or whether setup must happen at a specific time depending upon conditions.
+
+Possible values:
+- Early	
+- NotDelayed	
+- DelayedByPredicessor
+- DelayedByMaterial</xs:documentation>
+                                </xs:annotation>
+                        </xs:element>
+                        <xs:element name="Cost" type="Amount" minOccurs="0">
+                                <xs:annotation>
+                                        <xs:documentation source="http://www.openapplications.org/oagis">Identifies the cost of the operation on the General Ledger As such the currency used is the currency of the General Ledger.</xs:documentation>
+                                </xs:annotation>
+                        </xs:element>
+                        <xs:element name="OperationType" type="OperationType" minOccurs="0">
+                                <xs:annotation>
+                                        <xs:documentation source="http://www.openapplications.org/oagis">Is used to indicate how the rates are specified. </xs:documentation>
+                                </xs:annotation>
+                        </xs:element>
+                        <xs:element name="ProcessCode" type="Code" minOccurs="0">
+                                <xs:annotation>
+                                        <xs:documentation source="http://www.openapplications.org/oagis">Is a process code used for grouping like operations.
+Possible examples are:  Heat Treat, Dyeing</xs:documentation>
+                                </xs:annotation>
+                        </xs:element>
+                        <xs:element name="MaxParallelWorkTeamsQuantity" type="Quantity" minOccurs="0">
+                                <xs:annotation>
+                                        <xs:documentation source="http://www.openapplications.org/oagis">Defines a maximum number of parallel work teams allowed.</xs:documentation>
+                                </xs:annotation>
+                        </xs:element>
+                        <xs:element name="FixedRejectQuantity" type="Quantity" minOccurs="0">
+                                <xs:annotation>
+                                        <xs:documentation source="http://www.openapplications.org/oagis">This is the fixed number of parts that will be rejected during setup, or tear down of an operation.</xs:documentation>
+                                </xs:annotation>
+                        </xs:element>
+                        <xs:element name="RejectedQuantity" type="Quantity" minOccurs="0">
+                                <xs:annotation>
+                                        <xs:documentation source="http://www.openapplications.org/oagis">This is the quantity of product that is rejected as the result of an inspection or other business process</xs:documentation>
+                                </xs:annotation>
+                        </xs:element>
+                        <xs:group ref="OperationGrouping" minOccurs="0"/>
+                        <xs:element name="SaveSetupInd" type="Indicator" minOccurs="0">
+                                <xs:annotation>
+                                        <xs:documentation source="http://www.openapplications.org/oagis">Indicates that time can be saved by running this operation multiple times.  </xs:documentation>
+                                        <xs:documentation source="http://www.openapplications.org/oagis"/>
+                                </xs:annotation>
+                        </xs:element>
+                        <xs:element name="Site" type="LocationId" minOccurs="0" maxOccurs="unbounded">
+                                <xs:annotation>
+                                        <xs:documentation source="http://www.openapplications.org/oagis">Identifies the Location that the work is done.</xs:documentation>
+                                </xs:annotation>
+                        </xs:element>
+                        <xs:element name="TrackingInd" type="Indicator" minOccurs="0">
+                                <xs:annotation>
+                                        <xs:documentation source="http://www.openapplications.org/oagis">Indicates whether the operation should be tracked.</xs:documentation>
+                                </xs:annotation>
+                        </xs:element>
+                        <xs:element ref="DocumentReferences" minOccurs="0" maxOccurs="unbounded"/>
+                        <xs:element ref="QualifiedResource" minOccurs="0" maxOccurs="unbounded"/>
+                        <xs:element ref="Charges" minOccurs="0"/>
+                        <xs:element ref="Distribution" minOccurs="0" maxOccurs="unbounded"/>
+                        <xs:element ref="Step" minOccurs="0" maxOccurs="unbounded"/>
+                        <xs:element ref="UserArea" minOccurs="0"/>
+                </xs:sequence>
+        </xs:complexType>
+        <xs:group name="OperationGrouping">
+                <xs:sequence>
+                        <xs:element name="BatchSizeQuantity" type="Quantity" minOccurs="0">
+                                <xs:annotation>
+                                        <xs:documentation source="http://www.openapplications.org/oagis">This is the quantity of a product or item made during a batch production run or the amount of material produced by the Operation being defined.  An example would be how many cookies produced by a particular Operation..</xs:documentation>
+                                </xs:annotation>
+                        </xs:element>
+                        <xs:element name="PerishedInOperationQuantity" type="Quantity" minOccurs="0">
+                                <xs:annotation>
+                                        <xs:documentation source="http://www.openapplications.org/oagis">Indicates the number of items that have perished within the operation</xs:documentation>
+                                </xs:annotation>
+                        </xs:element>
+                        <xs:element name="PerishedBetweenOperationsQuantity" type="Quantity" minOccurs="0">
+                                <xs:annotation>
+                                        <xs:documentation source="http://www.openapplications.org/oagis">Indicates the number of items that have perished between operations.</xs:documentation>
+                                </xs:annotation>
+                        </xs:element>
+                        <xs:element name="TransferLotQuantity" type="Quantity" minOccurs="0">
+                                <xs:annotation>
+                                        <xs:documentation source="http://www.openapplications.org/oagis">This is quantity to be transferred between operations within one lot.</xs:documentation>
+                                </xs:annotation>
+                        </xs:element>
+                        <xs:element name="SetupTime" type="Duration" minOccurs="0">
+                                <xs:annotation>
+                                        <xs:documentation source="http://www.openapplications.org/oagis">This is the time it takes to setup to run the operation. This is a duration time.</xs:documentation>
+                                </xs:annotation>
+                        </xs:element>
+                        <xs:element name="WaitTime" type="Duration" minOccurs="0">
+                                <xs:annotation>
+                                        <xs:documentation source="http://www.openapplications.org/oagis">This is the time that an operation can wait after being run. This is a duration of time.</xs:documentation>
+                                </xs:annotation>
+                        </xs:element>
+                        <xs:element name="TearDownTime" type="Duration" minOccurs="0">
+                                <xs:annotation>
+                                        <xs:documentation source="http://www.openapplications.org/oagis">This is the quantity of time it takes to tear down from running an operation.  The time it takes before setup for another operation can be performed. This is a duration time.</xs:documentation>
+                                </xs:annotation>
+                        </xs:element>
+                        <xs:choice minOccurs="0">
+                                <xs:element name="RunTime" type="Duration">
+                                        <xs:annotation>
+                                                <xs:documentation source="http://www.openapplications.org/oagis">This is the time per item to perform the specific operation.  This is a duration of time.</xs:documentation>
+                                        </xs:annotation>
+                                </xs:element>
+                                <xs:element name="BatchTime" type="Duration">
+                                        <xs:annotation>
+                                                <xs:documentation source="http://www.openapplications.org/oagis">This is a fixed duration of time indicating the time it takes to perform a batch.</xs:documentation>
+                                        </xs:annotation>
+                                </xs:element>
+                        </xs:choice>
+                        <xs:element name="QueueTime" type="Duration" minOccurs="0">
+                                <xs:annotation>
+                                        <xs:documentation source="http://www.openapplications.org/oagis">This is the time the job may be in the queue before being able to be run at the work center location. This is a duration of time.</xs:documentation>
+                                </xs:annotation>
+                        </xs:element>
+                        <xs:element name="MoveTime" type="Duration" minOccurs="0">
+                                <xs:annotation>
+                                        <xs:documentation source="http://www.openapplications.org/oagis">This is the time it takes move the part from one work center location to another work center location. This is a duration time.</xs:documentation>
+                                </xs:annotation>
+                        </xs:element>
+                        <xs:element name="FixedTime" type="Duration" minOccurs="0">
+                                <xs:annotation>
+                                        <xs:documentation source="http://www.openapplications.org/oagis">This is a fixed duration of time where the time it takes to perform is known and fixed prior to the operation being performed.  An example of this would be something sent out to be worked, where the duration of the process is known before it actually happens.</xs:documentation>
+                                </xs:annotation>
+                        </xs:element>
+                        <xs:element name="RejectPercent" type="Percent" minOccurs="0">
+                                <xs:annotation>
+                                        <xs:documentation source="http://www.openapplications.org/oagis">This is the percentage to be rejected.</xs:documentation>
+                                </xs:annotation>
+                        </xs:element>
+                </xs:sequence>
+        </xs:group>
+        <xs:complexType name="QualifiedResource">
+                <xs:sequence>
+                        <xs:element name="ResourceUse" type="Usage" minOccurs="0">
+                                <xs:annotation>
+                                        <xs:documentation source="http://www.openapplications.org/oagis">Ientifies what the following resources of an operation or step are to be used for.
+
+The following are a couple of examples: Setup, Teardown, Run</xs:documentation>
+                                </xs:annotation>
+                        </xs:element>
+                        <xs:element name="WorkCenter" type="WorkCenter" minOccurs="0">
+                                <xs:annotation>
+                                        <xs:documentation source="http://www.openapplications.org/oagis">Identifies the WorkCenter in which the work is to be performed.</xs:documentation>
+                                </xs:annotation>
+                        </xs:element>
+                        <xs:group ref="OperationGrouping"/>
+                        <xs:element name="CapacityPercent" type="Percent" minOccurs="0">
+                                <xs:annotation>
+                                        <xs:documentation source="http://www.openapplications.org/oagis">This is the percentage of resources capacity used</xs:documentation>
+                                </xs:annotation>
+                        </xs:element>
+                        <xs:element name="Duration" type="Duration" minOccurs="0">
+                                <xs:annotation>
+                                        <xs:documentation source="http://www.openapplications.org/oagis">The time that the resource is commited to the Operation or Step.</xs:documentation>
+                                </xs:annotation>
+                        </xs:element>
+                        <xs:element name="EmployeesRequiredQuantity" type="Quantity" minOccurs="0">
+                                <xs:annotation>
+                                        <xs:documentation source="http://www.openapplications.org/oagis">Indicates the number of employees required to run the resource. In case of a tool or machine resource.</xs:documentation>
+                                </xs:annotation>
+                        </xs:element>
+                        <xs:element name="ToolsRequiredQuantity" type="Quantity" minOccurs="0">
+                                <xs:annotation>
+                                        <xs:documentation source="http://www.openapplications.org/oagis">Indicates the number of tools required to perform the operation or step.</xs:documentation>
+                                </xs:annotation>
+                        </xs:element>
+                        <xs:element ref="Resources" minOccurs="0"/>
+                        <xs:element ref="UserArea" minOccurs="0"/>
+                </xs:sequence>
+        </xs:complexType>
+        <xs:complexType name="Step">
+                <xs:sequence>
+                        <xs:element name="Id" type="Id" minOccurs="0">
+                                <xs:annotation>
+                                        <xs:documentation source="http://www.openapplications.org/oagis">Is the step idenitifier.</xs:documentation>
+                                </xs:annotation>
+                        </xs:element>
+                        <xs:element name="StepType" type="Type" minOccurs="0">
+                                <xs:annotation>
+                                        <xs:documentation source="http://www.openapplications.org/oagis">Is a classification of the step</xs:documentation>
+                                </xs:annotation>
+                        </xs:element>
+                        <xs:element name="StepSequence" type="SequenceCode" minOccurs="0">
+                                <xs:annotation>
+                                        <xs:documentation source="http://www.openapplications.org/oagis">Identifies the sequence number which is used to indicate the sequence in which the steps are to be performed for the operateion.</xs:documentation>
+                                </xs:annotation>
+                        </xs:element>
+                        <xs:element name="Site" type="LocationId" minOccurs="0" maxOccurs="unbounded">
+                                <xs:annotation>
+                                        <xs:documentation source="http://www.openapplications.org/oagis">Identifies the site in which the step is performed.</xs:documentation>
+                                </xs:annotation>
+                        </xs:element>
+                        <xs:element name="Department" type="Department" minOccurs="0">
+                                <xs:annotation>
+                                        <xs:documentation source="http://www.openapplications.org/oagis">Identifies teh department in which the work is performed.</xs:documentation>
+                                </xs:annotation>
+                        </xs:element>
+                        <xs:element ref="QualifiedResource" minOccurs="0" maxOccurs="unbounded"/>
+                        <xs:element ref="Charges" minOccurs="0" maxOccurs="unbounded"/>
+                        <xs:element ref="Distribution" minOccurs="0" maxOccurs="unbounded"/>
+                        <xs:group ref="References" minOccurs="0"/>
+                        <xs:element ref="UserArea" minOccurs="0"/>
+                </xs:sequence>
+        </xs:complexType>
+        <xs:element name="QualifiedResource" type="QualifiedResource">
+                <xs:annotation>
+                        <xs:documentation source="http://www.openapplications.org/oagis">Information that describes the resources to perform the specified resource usage for the operation and/or the step that is defined by the preceding Operation or Step.  </xs:documentation>
+                </xs:annotation>
+        </xs:element>
+        <xs:element name="Step" type="Step">
+                <xs:annotation>
+                        <xs:documentation source="http://www.openapplications.org/oagis">Information specific to the steps specified to perform the operation.</xs:documentation>
+                </xs:annotation>
+        </xs:element>
+<!---->
+<!--Inventory Location-->
+        <xs:group name="InvLocation">
+                <xs:sequence>
+                        <xs:element ref="Item" minOccurs="0"/>
+                        <xs:element name="ItemQuantity" type="Quantity" minOccurs="0">
+                                <xs:annotation>
+                                        <xs:documentation source="http://www.openapplications.org/oagis">Number of items being transfered from the source. location.</xs:documentation>
+                                </xs:annotation>
+                        </xs:element>
+                        <xs:element ref="Site" minOccurs="0"/>
+                        <xs:element ref="LotSerial" minOccurs="0" maxOccurs="unbounded"/>
+                        <xs:element name="GLAccount" type="GLAccount" minOccurs="0" maxOccurs="unbounded">
+                                <xs:annotation>
+                                        <xs:documentation source="http://www.openapplications.org/oagis">Is the GL Account that idenitfies what the items are from the particular organizations perspective.. See the type information for more information.</xs:documentation>
+                                </xs:annotation>
+                        </xs:element>
+                        <xs:element name="GLEntity" type="GLEntity" minOccurs="0">
+                                <xs:annotation>
+                                        <xs:documentation source="http://www.openapplications.org/oagis">Is the owning organization that will receive the credit or debit of value associated with the transfer of the inventory. Which is dependent upon which side of the transaction.</xs:documentation>
+                                </xs:annotation>
+                        </xs:element>
+                        <xs:element name="Note" type="Note" minOccurs="0" maxOccurs="unbounded">
+                                <xs:annotation>
+                                        <xs:documentation source="http://www.openapplications.org/oagis">Is a note about the source location of the transfer.</xs:documentation>
+                                </xs:annotation>
+                        </xs:element>
+                        <xs:element name="PrintInd" type="Indicator" minOccurs="0">
+                                <xs:annotation>
+                                        <xs:documentation source="http://www.openapplications.org/oagis">Indicates whether the InventoryTransfer should be printed at the source.</xs:documentation>
+                                </xs:annotation>
+                        </xs:element>
+                        <xs:element name="PrintControlInformation" type="Indicator" minOccurs="0">
+                                <xs:annotation>
+                                        <xs:documentation source="http://www.openapplications.org/oagis">Indicates whether the control information about the transfer should be printed.</xs:documentation>
+                                </xs:annotation>
+                        </xs:element>
+                        <xs:element name="ReasonCode" type="ReasonCode" minOccurs="0">
+                                <xs:annotation>
+                                        <xs:documentation source="http://www.openapplications.org/oagis">Is the reason for the transfer.</xs:documentation>
+                                </xs:annotation>
+                        </xs:element>
+                        <xs:element ref="OperationReference" minOccurs="0" maxOccurs="unbounded"/>
+                        <xs:element ref="Attachments" minOccurs="0"/>
+                </xs:sequence>
+        </xs:group>
+        <xs:complexType name="InventoryLocation">
+                <xs:annotation>
+                        <xs:documentation source="http://www.openapplications.org/oagis">This identifies the item being transferred and the location.</xs:documentation>
+                </xs:annotation>
+                <xs:group ref="InvLocation"/>
+        </xs:complexType>
+<!---->
+<!--Resources-->
+        <xs:complexType name="Resource">
+                <xs:annotation>
+                        <xs:documentation source="http://www.openapplications.org/oagis">An abstract type describing the allocation of persons, equipment or materials, likely in a manufacturing environment.</xs:documentation>
+                        <xs:documentation source="http://www.openapplications.org/oagis">Pattern should be: Id, Class/Category, Required Quantities</xs:documentation>
+                        <xs:documentation source="http://www.openapplications.org/oagis"> AW: Empty for now, if the xs:all is robust in the future may want to place common Resource fields here- </xs:documentation>
+                        <xs:documentation source="http://www.openapplications.org/oagis">mdf: Really shouldn't use group here - harder to extend. But if the resource has to come first...</xs:documentation>
+                </xs:annotation>
+        </xs:complexType>
+        <xs:group name="ResourceUsageFields">
+                <xs:sequence>
+                        <xs:element name="UnitRate" type="AmountPerQuantity" minOccurs="0">
+                                <xs:annotation>
+                                        <xs:documentation source="http://www.openapplications.org/oagis">the incremental cost of the resource.</xs:documentation>
+                                </xs:annotation>
+                        </xs:element>
+                        <xs:element name="RequiredQuantity" type="Quantity" minOccurs="0">
+                                <xs:annotation>
+                                        <xs:documentation source="http://www.openapplications.org/oagis">the number of units required.</xs:documentation>
+                                </xs:annotation>
+                        </xs:element>
+                        <xs:element name="RequiredDuration" type="Duration" minOccurs="0">
+                                <xs:annotation>
+                                        <xs:documentation source="http://www.openapplications.org/oagis">the period of time the resource is required.</xs:documentation>
+                                        <xs:documentation source="http://www.openapplications.org/oagis">Note: This is inapplicable for an ItemResource. </xs:documentation>
+                                </xs:annotation>
+                        </xs:element>
+                        <xs:element name="Description" type="Description" minOccurs="0" maxOccurs="unbounded">
+                                <xs:annotation>
+                                        <xs:documentation source="http://www.openapplications.org/oagis">Description of the resource.</xs:documentation>
+                                </xs:annotation>
+                        </xs:element>
+                        <xs:element name="Total" type="Amount" minOccurs="0">
+                                <xs:annotation>
+                                        <xs:documentation source="http://www.openapplications.org/oagis">the total cost of the resource; the product of rate, quantity and duration.</xs:documentation>
+                                </xs:annotation>
+                        </xs:element>
+                        <xs:element ref="UserArea" minOccurs="0"/>
+                </xs:sequence>
+        </xs:group>
+        <xs:complexType name="LaborResource">
+                <xs:complexContent>
+                        <xs:extension base="Resource">
+                                <xs:sequence>
+                                        <xs:element ref="Labor" minOccurs="0" maxOccurs="unbounded"/>
+                                        <xs:group ref="ResourceUsageFields" minOccurs="0"/>
+<!-- AW: for EEQualfs use xs:list type ?-->
+<!-- AW: How does Cost apply Cost x DurationQty or x EEQty or both; same question for Tool and Machine-->
+                                </xs:sequence>
+                        </xs:extension>
+                </xs:complexContent>
+        </xs:complexType>
+        <xs:complexType name="MachineResource">
+                <xs:complexContent>
+                        <xs:extension base="Resource">
+                                <xs:sequence>
+                                        <xs:element ref="Machine" minOccurs="0" maxOccurs="unbounded"/>
+                                        <xs:group ref="ResourceUsageFields" minOccurs="0"/>
+                                </xs:sequence>
+                        </xs:extension>
+                </xs:complexContent>
+        </xs:complexType>
+        <xs:complexType name="ToolingResource">
+                <xs:complexContent>
+                        <xs:extension base="Resource">
+                                <xs:sequence>
+                                        <xs:element ref="Tool" minOccurs="0" maxOccurs="unbounded"/>
+                                        <xs:group ref="ResourceUsageFields" minOccurs="0"/>
+                                </xs:sequence>
+                        </xs:extension>
+                </xs:complexContent>
+        </xs:complexType>
+        <xs:complexType name="ItemResource">
+                <xs:complexContent>
+                        <xs:extension base="Resource">
+                                <xs:sequence>
+                                        <xs:element ref="Item" minOccurs="0" maxOccurs="unbounded"/>
+                                        <xs:group ref="ResourceUsageFields" minOccurs="0"/>
+                                </xs:sequence>
+                        </xs:extension>
+                </xs:complexContent>
+        </xs:complexType>
+        <xs:element name="Resource" type="Resource" abstract="true"/>
+        <xs:element name="LaborResource" type="LaborResource" substitutionGroup="Resource"/>
+        <xs:element name="MachineResource" type="MachineResource" substitutionGroup="Resource"/>
+        <xs:element name="ToolResource" type="ToolingResource" substitutionGroup="Resource"/>
+        <xs:element name="ItemResource" type="ItemResource" substitutionGroup="Resource"/>
+        <xs:element name="Resources" type="Resources">
+                <xs:annotation>
+                        <xs:documentation source="http://www.openapplications.org/oagis">Indicates the resources being allocated.</xs:documentation>
+                </xs:annotation>
+        </xs:element>
+        <xs:complexType name="Resources">
+                <xs:annotation>
+                        <xs:documentation source="http://www.openapplications.org/oagis"> AW: In the future xs:All would be very helpful; still unbounded <choice/> works here </xs:documentation>
+                        <xs:documentation source="http://www.openapplications.org/oagis"> AW: not using Subs group with Resource so names can be local</xs:documentation>
+                </xs:annotation>
+                <xs:sequence>
+                        <xs:element ref="Resource" minOccurs="0" maxOccurs="unbounded"/>
+                </xs:sequence>
+        </xs:complexType>
+<!---->
+<!--ResourceReferences-->
+        <xs:complexType name="Tool">
+                <xs:complexContent>
+                        <xs:extension base="ResourceReference">
+                                <xs:sequence>
+                                        <xs:element name="ToolId" type="ToolId" minOccurs="0">
+                                                <xs:annotation>
+                                                        <xs:documentation source="http://www.openapplications.org/oagis">is the identifier for the tool.</xs:documentation>
+                                                        <xs:documentation source="http://www.openapplications.org/oagis">For the ProcessResourceAllocation BOD, only one of the following fields is required: MACHINEID or MACHCLASS.  Except in the situation where the sending system is indicating a preference of the machine to do the work then both fields may be populated.</xs:documentation>
+                                                </xs:annotation>
+                                        </xs:element>
+                                        <xs:element name="ToolClassification" type="ToolClassification" minOccurs="0">
+                                                <xs:annotation>
+                                                        <xs:documentation source="http://www.openapplications.org/oagis">is the classification of the tool.</xs:documentation>
+                                                </xs:annotation>
+                                        </xs:element>
+                                        <xs:element ref="UserArea" minOccurs="0"/>
+                                </xs:sequence>
+                        </xs:extension>
+                </xs:complexContent>
+        </xs:complexType>
+        <xs:complexType name="Machine">
+                <xs:complexContent>
+                        <xs:extension base="ResourceReference">
+                                <xs:sequence>
+                                        <xs:element name="Id" type="MachineId" minOccurs="0">
+                                                <xs:annotation>
+                                                        <xs:documentation source="http://www.openapplications.org/oagis">contains the value of a machine’s code or identifier</xs:documentation>
+                                                        <xs:documentation source="http://www.openapplications.org/oagis">For the ProcessResourceAllocation BOD, only one of the following fields is required: MACHINEID or MACHCLASS.  Except in the situation where the sending system is indicating a preference of the machine to do the work then both fields may be populated.</xs:documentation>
+                                                </xs:annotation>
+                                        </xs:element>
+                                        <xs:element name="Classification" type="MachineClassification" minOccurs="0">
+                                                <xs:annotation>
+                                                        <xs:documentation source="http://www.openapplications.org/oagis">is a classification of the machines of like functionality.</xs:documentation>
+                                                        <xs:documentation source="http://www.openapplications.org/oagis">Possible values: CNC-Lathe, Manual Lathe</xs:documentation>
+                                                </xs:annotation>
+                                        </xs:element>
+                                        <xs:element name="FixedAssetCode" type="Code" minOccurs="0">
+                                                <xs:annotation>
+                                                        <xs:documentation source="http://www.openapplications.org/oagis">Is the fixed asset code of the machine.</xs:documentation>
+                                                </xs:annotation>
+                                        </xs:element>
+                                        <xs:element name="Feature" type="FeatureValue" minOccurs="0" maxOccurs="unbounded">
+                                                <xs:annotation>
+                                                        <xs:documentation source="http://www.openapplications.org/oagis">Is the feature list of the machine.</xs:documentation>
+                                                </xs:annotation>
+                                        </xs:element>
+                                        <xs:element ref="Status" minOccurs="0"/>
+                                        <xs:element ref="Location" minOccurs="0"/>
+                                        <xs:element ref="UserArea" minOccurs="0"/>
+                                </xs:sequence>
+                        </xs:extension>
+                </xs:complexContent>
+        </xs:complexType>
+        <xs:complexType name="ItemReference">
+                <xs:complexContent>
+                        <xs:extension base="ResourceReference">
+                                <xs:sequence>
+                                        <xs:element ref="ItemId" minOccurs="0"/>
+                                        <xs:element name="ItemClass" type="Id" minOccurs="0">
+                                                <xs:annotation>
+                                                        <xs:documentation source="http://www.openapplications.org/oagis">Identifies the classification of the item.</xs:documentation>
+                                                </xs:annotation>
+                                        </xs:element>
+                                        <xs:element ref="UserArea" minOccurs="0"/>
+                                </xs:sequence>
+                        </xs:extension>
+                </xs:complexContent>
+        </xs:complexType>
+        <xs:complexType name="ResourceReference">
+                <xs:complexContent>
+                        <xs:extension base="Resource"/>
+                </xs:complexContent>
+        </xs:complexType>
+        <xs:element name="Labor" type="Employee">
+                <xs:annotation>
+                        <xs:documentation source="http://www.openapplications.org/oagis">Identifies the Labor needed for a given task.</xs:documentation>
+                </xs:annotation>
+        </xs:element>
+        <xs:element name="Tool" type="Tool">
+                <xs:annotation>
+                        <xs:documentation source="http://www.openapplications.org/oagis">Identifies the tool needed for a given task.</xs:documentation>
+                </xs:annotation>
+        </xs:element>
+        <xs:element name="Machine" type="Machine">
+                <xs:annotation>
+                        <xs:documentation source="http://www.openapplications.org/oagis">Idenitifies a machine.</xs:documentation>
+                </xs:annotation>
+        </xs:element>
+        <xs:element name="ItemReference" type="ItemReference">
+                <xs:annotation>
+                        <xs:documentation source="http://www.openapplications.org/oagis">References the Item needed for a given task.</xs:documentation>
+                </xs:annotation>
+        </xs:element>
+<!---->
+<!--HazardousItem-->
+        <xs:complexType name="HazardousItem">
+                <xs:sequence>
+                        <xs:choice>
+                                <xs:element ref="ItemId" minOccurs="0"/>
+                                <xs:element ref="Machine" minOccurs="0"/>
+                        </xs:choice>
+                        <xs:element name="Site" type="Location" minOccurs="0">
+                                <xs:annotation>
+                                        <xs:documentation source="http://www.openapplications.org/oagis">Is the location in which the Hazardous Item is located.</xs:documentation>
+                                </xs:annotation>
+                        </xs:element>
+                        <xs:element ref="HazardousMaterial" minOccurs="0" maxOccurs="unbounded"/>
+                        <xs:element ref="UserArea" minOccurs="0"/>
+                </xs:sequence>
+        </xs:complexType>
+        <xs:element name="HazardousItem" type="HazardousItem">
+                <xs:annotation>
+                        <xs:documentation source="http://www.openapplications.org/oagis">Identifies a Item, location and Hazardousmaterial identifier.</xs:documentation>
+                </xs:annotation>
+        </xs:element>
+<!---->
+<!--Item Data-->
+        <xs:complexType name="ItemData">
+                <xs:sequence>
+                        <xs:element name="Item" type="Item" minOccurs="0">
+                                <xs:annotation>
+                                        <xs:documentation source="http://www.openapplications.org/oagis">Identifies the Item being refered to.</xs:documentation>
+                                </xs:annotation>
+                        </xs:element>
+                        <xs:element name="ItemQuantity" type="Quantity" minOccurs="0">
+                                <xs:annotation>
+                                        <xs:documentation source="http://www.openapplications.org/oagis">Indicate the number of Items.</xs:documentation>
+                                </xs:annotation>
+                        </xs:element>
+                        <xs:element name="ItemConsumption" type="Description" minOccurs="0">
+                                <xs:annotation>
+                                        <xs:documentation source="http://www.openapplications.org/oagis">Describes how an ITEM or product is consumed during the manufacturing process.</xs:documentation>
+                                </xs:annotation>
+                        </xs:element>
+                        <xs:element name="EffectivePeriod" type="TimePeriod" minOccurs="0">
+                                <xs:annotation>
+                                        <xs:documentation source="http://www.openapplications.org/oagis">Indicates the effectivity period for the Item information.</xs:documentation>
+                                </xs:annotation>
+                        </xs:element>
+                        <xs:element name="ExecutionPeriod" type="TimePeriod" minOccurs="0">
+                                <xs:annotation>
+                                        <xs:documentation source="http://www.openapplications.org/oagis">Is the time in which the item is executed or run.</xs:documentation>
+                                </xs:annotation>
+                        </xs:element>
+                        <xs:element name="FixedQuantityInd" type="Indicator" minOccurs="0">
+                                <xs:annotation>
+                                        <xs:documentation source="http://www.openapplications.org/oagis">Indicates whether the ItemQuantity is a fixed size and does not scale along with the quantity of the BOM or Routing being produced</xs:documentation>
+                                </xs:annotation>
+                        </xs:element>
+                        <xs:element ref="Lot" minOccurs="0" maxOccurs="unbounded"/>
+                        <xs:element name="Note" type="Note" minOccurs="0" maxOccurs="unbounded">
+                                <xs:annotation>
+                                        <xs:documentation source="http://www.openapplications.org/oagis">Free-form notes about the item data.</xs:documentation>
+                                </xs:annotation>
+                        </xs:element>
+                        <xs:element name="MaximumLotSize" type="Quantity" minOccurs="0">
+                                <xs:annotation>
+                                        <xs:documentation source="http://www.openapplications.org/oagis">Is the maximum number of items that can be put into a lot for this Item.</xs:documentation>
+                                </xs:annotation>
+                        </xs:element>
+                        <xs:element name="MinimumLotSize" type="Quantity" minOccurs="0">
+                                <xs:annotation>
+                                        <xs:documentation source="http://www.openapplications.org/oagis">Is the minimum number of items that can be put into a lot for this Item,</xs:documentation>
+                                </xs:annotation>
+                        </xs:element>
+                        <xs:element name="LotSizeMultiple" type="Factor" minOccurs="0">
+                                <xs:annotation>
+                                        <xs:documentation source="http://www.openapplications.org/oagis">Is used with the MinimumLotSize and MaximumLotSize.  It contains the multiplier between the minimum and maximum manufactured lot quantities.  For example, if the maximum lot quantity is 10,000 and the minimum lot quantity is 1000, the lot size multiplier could be 1000.  This means the Item may be manufactured in lot sizes starting at 1000 and going up to 10,000 by 1000 increments.For example, 1000, 2000, 3000, etc.  A lot of 4500, would not be allowed under these constraints.</xs:documentation>
+                                </xs:annotation>
+                        </xs:element>
+                        <xs:element name="LeadTimeOffset" type="Duration" minOccurs="0">
+                                <xs:annotation>
+                                        <xs:documentation source="http://www.openapplications.org/oagis">Is the duration of time that is required to add to a manufacturing process to forecast availability of this Item.</xs:documentation>
+                                </xs:annotation>
+                        </xs:element>
+                        <xs:element name="ManufacturingReportingFlag" type="ManufacturingReportingFlag" minOccurs="0">
+                                <xs:annotation>
+                                        <xs:documentation source="http://www.openapplications.org/oagis">Identifies whether an ITEM is reported theoretically (back-flushed) or if the ITEM is reported directly (actual)</xs:documentation>
+                                </xs:annotation>
+                        </xs:element>
+                        <xs:element name="PercentRequiredQuantity" type="Quantity" minOccurs="0">
+                                <xs:annotation>
+                                        <xs:documentation source="http://www.openapplications.org/oagis">This is the percentage of the total quantity on the Bill of Material that is required to be available before the manufacturing process can begin</xs:documentation>
+                                </xs:annotation>
+                        </xs:element>
+                        <xs:element name="TrackingInd" type="Indicator" minOccurs="0">
+                                <xs:annotation>
+                                        <xs:documentation source="http://www.openapplications.org/oagis">Indicates whether or not the Item is tracked or not.</xs:documentation>
+                                </xs:annotation>
+                        </xs:element>
+                        <xs:element name="ScrapInd" type="Indicator" minOccurs="0">
+                                <xs:annotation>
+                                        <xs:documentation source="http://www.openapplications.org/oagis">Identifies the status of an item as a scrapped item</xs:documentation>
+                                </xs:annotation>
+                        </xs:element>
+                        <xs:element ref="OperationReference" minOccurs="0" maxOccurs="unbounded"/>
+                        <xs:element ref="UserArea" minOccurs="0"/>
+                </xs:sequence>
+        </xs:complexType>
+        <xs:element name="ItemData" type="ItemData">
+                <xs:annotation>
+                        <xs:documentation source="http://www.openapplications.org/oagis">Information that describes the attributes of a specific item.  At least one occurrence of thisComponent is required for each occurrence of the RouteOperation Component.</xs:documentation>
+                </xs:annotation>
+        </xs:element>
+        <xs:complexType name="SafetyBase">
+                <xs:sequence>
+                        <xs:element name="Id" type="Id" minOccurs="0">
+                                <xs:annotation>
+                                        <xs:documentation source="http://www.openapplications.org/oagis">Is the Safety identifier.</xs:documentation>
+                                </xs:annotation>
+                        </xs:element>
+                        <xs:element name="Classification" type="Classification" minOccurs="0">
+                                <xs:annotation>
+                                        <xs:documentation source="http://www.openapplications.org/oagis">Is the safety classification.</xs:documentation>
+                                </xs:annotation>
+                        </xs:element>
+                        <xs:element name="Description" type="Description" minOccurs="0"/>
+                        <xs:element ref="Attachments" minOccurs="0"/>
+                </xs:sequence>
+        </xs:complexType>
+        <xs:complexType name="Safety">
+                <xs:annotation>
+                        <xs:documentation source="http://www.openapplications.org/oagis">Safety Information related to the work. This may be Hazards or Precautions</xs:documentation>
+                </xs:annotation>
+                <xs:complexContent>
+                        <xs:extension base="SafetyBase">
+                                <xs:sequence>
+                                        <xs:element ref="UserArea" minOccurs="0"/>
+                                </xs:sequence>
+                        </xs:extension>
+                </xs:complexContent>
+        </xs:complexType>
+        <xs:element name="Precaution" type="Precaution">
+                <xs:annotation>
+                        <xs:documentation source="http://www.openapplications.org/oagis">Identifies the Precautions associated with a Hazard</xs:documentation>
+                </xs:annotation>
+        </xs:element>
+        <xs:element name="Hazard" type="Hazard">
+                <xs:annotation>
+                        <xs:documentation source="http://www.openapplications.org/oagis">Identifies a Hazard. Hazards can be associated with Items  or with activities such as maintenance operations</xs:documentation>
+                </xs:annotation>
+        </xs:element>
+        <xs:complexType name="Hazard">
+                <xs:complexContent>
+                        <xs:extension base="SafetyBase">
+                                <xs:sequence>
+                                        <xs:element name="HazardSourceMachine" type="Machine" minOccurs="0" maxOccurs="unbounded">
+                                                <xs:annotation>
+                                                        <xs:documentation source="http://www.openapplications.org/oagis">This identifies the machines that could cause this Hazard</xs:documentation>
+                                                </xs:annotation>
+                                        </xs:element>
+                                        <xs:element name="HazardSourceLocation" type="Location" minOccurs="0" maxOccurs="unbounded">
+                                                <xs:annotation>
+                                                        <xs:documentation source="http://www.openapplications.org/oagis">This identifies the Locations where this Hazard could occur</xs:documentation>
+                                                </xs:annotation>
+                                        </xs:element>
+                                        <xs:element ref="Precaution" minOccurs="0" maxOccurs="unbounded"/>
+                                        <xs:element ref="UserArea" minOccurs="0"/>
+                                </xs:sequence>
+                        </xs:extension>
+                </xs:complexContent>
+        </xs:complexType>
+        <xs:complexType name="Precaution">
+                <xs:complexContent>
+                        <xs:extension base="Safety"/>
+                </xs:complexContent>
+        </xs:complexType>
+</xs:schema>

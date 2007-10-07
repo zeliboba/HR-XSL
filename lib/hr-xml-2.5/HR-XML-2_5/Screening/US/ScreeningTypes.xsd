@@ -1,0 +1,885 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- edited with XMLSpy v2006 rel. 3 sp1 (http://www.altova.com) by Chuck Allen (HR-XML Consortium, Inc.) -->
+<xsd:schema xmlns:ds="http://www.w3.org/2000/09/xmldsig#" xmlns="http://ns.hr-xml.org/2007-04-15" xmlns:xsd="http://www.w3.org/2001/XMLSchema" targetNamespace="http://ns.hr-xml.org/2007-04-15" elementFormDefault="qualified" version="2007-04-15">
+	<xsd:annotation>
+		<xsd:documentation>
+"Copyright  The HR-XML Consortium. All Rights Reserved. http://www.hr-xml.org"
+Status: Recommendation
+Date this version: 2007-04-15
+Purpose: Defines the ScreeningTypes Schema
+Author(s):  Screening Workgroup
+Documentation: BackgroundChecking.html, BackgroundRequests.html, BackgroundReports.html
+
+Terms of license can be found in license.txt.
+
+Change History:
+2005-01-13
+ Substituted CurrencyType with ISOUtilities.xsd type called CurrencyCodeType 
+ ResultType renamed to ResultDataType so as not to be confused with attribute with same name.
+
+2004-Jun-24: 
+ Moved CurrencyAmountType and CurrencyType from Credit.xsd
+ Added additional enumerations to CourtTypeQualifiers
+ Added additional enumerations to  ReasonForTestTypes
+ Added additional enumerations to  SearchQualifiersCriminal
+ Added additional enumerations to  SearchTypeTypes
+ Added additional enumerations to  SpecimenTypes
+ Added additional enumerations to  VendorTypes
+ Added ScreeningCostType
+ Added optional Attribute to ScreeningPostalAddressType
+ Added SearchQualifiersSanctions to SearchQualifierType
+ 
+ 
+</xsd:documentation>
+	</xsd:annotation>
+	<xsd:import namespace="http://www.w3.org/2000/09/xmldsig#" schemaLocation="../../../W3C/xmldsig-core-schema.xsd"/>
+	<xsd:import namespace="http://www.w3.org/XML/1998/namespace" schemaLocation="../../../W3C/xml.xsd"/>
+	<xsd:include schemaLocation="../../CPO/DemographicDetail.xsd"/>
+	<xsd:include schemaLocation="../../CPO/EducationHistory.xsd"/>
+	<xsd:include schemaLocation="../../CPO/PositionHeader.xsd"/>
+	<xsd:include schemaLocation="../../CPO/EmploymentHistory.xsd"/>
+	<xsd:include schemaLocation="../../CPO/MilitaryHistory.xsd"/>
+	<xsd:include schemaLocation="../../CPO/SupportingMaterials.xsd"/>
+	<xsd:include schemaLocation="../../CPO/ISOUtilities.xsd"/>
+	<xsd:complexType name="AgencyReferenceType">
+		<xsd:complexContent>
+			<xsd:extension base="EntityIdType">
+				<xsd:attribute name="type" type="AgencyReferenceQualifierType"/>
+			</xsd:extension>
+		</xsd:complexContent>
+	</xsd:complexType>
+	<xsd:simpleType name="AgencyReferenceQualifierType">
+		<xsd:union memberTypes="AgencyReferenceQualifiers xStringPatternExtensionType"/>
+	</xsd:simpleType>
+	<xsd:simpleType name="AgencyReferenceQualifiers">
+		<xsd:restriction base="xsd:string">
+			<xsd:enumeration value="DOC"/>
+			<xsd:enumeration value="FBI"/>
+			<xsd:enumeration value="Case"/>
+			<xsd:enumeration value="Docket"/>
+			<xsd:enumeration value="StateId"/>
+			<xsd:enumeration value="LocalId"/>
+			<xsd:enumeration value="Citation"/>
+			<xsd:enumeration value="NotApplicable"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="ChargeType">
+		<xsd:restriction base="xsd:string">
+			<xsd:enumeration value="felony"/>
+			<xsd:enumeration value="forfeiture"/>
+			<xsd:enumeration value="infraction"/>
+			<xsd:enumeration value="misdemeanor"/>
+			<xsd:enumeration value="pettyOffence"/>
+			<xsd:enumeration value="summary"/>
+			<xsd:enumeration value="traffic"/>
+			<xsd:enumeration value="violation"/>
+			<xsd:enumeration value="capias"/>
+			<xsd:enumeration value="showCause"/>
+			<xsd:enumeration value="ordinanceViolation"/>
+			<xsd:enumeration value="sealed"/>
+			<xsd:enumeration value="felonyReducedToMisdemeanor"/>
+			<xsd:enumeration value="misdemeanorReducedToViolation"/>
+			<xsd:enumeration value="unknown"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="ChargeQualifiers">
+		<xsd:union memberTypes="ChargeType xStringPatternExtensionType"/>
+	</xsd:simpleType>
+	<xsd:complexType name="ContactType">
+		<xsd:sequence>
+			<xsd:element name="PersonName" type="PersonNameType" minOccurs="0"/>
+			<xsd:element ref="PositionTitle" minOccurs="0"/>
+			<xsd:element name="ContactMethod" type="ContactMethodType" minOccurs="0" maxOccurs="unbounded"/>
+			<xsd:element name="Relationship" type="xsd:string" minOccurs="0"/>
+			<xsd:element name="YearsKnown" type="xsd:decimal" minOccurs="0"/>
+		</xsd:sequence>
+		<xsd:attribute name="type" type="xsd:string"/>
+	</xsd:complexType>
+	<xsd:complexType name="CourtTypeType">
+		<xsd:annotation>
+			<xsd:documentation>Jurisdiction of court to be searched.  i.e. Felony, Misdemeanor, Both.</xsd:documentation>
+		</xsd:annotation>
+		<xsd:simpleContent>
+			<xsd:extension base="xsd:string">
+				<xsd:attribute name="type" type="CourtTypes"/>
+			</xsd:extension>
+		</xsd:simpleContent>
+	</xsd:complexType>
+	<xsd:simpleType name="CourtTypes">
+		<xsd:union memberTypes="CourtTypeQualifiers xsd:string"/>
+	</xsd:simpleType>
+	<xsd:simpleType name="CourtTypeQualifiers">
+		<xsd:restriction base="xsd:string">
+			<xsd:enumeration value="felony"/>
+			<xsd:enumeration value="misdemeanor"/>
+			<xsd:enumeration value="felonyMisdemeanor"/>
+			<xsd:enumeration value="civil"/>
+			<xsd:enumeration value="civilUpper"/>
+			<xsd:enumeration value="civilLower"/>
+			<xsd:enumeration value="ucc"/>
+			<xsd:enumeration value="bankruptcy"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="CourtJurisdictionType">
+		<xsd:union memberTypes="CourtJurisdictionQualifiers xsd:string"/>
+	</xsd:simpleType>
+	<xsd:simpleType name="CourtJurisdictionQualifiers">
+		<xsd:restriction base="xsd:string">
+			<xsd:enumeration value="country"/>
+			<xsd:enumeration value="regional"/>
+			<xsd:enumeration value="federal"/>
+			<xsd:enumeration value="county"/>
+			<xsd:enumeration value="city"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="CriminalDispositionTypes">
+		<xsd:restriction base="xsd:string">
+			<xsd:enumeration value="Acquitted"/>
+			<xsd:enumeration value="AdjournedToX"/>
+			<xsd:enumeration value="AdjudicatedGuilty"/>
+			<xsd:enumeration value="AdjudicationWithheld"/>
+			<xsd:enumeration value="ArdProgram"/>
+			<xsd:enumeration value="Bail/BondForfeiture"/>
+			<xsd:enumeration value="ConditionalDischarge"/>
+			<xsd:enumeration value="ConsentDecreeJuvenile"/>
+			<xsd:enumeration value="Convicted"/>
+			<xsd:enumeration value="DeadDocket"/>
+			<xsd:enumeration value="DeferredJudgment"/>
+			<xsd:enumeration value="Dismissed"/>
+			<xsd:enumeration value="DisposedByWaiver"/>
+			<xsd:enumeration value="Dropped"/>
+			<xsd:enumeration value="FugitiveFile"/>
+			<xsd:enumeration value="Guilty"/>
+			<xsd:enumeration value="GuiltyInAbsentia"/>
+			<xsd:enumeration value="Ignored"/>
+			<xsd:enumeration value="Infraction"/>
+			<xsd:enumeration value="LetterOfRealeaseFiled"/>
+			<xsd:enumeration value="MisdInterventionProgram"/>
+			<xsd:enumeration value="NoAction"/>
+			<xsd:enumeration value="NoBilled"/>
+			<xsd:enumeration value="NoFindingOfGuilt"/>
+			<xsd:enumeration value="NonformationFiled"/>
+			<xsd:enumeration value="NoPapered"/>
+			<xsd:enumeration value="NolleProsse"/>
+			<xsd:enumeration value="NoloContendre"/>
+			<xsd:enumeration value="NonAdjudicationOfGuilt"/>
+			<xsd:enumeration value="NotGuilty"/>
+			<xsd:enumeration value="OrderForArrest"/>
+			<xsd:enumeration value="Other"/>
+			<xsd:enumeration value="Pending"/>
+			<xsd:enumeration value="PledGuilty"/>
+			<xsd:enumeration value="PledNolloContendre"/>
+			<xsd:enumeration value="PrayerForJudgement"/>
+			<xsd:enumeration value="PerePaid"/>
+			<xsd:enumeration value="PreTrialIntervention"/>
+			<xsd:enumeration value="ProcessOther"/>
+			<xsd:enumeration value="Remanded"/>
+			<xsd:enumeration value="Responsible"/>
+			<xsd:enumeration value="StrickenOffLeave"/>
+			<xsd:enumeration value="StetDocket"/>
+			<xsd:enumeration value="TransferredToCaseNumber"/>
+			<xsd:enumeration value="TransferredToGrandJury"/>
+			<xsd:enumeration value="WaivedPledGuilty"/>
+			<xsd:enumeration value="Waiver"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:complexType name="CurrencyAmountType">
+		<xsd:simpleContent>
+			<xsd:extension base="xsd:decimal">
+				<xsd:attribute name="currency" type="CurrencyCodeType" use="required"/>
+			</xsd:extension>
+		</xsd:simpleContent>
+	</xsd:complexType>
+	<xsd:simpleType name="CurrentPriorTypes">
+		<xsd:restriction base="xsd:string">
+			<xsd:enumeration value="current"/>
+			<xsd:enumeration value="prior"/>
+			<xsd:enumeration value="unknown"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="DispositionType">
+		<xsd:union memberTypes="CriminalDispositionTypes xStringPatternExtensionType"/>
+	</xsd:simpleType>
+	<xsd:simpleType name="DocumentationTypes">
+		<xsd:union memberTypes="DocumentationTypeType xStringPatternExtensionType"/>
+	</xsd:simpleType>
+	<xsd:complexType name="DocumentationType">
+		<xsd:sequence>
+			<xsd:element name="Documentation" type="TextImageType" maxOccurs="unbounded"/>
+		</xsd:sequence>
+	</xsd:complexType>
+	<xsd:simpleType name="DocumentationTypeType">
+		<xsd:restriction base="xsd:string">
+			<xsd:enumeration value="distribution"/>
+			<xsd:enumeration value="letter"/>
+			<xsd:enumeration value="request"/>
+			<xsd:enumeration value="release"/>
+			<xsd:enumeration value="resume"/>
+			<xsd:enumeration value="result"/>
+			<xsd:enumeration value="results"/>
+			<xsd:enumeration value="order"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:complexType name="EducationContactInformationType">
+		<xsd:sequence>
+			<xsd:element name="PersonName" type="PersonNameType" minOccurs="0"/>
+			<xsd:element name="Title" type="xsd:string" minOccurs="0"/>
+			<xsd:element name="PostalAddress" type="PostalAddressType" minOccurs="0"/>
+			<xsd:element name="ContactMethod" type="ContactMethodType" minOccurs="0" maxOccurs="unbounded"/>
+		</xsd:sequence>
+	</xsd:complexType>
+	<xsd:complexType name="EffectiveDateType">
+		<xsd:sequence>
+			<xsd:element name="StartDate" type="FlexibleDatesType" minOccurs="0"/>
+			<xsd:element name="EndDate" type="FlexibleDatesType" minOccurs="0"/>
+		</xsd:sequence>
+	</xsd:complexType>
+	<xsd:simpleType name="EmploymentType">
+		<xsd:restriction base="xsd:string">
+			<xsd:enumeration value="current"/>
+			<xsd:enumeration value="prior"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:complexType name="FlexibleDetailType">
+		<xsd:sequence>
+			<xsd:element name="Sequence" type="xsd:positiveInteger" minOccurs="0">
+				<xsd:annotation>
+					<xsd:documentation>Optional sequence number to associate related groups of information represented by the parent element. </xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+			<xsd:element name="EffectiveDate" type="EffectiveDateType" minOccurs="0"/>
+			<xsd:element name="Text" type="xsd:string" maxOccurs="unbounded">
+				<xsd:annotation>
+					<xsd:documentation>Container for the unparsed line or other undefined report detail.  The type attribute of the parent element will identify the content of this element.  i.e. header, detail, etc.</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+			<xsd:element name="AdditionalItems" type="FlexibleDetailType" minOccurs="0" maxOccurs="unbounded"/>
+		</xsd:sequence>
+		<xsd:attribute name="type" type="FlexibleLineType" use="optional"/>
+		<xsd:attribute name="qualifier" type="xsd:string" use="optional"/>
+		<xsd:attribute name="vendor" type="VendorType" use="optional"/>
+	</xsd:complexType>
+	<xsd:simpleType name="FlexibleLineType">
+		<xsd:union memberTypes="FlexibleLineTypes xStringPatternExtensionType"/>
+	</xsd:simpleType>
+	<xsd:simpleType name="FlexibleLineTypes">
+		<xsd:restriction base="xsd:string">
+			<xsd:enumeration value="Header"/>
+			<xsd:enumeration value="Informational"/>
+			<xsd:enumeration value="Detail"/>
+			<xsd:enumeration value="Trace"/>
+			<xsd:enumeration value="RawData"/>
+			<xsd:enumeration value="Unknown"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:complexType name="GeneralSearchDetailType">
+		<xsd:sequence>
+			<xsd:element name="YearsSearched" type="EffectiveDateType" minOccurs="0">
+				<xsd:annotation>
+					<xsd:documentation>Years searched.</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+			<xsd:element name="CourtName" type="xsd:string" minOccurs="0"/>
+			<xsd:element name="RecordsSearched" type="xsd:string" minOccurs="0">
+				<xsd:annotation>
+					<xsd:documentation>Court or other Records.</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+			<xsd:element name="Database" type="xsd:string" minOccurs="0">
+				<xsd:annotation>
+					<xsd:documentation>Database containing details of search .</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+			<xsd:element name="Vendor" type="xsd:string" minOccurs="0">
+				<xsd:annotation>
+					<xsd:documentation>Name of the vendor.</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+			<xsd:element name="AdditionalItems" type="FlexibleDetailType" minOccurs="0" maxOccurs="unbounded"/>
+		</xsd:sequence>
+	</xsd:complexType>
+	<xsd:complexType name="LicenseIdentificationType">
+		<xsd:sequence>
+			<xsd:element ref="CountryCode" minOccurs="0"/>
+			<xsd:element name="LicenseNumber" type="xsd:string"/>
+			<xsd:element name="LicensingAgency" type="xsd:string" minOccurs="0"/>
+			<xsd:element name="LicenseName" type="LicenseNameType" minOccurs="0"/>
+			<xsd:element name="LicenseDescription" type="xsd:string" minOccurs="0"/>
+			<xsd:element name="EffectiveDate" type="EffectiveDateType" minOccurs="0"/>
+		</xsd:sequence>
+	</xsd:complexType>
+	<xsd:simpleType name="LicenseNameType">
+		<xsd:union memberTypes="LicenseNameQualifiers xStringPatternExtensionType"/>
+	</xsd:simpleType>
+	<xsd:simpleType name="LicenseNameQualifiers">
+		<xsd:restriction base="xsd:string">
+			<xsd:enumeration value="faa"/>
+			<xsd:enumeration value="fcc"/>
+			<xsd:enumeration value="lpn"/>
+			<xsd:enumeration value="mvPersonal"/>
+			<xsd:enumeration value="mvPersonalCommercial"/>
+			<xsd:enumeration value="mvCommercial"/>
+			<xsd:enumeration value="cdlis"/>
+			<xsd:enumeration value="nurse"/>
+			<xsd:enumeration value="pharmacy"/>
+			<xsd:enumeration value="physician"/>
+			<xsd:enumeration value="radTech"/>
+			<xsd:enumeration value="arrt"/>
+			<xsd:enumeration value="cna"/>
+			<xsd:enumeration value="gsa"/>
+			<xsd:enumeration value="physicalTherapist"/>
+			<xsd:enumeration value="occupationalTherapist"/>
+			<xsd:enumeration value="socialWorker"/>
+			<xsd:enumeration value="cpa"/>
+			<xsd:enumeration value="engineer"/>
+			<xsd:enumeration value="lvn"/>
+			<xsd:enumeration value="dietician"/>
+			<xsd:enumeration value="speechTherapist"/>
+			<xsd:enumeration value="lawyer"/>
+			<xsd:enumeration value="radiology"/>
+			<xsd:enumeration value="emt"/>
+			<xsd:enumeration value="paramedic"/>
+			<xsd:enumeration value="teacher"/>
+			<xsd:enumeration value="dentist"/>
+			<xsd:enumeration value="optometrist"/>
+			<xsd:enumeration value="rn"/>
+			<xsd:enumeration value="medical"/>
+			<xsd:enumeration value="legal"/>
+			<xsd:enumeration value="financial"/>
+			<xsd:enumeration value="insurance"/>
+			<xsd:enumeration value="informationTechnology"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="MediaTypes">
+		<xsd:union memberTypes="MediaQualifierType xStringPatternExtensionType"/>
+	</xsd:simpleType>
+	<xsd:simpleType name="MediaQualifierType">
+		<xsd:restriction base="xsd:string">
+			<xsd:enumeration value="image"/>
+			<xsd:enumeration value="link"/>
+			<xsd:enumeration value="txt"/>
+			<xsd:enumeration value="html"/>
+			<xsd:enumeration value="pdf"/>
+			<xsd:enumeration value="doc"/>
+			<xsd:enumeration value="rtf"/>
+			<xsd:enumeration value="csv"/>
+			<xsd:enumeration value="xls"/>
+			<xsd:enumeration value="dbf"/>
+			<xsd:enumeration value="tiff"/>
+			<xsd:enumeration value="bmp"/>
+			<xsd:enumeration value="emf"/>
+			<xsd:enumeration value="exif"/>
+			<xsd:enumeration value="gif"/>
+			<xsd:enumeration value="jpeg"/>
+			<xsd:enumeration value="png"/>
+			<xsd:enumeration value="wmf"/>
+			<xsd:enumeration value="zip"/>
+			<xsd:enumeration value="prn"/>
+			<xsd:enumeration value="dif"/>
+			<xsd:enumeration value="xml"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="PersonNameTypeType">
+		<xsd:union memberTypes="PersonNameTypes xStringPatternExtensionType"/>
+	</xsd:simpleType>
+	<xsd:simpleType name="PersonNameTypes">
+		<xsd:restriction base="xsd:string">
+			<xsd:enumeration value="Subject"/>
+			<xsd:enumeration value="Alias"/>
+			<xsd:enumeration value="Other"/>
+			<xsd:enumeration value="Contact"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:complexType name="QuestionAnswerPairType">
+		<xsd:sequence>
+			<xsd:element name="QuestionId" type="EntityIdType" minOccurs="0"/>
+			<xsd:element name="Question" type="xsd:string"/>
+			<xsd:element name="Answer" type="xsd:string" minOccurs="0"/>
+		</xsd:sequence>
+		<xsd:attribute name="score" type="xsd:string" use="optional"/>
+	</xsd:complexType>
+	<xsd:simpleType name="ReasonForTestTypes">
+		<xsd:restriction base="xsd:string">
+			<xsd:enumeration value="AccidentOrInjury"/>
+			<xsd:enumeration value="BlindSample"/>
+			<xsd:enumeration value="Followup"/>
+			<xsd:enumeration value="Other"/>
+			<xsd:enumeration value="Periodic"/>
+			<xsd:enumeration value="PostAccident"/>
+			<xsd:enumeration value="PostRehabilitation"/>
+			<xsd:enumeration value="Pre-employment"/>
+			<xsd:enumeration value="Promotion"/>
+			<xsd:enumeration value="Random"/>
+			<xsd:enumeration value="ReasonableSuspicion/Cause"/>
+			<xsd:enumeration value="ReturnToDuty"/>
+			<xsd:enumeration value="RuleViolation"/>
+			<xsd:enumeration value="Sports Testing"/>
+			<xsd:enumeration value="Unknown"/>
+			<xsd:enumeration value="NotIndicated"/>
+			<xsd:enumeration value="PreSiteAccess"/>
+			<xsd:enumeration value="PrePlacement"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="ReasonForTestType">
+		<xsd:union memberTypes="ReasonForTestTypes xStringPatternExtensionType"/>
+	</xsd:simpleType>
+	<xsd:complexType name="ReferralType">
+		<xsd:sequence>
+			<xsd:element name="OrganizationName" type="xsd:string"/>
+			<xsd:element name="OrganizationId" type="EntityIdType" minOccurs="0" maxOccurs="unbounded"/>
+			<xsd:element name="TaxId" type="EntityIdType" minOccurs="0" maxOccurs="unbounded"/>
+			<xsd:element name="LegalId" type="EntityIdType" minOccurs="0" maxOccurs="unbounded"/>
+			<xsd:element name="InternetDomainName" type="InternetDomainNameType" minOccurs="0" maxOccurs="unbounded"/>
+			<xsd:element name="ContactMethod" type="ContactMethodType" minOccurs="0"/>
+			<xsd:element name="AdditionalItems" type="FlexibleDetailType" minOccurs="0" maxOccurs="unbounded"/>
+		</xsd:sequence>
+		<xsd:attribute name="type" type="ReferralTypeType" use="optional"/>
+	</xsd:complexType>
+	<xsd:simpleType name="ReferralTypeType">
+		<xsd:union memberTypes="ReferralTypes xStringPatternExtensionType"/>
+	</xsd:simpleType>
+	<xsd:simpleType name="ReferralTypes">
+		<xsd:restriction base="xsd:string">
+			<xsd:enumeration value="SearchSubject"/>
+			<xsd:enumeration value="Client"/>
+			<xsd:enumeration value="Proxy"/>
+			<xsd:enumeration value="Vendor"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:complexType name="ReportedDateType">
+		<xsd:sequence>
+			<xsd:element name="EffectiveDate" type="EffectiveDateType" minOccurs="0"/>
+		</xsd:sequence>
+		<xsd:attribute name="type" use="optional">
+			<xsd:simpleType>
+				<xsd:restriction base="xsd:string">
+					<xsd:enumeration value="Inquiry"/>
+					<xsd:enumeration value="Manual"/>
+					<xsd:enumeration value="Proprietary"/>
+					<xsd:enumeration value="Update"/>
+					<xsd:enumeration value="Spec"/>
+					<xsd:enumeration value="Tape"/>
+					<xsd:enumeration value="DAT"/>
+					<xsd:enumeration value="CRT"/>
+					<xsd:enumeration value="Unknown"/>
+				</xsd:restriction>
+			</xsd:simpleType>
+		</xsd:attribute>
+		<xsd:attribute name="timesReported" type="xsd:string" use="optional"/>
+	</xsd:complexType>
+	<xsd:simpleType name="ResultDataTypes">
+		<xsd:union memberTypes="ResultDataType xStringPatternExtensionType"/>
+	</xsd:simpleType>
+	<xsd:simpleType name="ResultDataType">
+		<xsd:restriction base="xsd:string">
+			<xsd:enumeration value="errors"/>
+			<xsd:enumeration value="status"/>
+			<xsd:enumeration value="summary"/>
+			<xsd:enumeration value="report"/>
+			<xsd:enumeration value="message"/>
+			<xsd:enumeration value="all"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:complexType name="ResultsTextType">
+		<xsd:sequence>
+			<xsd:element ref="InternetWebAddress" minOccurs="0" maxOccurs="unbounded"/>
+			<xsd:element ref="InternetEmailAddress" minOccurs="0" maxOccurs="unbounded"/>
+			<xsd:choice minOccurs="0" maxOccurs="unbounded">
+				<xsd:element name="Text" type="xsd:string" minOccurs="0"/>
+				<xsd:element name="Signature" type="ds:SignatureType" minOccurs="0"/>
+			</xsd:choice>
+		</xsd:sequence>
+		<xsd:attribute name="type" type="DocumentationTypes" use="required"/>
+		<xsd:attribute name="mediaType" type="MediaTypes" use="optional"/>
+		<xsd:attribute name="resultType" type="ResultDataTypes" use="optional">
+			<xsd:annotation>
+				<xsd:documentation>Identifies the type of result the client is requesting.  i.e Summary = Scored result with not textual details regarding the search results.</xsd:documentation>
+			</xsd:annotation>
+		</xsd:attribute>
+	</xsd:complexType>
+	<xsd:complexType name="ScreeningCostType">
+		<xsd:sequence>
+			<xsd:element name="BaseCost" type="CurrencyAmountType" minOccurs="0"/>
+			<xsd:element name="AdditionalCost" minOccurs="0" maxOccurs="unbounded">
+				<xsd:complexType>
+					<xsd:simpleContent>
+						<xsd:extension base="CurrencyAmountType">
+							<xsd:attribute name="type" type="xsd:string" use="optional"/>
+						</xsd:extension>
+					</xsd:simpleContent>
+				</xsd:complexType>
+			</xsd:element>
+			<xsd:element name="TotalCost" type="CurrencyAmountType" minOccurs="0"/>
+		</xsd:sequence>
+	</xsd:complexType>
+	<xsd:element name="ScreeningHistory" type="ScreeningHistoryType"/>
+	<xsd:complexType name="ScreeningHistoryType">
+		<xsd:sequence>
+			<xsd:element name="HistoryTimeStamp" type="FlexibleDatesType" minOccurs="0"/>
+			<xsd:element name="HistoryDescription" type="xsd:string" minOccurs="0"/>
+		</xsd:sequence>
+	</xsd:complexType>
+	<xsd:complexType name="ScreeningPersonalDataType">
+		<xsd:sequence>
+			<xsd:element name="EffectiveDate" type="EffectiveDateType" minOccurs="0"/>
+			<xsd:element name="PersonName" minOccurs="0" maxOccurs="unbounded">
+				<xsd:complexType>
+					<xsd:complexContent>
+						<xsd:extension base="PersonNameType">
+							<xsd:attribute name="type" type="PersonNameTypeType" use="optional"/>
+							<xsd:attribute name="validFrom" type="AnyLocalYearMonthDateNkNaType" use="optional"/>
+							<xsd:attribute name="validTo" type="AnyLocalYearMonthDateNkNaType" use="optional"/>
+							<xsd:attribute name="qualifier" type="xsd:string" use="optional"/>
+						</xsd:extension>
+					</xsd:complexContent>
+				</xsd:complexType>
+			</xsd:element>
+			<xsd:element name="PostalAddress" type="ScreeningPostalAddressType" minOccurs="0" maxOccurs="unbounded"/>
+			<xsd:element name="ContactMethod" type="ContactMethodType" minOccurs="0" maxOccurs="unbounded"/>
+			<xsd:element name="DemographicDetail" type="DemographicDetailType" minOccurs="0"/>
+			<xsd:element ref="UserArea" minOccurs="0"/>
+		</xsd:sequence>
+		<xsd:attribute name="type" use="optional">
+			<xsd:simpleType>
+				<xsd:restriction base="xsd:string">
+					<xsd:enumeration value="Alias"/>
+					<xsd:enumeration value="Other"/>
+					<xsd:enumeration value="Current"/>
+					<xsd:enumeration value="Prior"/>
+					<xsd:enumeration value="NotSpecified"/>
+				</xsd:restriction>
+			</xsd:simpleType>
+		</xsd:attribute>
+		<xsd:attribute name="idReference" type="xsd:string" use="optional"/>
+		<xsd:attribute name="idSource" type="xsd:string" use="optional"/>
+		<xsd:attribute name="qualifier" type="xsd:string" use="optional"/>
+	</xsd:complexType>
+	<xsd:complexType name="ScreeningsMilitaryHistoryType">
+		<xsd:complexContent>
+			<xsd:extension base="MilitaryHistoryType">
+				<xsd:sequence>
+					<xsd:element name="MilitaryEducation" minOccurs="0" maxOccurs="unbounded">
+						<xsd:complexType>
+							<xsd:sequence>
+								<xsd:element name="School" type="SchoolDataType" minOccurs="0"/>
+								<xsd:element name="CourseName" type="xsd:string" minOccurs="0"/>
+								<xsd:element name="DatesOfAttendance" type="DatesOfAttendanceType" minOccurs="0" maxOccurs="unbounded"/>
+								<xsd:element name="EducationalMeasure" type="EducationMeasureType" minOccurs="0"/>
+								<xsd:element name="Comments" type="xsd:string" minOccurs="0"/>
+							</xsd:sequence>
+						</xsd:complexType>
+					</xsd:element>
+				</xsd:sequence>
+			</xsd:extension>
+		</xsd:complexContent>
+	</xsd:complexType>
+	<xsd:complexType name="ScreeningPostalAddressType">
+		<xsd:complexContent>
+			<xsd:extension base="PostalAddressType">
+				<xsd:attribute name="validFrom" type="AnyLocalYearMonthDateNkNaType" use="optional"/>
+				<xsd:attribute name="validTo" type="AnyLocalYearMonthDateNkNaType" use="optional"/>
+				<xsd:attribute name="qualifier" type="xsd:string" use="optional"/>
+			</xsd:extension>
+		</xsd:complexContent>
+	</xsd:complexType>
+	<xsd:simpleType name="SearchQualifierType">
+		<xsd:union memberTypes="SearchQualifiersAbuse SearchQualifiersCredit SearchQualifiersCriminal SearchQualifiersEarnings SearchQualifiersEmployment SearchQualifiersReference LicenseNameQualifiers SearchQualifiersSanctions xStringPatternExtensionType"/>
+	</xsd:simpleType>
+	<xsd:simpleType name="SearchQualifiersAbuse">
+		<xsd:restriction base="xsd:string">
+			<xsd:enumeration value="child"/>
+			<xsd:enumeration value="elderly"/>
+			<xsd:enumeration value="sexual"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="SearchQualifiersCredit">
+		<xsd:restriction base="xsd:string">
+			<xsd:enumeration value="business"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="SearchQualifiersCriminal">
+		<xsd:restriction base="xsd:string">
+			<xsd:enumeration value="county"/>
+			<xsd:enumeration value="statewide"/>
+			<xsd:enumeration value="federalCriminal"/>
+			<xsd:enumeration value="federalCivil"/>
+			<xsd:enumeration value="nationWide"/>
+			<xsd:enumeration value="nationWidePlus"/>
+			<xsd:enumeration value="statewideCivil"/>
+			<xsd:enumeration value="statewideCivilDefendant"/>
+			<xsd:enumeration value="statewideCivilPlaintiff"/>
+			<xsd:enumeration value="countyCivilUpper"/>
+			<xsd:enumeration value="countyCivilLower"/>
+			<xsd:enumeration value="corrections"/>
+			<xsd:enumeration value="international"/>
+			<xsd:enumeration value="FBI"/>
+			<xsd:enumeration value="Interpol"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="SearchQualifiersEarnings">
+		<xsd:restriction base="xsd:string">
+			<xsd:enumeration value="detail"/>
+			<xsd:enumeration value="summary"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="SearchQualifiersEmployment">
+		<xsd:restriction base="xsd:string">
+			<xsd:enumeration value="fhwa"/>
+			<xsd:enumeration value="DOT"/>
+			<xsd:enumeration value="FMCSA"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="SearchQualifiersReference">
+		<xsd:restriction base="xsd:string">
+			<xsd:enumeration value="personal"/>
+			<xsd:enumeration value="professional"/>
+			<xsd:enumeration value="technical"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="SearchQualifiersSanctions">
+		<xsd:restriction base="xsd:string">
+			<xsd:enumeration value="GSA"/>
+			<xsd:enumeration value="Medicaid"/>
+			<xsd:enumeration value="OFAC"/>
+			<xsd:enumeration value="OIG"/>
+			<xsd:enumeration value="Level1Individual"/>
+			<xsd:enumeration value="Level2Individual"/>
+			<xsd:enumeration value="Level3Individual"/>
+			<xsd:enumeration value="Level1Organization"/>
+			<xsd:enumeration value="Level2Organization"/>
+			<xsd:enumeration value="Level3Organization"/>
+			<xsd:enumeration value="ProhibitedParties"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="SearchTypes">
+		<xsd:union memberTypes="SearchTypeTypes xStringPatternExtensionType"/>
+	</xsd:simpleType>
+	<xsd:simpleType name="SearchTypeTypes">
+		<xsd:restriction base="xsd:string">
+			<xsd:enumeration value="abuse"/>
+			<xsd:enumeration value="address"/>
+			<xsd:enumeration value="awards"/>
+			<xsd:enumeration value="credit"/>
+			<xsd:enumeration value="criminal"/>
+			<xsd:enumeration value="alcohol"/>
+			<xsd:enumeration value="drug"/>
+			<xsd:enumeration value="earnings"/>
+			<xsd:enumeration value="education"/>
+			<xsd:enumeration value="employment"/>
+			<xsd:enumeration value="fingerPrint"/>
+			<xsd:enumeration value="license"/>
+			<xsd:enumeration value="certification"/>
+			<xsd:enumeration value="medical"/>
+			<xsd:enumeration value="military"/>
+			<xsd:enumeration value="name"/>
+			<xsd:enumeration value="other"/>
+			<xsd:enumeration value="patriotAct"/>
+			<xsd:enumeration value="phone"/>
+			<xsd:enumeration value="reference"/>
+			<xsd:enumeration value="sanction"/>
+			<xsd:enumeration value="ssn"/>
+			<xsd:enumeration value="workcomp"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="ServiceLevelTypes">
+		<xsd:union memberTypes="ServiceLevelType xStringPatternExtensionType"/>
+	</xsd:simpleType>
+	<xsd:simpleType name="ServiceLevelType">
+		<xsd:restriction base="xsd:string">
+			<xsd:enumeration value="Deluxe"/>
+			<xsd:enumeration value="Express"/>
+			<xsd:enumeration value="Standard"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="SpecimenTypes">
+		<xsd:restriction base="xsd:string">
+			<xsd:enumeration value="Blood"/>
+			<xsd:enumeration value="FingerNail"/>
+			<xsd:enumeration value="Hair"/>
+			<xsd:enumeration value="Saliva"/>
+			<xsd:enumeration value="Urine10panel"/>
+			<xsd:enumeration value="Urine9panel"/>
+			<xsd:enumeration value="Urine5panel"/>
+			<xsd:enumeration value="Urine"/>
+			<xsd:enumeration value="Breath"/>
+			<xsd:enumeration value="Sweat"/>
+			<xsd:enumeration value="OralFluid"/>
+			<xsd:enumeration value="Other"/>
+			<xsd:enumeration value="Unknown"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="SpecimenTypeType">
+		<xsd:union memberTypes="SpecimenTypes xStringPatternExtensionType"/>
+	</xsd:simpleType>
+	<xsd:complexType name="SubjectIdentificationType">
+		<xsd:complexContent>
+			<xsd:extension base="ScreeningPersonalDataType">
+				<xsd:sequence>
+					<xsd:element name="License" type="LicenseIdentificationType" minOccurs="0"/>
+					<xsd:element name="AdditionalItems" type="FlexibleDetailType" minOccurs="0" maxOccurs="unbounded"/>
+				</xsd:sequence>
+			</xsd:extension>
+		</xsd:complexContent>
+	</xsd:complexType>
+	<xsd:simpleType name="SubstanceTypeType">
+		<xsd:union memberTypes="SubstanceTypes xStringPatternExtensionType"/>
+	</xsd:simpleType>
+	<xsd:simpleType name="SubstanceTypes">
+		<xsd:restriction base="xsd:string">
+			<xsd:enumeration value="Acetone"/>
+			<xsd:enumeration value="Alcohol"/>
+			<xsd:enumeration value="Alprazolam"/>
+			<xsd:enumeration value="Amobarbital"/>
+			<xsd:enumeration value="Amobarbiturate"/>
+			<xsd:enumeration value="AMP"/>
+			<xsd:enumeration value="Amphetamines"/>
+			<xsd:enumeration value="Antiarrythmics"/>
+			<xsd:enumeration value="Anticonvulsants"/>
+			<xsd:enumeration value="Antidepressants"/>
+			<xsd:enumeration value="Antihistamine"/>
+			<xsd:enumeration value="Barbiturates"/>
+			<xsd:enumeration value="Benzodiazepines"/>
+			<xsd:enumeration value="Benzoylecgonine"/>
+			<xsd:enumeration value="Benzphetamine"/>
+			<xsd:enumeration value="Butabarbital"/>
+			<xsd:enumeration value="Butabarbiturate"/>
+			<xsd:enumeration value="Butalbital"/>
+			<xsd:enumeration value="Butorphanol"/>
+			<xsd:enumeration value="Carisoprodol"/>
+			<xsd:enumeration value="Chlordiazepoxide"/>
+			<xsd:enumeration value="Clonazepam"/>
+			<xsd:enumeration value="COC"/>
+			<xsd:enumeration value="Cocaethylene"/>
+			<xsd:enumeration value="Cocaine"/>
+			<xsd:enumeration value="CocaineMetabolites"/>
+			<xsd:enumeration value="Codeine"/>
+			<xsd:enumeration value="Cotinine"/>
+			<xsd:enumeration value="Cyclobenzaprine"/>
+			<xsd:enumeration value="Desmethydiazepam"/>
+			<xsd:enumeration value="Diazepam"/>
+			<xsd:enumeration value="Diethyoproprion"/>
+			<xsd:enumeration value="Ecstasy"/>
+			<xsd:enumeration value="Ethanol"/>
+			<xsd:enumeration value="Fentanyl"/>
+			<xsd:enumeration value="Fluoxetine"/>
+			<xsd:enumeration value="Flurazepam"/>
+			<xsd:enumeration value="Glucose"/>
+			<xsd:enumeration value="Heroin"/>
+			<xsd:enumeration value="Hydrocodone"/>
+			<xsd:enumeration value="Hydromorphone"/>
+			<xsd:enumeration value="Hydroxyalprazolam"/>
+			<xsd:enumeration value="Isopropanol"/>
+			<xsd:enumeration value="Ketamine"/>
+			<xsd:enumeration value="Lorazepam"/>
+			<xsd:enumeration value="LSD"/>
+			<xsd:enumeration value="Marijuana"/>
+			<xsd:enumeration value="MarijuanaMetabolites"/>
+			<xsd:enumeration value="MDMA"/>
+			<xsd:enumeration value="Meperidine"/>
+			<xsd:enumeration value="Meprobamate"/>
+			<xsd:enumeration value="Methadone"/>
+			<xsd:enumeration value="Methamphetamine"/>
+			<xsd:enumeration value="Methanol"/>
+			<xsd:enumeration value="Methaqualone"/>
+			<xsd:enumeration value="Methylenedioxy-amphe"/>
+			<xsd:enumeration value="Methylenedioxy-ethyl"/>
+			<xsd:enumeration value="Methylenedioxy-metam"/>
+			<xsd:enumeration value="Methylenediozy-amphe"/>
+			<xsd:enumeration value="Methylenendiozy-meth"/>
+			<xsd:enumeration value="Methylphenidate"/>
+			<xsd:enumeration value="Midazolam"/>
+			<xsd:enumeration value="MonoacetylMorphine"/>
+			<xsd:enumeration value="Morphine"/>
+			<xsd:enumeration value="N-Desmethyldiaze"/>
+			<xsd:enumeration value="Nikethamide"/>
+			<xsd:enumeration value="Nitrites"/>
+			<xsd:enumeration value="Nordiazepam"/>
+			<xsd:enumeration value="Normeperidine"/>
+			<xsd:enumeration value="OPI"/>
+			<xsd:enumeration value="Opiates"/>
+			<xsd:enumeration value="OpiatesMetabolites"/>
+			<xsd:enumeration value="Oxazepam"/>
+			<xsd:enumeration value="Oxycodone"/>
+			<xsd:enumeration value="PCP"/>
+			<xsd:enumeration value="Pentazocine"/>
+			<xsd:enumeration value="Pentobarbital"/>
+			<xsd:enumeration value="Pentobarbiturate"/>
+			<xsd:enumeration value="Phencyclidine"/>
+			<xsd:enumeration value="Phendimetrazine"/>
+			<xsd:enumeration value="Phenmetrazine"/>
+			<xsd:enumeration value="Phenobarbital"/>
+			<xsd:enumeration value="Phenobarbiturate"/>
+			<xsd:enumeration value="Phenothiazine"/>
+			<xsd:enumeration value="Phenothiazines"/>
+			<xsd:enumeration value="Phentermine"/>
+			<xsd:enumeration value="Phenylpropanolamine"/>
+			<xsd:enumeration value="Propoxyphene"/>
+			<xsd:enumeration value="Pseudoephedrine"/>
+			<xsd:enumeration value="Seccobarbiturate"/>
+			<xsd:enumeration value="Secobarbital"/>
+			<xsd:enumeration value="Strychnine"/>
+			<xsd:enumeration value="SyntheticNarcotics"/>
+			<xsd:enumeration value="Telazol"/>
+			<xsd:enumeration value="Temazepam"/>
+			<xsd:enumeration value="THC"/>
+			<xsd:enumeration value="Tletamine"/>
+			<xsd:enumeration value="Tamadol"/>
+			<xsd:enumeration value="Tiazolam"/>
+			<xsd:enumeration value="TicyclicAntidepressant"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:complexType name="TextImageType">
+		<xsd:sequence>
+			<xsd:element ref="InternetWebAddress" minOccurs="0" maxOccurs="unbounded"/>
+			<xsd:element ref="InternetEmailAddress" minOccurs="0" maxOccurs="unbounded"/>
+			<xsd:element name="RoutingId" type="EntityIdType" minOccurs="0" maxOccurs="unbounded">
+				<xsd:annotation>
+					<xsd:documentation>The content of this element  could be an internal account or user identifier that will receive a copy of the screening results.   The functionality of the content will be identified by the idOwner and name attributes.</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+			<xsd:choice minOccurs="0">
+				<xsd:element name="Text" type="xsd:string" minOccurs="0"/>
+				<xsd:element name="FileReferences" minOccurs="0" maxOccurs="unbounded">
+					<xsd:complexType>
+						<xsd:simpleContent>
+							<xsd:extension base="xsd:string">
+								<xsd:attribute name="type" type="DocumentationTypes" use="optional"/>
+								<xsd:attribute name="mediaType" type="MediaTypes" use="optional"/>
+							</xsd:extension>
+						</xsd:simpleContent>
+					</xsd:complexType>
+				</xsd:element>
+				<xsd:element name="Image" minOccurs="0" maxOccurs="unbounded">
+					<xsd:complexType>
+						<xsd:simpleContent>
+							<xsd:extension base="xsd:base64Binary">
+								<xsd:attribute name="type" type="DocumentationTypes" use="optional"/>
+								<xsd:attribute name="mediaType" type="MediaTypes" use="optional"/>
+								<xsd:attribute name="fileName" type="xsd:string" use="optional"/>
+								<xsd:attribute ref="xml:lang" use="optional"/>
+							</xsd:extension>
+						</xsd:simpleContent>
+					</xsd:complexType>
+				</xsd:element>
+			</xsd:choice>
+		</xsd:sequence>
+		<xsd:attribute name="type" type="DocumentationTypes" use="optional"/>
+		<xsd:attribute name="mediaType" type="MediaTypes" use="optional"/>
+		<xsd:attribute name="resultType" type="ResultDataTypes" use="optional"/>
+		<xsd:attribute name="manifestName" type="xsd:string" use="optional"/>
+		<xsd:attribute ref="xml:lang" use="optional"/>
+	</xsd:complexType>
+	<xsd:simpleType name="VendorType">
+		<xsd:union memberTypes="VendorTypes xsd:string"/>
+	</xsd:simpleType>
+	<xsd:simpleType name="VendorTypes">
+		<xsd:restriction base="xsd:string">
+			<xsd:enumeration value="equifax"/>
+			<xsd:enumeration value="experian"/>
+			<xsd:enumeration value="transUnion"/>
+			<xsd:enumeration value="merged"/>
+			<xsd:enumeration value="private"/>
+			<xsd:enumeration value="other"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+</xsd:schema>

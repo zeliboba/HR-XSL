@@ -1,0 +1,170 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Invoice xmlns="http://www.openapplications.org/oagis" xmlns:hrx="http://ns.hr-xml.org/2007-04-15" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://ns.hr-xml.org/2007-04-15 
+TimeCardAdditionalData.xsd 
+http://www.openapplications.org/oagis 
+Invoice.xsd">
+	<Header>
+		<DocumentIds>
+			<DocumentId>
+				<Id>A55529</Id>
+			</DocumentId>
+		</DocumentIds>
+		<DocumentDateTime>2002-05-01T00:00:00Z</DocumentDateTime>
+		<TotalAmount currency="USD">100050</TotalAmount>
+		<PaymentTerms>
+			<TermId>Net30Days</TermId>
+		</PaymentTerms>
+		<Parties>
+			<RemitToParty>
+				<Name>Kelly Services</Name>
+				<Addresses>
+					<PrimaryAddress>
+						<AddressLine>P.O. Box 999</AddressLine>
+						<City>Troy</City>
+						<StateOrProvince>MI</StateOrProvince>
+						<Country>USA</Country>
+						<PostalCode>48084</PostalCode>
+					</PrimaryAddress>
+				</Addresses>
+				<Contacts>
+					<PrimaryContact>
+						<Person>
+							<PersonName>
+								<GivenName>Mary</GivenName>
+								<FamilyName>Smith</FamilyName>
+							</PersonName>
+						</Person>
+						<Telephone>888-532-1212</Telephone>
+					</PrimaryContact>
+				</Contacts>
+			</RemitToParty>
+		</Parties>
+		<Type>Debit</Type>
+		<TotalCharges currency="USD">10000</TotalCharges>
+		<TotalTax currency="USD">50</TotalTax>
+		<UserArea>
+			<hrx:TimeCard>
+				<hrx:ReportedResource>
+					<hrx:Resource>
+						<hrx:AdditionalData>Invoice Header Data</hrx:AdditionalData>
+					</hrx:Resource>
+				</hrx:ReportedResource>
+				<hrx:ReportedTime>
+					<hrx:PeriodStartDate>2001-12-31</hrx:PeriodStartDate>
+					<hrx:PeriodEndDate>2002-01-06</hrx:PeriodEndDate>
+					<hrx:TimeEvent type="">
+						<hrx:EventDateTime>2002-01-06</hrx:EventDateTime>
+						<hrx:AdditionalData>
+							<hrx:StaffingAdditionalData>
+								<hrx:CustomerReportingRequirements>
+									<hrx:PurchaseOrderNumber>40-654</hrx:PurchaseOrderNumber>
+								</hrx:CustomerReportingRequirements>
+							</hrx:StaffingAdditionalData>
+						</hrx:AdditionalData>
+					</hrx:TimeEvent>
+				</hrx:ReportedTime>
+			</hrx:TimeCard>
+		</UserArea>
+	</Header>
+	<Line>
+		<LineNumber>B44418</LineNumber>
+		<TotalAmount currency="USD">5500</TotalAmount>
+		<Line>
+			<LineNumber>B44418A</LineNumber>
+			<TotalAmount currency="USD">4000</TotalAmount>
+			<Price>
+				<Amount currency="USD">100</Amount>
+				<PerQuantity uom="regular">1</PerQuantity>
+			</Price>
+			<ItemQuantity uom="regular">40</ItemQuantity>
+			<UserArea>
+				<hrx:TimeCard>
+					<hrx:ReportedResource>
+						<hrx:Person>
+							<hrx:PersonName>
+								<hrx:LegalName>Jack Jones</hrx:LegalName>
+							</hrx:PersonName>
+						</hrx:Person>
+					</hrx:ReportedResource>
+					<hrx:ReportedTime>
+						<hrx:PeriodStartDate>2001-12-31</hrx:PeriodStartDate>
+						<hrx:PeriodEndDate>2002-01-06</hrx:PeriodEndDate>
+						<hrx:TimeEvent type="">
+							<hrx:EventDateTime>2002-01-06</hrx:EventDateTime>
+						</hrx:TimeEvent>
+					</hrx:ReportedTime>
+				</hrx:TimeCard>
+			</UserArea>
+		</Line>
+		<Line>
+			<LineNumber>B44418B</LineNumber>
+			<TotalAmount currency="USD">1500</TotalAmount>
+			<Price>
+				<Amount currency="USD">150</Amount>
+				<PerQuantity uom="overtime">1</PerQuantity>
+			</Price>
+			<UserArea>
+				<hrx:TimeCard>
+					<hrx:ReportedResource>
+						<hrx:Person>
+							<hrx:PersonName>
+								<hrx:LegalName>Jessie Jones</hrx:LegalName>
+							</hrx:PersonName>
+						</hrx:Person>
+					</hrx:ReportedResource>
+					<hrx:ReportedTime>
+						<hrx:PeriodStartDate>2001-12-31</hrx:PeriodStartDate>
+						<hrx:PeriodEndDate>2002-01-06</hrx:PeriodEndDate>
+						<hrx:TimeEvent type="">
+							<hrx:EventDateTime>2002-01-06</hrx:EventDateTime>
+						</hrx:TimeEvent>
+					</hrx:ReportedTime>
+				</hrx:TimeCard>
+			</UserArea>
+		</Line>
+	</Line>
+	<Line>
+		<LineNumber>B44419</LineNumber>
+		<TotalAmount currency="USD">4550</TotalAmount>
+		<Line>
+			<LineNumber>B44419A</LineNumber>
+			<TotalAmount currency="USD">4550</TotalAmount>
+			<Charges>
+				<Charge>
+					<Total currency="USD">4500</Total>
+					<Description>MiscellaneousCharge</Description>
+				</Charge>
+			</Charges>
+			<Tax>
+				<TaxAmount currency="USD">50</TaxAmount>
+			</Tax>
+			<UserArea>
+				<hrx:TimeCard>
+					<hrx:ReportedResource>
+						<hrx:Person>
+							<hrx:PersonName>
+								<hrx:LegalName>Jack Jones</hrx:LegalName>
+							</hrx:PersonName>
+						</hrx:Person>
+					</hrx:ReportedResource>
+					<hrx:ReportedTime>
+						<hrx:PeriodStartDate>2001-12-31</hrx:PeriodStartDate>
+						<hrx:PeriodEndDate>2002-01-06</hrx:PeriodEndDate>
+						<hrx:Expense type="">
+							<hrx:ExpenseDate>2002-01-06</hrx:ExpenseDate>
+							<hrx:ExpenseAmount currency="USD">5000</hrx:ExpenseAmount>
+							<hrx:AdditionalData>Hotel</hrx:AdditionalData>
+							<hrx:AdditionalData>
+								<hrx:StaffingAdditionalData>
+									<hrx:CustomerReportingRequirements>
+										<hrx:DepartmentName>MailRoom</hrx:DepartmentName>
+									</hrx:CustomerReportingRequirements>
+								</hrx:StaffingAdditionalData>
+							</hrx:AdditionalData>
+						</hrx:Expense>
+					</hrx:ReportedTime>
+				</hrx:TimeCard>
+			</UserArea>
+		</Line>
+	</Line>
+</Invoice>

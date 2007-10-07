@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema xmlns="http://ns.hr-xml.org/2007-04-15" xmlns:xsd="http://www.w3.org/2001/XMLSchema" targetNamespace="http://ns.hr-xml.org/2007-04-15" elementFormDefault="qualified" attributeFormDefault="unqualified">
+	<xsd:include schemaLocation="../CPO/IdentifierTypes.xsd"/>
+	<xsd:include schemaLocation="../CPO/ContactMethod.xsd"/>
+	<xsd:include schemaLocation="../CPO/UserArea.xsd"/>
+	<xsd:include schemaLocation="../Indicative/IndicativeReusableTypes.xsd"/>
+	<xsd:include schemaLocation="../Indicative/OrganizationalInfoTypes.xsd"/>
+	<xsd:include schemaLocation="../CPO/US/USLocalizations.xsd"/>
+	<xsd:include schemaLocation="../Indicative/Localizations.xsd"/>
+	<xsd:complexType name="IndEmployeeInfoType">
+		<xsd:annotation>
+			<xsd:documentation>Localized content.</xsd:documentation>
+			<xsd:documentation>Localized content.</xsd:documentation>
+		</xsd:annotation>
+		<xsd:sequence>
+			<xsd:element name="EmployeeId" type="EntityIdType" minOccurs="0" maxOccurs="unbounded"/>
+			<xsd:element name="PriorIncorrectEmployeeId" type="EntityIdType" minOccurs="0" maxOccurs="unbounded"/>
+			<xsd:element name="ContactInfo" type="EffectiveDatedContactMethodWithPrecedenceType" minOccurs="0" maxOccurs="unbounded"/>
+			<xsd:element name="RemunerationBasis" type="RemunerationBasisEnumType" minOccurs="0"/>
+			<xsd:element ref="FLSAStatus" minOccurs="0">
+				<xsd:annotation>
+					<xsd:documentation>Localized content.</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+			<xsd:element name="EmploymentLevel" type="EmploymentLevelEnumType" minOccurs="0"/>
+			<xsd:element name="ResourceRelationship" type="ResourceRelationshipEnumType" minOccurs="0"/>
+			<xsd:element name="EmploymentTerm" type="EmploymentTermType" minOccurs="0"/>
+			<xsd:element name="LaborBargainingUnitStatus" type="LaborBargainingUnitStatusEnumType" minOccurs="0"/>
+			<xsd:element name="ForeignStatus" type="ForeignStatusEnumType" minOccurs="0"/>
+			<xsd:element name="IsVIP" type="VIPType" minOccurs="0"/>
+			<xsd:element name="IsExecutive" type="ExecutiveType" minOccurs="0"/>
+			<xsd:element name="IsOfficer" type="OfficerType" minOccurs="0"/>
+			<xsd:element ref="IsHighlyCompensated" minOccurs="0"/>
+			<xsd:element name="IsPercentOwner" type="PercentOwnerType" minOccurs="0"/>
+			<xsd:element name="IsRetiree" type="xsd:boolean" minOccurs="0"/>
+			<xsd:element name="RetirementInfo" type="IndRetirementInfoType" minOccurs="0" maxOccurs="unbounded"/>
+			<xsd:element name="EmployeeGroup" type="EntityIdType" minOccurs="0" maxOccurs="unbounded"/>
+			<xsd:element name="UserArea" type="UserAreaType" minOccurs="0"/>
+		</xsd:sequence>
+	</xsd:complexType>
+	<xsd:simpleType name="RemunerationBasisEnumType">
+		<xsd:restriction base="xsd:string">
+			<xsd:enumeration value="Hourly"/>
+			<xsd:enumeration value="Salaried"/>
+			<xsd:enumeration value="SalariedPlusCommission"/>
+			<xsd:enumeration value="CommisionOnly"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="EmploymentLevelEnumType">
+		<xsd:restriction base="xsd:string">
+			<xsd:enumeration value="FullTime"/>
+			<xsd:enumeration value="PartTime"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="ResourceRelationshipEnumType">
+		<xsd:restriction base="xsd:string">
+			<xsd:enumeration value="Employee"/>
+			<xsd:enumeration value="Vendor"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="EmploymentTermEnumType">
+		<xsd:restriction base="xsd:string">
+			<xsd:enumeration value="Regular"/>
+			<xsd:enumeration value="Temporary"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="LaborBargainingUnitStatusEnumType">
+		<xsd:restriction base="xsd:string">
+			<xsd:enumeration value="Member"/>
+			<xsd:enumeration value="NonMember"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="ForeignStatusEnumType">
+		<xsd:restriction base="xsd:string">
+			<xsd:enumeration value="Domestic"/>
+			<xsd:enumeration value="Inpatriate"/>
+			<xsd:enumeration value="Expatriate"/>
+			<xsd:enumeration value="LocalNational"/>
+			<xsd:enumeration value="ThirdCountryNational"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:complexType name="EmploymentTermType">
+		<xsd:simpleContent>
+			<xsd:extension base="EmploymentTermEnumType">
+				<xsd:attribute name="isInternship" type="xsd:boolean"/>
+				<xsd:attribute name="isSeasonal" type="xsd:boolean"/>
+			</xsd:extension>
+		</xsd:simpleContent>
+	</xsd:complexType>
+	<xsd:complexType name="VIPType">
+		<xsd:simpleContent>
+			<xsd:extension base="xsd:boolean">
+				<xsd:attribute name="type" type="xsd:string"/>
+			</xsd:extension>
+		</xsd:simpleContent>
+	</xsd:complexType>
+	<xsd:complexType name="ExecutiveType">
+		<xsd:simpleContent>
+			<xsd:extension base="xsd:boolean">
+				<xsd:attribute name="type" type="xsd:string"/>
+			</xsd:extension>
+		</xsd:simpleContent>
+	</xsd:complexType>
+	<xsd:complexType name="OfficerType">
+		<xsd:simpleContent>
+			<xsd:extension base="xsd:boolean">
+				<xsd:attribute name="type" type="xsd:string"/>
+			</xsd:extension>
+		</xsd:simpleContent>
+	</xsd:complexType>
+	<xsd:complexType name="PercentOwnerType">
+		<xsd:simpleContent>
+			<xsd:extension base="xsd:boolean">
+				<xsd:attribute name="percentage" type="xsd:string"/>
+			</xsd:extension>
+		</xsd:simpleContent>
+	</xsd:complexType>
+	<xsd:complexType name="IndRetirementInfoType">
+		<xsd:sequence>
+			<xsd:element name="Organization" type="IndOrganizationRefType" minOccurs="0"/>
+			<xsd:element name="IntendedRetirementDate" type="LocalDateType" minOccurs="0"/>
+			<xsd:element name="FirstDayOfRetirementDate" type="LocalDateType" minOccurs="0"/>
+		</xsd:sequence>
+	</xsd:complexType>
+</xsd:schema>

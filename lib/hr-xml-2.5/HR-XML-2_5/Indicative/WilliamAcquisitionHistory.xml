@@ -1,0 +1,523 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- This record contains the complete historical data from when William first started working at Widget Manufacturing through the Acme acquisition. -->
+<IndicativeData xmlns="http://ns.hr-xml.org/2007-04-15" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://ns.hr-xml.org/2007-04-15  IndicativeData.xsd">
+	<Employer>
+		<OrganizationName>Acme</OrganizationName>
+		<OrganizationId idOwner="Dunn &amp; Bradstreet">
+			<IdValue name="DUNNS">12345</IdValue>
+		</OrganizationId>
+		<TaxId validFrom="1975-01-01" validTo="notKnown" idOwner="US IRS">
+			<IdValue name="EIN">67890</IdValue>
+		</TaxId>
+		<LegalId validFrom="1975-01-01" validTo="notKnown" idOwner="US IRS">
+			<IdValue name="EIN">67890</IdValue>
+		</LegalId>
+	</Employer>
+	<Employee changeType="Add">
+		<PersonInfo>
+			<!-- Person Legal Id includes historical Canadian SIN and current US SSN.  -->
+			<PersonLegalId validFrom="1961-04-05" validTo="2000-05-11" idOwner="Canadian Social Insurance">
+				<IdValue name="SIN">123-456-789</IdValue>
+			</PersonLegalId>
+			<PersonLegalId idOwner="US SSA" validFrom="2000-05-12">
+				<IdValue name="SSN">456-11-1111</IdValue>
+			</PersonLegalId>
+			<PersonId idOwner="Acme">
+				<IdValue name="Person Unique Id">12440</IdValue>
+			</PersonId>
+			<PersonName>
+				<GivenName>William</GivenName>
+				<FamilyName>Jones</FamilyName>
+			</PersonName>
+			<DateOfBirth>1961-04-05</DateOfBirth>
+			<GenderCode>1</GenderCode>
+			<!-- Marital Status shows William originally single, then married in 1996 -->
+			<MaritalStatus validTo="1996-08-27">
+				<StandardValue>Unmarried</StandardValue>
+			</MaritalStatus>
+			<MaritalStatus validFrom="1996-08-28">
+				<StandardValue>Married</StandardValue>
+			</MaritalStatus>
+			<!-- Contact Info includes historical Canadian address and the current US address.  -->
+			<ContactInfo validFrom="1987-01-01" validTo="1998-06-05">
+				<Location>home</Location>
+				<WhenAvailable>evenings</WhenAvailable>
+				<Telephone>
+					<FormattedNumber>(418)555-9876</FormattedNumber>
+				</Telephone>
+				<PostalAddress>
+					<CountryCode>CA</CountryCode>
+					<PostalCode>G1R 5C7</PostalCode>
+					<Region>Quebec</Region>
+					<Municipality>Quebec City</Municipality>
+					<DeliveryAddress>
+						<AddressLine>875, rue Fraser</AddressLine>
+					</DeliveryAddress>
+				</PostalAddress>
+			</ContactInfo>
+			<ContactInfo precedence="Primary" validFrom="1998-06-06">
+				<Location>home</Location>
+				<WhenAvailable>evenings, weekends</WhenAvailable>
+				<Telephone>
+					<FormattedNumber>1 212 555 1212</FormattedNumber>
+				</Telephone>
+				<PostalAddress>
+					<CountryCode>US</CountryCode>
+					<PostalCode>11217</PostalCode>
+					<Region>NY</Region>
+					<Municipality>Brooklyn</Municipality>
+					<DeliveryAddress>
+						<AddressLine>4100 Abiline Avenue</AddressLine>
+						<Unit>15A</Unit>
+					</DeliveryAddress>
+				</PostalAddress>
+			</ContactInfo>
+			<!-- Citizenship includes historical Candian and current US information.  -->
+			<Citizenship validFrom="1961-04-05" validTo="2000-05-11">
+				<CountryCode>CA</CountryCode>
+			</Citizenship>
+			<Citizenship validFrom="2000-05-12">
+				<CountryCode>US</CountryCode>
+			</Citizenship>
+			<IsVeteran>false</IsVeteran>
+			<IsDisabled>false</IsDisabled>
+			<IsTobaccoUser>true</IsTobaccoUser>
+			<Dependent>
+				<PersonLegalId idOwner="US SSA">
+					<IdValue name="SSN">221871555</IdValue>
+				</PersonLegalId>
+				<PersonName>
+					<FormattedName>Margaret Jones</FormattedName>
+				</PersonName>
+				<DateOfBirth>1963-05-21</DateOfBirth>
+				<GenderCode>2</GenderCode>
+				<ContactInfo precedence="Primary" validFrom="1998-06-06">
+					<Location>home</Location>
+					<Telephone>
+						<FormattedNumber>1 212 555 1212</FormattedNumber>
+					</Telephone>
+					<PostalAddress>
+						<CountryCode>US</CountryCode>
+						<PostalCode>11217</PostalCode>
+						<Region>NY</Region>
+						<Municipality>Brooklyn</Municipality>
+						<DeliveryAddress>
+							<AddressLine>4100 Abiline Avenue</AddressLine>
+							<Unit>15A</Unit>
+						</DeliveryAddress>
+					</PostalAddress>
+				</ContactInfo>
+				<!-- Citizenship includes historical Canadian and current US information.  -->
+				<Citizenship validFrom="1963-05-21" validTo="2000-05-11">
+					<CountryCode>CA</CountryCode>
+				</Citizenship>
+				<Citizenship validFrom="2000-05-12">
+					<CountryCode>US</CountryCode>
+				</Citizenship>
+				<Relationship>
+					<StandardValue>Spouse</StandardValue>
+				</Relationship>
+			</Dependent>
+			<Dependent>
+				<PersonLegalId idOwner="US SSA">
+					<IdValue name="SSN">223990987</IdValue>
+				</PersonLegalId>
+				<PersonName>
+					<FormattedName>Paul Jones</FormattedName>
+				</PersonName>
+				<DateOfBirth>1999-03-21</DateOfBirth>
+				<GenderCode>1</GenderCode>
+				<ContactInfo precedence="Primary" validFrom="1999-03-21">
+					<Location>home</Location>
+					<Telephone>
+						<FormattedNumber>1 212 555 1212</FormattedNumber>
+					</Telephone>
+					<PostalAddress>
+						<CountryCode>US</CountryCode>
+						<PostalCode>11217</PostalCode>
+						<Region>NY</Region>
+						<Municipality>Brooklyn</Municipality>
+						<DeliveryAddress>
+							<AddressLine>4100 Abiline Avenue</AddressLine>
+							<Unit>15A</Unit>
+						</DeliveryAddress>
+					</PostalAddress>
+				</ContactInfo>
+				<Citizenship validFrom="1999-03-21">
+					<CountryCode>US</CountryCode>
+				</Citizenship>
+				<Relationship>
+					<StandardValue>Child</StandardValue>
+				</Relationship>
+			</Dependent>
+		</PersonInfo>
+		<EmployeeInfo>
+			<!-- Employee id's include id when originally hired at Widget, new id, and when re-hired.  Acme kept the same employee id's when they acquired Widget company.  -->
+			<EmployeeId validFrom="1987-01-01" validTo="2003-10-18" idOwner="Widget Manufacturing">
+				<IdValue name="EE Id">320</IdValue>
+			</EmployeeId>
+			<EmployeeId validFrom="2004-06-21" validTo="2004-10-24" idOwner="Widget Manufacturing">
+				<IdValue name="EE Id">654</IdValue>
+			</EmployeeId>
+			<EmployeeId validFrom="2004-10-25" validTo="notKnown" idOwner="Acme">
+				<IdValue name="EE Id">654</IdValue>
+			</EmployeeId>
+			<!-- Only the current work contact info is available, as the prior work contact typically wouldn't be useful. -->
+			<!--William works Monday, Tuesday, Thursday, and Friday at the New York Plant and Wednesday at the Syracuse Plant. -->
+			<ContactInfo precedence="Primary" validFrom="1998-06-06">
+				<Location>office</Location>
+				<WhenAvailable>Monday, Tuesday, Thursday, Friday</WhenAvailable>
+				<Telephone>
+					<FormattedNumber>1 212 456 5000</FormattedNumber>
+				</Telephone>
+				<PostalAddress>
+					<CountryCode>US</CountryCode>
+					<PostalCode>11220</PostalCode>
+					<Region>NY</Region>
+					<Municipality>Manhattan</Municipality>
+					<DeliveryAddress>
+						<AddressLine>5001 Progress Street</AddressLine>
+					</DeliveryAddress>
+				</PostalAddress>
+			</ContactInfo>
+			<ContactInfo precedence="Secondary" validFrom="1998-06-06">
+				<Location>office</Location>
+				<WhenAvailable>Wednesday</WhenAvailable>
+				<Telephone>
+					<FormattedNumber>1 212 570 3123</FormattedNumber>
+				</Telephone>
+				<PostalAddress>
+					<CountryCode>US</CountryCode>
+					<PostalCode>11225</PostalCode>
+					<Region>NY</Region>
+					<Municipality>Syracuse</Municipality>
+					<DeliveryAddress>
+						<AddressLine>15 Warehouse Road</AddressLine>
+					</DeliveryAddress>
+				</PostalAddress>
+			</ContactInfo>
+			<RemunerationBasis>Salaried</RemunerationBasis>
+			<FLSAStatus>exempt</FLSAStatus>
+			<EmploymentLevel>FullTime</EmploymentLevel>
+			<ResourceRelationship>Employee</ResourceRelationship>
+			<EmploymentTerm>Regular</EmploymentTerm>
+			<LaborBargainingUnitStatus>NonMember</LaborBargainingUnitStatus>
+			<ForeignStatus>Domestic</ForeignStatus>
+			<IsVIP>false</IsVIP>
+			<IsExecutive>false</IsExecutive>
+			<IsOfficer>false</IsOfficer>
+			<IsHighlyCompensated>true</IsHighlyCompensated>
+			<IsPercentOwner percentage="5">true</IsPercentOwner>
+			<IsRetiree>false</IsRetiree>
+			<!-- Employee Group changed for the original hire, transfer, re-hire and acquisition.  -->
+			<EmployeeGroup validFrom="1987-01-01" validTo="1998-06-05" idOwner="Widget Manufacturing">
+				<IdValue name="StatusCode">Y17LT6</IdValue>
+			</EmployeeGroup>
+			<EmployeeGroup validFrom="1998-06-06" validTo="2003-10-18" idOwner="Widget Manufacturing">
+				<IdValue name="StatusCode">X17BY9</IdValue>
+			</EmployeeGroup>
+			<EmployeeGroup validFrom="2004-06-21" validTo="2004-10-24" idOwner="Widget Manufacturing">
+				<IdValue name="StatusCode">X17RN9</IdValue>
+			</EmployeeGroup>
+			<EmployeeGroup validFrom="2004-10-25" validTo="notKnown" idOwner="Acme">
+				<IdValue name="StatusCode">JB1800</IdValue>
+			</EmployeeGroup>
+		</EmployeeInfo>
+		<EmploymentInfo>
+			<IsEmployed>true</IsEmployed>
+			<!-- Three employment structures exist to describe the new hire, re-hire, and acquisition.-->
+			<Employment>
+				<HireInfo typeOfHire="NewHire">
+					<HireDate>1987-01-01</HireDate>
+				</HireInfo>
+				<!-- LeaveInfo is historical information -->
+				<IsOnLeave>false</IsOnLeave>
+				<!-- William went on FMLA but decided to use his 6 weeks of vacation so that his leave would be paid. He intended to return 
+					to work on May 4. -->
+				<LeaveInfo employeeLeaveStatus="Active" remunerationLeaveStatus="Paid">
+					<LeaveDate>1999-03-21</LeaveDate>
+					<LeaveReason>Family Leave</LeaveReason>
+					<LastDateWorked>1999-03-20</LastDateWorked>
+					<ScheduledReturnToWorkDate>1999-05-04</ScheduledReturnToWorkDate>
+				</LeaveInfo>
+				<!--On the first of May,  William informed his boss that he needed to extend his leave since they were unable to find a
+						nanny.  He expected to return on June 20.  His leave switched from paid to unpaid as his vacation was exhausted. -->
+				<LeaveInfo employeeLeaveStatus="Active" remunerationLeaveStatus="Unpaid">
+					<LeaveDate>1999-03-21</LeaveDate>
+					<LeaveReason validFrom="1999-05-01">Family Leave Extension</LeaveReason>
+					<LastDateWorked>1999-03-20</LastDateWorked>
+					<ScheduledReturnToWorkDate>1999-06-20</ScheduledReturnToWorkDate>
+				</LeaveInfo>
+				<!--William returns to work June 20. -->
+				<LeaveInfo>
+					<LeaveDate>1999-03-21</LeaveDate>
+					<ReturnedToWorkDate>1999-06-20</ReturnedToWorkDate>
+				</LeaveInfo>
+				<TerminationInfo isVoluntary="true">
+					<TerminationReason>New employment opportunity</TerminationReason>
+					<TerminationDate>2003-10-18</TerminationDate>
+					<LastDateWorked>2003-10-18</LastDateWorked>
+					<LastDatePaid>2003-10-31</LastDatePaid>
+				</TerminationInfo>
+			</Employment>
+			<Employment>
+				<HireInfo typeOfHire="Rehire">
+					<HireDate>2004-06-21</HireDate>
+					<OriginalHireDate>1987-01-01</OriginalHireDate>
+					<!-- William received credit for time he was not with the company.  -->
+					<AdjustedHireDate type="service start date">1987-01-01</AdjustedHireDate>
+				</HireInfo>
+				<TerminationInfo>
+					<TerminationReason>Company acquired by Acme</TerminationReason>
+					<TerminationDate>2004-10-24</TerminationDate>
+					<LastDateWorked>2004-10-24</LastDateWorked>
+				</TerminationInfo>
+			</Employment>
+			<Employment>
+				<HireInfo typeOfHire="Acquisition">
+					<HireDate>2004-10-25</HireDate>
+					<OriginalHireDate>1987-01-01</OriginalHireDate>
+					<!-- William received credit for time he was not with the company.  -->
+					<AdjustedHireDate type="service start date">1987-01-01</AdjustedHireDate>
+				</HireInfo>
+				<IsOnLeave>false</IsOnLeave>
+				<IsTerminated>false</IsTerminated>
+			</Employment>
+		</EmploymentInfo>
+		<JobPositionInfo>
+			<!-- Job Position Detail includes historical information for the original hire position, promotion, transfer and rehire. It also includes the current acquisition information.  -->
+			<JobPositionDetail validFrom="1987-01-01" validTo="1989-12-31">
+				<PositionId idOwner="Widget Manufacturing">
+					<IdValue name="Job Id">20</IdValue>
+				</PositionId>
+				<PositionTitle>Assembly Line Worker</PositionTitle>
+				<JobLevel>
+					<JobPlan>Assembly Line</JobPlan>
+					<JobGrade>B17</JobGrade>
+					<JobStep>1</JobStep>
+				</JobLevel>
+				<JobCategory>Shop Floor</JobCategory>
+				<JobEntryReason>
+					<StandardValue>Hire</StandardValue>
+				</JobEntryReason>
+			</JobPositionDetail>
+			<JobPositionDetail validFrom="1990-01-01" validTo="1998-06-05">
+				<PositionId idOwner="Widget Manufacturing">
+					<IdValue name="Job Id">22</IdValue>
+				</PositionId>
+				<PositionTitle>Small Parts Specialist</PositionTitle>
+				<JobLevel>
+					<JobPlan>Assembly Line</JobPlan>
+					<JobGrade>B17</JobGrade>
+					<JobStep>3</JobStep>
+				</JobLevel>
+				<JobCategory>Shop Floor - Small Parts</JobCategory>
+				<JobEntryReason>
+					<StandardValue>Promotion</StandardValue>
+				</JobEntryReason>
+			</JobPositionDetail>
+			<JobPositionDetail validFrom="1998-06-06" validTo="2003-10-18">
+				<PositionId idOwner="Widget Manufacturing">
+					<IdValue name="Job Id">30</IdValue>
+				</PositionId>
+				<PositionTitle>Assembly Line Supervisor</PositionTitle>
+				<JobLevel>
+					<JobPlan>Assembly Line</JobPlan>
+					<JobGrade>B15</JobGrade>
+					<JobStep>1</JobStep>
+				</JobLevel>
+				<JobCategory>Supervisory</JobCategory>
+				<JobEntryReason>
+					<StandardValue>Transfer</StandardValue>
+				</JobEntryReason>
+			</JobPositionDetail>
+			<JobPositionDetail validFrom="2004-06-21" validTo="2004-10-24">
+				<PositionId idOwner="Widget Manufacturing">
+					<IdValue name="Job Id">22</IdValue>
+				</PositionId>
+				<PositionTitle>Floor Manager</PositionTitle>
+				<JobLevel>
+					<JobPlan>Management</JobPlan>
+					<JobGrade>B10</JobGrade>
+					<JobStep>1</JobStep>
+				</JobLevel>
+				<JobCategory>Shop Floor - Management</JobCategory>
+				<JobEntryReason>
+					<NonStandardValue>Rehire</NonStandardValue>
+				</JobEntryReason>
+			</JobPositionDetail>
+			<JobPositionDetail validFrom="2004-10-25">
+				<PositionId idOwner="Acme">
+					<IdValue name="Job Id">22</IdValue>
+				</PositionId>
+				<PositionTitle>Floor Manager</PositionTitle>
+				<JobLevel>
+					<JobPlan>Management</JobPlan>
+					<JobGrade>B10</JobGrade>
+					<JobStep>1</JobStep>
+				</JobLevel>
+				<JobCategory>Shop Floor - Management</JobCategory>
+				<JobEntryReason>
+					<StandardValue>Acquisition</StandardValue>
+				</JobEntryReason>
+			</JobPositionDetail>
+			<ScheduledHours baseInterval="Daily">8</ScheduledHours>
+			<ScheduledHours baseInterval="Weekly">40</ScheduledHours>
+		</JobPositionInfo>
+		<OrganizationInfo>
+			<!-- This section describes the relationship between the William and his employer. It does not describe the organizational structure. Please see CPO Organizational schema to describe the organizational structure.  -->
+			<Organization validFrom="1987-01-01" validTo="2004-10-24">
+				<OrganizationName>Widget Manufacturing</OrganizationName>
+				<OrganizationId idOwner="Dunn &amp; Bradstreet">
+					<IdValue name="DUNNS">72241</IdValue>
+				</OrganizationId>
+			</Organization>
+			<Organization validFrom="2004-10-25">
+				<OrganizationName>Acme</OrganizationName>
+				<OrganizationId idOwner="Dunn &amp; Bradstreet">
+					<IdValue name="DUNNS">12345</IdValue>
+				</OrganizationId>
+			</Organization>
+			<OrganizationalUnit validFrom="1987-01-01" validTo="1998-06-05">
+				<OrganizationalUnitName>Quebec Plant</OrganizationalUnitName>
+				<OrganizationalUnitId idOwner="Widget Manufacturing">
+					<IdValue name="Division Id">01</IdValue>
+				</OrganizationalUnitId>
+			</OrganizationalUnit>
+			<OrganizationalUnit validFrom="1998-06-06" validTo="2004-10-24">
+				<OrganizationalUnitName>New York Plant</OrganizationalUnitName>
+				<OrganizationalUnitId idOwner="Widget Manufacturing">
+					<IdValue name="Division Id">02</IdValue>
+				</OrganizationalUnitId>
+			</OrganizationalUnit>
+			<OrganizationalUnit validFrom="2004-10-25">
+				<OrganizationalUnitName>Manufacturing</OrganizationalUnitName>
+				<OrganizationalUnitId idOwner="Acme">
+					<IdValue name="Division Id">X17</IdValue>
+				</OrganizationalUnitId>
+				<AccountingCode description="Cost Center">54321</AccountingCode>
+			</OrganizationalUnit>
+			<WorkLocation allocationPercentage="80">
+				<Name>Manhattan</Name>
+				<Id idOwner="Acme">
+					<IdValue name="location Id">M25</IdValue>
+				</Id>
+				<PostalAddress>
+					<CountryCode>US</CountryCode>
+				</PostalAddress>
+			</WorkLocation>
+			<WorkLocation allocationPercentage="20">
+				<Name>Syracuse</Name>
+				<Id idOwner="Acme">
+					<IdValue name="location Id">M27</IdValue>
+				</Id>
+				<PostalAddress>
+					<CountryCode>US</CountryCode>
+				</PostalAddress>
+			</WorkLocation>
+		</OrganizationInfo>
+		<RemunerationInfo>
+			<!-- Remuneration Detail includes the historical pay rate changes made during William's career.  -->
+			<RemunerationDetail validFrom="1987-01-01" validTo="1989-12-31">
+				<PayRate currencyCode="CAD">15</PayRate>
+				<PayRateFrequency>
+					<StandardValue>Hourly</StandardValue>
+				</PayRateFrequency>
+				<RemunerationType>
+					<StandardValue>BasePay</StandardValue>
+				</RemunerationType>
+			</RemunerationDetail>
+			<RemunerationDetail validFrom="1990-01-01" validTo="1991-12-31">
+				<PayRate currencyCode="CAD">20</PayRate>
+				<PayRateFrequency>
+					<StandardValue>Hourly</StandardValue>
+				</PayRateFrequency>
+				<RemunerationType>
+					<StandardValue>BasePay</StandardValue>
+				</RemunerationType>
+			</RemunerationDetail>
+			<RemunerationDetail validFrom="1992-01-01" validTo="1993-12-31">
+				<PayRate currencyCode="CAD">22</PayRate>
+				<PayRateFrequency>
+					<StandardValue>Hourly</StandardValue>
+				</PayRateFrequency>
+				<RemunerationType>
+					<StandardValue>BasePay</StandardValue>
+				</RemunerationType>
+			</RemunerationDetail>
+			<RemunerationDetail validFrom="1994-01-01" validTo="1995-12-31">
+				<PayRate currencyCode="CAD">24</PayRate>
+				<PayRateFrequency>
+					<StandardValue>Hourly</StandardValue>
+				</PayRateFrequency>
+				<RemunerationType>
+					<StandardValue>BasePay</StandardValue>
+				</RemunerationType>
+			</RemunerationDetail>
+			<RemunerationDetail validFrom="1996-01-01" validTo="1997-01-01">
+				<PayRate currencyCode="CAD">26</PayRate>
+				<PayRateFrequency>
+					<StandardValue>Hourly</StandardValue>
+				</PayRateFrequency>
+				<RemunerationType>
+					<StandardValue>BasePay</StandardValue>
+				</RemunerationType>
+			</RemunerationDetail>
+			<RemunerationDetail validFrom="1998-01-01" validTo="1998-06-05">
+				<PayRate currencyCode="CAD">28</PayRate>
+				<PayRateFrequency>
+					<StandardValue>Hourly</StandardValue>
+				</PayRateFrequency>
+				<RemunerationType>
+					<StandardValue>BasePay</StandardValue>
+				</RemunerationType>
+			</RemunerationDetail>
+			<RemunerationDetail validFrom="1998-06-06" validTo="2003-10-18">
+				<PayRate currencyCode="USD">80000</PayRate>
+				<PayRateFrequency>
+					<StandardValue>Annually</StandardValue>
+				</PayRateFrequency>
+				<RemunerationType>
+					<StandardValue>BasePay</StandardValue>
+				</RemunerationType>
+			</RemunerationDetail>
+			<RemunerationDetail validFrom="2004-06-24">
+				<PayRate currencyCode="USD">150000</PayRate>
+				<PayRateFrequency>
+					<StandardValue>Annually</StandardValue>
+				</PayRateFrequency>
+				<RemunerationType>
+					<StandardValue>BasePay</StandardValue>
+				</RemunerationType>
+			</RemunerationDetail>
+			<PayCycleFrequency>
+				<StandardValue>Weekly</StandardValue>
+			</PayCycleFrequency>
+			<PayGroup>1334</PayGroup>
+		</RemunerationInfo>
+		<AffiliationInfo>
+			<!-- William was a member of the Canadian Union while employed in Canada. He became a member of the US Union when he moved to the US, but left the union when he terminated from the company.  He did not rejoin when he rehired with Widget Manufacturing as a manager. -->
+			<LaborBargainingUnitMembership>
+				<OrganizationName>Canadian Shop Floor Workers Union</OrganizationName>
+				<MemberId validFrom="1987-01-01" validTo="1998-06-05">
+					<IdValue>P71154</IdValue>
+				</MemberId>
+			</LaborBargainingUnitMembership>
+			<LaborBargainingUnitMembership>
+				<OrganizationName>US Shop Floor Workers Union</OrganizationName>
+				<MemberId validFrom="1998-06-06" validTo="2003-10-18">
+					<IdValue>U8801544</IdValue>
+				</MemberId>
+			</LaborBargainingUnitMembership>
+			<Association type="Professional">
+				<Name>North American Manufacturing Association</Name>
+				<Id idOwner="NAMA">
+					<IdValue name="member Id">098893</IdValue>
+				</Id>
+				<StartDate dateDescription="Join Date">
+					<AnyDate>1990-08-12</AnyDate>
+				</StartDate>
+			</Association>
+		</AffiliationInfo>
+	</Employee>
+</IndicativeData>

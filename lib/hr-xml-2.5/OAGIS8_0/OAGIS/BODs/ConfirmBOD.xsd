@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+    License information for this file is provided in LICENSE.TXT
+    For support, more information, or to report implementation bugs, 
+    please contact the Open Applications Group at xml@openapplications.org 
+     
+    ** Revision: 8.0 **
+    ** Date: 05 April 2002 **
+    Open Applications Group XSD
+    Copyright 1998-2002, All Rights Reserved
+    
+    Name: ConfirmBOD.xsd
+-->
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns="http://www.openapplications.org/oagis" targetNamespace="http://www.openapplications.org/oagis" elementFormDefault="qualified" attributeFormDefault="unqualified">
+        <xs:include schemaLocation="../Resources/Verbs/Confirm.xsd"/>
+        <xs:include schemaLocation="../Resources/Nouns/BOD.xsd"/>
+        <xs:element name="ConfirmBOD" type="ConfirmBOD">
+                <xs:annotation>
+                        <xs:documentation source="http://www.openapplications.org/oagis">Replacement for ConfirmBOD. This BOD reports on the outcome of processing a BOD. Only one BODOutcome noun will be returned, corresponding to a previously transmitted  BOD that was earmarked for returning outcome notification. Summaary BOD-level outcome is reported in the Header, with noun-specific errors or warnings reported for each noun instance that accompanied the original BOD.</xs:documentation>
+                </xs:annotation>
+        </xs:element>
+        <xs:complexType name="ConfirmBOD">
+                <xs:complexContent>
+                        <xs:extension base="BusinessObjectDocument">
+                                <xs:sequence>
+                                        <xs:element name="DataArea" type="ConfirmBODDataArea">
+                                                <xs:annotation>
+                                                        <xs:documentation source="http://www.openapplications.org/oagis">Is where the information that the BOD message carries is provided, in this case ConfirmBOD. The information consists of a Verb and one or more Nouns. The verb (Confirm) indicates the action to be performed on the Noun (BOD).</xs:documentation>
+                                                </xs:annotation>
+                                        </xs:element>
+                                </xs:sequence>
+                        </xs:extension>
+                </xs:complexContent>
+        </xs:complexType>
+        <xs:complexType name="ConfirmBODDataArea">
+                <xs:complexContent>
+                        <xs:extension base="DataArea">
+                                <xs:sequence>
+                                        <xs:element ref="Confirm"/>
+                                        <xs:element ref="BOD" maxOccurs="unbounded"/>
+                                </xs:sequence>
+                        </xs:extension>
+                </xs:complexContent>
+        </xs:complexType>
+</xs:schema>

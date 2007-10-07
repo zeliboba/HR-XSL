@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<StockPlanParticipant xmlns="http://ns.hr-xml.org/2007-04-15" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://ns.hr-xml.org/2007-04-15
+StockPlanParticipant.xsd">
+	<Id>           
+		<IdValue>P-1</IdValue>
+	</Id>
+	<Account>
+		<IdValue name="Bankleitzahl">67292200</IdValue>
+		<IdValue name="Kontonummer">43589456</IdValue>
+	</Account>
+	<CompanyId>
+		<IdValue>C-1</IdValue>
+	</CompanyId>
+	<Name>
+		<LegalName>Hans Müller</LegalName>
+	</Name>
+	<ContactInfo>
+		<Telephone>
+			<FormattedNumber>+49 6222 4711</FormattedNumber>
+		</Telephone>               
+		<InternetEmailAddress>Hans.Müller@firma.de</InternetEmailAddress>
+	</ContactInfo>
+	<AdditionalInfo>            
+		<DateOfBirth>1966-04-18</DateOfBirth>               
+		<Nationality>DE</Nationality>
+		<HireDate>2000-01-01</HireDate>               
+		<Employee>true</Employee>
+		<Director>false</Director>
+		<Insider>true</Insider>
+		<PercentOwner>7</PercentOwner>
+		<WorkLocation validFrom="2000-01-01" validTo="2002-09-30">
+			<CountryCode>DE</CountryCode>
+			<Region>Hamburg</Region>
+			<Municipality>Hamburg</Municipality>
+		</WorkLocation>                
+		<WorkLocation validFrom="2002-10-01" validTo="9999-12-31">
+			<CountryCode>DE</CountryCode>
+			<Region>Bayern</Region>
+		</WorkLocation>               
+		<TaxInfo validFrom="2000-01-01" validTo="9999-12-31">                   
+			<TaxType>Einkommenssteuer</TaxType>                   
+			<TaxationLocation>
+				<CountryCode>DE</CountryCode> 
+			</TaxationLocation>
+			<Percentage>40</Percentage>                
+		</TaxInfo>
+	</AdditionalInfo>        
+	<UserArea/> 
+</StockPlanParticipant>

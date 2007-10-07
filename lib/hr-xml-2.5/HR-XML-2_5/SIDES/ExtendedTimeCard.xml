@@ -1,0 +1,172 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TimeCard xmlns="http://ns.hr-xml.org/2007-04-15" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://ns.hr-xml.org/2007-04-15
+../SIDES/TimeCardAdditionalData.xsd">
+	<ReportedResource>
+		<Person>
+			<PersonName>
+				<FormattedName>String</FormattedName>
+				<LegalName>String</LegalName>
+				<GivenName>String</GivenName>
+				<PreferredGivenName>String</PreferredGivenName>
+				<MiddleName>String</MiddleName>
+				<FamilyName primary="undefined" prefix="String">String</FamilyName>
+				<Affix type="qualification">String</Affix>
+			</PersonName>
+		</Person>
+	</ReportedResource>
+	<ReportedTime status="Raw">
+		<PeriodStartDate>1967-08-13</PeriodStartDate>
+		<PeriodEndDate>1967-08-13</PeriodEndDate>
+		<ReportedPersonAssignment/>
+		<TimeInterval type="String" dayAssignment="current" billable="1">
+			<StartDateTime>2002-02-02</StartDateTime>
+			<EndDateTime>2002-02-02</EndDateTime>
+			<Duration>P1Y2M3DT10H30M</Duration>
+			<PieceWork>
+				<Piece>
+					<Id>
+						<IdValue>String</IdValue>
+					</Id>
+					<PieceValue>String</PieceValue>
+				</Piece>
+				<Quantity unitOfMeasure="String">3.14159265358979</Quantity>
+			</PieceWork>
+			<RateOrAmount currency="AAA" type="String" period="NotApplicable">3.14159265358979</RateOrAmount>
+			<AdditionalData>
+				<CustomerReportingRequirements>
+					<ManagerName>String</ManagerName>
+					<SupervisorName>String</SupervisorName>
+					<ContactName>String</ContactName>
+					<PurchaseOrderNumber>String</PurchaseOrderNumber>
+					<DepartmentCode>String</DepartmentCode>
+					<DepartmentName>String</DepartmentName>
+					<LocationCode>String</LocationCode>
+					<LocationName>String</LocationName>
+					<CostCenterCode>String</CostCenterCode>
+					<CostCenterName>String</CostCenterName>
+					<CustomerJobCode>String</CustomerJobCode>
+					<CustomerJobDescription>String</CustomerJobDescription>
+					<AccountCode>String</AccountCode>
+					<ProjectCode>String</ProjectCode>
+					<ExternalOrderNumber>String</ExternalOrderNumber>
+					<ExternalReqNumber>String</ExternalReqNumber>
+					<Entity>String</Entity>
+					<SubEntity>String</SubEntity>
+					<Shift>String</Shift>
+					<CustomerReferenceNumber>String</CustomerReferenceNumber>
+					<AdditionalRequirement requirementTitle="String">String</AdditionalRequirement>
+				</CustomerReportingRequirements>
+			</AdditionalData>
+			<ApprovalInfo approverType="String">
+				<Person>
+					<PersonName>
+						<FormattedName>String</FormattedName>
+						<LegalName>String</LegalName>
+						<GivenName>String</GivenName>
+						<PreferredGivenName>String</PreferredGivenName>
+						<MiddleName>String</MiddleName>
+						<FamilyName primary="undefined" prefix="String">String</FamilyName>
+						<Affix type="qualification">String</Affix>
+					</PersonName>
+				</Person>
+				<ApprovedDateTime>2002-02-02</ApprovedDateTime>
+				<Comment>String</Comment>
+			</ApprovalInfo>
+			<Comment>String</Comment>
+		</TimeInterval>
+		<AdditionalData>
+			<CustomerReportingRequirements>
+				<ManagerName>String</ManagerName>
+				<SupervisorName>String</SupervisorName>
+				<ContactName>String</ContactName>
+				<PurchaseOrderNumber>String</PurchaseOrderNumber>
+				<DepartmentCode>String</DepartmentCode>
+				<DepartmentName>String</DepartmentName>
+				<LocationCode>String</LocationCode>
+				<LocationName>String</LocationName>
+				<CostCenterCode>String</CostCenterCode>
+				<CostCenterName>String</CostCenterName>
+				<CustomerJobCode>String</CustomerJobCode>
+				<CustomerJobDescription>String</CustomerJobDescription>
+				<AccountCode>String</AccountCode>
+				<ProjectCode>String</ProjectCode>
+				<ExternalOrderNumber>String</ExternalOrderNumber>
+				<ExternalReqNumber>String</ExternalReqNumber>
+				<Entity>String</Entity>
+				<SubEntity>String</SubEntity>
+				<Shift>String</Shift>
+				<CustomerReferenceNumber>String</CustomerReferenceNumber>
+				<AdditionalRequirement requirementTitle="String">String</AdditionalRequirement>
+			</CustomerReportingRequirements>
+		</AdditionalData>
+		<ApprovalInfo approverType="String">
+			<Person>
+				<PersonName>
+					<FormattedName>String</FormattedName>
+					<LegalName>String</LegalName>
+					<GivenName>String</GivenName>
+					<PreferredGivenName>String</PreferredGivenName>
+					<MiddleName>String</MiddleName>
+					<FamilyName primary="undefined" prefix="String">String</FamilyName>
+					<Affix type="qualification">String</Affix>
+				</PersonName>
+			</Person>
+			<ApprovedDateTime>2002-02-02</ApprovedDateTime>
+			<Comment>String</Comment>
+		</ApprovalInfo>
+	</ReportedTime>
+	<SubmitterInfo>
+		<Person>
+			<PersonName>
+				<FormattedName>String</FormattedName>
+				<LegalName>String</LegalName>
+				<GivenName>String</GivenName>
+				<PreferredGivenName>String</PreferredGivenName>
+				<MiddleName>String</MiddleName>
+				<FamilyName primary="undefined" prefix="String">String</FamilyName>
+				<Affix type="qualification">String</Affix>
+			</PersonName>
+		</Person>
+		<Source>String</Source>
+		<SubmittedDateTime>2002-02-02</SubmittedDateTime>
+	</SubmitterInfo>
+	<ApprovalInfo approverType="String">
+		<Person>
+			<PersonName>
+				<FormattedName>String</FormattedName>
+				<LegalName>String</LegalName>
+				<GivenName>String</GivenName>
+				<PreferredGivenName>String</PreferredGivenName>
+				<MiddleName>String</MiddleName>
+				<FamilyName primary="undefined" prefix="String">String</FamilyName>
+				<Affix type="qualification">String</Affix>
+			</PersonName>
+		</Person>
+		<ApprovedDateTime>2002-02-02</ApprovedDateTime>
+		<Comment>String</Comment>
+	</ApprovalInfo>
+	<AdditionalData>
+		<StaffingAdditionalData>
+			<ReferenceInformation>
+				<OrderId validFrom="2002-02-20" validTo="2002-02-02" idOwner="String">
+					<IdValue name="String">String</IdValue>
+				</OrderId>
+				<PositionId validFrom="2002-02-20" validTo="2002-02-20" idOwner="String">
+					<IdValue name="String">String</IdValue>
+				</PositionId>
+				<IntermediaryId validFrom="2002-02-20" validTo="2002-02-20" idOwner="String">
+					<IdValue name="String">String</IdValue>
+				</IntermediaryId>
+				<StaffingSupplierId validFrom="2002-02-20" validTo="2002-02-20" idOwner="String">
+					<IdValue name="String">String</IdValue>
+				</StaffingSupplierId>
+				<StaffingCustomerId validFrom="2002-02-20" validTo="2002-02-20" idOwner="String">
+					<IdValue name="String">String</IdValue>
+				</StaffingCustomerId>
+				<MasterOrderId validFrom="2002-02-20" validTo="2002-02-20" idOwner="String">
+					<IdValue name="String">String</IdValue>
+				</MasterOrderId>
+			</ReferenceInformation>
+		</StaffingAdditionalData>
+	</AdditionalData>
+</TimeCard>

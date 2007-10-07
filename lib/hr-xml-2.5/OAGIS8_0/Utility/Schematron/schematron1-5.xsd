@@ -1,0 +1,223 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- edited with XML Spy v4.2 U (http://www.xmlspy.com) by Kurt Kanaskie (Lucent Technologies) -->
+<!-- schemaVersion of 2001/02/15 -->
+<xsd:schema 
+	targetNamespace="http://www.ascc.net/xml/schematron" 
+	xmlns:sch="http://www.ascc.net/xml/schematron" 
+	xmlns="http://www.ascc.net/xml/schematron" 
+	xmlns:xsd="http://www.w3.org/2001/XMLSchema" 
+	elementFormDefault="unqualified" 
+	attributeFormDefault="unqualified" 
+	version="+//IDN sinica.edu.tw//SGML W3C XML Schema for Schematron 1.5//EN">
+	<xsd:annotation>
+		<xsd:documentation source="http://www.ascc.net/xml/resource/schematron/schematron.html" xml:lang="en"/>
+	</xsd:annotation>
+	<xsd:element name="active">
+		<xsd:complexType mixed="true">
+			<xsd:choice minOccurs="0" maxOccurs="unbounded">
+				<xsd:element ref="sch:dir"/>
+				<xsd:element ref="sch:emph"/>
+				<xsd:element ref="sch:span"/>
+			</xsd:choice>
+			<xsd:attribute name="pattern" type="xsd:ID" use="required"/>
+		</xsd:complexType>
+	</xsd:element>
+	<xsd:element name="assert">
+		<xsd:complexType mixed="true">
+			<xsd:choice minOccurs="0" maxOccurs="unbounded">
+				<xsd:element ref="sch:name"/>
+				<xsd:element ref="sch:emph"/>
+				<xsd:element ref="sch:dir"/>
+				<xsd:element ref="sch:span"/>
+				<xsd:any namespace="##other" processContents="lax"/>
+			</xsd:choice>
+			<xsd:attribute name="test" type="xsd:string" use="required"/>
+			<xsd:attribute name="role" type="xsd:NMTOKEN"/>
+			<xsd:attribute name="id" type="xsd:ID"/>
+			<xsd:attribute name="diagnostics" type="xsd:IDREFS"/>
+			<xsd:attribute name="icon" type="xsd:anyURI"/>
+			<xsd:attribute name="subject" type="xsd:string" default="."/>
+			<xsd:anyAttribute namespace="##other" processContents="lax"/>
+			<!--xsd:attribute name="xml:lang" type="xsd:language" -->
+		</xsd:complexType>
+	</xsd:element>
+	<xsd:element name="diagnostic">
+		<xsd:complexType mixed="true">
+			<xsd:choice minOccurs="0" maxOccurs="unbounded">
+				<xsd:element ref="sch:value-of"/>
+				<xsd:element ref="sch:emph"/>
+				<xsd:element ref="sch:dir"/>
+				<xsd:element ref="sch:span"/>
+				<xsd:any namespace="##other" processContents="lax"/>
+			</xsd:choice>
+			<xsd:attribute name="id" type="xsd:ID" use="required"/>
+			<xsd:attribute name="icon" type="xsd:anyURI"/>
+			<xsd:anyAttribute namespace="##other" processContents="lax"/>
+			<!--xsd:attribute name="xml:lang" type="xsd:language" -->
+		</xsd:complexType>
+	</xsd:element>
+	<xsd:element name="diagnostics">
+		<xsd:complexType>
+			<xsd:sequence>
+				<xsd:element ref="diagnostic" minOccurs="0" maxOccurs="unbounded"/>
+			</xsd:sequence>
+		</xsd:complexType>
+	</xsd:element>
+	<xsd:element name="dir">
+		<xsd:complexType>
+			<xsd:simpleContent>
+				<!-- KAK changed
+				<xsd:restriction base="xsd:string">
+				-->
+				<xsd:extension base="xsd:string">
+					<xsd:attribute name="value">
+						<xsd:simpleType>
+							<xsd:restriction base="xsd:NMTOKEN">
+								<xsd:enumeration value="ltr"/>
+								<xsd:enumeration value="rtl"/>
+							</xsd:restriction>
+						</xsd:simpleType>
+					</xsd:attribute>
+				</xsd:extension>
+			</xsd:simpleContent>
+		</xsd:complexType>
+	</xsd:element>
+	<xsd:element name="emph" type="xsd:string"/>
+	<xsd:element name="extends">
+		<xsd:complexType>
+			<xsd:attribute name="rule" type="xsd:IDREF" use="required"/>
+		</xsd:complexType>
+	</xsd:element>
+	<xsd:element name="key">
+		<xsd:complexType>
+			<xsd:attribute name="name" type="xsd:NMTOKEN" use="required"/>
+			<xsd:attribute name="path" type="xsd:string" use="required"/>
+			<xsd:attribute name="icon" type="xsd:anyURI"/>
+		</xsd:complexType>
+	</xsd:element>
+	<xsd:element name="name">
+		<xsd:complexType>
+			<xsd:attribute name="path" type="xsd:string" default="."/>
+		</xsd:complexType>
+	</xsd:element>
+	<xsd:element name="ns">
+		<xsd:complexType>
+			<xsd:attribute name="uri" type="xsd:anyURI" use="required"/>
+			<xsd:attribute name="prefix" type="xsd:NCName"/>
+		</xsd:complexType>
+	</xsd:element>
+	<xsd:element name="p">
+		<xsd:complexType mixed="true">
+			<xsd:choice minOccurs="0" maxOccurs="unbounded">
+				<xsd:element ref="sch:dir"/>
+				<xsd:element ref="sch:emph"/>
+				<xsd:element ref="sch:span"/>
+			</xsd:choice>
+			<xsd:attribute name="id" type="xsd:ID"/>
+			<xsd:attribute name="class" type="xsd:string"/>
+			<xsd:attribute name="icon" type="xsd:anyURI"/>
+			<xsd:anyAttribute namespace="##other" processContents="lax"/>
+			<!--xsd:attribute name="xml:lang" type="xsd:language" -->
+		</xsd:complexType>
+	</xsd:element>
+	<xsd:element name="pattern">
+		<xsd:complexType>
+			<xsd:sequence>
+				<xsd:element ref="p" minOccurs="0" maxOccurs="unbounded"/>
+				<xsd:element ref="sch:rule" maxOccurs="unbounded"/>
+			</xsd:sequence>
+			<xsd:attribute name="name" type="xsd:string" use="required"/>
+			<xsd:attribute name="see" type="xsd:anyURI"/>
+			<xsd:attribute name="id" type="xsd:ID"/>
+			<xsd:attribute name="icon" type="xsd:anyURI"/>
+		</xsd:complexType>
+	</xsd:element>
+	<xsd:element name="phase">
+		<xsd:complexType>
+			<xsd:sequence>
+				<xsd:element ref="sch:p" minOccurs="0" maxOccurs="unbounded"/>
+				<xsd:element ref="sch:active" maxOccurs="unbounded"/>
+			</xsd:sequence>
+			<xsd:attribute name="id" type="xsd:ID" use="required"/>
+			<xsd:attribute name="fpi" type="xsd:string"/>
+			<xsd:attribute name="icon" type="xsd:anyURI"/>
+		</xsd:complexType>
+	</xsd:element>
+	<xsd:element name="report">
+		<xsd:complexType mixed="true">
+			<xsd:choice minOccurs="0" maxOccurs="unbounded">
+				<xsd:element ref="sch:name"/>
+				<xsd:element ref="sch:emph"/>
+				<xsd:element ref="sch:dir"/>
+				<xsd:element ref="sch:span"/>
+				<xsd:any namespace="##other" processContents="lax"/>
+			</xsd:choice>
+			<xsd:attribute name="test" type="xsd:string" use="required"/>
+			<xsd:attribute name="role" type="xsd:NMTOKEN"/>
+			<xsd:attribute name="id" type="xsd:ID"/>
+			<xsd:attribute name="diagnostics" type="xsd:IDREFS"/>
+			<xsd:attribute name="icon" type="xsd:anyURI"/>
+			<xsd:attribute name="subject" type="xsd:string" default="."/>
+		</xsd:complexType>
+	</xsd:element>
+	<xsd:element name="rule">
+		<xsd:complexType>
+			<xsd:choice maxOccurs="unbounded">
+				<xsd:element ref="sch:assert"/>
+				<xsd:element ref="sch:report"/>
+				<xsd:element ref="sch:key"/>
+				<xsd:element ref="sch:extends"/>
+			</xsd:choice>
+			<xsd:attribute name="context" type="xsd:string"/>
+			<xsd:attribute name="abstract" type="xsd:boolean" default="false"/>
+			<xsd:attribute name="role" type="xsd:NMTOKEN"/>
+			<xsd:attribute name="id" type="xsd:ID"/>
+		</xsd:complexType>
+	</xsd:element>
+	<xsd:element name="schema">
+		<xsd:complexType>
+			<xsd:sequence>
+				<xsd:element ref="sch:title" minOccurs="0"/>
+				<xsd:element ref="sch:ns" minOccurs="0" maxOccurs="unbounded"/>
+				<xsd:element ref="sch:p" minOccurs="0" maxOccurs="unbounded"/>
+				<xsd:element ref="sch:phase" minOccurs="0" maxOccurs="unbounded"/>
+				<xsd:element ref="sch:pattern" maxOccurs="unbounded"/>
+				<xsd:element ref="sch:p" minOccurs="0" maxOccurs="unbounded"/>
+				<xsd:element ref="sch:diagnostics" minOccurs="0"/>
+			</xsd:sequence>
+			<xsd:attribute name="id" type="xsd:ID"/>
+			<xsd:attribute name="fpi" type="xsd:string"/>
+			<xsd:attribute name="schemaVersion" type="xsd:string"/>
+			<xsd:attribute name="defaultPhase" type="xsd:IDREF"/>
+			<xsd:attribute name="icon" type="xsd:anyURI"/>
+			<xsd:attribute name="ns" type="xsd:anyURI"/>
+			<xsd:attribute name="version" type="xsd:string" default="1.5"/>
+			<xsd:anyAttribute namespace="##other" processContents="lax"/>
+			<!--xsd:attribute name="xml:lang" type="xsd:language" -->
+		</xsd:complexType>
+	</xsd:element>
+	<xsd:element name="span">
+		<xsd:complexType>
+			<xsd:simpleContent>
+				<!-- KAK changed 
+				<xsd:restriction base="xsd:string">
+				-->
+				<xsd:extension base="xsd:string">
+					<xsd:attribute name="class" type="xsd:string"/>
+				</xsd:extension>
+			</xsd:simpleContent>
+		</xsd:complexType>
+	</xsd:element>
+	<xsd:element name="title">
+		<xsd:complexType mixed="true">
+			<xsd:choice minOccurs="0" maxOccurs="unbounded">
+				<xsd:element ref="sch:dir"/>
+			</xsd:choice>
+		</xsd:complexType>
+	</xsd:element>
+	<xsd:element name="value-of">
+		<xsd:complexType>
+			<xsd:attribute name="select" type="xsd:string" use="required"/>
+		</xsd:complexType>
+	</xsd:element>
+</xsd:schema>

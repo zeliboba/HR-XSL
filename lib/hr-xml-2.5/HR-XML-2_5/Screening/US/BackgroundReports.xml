@@ -1,0 +1,240 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<BackgroundReports xmlns="http://ns.hr-xml.org/2007-04-15" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:sep="http://ns.hr-xml.org/2007-04-15" xsi:schemaLocation="http://ns.hr-xml.org/2007-04-15  BackgroundReports.xsd" userId="900XXX">
+	<!-- Example of Search Package returning text results -->
+	<ProviderReferenceId>
+		<IdValue>204</IdValue>
+	</ProviderReferenceId>
+	<BackgroundReportPackage type="report">
+		<ProviderReferenceId>
+			<IdValue>204-111</IdValue>
+		</ProviderReferenceId>
+		<ClientReferenceId>
+			<IdValue>12345</IdValue>
+		</ClientReferenceId>
+		<PackageId>
+			<IdValue>1</IdValue>
+		</PackageId>
+		<ScreeningStatus>
+			<OrderStatus>Completed</OrderStatus>
+			<ResultStatus>Hit</ResultStatus>
+			<DateOrderReceived>2002-01-13T12:24:01</DateOrderReceived>
+		</ScreeningStatus>
+		<ScreeningsSummary>
+			<PersonalData>
+				<PersonName>
+					<GivenName>Joe</GivenName>
+					<MiddleName>S</MiddleName>
+					<FamilyName>Doe</FamilyName>
+				</PersonName>
+				<DemographicDetail>
+					<GovernmentId countryCode="US">555555555</GovernmentId>
+				</DemographicDetail>
+			</PersonalData>
+			<ClientReferences>
+				<IdValue name="ProviderRequestNumber">03y</IdValue>
+			</ClientReferences>
+		</ScreeningsSummary>
+		<Screenings>
+			<Screening type="education">
+				<ProviderReferenceId>
+					<IdValue>A204-111</IdValue>
+				</ProviderReferenceId>
+				<ClientReferenceId>
+					<IdValue>012345</IdValue>
+				</ClientReferenceId>
+				<ScreeningResults type="result" mediaType="txt" resultType="report">
+					<Text>
+                                  DISCLAIMER
+
+     Information contained herein should not be the sole determination in 
+     evaluation of this individual.  All other factors, references and 
+     current situations should be considered.  Human error in compiling 
+     this information is possible.  The FCRA requires certain actions if 
+     you take adverse action based in whole or in part on this report.
+     See your Help File, the FCRA or call for procedures.
+
+
+                            EDUCATION VERIFICATION
+
+--------------------------------------------------------------------------------
+
+Name.....................:   JANE JILL DOE
+Social Security Number...:   555-55-5555
+Search Date..............:   01/09/2002 1:19:53 PM
+Reference Number.........:   012345
+--------------------------------------------------------------------------------
+
+Name of School               NORTH DAKOTA STATE UNIVERSITY
+
+City/State                   FARGO, ND
+
+Degree Attained              BACHELOR OF SCIENCE DEGREE (BS), MASTER OF SCIENCE
+                              DEGREE (MS).
+
+Years Attended               BS DEGREE RECEIVED AUGUST 17, 1977.  MS DEGREE 
+                             RECEIVED MAY 24, 1980. FIRST ENROLLED SEPTEMBER 8,
+                              1975.
+
+Studies                      MAJOR FOR BOTH DEGREES / CIVIL ENGINEERING.
+
+Contact Person/Position      HOLLY DOLLY / TRANSCRIPT CLERK.
+
+Comments                     WE CALLED THE SCHOOL AND SPOKE WITH HOLLY, WHO 
+                             VERIFIED THE ABOVE INFORMATION.
+
+                              **SEARCH COMPLETE**
+
+********************************************************************************
+HireCheck Search History
+
+07/06/2001 5:32:33 PM        NORTH DAKOTA STATE UNIVERSITY.
+
+                             THIS INSTITUTION WAS CALLED BUT NO ONE WAS 
+                             IMMEDIATELY AVAILABLE TO CHECK RECORDS. FOLLOW-UP 
+                             WILL OCCUR.
+
+07/09/2001 1:19:45 PM        SEARCH COMPLETE.
+
+                                 </Text>
+				</ScreeningResults>
+			</Screening>
+			<Screening type="license" qualifier="mvPersonal">
+				<ProviderReferenceId>
+					<IdValue>204-112</IdValue>
+				</ProviderReferenceId>
+				<ClientReferenceId>
+					<IdValue>12346</IdValue>
+				</ClientReferenceId>
+				<ScreeningResults type="result" mediaType="txt" resultType="report">
+					<Text>
+                                DISCLAIMER
+
+     Information contained herein should not be the sole determination in 
+     evaluation of this individual.  All other factors, references and 
+     current situations should be considered.  Human error in compiling 
+     this information is possible.  The FCRA requires certain actions if 
+     you take adverse action based in whole or in part on this report.
+     See your Help File, the FCRA or call for procedures.
+
+
+                             MOTOR VEHICLE SEARCH
+
+                                     Order ID:    204-112
+                                      FLORIDA Driver Record                Order Dt:    08/09/2001
+                                      License:    N55555555555
+
+                                         Name:    Doe, Jane
+                                     Zip Code:
+
+
+--------------------------------------------------------------------------------
+                                      DOB: 11/02/1956         Age:
+ Eyes:             Hair:            Issue: 12/23/1993     Expires: 11/02/2006
+
+--------------------------------------------------------------------------------
+Type  Code     ACD Viol       Conv       Description
+----- -------- --- ---------- ---------- ----------------------------------------
+CONV  137      UNK 09/08/1995 09/19/1995 DEFECTIVE EQUIPMENT
+CONV  455      M81 09/08/1995 09/19/1995 CARELESS DRIVING
+DEPT                                     ** ENTRIES BELOW COVER THE PAST 7 YEARS
+                                         ** MISC: DUPLICATE LIC ISS. 02/02/01
+                                         ,OFFICE NO=R04 MISC: REPLACEMENT LIC
+                                         ISS. 06/13/95 ,OFFICE NO=P02 MISC: EXAMS
+                                         VISION=1 ROAD SIGN=1 ROAD RULES=5
+                                         DRIVING=2 MISC: EXAMS MCYCLE RULES=0
+                                         MCYCLE
+DEPT                                     ** THIS PERSON HAS A DIGITAL IMAGE **
+                                         MISC: REPLACEMENT LIC ISS. 05/10/94
+                                         ,OFFICE
+REST                                     CORRECTIVE LENSES
+
+License Status(1):    ELIGIBLE
+License Type(1)..:    PERSONAL
+Drivers Class(1).:    REGULAR OPERATOR
+
+License Status(2):    EXPIRED
+License Type(2)..:    IDENTIFICATION
+Drivers Class(2).:    *(not returned)
+
+* information not returned by state
+Total Points.....:    No points returned by state
+
+
+                                                           08/09/2001 2:58:42 PM
+
+
+                               END-OF-REPORT
+                                 </Text>
+				</ScreeningResults>
+			</Screening>
+		</Screenings>
+	</BackgroundReportPackage>
+	<!-- Example of Search Package returning each screening results in separate pdfs as well as an example of combining reports into single PDF -->
+	<BackgroundReportPackage type="report">
+		<ProviderReferenceId>
+			<IdValue>204-114</IdValue>
+		</ProviderReferenceId>
+		<ClientReferenceId>
+			<IdValue>12347</IdValue>
+		</ClientReferenceId>
+		<PackageId>
+			<IdValue>1</IdValue>
+		</PackageId>
+		<ScreeningStatus>
+			<OrderStatus>Completed</OrderStatus>
+			<ResultStatus>Hit</ResultStatus>
+			<DateOrderReceived>2002-01-13T12:24:01</DateOrderReceived>
+		</ScreeningStatus>
+		<ScreeningsSummary>
+			<PersonalData>
+				<PersonName>
+					<GivenName>Joe</GivenName>
+					<MiddleName>S</MiddleName>
+					<FamilyName>Doe</FamilyName>
+				</PersonName>
+				<DemographicDetail>
+					<GovernmentId countryCode="US">555555555</GovernmentId>
+				</DemographicDetail>
+			</PersonalData>
+			<ClientReferences>
+				<IdValue name="ProviderRequestNumber">03y</IdValue>
+			</ClientReferences>
+		</ScreeningsSummary>
+		<Screenings>
+			<Screening type="education">
+				<ProviderReferenceId>
+					<IdValue>204-118</IdValue>
+				</ProviderReferenceId>
+				<ClientReferenceId>
+					<IdValue>12348</IdValue>
+				</ClientReferenceId>
+				<ScreeningResults type="result" mediaType="pdf" resultType="report">
+					<InternetWebAddress>http://www.HR-XML.ORG/200201/sf/XXX03Q01.PDF</InternetWebAddress>
+				</ScreeningResults>
+			</Screening>
+			<Screening type="license" qualifier="mvPersonal">
+				<ProviderReferenceId>
+					<IdValue>204-119</IdValue>
+				</ProviderReferenceId>
+				<ClientReferenceId>
+					<IdValue>12349</IdValue>
+				</ClientReferenceId>
+				<ScreeningResults type="result" mediaType="pdf" resultType="report">
+					<InternetWebAddress>http://www.HR-XML.ORG/200201/sf/XXX03Q01.PDF</InternetWebAddress>
+				</ScreeningResults>
+			</Screening>
+			<!-- Example of Search Package returning pdf with all results for package combined into single PDF -->
+			<Screening>
+				<ProviderReferenceId>
+					<IdValue>204-1218</IdValue>
+				</ProviderReferenceId>
+				<ClientReferenceId>
+					<IdValue>123428</IdValue>
+				</ClientReferenceId>
+				<ScreeningResults type="result" mediaType="pdf" resultType="report">
+					<InternetWebAddress>http://www.HR-XML.ORG/200201/sf/XXX03Q01.PDF</InternetWebAddress>
+				</ScreeningResults>
+			</Screening>
+		</Screenings>
+	</BackgroundReportPackage>
+</BackgroundReports>

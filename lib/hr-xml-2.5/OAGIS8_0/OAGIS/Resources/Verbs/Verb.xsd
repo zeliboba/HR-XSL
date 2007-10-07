@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+    License information for this file is provided in LICENSE.TXT
+    For support, more information, or to report implementation bugs, 
+    please contact the Open Applications Group at xml@openapplications.org 
+     
+    ** Revision: 8.0 **
+    ** Date: 05 April 2002 **
+    Open Applications Group XSD
+    Copyright 1998-2002, All Rights Reserved
+    
+    Name: Verbs/Verb.xsd
+-->
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns="http://www.openapplications.org/oagis" targetNamespace="http://www.openapplications.org/oagis" elementFormDefault="qualified" attributeFormDefault="unqualified">
+        <xs:include schemaLocation="VerbBase.xsd"/>
+        <xs:simpleType name="ConfirmType">
+                <xs:restriction base="xs:NMTOKEN">
+                        <xs:enumeration value="Always"/>
+                        <xs:enumeration value="OnChange"/>
+                        <xs:enumeration value="Never"/>
+                </xs:restriction>
+        </xs:simpleType>
+        <xs:complexType name="ConfirmableVerb">
+                <xs:complexContent>
+                        <xs:extension base="Verb">
+                                <xs:attribute name="confirm" type="ConfirmType"/>
+                        </xs:extension>
+                </xs:complexContent>
+        </xs:complexType>
+        <xs:complexType name="AcknowledgableVerb" abstract="true">
+                <xs:complexContent>
+                        <xs:extension base="ConfirmableVerb">
+                                <xs:attribute name="acknowledge" type="AcknowledgementType"/>
+                        </xs:extension>
+                </xs:complexContent>
+        </xs:complexType>
+        <xs:simpleType name="AcknowledgementType">
+                <xs:restriction base="xs:NMTOKEN">
+                        <xs:enumeration value="Always"/>
+                        <xs:enumeration value="OnChange"/>
+                        <xs:enumeration value="Never"/>
+                </xs:restriction>
+        </xs:simpleType>
+<!-- These are used in Verbs and not in Nouns, they too, should go out of the noun space -->
+        <xs:complexType name="ExpressionCriteria">
+                <xs:sequence>
+                        <xs:element name="SelectExpression" type="Expression" maxOccurs="unbounded">
+                                <xs:annotation>
+                                        <xs:documentation source="http://www.openapplications.org/oagis">Allows the 1-n number of selection expressions for the information to be returned.</xs:documentation>
+                                </xs:annotation>
+                        </xs:element>
+                </xs:sequence>
+                <xs:attribute name="expressionLanguage" type="xs:string" use="optional" default="XPath"/>
+        </xs:complexType>
+        <xs:simpleType name="Expression">
+                <xs:restriction base="xs:string"/>
+        </xs:simpleType>
+        <xs:complexType name="RequestVerb">
+                <xs:complexContent>
+                        <xs:extension base="ConfirmableVerb">
+                                <xs:sequence>
+                                        <xs:element name="ReturnCriteria">
+                                                <xs:annotation>
+                                                        <xs:documentation source="http://www.openapplications.org/oagis">Allows the initator of the BOD to indicate the information (down to the field level) that is requested to be returned. The expressionLanguage indicates the expression language being used.</xs:documentation>
+                                                </xs:annotation>
+                                                <xs:complexType>
+                                                        <xs:complexContent>
+                                                                <xs:extension base="ExpressionCriteria"/>
+                                                        </xs:complexContent>
+                                                </xs:complexType>
+                                        </xs:element>
+                                </xs:sequence>
+                        </xs:extension>
+                </xs:complexContent>
+        </xs:complexType>
+</xs:schema>

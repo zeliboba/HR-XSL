@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+    License information for this file is provided in LICENSE.TXT
+    For support, more information, or to report implementation bugs, 
+    please contact the Open Applications Group at xml@openapplications.org 
+     
+    ** Revision: 8.0 **
+    ** Date: 05 April 2002 **
+    Open Applications Group XSD IndustryA Overlay Example
+    Copyright 1998-2002, All Rights Reserved
+    
+    Name: IndustryA ProcessInvoice.xsd
+-->
+
+<xs:schema targetNamespace="http://www.oagi.net/oagis/ia" xmlns:ia="http://www.oagi.net/oagis/ia" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:oa="http://www.openapplications.org/oagis" elementFormDefault="qualified" attributeFormDefault="unqualified">
+	<xs:import namespace="http://www.openapplications.org/oagis" schemaLocation="../../../OAGIS/BODs/ProcessInvoice.xsd"/>
+	<xs:include schemaLocation="../Resources/Nouns/Invoice.xsd"/>
+	<xs:element name="ProcessInvoice">
+		<xs:annotation>
+			<xs:documentation>p</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:complexContent>
+				<xs:extension base="ia:ProcessInvoice"/>
+			</xs:complexContent>
+		</xs:complexType>
+	</xs:element>
+	<xs:complexType name="ProcessInvoice">
+		<xs:complexContent>
+			<xs:extension base="oa:BusinessObjectDocument">
+				<xs:sequence>
+					<xs:element name="DataArea" type="ia:ProcessInvoiceDataArea"/>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="ProcessInvoiceDataArea">
+		<xs:complexContent>
+			<xs:extension base="oa:ProcessInvoiceDataArea"/>
+		</xs:complexContent>
+	</xs:complexType>
+</xs:schema>

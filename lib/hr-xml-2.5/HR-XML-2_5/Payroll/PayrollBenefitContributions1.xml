@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<PayrollBenefitContributions xmlns="http://ns.hr-xml.org/2007-04-15" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://ns.hr-xml.org/2007-04-15
+PayrollBenefitContributions.xsd">
+	<TransmittalDate>2001-12-01</TransmittalDate>
+	<CreateDate>2001-12-01</CreateDate>
+	<VendorPlan>
+		<PlanId primaryIdentifier="true" validFrom="2001-12-01" validTo="2001-12-01">
+			<Id>XYZ Company Savings Plan</Id>
+		</PlanId>
+		<Participant>
+			<PayrollInformation>
+				<PayDate>2001-12-01</PayDate>
+				<PayEndDate>2001-12-01</PayEndDate>
+				<EligibleEarnings planType="x:ADP">50573.73</EligibleEarnings>
+				<EligibleEarnings planType="x:PensionPlan">62146.00</EligibleEarnings>
+				<EligibleEarnings planType="x:PensionSERP">71481.32</EligibleEarnings>
+				<EligibleEarnings planType="x:401kDeferral">93115.23</EligibleEarnings>
+				<EligibleEarnings planType="x:BasePay">83941.65</EligibleEarnings>
+				<EligibleEarnings planType="x:Commissions">80355.83</EligibleEarnings>
+				<EligibleEarnings planType="x:Overtime">26181.03</EligibleEarnings>
+				<EligibleEarnings planType="x:EBPCash">8255.00</EligibleEarnings>
+				<EligibleEarnings planType="x:EBPStock">79138.18</EligibleEarnings>
+				<EligibleEarnings planType="x:NonEBPBonus">37973.02</EligibleEarnings>
+				<EligibleEarnings planType="x:RestrictedStock">28610.23</EligibleEarnings>
+				<EligibleEarnings planType="x:ShiftDifferential">60485.84</EligibleEarnings>
+				<EligibleEarnings planType="x:1994Attributed">87817.38</EligibleEarnings>
+				<EligibleEarnings planType="x:FICA">83984.38</EligibleEarnings>
+				<EligibleEarnings planType="x:HCE">69931.03</EligibleEarnings>
+				<EligibleEarnings planType="x:CanadaBase">11932.37</EligibleEarnings>
+				<EligibleEarnings planType="x:CanadaCommissions">66812.13</EligibleEarnings>
+				<EligibleEarnings planType="x:CanadaOvertime">68252.56</EligibleEarnings>
+				<EligibleEarnings planType="x:CanadaBonus">89474.49</EligibleEarnings>
+				<Contribution typeContribution="ER" planType="401k">
+					<ContributionAmount>139.24</ContributionAmount>
+				</Contribution>
+				<Contribution typeContribution="ER" planType="x:BaseToEBP">
+					<ContributionAmount>103.16</ContributionAmount>
+				</Contribution>
+				<Contribution typeContribution="ER" planType="x:CommissionsToEBP">
+					<ContributionAmount>132.64</ContributionAmount>
+				</Contribution>
+				<Contribution typeContribution="ER" planType="x:EBPCashToEDP">
+					<ContributionAmount>410.96</ContributionAmount>
+				</Contribution>
+				<Contribution typeContribution="ER" planType="x:EBPStockToEDP">
+					<ContributionAmount>333.94</ContributionAmount>
+				</Contribution>
+				<Contribution typeContribution="ER" planType="x:nonEBPStockToEDP">
+					<ContributionAmount>466.81</ContributionAmount>
+				</Contribution>
+				<Contribution typeContribution="ER" planType="x:StockToEDP">
+					<ContributionAmount>86.17</ContributionAmount>
+				</Contribution>
+				<Contribution typeContribution="ER" planType="x:CreditsToEDP">
+					<ContributionAmount>254.01</ContributionAmount>
+				</Contribution>
+				<Contribution typeContribution="ER" planType="x:MatchToEDP">
+					<ContributionAmount>183.27</ContributionAmount>
+				</Contribution>
+				<Contribution typeContribution="ER" planType="x:HealthFSA">
+					<ContributionAmount>315.55</ContributionAmount>
+				</Contribution>
+				<Contribution typeContribution="ER" planType="x:DependentFSA">
+					<ContributionAmount>253.05</ContributionAmount>
+				</Contribution>
+				<Contribution typeContribution="ER" planType="x:TransportationFSA">
+					<ContributionAmount>404.07</ContributionAmount>
+				</Contribution>
+				<Contribution typeContribution="ER" planType="x:401kLoan">
+					<Loan>
+						<Id>4</Id>
+						<LoanPaymentAmount toDateType="Period">210.59</LoanPaymentAmount>
+					</Loan>
+				</Contribution>
+				<Contribution typeContribution="ER" planType="x:401kLoan">
+					<Loan>
+						<Id>3</Id>
+						<LoanPaymentAmount toDateType="Period">4.59</LoanPaymentAmount>
+					</Loan>
+				</Contribution>
+				<Contribution typeContribution="ER" planType="x:401kLoan">
+					<Loan>
+						<Id>2</Id>
+						<LoanPaymentAmount toDateType="Period">332.55</LoanPaymentAmount>
+					</Loan>
+				</Contribution>
+				<Contribution typeContribution="ER" planType="x:401kLoan">
+					<Loan>
+						<Id>1</Id>
+						<LoanPaymentAmount toDateType="Period">96.47</LoanPaymentAmount>
+					</Loan>
+				</Contribution>
+			</PayrollInformation>
+			<PlanSummaryInformation>
+				<ServiceHours periodType="Period">41.34</ServiceHours>
+			</PlanSummaryInformation>
+			<PersonInformation>
+				<PersonId primaryIdentifier="true" validFrom="2001-12-01" validTo="2001-12-01">
+					<Id>356-41-6603</Id>
+					<Domain>
+						<IdIssuer>Country:US</IdIssuer>
+						<IdType>SSN</IdType>
+					</Domain>
+				</PersonId>
+			</PersonInformation>
+		</Participant>
+	</VendorPlan>
+</PayrollBenefitContributions>

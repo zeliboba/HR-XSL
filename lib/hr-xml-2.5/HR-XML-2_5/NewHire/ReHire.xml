@@ -1,0 +1,289 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<NewHire xmlns="http://ns.hr-xml.org/2007-04-15" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://ns.hr-xml.org/2007-04-15
+NewHire.xsd">
+	<TypeOfHire>
+		<StandardValue>Rehire</StandardValue>
+	</TypeOfHire>
+	<EmployeeInfo>
+		<PersonName>
+			<GivenName>John</GivenName>
+			<FamilyName>Doe</FamilyName>
+		</PersonName>
+		<ApplicantId idOwner="SuperrrBoard">
+			<IdValue name="candidateId">8885533</IdValue>
+		</ApplicantId>
+		<FormerEmployeeId idOwner="Acme">
+			<IdValue name="EE_ID">229356</IdValue>
+		</FormerEmployeeId>
+		<ContactMethod>
+			<Use>personal</Use>
+			<Location>home</Location>
+			<WhenAvailable>Nights and Weekends</WhenAvailable>
+			<Telephone>
+				<FormattedNumber>847-222-9500</FormattedNumber>
+			</Telephone>
+			<Mobile smsEnabled="false">
+				<FormattedNumber>847-693-4500</FormattedNumber>
+			</Mobile>
+			<InternetEmailAddress>www.JDOE@GMAIL.com</InternetEmailAddress>
+			<PostalAddress type="streetAddress">
+				<CountryCode>US</CountryCode>
+				<PostalCode>60150</PostalCode>
+				<Region>IL</Region>
+				<Municipality>Bartlet</Municipality>
+				<DeliveryAddress>
+					<AddressLine>567 North Grove Ave</AddressLine>
+				</DeliveryAddress>
+			</PostalAddress>
+		</ContactMethod>
+		<EmergencyContact>
+			<PersonName>
+				<FormattedName>String</FormattedName>
+				<GivenName>Sally</GivenName>
+				<FamilyName>Doe</FamilyName>
+			</PersonName>
+			<ContactMethod>
+				<Use>business</Use>
+				<Location>office</Location>
+				<WhenAvailable>Normal Business Hours</WhenAvailable>
+				<Telephone>
+					<FormattedNumber>847-777-8700</FormattedNumber>
+				</Telephone>
+			</ContactMethod>
+		</EmergencyContact>
+		<PersonDescriptors>
+			<LegalIdentifiers>
+				<PersonLegalId validFrom="notKnown" validTo="notKnown" idOwner="SSA" countryCode="US" jurisdiction="Country" issuingRegion="US" documentType="Social Security Card" idSource="">
+					<IdValue name="SSN">123456789</IdValue>
+				</PersonLegalId>
+				<PersonLegalId validFrom="2002-07-01" validTo="2007-07-01" idOwner="ILDOT" countryCode="US" jurisdiction="State" issuingRegion="IL" documentType="Drivers License">
+					<IdValue name="DriversLicense">11155558886315</IdValue>
+				</PersonLegalId>
+				<VisaStatus countryCode="US">Active</VisaStatus>
+				<Citizenship>US</Citizenship>
+				<Residency>US</Residency>
+			</LegalIdentifiers>
+			<DemographicDescriptors>
+				<Race>Caucasian</Race>
+				<Nationality>American</Nationality>
+				<MaritalStatus>Married</MaritalStatus>
+			</DemographicDescriptors>
+			<BiologicalDescriptors>
+				<DateOfBirth>1975-06-07</DateOfBirth>
+				<GenderCode>1</GenderCode>
+			</BiologicalDescriptors>
+		</PersonDescriptors>
+		<EducationHistory>
+			<SchoolOrInstitution schoolType="college">
+				<SchoolName>University of Illinois</SchoolName>
+				<School type="prior">
+					<SchoolId idOwner="Acme">
+						<IdValue>5423</IdValue>
+					</SchoolId>
+				</School>
+				<Degree degreeType="bachelors" graduatingDegree="graduating">
+					<DegreeDate>
+						<AnyDate>1998-12-15</AnyDate>
+					</DegreeDate>
+					<DegreeMajor>
+						<ProgramId idOwner="Acme">
+							<IdValue>120</IdValue>
+						</ProgramId>
+						<Name>Computer Science</Name>
+					</DegreeMajor>
+					<DegreeMinor>
+						<ProgramId idOwner="Acme">
+							<IdValue>340</IdValue>
+						</ProgramId>
+						<Name>Business</Name>
+					</DegreeMinor>
+					<DatesOfAttendance studentInGoodStanding="true">
+						<StartDate>
+							<AnyDate>1996-09-01</AnyDate>
+						</StartDate>
+						<EndDate>
+							<AnyDate>1998-12-15</AnyDate>
+						</EndDate>
+					</DatesOfAttendance>
+				</Degree>
+			</SchoolOrInstitution>
+		</EducationHistory>
+		<EmploymentHistory>
+			<EmployerOrg>
+				<EmployerOrgName>UPS</EmployerOrgName>
+				<EmployerContactInfo contactType="directSupervisor">
+					<PersonName>
+						<GivenName>Jim</GivenName>
+						<FamilyName>Smith</FamilyName>
+					</PersonName>
+					<ContactMethod>
+						<Use>business</Use>
+						<Location>office</Location>
+						<WhenAvailable>Normal Business Hours</WhenAvailable>
+						<Telephone>
+							<FormattedNumber>815-458-7896</FormattedNumber>
+						</Telephone>
+						<PostalAddress type="streetAddress">
+							<CountryCode>US</CountryCode>
+							<PostalCode>60078</PostalCode>
+							<Region>IL</Region>
+							<Municipality>Buffalo Grove</Municipality>
+							<DeliveryAddress>
+								<AddressLine>1234 Hicks Road</AddressLine>
+							</DeliveryAddress>
+						</PostalAddress>
+					</ContactMethod>
+				</EmployerContactInfo>
+				<PositionHistory positionType="directHire" currentEmployer="false">
+					<Title>Package Sorter</Title>
+					<OrgName organizationType="branch">
+						<OrganizationName>Palatine</OrganizationName>
+					</OrgName>
+					<Description>Sort Packages by zipcode</Description>
+					<StartDate>
+						<AnyDate>1998-11-15</AnyDate>
+					</StartDate>
+					<EndDate>
+						<AnyDate>1999-05-10</AnyDate>
+					</EndDate>
+				</PositionHistory>
+			</EmployerOrg>
+			<EmployerOrg>
+				<EmployerOrgName>Acme</EmployerOrgName>
+				<EmployerContactInfo contactType="directSupervisor">
+					<PersonName>
+						<GivenName>Sally</GivenName>
+						<FamilyName>Smith</FamilyName>
+					</PersonName>
+					<ContactMethod>
+						<Use>business</Use>
+						<Location>office</Location>
+						<WhenAvailable>Normal Business Hours</WhenAvailable>
+						<Telephone>
+							<FormattedNumber>847-879-5224</FormattedNumber>
+						</Telephone>
+						<PostalAddress type="streetAddress">
+							<CountryCode>US</CountryCode>
+							<PostalCode>60069</PostalCode>
+							<Region>IL</Region>
+							<Municipality>Lincolnshire</Municipality>
+							<DeliveryAddress>
+								<AddressLine>558 Milwauke Ave</AddressLine>
+							</DeliveryAddress>
+						</PostalAddress>
+					</ContactMethod>
+				</EmployerContactInfo>
+				<PositionHistory positionType="directHire" currentEmployer="false">
+					<Title>Systems Analyst</Title>
+					<OrgName organizationType="department">
+						<OrganizationName>Software Maintenance</OrganizationName>
+					</OrgName>
+					<Description>Maintained ongoing code base</Description>
+					<StartDate>
+						<AnyDate>1999-05-15</AnyDate>
+					</StartDate>
+					<EndDate>
+						<AnyDate>2003-01-05</AnyDate>
+					</EndDate>
+				</PositionHistory>
+			</EmployerOrg>
+			<EmployerOrg>
+				<EmployerOrgName>Doe Consulting</EmployerOrgName>
+				<PositionHistory positionType="directHire" currentEmployer="true">
+					<Title>Systems Consultant</Title>
+					<OrgName organizationType="company">
+						<OrganizationName>Doe Consulting</OrganizationName>
+					</OrgName>
+					<Description>Systems Consulting </Description>
+					<StartDate>
+						<AnyDate>2003-01-15</AnyDate>
+					</StartDate>
+				</PositionHistory>
+			</EmployerOrg>
+		</EmploymentHistory>
+	</EmployeeInfo>
+	<ApplicationInfo>
+		<ApplicationHistory>
+			<HiringProcessActivity>
+				<Type>Conduct Interview</Type>
+				<ActivityPerformer>
+					<PersonName>
+						<GivenName>Sally</GivenName>
+						<FamilyName>Smith</FamilyName>
+					</PersonName>
+					<PersonId idOwner="Acme">
+						<IdValue>8436</IdValue>
+					</PersonId>
+					<Role>Hiring Manager</Role>
+				</ActivityPerformer>
+				<Date>2003-06-10</Date>
+				<ActivityResults>Prior Employee Made Offer</ActivityResults>
+			</HiringProcessActivity>
+			<HiringProcessActivity>
+				<Type>Offer Accepted</Type>
+				<ActivityPerformer>
+					<PersonName>
+						<GivenName>Sally</GivenName>
+						<FamilyName>Smith</FamilyName>
+					</PersonName>
+					<PersonId idOwner="Acme">
+						<IdValue>8436</IdValue>
+					</PersonId>
+					<Role>Hiring Manager</Role>
+				</ActivityPerformer>
+				<Date>2003-06-10</Date>
+				<ActivityResults>Applicant Hired</ActivityResults>
+			</HiringProcessActivity>
+		</ApplicationHistory>
+		<WorkEligibilityInfo>
+			<DocumentId idOwner="SSA">
+				<IdValue name="SSN">123456789</IdValue>
+			</DocumentId>
+			<DocumentName>Social Security Card</DocumentName>
+			<IssuingAuthority>US SSA</IssuingAuthority>
+			<IsDocumentSignedByCandidate>true</IsDocumentSignedByCandidate>
+		</WorkEligibilityInfo>
+		<WorkEligibilityInfo>
+			<DocumentId idOwner="IL DOT">
+				<IdValue name="Drivers License">11155558886315</IdValue>
+			</DocumentId>
+			<DocumentName>Illinois Drivers License</DocumentName>
+			<IssuingAuthority>IL DOT</IssuingAuthority>
+			<IsDocumentSignedByCandidate>true</IsDocumentSignedByCandidate>
+		</WorkEligibilityInfo>
+	</ApplicationInfo>
+	<PositionInfo>
+		<ReferenceInfo>
+			<RequisitionId idOwner="SuperrrBoard">
+				<IdValue name="reqId">546585222</IdValue>
+			</RequisitionId>
+			<PositionId idOwner="Acme">
+				<IdValue name="positionId">65125</IdValue>
+			</PositionId>
+			<JobId idOwner="Acme">
+				<IdValue name="jobId">695</IdValue>
+			</JobId>
+		</ReferenceInfo>
+		<OfferInfo>
+			<OfferMade>
+				<OfferedBy>
+					<PersonName>
+						<GivenName>Sally</GivenName>
+						<FamilyName>Smith</FamilyName>
+					</PersonName>
+					<PersonId idOwner="Acme">
+						<IdValue>8436</IdValue>
+					</PersonId>
+				</OfferedBy>
+				<OfferedOnDate>2003-06-10</OfferedOnDate>
+			</OfferMade>
+			<DateJobAccepted>2003-06-10</DateJobAccepted>
+			<EmploymentStartDate>2003-07-01</EmploymentStartDate>
+			<RemunerationInfo>
+				<BasePay currencyCode="USD" baseInterval="Annually">65000</BasePay>
+			</RemunerationInfo>
+			<EmploymentLevel>FullTime</EmploymentLevel>
+			<ResourceRelationship>Employee</ResourceRelationship>
+		</OfferInfo>
+	</PositionInfo>
+</NewHire>

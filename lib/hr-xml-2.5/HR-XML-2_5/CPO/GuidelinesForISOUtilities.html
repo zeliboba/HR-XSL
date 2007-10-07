@@ -1,0 +1,2728 @@
+<html>
+
+<head>
+<meta http-equiv=Content-Type content="text/html; charset=us-ascii">
+<meta name=Generator content="Microsoft Word 11 (filtered)">
+<title>Guidelines for ISO Utilities</title>
+<style>
+<!--p.SUPER
+	{position:relative;
+	top:-3pt;}
+li.SUPER
+	{position:relative;
+	top:-3pt;}
+div.SUPER
+	{position:relative;
+	top:-3pt;}
+
+ /* Font Definitions */
+ @font-face
+	{font-family:Courier;
+	panose-1:2 7 4 9 2 2 5 2 4 4;}
+@font-face
+	{font-family:Wingdings;
+	panose-1:5 0 0 0 0 0 0 0 0 0;}
+@font-face
+	{font-family:"MS Mincho";
+	panose-1:2 2 6 9 4 2 5 8 3 4;}
+@font-face
+	{font-family:Tahoma;
+	panose-1:2 11 6 4 3 5 4 4 2 4;}
+@font-face
+	{font-family:"\@MS Mincho";
+	panose-1:2 2 6 9 4 2 5 8 3 4;}
+@font-face
+	{font-family:Verdana;
+	panose-1:2 11 6 4 3 5 4 4 2 4;}
+@font-face
+	{font-family:"Book Antiqua";
+	panose-1:2 4 6 2 5 3 5 3 3 4;}
+@font-face
+	{font-family:GillSans;}
+@font-face
+	{font-family:Copperplate31ab;}
+@font-face
+	{font-family:"Verdana\, Arial\, Helvetica";}
+@font-face
+	{font-family:ArialMT;}
+@font-face
+	{font-family:Arial-BoldMT;}
+ /* Style Definitions */
+ p.MsoNormal, li.MsoNormal, div.MsoNormal
+	{margin-top:6.0pt;
+	margin-right:0in;
+	margin-bottom:6.0pt;
+	margin-left:0in;
+	font-size:11.0pt;
+	font-family:Arial;}
+h1
+	{margin-top:24.0pt;
+	margin-right:0in;
+	margin-bottom:12.0pt;
+	margin-left:.3in;
+	text-align:justify;
+	text-justify:inter-ideograph;
+	text-indent:-.3in;
+	page-break-after:avoid;
+	font-size:14.0pt;
+	font-family:Copperplate31ab;
+	font-weight:normal;}
+h2
+	{margin-top:.25in;
+	margin-right:0in;
+	margin-bottom:6.0pt;
+	margin-left:.4in;
+	text-indent:-.4in;
+	page-break-after:avoid;
+	layout-grid-mode:char;
+	font-size:12.0pt;
+	font-family:Arial;
+	font-weight:bold;
+	font-style:italic;}
+h3
+	{margin-top:12.0pt;
+	margin-right:0in;
+	margin-bottom:6.0pt;
+	margin-left:.5in;
+	text-indent:-.5in;
+	page-break-after:avoid;
+	layout-grid-mode:char;
+	font-size:10.0pt;
+	font-family:Arial;
+	font-weight:bold;}
+h4
+	{margin-top:12.0pt;
+	margin-right:0in;
+	margin-bottom:3.0pt;
+	margin-left:0in;
+	page-break-after:avoid;
+	font-size:12.0pt;
+	font-family:Arial;
+	font-weight:bold;}
+h5
+	{margin-top:6.0pt;
+	margin-right:0in;
+	margin-bottom:6.0pt;
+	margin-left:.7in;
+	text-align:justify;
+	text-justify:inter-ideograph;
+	text-indent:-.7in;
+	page-break-after:avoid;
+	punctuation-wrap:simple;
+	text-autospace:none;
+	font-size:12.0pt;
+	font-family:GillSans;
+	font-weight:bold;}
+h6
+	{margin-top:12.0pt;
+	margin-right:0in;
+	margin-bottom:3.0pt;
+	margin-left:.8in;
+	text-align:justify;
+	text-justify:inter-ideograph;
+	text-indent:-.8in;
+	font-size:11.0pt;
+	font-family:GillSans;
+	font-weight:bold;}
+p.MsoHeading7, li.MsoHeading7, div.MsoHeading7
+	{margin-top:12.0pt;
+	margin-right:0in;
+	margin-bottom:3.0pt;
+	margin-left:.9in;
+	text-align:justify;
+	text-justify:inter-ideograph;
+	text-indent:-.9in;
+	font-size:12.0pt;
+	font-family:GillSans;}
+p.MsoHeading8, li.MsoHeading8, div.MsoHeading8
+	{margin-top:12.0pt;
+	margin-right:0in;
+	margin-bottom:3.0pt;
+	margin-left:1.0in;
+	text-align:justify;
+	text-justify:inter-ideograph;
+	text-indent:-1.0in;
+	font-size:12.0pt;
+	font-family:GillSans;
+	font-style:italic;}
+p.MsoHeading9, li.MsoHeading9, div.MsoHeading9
+	{margin-top:12.0pt;
+	margin-right:0in;
+	margin-bottom:3.0pt;
+	margin-left:1.1in;
+	text-align:justify;
+	text-justify:inter-ideograph;
+	text-indent:-1.1in;
+	font-size:11.0pt;
+	font-family:Arial;}
+p.MsoIndex1, li.MsoIndex1, div.MsoIndex1
+	{margin-top:6.0pt;
+	margin-right:0in;
+	margin-bottom:6.0pt;
+	margin-left:12.0pt;
+	text-align:justify;
+	text-justify:inter-ideograph;
+	text-indent:-12.0pt;
+	font-size:12.0pt;
+	font-family:GillSans;}
+p.MsoIndex2, li.MsoIndex2, div.MsoIndex2
+	{margin-top:6.0pt;
+	margin-right:0in;
+	margin-bottom:6.0pt;
+	margin-left:24.0pt;
+	text-align:justify;
+	text-justify:inter-ideograph;
+	text-indent:-12.0pt;
+	font-size:12.0pt;
+	font-family:GillSans;}
+p.MsoIndex3, li.MsoIndex3, div.MsoIndex3
+	{margin-top:6.0pt;
+	margin-right:0in;
+	margin-bottom:6.0pt;
+	margin-left:.5in;
+	text-align:justify;
+	text-justify:inter-ideograph;
+	text-indent:-12.0pt;
+	font-size:12.0pt;
+	font-family:GillSans;}
+p.MsoIndex4, li.MsoIndex4, div.MsoIndex4
+	{margin-top:6.0pt;
+	margin-right:0in;
+	margin-bottom:6.0pt;
+	margin-left:48.0pt;
+	text-align:justify;
+	text-justify:inter-ideograph;
+	text-indent:-12.0pt;
+	font-size:12.0pt;
+	font-family:GillSans;}
+p.MsoIndex5, li.MsoIndex5, div.MsoIndex5
+	{margin-top:6.0pt;
+	margin-right:0in;
+	margin-bottom:6.0pt;
+	margin-left:60.0pt;
+	text-align:justify;
+	text-justify:inter-ideograph;
+	text-indent:-12.0pt;
+	font-size:12.0pt;
+	font-family:GillSans;}
+p.MsoIndex6, li.MsoIndex6, div.MsoIndex6
+	{margin-top:6.0pt;
+	margin-right:0in;
+	margin-bottom:6.0pt;
+	margin-left:1.0in;
+	text-align:justify;
+	text-justify:inter-ideograph;
+	text-indent:-12.0pt;
+	font-size:12.0pt;
+	font-family:GillSans;}
+p.MsoIndex7, li.MsoIndex7, div.MsoIndex7
+	{margin-top:6.0pt;
+	margin-right:0in;
+	margin-bottom:6.0pt;
+	margin-left:84.0pt;
+	text-align:justify;
+	text-justify:inter-ideograph;
+	text-indent:-12.0pt;
+	font-size:12.0pt;
+	font-family:GillSans;}
+p.MsoIndex8, li.MsoIndex8, div.MsoIndex8
+	{margin-top:6.0pt;
+	margin-right:0in;
+	margin-bottom:6.0pt;
+	margin-left:96.0pt;
+	text-align:justify;
+	text-justify:inter-ideograph;
+	text-indent:-12.0pt;
+	font-size:12.0pt;
+	font-family:GillSans;}
+p.MsoIndex9, li.MsoIndex9, div.MsoIndex9
+	{margin-top:6.0pt;
+	margin-right:0in;
+	margin-bottom:6.0pt;
+	margin-left:1.5in;
+	text-align:justify;
+	text-justify:inter-ideograph;
+	text-indent:-12.0pt;
+	font-size:12.0pt;
+	font-family:GillSans;}
+p.MsoToc1, li.MsoToc1, div.MsoToc1
+	{margin-top:12.0pt;
+	margin-right:0in;
+	margin-bottom:6.0pt;
+	margin-left:0in;
+	font-size:11.0pt;
+	font-family:"Times New Roman";
+	font-weight:bold;}
+p.MsoToc2, li.MsoToc2, div.MsoToc2
+	{margin-top:6.0pt;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:11.0pt;
+	margin-bottom:.0001pt;
+	font-size:11.0pt;
+	font-family:"Times New Roman";
+	font-style:italic;}
+p.MsoToc3, li.MsoToc3, div.MsoToc3
+	{margin-top:0in;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:22.0pt;
+	margin-bottom:.0001pt;
+	font-size:11.0pt;
+	font-family:"Times New Roman";}
+p.MsoToc4, li.MsoToc4, div.MsoToc4
+	{margin-top:0in;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:33.0pt;
+	margin-bottom:.0001pt;
+	font-size:11.0pt;
+	font-family:"Times New Roman";}
+p.MsoToc5, li.MsoToc5, div.MsoToc5
+	{margin-top:0in;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:44.0pt;
+	margin-bottom:.0001pt;
+	font-size:11.0pt;
+	font-family:"Times New Roman";}
+p.MsoToc6, li.MsoToc6, div.MsoToc6
+	{margin-top:0in;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:55.0pt;
+	margin-bottom:.0001pt;
+	font-size:11.0pt;
+	font-family:"Times New Roman";}
+p.MsoToc7, li.MsoToc7, div.MsoToc7
+	{margin-top:0in;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:66.0pt;
+	margin-bottom:.0001pt;
+	font-size:11.0pt;
+	font-family:"Times New Roman";}
+p.MsoToc8, li.MsoToc8, div.MsoToc8
+	{margin-top:0in;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:77.0pt;
+	margin-bottom:.0001pt;
+	font-size:11.0pt;
+	font-family:"Times New Roman";}
+p.MsoToc9, li.MsoToc9, div.MsoToc9
+	{margin-top:0in;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:88.0pt;
+	margin-bottom:.0001pt;
+	font-size:11.0pt;
+	font-family:"Times New Roman";}
+p.MsoNormalIndent, li.MsoNormalIndent, div.MsoNormalIndent
+	{margin-top:6.0pt;
+	margin-right:0in;
+	margin-bottom:6.0pt;
+	margin-left:.5in;
+	font-size:11.0pt;
+	font-family:Arial;}
+p.MsoFootnoteText, li.MsoFootnoteText, div.MsoFootnoteText
+	{margin-top:6.0pt;
+	margin-right:0in;
+	margin-bottom:6.0pt;
+	margin-left:0in;
+	text-align:justify;
+	text-justify:inter-ideograph;
+	font-size:11.0pt;
+	font-family:GillSans;}
+p.MsoCommentText, li.MsoCommentText, div.MsoCommentText
+	{margin-top:6.0pt;
+	margin-right:0in;
+	margin-bottom:6.0pt;
+	margin-left:0in;
+	text-align:justify;
+	text-justify:inter-ideograph;
+	font-size:11.0pt;
+	font-family:GillSans;}
+p.MsoHeader, li.MsoHeader, div.MsoHeader
+	{margin-top:6.0pt;
+	margin-right:0in;
+	margin-bottom:6.0pt;
+	margin-left:0in;
+	text-align:justify;
+	text-justify:inter-ideograph;
+	font-size:11.0pt;
+	font-family:GillSans;}
+p.MsoFooter, li.MsoFooter, div.MsoFooter
+	{margin-top:6.0pt;
+	margin-right:0in;
+	margin-bottom:6.0pt;
+	margin-left:0in;
+	text-align:justify;
+	text-justify:inter-ideograph;
+	font-size:11.0pt;
+	font-family:GillSans;}
+p.MsoIndexHeading, li.MsoIndexHeading, div.MsoIndexHeading
+	{margin-top:6.0pt;
+	margin-right:0in;
+	margin-bottom:6.0pt;
+	margin-left:0in;
+	text-align:justify;
+	text-justify:inter-ideograph;
+	font-size:12.0pt;
+	font-family:Arial;
+	font-weight:bold;}
+p.MsoCaption, li.MsoCaption, div.MsoCaption
+	{margin-top:6.0pt;
+	margin-right:0in;
+	margin-bottom:6.0pt;
+	margin-left:0in;
+	text-align:center;
+	font-size:12.0pt;
+	font-family:GillSans;
+	font-weight:bold;}
+p.MsoTof, li.MsoTof, div.MsoTof
+	{margin-top:6.0pt;
+	margin-right:0in;
+	margin-bottom:6.0pt;
+	margin-left:24.0pt;
+	text-indent:-24.0pt;
+	font-size:11.0pt;
+	font-family:Arial;}
+p.MsoEnvelopeAddress, li.MsoEnvelopeAddress, div.MsoEnvelopeAddress
+	{margin-top:6.0pt;
+	margin-right:0in;
+	margin-bottom:6.0pt;
+	margin-left:2.0in;
+	text-align:justify;
+	text-justify:inter-ideograph;
+	font-size:12.0pt;
+	font-family:Arial;}
+p.MsoEnvelopeReturn, li.MsoEnvelopeReturn, div.MsoEnvelopeReturn
+	{margin-top:6.0pt;
+	margin-right:0in;
+	margin-bottom:6.0pt;
+	margin-left:0in;
+	text-align:justify;
+	text-justify:inter-ideograph;
+	font-size:11.0pt;
+	font-family:Arial;}
+span.MsoFootnoteReference
+	{vertical-align:super;}
+span.MsoCommentReference
+	{color:fuchsia;}
+span.MsoEndnoteReference
+	{vertical-align:super;}
+p.MsoEndnoteText, li.MsoEndnoteText, div.MsoEndnoteText
+	{margin-top:6.0pt;
+	margin-right:0in;
+	margin-bottom:6.0pt;
+	margin-left:0in;
+	text-align:justify;
+	text-justify:inter-ideograph;
+	font-size:11.0pt;
+	font-family:GillSans;}
+p.MsoToa, li.MsoToa, div.MsoToa
+	{margin-top:6.0pt;
+	margin-right:0in;
+	margin-bottom:6.0pt;
+	margin-left:12.0pt;
+	text-indent:-12.0pt;
+	font-size:11.0pt;
+	font-family:Arial;}
+p.MsoMacroText, li.MsoMacroText, div.MsoMacroText
+	{margin:0in;
+	margin-bottom:.0001pt;
+	text-align:justify;
+	text-justify:inter-ideograph;
+	font-size:10.0pt;
+	font-family:"Courier New";}
+p.MsoToaHeading, li.MsoToaHeading, div.MsoToaHeading
+	{margin-top:6.0pt;
+	margin-right:0in;
+	margin-bottom:6.0pt;
+	margin-left:0in;
+	font-size:11.0pt;
+	font-family:Arial;
+	font-weight:bold;}
+p.MsoList, li.MsoList, div.MsoList
+	{margin-top:6.0pt;
+	margin-right:0in;
+	margin-bottom:6.0pt;
+	margin-left:.25in;
+	text-align:justify;
+	text-justify:inter-ideograph;
+	text-indent:-.25in;
+	font-size:12.0pt;
+	font-family:GillSans;}
+p.MsoListBullet, li.MsoListBullet, div.MsoListBullet
+	{margin-top:6.0pt;
+	margin-right:0in;
+	margin-bottom:6.0pt;
+	margin-left:.25in;
+	text-align:justify;
+	text-justify:inter-ideograph;
+	text-indent:-.25in;
+	font-size:12.0pt;
+	font-family:GillSans;}
+p.MsoListNumber, li.MsoListNumber, div.MsoListNumber
+	{margin-top:6.0pt;
+	margin-right:0in;
+	margin-bottom:6.0pt;
+	margin-left:.25in;
+	text-align:justify;
+	text-justify:inter-ideograph;
+	text-indent:-.25in;
+	font-size:12.0pt;
+	font-family:GillSans;}
+p.MsoList2, li.MsoList2, div.MsoList2
+	{margin-top:6.0pt;
+	margin-right:0in;
+	margin-bottom:6.0pt;
+	margin-left:.5in;
+	text-align:justify;
+	text-justify:inter-ideograph;
+	text-indent:-.25in;
+	font-size:12.0pt;
+	font-family:GillSans;}
+p.MsoList3, li.MsoList3, div.MsoList3
+	{margin-top:6.0pt;
+	margin-right:0in;
+	margin-bottom:6.0pt;
+	margin-left:.75in;
+	text-align:justify;
+	text-justify:inter-ideograph;
+	text-indent:-.25in;
+	font-size:12.0pt;
+	font-family:GillSans;}
+p.MsoList4, li.MsoList4, div.MsoList4
+	{margin-top:6.0pt;
+	margin-right:0in;
+	margin-bottom:6.0pt;
+	margin-left:1.0in;
+	text-align:justify;
+	text-justify:inter-ideograph;
+	text-indent:-.25in;
+	font-size:12.0pt;
+	font-family:GillSans;}
+p.MsoList5, li.MsoList5, div.MsoList5
+	{margin-top:6.0pt;
+	margin-right:0in;
+	margin-bottom:6.0pt;
+	margin-left:1.25in;
+	text-align:justify;
+	text-justify:inter-ideograph;
+	text-indent:-.25in;
+	font-size:12.0pt;
+	font-family:GillSans;}
+p.MsoListBullet2, li.MsoListBullet2, div.MsoListBullet2
+	{margin-top:6.0pt;
+	margin-right:0in;
+	margin-bottom:6.0pt;
+	margin-left:.5in;
+	text-align:justify;
+	text-justify:inter-ideograph;
+	text-indent:-.25in;
+	font-size:12.0pt;
+	font-family:GillSans;}
+p.MsoListBullet3, li.MsoListBullet3, div.MsoListBullet3
+	{margin-top:6.0pt;
+	margin-right:0in;
+	margin-bottom:6.0pt;
+	margin-left:.75in;
+	text-align:justify;
+	text-justify:inter-ideograph;
+	text-indent:-.25in;
+	font-size:12.0pt;
+	font-family:GillSans;}
+p.MsoListBullet4, li.MsoListBullet4, div.MsoListBullet4
+	{margin-top:6.0pt;
+	margin-right:0in;
+	margin-bottom:6.0pt;
+	margin-left:1.0in;
+	text-align:justify;
+	text-justify:inter-ideograph;
+	text-indent:-.25in;
+	font-size:12.0pt;
+	font-family:GillSans;}
+p.MsoListBullet5, li.MsoListBullet5, div.MsoListBullet5
+	{margin-top:6.0pt;
+	margin-right:0in;
+	margin-bottom:6.0pt;
+	margin-left:1.25in;
+	text-align:justify;
+	text-justify:inter-ideograph;
+	text-indent:-.25in;
+	font-size:12.0pt;
+	font-family:GillSans;}
+p.MsoListNumber2, li.MsoListNumber2, div.MsoListNumber2
+	{margin-top:6.0pt;
+	margin-right:0in;
+	margin-bottom:6.0pt;
+	margin-left:.5in;
+	text-align:justify;
+	text-justify:inter-ideograph;
+	text-indent:-.25in;
+	font-size:12.0pt;
+	font-family:GillSans;}
+p.MsoListNumber3, li.MsoListNumber3, div.MsoListNumber3
+	{margin-top:6.0pt;
+	margin-right:0in;
+	margin-bottom:6.0pt;
+	margin-left:.75in;
+	text-align:justify;
+	text-justify:inter-ideograph;
+	text-indent:-.25in;
+	font-size:12.0pt;
+	font-family:GillSans;}
+p.MsoListNumber4, li.MsoListNumber4, div.MsoListNumber4
+	{margin-top:6.0pt;
+	margin-right:0in;
+	margin-bottom:6.0pt;
+	margin-left:1.0in;
+	text-align:justify;
+	text-justify:inter-ideograph;
+	text-indent:-.25in;
+	font-size:12.0pt;
+	font-family:GillSans;}
+p.MsoListNumber5, li.MsoListNumber5, div.MsoListNumber5
+	{margin-top:6.0pt;
+	margin-right:0in;
+	margin-bottom:6.0pt;
+	margin-left:1.25in;
+	text-align:justify;
+	text-justify:inter-ideograph;
+	text-indent:-.25in;
+	font-size:12.0pt;
+	font-family:GillSans;}
+p.MsoTitle, li.MsoTitle, div.MsoTitle
+	{margin-top:12.0pt;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:0in;
+	margin-bottom:.0001pt;
+	font-size:18.0pt;
+	font-family:Arial;
+	color:navy;
+	font-weight:bold;}
+p.MsoClosing, li.MsoClosing, div.MsoClosing
+	{margin-top:6.0pt;
+	margin-right:0in;
+	margin-bottom:6.0pt;
+	margin-left:3.0in;
+	text-align:justify;
+	text-justify:inter-ideograph;
+	font-size:12.0pt;
+	font-family:GillSans;}
+p.MsoSignature, li.MsoSignature, div.MsoSignature
+	{margin-top:6.0pt;
+	margin-right:0in;
+	margin-bottom:6.0pt;
+	margin-left:3.0in;
+	font-size:11.0pt;
+	font-family:Arial;}
+p.MsoBodyText, li.MsoBodyText, div.MsoBodyText
+	{margin-top:6.0pt;
+	margin-right:0in;
+	margin-bottom:6.0pt;
+	margin-left:0in;
+	text-align:justify;
+	text-justify:inter-ideograph;
+	layout-grid-mode:char;
+	font-size:12.0pt;
+	font-family:GillSans;}
+p.MsoBodyTextIndent, li.MsoBodyTextIndent, div.MsoBodyTextIndent
+	{margin-top:6.0pt;
+	margin-right:0in;
+	margin-bottom:6.0pt;
+	margin-left:.25in;
+	text-align:justify;
+	text-justify:inter-ideograph;
+	font-size:12.0pt;
+	font-family:GillSans;}
+p.MsoListContinue, li.MsoListContinue, div.MsoListContinue
+	{margin-top:6.0pt;
+	margin-right:0in;
+	margin-bottom:6.0pt;
+	margin-left:.25in;
+	text-align:justify;
+	text-justify:inter-ideograph;
+	font-size:12.0pt;
+	font-family:GillSans;}
+p.MsoListContinue2, li.MsoListContinue2, div.MsoListContinue2
+	{margin-top:6.0pt;
+	margin-right:0in;
+	margin-bottom:6.0pt;
+	margin-left:.5in;
+	text-align:justify;
+	text-justify:inter-ideograph;
+	font-size:12.0pt;
+	font-family:GillSans;}
+p.MsoListContinue3, li.MsoListContinue3, div.MsoListContinue3
+	{margin-top:6.0pt;
+	margin-right:0in;
+	margin-bottom:6.0pt;
+	margin-left:.75in;
+	text-align:justify;
+	text-justify:inter-ideograph;
+	font-size:12.0pt;
+	font-family:GillSans;}
+p.MsoListContinue4, li.MsoListContinue4, div.MsoListContinue4
+	{margin-top:6.0pt;
+	margin-right:0in;
+	margin-bottom:6.0pt;
+	margin-left:1.0in;
+	text-align:justify;
+	text-justify:inter-ideograph;
+	font-size:12.0pt;
+	font-family:GillSans;}
+p.MsoListContinue5, li.MsoListContinue5, div.MsoListContinue5
+	{margin-top:6.0pt;
+	margin-right:0in;
+	margin-bottom:6.0pt;
+	margin-left:1.25in;
+	text-align:justify;
+	text-justify:inter-ideograph;
+	font-size:12.0pt;
+	font-family:GillSans;}
+p.MsoMessageHeader, li.MsoMessageHeader, div.MsoMessageHeader
+	{margin-top:6.0pt;
+	margin-right:0in;
+	margin-bottom:6.0pt;
+	margin-left:.75in;
+	text-align:justify;
+	text-justify:inter-ideograph;
+	text-indent:-.75in;
+	background:#CCCCCC;
+	font-size:12.0pt;
+	font-family:Arial;}
+p.MsoSubtitle, li.MsoSubtitle, div.MsoSubtitle
+	{margin:0in;
+	margin-bottom:.0001pt;
+	text-align:center;
+	font-size:14.0pt;
+	font-family:Copperplate31ab;
+	font-weight:bold;}
+p.MsoSalutation, li.MsoSalutation, div.MsoSalutation
+	{margin-top:6.0pt;
+	margin-right:0in;
+	margin-bottom:6.0pt;
+	margin-left:0in;
+	font-size:11.0pt;
+	font-family:Arial;}
+p.MsoDate, li.MsoDate, div.MsoDate
+	{margin-top:6.0pt;
+	margin-right:0in;
+	margin-bottom:6.0pt;
+	margin-left:0in;
+	text-align:justify;
+	text-justify:inter-ideograph;
+	font-size:12.0pt;
+	font-family:GillSans;}
+p.MsoBodyTextFirstIndent, li.MsoBodyTextFirstIndent, div.MsoBodyTextFirstIndent
+	{margin-top:6.0pt;
+	margin-right:0in;
+	margin-bottom:6.0pt;
+	margin-left:0in;
+	text-align:justify;
+	text-justify:inter-ideograph;
+	text-indent:10.5pt;
+	font-size:12.0pt;
+	font-family:GillSans;}
+p.MsoBodyTextFirstIndent2, li.MsoBodyTextFirstIndent2, div.MsoBodyTextFirstIndent2
+	{margin-top:6.0pt;
+	margin-right:0in;
+	margin-bottom:6.0pt;
+	margin-left:.25in;
+	text-align:justify;
+	text-justify:inter-ideograph;
+	text-indent:10.5pt;
+	font-size:12.0pt;
+	font-family:GillSans;}
+p.MsoNoteHeading, li.MsoNoteHeading, div.MsoNoteHeading
+	{margin-top:6.0pt;
+	margin-right:0in;
+	margin-bottom:6.0pt;
+	margin-left:0in;
+	font-size:11.0pt;
+	font-family:Arial;}
+p.MsoBodyText2, li.MsoBodyText2, div.MsoBodyText2
+	{margin-top:6.0pt;
+	margin-right:0in;
+	margin-bottom:6.0pt;
+	margin-left:0in;
+	text-align:justify;
+	text-justify:inter-ideograph;
+	line-height:200%;
+	font-size:12.0pt;
+	font-family:GillSans;}
+p.MsoBodyText3, li.MsoBodyText3, div.MsoBodyText3
+	{margin-top:6.0pt;
+	margin-right:0in;
+	margin-bottom:6.0pt;
+	margin-left:0in;
+	line-height:200%;
+	font-size:12.0pt;
+	font-family:Arial;}
+p.MsoBodyTextIndent2, li.MsoBodyTextIndent2, div.MsoBodyTextIndent2
+	{margin-top:6.0pt;
+	margin-right:0in;
+	margin-bottom:6.0pt;
+	margin-left:.25in;
+	text-align:justify;
+	text-justify:inter-ideograph;
+	line-height:200%;
+	font-size:12.0pt;
+	font-family:GillSans;}
+p.MsoBodyTextIndent3, li.MsoBodyTextIndent3, div.MsoBodyTextIndent3
+	{margin-top:6.0pt;
+	margin-right:0in;
+	margin-bottom:6.0pt;
+	margin-left:.25in;
+	text-align:justify;
+	text-justify:inter-ideograph;
+	font-size:8.0pt;
+	font-family:GillSans;}
+p.MsoBlockText, li.MsoBlockText, div.MsoBlockText
+	{margin-top:6.0pt;
+	margin-right:1.0in;
+	margin-bottom:6.0pt;
+	margin-left:1.0in;
+	text-align:justify;
+	text-justify:inter-ideograph;
+	font-size:12.0pt;
+	font-family:GillSans;}
+a:link, span.MsoHyperlink
+	{color:blue;
+	text-decoration:none none;}
+a:visited, span.MsoHyperlinkFollowed
+	{color:purple;
+	text-decoration:none none;}
+p.MsoDocumentMap, li.MsoDocumentMap, div.MsoDocumentMap
+	{margin-top:6.0pt;
+	margin-right:0in;
+	margin-bottom:6.0pt;
+	margin-left:0in;
+	text-align:justify;
+	text-justify:inter-ideograph;
+	background:navy;
+	font-size:12.0pt;
+	font-family:Tahoma;}
+p.MsoPlainText, li.MsoPlainText, div.MsoPlainText
+	{margin:0in;
+	margin-bottom:.0001pt;
+	font-size:10.0pt;
+	font-family:"Courier New";}
+p.MsoAutoSig, li.MsoAutoSig, div.MsoAutoSig
+	{margin-top:6.0pt;
+	margin-right:0in;
+	margin-bottom:6.0pt;
+	margin-left:0in;
+	text-align:justify;
+	text-justify:inter-ideograph;
+	font-size:12.0pt;
+	font-family:GillSans;}
+p
+	{margin:0in;
+	margin-bottom:.0001pt;
+	font-size:8.0pt;
+	font-family:"Times New Roman";}
+address
+	{margin-top:6.0pt;
+	margin-right:0in;
+	margin-bottom:6.0pt;
+	margin-left:0in;
+	text-align:justify;
+	text-justify:inter-ideograph;
+	font-size:12.0pt;
+	font-family:GillSans;
+	font-style:italic;}
+code
+	{font-family:"Courier New";}
+pre
+	{margin-top:6.0pt;
+	margin-right:0in;
+	margin-bottom:6.0pt;
+	margin-left:0in;
+	text-align:justify;
+	text-justify:inter-ideograph;
+	font-size:11.0pt;
+	font-family:"Courier New";}
+p.xml, li.xml, div.xml
+	{margin-top:6.0pt;
+	margin-right:0in;
+	margin-bottom:6.0pt;
+	margin-left:0in;
+	font-size:11.0pt;
+	font-family:"Courier New";}
+p.appendices, li.appendices, div.appendices
+	{margin-top:24.0pt;
+	margin-right:0in;
+	margin-bottom:12.0pt;
+	margin-left:.3in;
+	text-align:center;
+	text-indent:-.3in;
+	page-break-after:avoid;
+	font-size:14.0pt;
+	font-family:Copperplate31ab;
+	font-weight:bold;}
+p.bullet, li.bullet, div.bullet
+	{margin-top:3.0pt;
+	margin-right:4.3pt;
+	margin-bottom:3.0pt;
+	margin-left:.5in;
+	text-align:justify;
+	text-justify:inter-ideograph;
+	text-indent:-.25in;
+	layout-grid-mode:char;
+	font-size:12.0pt;
+	font-family:GillSans;}
+p.footerlandscape, li.footerlandscape, div.footerlandscape
+	{margin-top:6.0pt;
+	margin-right:0in;
+	margin-bottom:6.0pt;
+	margin-left:0in;
+	text-align:justify;
+	text-justify:inter-ideograph;
+	font-size:11.0pt;
+	font-family:GillSans;}
+p.headerlandscape, li.headerlandscape, div.headerlandscape
+	{margin-top:6.0pt;
+	margin-right:0in;
+	margin-bottom:6.0pt;
+	margin-left:0in;
+	text-align:justify;
+	text-justify:inter-ideograph;
+	font-size:11.0pt;
+	font-family:GillSans;}
+p.number, li.number, div.number
+	{margin-top:3.0pt;
+	margin-right:0in;
+	margin-bottom:3.0pt;
+	margin-left:.5in;
+	text-indent:-.25in;
+	font-size:11.0pt;
+	font-family:Arial;}
+p.titlecover, li.titlecover, div.titlecover
+	{margin-top:1.25in;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:.75in;
+	margin-bottom:.0001pt;
+	page-break-after:avoid;
+	font-size:36.0pt;
+	font-family:Arial;
+	letter-spacing:-2.4pt;
+	font-weight:bold;}
+p.subtitlecover, li.subtitlecover, div.subtitlecover
+	{margin-top:76.0pt;
+	margin-right:84.0pt;
+	margin-bottom:0in;
+	margin-left:.75in;
+	margin-bottom:.0001pt;
+	page-break-after:avoid;
+	font-size:20.0pt;
+	font-family:"Times New Roman";
+	letter-spacing:-1.0pt;
+	font-style:italic;}
+p.tabletext, li.tabletext, div.tabletext
+	{margin:0in;
+	margin-bottom:.0001pt;
+	font-size:11.0pt;
+	font-family:Arial;}
+p.tablebullet, li.tablebullet, div.tablebullet
+	{margin-top:0in;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:.15in;
+	margin-bottom:.0001pt;
+	text-indent:-.15in;
+	font-size:11.0pt;
+	font-family:Arial;}
+p.tableheader, li.tableheader, div.tableheader
+	{margin:0in;
+	margin-bottom:.0001pt;
+	text-align:center;
+	font-size:11.0pt;
+	font-family:Copperplate31ab;
+	color:white;
+	font-weight:bold;}
+p.tablelist, li.tablelist, div.tablelist
+	{margin-top:0in;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:.25in;
+	margin-bottom:.0001pt;
+	text-indent:-.3in;
+	font-size:11.0pt;
+	font-family:Arial;}
+p.tablesubheader, li.tablesubheader, div.tablesubheader
+	{margin:0in;
+	margin-bottom:.0001pt;
+	text-align:center;
+	font-size:11.0pt;
+	font-family:Arial;
+	font-weight:bold;}
+p.version, li.version, div.version
+	{margin:0in;
+	margin-bottom:.0001pt;
+	text-align:center;
+	font-size:10.0pt;
+	font-family:Copperplate31ab;}
+p.style1, li.style1, div.style1
+	{margin-top:12.0pt;
+	margin-right:0in;
+	margin-bottom:6.0pt;
+	margin-left:.5in;
+	text-indent:-.5in;
+	page-break-after:avoid;
+	layout-grid-mode:char;
+	font-size:10.0pt;
+	font-family:Arial;
+	font-weight:bold;}
+p.h4, li.h4, div.h4
+	{margin-top:6.0pt;
+	margin-right:0in;
+	margin-bottom:6.0pt;
+	margin-left:0in;
+	font-size:11.0pt;
+	font-family:Arial;
+	font-weight:bold;}
+p.b, li.b, div.b
+	{margin:0in;
+	margin-bottom:.0001pt;
+	font-size:12.0pt;
+	font-family:"Courier New";
+	color:red;
+	font-weight:bold;}
+p.e, li.e, div.e
+	{margin-top:0in;
+	margin-right:12.0pt;
+	margin-bottom:0in;
+	margin-left:12.0pt;
+	margin-bottom:.0001pt;
+	text-indent:-12.0pt;
+	font-size:12.0pt;
+	font-family:"Times New Roman";}
+p.k, li.k, div.k
+	{margin-top:0in;
+	margin-right:12.0pt;
+	margin-bottom:0in;
+	margin-left:12.0pt;
+	margin-bottom:.0001pt;
+	text-indent:-12.0pt;
+	font-size:12.0pt;
+	font-family:"Times New Roman";}
+p.t, li.t, div.t
+	{margin:0in;
+	margin-bottom:.0001pt;
+	font-size:12.0pt;
+	font-family:"Times New Roman";
+	color:#990000;}
+p.xt, li.xt, div.xt
+	{margin:0in;
+	margin-bottom:.0001pt;
+	font-size:12.0pt;
+	font-family:"Times New Roman";
+	color:#990099;}
+p.ns, li.ns, div.ns
+	{margin:0in;
+	margin-bottom:.0001pt;
+	font-size:12.0pt;
+	font-family:"Times New Roman";
+	color:red;}
+p.m, li.m, div.m
+	{margin:0in;
+	margin-bottom:.0001pt;
+	font-size:12.0pt;
+	font-family:"Times New Roman";
+	color:blue;}
+p.tx, li.tx, div.tx
+	{margin:0in;
+	margin-bottom:.0001pt;
+	font-size:12.0pt;
+	font-family:"Times New Roman";
+	font-weight:bold;}
+p.db, li.db, div.db
+	{margin-top:0in;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:12.0pt;
+	margin-bottom:.0001pt;
+	font-size:12.0pt;
+	font-family:Courier;}
+p.di, li.di, div.di
+	{margin:0in;
+	margin-bottom:.0001pt;
+	font-size:12.0pt;
+	font-family:Courier;}
+p.d, li.d, div.d
+	{margin:0in;
+	margin-bottom:.0001pt;
+	font-size:12.0pt;
+	font-family:"Times New Roman";
+	color:blue;}
+p.pi, li.pi, div.pi
+	{margin:0in;
+	margin-bottom:.0001pt;
+	font-size:12.0pt;
+	font-family:"Times New Roman";
+	color:blue;}
+p.cb, li.cb, div.cb
+	{margin-top:0in;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:12.0pt;
+	margin-bottom:.0001pt;
+	font-size:12.0pt;
+	font-family:Courier;
+	color:#888888;}
+p.ci, li.ci, div.ci
+	{margin:0in;
+	margin-bottom:.0001pt;
+	font-size:12.0pt;
+	font-family:Courier;
+	color:#888888;}
+p.workingdraftdate, li.workingdraftdate, div.workingdraftdate
+	{margin-top:12.0pt;
+	margin-right:0in;
+	margin-bottom:12.0pt;
+	margin-left:0in;
+	font-size:16.0pt;
+	font-family:Arial;
+	color:navy;}
+p.heading3preface, li.heading3preface, div.heading3preface
+	{margin:0in;
+	margin-bottom:.0001pt;
+	font-size:10.0pt;
+	font-family:Arial;
+	font-weight:bold;}
+p.prefacetext, li.prefacetext, div.prefacetext
+	{margin-top:0in;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:.5in;
+	margin-bottom:.0001pt;
+	font-size:10.0pt;
+	font-family:Arial;}
+p.heading2preface, li.heading2preface, div.heading2preface
+	{margin-top:24.0pt;
+	margin-right:0in;
+	margin-bottom:3.0pt;
+	margin-left:0in;
+	font-size:14.0pt;
+	font-family:Arial;
+	color:navy;
+	font-weight:bold;}
+p.address, li.address, div.address
+	{margin-top:0in;
+	margin-right:0in;
+	margin-bottom:3.0pt;
+	margin-left:0in;
+	line-height:12.0pt;
+	font-size:10.0pt;
+	font-family:Arial;}
+p.dash, li.dash, div.dash
+	{margin-top:2.0pt;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:.6in;
+	margin-bottom:.0001pt;
+	text-indent:-.3in;
+	font-size:10.0pt;
+	font-family:Arial;}
+p.highlight, li.highlight, div.highlight
+	{margin-top:12.0pt;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:0in;
+	margin-bottom:.0001pt;
+	font-size:10.0pt;
+	font-family:Arial;
+	color:navy;
+	font-weight:bold;}
+p.tabentry, li.tabentry, div.tabentry
+	{margin-top:1.0pt;
+	margin-right:0in;
+	margin-bottom:1.0pt;
+	margin-left:0in;
+	font-size:10.0pt;
+	font-family:Arial;}
+p.tabtitle, li.tabtitle, div.tabtitle
+	{margin-top:6.0pt;
+	margin-right:0in;
+	margin-bottom:6.0pt;
+	margin-left:0in;
+	text-align:center;
+	page-break-after:avoid;
+	font-size:10.0pt;
+	font-family:Arial;
+	font-weight:bold;}
+p.cvheaderfooter, li.cvheaderfooter, div.cvheaderfooter
+	{margin-top:3.0pt;
+	margin-right:19.3pt;
+	margin-bottom:3.0pt;
+	margin-left:0in;
+	line-height:12.0pt;
+	font-size:10.0pt;
+	font-family:Arial;}
+p.cvhp, li.cvhp, div.cvhp
+	{margin-top:3.0pt;
+	margin-right:19.3pt;
+	margin-bottom:3.0pt;
+	margin-left:1.5in;
+	text-indent:-.5in;
+	line-height:12.0pt;
+	font-size:10.0pt;
+	font-family:Arial;}
+p.cvnormal, li.cvnormal, div.cvnormal
+	{margin-top:3.0pt;
+	margin-right:19.3pt;
+	margin-bottom:3.0pt;
+	margin-left:1.0in;
+	text-indent:-1.0in;
+	line-height:12.0pt;
+	font-size:10.0pt;
+	font-family:Arial;}
+p.diagram, li.diagram, div.diagram
+	{margin-top:3.0pt;
+	margin-right:0in;
+	margin-bottom:3.0pt;
+	margin-left:0in;
+	text-align:center;
+	line-height:12.0pt;
+	page-break-after:avoid;
+	font-size:10.0pt;
+	font-family:Arial;}
+p.endofdoc, li.endofdoc, div.endofdoc
+	{margin-top:24.0pt;
+	margin-right:0in;
+	margin-bottom:3.0pt;
+	margin-left:0in;
+	text-align:center;
+	line-height:12.0pt;
+	font-size:10.0pt;
+	font-family:Arial;}
+p.figure, li.figure, div.figure
+	{margin-top:6.0pt;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:0in;
+	margin-bottom:.0001pt;
+	text-align:center;
+	page-break-after:avoid;
+	font-size:10.0pt;
+	font-family:Arial;}
+p.frontpage, li.frontpage, div.frontpage
+	{margin-top:0in;
+	margin-right:0in;
+	margin-bottom:24.0pt;
+	margin-left:.5in;
+	line-height:12.0pt;
+	font-size:10.0pt;
+	font-family:Arial;
+	font-weight:bold;}
+p.frontpagecolumn1, li.frontpagecolumn1, div.frontpagecolumn1
+	{margin-top:0in;
+	margin-right:0in;
+	margin-bottom:24.0pt;
+	margin-left:0in;
+	line-height:12.0pt;
+	font-size:10.0pt;
+	font-family:Arial;
+	font-weight:bold;}
+p.frontpagecolumn2, li.frontpagecolumn2, div.frontpagecolumn2
+	{margin-top:0in;
+	margin-right:0in;
+	margin-bottom:24.0pt;
+	margin-left:0in;
+	line-height:12.0pt;
+	font-size:10.0pt;
+	font-family:Arial;}
+p.insert, li.insert, div.insert
+	{margin-top:3.0pt;
+	margin-right:0in;
+	margin-bottom:3.0pt;
+	margin-left:0in;
+	text-align:center;
+	line-height:12.0pt;
+	font-size:10.0pt;
+	font-family:Arial;}
+p.super, li.super, div.super
+	{margin-top:6.0pt;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:0in;
+	margin-bottom:.0001pt;
+	font-size:10.0pt;
+	font-family:Arial;}
+p.application, li.application, div.application
+	{margin-top:0in;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:.1in;
+	margin-bottom:.0001pt;
+	text-indent:-.1in;
+	font-size:9.0pt;
+	font-family:"Courier New";}
+p.backaus, li.backaus, div.backaus
+	{margin-top:12.0pt;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:1.0in;
+	margin-bottom:.0001pt;
+	text-indent:-1.0in;
+	font-size:10.0pt;
+	font-family:"Courier New";}
+p.logic, li.logic, div.logic
+	{margin-top:0in;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:261.0pt;
+	margin-bottom:.0001pt;
+	text-indent:-261.0pt;
+	font-size:10.0pt;
+	font-family:"Courier New";}
+p.xmla, li.xmla, div.xmla
+	{margin-top:0in;
+	margin-right:-6.0pt;
+	margin-bottom:0in;
+	margin-left:12.0pt;
+	margin-bottom:.0001pt;
+	background:#E5E5E5;
+	font-size:8.0pt;
+	font-family:"Courier New";}
+p.outlinenumbered, li.outlinenumbered, div.outlinenumbered
+	{margin-top:6.0pt;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:.25in;
+	margin-bottom:.0001pt;
+	text-indent:-.25in;
+	font-size:10.0pt;
+	font-family:Arial;}
+p.reference, li.reference, div.reference
+	{margin-top:6.0pt;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:.5in;
+	margin-bottom:.0001pt;
+	text-indent:-.5in;
+	font-size:10.0pt;
+	font-family:Arial;}
+p.note, li.note, div.note
+	{margin-top:12.0pt;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:.35in;
+	margin-bottom:.0001pt;
+	text-indent:-.15in;
+	line-height:12.0pt;
+	font-size:12.0pt;
+	font-family:Courier;}
+p.notebullet, li.notebullet, div.notebullet
+	{margin-top:0in;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:57.35pt;
+	margin-bottom:.0001pt;
+	text-indent:-14.15pt;
+	line-height:12.0pt;
+	font-size:12.0pt;
+	font-family:Courier;}
+p.el, li.el, div.el
+	{margin-top:0in;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:.25in;
+	margin-bottom:.0001pt;
+	text-indent:-.25in;
+	font-size:10.0pt;
+	font-family:Arial;}
+p.elementstructure, li.elementstructure, div.elementstructure
+	{margin-top:0in;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:.25in;
+	margin-bottom:.0001pt;
+	text-indent:-.25in;
+	font-size:10.0pt;
+	font-family:Arial;}
+p.outlinenumbereddb, li.outlinenumbereddb, div.outlinenumbereddb
+	{margin-top:6.0pt;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:.25in;
+	margin-bottom:.0001pt;
+	text-indent:-.25in;
+	font-size:10.0pt;
+	font-family:Arial;}
+p.heading3bodytext, li.heading3bodytext, div.heading3bodytext
+	{margin-top:.25in;
+	margin-right:0in;
+	margin-bottom:3.0pt;
+	margin-left:.25in;
+	text-indent:-.25in;
+	line-height:12.0pt;
+	page-break-after:avoid;
+	font-size:10.0pt;
+	font-family:Arial;
+	color:navy;
+	font-weight:bold;}
+p.noteend, li.noteend, div.noteend
+	{margin-top:0in;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:.75in;
+	margin-bottom:.0001pt;
+	text-indent:-.75in;
+	line-height:12.0pt;
+	font-size:10.0pt;
+	font-family:Arial;}
+p.notecontinuation, li.notecontinuation, div.notecontinuation
+	{margin-top:12.0pt;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:.75in;
+	margin-bottom:.0001pt;
+	text-indent:-.15in;
+	line-height:12.0pt;
+	font-size:10.0pt;
+	font-family:Arial;}
+p.tableheading, li.tableheading, div.tableheading
+	{margin-top:6.0pt;
+	margin-right:0in;
+	margin-bottom:6.0pt;
+	margin-left:0in;
+	font-size:8.0pt;
+	font-family:"Book Antiqua";
+	font-weight:bold;}
+p.rootnode, li.rootnode, div.rootnode
+	{margin:0in;
+	margin-bottom:.0001pt;
+	font-size:8.0pt;
+	font-family:Verdana;}
+span.m1
+	{color:blue;}
+span.pi1
+	{color:blue;}
+span.d1
+	{color:blue;}
+span.b1
+	{font-family:"Courier New";
+	color:red;
+	font-weight:bold;
+	text-decoration:none none;}
+span.t1
+	{color:#990000;}
+span.tx1
+	{font-weight:bold;}
+span.note1
+	{color:gray;}
+span.headers1
+	{font-family:"Verdana\, Arial\, Helvetica";
+	font-weight:bold;}
+span.arrow
+	{font-weight:bold;
+	font-style:normal;}
+span.courier
+	{font-family:"Courier New";}
+span.technicalcommitteestandardslist-content1
+	{font-family:Verdana;
+	color:#002597;}
+@page Section1
+	{size:8.5in 11.0in;
+	margin:1.0in 1.0in .6in 1.0in;}
+div.Section1
+	{page:Section1;}
+ /* List Definitions */
+ ol
+	{margin-bottom:0in;}
+ul
+	{margin-bottom:0in;}
+-->
+</style>
+
+</head>
+
+<body lang=EN-US link=blue vlink=purple>
+
+<div class=Section1>
+
+<p class=xml><span style='font-family:Arial'><img width=281 height=87
+src="GuidelinesForISOUtilities_files/image001.jpg">&nbsp;&nbsp; </span></p>
+
+<p class=MsoTitle>Guidelines for Supporting ISO Code Sets &nbsp;</p>
+
+<p class=MsoTitle>Recommendation, 2007 April 15</p>
+
+<p class=heading3preface style='margin-top:6.0pt'>Editor:</p>
+
+<p class=prefacetext>Chuck Allen, HR-XML Consortium, Inc. </p>
+
+<p class=prefacetext>Paul Kiel, HR-XML Consortium, Inc.</p>
+
+<p class=prefacetext>Kim Bartkus, HR-XML Consortium, Inc. </p>
+
+<p class=heading3preface style='margin-top:6.0pt'>Authors:</p>
+
+<p class=prefacetext>Chuck Allen, HR-XML Consortium, Inc.</p>
+
+<p class=heading3preface style='margin-top:6.0pt'>Contributors:</p>
+
+<p class=prefacetext>These guidelines draw heavily upon this technical note
+prepared by Bill Kerr:<br>
+<a href="http://www.hr-xml.org/resources/TSC-ISO-Standards-v00-03.pdf">http://www.hr-xml.org/resources/TSC-ISO-Standards-v00-03.pdf</a></p>
+
+<p class=prefacetext>It also incorporates the &#8220;utility schemas&#8221;
+developed by Paul Kiel.</p>
+
+<p class=prefacetext style='margin-left:0in'><b>&nbsp;</b></p>
+
+<p class=prefacetext style='margin-left:0in'><b>Copyright &copy; 2007 HR-XML
+Consortium, Inc.</b>&nbsp; </p>
+
+<p class=prefacetext style='margin-left:0in'>&nbsp;</p>
+
+<div style='border:none;border-top:double windowtext 2.25pt;padding:24.0pt 0in 0in 0in'>
+
+<p class=heading2preface style='margin-top:12.0pt'>Abstract</p>
+
+</div>
+
+<p class=MsoPlainText><span style='font-family:Arial'>A growing number of
+approved HR-XML specifications use a set of agreed-upon XML schema types to
+represent ISO codes for currency, country, gender, and names of languages. The
+purpose of this recommendation is to document the use of these types and to
+formalize their adoption as Cross-Process Objects.</span></p>
+
+<p class=heading2preface style='margin-top:12.0pt;margin-right:0in;margin-bottom:
+0in;margin-left:0in;margin-bottom:.0001pt'>&nbsp;</p>
+
+<p class=MsoNormal>&nbsp;</p>
+
+<p class=heading2preface style='margin-top:12.0pt;margin-right:0in;margin-bottom:
+0in;margin-left:0in;margin-bottom:.0001pt'>Table of Contents</p>
+
+<p class=MsoToc1><span class=MsoHyperlink><a href="#_Toc127534562">1<span
+style='font-size:12.0pt;color:windowtext;font-weight:normal'>&nbsp;&nbsp;&nbsp;&nbsp;
+</span>Overview<span style='color:windowtext;display:none'>.. 3</span></a></span></p>
+
+<p class=MsoToc1><span class=MsoHyperlink><a href="#_Toc127534563">2<span
+style='font-size:12.0pt;color:windowtext;font-weight:normal'>&nbsp;&nbsp;&nbsp;&nbsp;
+</span>Design Approach<span style='color:windowtext;display:none'>. 3</span></a></span></p>
+
+<p class=MsoToc1><span class=MsoHyperlink><a href="#_Toc127534564">3<span
+style='font-size:12.0pt;color:windowtext;font-weight:normal'>&nbsp;&nbsp;&nbsp;&nbsp;
+</span>GenderCodeType<span style='color:windowtext;display:none'>. 4</span></a></span></p>
+
+<p class=MsoToc2><span class=MsoHyperlink><a href="#_Toc127534565">3.1<span
+style='font-size:12.0pt;color:windowtext;font-style:normal'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span>Supporting Schema<span style='color:windowtext;display:none'>. 4</span></a></span></p>
+
+<p class=MsoToc2><span class=MsoHyperlink><a href="#_Toc127534566">3.2<span
+style='font-size:12.0pt;color:windowtext;font-style:normal'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span><span style='background:white'>Uses/Implementation Considerations</span><span
+style='color:windowtext;display:none'>. 4</span></a></span></p>
+
+<p class=MsoToc1><span class=MsoHyperlink><a href="#_Toc127534567">4<span
+style='font-size:12.0pt;color:windowtext;font-weight:normal'>&nbsp;&nbsp;&nbsp;&nbsp;
+</span>CountryCodeType<span style='color:windowtext;display:none'>. 5</span></a></span></p>
+
+<p class=MsoToc2><span class=MsoHyperlink><a href="#_Toc127534568">4.1<span
+style='font-size:12.0pt;color:windowtext;font-style:normal'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span>Supporting Schema<span style='color:windowtext;display:none'>. 5</span></a></span></p>
+
+<p class=MsoToc2><span class=MsoHyperlink><a href="#_Toc127534569">4.2<span
+style='font-size:12.0pt;color:windowtext;font-style:normal'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span><span style='background:white'>Uses/Implementation Considerations</span><span
+style='color:windowtext;display:none'>. 5</span></a></span></p>
+
+<p class=MsoToc1><span class=MsoHyperlink><a href="#_Toc127534570"><span
+style='font-family:Arial-BoldMT'>5</span><span style='font-size:12.0pt;
+color:windowtext;font-weight:normal'>&nbsp;&nbsp;&nbsp;&nbsp; </span>CurrencyCodeType<span
+style='color:windowtext;display:none'>. 5</span></a></span></p>
+
+<p class=MsoToc2><span class=MsoHyperlink><a href="#_Toc127534571">5.1<span
+style='font-size:12.0pt;color:windowtext;font-style:normal'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span>Supporting Schema<span style='color:windowtext;display:none'>. 6</span></a></span></p>
+
+<p class=MsoToc2><span class=MsoHyperlink><a href="#_Toc127534572">5.2<span
+style='font-size:12.0pt;color:windowtext;font-style:normal'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span><span style='background:white'>Uses/Implementation Considerations</span><span
+style='color:windowtext;display:none'>. 6</span></a></span></p>
+
+<p class=MsoToc1><span class=MsoHyperlink><a href="#_Toc127534573">6<span
+style='font-size:12.0pt;color:windowtext;font-weight:normal'>&nbsp;&nbsp;&nbsp;&nbsp;
+</span>LanguageCodeType<span style='color:windowtext;display:none'>. 6</span></a></span></p>
+
+<p class=MsoToc2><span class=MsoHyperlink><a href="#_Toc127534574">6.1<span
+style='font-size:12.0pt;color:windowtext;font-style:normal'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span>Standards for Representation of Languages<span style='color:windowtext;
+display:none'>. 6</span></a></span></p>
+
+<p class=MsoToc2><span class=MsoHyperlink><a href="#_Toc127534575">6.2<span
+style='font-size:12.0pt;color:windowtext;font-style:normal'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span>HR-XML Supporting Schema<span style='color:windowtext;display:none'>. 7</span></a></span></p>
+
+<p class=MsoToc2><span class=MsoHyperlink><a href="#_Toc127534576"><span
+style='background:white'>6.3</span><span style='font-size:12.0pt;color:windowtext;
+font-style:normal'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span
+style='background:white'>Uses/Implementation Considerations</span><span
+style='color:windowtext;display:none'>. 7</span></a></span></p>
+
+<p class=MsoToc3><span class=MsoHyperlink><a href="#_Toc127534577">6.3.1<span
+style='font-size:12.0pt;color:windowtext'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span>Use of &#8220;xml:lang&#8221; (language as metadata)<span
+style='color:windowtext;display:none'> 7</span></a></span></p>
+
+<p class=MsoToc3><span class=MsoHyperlink><a href="#_Toc127534578">6.3.2<span
+style='font-size:12.0pt;color:windowtext'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span>Use of XML Schema data type &#8220;language&#8221; (language as data)<span
+style='color:windowtext;display:none'> 8</span></a></span></p>
+
+<p class=MsoToc1><span class=MsoHyperlink><a href="#_Toc127534579">7<span
+style='font-size:12.0pt;color:windowtext;font-weight:normal'>&nbsp;&nbsp;&nbsp;&nbsp;
+</span>Data Privacy<span style='color:windowtext;display:none'>. 8</span></a></span></p>
+
+<p class=MsoToc1><span class=MsoHyperlink><a href="#_Toc127534580">8<span
+style='font-size:12.0pt;color:windowtext;font-weight:normal'>&nbsp;&nbsp;&nbsp;&nbsp;
+</span>Appendix A - Document Version History<span style='color:windowtext;
+display:none'>. 8</span></a></span></p>
+
+<p class=MsoToc1><span class=MsoHyperlink><a href="#_Toc127534581">9<span
+style='font-size:12.0pt;color:windowtext;font-weight:normal'>&nbsp;&nbsp;&nbsp;&nbsp;
+</span>Appendix B &#8211; Related Documents<span style='color:windowtext;
+display:none'>. 9</span></a></span></p>
+
+<p class=MsoToc1><span style='font-family:Arial'>&nbsp;</span></p>
+
+<span style='font-size:14.0pt;font-family:Copperplate31ab'><br clear=all
+style='page-break-before:always'>
+</span>
+
+<h1><a name="_Toc127534562"><span style='color:black'>1</span></a><span
+style='font-size:7.0pt;font-family:"Times New Roman";color:black'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span>Overview</h1>
+
+<p class=MsoNormal style='margin:0in;margin-bottom:.0001pt;text-autospace:none'>The
+International Organization for Standardization (ISO) is a worldwide federation
+of national standards bodies. This document provides guidance on representing
+ISO codes for currency, country, gender, and names of languages within HR-XML
+Consortium specifications.</p>
+
+<h1><a name="_Ref18335313"></a><a name="_Toc127534563"></a><a
+name="_Ref18335321"></a><span style='color:black'>2</span><span
+style='font-size:7.0pt;font-family:"Times New Roman";color:black'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span>Design Approach</h1>
+
+<p class=MsoNormal>This document recommends that implementers of HR-XML
+Consortium specifications conform to ISO codes for currency, country, gender,
+and names of languages. The document also sets out XML schema types that HR-XML
+workgroups SHOULD incorporate within their specifications to support
+conformance with the ISO codes.</p>
+
+<p class=MsoNormal>The XML schema types presented in this document are designed
+to support (but do not directly include) code sets that have been standardized
+by the International Organization for Standardization.&nbsp; In each case, the
+schema includes a pattern to ensure that the code transmitted conforms to the
+format &#8211; but not necessarily the content &#8211; prescribed under the ISO
+standard. </p>
+
+<p class=MsoNormal>An alternative approach considered, but rejected, by the
+HR-XML Consortium&#8217;s Technical Steering Committee was to enumerate the
+actual codes prescribed under the ISO standards within HR-XML schemas.&nbsp;
+The approach of specifying a pattern to enforce the format of the particular
+ISO code set was favored over enumerating the codes themselves for the
+following reasons:</p>
+
+<p class=number style='margin-top:6.0pt;margin-right:0in;margin-bottom:6.0pt;
+margin-left:.5in'><span style='font-family:Wingdings;color:black'>&sect;</span><span
+style='font-size:7.0pt;font-family:"Times New Roman";color:black'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span>Including the ISO code sets by reference, instead of including the codes
+directly, spares the HR-XML Consortium the burden of having to edit and update
+enumerations each time a new version of the particular ISO specification is
+published. </p>
+
+<p class=number style='margin-top:6.0pt;margin-right:0in;margin-bottom:6.0pt;
+margin-left:.5in'><span style='font-family:Wingdings;color:black'>&sect;</span><span
+style='font-size:7.0pt;font-family:"Times New Roman";color:black'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span>Many ISO specifications are copyrighted and available only if a
+licensing fee is paid.&nbsp; By merely recommending the use of the ISO codes,
+but not including their content, HR-XML avoids any possible copyright or
+licensing controversies.</p>
+
+<p class=number style='margin-top:6.0pt;margin-right:0in;margin-bottom:6.0pt;
+margin-left:.5in'><span style='font-family:Wingdings;color:black'>&sect;</span><span
+style='font-size:7.0pt;font-family:"Times New Roman";color:black'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span>The approach of enforcing the format of the codes, rather than the
+content, is relatively simple. In most cases, the format of the code will
+remain constant, while the actual code content will change over time. Enforcing
+the format of the codes adds little overhead to the development and maintenance
+of HR-XML specifications, yet it supports conformance with recognized
+international standards.</p>
+
+<p class=number style='margin-top:6.0pt;margin-right:0in;margin-bottom:6.0pt;
+margin-left:.5in'><span style='font-family:Wingdings;color:black'>&sect;</span><span
+style='font-size:7.0pt;font-family:"Times New Roman";color:black'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span>Business logic for handling country and language code data and other
+codes often will be handled by a receiving system regardless of whether
+interchange data was validated against a complete list of ISO codes. For
+example, many companies &#8211; even those with wide-ranging global operations
+&#8211; may not have a compelling business reason to use the full 136 language
+codes within ISO 639-1:2002, Code for the Representation of Names of Languages.
+In such cases, parsing data against an enumerated list of the full 136
+ISO-recognized language codes would add some overhead without a commensurate
+benefit for the implementer.</p>
+
+<h1><a name="_Toc127534564"><span style='color:black'>3</span></a><span
+style='font-size:7.0pt;font-family:"Times New Roman";color:black'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span>GenderCodeType</h1>
+
+<p class=MsoNormal style='margin:0in;margin-bottom:.0001pt;text-autospace:none'>For
+purposes of indicating gender within HR-XML Consortium specifications, the codes
+prescribed by ISO 5218 (ISO 5218:1977 Information interchange -- Representation
+of human sexes) are RECOMMENDED. </p>
+
+<p class=MsoNormal style='margin:0in;margin-bottom:.0001pt;text-autospace:none'>&nbsp;</p>
+
+<p class=MsoNormal style='margin:0in;margin-bottom:.0001pt;text-autospace:none'>ISO
+5218 specifies the use of the following codes:</p>
+
+<p class=MsoNormal style='margin:0in;margin-bottom:.0001pt;text-autospace:none'>&nbsp;</p>
+
+<table class=MsoNormalTable border=0 cellspacing=0 cellpadding=0
+ style='border-collapse:collapse'>
+ <tr>
+  <td width=61 valign=top style='width:45.9pt;border:solid windowtext 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='margin:0in;margin-bottom:.0001pt;text-autospace:
+  none'><b><span style='font-size:10.0pt;font-family:ArialMT'>Code</span></b></p>
+  </td>
+  <td width=120 valign=top style='width:1.25in;border:solid windowtext 1.0pt;
+  border-left:none;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='margin:0in;margin-bottom:.0001pt;text-autospace:
+  none'><b><span style='font-size:10.0pt;font-family:ArialMT'>Definition</span></b></p>
+  </td>
+ </tr>
+ <tr>
+  <td width=61 valign=top style='width:45.9pt;border:solid windowtext 1.0pt;
+  border-top:none;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='margin:0in;margin-bottom:.0001pt;text-autospace:
+  none'><span style='font-size:10.0pt;font-family:ArialMT'>0 </span></p>
+  </td>
+  <td width=120 valign=top style='width:1.25in;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='margin:0in;margin-bottom:.0001pt;text-autospace:
+  none'><span style='font-size:10.0pt;font-family:ArialMT'>&nbsp;Not Known</span></p>
+  </td>
+ </tr>
+ <tr>
+  <td width=61 valign=top style='width:45.9pt;border:solid windowtext 1.0pt;
+  border-top:none;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='margin:0in;margin-bottom:.0001pt;text-autospace:
+  none'><span style='font-size:10.0pt;font-family:ArialMT'>1 </span></p>
+  </td>
+  <td width=120 valign=top style='width:1.25in;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='margin:0in;margin-bottom:.0001pt;text-autospace:
+  none'><span style='font-size:10.0pt;font-family:ArialMT'>&nbsp;Male</span></p>
+  </td>
+ </tr>
+ <tr>
+  <td width=61 valign=top style='width:45.9pt;border:solid windowtext 1.0pt;
+  border-top:none;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='margin:0in;margin-bottom:.0001pt;text-autospace:
+  none'><span style='font-size:10.0pt;font-family:ArialMT'>2 </span></p>
+  </td>
+  <td width=120 valign=top style='width:1.25in;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='margin:0in;margin-bottom:.0001pt;text-autospace:
+  none'><span style='font-size:10.0pt;font-family:ArialMT'>&nbsp;Female</span></p>
+  </td>
+ </tr>
+ <tr>
+  <td width=61 valign=top style='width:45.9pt;border:solid windowtext 1.0pt;
+  border-top:none;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='margin:0in;margin-bottom:.0001pt;text-autospace:
+  none'><span style='font-size:10.0pt;font-family:ArialMT'>9 </span></p>
+  </td>
+  <td width=120 valign=top style='width:1.25in;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='margin:0in;margin-bottom:.0001pt;text-autospace:
+  none'><span style='font-size:10.0pt;font-family:ArialMT'>&nbsp;Not specified</span></p>
+  </td>
+ </tr>
+</table>
+
+<h2><a name="_Toc127534565"><span style='color:black;font-style:normal'>3.1</span></a><span
+style='font-size:7.0pt;font-family:"Times New Roman";color:black;font-style:
+normal'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>Supporting Schema</h2>
+
+<p class=MsoNormal style='margin:0in;margin-bottom:.0001pt;text-autospace:none'>&nbsp;</p>
+
+<p class=MsoNormal style='margin:0in;margin-bottom:.0001pt;text-autospace:none'>The
+following schema supports the use of ISO 5218. As explained in Section 2,
+Design Approach, an enumeration of the actual codes is not contained in the
+schema.</p>
+
+<p class=MsoNormal style='margin:0in;margin-bottom:.0001pt;text-autospace:none'>&nbsp;</p>
+
+<p class=MsoNormal style='margin:0in;margin-bottom:.0001pt;text-autospace:none'><span
+style='font-size:8.5pt;color:blue;background:white'>&lt;</span><span
+style='font-size:8.5pt;color:maroon;background:white'>xsd:schema</span><span
+style='font-size:8.5pt;color:red;background:white'> targetNamespace</span><span
+style='font-size:8.5pt;color:blue;background:white'>=&quot;</span><span
+style='font-size:8.5pt;color:black;background:white'>http://ns.hr-xml.org/2007-04-15</span><span
+style='font-size:8.5pt;color:blue;background:white'>&quot;</span><span
+style='font-size:8.5pt;color:red;background:white'> xmlns:xsd</span><span
+style='font-size:8.5pt;color:blue;background:white'>=&quot;</span><span
+style='font-size:8.5pt;color:black;background:white'>http://www.w3.org/2001/XMLSchema</span><span
+style='font-size:8.5pt;color:blue;background:white'>&quot;</span><span
+style='font-size:8.5pt;color:red;background:white'> xmlns</span><span
+style='font-size:8.5pt;color:blue;background:white'>=&quot;</span><span
+style='font-size:8.5pt;color:black;background:white'>http://ns.hr-xml.org/2007-04-15</span><span
+style='font-size:8.5pt;color:blue;background:white'>&quot;</span><span
+style='font-size:8.5pt;color:red;background:white'> elementFormDefault</span><span
+style='font-size:8.5pt;color:blue;background:white'>=&quot;</span><span
+style='font-size:8.5pt;color:black;background:white'>qualified</span><span
+style='font-size:8.5pt;color:blue;background:white'>&quot;</span><span
+style='font-size:8.5pt;color:red;background:white'> attributeFormDefault</span><span
+style='font-size:8.5pt;color:blue;background:white'>=&quot;</span><span
+style='font-size:8.5pt;color:black;background:white'>unqualified</span><span
+style='font-size:8.5pt;color:blue;background:white'>&quot;&gt;</span></p>
+
+<p class=MsoNormal style='margin:0in;margin-bottom:.0001pt;text-autospace:none'><span
+style='font-size:8.5pt;color:black;background:white'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span><span lang=NL style='font-size:8.5pt;color:blue;background:white'>&lt;</span><span
+lang=NL style='font-size:8.5pt;color:maroon;background:white'>xsd:element</span><span
+lang=NL style='font-size:8.5pt;color:red;background:white'> name</span><span
+lang=NL style='font-size:8.5pt;color:blue;background:white'>=&quot;</span><span
+lang=NL style='font-size:8.5pt;color:black;background:white'>GenderCode</span><span
+lang=NL style='font-size:8.5pt;color:blue;background:white'>&quot;</span><span
+lang=NL style='font-size:8.5pt;color:red;background:white'> type</span><span
+lang=NL style='font-size:8.5pt;color:blue;background:white'>=&quot;</span><span
+lang=NL style='font-size:8.5pt;color:black;background:white'>GenderCodeType</span><span
+lang=NL style='font-size:8.5pt;color:blue;background:white'>&quot;/&gt;</span></p>
+
+<p class=MsoNormal style='margin:0in;margin-bottom:.0001pt;text-autospace:none'><span
+lang=NL style='font-size:8.5pt;color:black;background:white'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span><span style='font-size:8.5pt;color:blue;background:white'>&lt;</span><span
+style='font-size:8.5pt;color:maroon;background:white'>xsd:simpleType</span><span
+style='font-size:8.5pt;color:red;background:white'> name</span><span
+style='font-size:8.5pt;color:blue;background:white'>=&quot;</span><span
+style='font-size:8.5pt;color:black;background:white'>GenderCodeType</span><span
+style='font-size:8.5pt;color:blue;background:white'>&quot;&gt;</span></p>
+
+<p class=MsoNormal style='margin:0in;margin-bottom:.0001pt;text-autospace:none'><span
+style='font-size:8.5pt;color:black;background:white'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span><span style='font-size:8.5pt;color:blue;background:white'>&lt;</span><span
+style='font-size:8.5pt;color:maroon;background:white'>xsd:annotation</span><span
+style='font-size:8.5pt;color:blue;background:white'>&gt;</span></p>
+
+<p class=MsoNormal style='margin:0in;margin-bottom:.0001pt;text-autospace:none'><span
+style='font-size:8.5pt;color:black;background:white'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span><span style='font-size:8.5pt;color:blue;background:white'>&lt;</span><span
+style='font-size:8.5pt;color:maroon;background:white'>xsd:documentation</span><span
+style='font-size:8.5pt;color:blue;background:white'>&gt;</span><span
+style='font-size:8.5pt;color:black;background:white'>Must conform to ISO 5218 -
+Representation of Human Sexes (0 - Not Known; 1 - Male; 2 -&nbsp;&nbsp; Female;
+9 - Not specified)</span><span style='font-size:8.5pt;color:blue;background:
+white'>&lt;/</span><span style='font-size:8.5pt;color:maroon;background:white'>xsd:documentation</span><span
+style='font-size:8.5pt;color:blue;background:white'>&gt;</span></p>
+
+<p class=MsoNormal style='margin:0in;margin-bottom:.0001pt;text-autospace:none'><span
+style='font-size:8.5pt;color:black;background:white'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span><span style='font-size:8.5pt;color:blue;background:white'>&lt;/</span><span
+style='font-size:8.5pt;color:maroon;background:white'>xsd:annotation</span><span
+style='font-size:8.5pt;color:blue;background:white'>&gt;</span></p>
+
+<p class=MsoNormal style='margin:0in;margin-bottom:.0001pt;text-autospace:none'><span
+style='font-size:8.5pt;color:black;background:white'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span><span style='font-size:8.5pt;color:blue;background:white'>&lt;</span><span
+style='font-size:8.5pt;color:maroon;background:white'>xsd:restriction</span><span
+style='font-size:8.5pt;color:red;background:white'> base</span><span
+style='font-size:8.5pt;color:blue;background:white'>=&quot;</span><span
+style='font-size:8.5pt;color:black;background:white'>xsd:integer</span><span
+style='font-size:8.5pt;color:blue;background:white'>&quot;&gt;</span></p>
+
+<p class=MsoNormal style='margin:0in;margin-bottom:.0001pt;text-autospace:none'><span
+style='font-size:8.5pt;color:black;background:white'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span><span style='font-size:8.5pt;color:blue;background:white'>&lt;</span><span
+style='font-size:8.5pt;color:maroon;background:white'>xsd:pattern</span><span
+style='font-size:8.5pt;color:red;background:white'> value</span><span
+style='font-size:8.5pt;color:blue;background:white'>=&quot;</span><span
+style='font-size:8.5pt;color:black;background:white'>[0129]</span><span
+style='font-size:8.5pt;color:blue;background:white'>&quot;/&gt;</span></p>
+
+<p class=MsoNormal style='margin:0in;margin-bottom:.0001pt;text-autospace:none'><span
+style='font-size:8.5pt;color:black;background:white'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span><span style='font-size:8.5pt;color:blue;background:white'>&lt;/</span><span
+style='font-size:8.5pt;color:maroon;background:white'>xsd:restriction</span><span
+style='font-size:8.5pt;color:blue;background:white'>&gt;</span></p>
+
+<p class=MsoNormal style='margin:0in;margin-bottom:.0001pt;text-autospace:none'><span
+style='font-size:8.5pt;color:black;background:white'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span><span style='font-size:8.5pt;color:blue;background:white'>&lt;/</span><span
+style='font-size:8.5pt;color:maroon;background:white'>xsd:simpleType</span><span
+style='font-size:8.5pt;color:blue;background:white'>&gt;</span></p>
+
+<p class=MsoNormal><span style='font-size:8.5pt;color:blue;background:white'>&lt;/</span><span
+style='font-size:8.5pt;color:maroon;background:white'>xsd:schema</span><span
+style='font-size:8.5pt;color:blue;background:white'>&gt;</span></p>
+
+<h2><a name="_Toc127534566"><span style='color:black;font-style:normal'>3.2</span></a><span
+style='font-size:7.0pt;font-family:"Times New Roman";color:black;font-style:
+normal'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span
+style='background:white'>Uses/Implementation Considerations</span></h2>
+
+<p class=MsoNormal style='margin:0in;margin-bottom:.0001pt;text-autospace:none'><span
+style='font-size:10.0pt;font-family:ArialMT'>&nbsp;</span></p>
+
+<p class=MsoNormal style='margin:0in;margin-bottom:.0001pt;text-autospace:none'>The
+use of ISO 5218 ensures a uniform representation of gender in HR-XML
+specifications. The ISO convention for specifying &#8220;not known&#8221; or
+&#8220;not specified&#8221; helps eliminate ambiguity and allows the sender of
+data to deliberately exclude the specification of gender. For example, the
+&#8220;not specified&#8221; option may be useful when it is illegal or
+inappropriate to transmit information about a person&#8217;s gender.</p>
+
+<h1><a name="_Toc127534567"><span style='color:black'>4</span></a><span
+style='font-size:7.0pt;font-family:"Times New Roman";color:black'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span>CountryCodeType</h1>
+
+<p class=MsoNormal>For purposes of identifying countries within HR-XML Consortium
+specifications, the two-letter codes prescribed by ISO 3166-1 (ISO 3166-1,
+Codes for the representation of names of countries and their subdivisions) are
+RECOMMENDED.</p>
+
+<h2><a name="_Toc127534568"><span style='color:black;font-style:normal'>4.1</span></a><span
+style='font-size:7.0pt;font-family:"Times New Roman";color:black;font-style:
+normal'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>Supporting Schema</h2>
+
+<p class=MsoNormal style='margin:0in;margin-bottom:.0001pt;text-autospace:none'>The
+following schema enforces a two-letter, uppercase pattern to support the use of
+ISO 3166-1. As explained in Section 2, Design Approach, an enumeration of the
+actual codes is not contained in the schema.</p>
+
+<p class=MsoNormal style='margin:0in;margin-bottom:.0001pt;text-autospace:none'><span
+style='font-size:8.5pt;color:teal;background:white'>&nbsp;</span></p>
+
+<p class=MsoNormal style='margin:0in;margin-bottom:.0001pt;text-autospace:none'><span
+style='font-size:8.5pt;color:teal;background:white'>&lt;?xml
+version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;</span></p>
+
+<p class=MsoNormal style='margin:0in;margin-bottom:.0001pt;text-autospace:none'><span
+style='font-size:8.5pt;color:blue;background:white'>&lt;</span><span
+style='font-size:8.5pt;color:maroon;background:white'>xsd:schema</span><span
+style='font-size:8.5pt;color:red;background:white'> targetNamespace</span><span
+style='font-size:8.5pt;color:blue;background:white'>=&quot;</span><span
+style='font-size:8.5pt;color:black;background:white'>http://ns.hr-xml.org/2007-04-15</span><span
+style='font-size:8.5pt;color:blue;background:white'>&quot;</span><span
+style='font-size:8.5pt;color:red;background:white'> xmlns:xsd</span><span
+style='font-size:8.5pt;color:blue;background:white'>=&quot;</span><span
+style='font-size:8.5pt;color:black;background:white'>http://www.w3.org/2001/XMLSchema</span><span
+style='font-size:8.5pt;color:blue;background:white'>&quot;</span><span
+style='font-size:8.5pt;color:red;background:white'> xmlns</span><span
+style='font-size:8.5pt;color:blue;background:white'>=&quot;</span><span
+style='font-size:8.5pt;color:black;background:white'>http://ns.hr-xml.org/2007-04-15</span><span
+style='font-size:8.5pt;color:blue;background:white'>&quot;</span><span
+style='font-size:8.5pt;color:red;background:white'> elementFormDefault</span><span
+style='font-size:8.5pt;color:blue;background:white'>=&quot;</span><span
+style='font-size:8.5pt;color:black;background:white'>qualified</span><span
+style='font-size:8.5pt;color:blue;background:white'>&quot;</span><span
+style='font-size:8.5pt;color:red;background:white'> attributeFormDefault</span><span
+style='font-size:8.5pt;color:blue;background:white'>=&quot;</span><span
+style='font-size:8.5pt;color:black;background:white'>unqualified</span><span
+style='font-size:8.5pt;color:blue;background:white'>&quot;&gt;</span></p>
+
+<p class=MsoNormal style='margin:0in;margin-bottom:.0001pt;text-autospace:none'><span
+style='font-size:8.5pt;color:black;background:white'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span><span style='font-size:8.5pt;color:blue;background:white'>&lt;</span><span
+style='font-size:8.5pt;color:maroon;background:white'>xsd:element</span><span
+style='font-size:8.5pt;color:red;background:white'> name</span><span
+style='font-size:8.5pt;color:blue;background:white'>=&quot;</span><span
+style='font-size:8.5pt;color:black;background:white'>CountryCode</span><span
+style='font-size:8.5pt;color:blue;background:white'>&quot;</span><span
+style='font-size:8.5pt;color:red;background:white'> type</span><span
+style='font-size:8.5pt;color:blue;background:white'>=&quot;</span><span
+style='font-size:8.5pt;color:black;background:white'>CountryCodeType</span><span
+style='font-size:8.5pt;color:blue;background:white'>&quot;/&gt;</span></p>
+
+<p class=MsoNormal style='margin:0in;margin-bottom:.0001pt;text-autospace:none'><span
+style='font-size:8.5pt;color:black;background:white'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span><span style='font-size:8.5pt;color:blue;background:white'>&lt;</span><span
+style='font-size:8.5pt;color:maroon;background:white'>xsd:simpleType</span><span
+style='font-size:8.5pt;color:red;background:white'> name</span><span
+style='font-size:8.5pt;color:blue;background:white'>=&quot;</span><span
+style='font-size:8.5pt;color:black;background:white'>CountryCodeType</span><span
+style='font-size:8.5pt;color:blue;background:white'>&quot;&gt;</span></p>
+
+<p class=MsoNormal style='margin:0in;margin-bottom:.0001pt;text-autospace:none'><span
+style='font-size:8.5pt;color:black;background:white'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span><span style='font-size:8.5pt;color:blue;background:white'>&lt;</span><span
+style='font-size:8.5pt;color:maroon;background:white'>xsd:annotation</span><span
+style='font-size:8.5pt;color:blue;background:white'>&gt;</span></p>
+
+<p class=MsoNormal style='margin:0in;margin-bottom:.0001pt;text-autospace:none'><span
+style='font-size:8.5pt;color:black;background:white'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span><span style='font-size:8.5pt;color:blue;background:white'>&lt;</span><span
+style='font-size:8.5pt;color:maroon;background:white'>xsd:documentation</span><span
+style='font-size:8.5pt;color:blue;background:white'>&gt;</span><span
+style='font-size:8.5pt;color:black;background:white'>Must conform to ISO 3166-1
+Representation of Countries.</span><span style='font-size:8.5pt;color:blue;
+background:white'>&lt;/</span><span style='font-size:8.5pt;color:maroon;
+background:white'>xsd:documentation</span><span style='font-size:8.5pt;
+color:blue;background:white'>&gt;</span></p>
+
+<p class=MsoNormal style='margin:0in;margin-bottom:.0001pt;text-autospace:none'><span
+style='font-size:8.5pt;color:black;background:white'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span><span style='font-size:8.5pt;color:blue;background:white'>&lt;/</span><span
+style='font-size:8.5pt;color:maroon;background:white'>xsd:annotation</span><span
+style='font-size:8.5pt;color:blue;background:white'>&gt;</span></p>
+
+<p class=MsoNormal style='margin:0in;margin-bottom:.0001pt;text-autospace:none'><span
+style='font-size:8.5pt;color:black;background:white'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span><span style='font-size:8.5pt;color:blue;background:white'>&lt;</span><span
+style='font-size:8.5pt;color:maroon;background:white'>xsd:restriction</span><span
+style='font-size:8.5pt;color:red;background:white'> base</span><span
+style='font-size:8.5pt;color:blue;background:white'>=&quot;</span><span
+style='font-size:8.5pt;color:black;background:white'>xsd:string</span><span
+style='font-size:8.5pt;color:blue;background:white'>&quot;&gt;</span></p>
+
+<p class=MsoNormal style='margin:0in;margin-bottom:.0001pt;text-autospace:none'><span
+style='font-size:8.5pt;color:black;background:white'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span><span style='font-size:8.5pt;color:blue;background:white'>&lt;</span><span
+style='font-size:8.5pt;color:maroon;background:white'>xsd:pattern</span><span
+style='font-size:8.5pt;color:red;background:white'> value</span><span
+style='font-size:8.5pt;color:blue;background:white'>=&quot;</span><span
+style='font-size:8.5pt;color:black;background:white'>[A-Z][A-Z]</span><span
+style='font-size:8.5pt;color:blue;background:white'>&quot;/&gt;</span></p>
+
+<p class=MsoNormal style='margin:0in;margin-bottom:.0001pt;text-autospace:none'><span
+style='font-size:8.5pt;color:black;background:white'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span><span style='font-size:8.5pt;color:blue;background:white'>&lt;/</span><span
+style='font-size:8.5pt;color:maroon;background:white'>xsd:restriction</span><span
+style='font-size:8.5pt;color:blue;background:white'>&gt;</span></p>
+
+<p class=MsoNormal style='margin:0in;margin-bottom:.0001pt;text-autospace:none'><span
+style='font-size:8.5pt;color:black;background:white'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span><span style='font-size:8.5pt;color:blue;background:white'>&lt;/</span><span
+style='font-size:8.5pt;color:maroon;background:white'>xsd:simpleType</span><span
+style='font-size:8.5pt;color:blue;background:white'>&gt;</span></p>
+
+<p class=MsoNormal style='margin:0in;margin-bottom:.0001pt;text-autospace:none'><span
+style='font-size:8.5pt;color:blue;background:white'>&lt;/</span><span
+style='font-size:8.5pt;color:maroon;background:white'>xsd:schema</span><span
+style='font-size:8.5pt;color:blue;background:white'>&gt;</span></p>
+
+<p class=MsoNormal style='margin:0in;margin-bottom:.0001pt;text-autospace:none'><span
+style='font-size:8.5pt;color:blue;background:white'>&nbsp;</span></p>
+
+<p class=MsoNormal style='margin:0in;margin-bottom:.0001pt;text-autospace:none'><span
+style='font-size:8.5pt;color:black;background:white'>&nbsp;</span></p>
+
+<h2><a name="_Toc127534569"><span style='color:black;font-style:normal'>4.2</span></a><span
+style='font-size:7.0pt;font-family:"Times New Roman";color:black;font-style:
+normal'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span
+style='background:white'>Uses/Implementation Considerations</span></h2>
+
+<p class=MsoNormal>Examples of the use of CountryCodeType might include information
+related to the location of an organization or the nationality of a human
+resource.</p>
+
+<h1><a name="_Toc127534570"><span style='font-family:Arial-BoldMT;color:black'>5</span></a><span
+style='font-size:7.0pt;font-family:"Times New Roman";color:black'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span>CurrencyCodeType</h1>
+
+<p class=MsoNormal style='margin:0in;margin-bottom:.0001pt;text-autospace:none'>&nbsp;</p>
+
+<p class=MsoNormal style='margin:0in;margin-bottom:.0001pt;text-autospace:none'>The
+use of standard codes for representing currency is important to making
+HR-XML&#8217;s data exchange standards useful in many different countries and
+business scenarios.</p>
+
+<p class=MsoNormal style='margin:0in;margin-bottom:.0001pt;text-autospace:none'>&nbsp;</p>
+
+<p class=MsoNormal style='margin:0in;margin-bottom:.0001pt;text-autospace:none'>For
+the purpose of indicating currency with HR-XML specifications, three-letter ISO
+4217 codes are RECOMMENDED (ISO 4217:2001 Codes for the representation of
+currencies and funds). &nbsp;ISO's currency codes are based on the ISO country
+codes. The currency codes are made up of the two-character country code (ISO
+3166-1), plus a one-character currency designator.</p>
+
+<p class=MsoNormal style='margin:0in;margin-bottom:.0001pt;text-autospace:none'>&nbsp;</p>
+
+<p class=MsoNormal style='margin:0in;margin-bottom:.0001pt;text-autospace:none'>Any
+HR-XML Consortium schema that represents a monetary amount SHOULD incorporate
+the CurrencyCodeType to support the capture of a conforming ISO 4217 code.
+Schema designs MAY allow for the transmission of a currency code to be
+optional, in which case it is assumed that the currency is understood or agreed
+upon by trading partners.</p>
+
+<p class=MsoNormal style='margin:0in;margin-bottom:.0001pt;text-autospace:none'>&nbsp;</p>
+
+<h2><a name="_Toc127534571"><span style='color:black;font-style:normal'>5.1</span></a><span
+style='font-size:7.0pt;font-family:"Times New Roman";color:black;font-style:
+normal'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>Supporting Schema</h2>
+
+<p class=MsoNormal>The following schema enforces a three-letter, uppercase
+pattern to support the use of ISO 4217 codes. As explained in Section 2, Design
+Approach, an enumeration of the actual codes is not contained in the schema.</p>
+
+<p class=MsoNormal style='margin:0in;margin-bottom:.0001pt;text-autospace:none'><span
+style='font-size:8.5pt;color:teal;background:white'>&lt;?xml
+version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;</span></p>
+
+<p class=MsoNormal style='margin:0in;margin-bottom:.0001pt;text-autospace:none'><span
+style='font-size:8.5pt;color:blue;background:white'>&lt;</span><span
+style='font-size:8.5pt;color:maroon;background:white'>xsd:schema</span><span
+style='font-size:8.5pt;color:red;background:white'> targetNamespace</span><span
+style='font-size:8.5pt;color:blue;background:white'>=&quot;</span><span
+style='font-size:8.5pt;color:black;background:white'>http://ns.hr-xml.org/2007-04-15</span><span
+style='font-size:8.5pt;color:blue;background:white'>&quot;</span><span
+style='font-size:8.5pt;color:red;background:white'> xmlns:xsd</span><span
+style='font-size:8.5pt;color:blue;background:white'>=&quot;</span><span
+style='font-size:8.5pt;color:black;background:white'>http://www.w3.org/2001/XMLSchema</span><span
+style='font-size:8.5pt;color:blue;background:white'>&quot;</span><span
+style='font-size:8.5pt;color:red;background:white'> xmlns</span><span
+style='font-size:8.5pt;color:blue;background:white'>=&quot;</span><span
+style='font-size:8.5pt;color:black;background:white'>http://ns.hr-xml.org/2007-04-15</span><span
+style='font-size:8.5pt;color:blue;background:white'>&quot;</span><span
+style='font-size:8.5pt;color:red;background:white'> elementFormDefault</span><span
+style='font-size:8.5pt;color:blue;background:white'>=&quot;</span><span
+style='font-size:8.5pt;color:black;background:white'>qualified</span><span
+style='font-size:8.5pt;color:blue;background:white'>&quot;</span><span
+style='font-size:8.5pt;color:red;background:white'> attributeFormDefault</span><span
+style='font-size:8.5pt;color:blue;background:white'>=&quot;</span><span
+style='font-size:8.5pt;color:black;background:white'>unqualified</span><span
+style='font-size:8.5pt;color:blue;background:white'>&quot;&gt;</span></p>
+
+<p class=MsoNormal style='margin:0in;margin-bottom:.0001pt;text-autospace:none'><span
+style='font-size:8.5pt;color:black;background:white'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span><span style='font-size:8.5pt;color:blue;background:white'>&lt;</span><span
+style='font-size:8.5pt;color:maroon;background:white'>xsd:element</span><span
+style='font-size:8.5pt;color:red;background:white'> name</span><span
+style='font-size:8.5pt;color:blue;background:white'>=&quot;</span><span
+style='font-size:8.5pt;color:black;background:white'>CurrencyCode</span><span
+style='font-size:8.5pt;color:blue;background:white'>&quot;</span><span
+style='font-size:8.5pt;color:red;background:white'> type</span><span
+style='font-size:8.5pt;color:blue;background:white'>=&quot;</span><span
+style='font-size:8.5pt;color:black;background:white'>CurrencyCodeType</span><span
+style='font-size:8.5pt;color:blue;background:white'>&quot;/&gt;</span></p>
+
+<p class=MsoNormal style='margin:0in;margin-bottom:.0001pt;text-autospace:none'><span
+style='font-size:8.5pt;color:black;background:white'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span><span style='font-size:8.5pt;color:blue;background:white'>&lt;</span><span
+style='font-size:8.5pt;color:maroon;background:white'>xsd:simpleType</span><span
+style='font-size:8.5pt;color:red;background:white'> name</span><span
+style='font-size:8.5pt;color:blue;background:white'>=&quot;</span><span
+style='font-size:8.5pt;color:black;background:white'>CurrencyCodeType</span><span
+style='font-size:8.5pt;color:blue;background:white'>&quot;&gt;</span></p>
+
+<p class=MsoNormal style='margin:0in;margin-bottom:.0001pt;text-autospace:none'><span
+style='font-size:8.5pt;color:black;background:white'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span><span style='font-size:8.5pt;color:blue;background:white'>&lt;</span><span
+style='font-size:8.5pt;color:maroon;background:white'>xsd:annotation</span><span
+style='font-size:8.5pt;color:blue;background:white'>&gt;</span></p>
+
+<p class=MsoNormal style='margin:0in;margin-bottom:.0001pt;text-autospace:none'><span
+style='font-size:8.5pt;color:black;background:white'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span><span style='font-size:8.5pt;color:blue;background:white'>&lt;</span><span
+style='font-size:8.5pt;color:maroon;background:white'>xsd:documentation</span><span
+style='font-size:8.5pt;color:blue;background:white'>&gt;</span><span
+style='font-size:8.5pt;color:black;background:white'>Must conform to ISO 4217 -
+Representation of Currency and Funds</span><span style='font-size:8.5pt;
+color:blue;background:white'>&lt;/</span><span style='font-size:8.5pt;
+color:maroon;background:white'>xsd:documentation</span><span style='font-size:
+8.5pt;color:blue;background:white'>&gt;</span></p>
+
+<p class=MsoNormal style='margin:0in;margin-bottom:.0001pt;text-autospace:none'><span
+style='font-size:8.5pt;color:black;background:white'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span><span style='font-size:8.5pt;color:blue;background:white'>&lt;/</span><span
+style='font-size:8.5pt;color:maroon;background:white'>xsd:annotation</span><span
+style='font-size:8.5pt;color:blue;background:white'>&gt;</span></p>
+
+<p class=MsoNormal style='margin:0in;margin-bottom:.0001pt;text-autospace:none'><span
+style='font-size:8.5pt;color:black;background:white'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span><span style='font-size:8.5pt;color:blue;background:white'>&lt;</span><span
+style='font-size:8.5pt;color:maroon;background:white'>xsd:restriction</span><span
+style='font-size:8.5pt;color:red;background:white'> base</span><span
+style='font-size:8.5pt;color:blue;background:white'>=&quot;</span><span
+style='font-size:8.5pt;color:black;background:white'>xsd:string</span><span
+style='font-size:8.5pt;color:blue;background:white'>&quot;&gt;</span></p>
+
+<p class=MsoNormal style='margin:0in;margin-bottom:.0001pt;text-autospace:none'><span
+style='font-size:8.5pt;color:black;background:white'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span><span style='font-size:8.5pt;color:blue;background:white'>&lt;</span><span
+style='font-size:8.5pt;color:maroon;background:white'>xsd:pattern</span><span
+style='font-size:8.5pt;color:red;background:white'> value</span><span
+style='font-size:8.5pt;color:blue;background:white'>=&quot;</span><span
+style='font-size:8.5pt;color:black;background:white'>[A-Z][A-Z][A-Z]</span><span
+style='font-size:8.5pt;color:blue;background:white'>&quot;/&gt;</span></p>
+
+<p class=MsoNormal style='margin:0in;margin-bottom:.0001pt;text-autospace:none'><span
+style='font-size:8.5pt;color:black;background:white'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span><span style='font-size:8.5pt;color:blue;background:white'>&lt;/</span><span
+style='font-size:8.5pt;color:maroon;background:white'>xsd:restriction</span><span
+style='font-size:8.5pt;color:blue;background:white'>&gt;</span></p>
+
+<p class=MsoNormal style='margin:0in;margin-bottom:.0001pt;text-autospace:none'><span
+style='font-size:8.5pt;color:black;background:white'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span><span style='font-size:8.5pt;color:blue;background:white'>&lt;/</span><span
+style='font-size:8.5pt;color:maroon;background:white'>xsd:simpleType</span><span
+style='font-size:8.5pt;color:blue;background:white'>&gt;</span></p>
+
+<p class=MsoNormal><span style='font-size:8.5pt;color:blue;background:white'>&lt;/</span><span
+style='font-size:8.5pt;color:maroon;background:white'>xsd:schema</span><span
+style='font-size:8.5pt;color:blue;background:white'>&gt;</span></p>
+
+<h2><a name="_Toc127534572"><span style='color:black;font-style:normal'>5.2</span></a><span
+style='font-size:7.0pt;font-family:"Times New Roman";color:black;font-style:
+normal'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span
+style='background:white'>Uses/Implementation Considerations</span></h2>
+
+<p class=MsoNormal>Currency generally would be an attribute of an element
+requiring a monetary amount. However, other designs may be appropriate.</p>
+
+<h1><a name="_Toc127534573"><span style='color:black'>6</span></a><span
+style='font-size:7.0pt;font-family:"Times New Roman";color:black'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span>LanguageCodeType</h1>
+
+<h2><a name="_Toc127534574"><span style='color:black;font-style:normal'>6.1</span></a><span
+style='font-size:7.0pt;font-family:"Times New Roman";color:black;font-style:
+normal'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>Standards for
+Representation of Languages</h2>
+
+<p class=MsoNormal style='margin:0in;margin-bottom:.0001pt;text-autospace:none'>The
+W3C has a special attribute &#8221;xml:lang&#8221;, which specifies the
+language of the element or attribute content. This attribute would be used in
+conjunction with the ISO 639-1 codes.</p>
+
+<p class=MsoNormal style='margin:0in;margin-bottom:.0001pt;text-autospace:none'>&nbsp;</p>
+
+<p class=MsoNormal style='margin:0in;margin-bottom:.0001pt;text-autospace:none'>For
+the purpose of the exchanges using HR-XML specifications, two-letter ISO 639-1
+codes are preferred (ISO 639-1:2002 Code for the Representation of Names of
+Languages). This code set covers 136 languages and is in general use today.</p>
+
+<p class=MsoNormal style='margin:0in;margin-bottom:.0001pt;text-autospace:none'>&nbsp;</p>
+
+<p class=MsoNormal style='margin:0in;margin-bottom:.0001pt;text-autospace:none'>ISO
+639-2 is a three-character representation of languages. This code set covers
+460 languages and addresses terminological as well as bibliographic needs.
+However, ISO 639-2 is not as widely implemented as ISO 639-1 and thus is not
+recommended as the basis for HR-XML schemas. </p>
+
+<p class=MsoNormal style='margin:0in;margin-bottom:.0001pt;text-autospace:none'>&nbsp;</p>
+
+<p class=MsoNormal style='margin:0in;margin-bottom:.0001pt;text-autospace:none'>Another
+standard relating to the representation of languages is the IETF (Internet
+Engineering Task Force) 1766.<b><span style='font-family:ArialMT'>&nbsp; </span></b>This
+standard relates to language tags used in MIME/web applications. It builds on
+the codes define in ISO 639-1.</p>
+
+<p class=MsoNormal style='margin:0in;margin-bottom:.0001pt;text-autospace:none'>&nbsp;</p>
+
+<h2><a name="_Toc127534575"><span style='color:black;font-style:normal'>6.2</span></a><span
+style='font-size:7.0pt;font-family:"Times New Roman";color:black;font-style:
+normal'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>HR-XML Supporting
+Schema</h2>
+
+<p class=MsoNormal>The following schema is created for the purpose of enabling
+consistency in usage.&nbsp; </p>
+
+<p class=MsoNormal style='margin:0in;margin-bottom:.0001pt;text-autospace:none'><span
+style='font-size:8.5pt;color:blue;background:white'>&lt;</span><span
+style='font-size:8.5pt;color:maroon;background:white'>xsd:schema</span><span
+style='font-size:8.5pt;color:red;background:white'> targetNamespace</span><span
+style='font-size:8.5pt;color:blue;background:white'>=&quot;</span><span
+style='font-size:8.5pt;color:black;background:white'>http://ns.hr-xml.org/2007-04-15</span><span
+style='font-size:8.5pt;color:blue;background:white'>&quot;</span><span
+style='font-size:8.5pt;color:red;background:white'> xmlns:xsd</span><span
+style='font-size:8.5pt;color:blue;background:white'>=&quot;</span><span
+style='font-size:8.5pt;color:black;background:white'>http://www.w3.org/2001/XMLSchema</span><span
+style='font-size:8.5pt;color:blue;background:white'>&quot;</span><span
+style='font-size:8.5pt;color:red;background:white'> xmlns</span><span
+style='font-size:8.5pt;color:blue;background:white'>=&quot;</span><span
+style='font-size:8.5pt;color:black;background:white'>http://ns.hr-xml.org/2007-04-15</span><span
+style='font-size:8.5pt;color:blue;background:white'>&quot;</span><span
+style='font-size:8.5pt;color:red;background:white'> elementFormDefault</span><span
+style='font-size:8.5pt;color:blue;background:white'>=&quot;</span><span
+style='font-size:8.5pt;color:black;background:white'>qualified</span><span
+style='font-size:8.5pt;color:blue;background:white'>&quot;</span><span
+style='font-size:8.5pt;color:red;background:white'> attributeFormDefault</span><span
+style='font-size:8.5pt;color:blue;background:white'>=&quot;</span><span
+style='font-size:8.5pt;color:black;background:white'>unqualified</span><span
+style='font-size:8.5pt;color:blue;background:white'>&quot;&gt;</span></p>
+
+<p class=MsoNormal style='margin:0in;margin-bottom:.0001pt;text-autospace:none'><span
+style='font-size:8.5pt;color:black;background:white'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span><span style='font-size:8.5pt;color:blue;background:white'>&lt;</span><span
+style='font-size:8.5pt;color:maroon;background:white'>xsd:import</span><span
+style='font-size:8.5pt;color:red;background:white'> namespace</span><span
+style='font-size:8.5pt;color:blue;background:white'>=&quot;</span><span
+style='font-size:8.5pt;color:black;background:white'>http://www.w3.org/XML/1998/namespace</span><span
+style='font-size:8.5pt;color:blue;background:white'>&quot;</span><span
+style='font-size:8.5pt;color:red;background:white'> schemaLocation</span><span
+style='font-size:8.5pt;color:blue;background:white'>=&quot;</span><span
+style='font-size:8.5pt;color:black;background:white'>../../W3C/xml.xsd</span><span
+style='font-size:8.5pt;color:blue;background:white'>&quot;/&gt;</span></p>
+
+<p class=MsoNormal style='margin:0in;margin-bottom:.0001pt;text-autospace:none'><span
+style='font-size:8.5pt;color:black;background:white'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span><span style='font-size:8.5pt;color:blue;background:white'>&lt;!--</span><span
+style='font-size:8.5pt;color:gray;background:white'> language as data,
+capturing the language itself </span><span style='font-size:8.5pt;color:blue;
+background:white'>--&gt;</span></p>
+
+<p class=MsoNormal style='margin:0in;margin-bottom:.0001pt;text-autospace:none'><span
+style='font-size:8.5pt;color:black;background:white'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span><span style='font-size:8.5pt;color:blue;background:white'>&lt;</span><span
+style='font-size:8.5pt;color:maroon;background:white'>xsd:element</span><span
+style='font-size:8.5pt;color:red;background:white'> name</span><span
+style='font-size:8.5pt;color:blue;background:white'>=&quot;</span><span
+style='font-size:8.5pt;color:black;background:white'>LanguageCode</span><span
+style='font-size:8.5pt;color:blue;background:white'>&quot;</span><span
+style='font-size:8.5pt;color:red;background:white'> type</span><span
+style='font-size:8.5pt;color:blue;background:white'>=&quot;</span><span
+style='font-size:8.5pt;color:black;background:white'>LanguageCodeType</span><span
+style='font-size:8.5pt;color:blue;background:white'>&quot;/&gt;</span></p>
+
+<p class=MsoNormal style='margin:0in;margin-bottom:.0001pt;text-autospace:none'><span
+style='font-size:8.5pt;color:black;background:white'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span><span style='font-size:8.5pt;color:blue;background:white'>&lt;</span><span
+style='font-size:8.5pt;color:maroon;background:white'>xsd:simpleType</span><span
+style='font-size:8.5pt;color:red;background:white'> name</span><span
+style='font-size:8.5pt;color:blue;background:white'>=&quot;</span><span
+style='font-size:8.5pt;color:black;background:white'>LanguageCodeType</span><span
+style='font-size:8.5pt;color:blue;background:white'>&quot;&gt;</span></p>
+
+<p class=MsoNormal style='margin:0in;margin-bottom:.0001pt;text-autospace:none'><span
+style='font-size:8.5pt;color:black;background:white'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span><span style='font-size:8.5pt;color:blue;background:white'>&lt;</span><span
+style='font-size:8.5pt;color:maroon;background:white'>xsd:annotation</span><span
+style='font-size:8.5pt;color:blue;background:white'>&gt;</span></p>
+
+<p class=MsoNormal style='margin:0in;margin-bottom:.0001pt;text-autospace:none'><span
+style='font-size:8.5pt;color:black;background:white'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span><span style='font-size:8.5pt;color:blue;background:white'>&lt;</span><span
+style='font-size:8.5pt;color:maroon;background:white'>xsd:documentation</span><span
+style='font-size:8.5pt;color:blue;background:white'>&gt;</span><span
+style='font-size:8.5pt;color:black;background:white'>ISO 639-1 two character
+code is preferred, but not required.</span><span style='font-size:8.5pt;
+color:blue;background:white'>&lt;/</span><span style='font-size:8.5pt;
+color:maroon;background:white'>xsd:documentation</span><span style='font-size:
+8.5pt;color:blue;background:white'>&gt;</span></p>
+
+<p class=MsoNormal style='margin:0in;margin-bottom:.0001pt;text-autospace:none'><span
+style='font-size:8.5pt;color:black;background:white'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span style='font-size:8.5pt;
+color:blue;background:white'>&lt;/</span><span style='font-size:8.5pt;
+color:maroon;background:white'>xsd:annotation</span><span style='font-size:
+8.5pt;color:blue;background:white'>&gt;</span></p>
+
+<p class=MsoNormal style='margin:0in;margin-bottom:.0001pt;text-autospace:none'><span
+style='font-size:8.5pt;color:black;background:white'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span><span style='font-size:8.5pt;color:blue;background:white'>&lt;</span><span
+style='font-size:8.5pt;color:maroon;background:white'>xsd:restriction</span><span
+style='font-size:8.5pt;color:red;background:white'> base</span><span
+style='font-size:8.5pt;color:blue;background:white'>=&quot;</span><span
+style='font-size:8.5pt;color:black;background:white'>xsd:language</span><span
+style='font-size:8.5pt;color:blue;background:white'>&quot;/&gt;</span></p>
+
+<p class=MsoNormal style='margin:0in;margin-bottom:.0001pt;text-autospace:none'><span
+style='font-size:8.5pt;color:black;background:white'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span><span style='font-size:8.5pt;color:blue;background:white'>&lt;/</span><span
+style='font-size:8.5pt;color:maroon;background:white'>xsd:simpleType</span><span
+style='font-size:8.5pt;color:blue;background:white'>&gt;</span></p>
+
+<p class=MsoNormal style='margin:0in;margin-bottom:.0001pt;text-autospace:none'><span
+style='font-size:8.5pt;color:black;background:white'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></p>
+
+<p class=MsoNormal style='margin:0in;margin-bottom:.0001pt;text-autospace:none'><span
+style='font-size:8.5pt;color:black;background:white'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span><span style='font-size:8.5pt;color:blue;background:white'>&lt;!--</span><span
+style='font-size:8.5pt;color:gray;background:white'> language as metadata,
+capturing a general descriptive string in a given language </span><span
+style='font-size:8.5pt;color:blue;background:white'>--&gt;</span></p>
+
+<p class=MsoNormal style='margin:0in;margin-bottom:.0001pt;text-autospace:none'><span
+style='font-size:8.5pt;color:black;background:white'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span><span style='font-size:8.5pt;color:blue;background:white'>&lt;</span><span
+style='font-size:8.5pt;color:maroon;background:white'>xsd:element</span><span
+style='font-size:8.5pt;color:red;background:white'> name</span><span
+style='font-size:8.5pt;color:blue;background:white'>=&quot;</span><span
+style='font-size:8.5pt;color:black;background:white'>LanguageDependentText</span><span
+style='font-size:8.5pt;color:blue;background:white'>&quot;</span><span
+style='font-size:8.5pt;color:red;background:white'> type</span><span
+style='font-size:8.5pt;color:blue;background:white'>=&quot;</span><span
+style='font-size:8.5pt;color:black;background:white'>LanguageDependentTextType</span><span
+style='font-size:8.5pt;color:blue;background:white'>&quot;/&gt;</span></p>
+
+<p class=MsoNormal style='margin:0in;margin-bottom:.0001pt;text-autospace:none'><span
+style='font-size:8.5pt;color:black;background:white'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span><span style='font-size:8.5pt;color:blue;background:white'>&lt;</span><span
+style='font-size:8.5pt;color:maroon;background:white'>xsd:complexType</span><span
+style='font-size:8.5pt;color:red;background:white'> name</span><span
+style='font-size:8.5pt;color:blue;background:white'>=&quot;</span><span
+style='font-size:8.5pt;color:black;background:white'>LanguageDependentTextType</span><span
+style='font-size:8.5pt;color:blue;background:white'>&quot;&gt;</span></p>
+
+<p class=MsoNormal style='margin:0in;margin-bottom:.0001pt;text-autospace:none'><span
+style='font-size:8.5pt;color:black;background:white'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span><span style='font-size:8.5pt;color:blue;background:white'>&lt;</span><span
+style='font-size:8.5pt;color:maroon;background:white'>xsd:simpleContent</span><span
+style='font-size:8.5pt;color:blue;background:white'>&gt;</span></p>
+
+<p class=MsoNormal style='margin:0in;margin-bottom:.0001pt;text-autospace:none'><span
+style='font-size:8.5pt;color:black;background:white'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span><span style='font-size:8.5pt;color:blue;background:white'>&lt;</span><span
+style='font-size:8.5pt;color:maroon;background:white'>xsd:extension</span><span
+style='font-size:8.5pt;color:red;background:white'> base</span><span
+style='font-size:8.5pt;color:blue;background:white'>=&quot;</span><span
+style='font-size:8.5pt;color:black;background:white'>xsd:string</span><span
+style='font-size:8.5pt;color:blue;background:white'>&quot;&gt;</span></p>
+
+<p class=MsoNormal style='margin:0in;margin-bottom:.0001pt;text-autospace:none'><span
+style='font-size:8.5pt;color:black;background:white'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span><span lang=FR style='font-size:8.5pt;color:blue;background:white'>&lt;</span><span
+lang=FR style='font-size:8.5pt;color:maroon;background:white'>xsd:attribute</span><span
+lang=FR style='font-size:8.5pt;color:red;background:white'> ref</span><span
+lang=FR style='font-size:8.5pt;color:blue;background:white'>=&quot;</span><span
+lang=FR style='font-size:8.5pt;color:black;background:white'>xml:lang</span><span
+lang=FR style='font-size:8.5pt;color:blue;background:white'>&quot;&gt;</span></p>
+
+<p class=MsoNormal style='margin:0in;margin-bottom:.0001pt;text-autospace:none'><span
+lang=FR style='font-size:8.5pt;color:black;background:white'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span><span style='font-size:8.5pt;color:blue;background:white'>&lt;</span><span
+style='font-size:8.5pt;color:maroon;background:white'>xsd:annotation</span><span
+style='font-size:8.5pt;color:blue;background:white'>&gt;</span></p>
+
+<p class=MsoNormal style='margin:0in;margin-bottom:.0001pt;text-autospace:none'><span
+style='font-size:8.5pt;color:black;background:white'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span><span style='font-size:8.5pt;color:blue;background:white'>&lt;</span><span
+style='font-size:8.5pt;color:maroon;background:white'>xsd:documentation</span><span
+style='font-size:8.5pt;color:blue;background:white'>&gt;</span><span
+style='font-size:8.5pt;color:black;background:white'>ISO 639-1 two character code
+is preferred, but not required.</span><span style='font-size:8.5pt;color:blue;
+background:white'>&lt;/</span><span style='font-size:8.5pt;color:maroon;
+background:white'>xsd:documentation</span><span style='font-size:8.5pt;
+color:blue;background:white'>&gt;</span></p>
+
+<p class=MsoNormal style='margin:0in;margin-bottom:.0001pt;text-autospace:none'><span
+style='font-size:8.5pt;color:black;background:white'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span><span style='font-size:8.5pt;color:blue;background:white'>&lt;/</span><span
+style='font-size:8.5pt;color:maroon;background:white'>xsd:annotation</span><span
+style='font-size:8.5pt;color:blue;background:white'>&gt;</span></p>
+
+<p class=MsoNormal style='margin:0in;margin-bottom:.0001pt;text-autospace:none'><span
+style='font-size:8.5pt;color:black;background:white'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span><span style='font-size:8.5pt;color:blue;background:white'>&lt;/</span><span
+style='font-size:8.5pt;color:maroon;background:white'>xsd:attribute</span><span
+style='font-size:8.5pt;color:blue;background:white'>&gt;</span></p>
+
+<p class=MsoNormal style='margin:0in;margin-bottom:.0001pt;text-autospace:none'><span
+style='font-size:8.5pt;color:black;background:white'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span><span style='font-size:8.5pt;color:blue;background:white'>&lt;/</span><span
+style='font-size:8.5pt;color:maroon;background:white'>xsd:extension</span><span
+style='font-size:8.5pt;color:blue;background:white'>&gt;</span></p>
+
+<p class=MsoNormal style='margin:0in;margin-bottom:.0001pt;text-autospace:none'><span
+style='font-size:8.5pt;color:black;background:white'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span><span style='font-size:8.5pt;color:blue;background:white'>&lt;/</span><span
+style='font-size:8.5pt;color:maroon;background:white'>xsd:simpleContent</span><span
+style='font-size:8.5pt;color:blue;background:white'>&gt;</span></p>
+
+<p class=MsoNormal style='margin:0in;margin-bottom:.0001pt;text-autospace:none'><span
+style='font-size:8.5pt;color:black;background:white'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span><span style='font-size:8.5pt;color:blue;background:white'>&lt;/</span><span
+style='font-size:8.5pt;color:maroon;background:white'>xsd:complexType</span><span
+style='font-size:8.5pt;color:blue;background:white'>&gt;</span></p>
+
+<p class=MsoNormal style='margin:0in;margin-bottom:.0001pt;text-autospace:none'><span
+style='font-size:8.5pt;color:blue;background:white'>&lt;/</span><span
+style='font-size:8.5pt;color:maroon;background:white'>xsd:schema</span><span
+style='font-size:8.5pt;color:blue;background:white'>&gt;</span></p>
+
+<p class=MsoNormal style='margin:0in;margin-bottom:.0001pt;text-autospace:none'><span
+style='font-size:8.5pt;color:blue;background:white'>&nbsp;</span></p>
+
+<p class=MsoNormal style='margin:0in;margin-bottom:.0001pt;text-autospace:none'><span
+style='background:white'>Sample instances:</span></p>
+
+<p class=MsoNormal style='margin:0in;margin-bottom:.0001pt;text-autospace:none'><span
+style='font-size:8.5pt;color:blue;background:white'>&nbsp;</span></p>
+
+<p class=MsoNormal style='margin:0in;margin-bottom:.0001pt;text-autospace:none'><span
+style='font-size:8.5pt;color:blue;background:white'>&lt;!--</span><span
+style='font-size:8.5pt;color:gray;background:white'> Japanese </span><span
+style='font-size:8.5pt;color:blue;background:white'>--&gt;</span></p>
+
+<p class=MsoNormal style='margin:0in;margin-bottom:.0001pt;text-autospace:none'><span
+style='font-size:8.5pt;color:blue;background:white'>&lt;</span><span
+style='font-size:8.5pt;color:maroon;background:white'>LanguageCode</span><span
+style='font-size:8.5pt;color:red;background:white'> xmlns</span><span
+style='font-size:8.5pt;color:blue;background:white'>=&quot;</span><span
+style='font-size:8.5pt;color:black;background:white'>http://ns.hr-xml.org/2007-04-15</span><span
+style='font-size:8.5pt;color:blue;background:white'>&quot;&gt;</span><span
+style='font-size:9.0pt;color:black;background:white'>ja</span><span
+style='font-size:8.5pt;color:blue;background:white'>&lt;/</span><span
+style='font-size:8.5pt;color:maroon;background:white'>LanguageCode</span><span
+style='font-size:8.5pt;color:blue;background:white'>&gt;</span></p>
+
+<p class=MsoNormal style='margin:0in;margin-bottom:.0001pt;text-autospace:none'><span
+style='font-size:8.5pt;color:black;background:white'>&nbsp;</span></p>
+
+<p class=MsoNormal style='margin:0in;margin-bottom:.0001pt;text-autospace:none'><span
+style='font-size:8.5pt;color:blue;background:white'>&nbsp;</span></p>
+
+<p class=MsoNormal style='margin:0in;margin-bottom:.0001pt;text-autospace:none'><span
+style='font-size:8.5pt;color:blue;background:white'>&lt;!--</span><span
+style='font-size:8.5pt;color:gray;background:white'> data is in French </span><span
+style='font-size:8.5pt;color:blue;background:white'>--&gt;</span></p>
+
+<p class=MsoNormal style='margin:0in;margin-bottom:.0001pt;text-autospace:none'><span
+style='font-size:8.5pt;color:blue;background:white'>&lt;</span><span
+style='font-size:8.5pt;color:maroon;background:white'>LanguageDependentText</span><span
+style='font-size:8.5pt;color:red;background:white'> xmlns</span><span
+style='font-size:8.5pt;color:blue;background:white'>=&quot;</span><span
+style='font-size:8.5pt;color:black;background:white'>http://ns.hr-xml.org/2007-04-15</span><span
+style='font-size:8.5pt;color:blue;background:white'>&quot;</span><span
+style='font-size:8.5pt;color:red;background:white'> xml:lang</span><span
+style='font-size:8.5pt;color:blue;background:white'>=&quot;</span><span
+style='font-size:8.5pt;color:black;background:white'>fr</span><span
+style='font-size:8.5pt;color:blue;background:white'>&quot;&gt;</span>adieu<span
+style='font-size:8.5pt;color:blue;background:white'>&lt;/</span><span
+style='font-size:8.5pt;color:maroon;background:white'>LanguageDependentText</span><span
+style='font-size:8.5pt;color:blue;background:white'>&gt;</span></p>
+
+<p class=MsoNormal style='margin:0in;margin-bottom:.0001pt;text-autospace:none'><span
+style='font-size:8.5pt;color:blue;background:white'>&nbsp;</span></p>
+
+<p class=MsoNormal style='margin:0in;margin-bottom:.0001pt;text-autospace:none'><span
+style='background:white'><img border=0 width=320 height=47
+src="GuidelinesForISOUtilities_files/image002.jpg"></span></p>
+
+<p class=MsoNormal style='margin:0in;margin-bottom:.0001pt;text-autospace:none'><span
+style='font-size:8.5pt;color:blue;background:white'>&nbsp;</span></p>
+
+<h2><a name="_Toc127534576"><span style='color:black;background:white;
+font-style:normal'>6.3</span></a><span style='font-size:7.0pt;font-family:"Times New Roman";
+color:black;background:white;font-style:normal'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span><span style='background:white'>Uses/Implementation Considerations</span></h2>
+
+<h3><a name="_Toc127534577"></a><a name="_Toc5528185"></a>6.3.1<span
+style='font-size:7.0pt;font-family:"Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span>Use of &#8220;xml:lang&#8221; (language as metadata)</h3>
+
+<p class=MsoNormal>The official RECOMMENDATION of the Consortium is to use the
+&#8220;xml:lang&#8221; attribute, as defined by the W3C, to indicate the
+language of data content.&nbsp; For example, the following indicates that the
+Address data is in English.</p>
+
+<p class=MsoNormal>&lt;Address&nbsp; xml:lang=&#8221;en&#8221;&gt;123 Main Street&lt;/Address&gt;</p>
+
+<p class=MsoNormal>The LanguageDependentText and LanguageDependentTextType can
+be used as a standard element of text that is language dependent.&nbsp; </p>
+
+<h3><a name="_Toc127534578">6.3.2</a><span style='font-size:7.0pt;font-family:
+"Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>Use
+of XML Schema data type &#8220;language&#8221; (language as data)</h3>
+
+<p class=MsoNormal>When the language itself is needed as a data object, such as
+needing to capture what language a person speaks, then the XML Schema
+&#8220;language&#8221; data type is used.&nbsp; For example, the following
+shows that a benefit plan participant speaks German.</p>
+
+<p class=MsoNormal>&lt;ParticipantPrimaryLanguage&gt;de&lt;/
+ParticipantPrimaryLanguage&gt;</p>
+
+<p class=MsoNormal>The LanguageCode and LanguageCodeType can be used to capture
+language as a data element.&nbsp; In the interest of simplicity, the Consortium
+preference is to use the ISO 639-1 two-character code when possible; however,
+this is not required.</p>
+
+<h1><a name="_Toc127534579"><span style='color:black'>7</span></a><span
+style='font-size:7.0pt;font-family:"Times New Roman";color:black'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span>Data Privacy</h1>
+
+<p class=MsoNormal style='margin:0in;margin-bottom:.0001pt;text-autospace:none'>Human
+resources data, by its very nature, is personal data. The laws of many
+jurisdictions as well as codes of fair information practice require
+organizations to handle personal data in a way that protects individuals from
+loss of privacy.</p>
+
+<p class=MsoNormal style='margin:0in;margin-bottom:.0001pt;text-autospace:none'>&nbsp;</p>
+
+<p class=MsoNormal style='margin:0in;margin-bottom:.0001pt;text-autospace:none'>The
+data exchange specifications developed by the HR-XML Consortium are designed to
+be useful across many jurisdictions and within a variety of business contexts.
+It is not feasible for the HR-XML Consortium to develop specific privacy
+guidance for every jurisdiction or business context in which the Consortium's
+specifications might be implemented. When implementing data exchanges using the
+HR-XML Consortium's data definitions (or, for that matter, any data exchange
+mechanism), organizations are advised to examine the privacy protections that
+may be required under applicable law or codes of fair information practice.</p>
+
+<p class=MsoNormal style='margin:0in;margin-bottom:.0001pt;text-autospace:none'>&nbsp;</p>
+
+<p class=MsoNormal style='margin:0in;margin-bottom:.0001pt;text-autospace:none'>For
+information on protecting personal data, general references include: European
+Union Data Protection Directive (95/46/EC); the Association Computing Machinery
+Code of Ethics&nbsp; (1992); Canadian Standards Association Model Code for the
+Protection of Personal Information (1995 -- PIPEDA); U.S.-EU Safe Harbor
+Principles and FAQs (2000).</p>
+
+<h1><a name="_Toc16579043"></a><a name="_Toc127534580"></a><span
+style='color:black'>8</span><span style='font-size:7.0pt;font-family:"Times New Roman";
+color:black'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>Appendix A
+- Document Version History</h1>
+
+<table class=MsoNormalTable border=0 cellspacing=0 cellpadding=0
+ style='margin-left:-.05in;border-collapse:collapse'>
+ <tr>
+  <td width=114 valign=top style='width:85.5pt;border:solid windowtext 1.0pt;
+  background:#E5E5E5;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=tabletext align=center style='text-align:center'><b>Date</b></p>
+  </td>
+  <td width=362 valign=top style='width:271.6pt;border:solid windowtext 1.0pt;
+  border-left:none;background:#E5E5E5;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=tabletext><b>Description</b></p>
+  </td>
+ </tr>
+ <tr>
+  <td width=114 valign=top style='width:85.5pt;border:solid windowtext 1.0pt;
+  border-top:none;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=tabletext align=center style='text-align:center'>2002-08-28</p>
+  </td>
+  <td width=362 valign=top style='width:271.6pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=tabletext>Draft</p>
+  </td>
+ </tr>
+ <tr>
+  <td width=114 valign=top style='width:85.5pt;border:solid windowtext 1.0pt;
+  border-top:none;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=tabletext align=center style='text-align:center'>2002-11-18</p>
+  </td>
+  <td width=362 valign=top style='width:271.6pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=tabletext>Added xml:lang information</p>
+  </td>
+ </tr>
+ <tr>
+  <td width=114 valign=top style='width:85.5pt;border:solid windowtext 1.0pt;
+  border-top:none;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=tabletext align=center style='text-align:center'>2002-12-16</p>
+  </td>
+  <td width=362 valign=top style='width:271.6pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=tabletext>Added LanguageDependentText information</p>
+  </td>
+ </tr>
+ <tr>
+  <td width=114 valign=top style='width:85.5pt;border:solid windowtext 1.0pt;
+  border-top:none;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=tabletext align=center style='text-align:center'>2002-12-30</p>
+  </td>
+  <td width=362 valign=top style='width:271.6pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=tabletext>Removed element LanguageDependentText. (Type is still included).
+  Clarified ISO references.</p>
+  </td>
+ </tr>
+ <tr>
+  <td width=114 valign=top style='width:85.5pt;border:solid windowtext 1.0pt;
+  border-top:none;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=tabletext align=center style='text-align:center'>2003-02-26</p>
+  </td>
+  <td width=362 valign=top style='width:271.6pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal>Approved recommendation by HR-XML Consortium. <span
+  style='background:white'>The default and targetNamespaces of all HR-XML
+  schemas have been standardized.</span> This recommendation is available as
+  part of the HR-XML 2_0 architecture.</p>
+  </td>
+ </tr>
+ <tr>
+  <td width=114 valign=top style='width:85.5pt;border:solid windowtext 1.0pt;
+  border-top:none;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=tabletext align=center style='text-align:center'>2006-02-28</p>
+  </td>
+  <td width=362 valign=top style='width:271.6pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal>Approved by Consortium</p>
+  </td>
+ </tr>
+ <tr>
+  <td width=114 valign=top style='width:85.5pt;border:solid windowtext 1.0pt;
+  border-top:none;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=tabletext align=center style='text-align:center'>2007-Apr-15</p>
+  </td>
+  <td width=362 valign=top style='width:271.6pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal>Approved by Consortium</p>
+  </td>
+ </tr>
+</table>
+
+<h1><a name="_Toc127534581"><span style='color:black'>9</span></a><span
+style='font-size:7.0pt;font-family:"Times New Roman";color:black'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span>Appendix B &#8211; Related Documents</h1>
+
+<p class=MsoNormal>The following documents are available for purchase from ISO
+(<a href="http://www.iso.org/">http://www.iso.org</a>/):</p>
+
+<p class=MsoNormal><span style='color:black'><a
+href="http://www.iso.ch/iso/en/CatalogueDetailPage.CatalogueDetail?CSNUMBER=11219&amp;ICS1=35&amp;ICS2=40&amp;ICS3="><span
+style='color:black'>ISO 5218:1977</span></a>&nbsp;&nbsp; Information
+interchange -- Representation of human sexes</span></p>
+
+<p class=MsoNormal><span style='color:black'><a
+href="http://www.iso.ch/iso/en/CatalogueDetailPage.CatalogueDetail?CSNUMBER=22109&amp;ICS1=1&amp;ICS2=140&amp;ICS3=20"><span
+style='color:black'>ISO 639-1:2002</span></a>&nbsp;&nbsp; Codes for the
+representation of names of languages -- Part 1: Alpha-2 code </span></p>
+
+<p class=MsoNormal><span style='color:black'><a
+href="http://www.iso.ch/iso/en/CatalogueDetailPage.CatalogueDetail?CSNUMBER=34749&amp;ICS1=3&amp;ICS2=60&amp;ICS3="><span
+style='color:black'>ISO 4217:2001</span></a>&nbsp;&nbsp; Codes for the
+representation of currencies and funds</span></p>
+
+<p class=MsoNormal><span style='color:black'><a
+href="http://www.iso.ch/iso/en/CatalogueDetailPage.CatalogueDetail?CSNUMBER=8349&amp;ICS1=1&amp;ICS2=140&amp;ICS3=30"><span
+style='color:black'>ISO 3166-2:1998</span></a>&nbsp;&nbsp; Codes for the
+representation of names of countries and their subdivisions -- Part 2: Country
+subdivision code</span></p>
+
+<p class=MsoNormal><span style='color:black'><a
+href="http://www.iso.ch/iso/en/CatalogueDetailPage.CatalogueDetail?CSNUMBER=2130&amp;ICS1=1&amp;ICS2=140&amp;ICS3=30"><span
+style='color:black'>ISO 3166-3:1999</span></a>&nbsp;&nbsp; Codes for the
+representation of names of countries and their subdivisions -- Part 3: Code for
+formerly used names of countries</span></p>
+
+<p class=MsoNormal><span style='color:black'>Information on the details of
+xml:lang may be found at the W3C website:</span></p>
+
+<p class=MsoNormal><span style='color:black'><a
+href="http://www.w3.org/TR/2000/WD-xml-2e-20000814#sec-lang-tag"><span
+style='color:black'>http://www.w3.org/TR/2000/WD-xml-2e-20000814#sec-lang-tag</span></a></span></p>
+
+<p class=MsoNormal>&nbsp;</p>
+
+</div>
+
+</body>
+
+</html>

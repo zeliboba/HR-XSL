@@ -1,0 +1,523 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<BackgroundReports xmlns="http://ns.hr-xml.org/2007-04-15" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://ns.hr-xml.org/2007-04-15  BackgroundReports.xsd" userId="" password="" account="" location="" version="2007-04-15" xml:lang="en">
+	<ProviderReferenceId idOwner="Hirecheck">
+		<IdValue>0178567</IdValue>
+	</ProviderReferenceId>
+	<!--
+Sample XML depicting the text and parsed results of a TransUnion Credit Search. 
+-->
+	<BackgroundReportPackage type="report">
+		<ClientReferenceId>
+			<IdValue>bec61f0f-aaa9-4211-8e49-18d603c76cd0</IdValue>
+		</ClientReferenceId>
+		<CopyToApplicant>true</CopyToApplicant>
+		<ScreeningsSummary>
+			<Organization type="Vendor">
+				<OrganizationName>First Advantage</OrganizationName>
+				<ContactMethod>
+					<Use>business</Use>
+					<Location>office</Location>
+					<Telephone>
+						<FormattedNumber>1-800-321-4473</FormattedNumber>
+					</Telephone>
+				</ContactMethod>
+			</Organization>
+			<PersonalData type="Current">
+				<PersonName type="Subject">
+					<GivenName>JOHN</GivenName>
+					<MiddleName>M</MiddleName>
+					<FamilyName primary="undefined" prefix="">WAYNE</FamilyName>
+				</PersonName>
+				<PostalAddress type="undefined">
+					<CountryCode>US</CountryCode>
+					<PostalCode>22311</PostalCode>
+					<Region>VA</Region>
+					<Municipality>ALEXANDRIA</Municipality>
+					<DeliveryAddress>
+						<StreetName>3714 N ROSSER ST</StreetName>
+						<Unit>APT 301</Unit>
+					</DeliveryAddress>
+				</PostalAddress>
+				<DemographicDetail>
+					<GovernmentId countryCode="US" issuingAuthority="SSN">228515555</GovernmentId>
+				</DemographicDetail>
+			</PersonalData>
+			<ClientReferences>
+				<IdValue name="BillingCode">176-345</IdValue>
+			</ClientReferences>
+		</ScreeningsSummary>
+		<Screenings>
+			<Screening type="credit">
+				<ProviderReferenceId>
+					<IdValue>900XXX0C0</IdValue>
+				</ProviderReferenceId>
+				<ClientReferenceId>
+					<IdValue>B0019474MV</IdValue>
+				</ClientReferenceId>
+				<ScreeningStatus>
+					<OrderStatus>Completed</OrderStatus>
+					<ResultStatus>Fail</ResultStatus>
+					<DateOrderReceived>2002-07-26</DateOrderReceived>
+				</ScreeningStatus>
+				<CountryCode>US</CountryCode>
+				<Region>VA</Region>
+				<Vendor>transUnion</Vendor>
+				<ScreeningResults type="results" mediaType="txt" resultType="report">
+					<Text>DISCLAIMER
+
+     Information contained herein should not be the sole determination in 
+     evaluation of this individual.  All other factors, references and 
+     current situations should be considered.  Human error in compiling 
+     this information is possible.  The FCRA requires certain actions if 
+     you take adverse action based in whole or in part on this report.
+     See your Help File, the FCRA or call for procedures.
+
+
+                      CREDIT BUREAU SEARCH - TRANS UNION
+
+
+DATE REPORT PRINTED:   01/08/2003
+IN OUR FILES SINCE:    04/1986
+
+SUBJECT NAME:
+   WAYNE,  JOHN
+
+                                           SOCIAL SECURITY NUMBER: 444-58-5555
+                                           PHONE:                      941-7777
+
+CURRENT ADDRESS REPORTED 03/2002:
+  PO BOX 777
+
+FORMER ADDRESSES REPORTED 08/1995:
+  6000 CITYWEST, #6316. EDEN PRAIRIE MN. 55344
+  90 POB 90, PHOENIX AZ. 85001
+
+                             CREDIT INFORMATION
+------------------------------------------------------------------------------
+THE FOLLOWING ITEMS OBTAINED FROM PUBLIC RECORDS APPEAR ON THE FILE. IN
+COMPLIANCE WITH THE FAIR CREDIT REPORTING ACT,  A NOTIFICATION WAS MAILED
+ADVISING THE SUBJECT THAT A REPORT HAS BEEN REQUESTED IN CONNECTION WITH
+AN EMPLOYMENT BACKGROUND INVESTIGATION WHICH CONTAINS PUBLIC RECORD
+INFORMATION.
+
+SOURCE: Z 4871382
+DOCKET  TJ988989     CIRCUIT COURT          PAID CIVIL JUDGMENT
+PLAINTIFF:          FAIRVIEW HOSPITAL AND                   ENTERED:    05/1998
+                                                            AMOUNT:        $349
+                                                            PAID:       11/1998
+
+
+SOURCE: Z 4871418
+DOCKET  971216767   CIRCUIT COURT          CIVIL JUDGMENT
+PLAINTIFF:          FAIRVIEW HOSPITAL AND                   ENTERED:    02/1998
+                                                            AMOUNT:        $349
+
+
+SOURCE: Z 506104S
+DOCKET  96845656     RECORDER OF DEEDS      STATE TAX LIEN
+                                                            ENTERED:    12/1996
+                                                            AMOUNT:        $127
+------------------------------------------------------------------------------
+ THE FOLLOWING CREDIT SUMMARY REPRESENTS THE SUBJECT''S TOTAL FILE HISTORY
+
+ PUBLIC RECORDS:   3     CURRENT NEGATIVE ACCTS:  3     REVOLVING ACCTS:   1
+ COLLECTIONS:      5     PREVIOUS NEGATIVE ACCTS: 3     INSTALLMENT ACCTS: 8
+ TRADE ACCTS:      10    PREVIOUS TIMES NEGATIVE: 9     MORTGAGE ACCTS:    0
+ CREDIT INQUIRIES: 10    EMPLOYMENT INQUIRIES:    1     OPEN ACCTS:        1
+
+              HIGH CRED   CRED LIMIT   BALANCE      PAST DUE   MNTHLY    AVAIL
+ REVOLVING:   $0          $1500        $0           $0                     100%
+ INSTALLMENT: $77.5K      $            $2471        $0         $1516
+ CLOSED W/BAL:                         $260         $260       $
+ TOTALS:      $77.5K      $1500        $2731        $260       $1516
+------------------------------------------------------------------------------
+THE FOLLOWING ITEMS ARE COLLECTION RECORDS:
+
+  UNITED CRDT                Y 4728033         OPEN ACCOUNT
+  PLACED FOR COLLECTION                        COLLECTION AGENCY/ATTORNEY
+   VERIF''D  12/2002   BALANCE:           $0    INDIVIDUAL ACCOUNT
+   OPENED   12/2000   MOST OWED:       $177    MARSHFIELD CLINIC
+   PAID OFF 05/2001
+   STATUS AS OF 05/2001: COLLECTION ACCOUNT
+
+  UNITED CRDT                Y 4728033         OPEN ACCOUNT
+  PLACED FOR COLLECTION                        COLLECTION AGENCY/ATTORNEY
+   VERIF''D  12/2002   BALANCE:         $105    INDIVIDUAL ACCOUNT
+   OPENED   01/2002   MOST OWED:       $105    MARSHFIELD CLINIC
+                      PAST DUE:        $105
+   STATUS AS OF 12/2002: COLLECTION ACCOUNT
+
+  FINANCE SYS                Y 69MZ001         OPEN ACCOUNT
+  PLACED FOR COLLECTION                        COLLECTION AGENCY/ATTORNEY
+   VERIF''D  12/2001   BALANCE:         $393    INDIVIDUAL ACCOUNT
+   OPENED   01/2001   MOST OWED:       $393    VALLEY UROLOGIC ASSOCIATES S C
+   CLOSED   11/1999   PAST DUE:        $393
+   STATUS AS OF 11/1999: COLLECTION ACCOUNT
+
+  CERTFD RCVRY               Y 96VE001         OPEN ACCOUNT
+  PLACED FOR COLLECTION
+   VERIF''D  08/1999   BALANCE:         $708    INDIVIDUAL ACCOUNT
+   OPENED   02/1998   MOST OWED:       $708    MINNEAPOLIS SURGICAL CNTR
+                      PAST DUE:        $708
+   STATUS AS OF 08/1999: COLLECTION ACCOUNT
+
+  NCOFINSYS                  Y 1EDM017         OPEN ACCOUNT
+  PLACED FOR COLLECTION
+   VERIF''D  03/1998   BALANCE:         $777    INDIVIDUAL ACCOUNT
+   OPENED   02/1998   MOST OWED:       $777    FRANCE AVENUE FAMILY PHYS
+   STATUS AS OF 03/1998: COLLECTION ACCOUNT
+------------------------------------------------------------------------------
+THE FOLLOWING ACCOUNT INFORMATION IS PRINTED IN ORDER BY MOST NEGATIVE MANNER
+OF PAYMENT (MOP) AND DATE MOST RECENTLY UPDATED.
+
+  VERIZON WIRE               U 7537007         OPEN ACCOUNT
+  P AND L WRITEOFF                             TELECOMMUNICATIONS/CELLULAR
+   VERIF''D  11/2002   BALANCE:         $260    INDIVIDUAL ACCOUNT
+   OPENED   03/1996   MOST OWED:       $260
+   CLOSED   09/1997   PAST DUE:        $260
+   STATUS AS OF 09/1997: CHARGED OFF AS BAD DEBT
+
+  WFFINACCPT                 F 1BR6033         INSTALLMENT ACCOUNT
+  CLOSED
+   VERIF''D  05/2000   BALANCE:           $0    JOINT ACCOUNT
+   OPENED   02/1997   MOST OWED:     $29982    PAY TERMS: 60 MONTHLY $761
+   CLOSED   04/2000
+   STATUS AS OF 04/2000: 30 DAYS PAST DUE
+   IN PRIOR 09 MONTHS FROM DATE CLOSED 1 TIME 30 DAYS LATE
+
+  WFFINACCPT                 F 1BR6033         INSTALLMENT ACCOUNT
+  REFINANCED                                   INSTALLMENT SALES CONTRACT
+   VERIF''D  04/2000   BALANCE:           $0    JOINT ACCOUNT
+   OPENED   08/1998   MOST OWED:     $32658    PAY TERMS: 54 MONTHLY
+   CLOSED   04/2000
+   STATUS AS OF 04/2000: 30 DAYS PAST DUE
+   IN PRIOR 09 MONTHS FROM DATE CLOSED 1 TIME 30 DAYS LATE
+
+  WFFINACCPT                 F 1BR6033         INSTALLMENT ACCOUNT
+                                               AUTOMOBILE
+   VERIF''D  11/2002   BALANCE:           $4    JOINT ACCOUNT
+   OPENED   04/2000   MOST OWED:     $43329    PAY TERMS: 30 MONTHLY $1428
+   STATUS AS OF 11/2002: PAID OR PAYING AS AGREED
+   IN PRIOR 32 MONTHS FROM DATE VERIF''D 1 TIME 60 DAYS,
+      6 TIMES 30 DAYS LATE
+     MAXIMUM DELINQUENCY OF 60 DAYS OCCURRED IN 02/2001
+
+  CITIFINANC                 F 6312252         REVOLVING ACCOUNT
+                                               INSTALLMENT SALES CONTRACT
+   VERIF''D  11/2002   BALANCE:           $0    JOINT ACCOUNT
+   OPENED   06/2001   MOST OWED:         $0    CREDIT LIMIT:      $1500
+   STATUS AS OF 11/2002: PAID OR PAYING AS AGREED
+   IN PRIOR 18 MONTHS FROM DATE VERIF''D NEVER LATE
+
+  CITIFINANC                 F 6312252         INSTALLMENT ACCOUNT
+                                               UNSECURED
+   VERIF''D  11/2002   BALANCE:        $2467    INDIVIDUAL ACCOUNT
+   OPENED   02/2002   MOST OWED:      $3183    PAY TERMS: 36 MONTHLY $88
+   STATUS AS OF 11/2002: PAID OR PAYING AS AGREED
+   IN PRIOR 10 MONTHS FROM DATE VERIF''D NEVER LATE
+
+  CITYSIDE SVG               B 171V002         INSTALLMENT ACCOUNT
+                                               AUTOMOBILE
+   VERIF''D  10/1997                            JOINT ACCOUNT
+   OPENED   06/1997   MOST OWED:      $1100    PAY TERMS: 12 MONTHLY $104
+   STATUS AS OF 10/1997: PAID OR PAYING AS AGREED
+   IN PRIOR 05 MONTHS FROM DATE VERIF''D NEVER LATE
+
+  CITYSIDE SVG               B 171V002         INSTALLMENT ACCOUNT
+                                               AUTOMOBILE
+   VERIF''D  10/1997                            JOINT ACCOUNT
+   OPENED   02/1997   MOST OWED:     $29982    PAY TERMS: 60 MONTHLY $761
+   STATUS AS OF 10/1997: PAID OR PAYING AS AGREED
+   IN PRIOR 09 MONTHS FROM DATE VERIF''D NEVER LATE
+
+  CITYSIDE SVG               B 171V004         INSTALLMENT ACCOUNT
+  ACT CLSD-TRNSFR/REFIN                        AUTOMOBILE
+   VERIF''D  02/1997   BALANCE:           $0    INDIVIDUAL ACCOUNT
+   OPENED   08/1994   MOST OWED:     $16636    PAY TERMS: 48 MONTHLY $346
+   CLOSED   02/1997
+   STATUS AS OF 02/1997: PAID OR PAYING AS AGREED
+   IN PRIOR 11 MONTHS FROM DATE CLOSED NEVER LATE
+
+  WFFINACCPT                 F 1BR6114         INSTALLMENT ACCOUNT
+  CLOSED
+   VERIF''D  06/1998   BALANCE:           $0    JOINT ACCOUNT
+   OPENED   06/1997   MOST OWED:      $1100    PAY TERMS: 12 MONTHLY $104
+   CLOSED   06/1998
+   STATUS AS OF 06/1998: UNRATED
+   IN PRIOR 01 MONTH  FROM DATE CLOSED NEVER LATE
+------------------------------------------------------------------------------
+THE FOLLOWING COMPANIES HAVE REQUESTED A COPY OF THE SUBJECT''S CREDIT REPORT
+
+  DATE         SUBCODE     SUBSCRIBER NAME
+
+  12/31/2002   I 4927305   FARMERS INS
+  06/19/2002   F 6312252   CITIFINANCIA
+  02/04/2002   F 6312252   CITIFINANCIA
+  07/30/2001   F 1270302   WFFINACCPT
+  07/20/2001   I 4927305   FARMERS INS
+  07/18/2001   F 1270302   WFFINACCPT
+  05/31/2001   F 1270302   WFFINACCPT
+  05/26/2001   F 7212066   CITIFINANCIA
+  02/22/2001   F 1270302   WFFINACCPT
+  02/13/2001   F 1270302   WFFINACCPT
+------------------------------------------------------------------------------
+THE FOLLOWING COMPANIES HAVE REQUESTED THE SUBJECT''S FILE FOR EMPLOYMENT USE:
+
+  DATE         SUBCODE     SUBSCRIBER NAME
+
+  01/08/2003   E 2900      HIRE CHECK
+------------------------------------------------------------------------------
+END OF PEER REPORT - SERVICED BY:
+
+TRANS UNION
+2 BALDWIN PLACE, P. O. BOX 1000
+CHESTER, PA. 19022
+800-888-4213
+Consumer disclosures can be obtained online through TransUnion at:
+     http://www.transunion.com/direct
+
+
+
+                                                  END OF TRANSUNION REPORT
+
+
+                               END-OF-REPORT</Text>
+				</ScreeningResults>
+				<CreditReport>
+					<ProcessedDate>
+						<AnyDate>2003-01-08</AnyDate>
+					</ProcessedDate>
+					<CreditFile vendor="transUnion">
+						<FileDate>
+							<YearMonth>1986-04</YearMonth>
+						</FileDate>
+						<LastActivityDate>
+							<AnyDate>2001-09-04</AnyDate>
+						</LastActivityDate>
+						<FileReference idOwner="transUnion">
+							<IdValue>787</IdValue>
+						</FileReference>
+						<PersonalData type="Current">
+							<PersonName type="Subject">
+								<GivenName>JOHN</GivenName>
+								<FamilyName primary="undefined" prefix="">WAYNE</FamilyName>
+							</PersonName>
+							<PostalAddress type="undefined" enteredOnInquiry="false">
+								<CountryCode>US</CountryCode>
+								<DeliveryAddress>
+									<PostOfficeBox>PO BOX 777</PostOfficeBox>
+								</DeliveryAddress>
+								<ReportedDate>
+									<EffectiveDate>
+										<StartDate>
+											<YearMonth>2002-03</YearMonth>
+										</StartDate>
+									</EffectiveDate>
+								</ReportedDate>
+							</PostalAddress>
+							<PostalAddress type="undefined">
+								<CountryCode>US</CountryCode>
+								<PostalCode>55344</PostalCode>
+								<Region>MN</Region>
+								<Municipality>EDEN PRAIRIE</Municipality>
+								<DeliveryAddress>
+									<StreetName>6000 CITYWEST</StreetName>
+									<Unit>6316</Unit>
+								</DeliveryAddress>
+								<ReportedDate>
+									<EffectiveDate>
+										<StartDate>
+											<YearMonth>1995-08</YearMonth>
+										</StartDate>
+									</EffectiveDate>
+								</ReportedDate>
+							</PostalAddress>
+							<PostalAddress type="undefined">
+								<CountryCode>US</CountryCode>
+								<PostalCode>85001</PostalCode>
+								<Region>AZ</Region>
+								<Municipality>PHOENIX</Municipality>
+								<DeliveryAddress>
+									<PostOfficeBox>90 POB 90</PostOfficeBox>
+								</DeliveryAddress>
+							</PostalAddress>
+							<ContactMethod>
+								<Telephone>
+									<FormattedNumber>941-7777</FormattedNumber>
+								</Telephone>
+							</ContactMethod>
+							<DemographicDetail>
+								<GovernmentId countryCode="US" issuingAuthority="SSN">444-58-5555</GovernmentId>
+							</DemographicDetail>
+						</PersonalData>
+					</CreditFile>
+					<CreditConsumerReferral type="Vendor" qualifier="TransUnion">
+						<OrganizationName>TRANS UNION</OrganizationName>
+						<ContactMethod>
+							<Use>business</Use>
+							<Location>office</Location>
+							<Telephone>
+								<FormattedNumber>800-888-4213</FormattedNumber>
+							</Telephone>
+							<InternetWebAddress>http://www.transunion.com/direct</InternetWebAddress>
+							<PostalAddress type="undefined">
+								<CountryCode>US</CountryCode>
+								<PostalCode>19022</PostalCode>
+								<Region>PA</Region>
+								<Municipality>CHESTER</Municipality>
+								<DeliveryAddress>
+									<AddressLine>2 BALDWIN PLACE</AddressLine>
+									<PostOfficeBox>P. O. BOX 1000</PostOfficeBox>
+								</DeliveryAddress>
+							</PostalAddress>
+						</ContactMethod>
+					</CreditConsumerReferral>
+					<!--
+For brevity,  all Liabilities were not included.  
+-->
+					<CreditLiability liabilityType="Collection" vendor="transUnion">
+						<AdditionalItems type="Header" qualifier="" vendor="transUnion">
+							<Text>THE FOLLOWING ITEMS ARE COLLECTION RECORDS:</Text>
+						</AdditionalItems>
+					</CreditLiability>
+					<CreditLiability liabilityType="Collection" vendor="transUnion">
+						<Creditor>
+							<OrganizationName>UNITED CRDT</OrganizationName>
+							<OriginalOrganizationName>MARSHFIELD CLINIC</OriginalOrganizationName>
+							<OrganizationId idOwner="transUnion">
+								<IdValue>4728033</IdValue>
+							</OrganizationId>
+							<CreditBusinessType>
+								<Value>CollectionServices</Value>
+								<RepositoryCode>Y</RepositoryCode>
+								<RepositoryValue>Other collection agencies</RepositoryValue>
+							</CreditBusinessType>
+						</Creditor>
+						<AccountOpenedDate>
+							<YearMonth>2000-12</YearMonth>
+						</AccountOpenedDate>
+						<AccountOwnershipType>
+							<Value>Individual</Value>
+							<RepositoryCode>I</RepositoryCode>
+							<RepositoryValue>INDIVIDUAL ACCOUNT</RepositoryValue>
+						</AccountOwnershipType>
+						<AccountPaidDate>
+							<YearMonth>2001-05</YearMonth>
+						</AccountPaidDate>
+						<AccountReportedDate>
+							<YearMonth>2002-12</YearMonth>
+						</AccountReportedDate>
+						<AccountStatusType>
+							<RepositoryCode>COL</RepositoryCode>
+							<RepositoryValue>COLLECTION ACCOUNT</RepositoryValue>
+						</AccountStatusType>
+						<AccountStatusDate>
+							<YearMonth>2001-05</YearMonth>
+						</AccountStatusDate>
+						<AccountType>
+							<RepositoryCode>AG</RepositoryCode>
+							<RepositoryValue>COLLECTION AGENCY/ATTORNEY</RepositoryValue>
+						</AccountType>
+						<CreditLoanType>
+							<RepositoryCode>AC</RepositoryCode>
+							<RepositoryValue>OPEN ACCOUNT</RepositoryValue>
+						</CreditLoanType>
+						<CurrentRating>
+							<Code>9B</Code>
+							<Type>Collection</Type>
+						</CurrentRating>
+						<HighBalanceAmount currency="USD">177</HighBalanceAmount>
+						<LastActivityDate>
+							<YearMonth>2001-05</YearMonth>
+						</LastActivityDate>
+						<UnpaidBalanceAmount currency="USD">0</UnpaidBalanceAmount>
+						<InformationalMessage type="Comment" vendor="transUnion">
+							<MessageClassification>Unknown</MessageClassification>
+							<Text>PLACED FOR COLLECTION </Text>
+						</InformationalMessage>
+					</CreditLiability>
+					<CreditLiability liabilityType="Collection" vendor="transUnion">
+						<AdditionalItems type="Header" qualifier="" vendor="transUnion">
+							<Text>THE FOLLOWING ACCOUNT INFORMATION IS PRINTED IN ORDER BY MOST NEGATIVE MANNER OF PAYMENT (MOP) AND DATE MOST RECENTLY UPDATED.</Text>
+						</AdditionalItems>
+					</CreditLiability>
+					<!--
+For brevity,  all Inquiries were not included.  
+-->
+					<CreditInquiry vendor="transUnion">
+						<AdditionalItems type="Header" qualifier="" vendor="transUnion">
+							<Text>THE FOLLOWING COMPANIES HAVE REQUESTED THE SUBJECT''S FILE FOR EMPLOYMENT USE:</Text>
+						</AdditionalItems>
+					</CreditInquiry>
+					<CreditInquiry vendor="transUnion">
+						<InquiryDate>
+							<AnyDate>2003-01-08</AnyDate>
+						</InquiryDate>
+						<InquiringOrganization>
+							<OrganizationName>HIRE CHECK</OrganizationName>
+							<OrganizationId idOwner="transUnion">
+								<IdValue>E 2900</IdValue>
+							</OrganizationId>
+							<CreditBusinessType>
+								<Value>Employment</Value>
+								<RepositoryCode>E</RepositoryCode>
+								<RepositoryValue>EMPLOYMENT</RepositoryValue>
+							</CreditBusinessType>
+						</InquiringOrganization>
+					</CreditInquiry>
+					<CreditSummary vendor="transUnion">
+						<BalanceAmount>
+							<TotalAmount currency="USD">2731</TotalAmount>
+							<InstallmentAmount currency="USD">2471</InstallmentAmount>
+							<RevolvingAmount currency="USD">0</RevolvingAmount>
+							<ClosedWithBalanceAmount currency="USD">260</ClosedWithBalanceAmount>
+						</BalanceAmount>
+						<CollectionCount>5</CollectionCount>
+						<DelinquencyCounters>
+							<CurrentNegativeCount>3</CurrentNegativeCount>
+							<PreviousNegativeCount>3</PreviousNegativeCount>
+							<PreviousTimesNegativeCount>9</PreviousTimesNegativeCount>
+						</DelinquencyCounters>
+						<EmploymentInquiriesCount>1</EmploymentInquiriesCount>
+						<HighCreditAmount>
+							<TotalAmount currency="USD">77500</TotalAmount>
+							<InstallmentAmount currency="USD">77500</InstallmentAmount>
+							<RevolvingAmount currency="USD">0</RevolvingAmount>
+							<ClosedWithBalanceAmount currency="USD">0</ClosedWithBalanceAmount>
+						</HighCreditAmount>
+						<InquiriesCount>10</InquiriesCount>
+						<InstallmentAccounts>8</InstallmentAccounts>
+						<MortgageAccounts>0</MortgageAccounts>
+						<OpenAccounts>1</OpenAccounts>
+						<PastDueBalance>
+							<TotalAmount currency="USD">260</TotalAmount>
+							<InstallmentAmount currency="USD">0</InstallmentAmount>
+							<RevolvingAmount currency="USD">0</RevolvingAmount>
+							<ClosedWithBalanceAmount currency="USD">260</ClosedWithBalanceAmount>
+						</PastDueBalance>
+						<PaymentAmount>
+							<TotalAmount currency="USD">1516</TotalAmount>
+							<InstallmentAmount currency="USD">1516</InstallmentAmount>
+							<RevolvingAmount currency="USD">0</RevolvingAmount>
+							<ClosedWithBalanceAmount currency="USD">0</ClosedWithBalanceAmount>
+						</PaymentAmount>
+						<PublicRecords>3</PublicRecords>
+						<RevolvingAccounts>1</RevolvingAccounts>
+						<RevolvingAvailablePercent>100</RevolvingAvailablePercent>
+						<TotalCreditLimit>
+							<TotalAmount currency="USD">1500</TotalAmount>
+							<InstallmentAmount currency="USD">0</InstallmentAmount>
+							<RevolvingAmount currency="USD">1500</RevolvingAmount>
+							<ClosedWithBalanceAmount currency="USD">0</ClosedWithBalanceAmount>
+						</TotalCreditLimit>
+						<TradesOrOther>10</TradesOrOther>
+						<InformationalMessage type="Comment" vendor="transUnion">
+							<MessageClassification>Unknown</MessageClassification>
+							<Text> THE FOLLOWING CREDIT SUMMARY REPRESENTS THE SUBJECT''S TOTAL FILE HISTORY</Text>
+						</InformationalMessage>
+					</CreditSummary>
+				</CreditReport>
+			</Screening>
+		</Screenings>
+	</BackgroundReportPackage>
+</BackgroundReports>

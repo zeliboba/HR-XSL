@@ -1,0 +1,176 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema xmlns="http://ns.hr-xml.org/2007-04-15" xmlns:xsd="http://www.w3.org/2001/XMLSchema" targetNamespace="http://ns.hr-xml.org/2007-04-15" elementFormDefault="qualified" version="2007-04-15">
+	<xsd:annotation>
+		<xsd:documentation>
+"Copyright  The HR-XML Consortium. All Rights Reserved. http://www.hr-xml.org"
+Name: USLocalizations.xsd
+Status: Recommendation
+Date this version: 2007-04-15
+Purpose: 
+Author(s): 
+Documentation: 
+
+		</xsd:documentation>
+	</xsd:annotation>
+	<xsd:import namespace="http://www.w3.org/XML/1998/namespace" schemaLocation="../../../W3C/xml.xsd"/>
+	<xsd:include schemaLocation="../../CPO/PersonName.xsd"/>
+	<xsd:include schemaLocation="../../CPO/PostalAddress.xsd"/>
+	<xsd:include schemaLocation="../../CPO/DateTimeDataTypes.xsd"/>
+	<xsd:include schemaLocation="../../CPO/ContactMethod.xsd"/>
+	<xsd:include schemaLocation="../../CPO/TelcomNumber.xsd"/>
+	<xsd:include schemaLocation="../../CPO/OnlineAddress.xsd"/>
+	<xsd:include schemaLocation="../../CPO/EntityIdType.xsd"/>
+	<xsd:include schemaLocation="../../CPO/UserArea.xsd"/>
+	<xsd:include schemaLocation="../../CPO/ISOUtilities.xsd"/>
+	<xsd:include schemaLocation="../../Enrollment/US/USTierCoverage.xsd"/>
+	<xsd:include schemaLocation="../../Enrollment/US/USSpendingAccountCoverage.xsd"/>
+	<xsd:include schemaLocation="../../Enrollment/US/USRateBasedCoverage.xsd"/>
+	<xsd:include schemaLocation="../../Stock/StockPurchasePlanCoverage.xsd"/>
+	<xsd:element name="HIPAA" type="HIPAAData">
+		<xsd:annotation>
+			<xsd:documentation>This element refers to US jurisdictions only and will become a localized data point in a future version.</xsd:documentation>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="Medicare" type="MedicareData">
+		<xsd:annotation>
+			<xsd:documentation>Deprecated in favor of MedicareInfo. This element refers to US jurisdictions only and is localized.</xsd:documentation>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="Medicaid" type="MedicaidData">
+		<xsd:annotation>
+			<xsd:documentation>This element refers to US jurisdictions only and will become a localized data point in a future version.</xsd:documentation>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:complexType name="MedicareData">
+		<xsd:sequence>
+			<xsd:element name="StartDate" type="LocalDateType" minOccurs="0">
+				<xsd:annotation>
+					<xsd:documentation>Deprecated.</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+			<xsd:element name="EndDate" type="LocalDateType" minOccurs="0">
+				<xsd:annotation>
+					<xsd:documentation>Deprecated.</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+			<xsd:element name="MedicarePartANumber" type="xsd:string" minOccurs="0">
+				<xsd:annotation>
+					<xsd:documentation>Deprecated.</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+			<xsd:element name="MedicarePartBNumber" type="xsd:string" minOccurs="0">
+				<xsd:annotation>
+					<xsd:documentation>Deprecated.</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+			<xsd:element name="MedicareEntitlement" minOccurs="0">
+				<xsd:complexType>
+					<xsd:sequence>
+						<xsd:element name="IsEligible" type="MedicareIsEligibleTypesType" minOccurs="0"/>
+						<xsd:element name="EntitlementReason" type="EntitlementReasonCodeTypesType" minOccurs="0"/>
+						<xsd:element name="StartDate" type="LocalDateType" minOccurs="0"/>
+						<xsd:element name="EndDate" type="LocalDateType" minOccurs="0"/>
+					</xsd:sequence>
+				</xsd:complexType>
+			</xsd:element>
+			<xsd:element name="HealthInsuranceClaimNumber" type="xsd:string" minOccurs="0"/>
+			<xsd:element name="MedicarePartA" type="MedicareCoverageBaseType" minOccurs="0"/>
+			<xsd:element name="MedicarePartB" type="MedicareCoverageBaseType" minOccurs="0"/>
+			<xsd:element name="MedicarePartD" type="MedicareCoveragePartDType" minOccurs="0"/>
+		</xsd:sequence>
+	</xsd:complexType>
+	<xsd:complexType name="MedicaidData">
+		<xsd:sequence>
+			<xsd:element name="StartDate" type="LocalDateType"/>
+			<xsd:element name="EndDate" type="LocalDateType" minOccurs="0"/>
+		</xsd:sequence>
+	</xsd:complexType>
+	<xsd:complexType name="HIPAAData">
+		<xsd:sequence>
+			<xsd:element name="PriorCoverageMonths" type="xsd:nonNegativeInteger"/>
+		</xsd:sequence>
+	</xsd:complexType>
+	<xsd:complexType name="MedicareDrugPlanInfoType">
+		<xsd:sequence>
+			<xsd:element name="UniqueBenefitOptionId" type="EntityIdType" minOccurs="0"/>
+			<xsd:element name="DrugPlanCoverage" minOccurs="0">
+				<xsd:complexType>
+					<xsd:sequence>
+						<xsd:element name="DrugPlanCoverageType" type="MedicareDrugPlanTypesType"/>
+						<xsd:element name="StartDate" type="LocalDateType" minOccurs="0"/>
+						<xsd:element name="EndDate" type="LocalDateType" minOccurs="0"/>
+					</xsd:sequence>
+				</xsd:complexType>
+			</xsd:element>
+		</xsd:sequence>
+	</xsd:complexType>
+	<xsd:simpleType name="MedicareDrugPlanTypesType">
+		<xsd:restriction base="xsd:string">
+			<xsd:enumeration value="Part D Subsidy Program"/>
+			<xsd:enumeration value="Integrated Wrapped Secondary Coverage"/>
+			<xsd:enumeration value="Not Participating Subsidy"/>
+			<xsd:enumeration value="Not Participating"/>
+			<xsd:enumeration value="Unknown"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:complexType name="MedicareCoverageBaseType">
+		<xsd:sequence>
+			<xsd:element name="IsEnrolled" type="MedicareIsEnrolledTypesType" minOccurs="0"/>
+			<xsd:element name="StartDate" type="LocalDateType" minOccurs="0"/>
+			<xsd:element name="EndDate" type="LocalDateType" minOccurs="0"/>
+		</xsd:sequence>
+	</xsd:complexType>
+	<xsd:simpleType name="MedicareIsEligibleTypesType">
+		<xsd:restriction base="xsd:string">
+			<xsd:enumeration value="yes"/>
+			<xsd:enumeration value="no"/>
+			<xsd:enumeration value="unknown"/>
+			<xsd:enumeration value="not applicable"/>
+			<xsd:enumeration value="disqualified employment"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="MedicareIsEnrolledTypesType">
+		<xsd:restriction base="xsd:string">
+			<xsd:enumeration value="yes"/>
+			<xsd:enumeration value="no"/>
+			<xsd:enumeration value="unknown"/>
+			<xsd:enumeration value="not applicable"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:complexType name="CoordinationOfBenefitsInfoType">
+		<xsd:sequence>
+			<xsd:element name="CoordinationOfBenefitsIndicator" type="CoordinationOfBenefitsIndicatorTypesType"/>
+			<xsd:element name="InsurerName" type="xsd:string" minOccurs="0"/>
+			<xsd:element name="StartDate" type="LocalDateType" minOccurs="0"/>
+			<xsd:element name="EndDate" type="LocalDateType" minOccurs="0"/>
+		</xsd:sequence>
+	</xsd:complexType>
+	<xsd:complexType name="MedicareCoveragePartDType">
+		<xsd:complexContent>
+			<xsd:extension base="MedicareCoverageBaseType">
+				<xsd:sequence>
+					<xsd:element name="MedicareDrugPlanInfo" type="MedicareDrugPlanInfoType" minOccurs="0"/>
+				</xsd:sequence>
+			</xsd:extension>
+		</xsd:complexContent>
+	</xsd:complexType>
+	<xsd:simpleType name="CoordinationOfBenefitsIndicatorTypesType">
+		<xsd:restriction base="xsd:string">
+			<xsd:enumeration value="yes"/>
+			<xsd:enumeration value="no"/>
+			<xsd:enumeration value="unknown"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="EntitlementReasonCodeTypesType">
+		<xsd:annotation>
+			<xsd:documentation>ESRD (end-stage renal disease). An type of entitlement under Medicare for persons with permanent kidney failure. That stage of renal impairment that appears irreversible and permanent, and requires a regular course of dialysis or kidney transplantation to maintain life.</xsd:documentation>
+		</xsd:annotation>
+		<xsd:restriction base="xsd:string">
+			<xsd:enumeration value="age"/>
+			<xsd:enumeration value="ESRD"/>
+			<xsd:enumeration value="disabled"/>
+			<xsd:enumeration value="working disabled"/>
+			<xsd:enumeration value="unknown"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+</xsd:schema>

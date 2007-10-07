@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema xmlns="http://ns.hr-xml.org/2007-04-15" targetNamespace="http://ns.hr-xml.org/2007-04-15" xmlns:xsd="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" version="2007-04-15">
+	<xsd:import namespace="http://www.w3.org/XML/1998/namespace" schemaLocation="../../W3C/xml.xsd"/>
+	<xsd:annotation>
+		<xsd:documentation>
+"Copyright  The HR-XML Consortium. All Rights Reserved. http://www.hr-xml.org"
+Name: StockSaleConfirmation.xsd
+Status: Recommendation
+Date this version: 2007-04-15
+Author(s): Andreas Bold - SAP, Stock Work Group
+Documentation: EmployeeStocksPlanInterface.html
+
+Terms of license can be found in license.txt.
+		
+		</xsd:documentation>
+	</xsd:annotation>
+	<xsd:include schemaLocation="../CPO/EntityIdType.xsd"/>
+	<xsd:include schemaLocation="../CPO/ISOUtilities.xsd"/>
+	<xsd:include schemaLocation="../CPO/UserArea.xsd"/>
+	<xsd:complexType name="AmountType">
+		<xsd:simpleContent>
+			<xsd:extension base="xsd:decimal">
+				<xsd:attribute name="currency" use="required" type="CurrencyCodeType"/>
+			</xsd:extension>
+		</xsd:simpleContent>
+	</xsd:complexType>
+	<xsd:complexType name="TaxInfoType">
+		<xsd:sequence>
+			<xsd:element name="TaxDate" type="LocalDateType"/>
+			<xsd:element name="TaxType" type="xsd:string"/>
+			<xsd:element name="TaxationLocation">
+				<xsd:complexType>
+					<xsd:sequence>
+						<xsd:element name="CountryCode" type="CountryCodeType" minOccurs="0"/>
+						<xsd:element name="Region" type="xsd:string" minOccurs="0"/>
+						<xsd:element name="Municipality" type="xsd:string" minOccurs="0"/>
+						<xsd:element name="PostalCode" type="xsd:string" minOccurs="0"/>
+					</xsd:sequence>
+				</xsd:complexType>
+			</xsd:element>
+			<xsd:element name="TaxAmount" type="AmountType"/>
+		</xsd:sequence>
+	</xsd:complexType>
+	<xsd:complexType name="StockSaleConfirmationType">
+		<xsd:sequence>
+			<xsd:element name="Id" type="EntityIdType"/>
+			<xsd:element name="ParticipantId" type="EntityIdType"/>
+			<xsd:element name="SaleDate" type="LocalDateTimeType"/>
+			<xsd:element name="StockSalePosition" maxOccurs="unbounded">
+				<xsd:complexType>
+					<xsd:sequence>
+						<xsd:element name="StockPurchaseId" type="EntityIdType"/>
+						<xsd:element name="SharesSold" type="xsd:decimal"/>
+						<xsd:element name="TaxInfo" type="TaxInfoType" minOccurs="0" maxOccurs="unbounded"/>
+					</xsd:sequence>
+				</xsd:complexType>
+			</xsd:element>
+			<xsd:element name="SharesSoldTotal" type="xsd:decimal"/>
+			<xsd:element name="SalesPricePerShare" type="AmountType" minOccurs="0"/>
+			<xsd:element name="TotalSalesValue" type="AmountType" minOccurs="0"/>
+			<xsd:element name="TaxInfoTotal" type="TaxInfoType" minOccurs="0" maxOccurs="unbounded"/>
+			<xsd:element ref="UserArea" minOccurs="0"/>
+		</xsd:sequence>
+	</xsd:complexType>
+	<xsd:element name="StockSaleConfirmation" type="StockSaleConfirmationType"/>
+</xsd:schema>

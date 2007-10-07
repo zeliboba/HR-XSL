@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--This record contains the termination information of when William voluntarily terminated from Widgets on October 18 2003-->
+<IndicativeData xmlns="http://ns.hr-xml.org/2007-04-15" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://ns.hr-xml.org/2007-04-15  IndicativeData.xsd">
+	<Employer>
+		<OrganizationName>Widget Manufacturing</OrganizationName>
+		<OrganizationId idOwner="Dunn &amp; Bradstreet">
+			<IdValue name="DUNNS">12345</IdValue>
+		</OrganizationId>
+		<TaxId validFrom="1975-01-01" validTo="notKnown" idOwner="US IRS">
+			<IdValue name="EIN">67890</IdValue>
+		</TaxId>
+		<LegalId validFrom="1975-01-01" validTo="notKnown" idOwner="US IRS">
+			<IdValue name="EIN">67890</IdValue>
+		</LegalId>
+	</Employer>
+	<Employee changeType="Update">
+		<PersonInfo>
+			<PersonLegalId idOwner="US SSA">
+				<IdValue name="SSN">456-11-1111</IdValue>
+			</PersonLegalId>
+			<PersonId idOwner="Widget Manufacturing">
+				<IdValue name="Person Unique Id">12440</IdValue>
+			</PersonId>
+			<PersonName>
+				<GivenName>William</GivenName>
+				<FamilyName>Jones</FamilyName>
+			</PersonName>
+		</PersonInfo>
+		<EmployeeInfo>
+			<EmployeeId idOwner="Widget Manufacturing">
+				<IdValue name="EE Id">320</IdValue>
+			</EmployeeId>
+		</EmployeeInfo>
+		<EmploymentInfo>
+			<IsEmployed>false</IsEmployed>
+			<Employment>
+				<IsTerminated>true</IsTerminated>
+				<TerminationInfo isVoluntary="true">
+					<TerminationReason>New employment opportunity</TerminationReason>
+					<TerminationDate>2003-10-18</TerminationDate>
+					<LastDateWorked>2003-10-18</LastDateWorked>
+					<LastDatePaid>2003-10-31</LastDatePaid>
+				</TerminationInfo>
+			</Employment>
+		</EmploymentInfo>
+	</Employee>
+</IndicativeData>

@@ -1,0 +1,2084 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+    License information for this file is provided in LICENSE.TXT
+    For support, more information, or to report implementation bugs, 
+    please contact the Open Applications Group at xml@openapplications.org 
+     
+    ** Revision: 8.0 **
+    ** Date: 05 April 2002 **
+    Open Applications Group XSD
+    Copyright 1998-2002, All Rights Reserved
+    
+    Name: Components.xsd
+-->
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns="http://www.openapplications.org/oagis" targetNamespace="http://www.openapplications.org/oagis" elementFormDefault="qualified" attributeFormDefault="unqualified">
+        <xs:include schemaLocation="Fields.xsd"/>
+<!-- Start Component types -->
+<!-- ====================================================================================================-->
+<!-- -->
+<!-- Distribution type -->
+        <xs:complexType name="Distribution">
+                <xs:annotation>
+                        <xs:documentation source="http://www.openapplications.org/oagis">A distribution identifies how monetary amounts are distributed accross an organization.</xs:documentation>
+                </xs:annotation>
+                <xs:sequence>
+                        <xs:element name="Amount" type="Amounts" minOccurs="0">
+                                <xs:annotation>
+                                        <xs:documentation source="http://www.openapplications.org/oagis">The extended total amount of the distribution.</xs:documentation>
+                                </xs:annotation>
+                        </xs:element>
+                        <xs:element name="Ledger" type="LedgerId" minOccurs="0"/>
+                        <xs:element name="GLEntity" type="GLEntity" minOccurs="0"/>
+                        <xs:group ref="AccountingEntity" minOccurs="0"/>
+                        <xs:element name="Project" type="Project" minOccurs="0">
+                                <xs:annotation>
+                                        <xs:documentation source="http://www.openapplications.org/oagis">Indicates the Project that will pay for the order items</xs:documentation>
+                                </xs:annotation>
+                        </xs:element>
+                        <xs:element ref="UserArea" minOccurs="0"/>
+                </xs:sequence>
+        </xs:complexType>
+        <xs:element name="Distribution" type="Distribution">
+                <xs:annotation>
+                        <xs:documentation source="http://www.openapplications.org/oagis">The accounting distribution information associated with a Business Object Document. The position of the Distribution within a Business Object Document provides the context and additional meaning. </xs:documentation>
+                </xs:annotation>
+        </xs:element>
+<!-- -->
+        <xs:group name="References">
+                <xs:sequence>
+                        <xs:element ref="DocumentReferences" minOccurs="0"/>
+                        <xs:element ref="Attachments" minOccurs="0"/>
+                </xs:sequence>
+        </xs:group>
+<!-- Document reference type -->
+        <xs:element name="DocumentReferences" type="DocumentReferences">
+                <xs:annotation>
+                        <xs:documentation source="http://www.openapplications.org/oagis">Allows references to other business transactions to be referenced by the document/component that includes DocumentReferences. These references make use of semantic names in order to capture the purpose of the references. This in combination with the relative position with in a business document provide context for their use.</xs:documentation>
+                </xs:annotation>
+        </xs:element>
+        <xs:complexType name="DocumentReferences">
+                <xs:sequence>
+                        <xs:element ref="DocumentReference" minOccurs="0" maxOccurs="unbounded"/>
+                </xs:sequence>
+        </xs:complexType>
+        <xs:group name="CommonReference">
+                <xs:sequence>
+                        <xs:element name="Description" type="Description" minOccurs="0" maxOccurs="unbounded">
+                                <xs:annotation>
+                                        <xs:documentation source="http://www.openapplications.org/oagis">Provides descriptive information about the document being referenced. This is a free formed text fireld.</xs:documentation>
+                                </xs:annotation>
+                        </xs:element>
+                        <xs:element name="Name" type="Name" minOccurs="0" maxOccurs="unbounded">
+                                <xs:annotation>
+                                        <xs:documentation source="http://www.openapplications.org/oagis">Provides descriptive name of the document being referenced. </xs:documentation>
+                                </xs:annotation>
+                        </xs:element>
+                        <xs:element name="Status" type="Status" minOccurs="0">
+                                <xs:annotation>
+                                        <xs:documentation source="http://www.openapplications.org/oagis">Indiactes the state of the document being referenced.</xs:documentation>
+                                </xs:annotation>
+                        </xs:element>
+                        <xs:element name="Usage" type="Usage" minOccurs="0">
+                                <xs:annotation>
+                                        <xs:documentation source="http://www.openapplications.org/oagis">Indiactes the use of the document being referenced.</xs:documentation>
+                                </xs:annotation>
+                        </xs:element>
+                        <xs:element name="Note" type="Note" minOccurs="0" maxOccurs="unbounded">
+                                <xs:annotation>
+                                        <xs:documentation source="http://www.openapplications.org/oagis">Allows a note about the document being referenced. </xs:documentation>
+                                </xs:annotation>
+                        </xs:element>
+                </xs:sequence>
+        </xs:group>
+        <xs:complexType name="DocumentReference">
+                <xs:annotation>
+                        <xs:documentation source="http://www.openapplications.org/oagis">Identifies another document within the scope of the OAGIS specification, such as a PurchaseOrder or Invoice that maybe associated with a particular Business Object Document.</xs:documentation>
+                </xs:annotation>
+        </xs:complexType>
+        <xs:complexType name="OrderDocumentReference">
+                <xs:complexContent>
+                        <xs:extension base="DocumentReference">
+                                <xs:sequence>
+                                        <xs:element ref="DocumentIds" minOccurs="0"/>
+                                        <xs:element name="DocumentDate" type="DateTimeAny" minOccurs="0">
+                                                <xs:annotation>
+                                                        <xs:documentation source="http://www.openapplications.org/oagis">The Datetime of the referenced document.</xs:documentation>
+                                                </xs:annotation>
+                                        </xs:element>
+                                        <xs:group ref="CommonReference" minOccurs="0"/>
+                                        <xs:element name="LineNumber" type="xs:positiveInteger" minOccurs="0">
+                                                <xs:annotation>
+                                                        <xs:documentation source="http://www.openapplications.org/oagis">Is the LineNumber of a particular item of interest for the given DocumentReference. The Line Number is of the primary DocumentId of the sender indicated  by the DocumentId under DocumentIds.</xs:documentation>
+                                                </xs:annotation>
+                                        </xs:element>
+                                        <xs:element name="ScheduleLineNumber" type="xs:positiveInteger" minOccurs="0">
+                                                <xs:annotation>
+                                                        <xs:documentation source="http://www.openapplications.org/oagis">Is the ScheduleLineNumber of a particular item of interest for the given DocumentReference. The Line Number is of the primary DocumentId of the sender indicated  by the DocumentId under DocumentIds.</xs:documentation>
+                                                </xs:annotation>
+                                        </xs:element>
+                                        <xs:element name="SubLineNumber" type="xs:positiveInteger" minOccurs="0">
+                                                <xs:annotation>
+                                                        <xs:documentation source="http://www.openapplications.org/oagis">Is the SubLineNumber of a particular item of interest for the given DocumentReference. The Line Number is of the primary DocumentId of the sender indicated  by the DocumentId under DocumentIds.</xs:documentation>
+                                                </xs:annotation>
+                                        </xs:element>
+                                        <xs:element ref="UserArea" minOccurs="0"/>
+                                </xs:sequence>
+                        </xs:extension>
+                </xs:complexContent>
+        </xs:complexType>
+        <xs:complexType name="GenericDocumentReference">
+                <xs:complexContent>
+                        <xs:extension base="DocumentReference">
+                                <xs:sequence>
+                                        <xs:element ref="DocumentIds" minOccurs="0"/>
+                                        <xs:element name="DocumentDate" type="DateTimeAny" minOccurs="0">
+                                                <xs:annotation>
+                                                        <xs:documentation source="http://www.openapplications.org/oagis">The Datetime of the referenced document.</xs:documentation>
+                                                </xs:annotation>
+                                        </xs:element>
+                                        <xs:group ref="CommonReference" minOccurs="0"/>
+                                        <xs:element ref="UserArea" minOccurs="0"/>
+                                </xs:sequence>
+                        </xs:extension>
+                </xs:complexContent>
+        </xs:complexType>
+        <xs:element name="DocumentReference" type="DocumentReference" abstract="true"/>
+        <xs:element name="PurchaseOrderDocumentReference" type="OrderDocumentReference" substitutionGroup="DocumentReference"/>
+        <xs:element name="SalesOrderDocumentReference" type="OrderDocumentReference" substitutionGroup="DocumentReference"/>
+        <xs:element name="RequisitionDocumentReference" type="OrderDocumentReference" substitutionGroup="DocumentReference"/>
+        <xs:element name="RFQDocumentReference" type="OrderDocumentReference" substitutionGroup="DocumentReference"/>
+        <xs:element name="QuoteDocumentReference" type="OrderDocumentReference" substitutionGroup="DocumentReference"/>
+        <xs:element name="MaintenanceOrderReference" type="GenericDocumentReference" substitutionGroup="DocumentReference"/>
+        <xs:element name="ContractDocumentReference" type="OrderDocumentReference" substitutionGroup="DocumentReference"/>
+        <xs:element name="InvoiceDocumentReference" type="OrderDocumentReference" substitutionGroup="DocumentReference"/>
+        <xs:element name="UOMGroupReference" type="GenericDocumentReference" substitutionGroup="DocumentReference">
+                <xs:annotation>
+                        <xs:documentation source="http://www.openapplications.org/oagis">Reference to the UOM cross references for units of measures.</xs:documentation>
+                </xs:annotation>
+        </xs:element>
+        <xs:element name="CatalogDocumentReference" type="GenericDocumentReference" substitutionGroup="DocumentReference">
+                <xs:annotation>
+                        <xs:documentation source="http://www.openapplications.org/oagis">Reference to a Catalog.</xs:documentation>
+                </xs:annotation>
+        </xs:element>
+        <xs:element name="ReceiptDocumentReference" type="OrderDocumentReference" substitutionGroup="DocumentReference">
+                <xs:annotation>
+                        <xs:documentation source="http://www.openapplications.org/oagis">Is a reference to the receipt document.</xs:documentation>
+                </xs:annotation>
+        </xs:element>
+        <xs:element name="ProjectReference" type="GenericDocumentReference" substitutionGroup="DocumentReference">
+                <xs:annotation>
+                        <xs:documentation source="http://www.openapplications.org/oagis">Is a reference to a Project document.</xs:documentation>
+                </xs:annotation>
+        </xs:element>
+        <xs:element name="LedgerDocumentReference" type="GenericDocumentReference" substitutionGroup="DocumentReference"/>
+        <xs:element name="VoucherDocumentReference" type="OrderDocumentReference" substitutionGroup="DocumentReference"/>
+<!---->
+        <xs:element name="Attachments" type="Attachments">
+                <xs:annotation>
+                        <xs:documentation source="http://www.openapplications.org/oagis">Attachments allows any number of Attachment components to be associated with a Component or Noun. These Attachments use semantic names in order to provide meaning for the Attachment. The combination of the semantic name and position provide context for the Attachment.</xs:documentation>
+                </xs:annotation>
+        </xs:element>
+        <xs:complexType name="Attachments">
+                <xs:sequence>
+                        <xs:element ref="Attachment" minOccurs="0" maxOccurs="unbounded"/>
+                </xs:sequence>
+        </xs:complexType>
+        <xs:complexType name="Attachment">
+                <xs:annotation>
+                        <xs:documentation source="http://www.openapplications.org/oagis">Attachment allows supporting documents to be attached to the BOD. This is for reference and management of binary/non-XML documents such as spreadsheets, CAD files, graphics, etc.
+
+Defines information about the attachement which may be inline, a MIME part or an external URI
+
+</xs:documentation>
+                </xs:annotation>
+                <xs:sequence>
+                        <xs:choice>
+                                <xs:element name="EmbeddedData" type="EmbeddedData" minOccurs="0">
+                                        <xs:annotation>
+                                                <xs:documentation source="http://www.openapplications.org/oagis">Allows the data to be embedded directly into the BOD instance.</xs:documentation>
+                                        </xs:annotation>
+                                </xs:element>
+                                <xs:element name="URI" type="xs:anyURI" minOccurs="0">
+                                        <xs:annotation>
+                                                <xs:documentation source="http://www.openapplications.org/oagis">Allows the Attachment to reference any URI.</xs:documentation>
+                                        </xs:annotation>
+                                </xs:element>
+                                <xs:element name="FileName" type="xs:string" minOccurs="0">
+                                        <xs:annotation>
+                                                <xs:documentation source="http://www.openapplications.org/oagis">Indicates the name of the File being referenced.</xs:documentation>
+                                        </xs:annotation>
+                                </xs:element>
+                                <xs:element name="ISBN" type="ISBN" minOccurs="0">
+                                        <xs:annotation>
+                                                <xs:documentation source="http://www.openapplications.org/oagis">Allows a reference to an ISBN.</xs:documentation>
+                                        </xs:annotation>
+                                </xs:element>
+                        </xs:choice>
+                        <xs:element name="DocumentDate" type="DateTimeAny" minOccurs="0">
+                                <xs:annotation>
+                                        <xs:documentation source="http://www.openapplications.org/oagis">Indicates the creation date and time of the document being referenced.
+</xs:documentation>
+                                </xs:annotation>
+                        </xs:element>
+                        <xs:element name="Description" type="Description" minOccurs="0" maxOccurs="unbounded">
+                                <xs:annotation>
+                                        <xs:documentation source="http://www.openapplications.org/oagis">Description of the Attachment.</xs:documentation>
+                                </xs:annotation>
+                        </xs:element>
+                        <xs:element name="FileType" type="xs:string" minOccurs="0">
+                                <xs:annotation>
+                                        <xs:documentation source="http://www.openapplications.org/oagis">Identifies the type of the file type of the attachment.</xs:documentation>
+                                </xs:annotation>
+                        </xs:element>
+                        <xs:element name="FileSize" type="xs:decimal" minOccurs="0">
+                                <xs:annotation>
+                                        <xs:documentation source="http://www.openapplications.org/oagis">Specifies how big the file is.</xs:documentation>
+                                </xs:annotation>
+                        </xs:element>
+                        <xs:element name="Note" type="Note" minOccurs="0" maxOccurs="unbounded">
+                                <xs:annotation>
+                                        <xs:documentation source="http://www.openapplications.org/oagis">A note that can be associated with the attachment.</xs:documentation>
+                                </xs:annotation>
+                        </xs:element>
+                        <xs:element name="Title" type="LingualString" minOccurs="0" maxOccurs="unbounded">
+                                <xs:annotation>
+                                        <xs:documentation source="http://www.openapplications.org/oagis">Indicates the Title of the attachment.</xs:documentation>
+                                </xs:annotation>
+                        </xs:element>
+                        <xs:element ref="UserArea" minOccurs="0"/>
+                </xs:sequence>
+                <xs:attribute name="inline" type="xs:boolean" use="optional" default="false"/>
+        </xs:complexType>
+        <xs:element name="Attachment" type="Attachment">
+                <xs:annotation>
+                        <xs:documentation source="http://www.openapplications.org/oagis">The Attachment represents binary data files that may be included within a BOD. These files replace the paper specifications and drawings attached to a BOD definition to clearly communicate design requirements. This Data Type is optional.
+
+Attachment usage is further defined by its position.</xs:documentation>
+                </xs:annotation>
+        </xs:element>
+        <xs:element name="DrawingAttachment" type="Attachment" substitutionGroup="Attachment">
+                <xs:annotation>
+                        <xs:documentation source="http://www.openapplications.org/oagis">Drawing Attachment allows drawings to be attached to a Noun or Component.</xs:documentation>
+                </xs:annotation>
+        </xs:element>
+        <xs:element name="DataSheetAttachment" type="Attachment" substitutionGroup="Attachment"/>
+        <xs:element name="FileAttachment" type="Attachment" substitutionGroup="Attachment"/>
+        <xs:element name="InstructionsAttachment" type="Attachment" substitutionGroup="Attachment"/>
+        <xs:element name="PictureAttachment" type="Attachment" substitutionGroup="Attachment"/>
+<!-- Payment Terms type -->
+        <xs:complexType name="PaymentTerms">
+                <xs:annotation>
+                        <xs:documentation source="http://www.openapplications.org/oagis">Identifies the payment terms for an Order or Invoice. Supports the abiility to specify an absolute due date, a number of days from a start daye, a percent discount or an absolute discount. A common term like "Net30Days" is explicitly code as either a calculated DueDateTime or a PaymentTermsDateTime and NumberOfDays.</xs:documentation>
+                </xs:annotation>
+                <xs:sequence>
+                        <xs:element name="TermId" type="Id" minOccurs="0">
+                                <xs:annotation>
+                                        <xs:documentation source="http://www.openapplications.org/oagis">The type of payment term, actually I think this ought to be a type following the design pattern: generic element name, semantic type attribute. (e.g. Net30Days, 10Percent30Days)</xs:documentation>
+                                </xs:annotation>
+                        </xs:element>
+                        <xs:element name="Description" type="Description" minOccurs="0" maxOccurs="unbounded">
+                                <xs:annotation>
+                                        <xs:documentation source="http://www.openapplications.org/oagis">A user friendly description of the Term (e.g. 10 Percent discount if payed in 30 days)</xs:documentation>
+                                </xs:annotation>
+                        </xs:element>
+                        <xs:element name="LineNumber" type="LineNumber" minOccurs="0">
+                                <xs:annotation>
+                                        <xs:documentation source="http://www.openapplications.org/oagis">Identifies the number of the term for reference purposes if necessary when there are multiple Terms</xs:documentation>
+                                </xs:annotation>
+                        </xs:element>
+                        <xs:choice>
+                                <xs:sequence>
+                                        <xs:element name="DueDate" type="DateTimeAny" minOccurs="0">
+                                                <xs:annotation>
+                                                        <xs:documentation source="http://www.openapplications.org/oagis">The absolute due date and time.</xs:documentation>
+                                                </xs:annotation>
+                                        </xs:element>
+                                </xs:sequence>
+                                <xs:sequence>
+                                        <xs:element name="PaymentTermsDate" type="DateTimeAny" minOccurs="0">
+                                                <xs:annotation>
+                                                        <xs:documentation source="http://www.openapplications.org/oagis">The date and time when the payment terms go into effect. Used in conjunction with NumberOfDays</xs:documentation>
+                                                </xs:annotation>
+                                        </xs:element>
+                                        <xs:element name="NumberOfDays" type="xs:positiveInteger" minOccurs="0">
+                                                <xs:annotation>
+                                                        <xs:documentation source="http://www.openapplications.org/oagis">The number of days from the PaymentTermDateTime by which payment is expected.</xs:documentation>
+                                                </xs:annotation>
+                                        </xs:element>
+                                </xs:sequence>
+                                <xs:sequence>
+                                        <xs:element name="ProximoNumberMonth" minOccurs="0">
+                                                <xs:annotation>
+                                                        <xs:documentation source="http://www.openapplications.org/oagis">The number of months occurring from the next month after the present.  It must have values between "1" and "12".  It is used injunction with DayOfMonth.</xs:documentation>
+                                                </xs:annotation>
+                                                <xs:simpleType>
+                                                        <xs:restriction base="xs:positiveInteger">
+                                                                <xs:minInclusive value="1"/>
+                                                                <xs:maxInclusive value="12"/>
+                                                        </xs:restriction>
+                                                </xs:simpleType>
+                                        </xs:element>
+                                        <xs:element name="DayOfMonth" type="xs:positiveInteger" minOccurs="0">
+                                                <xs:annotation>
+                                                        <xs:documentation source="http://www.openapplications.org/oagis">Indicates the Day of the month.</xs:documentation>
+                                                </xs:annotation>
+                                        </xs:element>
+                                </xs:sequence>
+                        </xs:choice>
+                        <xs:choice>
+                                <xs:element name="DiscountAmount" type="Amount" minOccurs="0">
+                                        <xs:annotation>
+                                                <xs:documentation source="http://www.openapplications.org/oagis">The absolute discount amount due if payed by DueDateTime</xs:documentation>
+                                        </xs:annotation>
+                                </xs:element>
+                                <xs:element name="DiscountPercent" type="Quantity" minOccurs="0">
+                                        <xs:annotation>
+                                                <xs:documentation source="http://www.openapplications.org/oagis">The percent discount if payed by DueDateTime</xs:documentation>
+                                        </xs:annotation>
+                                </xs:element>
+                        </xs:choice>
+                        <xs:element ref="UserArea" minOccurs="0"/>
+                </xs:sequence>
+        </xs:complexType>
+        <xs:element name="PaymentTerms" type="PaymentTerms">
+                <xs:annotation>
+                        <xs:documentation source="http://www.openapplications.org/oagis">Identifies the payment terms for an Order or Invoice. Supports the abiility to specify an absolute due date, a number of days from a start daye, a percent discount or an absolute discount. A common term like "Net30Days" is explicitly code as either a calculated DueDateTime or a PaymentTermsDateTime and NumberOfDays.</xs:documentation>
+                </xs:annotation>
+        </xs:element>
+        <xs:complexType name="Person">
+                <xs:sequence>
+                        <xs:element name="PersonCode" type="PersonCode" minOccurs="0">
+                                <xs:annotation>
+                                        <xs:documentation source="http://www.openapplications.org/oagis">Is the identifying code that uniquely identifyies a person.</xs:documentation>
+                                </xs:annotation>
+                        </xs:element>
+                        <xs:element name="PersonName" type="PersonName" minOccurs="0">
+                                <xs:annotation>
+                                        <xs:documentation source="http://www.openapplications.org/oagis">Person Name.</xs:documentation>
+                                </xs:annotation>
+                        </xs:element>
+                        <xs:element ref="UserArea" minOccurs="0"/>
+                </xs:sequence>
+        </xs:complexType>
+        <xs:element name="Person" type="Person">
+                <xs:annotation>
+                        <xs:documentation source="http://www.openapplications.org/oagis">Indentifies the person.</xs:documentation>
+                </xs:annotation>
+        </xs:element>
+        <xs:complexType name="Employee">
+                <xs:sequence>
+                        <xs:element name="EmployeeId" type="EmployeeId" minOccurs="0">
+                                <xs:annotation>
+                                        <xs:documentation source="http://www.openapplications.org/oagis">Company assiged EmployeeId.</xs:documentation>
+                                </xs:annotation>
+                        </xs:element>
+                        <xs:element ref="Person" minOccurs="0"/>
+                        <xs:element name="EmployeeStatus" type="Status" minOccurs="0">
+                                <xs:annotation>
+                                        <xs:documentation source="http://www.openapplications.org/oagis">This is a code or identifier that describes the current work status of an employee.  It indicates the condition of the employment of the employee.  Also known as the employee category. Examples are: Active, Inactive, No longer employed, Part time, Full time, Temporary, Casual</xs:documentation>
+                                </xs:annotation>
+                        </xs:element>
+                        <xs:element name="Position" type="Position" minOccurs="0">
+                                <xs:annotation>
+                                        <xs:documentation source="http://www.openapplications.org/oagis">This is similar to JobTitle - it is an employee's specific assignment, for example, Vice President of Engineering</xs:documentation>
+                                </xs:annotation>
+                        </xs:element>
+                        <xs:element ref="DocumentReferences" minOccurs="0"/>
+                        <xs:element name="Category" type="EmployeeCategory" minOccurs="0">
+                                <xs:annotation>
+                                        <xs:documentation source="http://www.openapplications.org/oagis">Identifies the employees skill level and job description.</xs:documentation>
+                                </xs:annotation>
+                        </xs:element>
+                        <xs:element name="JobCode" type="JobCode" minOccurs="0" maxOccurs="unbounded">
+                                <xs:annotation>
+                                        <xs:documentation source="http://www.openapplications.org/oagis">The grouping of similar or equivalent job descriptions</xs:documentation>
+                                </xs:annotation>
+                        </xs:element>
+                        <xs:element name="Qualification" type="EmployeeQualification" minOccurs="0" maxOccurs="unbounded">
+                                <xs:annotation>
+                                        <xs:documentation source="http://www.openapplications.org/oagis">Is a list of the employee's qualifications, titles and or certifications.</xs:documentation>
+                                </xs:annotation>
+                        </xs:element>
+                        <xs:element name="WageGroup" type="WageGroup" minOccurs="0">
+                                <xs:annotation>
+                                        <xs:documentation source="http://www.openapplications.org/oagis">Is used to classify an employee's wage.</xs:documentation>
+                                </xs:annotation>
+                        </xs:element>
+                        <xs:element name="WageType" type="WageType" minOccurs="0">
+                                <xs:annotation>
+                                        <xs:documentation source="http://www.openapplications.org/oagis">Is a code or identifier that describes the specific type a wage an employee or worker is paid.
+
+Examples include:	Exempt from Overtime, Non-Exempt from Overtime</xs:documentation>
+                                </xs:annotation>
+                        </xs:element>
+                        <xs:element name="PayrollPeriod" type="TimePeriodAny" minOccurs="0"/>
+                        <xs:element ref="Attachments" minOccurs="0"/>
+                        <xs:element ref="UserArea" minOccurs="0"/>
+                </xs:sequence>
+        </xs:complexType>
+        <xs:element name="Employee" type="Employee">
+                <xs:annotation>
+                        <xs:documentation source="http://www.openapplications.org/oagis">Employee information</xs:documentation>
+                </xs:annotation>
+        </xs:element>
+        <xs:complexType name="Someone">
+                <xs:sequence>
+                        <xs:choice>
+                                <xs:element ref="Person" minOccurs="0"/>
+                                <xs:element ref="Contact" minOccurs="0"/>
+                                <xs:element ref="Employee" minOccurs="0"/>
+                        </xs:choice>
+                        <xs:element ref="UserArea" minOccurs="0"/>
+                </xs:sequence>
+        </xs:complexType>
+        <xs:complexType name="EmployeeQualification">
+                <xs:sequence>
+                        <xs:element name="Id" type="Id" minOccurs="0">
+                                <xs:annotation>
+                                        <xs:documentation source="http://www.openapplications.org/oagis">Is the identifier of the qualification.</xs:documentation>
+                                </xs:annotation>
+                        </xs:element>
+                        <xs:element name="SkillCode" type="Code" minOccurs="0">
+                                <xs:annotation>
+                                        <xs:documentation source="http://www.openapplications.org/oagis">Is the code used to identify the skill with in the business.</xs:documentation>
+                                </xs:annotation>
+                        </xs:element>
+                        <xs:element name="SkillName" type="Name" minOccurs="0" maxOccurs="unbounded">
+                                <xs:annotation>
+                                        <xs:documentation source="http://www.openapplications.org/oagis">Name of ths Skill.</xs:documentation>
+                                </xs:annotation>
+                        </xs:element>
+                        <xs:element name="Competency" type="Code" minOccurs="0">
+                                <xs:annotation>
+                                        <xs:documentation source="http://www.openapplications.org/oagis">Inidicates the competency level</xs:documentation>
+                                </xs:annotation>
+                        </xs:element>
+                        <xs:element name="LastUsedDate" type="DateTimeAny" minOccurs="0">
+                                <xs:annotation>
+                                        <xs:documentation source="http://www.openapplications.org/oagis">Last time the employee used this skill.</xs:documentation>
+                                </xs:annotation>
+                        </xs:element>
+                        <xs:element name="TrainingDate" type="DateTimeAny" minOccurs="0" maxOccurs="unbounded">
+                                <xs:annotation>
+                                        <xs:documentation source="http://www.openapplications.org/oagis">Indicates the dates in which training was received for this skill.</xs:documentation>
+                                </xs:annotation>
+                        </xs:element>
+                        <xs:element name="EffectiveTimePeriod" type="TimePeriodAny" minOccurs="0">
+                                <xs:annotation>
+                                        <xs:documentation source="http://www.openapplications.org/oagis">Is the effective period in which the employee has had this skill. Used to indicate experience with this skill.</xs:documentation>
+                                </xs:annotation>
+                        </xs:element>
+                        <xs:element ref="UserArea" minOccurs="0"/>
+                </xs:sequence>
+        </xs:complexType>
+        <xs:complexType name="EmployeeAssignment">
+                <xs:annotation>
+                        <xs:documentation source="http://www.openapplications.org/oagis"/>
+                </xs:annotation>
+                <xs:sequence>
+                        <xs:element name="GLEntity" type="GLEntity" minOccurs="0">
+                                <xs:annotation>
+                                        <xs:documentation source="http://www.openapplications.org/oagis">This identifies the GLEntity to which the employee belongs</xs:documentation>
+                                </xs:annotation>
+                        </xs:element>
+                        <xs:element name="CostCenter" type="CostCenter" minOccurs="0">
+                                <xs:annotation>
+                                        <xs:documentation source="http://www.openapplications.org/oagis">The CostCenter to which the employee belongs</xs:documentation>
+                                </xs:annotation>
+                        </xs:element>
+                        <xs:element name="Division" type="Division" minOccurs="0">
+                                <xs:annotation>
+                                        <xs:documentation source="http://www.openapplications.org/oagis">The Division of the organization to which the person belongs</xs:documentation>
+                                </xs:annotation>
+                        </xs:element>
+                        <xs:element name="Department" type="Department" minOccurs="0">
+                                <xs:annotation>
+                                        <xs:documentation source="http://www.openapplications.org/oagis">The Department of the organization to  which the employee belongs</xs:documentation>
+                                </xs:annotation>
+                        </xs:element>
+                        <xs:element name="WorkCenter" type="WorkCenter" minOccurs="0">
+                                <xs:annotation>
+                                        <xs:documentation source="http://www.openapplications.org/oagis">This identifies an area consisting of one or more resources where production takes place.  It is used to identify a specific Work Center on a Shop Floor or other manufacturing facility</xs:documentation>
+                                </xs:annotation>
+                        </xs:element>
+                        <xs:element ref="Site" minOccurs="0"/>
+                        <xs:element name="HROrganization" type="OrganizationalUnit" minOccurs="0" maxOccurs="unbounded">
+                                <xs:annotation>
+                                        <xs:documentation source="http://www.openapplications.org/oagis">This is the organization level that personnel are assigned</xs:documentation>
+                                </xs:annotation>
+                        </xs:element>
+                        <xs:element name="ShiftId" type="Id" minOccurs="0">
+                                <xs:annotation>
+                                        <xs:documentation source="http://www.openapplications.org/oagis">This describes the regular or standard authorized work time for the employee: SAT - Should this be an Id?</xs:documentation>
+                                </xs:annotation>
+                        </xs:element>
+                        <xs:element name="ScheduleType" type="Type" minOccurs="0">
+                                <xs:annotation>
+                                        <xs:documentation source="http://www.openapplications.org/oagis">This is a code or identifier that describes the specific schedule and can be used in a variety of contexts. When used in the context of employee, this refers to the specific schedule for the employee or worker</xs:documentation>
+                                </xs:annotation>
+                        </xs:element>
+                        <xs:element ref="UserArea" minOccurs="0"/>
+                </xs:sequence>
+        </xs:complexType>
+        <xs:element name="EmployeeAssignment" type="EmployeeAssignment">
+                <xs:annotation>
+                        <xs:documentation source="http://www.openapplications.org/oagis">This identifies an employee's work location and the HR organization to which the employee is associated</xs:documentation>
+                </xs:annotation>
+        </xs:element>
+        <xs:complexType name="User">
+                <xs:sequence>
+                        <xs:element ref="Person" minOccurs="0"/>
+                        <xs:element name="UserAccount" type="UserAccount" minOccurs="0" maxOccurs="unbounded"/>
+                        <xs:element ref="UserArea" minOccurs="0"/>
+                </xs:sequence>
+        </xs:complexType>
+        <xs:complexType name="remAuthorization">
+                <xs:sequence>
+                        <xs:element name="Code" type="AuthorizationCode" minOccurs="0">
+                                <xs:annotation>
+                                        <xs:documentation source="http://www.openapplications.org/oagis">Identifies the authorization identification of the user.</xs:documentation>
+                                </xs:annotation>
+                        </xs:element>
+                        <xs:element name="Description" type="Description" minOccurs="0" maxOccurs="unbounded">
+                                <xs:annotation>
+                                        <xs:documentation source="http://www.openapplications.org/oagis">Is a description of the authorization.</xs:documentation>
+                                </xs:annotation>
+                        </xs:element>
+                        <xs:element ref="UserArea" minOccurs="0"/>
+                </xs:sequence>
+        </xs:complexType>
+        <xs:complexType name="UserAccount">
+                <xs:sequence>
+                        <xs:element name="SystemId" type="Id" minOccurs="0">
+                                <xs:annotation>
+                                        <xs:documentation source="http://www.openapplications.org/oagis">Is the system in which the userid applies.</xs:documentation>
+                                </xs:annotation>
+                        </xs:element>
+                        <xs:element name="Authorization" type="AuthorizationType" minOccurs="0" maxOccurs="unbounded"/>
+                        <xs:element ref="UserArea" minOccurs="0"/>
+                </xs:sequence>
+        </xs:complexType>
+        <xs:element name="UserAccount" type="UserAccount"/>
+<!-- -->
+        <xs:complexType name="PersonName">
+                <xs:annotation>
+                        <xs:documentation source="http://www.openapplications.org/oagis">Full specification for a persons name.</xs:documentation>
+                </xs:annotation>
+                <xs:sequence>
+                        <xs:element name="Salutation" type="Name" minOccurs="0" maxOccurs="unbounded"/>
+                        <xs:element name="GivenName" type="Name" minOccurs="0" maxOccurs="unbounded">
+                                <xs:annotation>
+                                        <xs:documentation source="http://www.openapplications.org/oagis">Is the Persons given name or first name.</xs:documentation>
+                                </xs:annotation>
+                        </xs:element>
+                        <xs:element name="PreferredGivenName" type="Name" minOccurs="0" maxOccurs="unbounded">
+                                <xs:annotation>
+                                        <xs:documentation source="http://www.openapplications.org/oagis">Is the persons preferred name or nick name.</xs:documentation>
+                                </xs:annotation>
+                        </xs:element>
+                        <xs:element name="MiddleName" type="Name" minOccurs="0" maxOccurs="unbounded">
+                                <xs:annotation>
+                                        <xs:documentation source="http://www.openapplications.org/oagis">Is the persons middle name.</xs:documentation>
+                                </xs:annotation>
+                        </xs:element>
+                        <xs:element name="FamilyName" type="Name" minOccurs="0" maxOccurs="unbounded">
+                                <xs:annotation>
+                                        <xs:documentation source="http://www.openapplications.org/oagis">Is the persons family name.</xs:documentation>
+                                </xs:annotation>
+                        </xs:element>
+                        <xs:element name="Suffix" type="Name" minOccurs="0" maxOccurs="unbounded"/>
+                        <xs:element name="FormattedName" type="Name" minOccurs="0" maxOccurs="unbounded">
+                                <xs:annotation>
+                                        <xs:documentation source="http://www.openapplications.org/oagis">Different formats for the persons name.</xs:documentation>
+                                </xs:annotation>
+                        </xs:element>
+                        <xs:element ref="UserArea" minOccurs="0"/>
+                </xs:sequence>
+        </xs:complexType>
+        <xs:element name="PersonName" type="PersonName"/>
+<!--???-->
+        <xs:complexType name="EmbeddedData">
+                <xs:annotation>
+                        <xs:documentation source="http://www.openapplications.org/oagis">Holds the contents of an inline attachment.</xs:documentation>
+                </xs:annotation>
+                <xs:sequence>
+                        <xs:element name="Data" type="xs:anyType">
+                                <xs:annotation>
+                                        <xs:documentation source="http://www.openapplications.org/oagis">Container to carry the embedded data.</xs:documentation>
+                                </xs:annotation>
+                        </xs:element>
+                </xs:sequence>
+                <xs:attribute name="encoding" type="Encoding" use="required"/>
+        </xs:complexType>
+<!-- -->
+        <xs:element name="Addresses" type="Addresses">
+                <xs:annotation>
+                        <xs:documentation source="http://www.openapplications.org/oagis">Associated address(es) for this party.</xs:documentation>
+                </xs:annotation>
+        </xs:element>
+        <xs:complexType name="Addresses">
+                <xs:sequence>
+                        <xs:element ref="Address" minOccurs="0" maxOccurs="unbounded"/>
+                </xs:sequence>
+        </xs:complexType>
+        <xs:element name="PostalAddress" type="PostalAddress">
+                <xs:annotation>
+                        <xs:documentation source="http://www.openapplications.org/oagis">Provides the postal address of the location.</xs:documentation>
+                </xs:annotation>
+        </xs:element>
+        <xs:complexType name="PostalAddressBase">
+                <xs:sequence>
+                        <xs:element name="AddressId" type="AddressId" minOccurs="0" maxOccurs="unbounded">
+                                <xs:annotation>
+                                        <xs:documentation source="http://www.openapplications.org/oagis">Is a code for the given address.</xs:documentation>
+                                </xs:annotation>
+                        </xs:element>
+                        <xs:element name="AddressLine" type="xs:string" minOccurs="0" maxOccurs="unbounded">
+                                <xs:annotation>
+                                        <xs:documentation source="http://www.openapplications.org/oagis">Indicates the multiple lines of an address. The first line is typically the street name and number.</xs:documentation>
+                                </xs:annotation>
+                        </xs:element>
+                        <xs:element name="City" type="xs:string" minOccurs="0">
+                                <xs:annotation>
+                                        <xs:documentation source="http://www.openapplications.org/oagis">Is the City of the Address.</xs:documentation>
+                                </xs:annotation>
+                        </xs:element>
+                        <xs:element name="County" type="xs:string" minOccurs="0">
+                                <xs:annotation>
+                                        <xs:documentation source="http://www.openapplications.org/oagis">Is the County of the Address.</xs:documentation>
+                                </xs:annotation>
+                        </xs:element>
+                        <xs:element name="StateOrProvince" type="xs:string" minOccurs="0">
+                                <xs:annotation>
+                                        <xs:documentation source="http://www.openapplications.org/oagis">Is the State or Province of a given Address.</xs:documentation>
+                                </xs:annotation>
+                        </xs:element>
+                        <xs:element name="Country" type="Country" minOccurs="0">
+                                <xs:annotation>
+                                        <xs:documentation source="http://www.openapplications.org/oagis">Conuntry in which the Address is in.</xs:documentation>
+                                </xs:annotation>
+                        </xs:element>
+                        <xs:element name="Region" type="xs:string" minOccurs="0">
+                                <xs:annotation>
+                                        <xs:documentation source="http://www.openapplications.org/oagis">Is the Region in which the Address is in.</xs:documentation>
+                                </xs:annotation>
+                        </xs:element>
+                        <xs:element name="PostalCode" type="PostalCode" minOccurs="0">
+                                <xs:annotation>
+                                        <xs:documentation source="http://www.openapplications.org/oagis">Postal Code of the Address.</xs:documentation>
+                                </xs:annotation>
+                        </xs:element>
+                        <xs:element name="Description" type="Description" minOccurs="0" maxOccurs="unbounded">
+                                <xs:annotation>
+                                        <xs:documentation source="http://www.openapplications.org/oagis">Description of the Address.</xs:documentation>
+                                </xs:annotation>
+                        </xs:element>
+                </xs:sequence>
+        </xs:complexType>
+        <xs:complexType name="PostalAddress">
+                <xs:complexContent>
+                        <xs:extension base="PostalAddressBase">
+                                <xs:sequence>
+                                        <xs:element ref="UserArea" minOccurs="0"/>
+                                </xs:sequence>
+                        </xs:extension>
+                </xs:complexContent>
+        </xs:complexType>
+        <xs:complexType name="Address">
+                <xs:annotation>
+                        <xs:documentation source="http://www.openapplications.org/oagis">Address,  </xs:documentation>
+                </xs:annotation>
+                <xs:complexContent>
+                        <xs:extension base="PostalAddressBase">
+                                <xs:sequence>
+                                        <xs:element name="Telephone" type="TelephoneNumber" minOccurs="0" maxOccurs="unbounded">
+                                                <xs:annotation>
+                                                        <xs:documentation source="http://www.openapplications.org/oagis">Telephone number at the address.</xs:documentation>
+                                                </xs:annotation>
+                                        </xs:element>
+                                        <xs:element name="FaxNumber" type="TelephoneNumber" minOccurs="0" maxOccurs="unbounded">
+                                                <xs:annotation>
+                                                        <xs:documentation source="http://www.openapplications.org/oagis">Fax Number at the Address.</xs:documentation>
+                                                </xs:annotation>
+                                        </xs:element>
+                                        <xs:element name="EMailAddress" type="EMailAddress" minOccurs="0" maxOccurs="unbounded"/>
+                                        <xs:element name="URI" type="URI" minOccurs="0" maxOccurs="unbounded">
+                                                <xs:annotation>
+                                                        <xs:documentation source="http://www.openapplications.org/oagis">URI for the address.</xs:documentation>
+                                                </xs:annotation>
+                                        </xs:element>
+                                        <xs:element name="TaxJurisdiction" type="TaxJurisdiction" minOccurs="0">
+                                                <xs:annotation>
+                                                        <xs:documentation source="http://www.openapplications.org/oagis">Tax Jurisdiction of the address.</xs:documentation>
+                                                </xs:annotation>
+                                        </xs:element>
+                                        <xs:element ref="UserArea" minOccurs="0"/>
+                                </xs:sequence>
+                        </xs:extension>
+                </xs:complexContent>
+        </xs:complexType>
+        <xs:element name="Address" type="Address"/>
+        <xs:element name="DropShipAddress" type="Address" substitutionGroup="Address">
+                <xs:annotation>
+                        <xs:documentation source="http://www.openapplications.org/oagis">The address for drop shipments</xs:documentation>
+                </xs:annotation>
+        </xs:element>
+        <xs:element name="PrimaryAddress" type="Address" substitutionGroup="Address">
+                <xs:annotation>
+                        <xs:documentation source="http://www.openapplications.org/oagis">The primary address</xs:documentation>
+                </xs:annotation>
+        </xs:element>
+        <xs:element name="SecondaryAddress" type="Address" substitutionGroup="Address"/>
+        <xs:element name="ShippingAddress" type="Address" substitutionGroup="Address">
+                <xs:annotation>
+                        <xs:documentation source="http://www.openapplications.org/oagis">The address to ship the material to</xs:documentation>
+                </xs:annotation>
+        </xs:element>
+<!-- -->
+<!-- Allowance type -->
+        <xs:complexType name="Allowance">
+                <xs:annotation>
+                        <xs:documentation source="http://www.openapplications.org/oagis">Identifies a type of allowance on order related BODs</xs:documentation>
+                </xs:annotation>
+                <xs:sequence>
+                        <xs:element name="Total" type="Amount">
+                                <xs:annotation>
+                                        <xs:documentation source="http://www.openapplications.org/oagis">Is the extended total amount for the Allowance</xs:documentation>
+                                </xs:annotation>
+                        </xs:element>
+                        <xs:element name="Description" type="Description" minOccurs="0" maxOccurs="unbounded">
+                                <xs:annotation>
+                                        <xs:documentation source="http://www.openapplications.org/oagis">Description of the Allowance.</xs:documentation>
+                                </xs:annotation>
+                        </xs:element>
+                        <xs:element name="LineNumber" type="LineNumber" minOccurs="0">
+                                <xs:annotation>
+                                        <xs:documentation source="http://www.openapplications.org/oagis">Is the Allowance instance within the given document.</xs:documentation>
+                                </xs:annotation>
+                        </xs:element>
+                        <xs:element name="PercentQuantity" type="Quantity" minOccurs="0">
+                                <xs:annotation>
+                                        <xs:documentation source="http://www.openapplications.org/oagis">Is the Allowance Percentage of the Amount.</xs:documentation>
+                                </xs:annotation>
+                        </xs:element>
+                        <xs:element ref="Charges" minOccurs="0" maxOccurs="unbounded"/>
+                        <xs:element ref="Tax" minOccurs="0" maxOccurs="unbounded"/>
+                        <xs:element ref="UserArea" minOccurs="0"/>
+                </xs:sequence>
+        </xs:complexType>
+        <xs:element name="Allowance" type="Allowance"/>
+<!-- -->
+<!-- Charge type and substitutions-->
+<!-- Good place for BOF design pattern, because the semantic changes with each substitutable element -->
+        <xs:element name="Charges" type="Charges">
+                <xs:annotation>
+                        <xs:documentation source="http://www.openapplications.org/oagis">Collects the semantically named Charges for the Components that reference Charges. The combination of the semantically rich name and the position with in the Business Object Document provide the context for the Charge.</xs:documentation>
+                </xs:annotation>
+        </xs:element>
+        <xs:complexType name="Charges">
+                <xs:sequence>
+                        <xs:element ref="Charge" minOccurs="0" maxOccurs="unbounded"/>
+                        <xs:element name="TotalCharge" type="Charge" minOccurs="0"/>
+                </xs:sequence>
+        </xs:complexType>
+        <xs:complexType name="Charge">
+                <xs:annotation>
+                        <xs:documentation source="http://www.openapplications.org/oagis">A charge identifies and monetary amount that must be paid.</xs:documentation>
+                </xs:annotation>
+                <xs:sequence>
+                        <xs:element name="Id" type="ChargeId" minOccurs="0"/>
+                        <xs:element name="Total" type="Amount" minOccurs="0">
+                                <xs:annotation>
+                                        <xs:documentation source="http://www.openapplications.org/oagis">Is the extended monitary amount for this instance of Charge.</xs:documentation>
+                                </xs:annotation>
+                        </xs:element>
+                        <xs:element name="Cost" type="AmountPerQuantity" minOccurs="0">
+                                <xs:annotation>
+                                        <xs:documentation source="http://www.openapplications.org/oagis">Indicates the Cost per Quantity of the Charge.</xs:documentation>
+                                </xs:annotation>
+                        </xs:element>
+                        <xs:element name="Description" type="Description" minOccurs="0" maxOccurs="unbounded">
+                                <xs:annotation>
+                                        <xs:documentation source="http://www.openapplications.org/oagis">Is a description of the charge.</xs:documentation>
+                                </xs:annotation>
+                        </xs:element>
+                        <xs:element ref="Distribution" minOccurs="0" maxOccurs="unbounded"/>
+                        <xs:element ref="UserArea" minOccurs="0"/>
+                </xs:sequence>
+        </xs:complexType>
+        <xs:element name="Charge" type="Charge"/>
+        <xs:element name="AllCharge" type="Charge" substitutionGroup="Charge"/>
+        <xs:element name="AdditionalCharge" type="Charge" substitutionGroup="Charge"/>
+        <xs:element name="TransportationCharge" type="Charge" substitutionGroup="Charge"/>
+        <xs:element name="TransportPlusAdditionalCharge" type="Charge" substitutionGroup="Charge"/>
+        <xs:element name="BasicFreightCharge" type="Charge" substitutionGroup="Charge"/>
+        <xs:element name="DestinationHaulageCharge" type="Charge" substitutionGroup="Charge"/>
+        <xs:element name="DistribursmentCharge" type="Charge" substitutionGroup="Charge"/>
+        <xs:element name="DestinationPortCharge" type="Charge" substitutionGroup="Charge"/>
+        <xs:element name="MiscellaneousCharge" type="Charge" substitutionGroup="Charge"/>
+        <xs:element name="TransportToLocationCharge" type="Charge" substitutionGroup="Charge"/>
+        <xs:element name="OriginPortCharge" type="Charge" substitutionGroup="Charge"/>
+        <xs:element name="SpecificAmountCharge" type="Charge" substitutionGroup="Charge"/>
+        <xs:element name="AllCostsToLocationCharge" type="Charge" substitutionGroup="Charge"/>
+        <xs:element name="WeightValuationCharge" type="Charge" substitutionGroup="Charge"/>
+        <xs:element name="SupplementaryCharge" type="Charge" substitutionGroup="Charge"/>
+<!---->
+<!--Contact Component-->
+        <xs:element name="Contacts" type="Contacts">
+                <xs:annotation>
+                        <xs:documentation source="http://www.openapplications.org/oagis">Associated contacts for this party.</xs:documentation>
+                </xs:annotation>
+        </xs:element>
+        <xs:complexType name="Contacts">
+                <xs:sequence>
+                        <xs:element ref="ContactAbs" minOccurs="0" maxOccurs="unbounded"/>
+                </xs:sequence>
+        </xs:complexType>
+        <xs:complexType name="Contact">
+                <xs:annotation>
+                        <xs:documentation source="http://www.openapplications.org/oagis">A business Party contact is a person and has a specific role.</xs:documentation>
+                </xs:annotation>
+                <xs:sequence>
+                        <xs:element ref="Person" minOccurs="0" maxOccurs="unbounded"/>
+                        <xs:element name="Telephone" type="TelephoneNumber" minOccurs="0" maxOccurs="unbounded"/>
+                        <xs:element name="EMailAddress" type="EMailAddress" minOccurs="0" maxOccurs="unbounded"/>
+                        <xs:element name="Fax" type="TelephoneNumber" minOccurs="0" maxOccurs="unbounded"/>
+                        <xs:element name="URI" type="URI" minOccurs="0" maxOccurs="unbounded"/>
+                        <xs:element name="Description" type="Description" minOccurs="0" maxOccurs="unbounded"/>
+                        <xs:element ref="Addresses" minOccurs="0"/>
+                        <xs:element ref="UserArea" minOccurs="0"/>
+                </xs:sequence>
+        </xs:complexType>
+        <xs:element name="ContactAbs" type="Contact"/>
+        <xs:element name="Contact" type="Contact" substitutionGroup="ContactAbs"/>
+        <xs:element name="AccountingContact" type="Contact" substitutionGroup="ContactAbs">
+                <xs:annotation>
+                        <xs:documentation source="http://www.openapplications.org/oagis">The person with accounting responsiblities. This is added to replace USERID in LoadPurchaseLedgerInvoice</xs:documentation>
+                </xs:annotation>
+        </xs:element>
+        <xs:element name="PrimaryContact" type="Contact" substitutionGroup="ContactAbs"/>
+        <xs:element name="SecondaryContact" type="Contact" substitutionGroup="ContactAbs"/>
+        <xs:element name="SalesContact" type="Contact" substitutionGroup="ContactAbs"/>
+        <xs:element name="MarketingContact" type="Contact" substitutionGroup="ContactAbs"/>
+        <xs:element name="DeliverToContact" type="Contact" substitutionGroup="ContactAbs">
+                <xs:annotation>
+                        <xs:documentation source="http://www.openapplications.org/oagis">Is the person(s) or department in which to deliver the ordered items to.</xs:documentation>
+                </xs:annotation>
+        </xs:element>
+<!--================================================================================================-->
+<!--PartyReference Birds of a Feather (BOF)-->
+<!-- -->
+        <xs:element name="PartyReferences" type="PartyReferences">
+                <xs:annotation>
+                        <xs:documentation source="http://www.openapplications.org/oagis">References to any parties.</xs:documentation>
+                </xs:annotation>
+        </xs:element>
+        <xs:complexType name="PartyReferences">
+                <xs:sequence>
+                        <xs:element ref="PartyReference" minOccurs="0" maxOccurs="unbounded"/>
+                </xs:sequence>
+        </xs:complexType>
+        <xs:complexType name="PartyReference">
+                <xs:sequence>
+                        <xs:element name="PartyId" type="PartyAssignedPartyId" minOccurs="0">
+                                <xs:annotation>
+                                        <xs:documentation source="http://www.openapplications.org/oagis">Identifies the Party being referenced.</xs:documentation>
+                                </xs:annotation>
+                        </xs:element>
+                        <xs:element name="Name" type="Name" minOccurs="0" maxOccurs="unbounded"/>
+                        <xs:element ref="UserArea" minOccurs="0"/>
+                </xs:sequence>
+        </xs:complexType>
+        <xs:element name="PartyReference" type="PartyReference"/>
+        <xs:element name="CarrierReference" type="PartyReference" substitutionGroup="PartyReference">
+                <xs:annotation>
+                        <xs:documentation source="http://www.openapplications.org/oagis">Identifies a reference to a Carrier.</xs:documentation>
+                </xs:annotation>
+        </xs:element>
+        <xs:element name="CustomerReference" type="PartyReference" substitutionGroup="PartyReference"/>
+        <xs:element name="ShipToReference" type="PartyReference" substitutionGroup="PartyReference"/>
+        <xs:element name="PayFromReference" type="PartyReference" substitutionGroup="PartyReference"/>
+        <xs:element name="BrokerReference" type="PartyReference" substitutionGroup="PartyReference"/>
+        <xs:element name="EmployeeReference" type="PartyReference" substitutionGroup="PartyReference"/>
+        <xs:element name="FreightBillToReference" type="PartyReference" substitutionGroup="PartyReference"/>
+        <xs:element name="JointVentureReference" type="PartyReference" substitutionGroup="PartyReference"/>
+        <xs:element name="ManufacturerReference" type="PartyReference" substitutionGroup="PartyReference"/>
+        <xs:element name="PublisherReference" type="PartyReference" substitutionGroup="PartyReference"/>
+        <xs:element name="RemitToReference" type="PartyReference" substitutionGroup="PartyReference"/>
+        <xs:element name="ShipFromReference" type="PartyReference" substitutionGroup="PartyReference"/>
+        <xs:element name="SupplierReference" type="PartyReference" substitutionGroup="PartyReference"/>
+        <xs:element name="ShipperReference" type="PartyReference" substitutionGroup="PartyReference"/>
+<!---->
+<!--Party BOF-->
+        <xs:element name="Parties" type="Parties">
+                <xs:annotation>
+                        <xs:documentation source="http://www.openapplications.org/oagis">Grouping of semantically named Parties.</xs:documentation>
+                </xs:annotation>
+        </xs:element>
+        <xs:complexType name="Parties" block="extension">
+                <xs:sequence>
+                        <xs:element ref="PartyType" minOccurs="0" maxOccurs="unbounded"/>
+                </xs:sequence>
+        </xs:complexType>
+        <xs:complexType name="PartyBase" abstract="true">
+                <xs:annotation>
+                        <xs:documentation source="http://www.openapplications.org/oagis">A mininmal Party type, as root to Party subst group type hierarchy </xs:documentation>
+                </xs:annotation>
+                <xs:complexContent>
+                        <xs:extension base="Noun">
+                                <xs:sequence>
+                                        <xs:element name="PartyId" type="PartyIdType" minOccurs="0"/>
+                                        <xs:element name="AlternatePartyIds" type="AlternatePartyIds" minOccurs="0">
+                                                <xs:annotation>
+                                                        <xs:documentation source="http://www.openapplications.org/oagis">Equivalent to OAGIS 7.x PartyIdX. This group allows for multiple, party-identified "X"s. </xs:documentation>
+                                                        <xs:documentation source="http://www.openapplications.org/oagis">Equivalent to OAGIS 7.x PartyIdX. This group allows for multiple, party-identified "X"s. </xs:documentation>
+                                                </xs:annotation>
+                                        </xs:element>
+                                </xs:sequence>
+                                <xs:attribute name="active" type="xs:boolean" use="optional" default="false"/>
+                                <xs:attribute name="oneTime" type="xs:boolean" use="optional" default="false"/>
+                        </xs:extension>
+                </xs:complexContent>
+        </xs:complexType>
+        <xs:complexType name="PartyInstitutional">
+                <xs:annotation>
+                        <xs:documentation source="http://www.openapplications.org/oagis">A business entity that plays some role in the transaction, either actively or  by reference (active parties  in a purchase might be the CustomerParty or the SupplierParty, while Manufacturer would be referenced Party  that plays no active role in the transaction).
+
+The Party type carries with it all of the identifying and descriptive information about the party. 
+
+A specific Party's role name is captured in the corresponding element's name, following the so-called "semantically-named element substitution group" design pattern. The instance is named [rolename]Party, as in SupplierParty, CustomerParty, etc. Each is of type Party, or of some derived type.
+
+Need to bring more Party elements into PartyBase, once reg testing can be broken for a little while. mdf</xs:documentation>
+                </xs:annotation>
+                <xs:complexContent>
+                        <xs:extension base="PartyBase">
+                                <xs:sequence>
+                                        <xs:element name="Name" type="Name" minOccurs="0" maxOccurs="unbounded">
+                                                <xs:annotation>
+                                                        <xs:documentation source="http://www.openapplications.org/oagis">Name of the Party.</xs:documentation>
+                                                </xs:annotation>
+                                        </xs:element>
+                                        <xs:element ref="Business" minOccurs="0"/>
+                                        <xs:element name="Currency" type="Currency" minOccurs="0">
+                                                <xs:annotation>
+                                                        <xs:documentation source="http://www.openapplications.org/oagis">Currency used by the party.</xs:documentation>
+                                                </xs:annotation>
+                                        </xs:element>
+                                        <xs:element name="Description" type="Description" minOccurs="0" maxOccurs="unbounded">
+                                                <xs:annotation>
+                                                        <xs:documentation source="http://www.openapplications.org/oagis">Description of the Party.</xs:documentation>
+                                                </xs:annotation>
+                                        </xs:element>
+                                        <xs:element name="GLEntity" type="GLEntity" minOccurs="0">
+                                                <xs:annotation>
+                                                        <xs:documentation source="http://www.openapplications.org/oagis">Is the GL Entity Source for the party.</xs:documentation>
+                                                </xs:annotation>
+                                        </xs:element>
+                                        <xs:element name="PaymentMethod" type="PaymentMethod" minOccurs="0">
+                                                <xs:annotation>
+                                                        <xs:documentation source="http://www.openapplications.org/oagis">Identifies the party's perferred payment method.</xs:documentation>
+                                                </xs:annotation>
+                                        </xs:element>
+                                        <xs:element name="Rating" type="Rating" minOccurs="0">
+                                                <xs:annotation>
+                                                        <xs:documentation source="http://www.openapplications.org/oagis">Rating level of the party...This can be for Customer, Supplier, Carrier etc.</xs:documentation>
+                                                </xs:annotation>
+                                        </xs:element>
+                                        <xs:element name="TaxExemptInd" type="Indicator" minOccurs="0">
+                                                <xs:annotation>
+                                                        <xs:documentation source="http://www.openapplications.org/oagis">Inidicates whether the Party is Tax exempt.</xs:documentation>
+                                                </xs:annotation>
+                                        </xs:element>
+                                        <xs:element name="TaxId" type="Id" minOccurs="0">
+                                                <xs:annotation>
+                                                        <xs:documentation source="http://www.openapplications.org/oagis">Is the party's TaxId</xs:documentation>
+                                                </xs:annotation>
+                                        </xs:element>
+                                        <xs:element name="TermId" type="Id" minOccurs="0">
+                                                <xs:annotation>
+                                                        <xs:documentation source="http://www.openapplications.org/oagis">Identifies the terms to be used with this party.</xs:documentation>
+                                                </xs:annotation>
+                                        </xs:element>
+                                        <xs:element ref="Addresses" minOccurs="0"/>
+                                        <xs:element ref="Contacts" minOccurs="0"/>
+                                        <xs:element ref="Attachments" minOccurs="0"/>
+                                        <xs:element ref="CorrespondenceLanguage" minOccurs="0" maxOccurs="unbounded"/>
+                                        <xs:element ref="Qualification" minOccurs="0" maxOccurs="unbounded"/>
+                                        <xs:element ref="UserArea" minOccurs="0"/>
+                                </xs:sequence>
+                        </xs:extension>
+                </xs:complexContent>
+        </xs:complexType>
+        <xs:element name="PartyType" type="PartyBase" abstract="true"/>
+        <xs:element name="SoldToParty" type="PartyInstitutional" substitutionGroup="PartyType"/>
+        <xs:element name="BillToParty" type="PartyInstitutional" substitutionGroup="PartyType"/>
+        <xs:element name="CustomerParty" type="PartyInstitutional" substitutionGroup="PartyType"/>
+        <xs:element name="ShipToParty" type="PartyInstitutional" substitutionGroup="PartyType"/>
+        <xs:element name="PayFromParty" type="PartyInstitutional" substitutionGroup="PartyType"/>
+        <xs:element name="BrokerParty" type="PartyInstitutional" substitutionGroup="PartyType"/>
+        <xs:element name="CarrierParty" type="PartyInstitutional" substitutionGroup="PartyType"/>
+        <xs:element name="EmployeeParty" type="PartyInstitutional" substitutionGroup="PartyType"/>
+        <xs:element name="FreightBillToParty" type="PartyInstitutional" substitutionGroup="PartyType"/>
+        <xs:element name="JointVentureParty" type="PartyInstitutional" substitutionGroup="PartyType"/>
+        <xs:element name="ManufacturerParty" type="PartyInstitutional" substitutionGroup="PartyType"/>
+        <xs:element name="PublisherParty" type="PartyInstitutional" substitutionGroup="PartyType"/>
+        <xs:element name="RemitToParty" type="PartyInstitutional" substitutionGroup="PartyType"/>
+        <xs:element name="ShipFromParty" type="PartyInstitutional" substitutionGroup="PartyType"/>
+        <xs:element name="SupplierParty" type="PartyInstitutional" substitutionGroup="PartyType"/>
+        <xs:element name="HoldAtParty" type="PartyInstitutional" substitutionGroup="PartyType"/>
+        <xs:element name="ImporterParty" type="PartyInstitutional" substitutionGroup="PartyType"/>
+        <xs:element name="ExporterParty" type="PartyInstitutional" substitutionGroup="PartyType"/>
+        <xs:element name="ReturnToParty" type="PartyInstitutional" substitutionGroup="PartyType"/>
+<!-- -->
+<!--Item Information-->
+        <xs:element name="Item" type="Item">
+                <xs:annotation>
+                        <xs:documentation source="http://www.openapplications.org/oagis">Identifies the Item being used.</xs:documentation>
+                </xs:annotation>
+        </xs:element>
+        <xs:complexType name="Item">
+                <xs:sequence>
+                        <xs:element ref="ItemId" minOccurs="0"/>
+                        <xs:element name="Type" type="ItemType" minOccurs="0">
+                                <xs:annotation>
+                                        <xs:documentation source="http://www.openapplications.org/oagis">Indicates whether the item is a good, a service, or a resource.  This is used to describe inventoried items.  Examples of this value include documents, jigs, fixtures, tools, or bulk items.</xs:documentation>
+                                </xs:annotation>
+                        </xs:element>
+                        <xs:element name="Variation" type="Variation" minOccurs="0">
+                                <xs:annotation>
+                                        <xs:documentation source="http://www.openapplications.org/oagis">Is used to distinguish Items that have the same Item identifier.  It is intended to identify a lower level variation of the Item from the Item Revision.  This is usually used to describe a property of the Item that is most distinguishable.This is not meant to describe detail configurations of an Item or Bill of Material.  They are to be described in each of those BODs.  This is to be used for slight variations on a particular Routing.</xs:documentation>
+                                </xs:annotation>
+                        </xs:element>
+                        <xs:element ref="Disposition" minOccurs="0"/>
+                        <xs:element ref="Property" minOccurs="0" maxOccurs="unbounded"/>
+                        <xs:element ref="UserArea" minOccurs="0"/>
+                </xs:sequence>
+        </xs:complexType>
+<!-- Orderd Item Type -->
+        <xs:complexType name="OrderItem">
+                <xs:annotation>
+                        <xs:documentation source="http://www.openapplications.org/oagis">Provides information on the Orderable Item. When associated with an order like a Purchase Order, it identifies the item being ordered at the associated Line.</xs:documentation>
+                </xs:annotation>
+                <xs:sequence>
+                        <xs:element ref="ItemIds" minOccurs="0"/>
+                        <xs:element ref="ItemStatus" minOccurs="0"/>
+                        <xs:element name="Commodity" type="Commodity" minOccurs="0" maxOccurs="unbounded">
+                                <xs:annotation>
+                                        <xs:documentation source="http://www.openapplications.org/oagis">Identify groupings of items by commodity codes.</xs:documentation>
+                                </xs:annotation>
+                        </xs:element>
+                        <xs:element name="ItemCategoryId" type="ItemCategoryId" minOccurs="0">
+                                <xs:annotation>
+                                        <xs:documentation source="http://www.openapplications.org/oagis">Is a reference to a description of a group of products.  The products may be products that you formally describe in your system as a part number, or you may transact only the category.  An example of a simple classification of an item may be under Office Supplies.
+
+An example of a complex classification of an item may be for engineering supplies:
+
+Engineering Discipline - Electrical 
+Equipment Type - Process Control Equipment
+Equipment Sub Type - Flow Control
+Equipment Use - Flow/No Flow Indicators</xs:documentation>
+                                </xs:annotation>
+                        </xs:element>
+                        <xs:element name="ItemType" type="Type" minOccurs="0">
+                                <xs:annotation>
+                                        <xs:documentation source="http://www.openapplications.org/oagis">Indentifies a type of Item.</xs:documentation>
+                                </xs:annotation>
+                        </xs:element>
+                        <xs:element name="Definition" type="Description" minOccurs="0" maxOccurs="unbounded">
+                                <xs:annotation>
+                                        <xs:documentation source="http://www.openapplications.org/oagis">Indicates the definition of the OrderItem.</xs:documentation>
+                                </xs:annotation>
+                        </xs:element>
+                        <xs:element name="Description" type="Description" minOccurs="0" maxOccurs="unbounded">
+                                <xs:annotation>
+                                        <xs:documentation source="http://www.openapplications.org/oagis">Describes the OrderItem.</xs:documentation>
+                                </xs:annotation>
+                        </xs:element>
+                        <xs:element name="SerialNumber" type="SerialNumber" minOccurs="0" maxOccurs="unbounded">
+                                <xs:annotation>
+                                        <xs:documentation source="http://www.openapplications.org/oagis">Identifies the instances of the OrderItems one serial number for each up to potentially OrderQuantity.</xs:documentation>
+                                </xs:annotation>
+                        </xs:element>
+                        <xs:element name="ParentSerialNumber" type="SerialNumber" minOccurs="0">
+                                <xs:annotation>
+                                        <xs:documentation source="http://www.openapplications.org/oagis">Identifies the Parents Serial Number.</xs:documentation>
+                                </xs:annotation>
+                        </xs:element>
+                        <xs:element ref="HazardousMaterial" minOccurs="0">
+                                <xs:annotation>
+                                        <xs:documentation source="http://www.openapplications.org/oagis">Needs to be typed with HazardousMaterial structure</xs:documentation>
+                                </xs:annotation>
+                        </xs:element>
+                        <xs:element name="ProductLine" type="Id" minOccurs="0">
+                                <xs:annotation>
+                                        <xs:documentation source="http://www.openapplications.org/oagis">Identifieas the ProductLine of the Orderable Item.</xs:documentation>
+                                </xs:annotation>
+                        </xs:element>
+                        <xs:element ref="Lot" minOccurs="0" maxOccurs="unbounded">
+                                <xs:annotation>
+                                        <xs:documentation source="http://www.openapplications.org/oagis">Indicates the LotLevel of the Orderable Item.</xs:documentation>
+                                </xs:annotation>
+                        </xs:element>
+                        <xs:element ref="FeatureValue" minOccurs="0"/>
+                        <xs:element ref="Attachments" minOccurs="0"/>
+                        <xs:element ref="UserArea" minOccurs="0"/>
+                </xs:sequence>
+        </xs:complexType>
+        <xs:element name="OrderItem" type="OrderItem">
+                <xs:annotation>
+                        <xs:documentation source="http://www.openapplications.org/oagis">Provides information on the Orderable Item. When associated with an order like a Purchase Order, it identifies the item being ordered at the associated Line.</xs:documentation>
+                </xs:annotation>
+        </xs:element>
+<!---->
+<!--This should be changed to something more generic, Status( @code, description) Kurt-->
+        <xs:complexType name="StateChange">
+                <xs:sequence>
+                        <xs:element name="From" type="Code" minOccurs="0">
+                                <xs:annotation>
+                                        <xs:documentation source="http://www.openapplications.org/oagis">Is the Status Code before the change.</xs:documentation>
+                                </xs:annotation>
+                        </xs:element>
+                        <xs:element name="To" type="Code" minOccurs="0">
+                                <xs:annotation>
+                                        <xs:documentation source="http://www.openapplications.org/oagis">Is the status code after the change.</xs:documentation>
+                                </xs:annotation>
+                        </xs:element>
+                        <xs:element name="ChangeDate" type="DateTimeAny" minOccurs="0">
+                                <xs:annotation>
+                                        <xs:documentation source="http://www.openapplications.org/oagis">Indicates when the status change occured.</xs:documentation>
+                                </xs:annotation>
+                        </xs:element>
+                        <xs:element name="Description" type="Description" minOccurs="0" maxOccurs="unbounded">
+                                <xs:annotation>
+                                        <xs:documentation source="http://www.openapplications.org/oagis">Description of the status change.</xs:documentation>
+                                </xs:annotation>
+                        </xs:element>
+                        <xs:element ref="UserArea" minOccurs="0"/>
+                </xs:sequence>
+        </xs:complexType>
+        <xs:complexType name="Status">
+                <xs:sequence>
+                        <xs:element name="Code" type="Code" minOccurs="0">
+                                <xs:annotation>
+                                        <xs:documentation source="http://www.openapplications.org/oagis">Is the Code to indicate the status for the Noun or Component in which the Status Component occurs.</xs:documentation>
+                                </xs:annotation>
+                        </xs:element>
+                        <xs:element name="Description" type="Description" minOccurs="0" maxOccurs="unbounded">
+                                <xs:annotation>
+                                        <xs:documentation source="http://www.openapplications.org/oagis">Is a description of the Status.</xs:documentation>
+                                </xs:annotation>
+                        </xs:element>
+                        <xs:element name="Change" type="StateChange" minOccurs="0" maxOccurs="unbounded">
+                                <xs:annotation>
+                                        <xs:documentation source="http://www.openapplications.org/oagis">Indicates the  status codes of the change when.</xs:documentation>
+                                </xs:annotation>
+                        </xs:element>
+                        <xs:element ref="UserArea" minOccurs="0"/>
+                </xs:sequence>
+        </xs:complexType>
+        <xs:element name="Status" type="Status">
+                <xs:annotation>
+                        <xs:documentation source="http://www.openapplications.org/oagis">Indicates the state of the Noun or Component in which it occurs.</xs:documentation>
+                </xs:annotation>
+        </xs:element>
+        <xs:element name="ItemStatus" type="Status">
+                <xs:annotation>
+                        <xs:documentation source="http://www.openapplications.org/oagis">Indicates whether an item is active, inactive, or in other various states.  Examples of values for this field include:	Active, Inactive, Hold, Deleted, Obsolete</xs:documentation>
+                </xs:annotation>
+        </xs:element>
+        <xs:element name="Type" type="Status">
+                <xs:annotation>
+                        <xs:documentation source="http://www.openapplications.org/oagis">Further qualifies the type of semantic component or document.</xs:documentation>
+                </xs:annotation>
+        </xs:element>
+        <xs:complexType name="Disposition">
+                <xs:annotation>
+                        <xs:documentation source="http://www.openapplications.org/oagis">Determines the receipt routing of an item or part.
+
+Examples of values include:
+  Customer consignment
+  Inspection
+  Vendor consignment
+  Blocked
+  Bonded
+  User defined
+
+SYNONYMS
+  Receipt Routing
+  Material Status
+  Material Condition Code</xs:documentation>
+                </xs:annotation>
+                <xs:complexContent>
+                        <xs:extension base="Status"/>
+                </xs:complexContent>
+        </xs:complexType>
+        <xs:element name="Disposition" type="Disposition">
+                <xs:annotation>
+                        <xs:documentation source="http://www.openapplications.org/oagis">Indicates whether an item is active, inactive, or in other various states.  Examples of values for this field include:	Active, Inactive, Hold, Deleted, Obsolete</xs:documentation>
+                </xs:annotation>
+        </xs:element>
+        <xs:element name="RoutingDisposition" type="Disposition">
+                <xs:annotation>
+                        <xs:documentation source="http://www.openapplications.org/oagis">Indicates the receipt routing disposition for an Item.</xs:documentation>
+                </xs:annotation>
+        </xs:element>
+<!--Added OrderStatus, because Status is to specific to be global, kurt-->
+        <xs:complexType name="OrderStatus">
+                <xs:sequence>
+                        <xs:element name="Code">
+                                <xs:annotation>
+                                        <xs:documentation source="http://www.openapplications.org/oagis">Indicates the Status Code of the Order.</xs:documentation>
+                                </xs:annotation>
+                                <xs:simpleType>
+                                        <xs:restriction base="xs:NMTOKEN">
+                                                <xs:enumeration value="Open"/>
+                                                <xs:enumeration value="Closed"/>
+                                                <xs:enumeration value="Cancelled"/>
+                                                <xs:enumeration value="Blocked"/>
+                                                <xs:enumeration value="Hold"/>
+                                        </xs:restriction>
+                                </xs:simpleType>
+                        </xs:element>
+                        <xs:element name="Description" type="Description" minOccurs="0" maxOccurs="unbounded">
+                                <xs:annotation>
+                                        <xs:documentation source="http://www.openapplications.org/oagis">Describes the OrderStatus.</xs:documentation>
+                                </xs:annotation>
+                        </xs:element>
+                        <xs:element name="AcknowledgementDetail" type="Status" minOccurs="0" maxOccurs="unbounded">
+                                <xs:annotation>
+                                        <xs:documentation source="http://www.openapplications.org/oagis">Provides Acknowledgement information for the Order.</xs:documentation>
+                                </xs:annotation>
+                        </xs:element>
+                        <xs:element ref="UserArea" minOccurs="0"/>
+                </xs:sequence>
+                <xs:attribute name="entryDateTime" type="DateTime"/>
+        </xs:complexType>
+        <xs:element name="OrderStatus" type="OrderStatus">
+                <xs:annotation>
+                        <xs:documentation source="http://www.openapplications.org/oagis">Order specific status information.</xs:documentation>
+                </xs:annotation>
+        </xs:element>
+        <xs:complexType name="AcknowledgementDetail">
+                <xs:complexContent>
+                        <xs:extension base="Status"/>
+                </xs:complexContent>
+        </xs:complexType>
+        <xs:element name="AcknowledgementDetail" type="AcknowledgementDetail"/>
+<!-- -->
+<!-- Tax type -->
+        <xs:complexType name="Tax">
+                <xs:annotation>
+                        <xs:documentation source="http://www.openapplications.org/oagis">Identifies a type of tax on order related BODs</xs:documentation>
+                </xs:annotation>
+                <xs:sequence>
+                        <xs:element name="TaxAmount" type="Amount" minOccurs="0">
+                                <xs:annotation>
+                                        <xs:documentation source="http://www.openapplications.org/oagis">Identifies the amount of tax charged based on teh TaxBase Amount.</xs:documentation>
+                                </xs:annotation>
+                        </xs:element>
+                        <xs:element name="TaxBaseAmount" type="Amount" minOccurs="0">
+                                <xs:annotation>
+                                        <xs:documentation source="http://www.openapplications.org/oagis">Indicates the taxable base used to calculate the tax Amount.</xs:documentation>
+                                </xs:annotation>
+                        </xs:element>
+                        <xs:element name="PercentQuantity" type="Quantity" minOccurs="0">
+                                <xs:annotation>
+                                        <xs:documentation source="http://www.openapplications.org/oagis">Identifyies the tax percentage that is applied to the TaxBaseAmount to get the TaxAmount.</xs:documentation>
+                                </xs:annotation>
+                        </xs:element>
+                        <xs:element name="Description" type="Description" minOccurs="0" maxOccurs="unbounded">
+                                <xs:annotation>
+                                        <xs:documentation source="http://www.openapplications.org/oagis">Describes the Tax.</xs:documentation>
+                                </xs:annotation>
+                        </xs:element>
+                        <xs:element name="LineNumber" type="LineNumber" minOccurs="0">
+                                <xs:annotation>
+                                        <xs:documentation source="http://www.openapplications.org/oagis">Indicates the LineNumber.</xs:documentation>
+                                </xs:annotation>
+                        </xs:element>
+                        <xs:element name="TaxCode" type="TaxCode" minOccurs="0">
+                                <xs:annotation>
+                                        <xs:documentation source="http://www.openapplications.org/oagis">Indicates that tax code of the tax being represented by the given instance of tax.</xs:documentation>
+                                </xs:annotation>
+                        </xs:element>
+                        <xs:element name="TaxJurisdiction" type="TaxJurisdiction" minOccurs="0">
+                                <xs:annotation>
+                                        <xs:documentation source="http://www.openapplications.org/oagis">Indicates the Tax Jurisdiction in which the given tax applies.</xs:documentation>
+                                </xs:annotation>
+                        </xs:element>
+                        <xs:element ref="Charges" minOccurs="0"/>
+                        <xs:element ref="Tax" minOccurs="0" maxOccurs="unbounded"/>
+                        <xs:element ref="UserArea" minOccurs="0"/>
+                </xs:sequence>
+        </xs:complexType>
+        <xs:element name="Tax" type="Tax">
+                <xs:annotation>
+                        <xs:documentation source="http://www.openapplications.org/oagis">Allows for taxes on tax.</xs:documentation>
+                </xs:annotation>
+        </xs:element>
+        <xs:complexType name="Location">
+                <xs:annotation>
+                        <xs:documentation source="http://www.openapplications.org/oagis">The replacement for SiteLevel, the original, flattened concept of numbered, sibling site levels. Location is intended to capture all of the location information for a given, named location. This could include more than one location descriptor, such as a PostalAddress and the GPS Coordinates.
+
+Location can also be described relative  to other locations, by including a  "Proximal Location" (a location nearby or surrounding/containing this location). In this fashion, locations can be identified and cascaded, e.g., the top floor of The Forrester Building which is at 400 Tech Square, right next to the Acamai Building:
+	<Location>
+                                        <Name>top floor</Name>
+                                        <ProximalLocation>
+                                                <Name>The Forrester Building</Name>
+                                                <Address>
+                                                        <AddressLine>400 Tech Square </AddressLine>
+                                                </Address>
+                                                <ProximalLocation>
+                                                        <Name>Next to the Acamai Building</Name>
+                                                </ProximalLocation>
+                                        </ProximalLocation>
+                                </Location>
+
+or in Bin 21 on Shelf 4 at Row 3B in Building 19:
+
+     <Location>
+                                        <Name>Bin</Name>
+                                        <Id>31</Id>
+                                        <ProximalLocation>
+                                                <Name>Shelf</Name>
+                                                <Id>4</Id>
+                                                <ProximalLocation>
+                                                        <Name>Row</Name>
+                                                        <Id>3B</Id>
+                                                        <ProximalLocation>
+                                                                <Name>Building</Name>
+                                                                <Id>19</Id>
+                                                                <Address>...</Address>
+                                                        </ProximalLocation>
+                                                </ProximalLocation>
+                                        </ProximalLocation>
+                                </Location>
+                        </xs:documentation>
+                </xs:annotation>
+                <xs:complexContent>
+                        <xs:extension base="Noun">
+                                <xs:sequence>
+                                        <xs:element name="Name" type="Name" minOccurs="0" maxOccurs="unbounded">
+                                                <xs:annotation>
+                                                        <xs:documentation source="http://www.openapplications.org/oagis">A name that is associated with the location.</xs:documentation>
+                                                </xs:annotation>
+                                        </xs:element>
+                                        <xs:element name="Id" type="LocationId" minOccurs="0">
+                                                <xs:annotation>
+                                                        <xs:documentation source="http://www.openapplications.org/oagis">Is a unique identifier of the location.</xs:documentation>
+                                                </xs:annotation>
+                                        </xs:element>
+                                        <xs:element name="Description" type="Description" minOccurs="0" maxOccurs="unbounded">
+                                                <xs:annotation>
+                                                        <xs:documentation source="http://www.openapplications.org/oagis">Description of the location.</xs:documentation>
+                                                </xs:annotation>
+                                        </xs:element>
+                                        <xs:element ref="PostalAddress" minOccurs="0"/>
+                                        <xs:element ref="GPSCoordinates" minOccurs="0"/>
+                                        <xs:element name="LocationRelationship" type="ProximalLocation" minOccurs="0" maxOccurs="unbounded">
+                                                <xs:annotation>
+                                                        <xs:documentation source="http://www.openapplications.org/oagis">The surrounding or containing location - the location where you find this location. Some things are situated only within a named location, as in "the desk" in "the last office on the right" or "the loading dock" at "the west entrance" at "400 Tech Square." It's possible that the current location can be described in relation to more than one other proximal location: "Last street on the left", "Just across from the Donut Shack."</xs:documentation>
+                                                </xs:annotation>
+                                        </xs:element>
+                                        <xs:element name="Note" type="Note" minOccurs="0" maxOccurs="unbounded">
+                                                <xs:annotation>
+                                                        <xs:documentation source="http://www.openapplications.org/oagis">Note about the location.</xs:documentation>
+                                                </xs:annotation>
+                                        </xs:element>
+                                        <xs:element ref="UserArea" minOccurs="0"/>
+                                </xs:sequence>
+                        </xs:extension>
+                </xs:complexContent>
+        </xs:complexType>
+        <xs:complexType name="ProximalLocation">
+                <xs:annotation>
+                        <xs:documentation source="http://www.openapplications.org/oagis">Reflects the relationship of a thing to a location, using a "binder" and a location. If a Part is located "in Bin 23", the binder is "in" and the location is "Bin 23".</xs:documentation>
+                </xs:annotation>
+                <xs:sequence>
+                        <xs:element name="Binder" type="SpatialRelationshipDescriptor" minOccurs="0">
+                                <xs:annotation>
+                                        <xs:documentation source="http://www.openapplications.org/oagis">The word used as a binder or connector to describe the relationship of the two locations. Typical values include: on, in, on top of, under, above, adjacent to, cattycorner, down the street from, etc. </xs:documentation>
+                                </xs:annotation>
+                        </xs:element>
+                        <xs:element ref="Location" minOccurs="0"/>
+                        <xs:element ref="UserArea" minOccurs="0"/>
+                </xs:sequence>
+        </xs:complexType>
+        <xs:element name="Location" type="Location" substitutionGroup="Noun">
+                <xs:annotation>
+                        <xs:documentation source="http://www.openapplications.org/oagis">The location of a thing, as captured by an address (or addresses), GPS Coordinates, and/or in relation to other locations.</xs:documentation>
+                </xs:annotation>
+        </xs:element>
+        <xs:element name="Site" type="Location">
+                <xs:annotation>
+                        <xs:documentation source="http://www.openapplications.org/oagis">Identifies the heirachical site level for a position.</xs:documentation>
+                </xs:annotation>
+        </xs:element>
+<!--  -->
+<!--General Ledger
+	<xs:complexType name="GeneralLedgerOld">
+		<xs:complexContent>
+			<xs:extension base="Noun">
+				<xs:sequence>
+					<xs:element name="DocumentDateTime" type="DateTime" minOccurs="0">
+						<xs:annotation><xs:documentation source="Open Applications Group - OAGIS 8.0">Is the date and time the document was last created. This is not the date and time that the BOD message instance was created.</xs:documentation></xs:annotation>
+					</xs:element>
+					<xs:element name="ActualAmount" type="Amount" minOccurs="0">
+						<xs:annotation><xs:documentation source="Open Applications Group - OAGIS 8.0">Is the actual monetary amount of the transaction.</xs:documentation></xs:annotation>
+					</xs:element>
+					<xs:group ref="LedgerEntryContent"/>
+					<xs:element name="Description" type="Description" minOccurs="0" maxOccurs="unbounded"/>
+					<xs:element ref="Attachments" minOccurs="0"/>
+					<xs:element ref="UserArea" minOccurs="0"/>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+-->
+<!--Financial Entities-->
+<!--TransportationTerms-->
+        <xs:complexType name="TransportationTerm">
+                <xs:annotation>
+                        <xs:documentation source="http://www.openapplications.org/oagis">When a seller ships something via common to a buyer in accordance with the Uniform Commerical Code and international legal agreements, you must specify a particular "phrase" that states who assumes the risk of shipment, who is responsible for loading and unloading the goods, where ownership or title to the goods passes, who paid or pays the carrirer, etc.
+
+Examples of these "phrases" include:
+- "FOB Origin Prepaid and Add" (Free On Board - no cost for loading, title passes at seller's dock, seller prepaid freight cost and delivery insurance, seller will freight costs to cost of goods)
+- "FOB Destination" or "FOB Destination Prepaid" (Free On Board - no cost for loading, title passes at buyer's dock, seller prepaid freight cost and delivery insurance)
+
+In software applications, this phrase is commonly split into two coded pieces, a "legal terms" risk and responsibility component for use with common carriers (FOB Destination) and some kind of qualifying component (Prepaid and Add).</xs:documentation>
+                </xs:annotation>
+                <xs:sequence>
+                        <xs:element name="TermCode">
+                                <xs:annotation>
+                                        <xs:documentation source="http://www.openapplications.org/oagis">Is a contractual code used to describe the point where delivery occurs (goods ownership is transferred) in a contract of sale.  It identifies the rights and obligations of each partner  (supplier, carrier and customer) in the transaction and may specify the requirements to assume ownership (i.e. paying for the cost of the goods and/or transportation).
+
+The United Nations Trade Facilitation Information Exchange (UN/TraFIX) has established the following codes (INCOTERMS 1990) for use in international trade to Europe, Asia and the Pacific.  (See http://www.unece.org/trade/rec/rec05en.htm).  These terms may also be found in the United States Uniform Commercial Code (UCC).
+
+EXAMPLES	
+EXW - Ex Works ... (named place) 
+FCA - Free Carrier ... (named place)
+FAS - Free Along Ship ... (named port of shipment)
+FOB - Free On Board ... (named port of shipment)
+CFR - Cost and Freight ... (named port of destination)
+CIF - Cost, Insurance and Freight ... (named port of destination)
+CPT - Carriage Paid To ... (named place of destination)
+CIP - Carriage and Insurance Paid to ... (named place of destination)
+DAF - Delivered At Frontier ... (named place)
+DES - Delivered Ex Ship ... (named port of destination)
+DEQ - Delivered Ex Quay (Duty Paid) ... (named port of destination)
+DDU - Delivered Duty Unpaid ... (named place of destination)
+DDP - Delivered Duty Paid ... (named place of destination)</xs:documentation>
+                                </xs:annotation>
+                                <xs:complexType>
+                                        <xs:simpleContent>
+                                                <xs:extension base="Id">
+                                                        <xs:attribute name="issuingAgency" type="TransportationType" use="required">
+                                                                <xs:annotation>
+                                                                        <xs:documentation source="http://www.openapplications.org/oagis">The United Nations Trade Facilitation Information Exchange (UN/TraFIX) has established the following codes (INCOTERMS 1990) for use in international trade to Europe, Asia and the Pacific.  (See http://www.unece.org/trade/rec/rec05en.htm).</xs:documentation>
+                                                                </xs:annotation>
+                                                        </xs:attribute>
+                                                </xs:extension>
+                                        </xs:simpleContent>
+                                </xs:complexType>
+                        </xs:element>
+                        <xs:element name="PlaceOfOwnershipTransfer" type="Location" minOccurs="0">
+                                <xs:annotation>
+                                        <xs:documentation source="http://www.openapplications.org/oagis">Identifies the place where the transfer of ownership takes place.</xs:documentation>
+                                </xs:annotation>
+                        </xs:element>
+                        <xs:element name="FreightTerms" type="FreightTerms" minOccurs="0">
+                                <xs:annotation>
+                                        <xs:documentation source="http://www.openapplications.org/oagis">Describes how the freight cost for a shipment of goods should be billed. EXAMPLES:  Prepaid, Collect, Third Party, Prepaid and Add, Consignee Billed</xs:documentation>
+                                </xs:annotation>
+                        </xs:element>
+                        <xs:element ref="UserArea" minOccurs="0"/>
+                </xs:sequence>
+        </xs:complexType>
+        <xs:element name="TransportationTerm" type="TransportationTerm">
+                <xs:annotation>
+                        <xs:documentation source="http://www.openapplications.org/oagis">When a seller ships something via common to a buyer in accordance with the Uniform Commerical Code and international legal agreements, you must specify a particular "phrase" that states who assumes the risk of shipment, who is responsible for loading and unloading the goods, where ownership or title to the goods passes, who paid or pays the carrirer, etc.
+
+Examples of these "phrases" include:
+- "FOB Origin Prepaid and Add" (Free On Board - no cost for loading, title passes at seller's dock, seller prepaid freight cost and delivery insurance, seller will freight costs to cost of goods)
+- "FOB Destination" or "FOB Destination Prepaid" (Free On Board - no cost for loading, title passes at buyer's dock, seller prepaid freight cost and delivery insurance)
+
+In software applications, this phrase is commonly split into two coded pieces, a "legal terms" risk and responsibility component for use with common carriers (FOB Destination) and some kind of qualifying component (Prepaid and Add).</xs:documentation>
+                </xs:annotation>
+        </xs:element>
+<!--Name Value Types-->
+        <xs:complexType name="NameValueBase">
+                <xs:sequence>
+                        <xs:element name="NameValue" type="NameValuePair" minOccurs="0">
+                                <xs:annotation>
+                                        <xs:documentation source="http://www.openapplications.org/oagis">Is the tag and information of the new information to be passed.</xs:documentation>
+                                </xs:annotation>
+                        </xs:element>
+                        <xs:element name="Description" type="Description" minOccurs="0" maxOccurs="unbounded">
+                                <xs:annotation>
+                                        <xs:documentation source="http://www.openapplications.org/oagis">Descibes the Name Value information being communicated.</xs:documentation>
+                                </xs:annotation>
+                        </xs:element>
+                        <xs:element name="Note" type="Note" minOccurs="0" maxOccurs="unbounded">
+                                <xs:annotation>
+                                        <xs:documentation source="http://www.openapplications.org/oagis">Is the free form note about the information being passed.</xs:documentation>
+                                </xs:annotation>
+                        </xs:element>
+                </xs:sequence>
+        </xs:complexType>
+        <xs:element name="NameValueBase" type="NameValueBase" abstract="true"/>
+        <xs:complexType name="NameValue">
+                <xs:complexContent>
+                        <xs:extension base="NameValueBase">
+                                <xs:sequence>
+                                        <xs:element ref="UserArea" minOccurs="0"/>
+                                </xs:sequence>
+                        </xs:extension>
+                </xs:complexContent>
+        </xs:complexType>
+        <xs:element name="FieldValue" type="NameValue" substitutionGroup="NameValueBase">
+                <xs:annotation>
+                        <xs:documentation source="http://www.openapplications.org/oagis">Is a general purpose NameValue synchronization of fields. This is typically need to synchronize codes and identifiers between systems so that the same values may be used or so that a cross reference of values can be used to translate from one parties values to another.</xs:documentation>
+                </xs:annotation>
+        </xs:element>
+        <xs:element name="Qualification" type="NameValue" substitutionGroup="NameValueBase">
+                <xs:annotation>
+                        <xs:documentation source="http://www.openapplications.org/oagis">Represents the response to selection criteria that will be used to evaluate  the Party. It may also represent capabilities the party offers which are not requested. Examples include quality certifications (ISO-9000), CAD data compatibility (Pro/E), manufacturing operations (JIT), company size, and performance ratings.</xs:documentation>
+                </xs:annotation>
+        </xs:element>
+        <xs:element name="Property" type="NameValue" substitutionGroup="NameValueBase">
+                <xs:annotation>
+                        <xs:documentation source="http://www.openapplications.org/oagis">Represents the Properties of the Items being communicated.</xs:documentation>
+                </xs:annotation>
+        </xs:element>
+        <xs:element name="GLElement" type="NameValue" substitutionGroup="NameValueBase">
+                <xs:annotation>
+                        <xs:documentation source="http://www.openapplications.org/oagis">Allows accounting code elements, which cannot be linked to specified OAGI Field Identifiers that have to be transmitted.</xs:documentation>
+                </xs:annotation>
+        </xs:element>
+        <xs:complexType name="FeatureValue">
+                <xs:complexContent>
+                        <xs:extension base="NameValueBase">
+                                <xs:sequence>
+                                        <xs:element name="EffectivePeriod" type="TimePeriod" minOccurs="0">
+                                                <xs:annotation>
+                                                        <xs:documentation source="http://www.openapplications.org/oagis">Identifies the effective period of the Feature Value</xs:documentation>
+                                                </xs:annotation>
+                                        </xs:element>
+                                        <xs:element name="Qualification" type="Code" minOccurs="0" maxOccurs="unbounded">
+                                                <xs:annotation>
+                                                        <xs:documentation source="http://www.openapplications.org/oagis">Lists any further qualifications for the value.</xs:documentation>
+                                                </xs:annotation>
+                                        </xs:element>
+                                        <xs:element name="UOM" type="UOM" minOccurs="0">
+                                                <xs:annotation>
+                                                        <xs:documentation source="http://www.openapplications.org/oagis">Identifies the Unit of Measure for the Feature.</xs:documentation>
+                                                </xs:annotation>
+                                        </xs:element>
+                                        <xs:element ref="PartyReferences" minOccurs="0"/>
+                                        <xs:element name="Sequence" type="Code" minOccurs="0">
+                                                <xs:annotation>
+                                                        <xs:documentation source="http://www.openapplications.org/oagis">Identifies the Sequence of the Feature Value.</xs:documentation>
+                                                </xs:annotation>
+                                        </xs:element>
+                                        <xs:element ref="UserArea" minOccurs="0"/>
+                                </xs:sequence>
+                        </xs:extension>
+                </xs:complexContent>
+        </xs:complexType>
+        <xs:element name="FeatureValue" type="FeatureValue" substitutionGroup="NameValueBase">
+                <xs:annotation>
+                        <xs:documentation source="http://www.openapplications.org/oagis">Identifies pair wise features that the Orderable Item may have.</xs:documentation>
+                </xs:annotation>
+        </xs:element>
+<!-- -->
+        <xs:complexType name="Message">
+                <xs:sequence>
+                        <xs:element name="MessageId" type="Id" minOccurs="0">
+                                <xs:annotation>
+                                        <xs:documentation source="http://www.openapplications.org/oagis">Is the identifier of the message.</xs:documentation>
+                                </xs:annotation>
+                        </xs:element>
+                        <xs:element name="MessageType" type="MessageType" minOccurs="0">
+                                <xs:annotation>
+                                        <xs:documentation source="http://www.openapplications.org/oagis">Indicate the type of message.</xs:documentation>
+                                </xs:annotation>
+                        </xs:element>
+                        <xs:element name="MessageText" type="LingualString" minOccurs="0" maxOccurs="unbounded">
+                                <xs:annotation>
+                                        <xs:documentation source="http://www.openapplications.org/oagis">Is the message itself.</xs:documentation>
+                                </xs:annotation>
+                        </xs:element>
+                        <xs:element name="Description" type="Description" minOccurs="0" maxOccurs="unbounded">
+                                <xs:annotation>
+                                        <xs:documentation source="http://www.openapplications.org/oagis">Is the description(s) of the message.</xs:documentation>
+                                </xs:annotation>
+                        </xs:element>
+                        <xs:element name="Note" type="Note" minOccurs="0" maxOccurs="unbounded">
+                                <xs:annotation>
+                                        <xs:documentation source="http://www.openapplications.org/oagis">Free-form notes about the message.</xs:documentation>
+                                </xs:annotation>
+                        </xs:element>
+                        <xs:element name="Sender" type="Sender" minOccurs="0">
+                                <xs:annotation>
+                                        <xs:documentation source="http://www.openapplications.org/oagis">Identifies the Sender of the message.</xs:documentation>
+                                </xs:annotation>
+                        </xs:element>
+                        <xs:element ref="UserArea" minOccurs="0"/>
+                </xs:sequence>
+        </xs:complexType>
+        <xs:element name="Message" type="Message"/>
+        <xs:simpleType name="MessageType">
+                <xs:restriction base="xs:string"/>
+        </xs:simpleType>
+<!---->
+<!--HazardousMaterial-->
+        <xs:complexType name="HazardousMaterial">
+                <xs:annotation>
+                        <xs:documentation source="http://www.openapplications.org/oagis">Provides the Hazardous Material Code and description.</xs:documentation>
+                </xs:annotation>
+                <xs:sequence>
+                        <xs:element name="Code" minOccurs="0">
+                                <xs:annotation>
+                                        <xs:documentation source="http://www.openapplications.org/oagis">Is the Hazardous Material Code.</xs:documentation>
+                                </xs:annotation>
+                                <xs:complexType>
+                                        <xs:simpleContent>
+                                                <xs:extension base="Code">
+                                                        <xs:attribute name="issuingAgency" type="xs:string" use="optional"/>
+                                                </xs:extension>
+                                        </xs:simpleContent>
+                                </xs:complexType>
+                        </xs:element>
+                        <xs:element name="Description" type="Description" minOccurs="0" maxOccurs="unbounded">
+                                <xs:annotation>
+                                        <xs:documentation source="http://www.openapplications.org/oagis">Is a description of the Hazardous Material Code.</xs:documentation>
+                                </xs:annotation>
+                        </xs:element>
+                        <xs:element ref="UserArea" minOccurs="0"/>
+                </xs:sequence>
+        </xs:complexType>
+        <xs:element name="HazardousMaterial" type="HazardousMaterial">
+                <xs:annotation>
+                        <xs:documentation source="http://www.openapplications.org/oagis">Provides the Hazardous Material Code and description.</xs:documentation>
+                </xs:annotation>
+        </xs:element>
+<!---->
+<!---->
+<!--Packaging-->
+        <xs:element name="Packaging" type="Packaging">
+                <xs:annotation>
+                        <xs:documentation source="http://www.openapplications.org/oagis">Identifies the Packaging information for a given item.
+
+Note: The UPC here is the UPC of the packaging for a given item.</xs:documentation>
+                </xs:annotation>
+        </xs:element>
+        <xs:complexType name="Packaging">
+                <xs:annotation>
+                        <xs:documentation source="http://www.openapplications.org/oagis">Identifies the Packaging information for a given item.
+
+Note: The UPC here is the UPC of the packaging for a given item.</xs:documentation>
+                </xs:annotation>
+                <xs:sequence>
+                        <xs:element name="PackingCode" type="PackingCode" minOccurs="0">
+                                <xs:annotation>
+                                        <xs:documentation source="http://www.openapplications.org/oagis">Indicates the packaging code that idenitfies the packing material.</xs:documentation>
+                                </xs:annotation>
+                        </xs:element>
+                        <xs:element ref="UPC" minOccurs="0"/>
+                        <xs:element name="Description" type="Description" minOccurs="0" maxOccurs="unbounded">
+                                <xs:annotation>
+                                        <xs:documentation source="http://www.openapplications.org/oagis">Packaging description.</xs:documentation>
+                                </xs:annotation>
+                        </xs:element>
+                        <xs:element name="Volume" type="Quantity" minOccurs="0">
+                                <xs:annotation>
+                                        <xs:documentation source="http://www.openapplications.org/oagis">Indicates the volume of the packaging.</xs:documentation>
+                                </xs:annotation>
+                        </xs:element>
+                        <xs:element name="Width" type="Quantity" minOccurs="0">
+                                <xs:annotation>
+                                        <xs:documentation source="http://www.openapplications.org/oagis">Indicates the width of the packaging material.</xs:documentation>
+                                </xs:annotation>
+                        </xs:element>
+                        <xs:element name="Height" type="Quantity" minOccurs="0">
+                                <xs:annotation>
+                                        <xs:documentation source="http://www.openapplications.org/oagis">Inddicates the Height of the packaging material.</xs:documentation>
+                                </xs:annotation>
+                        </xs:element>
+                        <xs:element name="Length" type="Quantity" minOccurs="0">
+                                <xs:annotation>
+                                        <xs:documentation source="http://www.openapplications.org/oagis">Indicates the length of the packaging material.</xs:documentation>
+                                </xs:annotation>
+                        </xs:element>
+                        <xs:element name="WeightQuantity" type="Quantity" minOccurs="0">
+                                <xs:annotation>
+                                        <xs:documentation source="http://www.openapplications.org/oagis">Indicates the weight when full.</xs:documentation>
+                                </xs:annotation>
+                        </xs:element>
+                        <xs:element ref="ShippingMaterial" minOccurs="0" maxOccurs="unbounded"/>
+                        <xs:element ref="UserArea" minOccurs="0"/>
+                </xs:sequence>
+        </xs:complexType>
+        <xs:complexType name="ShippingMaterial">
+                <xs:sequence>
+                        <xs:element name="ShippingMaterialId" type="PackingMaterial" minOccurs="0">
+                                <xs:annotation>
+                                        <xs:documentation source="http://www.openapplications.org/oagis">Is the shipping material identifier.</xs:documentation>
+                                </xs:annotation>
+                        </xs:element>
+                        <xs:element name="Description" type="Description" minOccurs="0" maxOccurs="unbounded">
+                                <xs:annotation>
+                                        <xs:documentation source="http://www.openapplications.org/oagis">Description of the Shipping Material.</xs:documentation>
+                                </xs:annotation>
+                        </xs:element>
+                        <xs:element ref="UserArea" minOccurs="0"/>
+                </xs:sequence>
+        </xs:complexType>
+        <xs:element name="ShippingMaterial" type="ShippingMaterial">
+                <xs:annotation>
+                        <xs:documentation source="http://www.openapplications.org/oagis">Identifies the materials used to ship.</xs:documentation>
+                </xs:annotation>
+        </xs:element>
+<!---->
+<!--Lot and Serial Number Types-->
+        <xs:complexType name="Lot">
+                <xs:sequence>
+                        <xs:element name="LotId" type="Id" minOccurs="0">
+                                <xs:annotation>
+                                        <xs:documentation source="http://www.openapplications.org/oagis">Is the name of the lot.</xs:documentation>
+                                </xs:annotation>
+                        </xs:element>
+                        <xs:element name="SubLotId" type="Id" minOccurs="0">
+                                <xs:annotation>
+                                        <xs:documentation source="http://www.openapplications.org/oagis">Is the name of the parent lot.</xs:documentation>
+                                </xs:annotation>
+                        </xs:element>
+                        <xs:element name="EffectivePeriod" type="TimePeriod" minOccurs="0">
+                                <xs:annotation>
+                                        <xs:documentation source="http://www.openapplications.org/oagis">Indicates the effective period of the LotLevel.</xs:documentation>
+                                </xs:annotation>
+                        </xs:element>
+                        <xs:element ref="UserArea" minOccurs="0"/>
+                </xs:sequence>
+        </xs:complexType>
+        <xs:element name="Lot" type="Lot">
+                <xs:annotation>
+                        <xs:documentation source="http://www.openapplications.org/oagis">Identifies the Lot that a given Item belongs to.</xs:documentation>
+                </xs:annotation>
+        </xs:element>
+        <xs:complexType name="LotSerial">
+                <xs:sequence maxOccurs="unbounded">
+                        <xs:element name="ItemQuantity" type="Quantity" minOccurs="0">
+                                <xs:annotation>
+                                        <xs:documentation source="http://www.openapplications.org/oagis">Is the number of items associated with the LotSerial.</xs:documentation>
+                                </xs:annotation>
+                        </xs:element>
+                        <xs:element name="Lot" type="Lot" minOccurs="0">
+                                <xs:annotation>
+                                        <xs:documentation source="http://www.openapplications.org/oagis">Indicates the Lot associated with the LotSerial.</xs:documentation>
+                                </xs:annotation>
+                        </xs:element>
+                        <xs:element name="ParentLot" type="Lot" minOccurs="0">
+                                <xs:annotation>
+                                        <xs:documentation source="http://www.openapplications.org/oagis">Is the parent lot of the current Lot.</xs:documentation>
+                                </xs:annotation>
+                        </xs:element>
+                        <xs:element ref="Disposition" minOccurs="0"/>
+                        <xs:element name="SerialNumber" type="SerialNumber" minOccurs="0" maxOccurs="unbounded">
+                                <xs:annotation>
+                                        <xs:documentation source="http://www.openapplications.org/oagis">Is the serial number for each item in the item quantity.</xs:documentation>
+                                </xs:annotation>
+                        </xs:element>
+                        <xs:element name="ParentSerialNumber" type="SerialNumber" minOccurs="0">
+                                <xs:annotation>
+                                        <xs:documentation source="http://www.openapplications.org/oagis">Is the parent's serial number of the given item. This allows the traking of serialized components of an assembly.</xs:documentation>
+                                </xs:annotation>
+                        </xs:element>
+                        <xs:element name="Description" type="Description" minOccurs="0" maxOccurs="unbounded"/>
+                        <xs:element ref="Note" minOccurs="0" maxOccurs="unbounded"/>
+                        <xs:element ref="UserArea" minOccurs="0"/>
+                </xs:sequence>
+        </xs:complexType>
+        <xs:element name="LotSerial" type="LotSerial">
+                <xs:annotation>
+                        <xs:documentation source="http://www.openapplications.org/oagis">Is the Lot and Setial numbers for the items contained in the associated component.</xs:documentation>
+                </xs:annotation>
+        </xs:element>
+        <xs:complexType name="AccountingPeriod">
+                <xs:annotation>
+                        <xs:documentation source="http://www.openapplications.org/oagis">The accounting period the document is to post within.  The period is within a fiscal year to which a business transaction is assigned.</xs:documentation>
+                </xs:annotation>
+                <xs:complexContent>
+                        <xs:extension base="TimePeriodAny">
+                                <xs:sequence>
+                                        <xs:element name="Name" type="AccountingPeriodName" minOccurs="0"/>
+                                </xs:sequence>
+                        </xs:extension>
+                </xs:complexContent>
+        </xs:complexType>
+<!-- not quite a component, not quite a field - where does it go?? -->
+        <xs:element name="Business" type="OrganizationalUnit">
+                <xs:annotation>
+                        <xs:documentation source="http://www.openapplications.org/oagis">This is used to identify the buisness entity that is involved in a transaction. The structure of the business entity is represented within here. Each application may have a different aproach to defining this entity</xs:documentation>
+                </xs:annotation>
+        </xs:element>
+        <xs:simpleType name="OrganizationalUnitName">
+                <xs:restriction base="xs:string"/>
+        </xs:simpleType>
+        <xs:simpleType name="OrganizationalUnitId">
+                <xs:restriction base="xs:string"/>
+        </xs:simpleType>
+        <xs:complexType name="OrganizationalUnit">
+                <xs:annotation>
+                        <xs:documentation source="http://www.openapplications.org/oagis">A fully generic means of identifying an organizational unit. Can be an actual business unit (at any level) or an area of responsibility. Each is described with respect to others, via the ProximalUnit construct.</xs:documentation>
+                </xs:annotation>
+                <xs:sequence>
+                        <xs:element name="Id" type="OrganizationalUnitId" minOccurs="0"/>
+                        <xs:element name="Function" type="OrganizationalUnitName" minOccurs="0"/>
+                        <xs:element name="Name" type="Name" minOccurs="0"/>
+                        <xs:element name="RelatedUnit" type="RelatedUnitType" minOccurs="0" maxOccurs="unbounded"/>
+                        <xs:element ref="UserArea" minOccurs="0"/>
+                </xs:sequence>
+        </xs:complexType>
+        <xs:complexType name="RelatedUnitType">
+                <xs:sequence>
+                        <xs:element name="Relationship" type="Relationship" minOccurs="0">
+                                <xs:annotation>
+                                        <xs:documentation source="http://www.openapplications.org/oagis">Defines the relationship between this related unit and the preceeding unit,</xs:documentation>
+                                </xs:annotation>
+                        </xs:element>
+                        <xs:element name="Unit" type="OrganizationalUnit" minOccurs="0"/>
+                </xs:sequence>
+        </xs:complexType>
+        <xs:element name="LedgerEvent" type="LedgerEvent"/>
+        <xs:complexType name="LedgerEvent">
+                <xs:sequence>
+                        <xs:element name="SourceLedger" type="LedgerId" minOccurs="0">
+                                <xs:annotation>
+                                        <xs:documentation source="http://www.openapplications.org/oagis">General Ledger Entity Source code. Typically, this is the owning entity for the transaction</xs:documentation>
+                                </xs:annotation>
+                        </xs:element>
+                        <xs:element name="DestinationLedger" type="LedgerId" minOccurs="0">
+                                <xs:annotation>
+                                        <xs:documentation source="http://www.openapplications.org/oagis">General Ledger Entity Destination code. Entries here, when they do not match the GLENTITYS value, indicate an inter-company transaction</xs:documentation>
+                                </xs:annotation>
+                        </xs:element>
+                        <xs:group ref="LedgerEntryContent" minOccurs="0"/>
+                        <xs:element ref="UserArea" minOccurs="0"/>
+                </xs:sequence>
+        </xs:complexType>
+        <xs:element name="Project" type="Project" substitutionGroup="Noun">
+                <xs:annotation>
+                        <xs:documentation source="http://www.openapplications.org/oagis">A set of tasks with the following attributes: a singular purpose, a start and end date, those that accumulate costs, and those that may have materials and overhead. SYNONYMS: Job, Process Model, Program, Work Breakdown Structure (WBS) element
+
+This is used to enable all relevant sub-systems that submit transactions to the project accounting application to maintain valid values for the key project fields.  The target applications for this update would include, but not necessarily be limited to:
+Accounts Payable
+Accounts Receivable
+Budget
+Order Management
+Purchasing
+Time and Labor
+Travel and Expense</xs:documentation>
+                </xs:annotation>
+        </xs:element>
+        <xs:complexType name="Project">
+                <xs:annotation>
+                        <xs:documentation source="http://www.openapplications.org/oagis">A set of tasks with the following attributes: a singular purpose, a start and end date, those that accumulate costs, and those that may have materials and overhead. SYNONYMS: Job, Process Model, Program, Work Breakdown Structure (WBS) element</xs:documentation>
+                </xs:annotation>
+                <xs:complexContent>
+                        <xs:extension base="Noun">
+                                <xs:sequence>
+                                        <xs:element name="Id" type="ProjectId" minOccurs="0">
+                                                <xs:annotation>
+                                                        <xs:documentation source="http://www.openapplications.org/oagis">The project's unique identifier</xs:documentation>
+                                                </xs:annotation>
+                                        </xs:element>
+                                        <xs:element name="Status" type="ProjectStatus" minOccurs="0">
+                                                <xs:annotation>
+                                                        <xs:documentation source="http://www.openapplications.org/oagis">Indicates the status of the Project.</xs:documentation>
+                                                </xs:annotation>
+                                        </xs:element>
+                                        <xs:element name="DocumentDateTime" type="DateTime" minOccurs="0">
+                                                <xs:annotation>
+                                                        <xs:documentation source="http://www.openapplications.org/oagis">Indicates the timestamp in which the Project was created.</xs:documentation>
+                                                </xs:annotation>
+                                        </xs:element>
+                                        <xs:element name="EffectivePeriod" type="TimePeriodAny" minOccurs="0">
+                                                <xs:annotation>
+                                                        <xs:documentation source="http://www.openapplications.org/oagis">Identifies the effective period for the project.</xs:documentation>
+                                                </xs:annotation>
+                                        </xs:element>
+                                        <xs:element name="Authorization" type="AuthorizationType" minOccurs="0" maxOccurs="unbounded">
+                                                <xs:annotation>
+                                                        <xs:documentation source="http://www.openapplications.org/oagis">Indicates the Authorization for the project.</xs:documentation>
+                                                </xs:annotation>
+                                        </xs:element>
+                                        <xs:element name="TransactionType" type="ProjectTransactionType" minOccurs="0">
+                                                <xs:annotation>
+                                                        <xs:documentation source="http://www.openapplications.org/oagis">The project accounting classification of the transactions. EXAMPLES: Billed, Cash, Cost, Revenue</xs:documentation>
+                                                </xs:annotation>
+                                        </xs:element>
+                                        <xs:element name="TotalCost" type="Amounts" minOccurs="0">
+                                                <xs:annotation>
+                                                        <xs:documentation source="http://www.openapplications.org/oagis">The total cost of this project, as either an entered amount (no activity costing) or calculated as the sum of the activity costs.
+
+This field is updated by the LoadProjectAccounting BOD.</xs:documentation>
+                                                </xs:annotation>
+                                        </xs:element>
+                                        <xs:element name="SourceGLEntity" type="GLEntity" minOccurs="0">
+                                                <xs:annotation>
+                                                        <xs:documentation source="http://www.openapplications.org/oagis">Is the Source General Ledger recogized entity that is responsible for paying for the Project.</xs:documentation>
+                                                </xs:annotation>
+                                        </xs:element>
+                                        <xs:element ref="GLElement" minOccurs="0" maxOccurs="unbounded"/>
+                                        <xs:element name="ProjectResourceCategory" type="ProjectResourceCategory" minOccurs="0" maxOccurs="unbounded">
+                                                <xs:annotation>
+                                                        <xs:documentation source="http://www.openapplications.org/oagis">Is the categorization of project resources into classes, subclasses, etc</xs:documentation>
+                                                </xs:annotation>
+                                        </xs:element>
+                                        <xs:element name="Activity" type="ProjectActivity" minOccurs="0" maxOccurs="unbounded">
+                                                <xs:annotation>
+                                                        <xs:documentation source="http://www.openapplications.org/oagis">The specific business processes or tasks within a project.  For example, billing, receiving or preparing purchase orders</xs:documentation>
+                                                </xs:annotation>
+                                        </xs:element>
+                                        <xs:group ref="References" minOccurs="0"/>
+                                        <xs:element ref="UserArea" minOccurs="0"/>
+                                </xs:sequence>
+                        </xs:extension>
+                </xs:complexContent>
+        </xs:complexType>
+        <xs:complexType name="ProjectActivity">
+                <xs:annotation>
+                        <xs:documentation source="http://www.openapplications.org/oagis">The specific business process or task within a project.  For example, billing, receiving or preparing purchase orders.</xs:documentation>
+                </xs:annotation>
+                <xs:sequence>
+                        <xs:element name="Id" type="ProjectActivityId" minOccurs="0"/>
+                        <xs:element name="Status" type="ProjectActivityStatus" minOccurs="0"/>
+                        <xs:element name="Cost" type="Amounts" minOccurs="0">
+                                <xs:annotation>
+                                        <xs:documentation source="http://www.openapplications.org/oagis">The cost of performing this activity. Activity costs are loaded via the LoadProjectAccounting BOD and rolled up to the Project's TotalCost  field.</xs:documentation>
+                                </xs:annotation>
+                        </xs:element>
+                        <xs:element name="Description" type="Description" minOccurs="0" maxOccurs="unbounded"/>
+                        <xs:element name="Note" type="Note" minOccurs="0" maxOccurs="unbounded"/>
+                        <xs:element ref="UserArea" minOccurs="0"/>
+                </xs:sequence>
+        </xs:complexType>
+        <xs:complexType name="ProjectResourceCategory">
+                <xs:annotation>
+                        <xs:documentation source="http://www.openapplications.org/oagis">The categorization of project resources into classes, subclasses, etc., such as Labor, Material, Equipment</xs:documentation>
+                </xs:annotation>
+                <xs:simpleContent>
+                        <xs:extension base="xs:string"/>
+                </xs:simpleContent>
+        </xs:complexType>
+        <xs:complexType name="AuthorizationType">
+                <xs:sequence>
+                        <xs:element name="Id" type="AuthorizationId" minOccurs="0"/>
+                        <xs:element name="Type" type="Type" minOccurs="0"/>
+                        <xs:element ref="Status" minOccurs="0"/>
+                        <xs:element name="DateAuthorized" type="DateTimeAny" minOccurs="0"/>
+                        <xs:element name="EffectivePeriod" type="TimePeriodAny" minOccurs="0"/>
+                        <xs:element name="AuthorizationCode" type="AuthorizationCode" minOccurs="0"/>
+                        <xs:element ref="UserArea" minOccurs="0"/>
+                </xs:sequence>
+        </xs:complexType>
+        <xs:group name="LedgerEntryContent">
+                <xs:sequence>
+                        <xs:element name="EntryAmount" type="Amounts" minOccurs="0"/>
+                        <xs:element name="DebitCreditFlag" type="DebitCredit" minOccurs="0"/>
+                        <xs:element name="Reason" type="ReasonCode" minOccurs="0">
+                                <xs:annotation>
+                                        <xs:documentation source="http://www.openapplications.org/oagis">Is used as a reason indicator for any type of business event or activity</xs:documentation>
+                                </xs:annotation>
+                        </xs:element>
+                        <xs:element name="Item" type="Item" minOccurs="0">
+                                <xs:annotation>
+                                        <xs:documentation source="http://www.openapplications.org/oagis">A product or substance that is bought, sold, manufactured, delivered, or is somehow handled in similar business processes.  It is the identifier of a "thing".SYNONYMS	Material	Part	Resource	Stock Keeping Unit (SKU)</xs:documentation>
+                                </xs:annotation>
+                        </xs:element>
+                        <xs:element name="ItemQuantity" type="Quantity" minOccurs="0">
+                                <xs:annotation>
+                                        <xs:documentation source="http://www.openapplications.org/oagis">Identifies the quantity of the item that was specified on the source transaction</xs:documentation>
+                                </xs:annotation>
+                        </xs:element>
+                        <xs:element name="FixedAssetId" type="Id" minOccurs="0"/>
+                        <xs:element name="ProductLine" type="ProductLine" minOccurs="0"/>
+                        <xs:element name="DestinationGLEntity" type="GLEntity" minOccurs="0">
+                                <xs:annotation>
+                                        <xs:documentation source="http://www.openapplications.org/oagis">If a value is specified for this and the value is different from the SourceGLEntity, it indicates that the entry is an inter-company transaction</xs:documentation>
+                                </xs:annotation>
+                        </xs:element>
+                        <xs:group ref="AccountingEntity" minOccurs="0"/>
+                        <xs:group ref="GLAccount" minOccurs="0"/>
+                        <xs:element ref="Project" minOccurs="0"/>
+                        <xs:element name="TransactionAnalysis" type="Code" minOccurs="0">
+                                <xs:annotation>
+                                        <xs:documentation source="http://www.openapplications.org/oagis">Is a segmenting code used to analyze project accounting transactions.  It is commonly used in project accounting applications.</xs:documentation>
+                                </xs:annotation>
+                        </xs:element>
+                        <xs:element name="EntryCreator" type="UserId" minOccurs="0">
+                                <xs:annotation>
+                                        <xs:documentation source="http://www.openapplications.org/oagis">Is the user enterprise-wide identifier.  It is also known as the user code.</xs:documentation>
+                                </xs:annotation>
+                        </xs:element>
+                        <xs:element name="Description" type="Description" minOccurs="0" maxOccurs="unbounded"/>
+                        <xs:element ref="DocumentReferences" minOccurs="0"/>
+                        <xs:element name="Note" type="Note" minOccurs="0" maxOccurs="unbounded"/>
+                </xs:sequence>
+        </xs:group>
+        <xs:group name="AccountingEntity">
+                <xs:annotation>
+                        <xs:documentation source="http://www.openapplications.org/oagis">Accounting content for any financial transaction, event, activity. Incorporated into both Distribution and LedgerEntryContent.</xs:documentation>
+                </xs:annotation>
+                <xs:sequence>
+                        <xs:element ref="Business" minOccurs="0"/>
+                        <xs:element name="CostCenter" type="CostCenter" minOccurs="0">
+                                <xs:annotation>
+                                        <xs:documentation source="http://www.openapplications.org/oagis">Indicates the Cost Center of the organization</xs:documentation>
+                                </xs:annotation>
+                        </xs:element>
+                        <xs:element name="ProfitCenter" type="ProfitCenter" minOccurs="0">
+                                <xs:annotation>
+                                        <xs:documentation source="http://www.openapplications.org/oagis">Is an accumulator of revenue information that may be an organizational unit or area of responsibility.  A profit center can be used for internal management control.  Profit centers can calculate operating profit using the cost-of-sales accounting and/or period accounting methods</xs:documentation>
+                                </xs:annotation>
+                        </xs:element>
+                        <xs:element name="Fund" type="Fund" minOccurs="0">
+                                <xs:annotation>
+                                        <xs:documentation source="http://www.openapplications.org/oagis">Used to describe a major budgeting and spending area in an organization, FUND may be treated similarly to a legal entity.  It is normally used in not for profit and may have a fiscal year that is different from a 12-month cycle</xs:documentation>
+                                </xs:annotation>
+                        </xs:element>
+                </xs:sequence>
+        </xs:group>
+        <xs:group name="GLAccount">
+                <xs:sequence>
+                        <xs:element name="GLNominalAccount" type="GLAccount" minOccurs="0">
+                                <xs:annotation>
+                                        <xs:documentation source="http://www.openapplications.org/oagis">An entry in the GL chart of accounts.  It is the "what", not the "who" or "where". EXAMPLES INCLUDE: Assets, Office Supplies, Revenues, Salaries, Travel. SYNONYMS: Account Number, GL Natural Account, Object Account</xs:documentation>
+                                </xs:annotation>
+                        </xs:element>
+                        <xs:element ref="GLElement" minOccurs="0" maxOccurs="unbounded"/>
+                </xs:sequence>
+        </xs:group>
+        <xs:group name="ProjectReference">
+                <xs:sequence>
+                        <xs:element name="ProjectId" type="ProjectId" minOccurs="0"/>
+                        <xs:element name="ProjectActivityId" type="ProjectActivityId" minOccurs="0"/>
+                        <xs:element name="ProjectResourceCategory" type="Id" minOccurs="0"/>
+                </xs:sequence>
+        </xs:group>
+        <xs:group name="ItemLotSerialIdentifier">
+                <xs:annotation>
+                        <xs:documentation source="http://www.openapplications.org/oagis">Identifies a unique serial number and/or lot number for an item</xs:documentation>
+                </xs:annotation>
+                <xs:sequence>
+                        <xs:element ref="Lot" minOccurs="0"/>
+                        <xs:element name="SerialNumber" type="SerialNumber" minOccurs="0">
+                                <xs:annotation>
+                                        <xs:documentation source="http://www.openapplications.org/oagis">Identifies the Serial Number of the item</xs:documentation>
+                                </xs:annotation>
+                        </xs:element>
+                </xs:sequence>
+        </xs:group>
+</xs:schema>

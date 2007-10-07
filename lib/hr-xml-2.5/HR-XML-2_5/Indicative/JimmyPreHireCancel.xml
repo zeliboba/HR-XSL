@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Many times the intention of hiring an employee needs to be sent to a third party.  
+     The person is technically not an employee, but information needs to be sent ahead of time.  
+     Typically, this is so that the third party can meet contractual obligations 
+     (e.g. allow the employee to do online benefit enrollment on their first day of work.)
+
+	 Scenario: Information about the proposed employee (Jimmy) was sent in a previous transction. 
+     Jimmy has since declined the offer. This exchange is used to communicate that Jimmy has changed his 
+     mind and will not become an employee. So the new hire process must be cancelled.     
+     In this case the <ProposedHireInfo> element is used to indicate Jimmy has decided not to accept employment.
+-->
+<IndicativeBatch xmlns="http://ns.hr-xml.org/2007-04-15" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://ns.hr-xml.org/2007-04-15
+ IndicativeBatch.xsd">
+	<TransactionType>Change</TransactionType>
+	<CreateDate>2004-09-16</CreateDate>
+	<BaselineDate>2004-09-16</BaselineDate>
+	<IndicativeData>
+		<Employer>
+			<OrganizationId>
+				<IdValue>12345</IdValue>
+			</OrganizationId>
+		</Employer>
+		<Employee>
+			<PersonInfo>
+				<!-- For now, using a legal id for identification (no employee id yet) -->
+				<PersonLegalId idOwner="US:SSA">
+					<IdValue name="SSN">555-11-1111</IdValue>
+				</PersonLegalId>
+			</PersonInfo>
+			<EmploymentInfo>
+				<IsEmployed>false</IsEmployed>
+				<ProposedHireInfo>
+					<!-- note: attribute 'cancelDate' is optional -->
+					<CancelHire>true</CancelHire>
+				</ProposedHireInfo>
+			</EmploymentInfo>
+		</Employee>
+	</IndicativeData>
+</IndicativeBatch>

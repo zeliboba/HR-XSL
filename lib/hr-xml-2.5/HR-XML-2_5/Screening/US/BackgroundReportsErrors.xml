@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<BackgroundReports xmlns="http://ns.hr-xml.org/2007-04-15" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://ns.hr-xml.org/2007-04-15
+BackgroundReports.xsd" userId="900XXX">
+	<ProviderReferenceId>
+		<IdValue>205</IdValue>
+	</ProviderReferenceId>
+	<BackgroundReportPackage type="errors">
+		<ProviderReferenceId>
+			<IdValue>A1111</IdValue>
+		</ProviderReferenceId>
+		<ErrorReport>
+			<ErrorDescription>Missing Required Field:  DATEOFBIRTH</ErrorDescription>
+			<ErrorCode>300</ErrorCode>
+			<ErrorSeverity>Fatal</ErrorSeverity>
+			<FileReferenceId>
+				<IdValue>11202001173000</IdValue>
+			</FileReferenceId>
+			<PackageReferenceId>
+				<IdValue>112020011</IdValue>
+			</PackageReferenceId>
+			<ScreeningReferenceId>
+				<IdValue>570128-338586</IdValue>
+			</ScreeningReferenceId>
+			<ScreeningType>education</ScreeningType>
+			<ProviderReferenceId>
+				<IdValue>XXXO1034.XML</IdValue>
+			</ProviderReferenceId>
+		</ErrorReport>
+		<ErrorReport>
+			<ErrorDescription>Missing Required Field:  DATEOFBIRTH</ErrorDescription>
+			<ErrorCode>300</ErrorCode>
+			<ErrorSeverity>x:Serious but not fatal2</ErrorSeverity>
+			<FileReferenceId>
+				<IdValue>41202001173000</IdValue>
+			</FileReferenceId>
+			<PackageReferenceId>
+				<IdValue>412020011</IdValue>
+			</PackageReferenceId>
+			<ScreeningReferenceId>
+				<IdValue>570428-738586</IdValue>
+			</ScreeningReferenceId>
+			<ScreeningType>license</ScreeningType>
+			<ScreeningQualifier>mvPersonal</ScreeningQualifier>
+			<ProviderReferenceId>
+				<IdValue>XXXO1034.XML</IdValue>
+			</ProviderReferenceId>
+		</ErrorReport>
+	</BackgroundReportPackage>
+</BackgroundReports>

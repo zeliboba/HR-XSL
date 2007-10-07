@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Resume xmlns="http://ns.hr-xml.org/2007-04-15" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://ns.hr-xml.org/2007-04-15 Resume.xsd">
+	<StructuredXMLResume>
+		<EducationHistory>
+			<SchoolOrInstitution schoolType="university">
+				<School>
+					<InternetDomainName>www.uva.edu</InternetDomainName>
+					<SchoolName>Univeristy of Virginia</SchoolName>
+				</School>
+				<Degree degreeType="bachellors">
+					<DegreeName>Bachellors of Science</DegreeName>
+					<DegreeDate>
+						<YearMonth>1998-06</YearMonth>
+					</DegreeDate>
+					<DegreeMajor>
+						<Name>Computer Science</Name>
+					</DegreeMajor>
+					<DegreeMinor>
+						<Name>History, Technology, and Society</Name>
+					</DegreeMinor>
+				</Degree>
+			</SchoolOrInstitution>
+			<SchoolOrInstitution schoolType="college">
+				<School>
+					<InternetDomainName>www.gatech.edu</InternetDomainName>
+					<SchoolName>Georgia Institute of Technology</SchoolName>
+				</School>
+				<Degree degreeType="doctorate">
+					<DegreeName>Ph.D.</DegreeName>
+					<DegreeDate>
+						<YearMonth>2002-12</YearMonth>
+					</DegreeDate>
+					<DegreeMajor>
+						<Name>Computer Science</Name>
+					</DegreeMajor>
+					<Comments>Dissertation advisor: Amy Breck</Comments>
+				</Degree>
+			</SchoolOrInstitution>
+		</EducationHistory>
+      <SupportingMaterials>
+			<AttachmentReference context="Resume/StructuredResume/EducationHistory/SchoolOrInstitution[2]" mimeType="application/PDF">John_A_Example_GIT_transcript.pdf</AttachmentReference>
+			<Description>Official Transcript for John A. Example, College of Computing, Georgia Institute of Technology</Description>
+		</SupportingMaterials>		
+	</StructuredXMLResume>
+</Resume>

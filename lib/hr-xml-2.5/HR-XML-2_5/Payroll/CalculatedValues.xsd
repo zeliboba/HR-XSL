@@ -1,0 +1,195 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema xmlns="http://ns.hr-xml.org/2007-04-15" xmlns:xsd="http://www.w3.org/2001/XMLSchema" targetNamespace="http://ns.hr-xml.org/2007-04-15" elementFormDefault="qualified" version="2007-04-15">
+	<xsd:annotation>
+		<xsd:documentation>
+"Copyright  The HR-XML Consortium. All Rights Reserved. http://www.hr-xml.org"
+Name: CalculatedValues.xsd
+Status: Recommendation
+Date this version: 2007-04-15
+Purpose: Flexible amount types for use in deduction and benefit amount formulae
+Author(s): Jason Brown, Payroll Workgroup
+Documentation: PayrollInstructions.html
+
+
+Terms of license can be found in license.txt.
+
+Change History:
+2005-01
+As per Schema Design Guidelines, all default values have been removed.
+
+
+		</xsd:documentation>
+	</xsd:annotation>
+	<xsd:include schemaLocation="../CPO/EntityIdType.xsd"/>
+	<xsd:include schemaLocation="../CPO/xStringPatternExtensionType.xsd"/>
+	<!-- Calculated Values Types -->
+	<xsd:simpleType name="BasicCalculatedValuesType">
+		<xsd:restriction base="xsd:string">
+			<xsd:enumeration value="Fixed"/>
+			<xsd:enumeration value="Percent"/>
+			<xsd:enumeration value="Linear"/>
+			<xsd:enumeration value="Schedule"/>
+			<xsd:enumeration value="Lookup"/>
+			<xsd:enumeration value="Extended"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="CalculatedPercentType">
+		<xsd:restriction base="xsd:decimal">
+			<xsd:maxInclusive value="100.0"/>
+			<xsd:minInclusive value="-100.0"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="ScheduleIntervalType">
+		<xsd:union memberTypes="xsd:decimal InfinityType"/>
+	</xsd:simpleType>
+	<xsd:simpleType name="InfinityType">
+		<xsd:restriction base="xsd:string">
+			<xsd:enumeration value="PositiveInfinity"/>
+			<xsd:enumeration value="NegativeInfinity"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<!-- the Calculated Value Fixed -->
+	<xsd:complexType name="CalculatedValueFixedType">
+		<xsd:sequence>
+			<xsd:element name="Value" type="xsd:decimal" minOccurs="0"/>
+		</xsd:sequence>
+	</xsd:complexType>
+	<!-- Calculated Argument Types -->
+	<xsd:complexType name="ArgumentType">
+		<xsd:complexContent>
+			<xsd:extension base="CalculatedArgumentType">
+				<xsd:attribute name="index" type="xsd:integer"/>
+			</xsd:extension>
+		</xsd:complexContent>
+	</xsd:complexType>
+	<xsd:complexType name="CalculatedArgumentType">
+		<xsd:choice>
+			<xsd:element name="ArgumentValue" type="ArgumentValueType"/>
+			<xsd:element name="ArgumentVariableName" type="ArgumentVariableType"/>
+		</xsd:choice>
+	</xsd:complexType>
+	<xsd:complexType name="ArgumentValueType">
+		<xsd:simpleContent>
+			<xsd:extension base="xsd:decimal">
+				<xsd:attribute name="name" type="xsd:string"/>
+				<xsd:attribute name="multiplier" type="xsd:decimal"/>
+			</xsd:extension>
+		</xsd:simpleContent>
+	</xsd:complexType>
+	<xsd:complexType name="ArgumentVariableType">
+		<xsd:simpleContent>
+			<xsd:extension base="xsd:string">
+				<xsd:attribute name="name" type="xsd:string"/>
+				<xsd:attribute name="multiplier" type="xsd:decimal"/>
+			</xsd:extension>
+		</xsd:simpleContent>
+	</xsd:complexType>
+	<!-- Basis Type -->
+	<xsd:complexType name="BasisType">
+		<xsd:choice>
+			<xsd:element name="BasisValue" type="ArgumentValueType"/>
+			<xsd:element name="BasisVariableName" type="ArgumentVariableType"/>
+		</xsd:choice>
+	</xsd:complexType>
+	<!-- the Calculated Value Percent  -->
+	<xsd:complexType name="CalculatedValuePercentType">
+		<xsd:sequence>
+			<xsd:element name="Basis" type="BasisType"/>
+			<xsd:element name="Percentage" type="CalculatedPercentType"/>
+		</xsd:sequence>
+	</xsd:complexType>
+	<!-- the Calculated Value Linear  -->
+	<xsd:complexType name="CalculatedValueLinearType">
+		<xsd:sequence>
+			<xsd:element name="YIntercept" type="xsd:decimal" minOccurs="0"/>
+			<xsd:element name="Argument" type="ArgumentType" maxOccurs="unbounded"/>
+		</xsd:sequence>
+	</xsd:complexType>
+	<!-- the Calculated Lookup Table -->
+	<xsd:complexType name="CalculatedLookupTableEntryType">
+		<xsd:sequence>
+			<xsd:element name="Key" type="xsd:string"/>
+			<xsd:element name="Value" type="ArgumentValueType"/>
+		</xsd:sequence>
+	</xsd:complexType>
+	<xsd:complexType name="CalculatedLookupTableType">
+		<xsd:sequence>
+			<xsd:element name="LookupTableId" type="EntityIdType" minOccurs="0"/>
+			<xsd:element name="LookupTableName" type="xsd:string" minOccurs="0"/>
+			<xsd:element name="LookupTableEntry" type="CalculatedLookupTableEntryType" maxOccurs="unbounded"/>
+		</xsd:sequence>
+	</xsd:complexType>
+	<!-- the Lookup Table -->
+	<xsd:complexType name="CalculatedValueLookupType">
+		<xsd:sequence>
+			<xsd:choice>
+				<xsd:element name="LookupTableId" type="EntityIdType" minOccurs="0"/>
+				<xsd:element name="LookupTable" type="CalculatedLookupTableType" minOccurs="0"/>
+			</xsd:choice>
+			<xsd:element name="LookupKey" type="xsd:string"/>
+		</xsd:sequence>
+		<xsd:attribute name="notFoundValue" type="xsd:decimal"/>
+	</xsd:complexType>
+	<!-- the Calculated Schedule Interval Type -->
+	<!-- the Calculated Schedule Decimal Interval  -->
+	<xsd:complexType name="CalculatedScheduleIntervalValueType">
+		<xsd:simpleContent>
+			<xsd:extension base="ScheduleIntervalType">
+				<xsd:attribute name="inclusive" type="xsd:boolean"/>
+			</xsd:extension>
+		</xsd:simpleContent>
+	</xsd:complexType>
+	<xsd:complexType name="CalculatedScheduleTableEntryType">
+		<xsd:sequence>
+			<xsd:element name="IntervalLow" type="CalculatedScheduleIntervalValueType" minOccurs="0"/>
+			<xsd:element name="IntervalHigh" type="CalculatedScheduleIntervalValueType" minOccurs="0"/>
+			<xsd:choice>
+				<xsd:element name="Fixed" type="CalculatedValueFixedType"/>
+				<xsd:element name="Percent" type="CalculatedValuePercentType"/>
+				<xsd:element name="Linear" type="CalculatedValueLinearType"/>
+				<xsd:element name="Lookup" type="CalculatedValueLookupType"/>
+			</xsd:choice>
+		</xsd:sequence>
+	</xsd:complexType>
+	<xsd:complexType name="CalculatedScheduleTableType">
+		<xsd:sequence>
+			<xsd:element name="ScheduleTableId" type="EntityIdType" minOccurs="0"/>
+			<xsd:element name="ScheduleTableName" type="xsd:string" minOccurs="0"/>
+			<xsd:element name="ScheduleTableEntry" type="CalculatedScheduleTableEntryType" maxOccurs="unbounded"/>
+		</xsd:sequence>
+	</xsd:complexType>
+	<!-- the Schedule Table -->
+	<xsd:complexType name="CalculatedValueScheduleType">
+		<xsd:sequence>
+			<xsd:choice>
+				<xsd:element name="ScheduleTableId" type="EntityIdType" minOccurs="0"/>
+				<xsd:element name="ScheduleTable" type="CalculatedScheduleTableType" minOccurs="0"/>
+			</xsd:choice>
+			<xsd:element name="ScheduleValue" type="CalculatedScheduleIntervalValueType"/>
+		</xsd:sequence>
+		<xsd:attribute name="notFoundValue" type="xsd:decimal"/>
+	</xsd:complexType>
+	<!-- the Calculated Value Extended  -->
+	<xsd:complexType name="CalculatedValueExtendedType">
+		<xsd:sequence>
+			<xsd:element name="Function" type="xsd:string"/>
+			<xsd:element name="Argument" type="ArgumentType" minOccurs="0" maxOccurs="unbounded"/>
+		</xsd:sequence>
+	</xsd:complexType>
+	<!-- the Calculated value -->
+	<xsd:complexType name="CalculatedValueType">
+		<xsd:choice>
+			<xsd:element name="Fixed" type="CalculatedValueFixedType"/>
+			<xsd:element name="Percent" type="CalculatedValuePercentType"/>
+			<xsd:element name="Linear" type="CalculatedValueLinearType"/>
+			<xsd:element name="Lookup" type="CalculatedValueLookupType"/>
+			<xsd:element name="Schedule" type="CalculatedValueScheduleType"/>
+			<xsd:element name="Extended" type="CalculatedValueExtendedType"/>
+		</xsd:choice>
+	</xsd:complexType>
+	<!-- infinity types -->
+	<!-- reusable elements -->
+	<xsd:element name="CalculatedLookupTable" type="CalculatedLookupTableType"/>
+	<xsd:element name="CalculatedScheduleTable" type="CalculatedScheduleTableType"/>
+	<xsd:element name="CalculatedValue" type="CalculatedValueType"/>
+</xsd:schema>
