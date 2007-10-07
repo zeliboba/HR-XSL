@@ -18,6 +18,8 @@ Author: Trevor Harmon
 
 	<!-- Location of the DocBook DTD -->
 	<property name="docbook.xml.dir" value="${hr-xsl.basedir}/lib/docbook-xml-4.5"/> 
+	
+	<property name="hr-xml.dir" value="${hr-xsl.basedir}/lib/hr-xml-2.5/HR-XML-2_5"/>
 
 	<path id="saxon.classpath">   
 		<fileset dir="${hr-xsl.basedir}/lib/saxon-b-8.8">   
@@ -237,5 +239,17 @@ Author: Trevor Harmon
 
 		</sequential> 
 	</macrodef> 
+	
+	<!-- Validates the structure of the given HR-XML resume -->
+	<macrodef name="validate">
+		<attribute name="in" description="The filename of the HR-XML resume"/>
+		<sequential>
+			<exec executable="xmllint">
+				<arg line="--noout"/>
+				<arg line="--schema ${hr-xml.dir}/SEP/Resume.xsd"/>
+				<arg line="@{in}"/>
+			</exec>
+		</sequential>
+	</macrodef>
 	
 </project>

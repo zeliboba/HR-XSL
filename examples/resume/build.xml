@@ -18,6 +18,10 @@
 		<resume-to-text in="resume.xml"/>
 	</target>
 	
+	<target name="validate">
+		<validate in="resume.xml"/>
+	</target>
+	
 	<target name="clean">
 		<delete file="resume-docbook.xml"/>
 		<delete file="resume.html"/>

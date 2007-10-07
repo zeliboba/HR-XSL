@@ -18,6 +18,10 @@
 		<resume-to-text in="cv.xml"/>
 	</target>
 
+	<target name="validate">
+		<validate in="cv.xml"/>
+	</target>
+	
 	<target name="clean">
 		<delete file="cv-docbook.xml"/>
 		<delete file="cv.html"/>
