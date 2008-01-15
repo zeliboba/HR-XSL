@@ -44,7 +44,9 @@
 			</title>
 			
 			<itemizedlist>
-				<xsl:apply-templates select="sep:SpeakingEvent"/>
+				<xsl:apply-templates select="sep:SpeakingEvent">
+					<xsl:sort select="sep:StartDate" order="descending"/>
+				</xsl:apply-templates>
 			</itemizedlist>
 		</sect1>
 

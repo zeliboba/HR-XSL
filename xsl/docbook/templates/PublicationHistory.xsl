@@ -64,7 +64,9 @@
 					</title>
 				
 					<itemizedlist>
-						<xsl:apply-templates select="sep:Article"/>
+						<xsl:apply-templates select="sep:Article">
+							<xsl:sort select="sep:PublicationDate" order="descending"/>
+						</xsl:apply-templates>
 					</itemizedlist>
 
 				</sect2>
@@ -92,7 +94,9 @@
 					</title>
 				
 					<itemizedlist>
-						<xsl:apply-templates select="sep:Book"/>
+						<xsl:apply-templates select="sep:Book">
+							<xsl:sort select="sep:PublicationDate" order="descending"/>
+						</xsl:apply-templates>
 					</itemizedlist>
 				</sect2>
 			</xsl:if>		
@@ -118,7 +122,9 @@
 					</title>
 
 					<itemizedlist>
-						<xsl:apply-templates select="sep:ConferencePaper"/>
+						<xsl:apply-templates select="sep:ConferencePaper">
+							<xsl:sort select="sep:ConferenceDate" order="descending"/>
+						</xsl:apply-templates>
 					</itemizedlist>
 				</sect2>
 			</xsl:if>		
@@ -144,7 +150,9 @@
 					</title>
 				
 					<itemizedlist>
-						<xsl:apply-templates select="sep:OtherPublication"/>
+						<xsl:apply-templates select="sep:OtherPublication">
+							<xsl:sort select="sep:PublicationDate" order="descending"/>
+						</xsl:apply-templates>
 					</itemizedlist>
 				</sect2>
 			</xsl:if>		
