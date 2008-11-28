@@ -9,6 +9,11 @@ Author: Trevor Harmon
 
 	<!-- Handle to the environment properties -->
 	<property environment="env"/>
+	
+	<!-- Special handling for Windows path variable -->
+	<condition property="PATH" value="${env.Path}" else="${env.PATH}">
+		<os family="windows"/>
+	</condition>
 
 	<!-- Directory of this build file (instead of the directory of whatever includes this file)-->
 	<dirname property="hr-xsl.basedir" file="${ant.file.hr-xsl}/.."/>
@@ -68,6 +73,7 @@ Author: Trevor Harmon
 	<presetdef name="saxon">
 		<!-- The processor=SaxonLiaison setting causes our custom XSLTLiaison class to be used. -->
 		<!-- This works around bug #41314: http://issues.apache.org/bugzilla/show_bug.cgi?id=41314 -->
+		<!-- Should be fixed in Ant 1.8.0 by bug #46172: https://issues.apache.org/bugzilla/show_bug.cgi?id=46172 -->
 		<xslt classpath="${hr-xsl.basedir}/lib/saxon-b-8.8/saxon8.jar:${hr-xsl.basedir}/util" processor="SaxonLiaison">
 			<xmlcatalog>
 				<entity publicId="parameters" location="${basedir}/parameters.xsl"/>
@@ -210,7 +216,7 @@ Author: Trevor Harmon
 			<!-- Determine the filenames -->
 			<dirname property="in.dir" file="@{in}"/> 
 			<basename property="in.filename" file="@{in}" suffix=".xml"/>  
-			<property name="in" value="${in.dir}/${in.filename}"/>
+			<property name="in" value="${in.dir}${file.separator}${in.filename}"/>
 
 			<!-- Convert the HR-XML to HTML -->
 			<resume-to-html in="@{in}"/>
@@ -226,11 +232,14 @@ Author: Trevor Harmon
 				<sequential>
 					
 					<!-- Make sure the lynx command is available -->
-					<available file="lynx" filepath="${env.PATH}" property="lynx-available"/>
-					<fail unless="lynx-available" message="Could not create plain-text version of resume because lynx was not found on the path (${env.PATH}). Please install Lynx (http://lynx.isc.org/)."/>
-					
+					<condition property="lynx.executable" value="lynx.exe" else="lynx">
+						<os family="windows"/>
+					</condition>
+					<available file="${lynx.executable}" filepath="${PATH}" type="file" property="lynx-available"/>
+					<fail unless="lynx-available" message="Could not create plain-text version of resume because ${lynx.executable} was not found on the path (${PATH}). Please install Lynx (http://lynx.isc.org/)."/>
+
 					<!-- Use lynx to convert the HTML to plain text -->
-					<exec executable="lynx" output="${in}.txt">
+					<exec executable="${lynx.executable}" output="${in}.txt">
 						<arg line="-dump -nolist '${in}.html'"/>
 					</exec>
 
