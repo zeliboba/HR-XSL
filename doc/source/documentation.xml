@@ -85,7 +85,7 @@
 	    	</para>
 	
 			<para>
-				  Another benefit of HR-XSL is that it simplifies the writing process. By allowing the computer to handle the presentation of the data, you can focus on the specific content of your CV or résumé and avoid worrying about line spacing, indentation, and other formatting concerns. Updating the content is also easier because you can defer (or entirely ignore) decisions such as what font to use<footnote><para>HR-XSL itself does not provide explicit customization of appearance, such as font family or size. Instead, the output appearance can be changed through HTML stylesheets and DocBook parameters, as described in <xref linkend="DocBook_Customization"/>.</para></footnote> or how to display a date (e.g., September 7, Sep. 7, or 9/7). The automation provided by the stylesheets also ensures consistency: When and if you decide to specify a font or date format, it will be used consistently throughout the document.
+				  Another benefit of HR-XSL is that it simplifies the writing process. By allowing the computer to handle the presentation of the data, you can focus on the specific content of your CV or résumé and avoid worrying about line spacing, indentation, and other formatting concerns. Updating the content is also easier because you can defer (or entirely ignore) decisions such as what font to use<footnote><para>HR-XSL itself does not provide explicit customization of appearance, such as font family or size. Instead, the output appearance can be changed through HTML stylesheets and DocBook XSL parameters, as described in <xref linkend="DocBook_Customization"/>.</para></footnote> or how to display a date (e.g., September 7, Sep. 7, or 9/7). The automation provided by the stylesheets also ensures consistency: When and if you decide to specify a font or date format, it will be used consistently throughout the document.
 			</para>
 
 		</sect1>
@@ -155,7 +155,7 @@
 			</para>
 			
 			<para>
-				Realistically, though, HR-XSL has only been tested with the XSLT processors and DocBook stylesheets included in the <filename class="directory">lib</filename> directory of the distribution. In fact, <ulink url="http://saxon.sourceforge.net/">Saxon-B</ulink> is probably the only open-source XSLT processor capable of handling the HR-XSL stylesheets properly. It is therefore recommended that you use only the bundled libraries (unless you have some compelling reason not to).
+				Realistically, though, HR-XSL has only been tested with the XSLT processors and DocBook XSL stylesheets included in the <filename class="directory">lib</filename> directory of the distribution. In fact, <ulink url="http://saxon.sourceforge.net/">Saxon-B</ulink> is probably the only open-source XSLT processor capable of handling the HR-XSL stylesheets properly. It is therefore recommended that you use only the bundled libraries (unless you have some compelling reason not to).
 			</para>
 
 		</sect1>
@@ -334,7 +334,7 @@
 		</sect1> 
 				
 		<sect1 id="DocBook_Customization">
-			<title>DocBook Customization</title>
+			<title>DocBook XSL Customization</title>
 
 			<para>
 				The DocBook transformation is customized mostly by means of stylesheet parameters. <ulink url="http://en.wikipedia.org/wiki/Cascading_Style_Sheets">Cascading Style Sheets</ulink> can also be used to customize the DocBook transformation to HTML.
@@ -348,11 +348,11 @@
 				</para>
 				
 				<para>
-				 	<xref linkend="docbook.stylesheet.parameters"/> lists some typical DocBook parameters you might need when using HR-XSL. Note that this is only a small subset of the available DocBook parameters; for a complete list, refer to the <ulink url="http://docbook.sourceforge.net/release/xsl/current/doc/html/index.html">HTML Parameter Reference</ulink> or, for PDF output, the <ulink url="http://docbook.sourceforge.net/release/xsl/current/doc/fo/index.html">FO Parameter Reference</ulink>.
+				 	<xref linkend="docbook.stylesheet.parameters"/> lists some typical DocBook XSL parameters you might need when using HR-XSL. Note that this is only a small subset of the available DocBook XSL parameters; for a complete list, refer to the <ulink url="http://docbook.sourceforge.net/release/xsl/current/doc/html/index.html">HTML Parameter Reference</ulink> or, for PDF output, the <ulink url="http://docbook.sourceforge.net/release/xsl/current/doc/fo/index.html">FO Parameter Reference</ulink>.
 				</para>
 		
 				<table id="docbook.stylesheet.parameters">
-					<title>DocBook Stylesheet Parameters</title>
+					<title>DocBook XSL Stylesheet Parameters</title>
 					<tgroup cols="3">
 						<thead>
 							<row>
@@ -392,7 +392,7 @@
 				</table>
 
 				<para>
-					Note that some DocBook parameters are complex and cannot be specified with the <code>&lt;xsl:param&gt;</code> element. Instead, you must specify them using the <code><ulink url="http://www.w3schools.com/xsl/el_attributeset.asp">&lt;xsl:attribute-set&gt;</ulink></code> element. For example, to change the font size of all Section 1 titles in PDF output, you would specify an attribute set for <ulink url="http://docbook.sourceforge.net/release/xsl/current/doc/fo/section.title.level1.properties.html"><varname>section.title.level1.properties</varname></ulink>:
+					Note that some DocBook XSL parameters are complex and cannot be specified with the <code>&lt;xsl:param&gt;</code> element. Instead, you must specify them using the <code><ulink url="http://www.w3schools.com/xsl/el_attributeset.asp">&lt;xsl:attribute-set&gt;</ulink></code> element. For example, to change the font size of all Section 1 titles in PDF output, you would specify an attribute set for <ulink url="http://docbook.sourceforge.net/release/xsl/current/doc/fo/section.title.level1.properties.html"><varname>section.title.level1.properties</varname></ulink>:
 				</para>
 				
 				<programlisting>
