@@ -195,7 +195,7 @@
 				<xsl:if test="sep:Recipient/sep:PersonName"> 
 					<row> 
 						<entry>
-						<xsl:apply-templates select="sep:Recipient/sep:PersonName"/> 
+							<xsl:apply-templates select="sep:Recipient/sep:PersonName"/> 
 						</entry>
 					</row>
 				</xsl:if> 
@@ -203,7 +203,7 @@
 				<xsl:if test="sep:Recipient/sep:OrganizationName"> 
 					<row> 
 						<entry>
-						<xsl:value-of select="sep:Recipient/sep:OrganizationName"/> 
+							<xsl:value-of select="sep:Recipient/sep:OrganizationName"/> 
 						</entry>
 					</row>
 				</xsl:if> 
@@ -211,7 +211,7 @@
 				<xsl:for-each select="sep:DeliveryAddress/sep:AddressLine">  
 					<row> 
 						<entry>
-						<xsl:value-of select="."/> 
+							<xsl:value-of select="."/> 
 						</entry>
 					</row>
 				</xsl:for-each> 
@@ -219,11 +219,11 @@
 				<xsl:if test="sep:DeliveryAddress/sep:PostOfficeBox">  
 					<row> 
 						<entry>
-						<xsl:call-template name="message"> 
-							<xsl:with-param name="name">contactMethod.POBox</xsl:with-param> 
-						</xsl:call-template> 
-						<xsl:text> </xsl:text> 
-						<xsl:value-of select="sep:DeliveryAddress/sep:PostOfficeBox"/> 
+							<xsl:call-template name="message"> 
+								<xsl:with-param name="name">contactMethod.POBox</xsl:with-param> 
+							</xsl:call-template> 
+							<xsl:text> </xsl:text> 
+							<xsl:value-of select="sep:DeliveryAddress/sep:PostOfficeBox"/> 
 						</entry>
 					</row>
 				</xsl:if> 
@@ -233,19 +233,19 @@
 					<row> 
 						<entry>
 		 
-						<xsl:if test="sep:DeliveryAddress/sep:BuildingNumber"> 
-							<xsl:value-of select="sep:DeliveryAddress/sep:BuildingNumber"/> 
-						</xsl:if> 
+							<xsl:if test="sep:DeliveryAddress/sep:BuildingNumber"> 
+								<xsl:value-of select="sep:DeliveryAddress/sep:BuildingNumber"/> 
+							</xsl:if> 
 				 
-						<xsl:if test="sep:DeliveryAddress/sep:StreetName"> 
-							<xsl:text> </xsl:text> 
-							<xsl:value-of select="sep:DeliveryAddress/sep:StreetName"/> 
-						</xsl:if> 
+							<xsl:if test="sep:DeliveryAddress/sep:StreetName"> 
+								<xsl:text> </xsl:text> 
+								<xsl:value-of select="sep:DeliveryAddress/sep:StreetName"/> 
+							</xsl:if> 
 				 
-						<xsl:if test="sep:DeliveryAddress/sep:Unit"> 
-							<xsl:text> </xsl:text> 
-							<xsl:value-of select="sep:DeliveryAddress/sep:Unit"/> 
-						</xsl:if> 
+							<xsl:if test="sep:DeliveryAddress/sep:Unit"> 
+								<xsl:text> </xsl:text> 
+								<xsl:value-of select="sep:DeliveryAddress/sep:Unit"/> 
+							</xsl:if> 
 			 
 						</entry>
 					</row>
@@ -254,30 +254,88 @@
 		 
 				<row> 
 					<entry>
+						
+						<xsl:choose>
 
-						<xsl:if test="sep:Municipality"> 
-							<xsl:value-of select="sep:Municipality"/> 
-							<xsl:text>, </xsl:text> 
-						</xsl:if> 
+							<xsl:when test="matches(sep:CountryCode,'US|CA')">
 
-						<xsl:for-each select="sep:Region"> 
-							<xsl:value-of select="."/> 
-							<xsl:text> </xsl:text> 
-						</xsl:for-each> 
-		 
-						<xsl:if test="sep:PostalCode"> 
-							<xsl:value-of select="sep:PostalCode"/> 
-						</xsl:if> 
-					
+								<!-- Order: Municipality, Region, PostalCode -->
+
+								<xsl:if test="sep:Municipality"> 
+									<xsl:value-of select="sep:Municipality"/> 
+									<xsl:text>, </xsl:text> 
+								</xsl:if> 
+
+								<xsl:for-each select="sep:Region"> 
+									<xsl:value-of select="."/> 
+									<xsl:text> </xsl:text> 
+								</xsl:for-each> 
+
+								<xsl:if test="sep:PostalCode"> 
+									<xsl:value-of select="sep:PostalCode"/> 
+								</xsl:if> 
+
+							</xsl:when>
+
+							<xsl:when test="matches(sep:CountryCode,'ES')">
+
+								<!-- Order: PostalCode, Region, Municipality -->
+
+								<xsl:if test="sep:PostalCode"> 
+									<xsl:value-of select="sep:PostalCode"/> 
+									<xsl:text> </xsl:text> 
+								</xsl:if> 
+
+								<xsl:for-each select="sep:Region"> 
+									<xsl:value-of select="."/>
+									<xsl:if test="position() != last()">
+										<xsl:text> </xsl:text> 
+									</xsl:if>
+								</xsl:for-each>
+
+								<xsl:if test="sep:Municipality">
+									<xsl:text>, </xsl:text>
+									<xsl:value-of select="sep:Municipality"/>
+								</xsl:if> 
+
+							</xsl:when>
+
+							<xsl:otherwise>
+
+								<!-- Order: PostalCode, Municipality, Region" -->
+
+								<xsl:if test="sep:PostalCode"> 
+									<xsl:value-of select="sep:PostalCode"/> 
+									<xsl:text> </xsl:text> 
+								</xsl:if> 
+
+								<xsl:if test="sep:Municipality"> 
+									<xsl:value-of select="sep:Municipality"/> 
+									<xsl:if test="sep:Region"> 
+										<xsl:text>, </xsl:text> 
+									</xsl:if>
+								</xsl:if> 
+
+								<xsl:for-each select="sep:Region"> 
+									<xsl:value-of select="."/> 
+									<xsl:text> </xsl:text> 
+								</xsl:for-each> 
+
+							</xsl:otherwise>
+
+						</xsl:choose>
+
 					</entry>
 				</row>
 				 
 				<xsl:if test="sep:CountryCode"> 
 					<row> 
 						<entry>
+
 							<xsl:call-template name="message"> 
 								<xsl:with-param name="name">countryCode.<xsl:value-of select="sep:CountryCode"/></xsl:with-param> 
 							</xsl:call-template> 
+
 						</entry>
 					</row>
 				</xsl:if> 
