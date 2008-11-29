@@ -257,7 +257,7 @@
 						
 						<xsl:choose>
 
-							<xsl:when test="matches(sep:CountryCode,'US|CA')">
+							<xsl:when test="matches(sep:CountryCode,'US|CA|GB|AU|ID|IN|NZ|SG|TW')">
 
 								<!-- Order: Municipality, Region, PostalCode -->
 
