@@ -10,10 +10,8 @@ Author: Trevor Harmon
 	<!-- Handle to the environment properties -->
 	<property environment="env"/>
 	
-	<!-- Special handling for Windows path variable -->
-	<condition property="PATH" value="${env.Path}" else="${env.PATH}">
-		<os family="windows"/>
-	</condition>
+	<!-- Special case to deal with Windows using "Path" instead of "PATH" -->
+	<property name="env.PATH" value="${env.Path}"/>
 
 	<!-- Directory of this build file (instead of the directory of whatever includes this file)-->
 	<dirname property="hr-xsl.basedir" file="${ant.file.hr-xsl}/.."/>
@@ -240,8 +238,8 @@ Author: Trevor Harmon
 					<condition property="lynx.executable" value="lynx.exe" else="lynx">
 						<os family="windows"/>
 					</condition>
-					<available file="${lynx.executable}" filepath="${PATH}" type="file" property="lynx-available"/>
-					<fail unless="lynx-available" message="Could not create plain-text version of resume because ${lynx.executable} was not found on the path (${PATH}). Please install Lynx (http://lynx.isc.org/)."/>
+					<available file="${lynx.executable}" filepath="${env.PATH}" type="file" property="lynx-available"/>
+					<fail unless="lynx-available" message="Could not create plain-text version of resume because ${lynx.executable} was not found on the path (${env.PATH}). Please install Lynx (http://lynx.isc.org/)."/>
 
 					<!-- Use lynx to convert the HTML to plain text -->
 					<exec executable="${lynx.executable}" output="${in}.txt">
