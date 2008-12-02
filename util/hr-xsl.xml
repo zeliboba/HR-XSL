@@ -25,9 +25,13 @@ Author: Trevor Harmon
 	<property name="hr-xml.dir" value="${hr-xsl.basedir}/lib/hr-xml-2.5/HR-XML-2_5"/>
 
 	<path id="saxon.classpath">   
-		<fileset dir="${hr-xsl.basedir}/lib/saxon-b-8.8">   
+		<fileset dir="${hr-xsl.basedir}/lib/saxon-b-9.1.0.2">   
 			<include name="**/*.jar"/>   
-		</fileset>   
+		</fileset> 
+		<!-- Adding this location to the path allows our custom XSLTLiaison class to be used. -->
+		<!-- This works around bug #41314: http://issues.apache.org/bugzilla/show_bug.cgi?id=41314 -->
+		<!-- Should be fixed in Ant 1.8.0 by bug #46172: https://issues.apache.org/bugzilla/show_bug.cgi?id=46172 -->
+		<pathelement location="${hr-xsl.basedir}/util"/>  
 	</path>   
 
 	<!-- Load the FOP task -->
@@ -75,7 +79,7 @@ Author: Trevor Harmon
 		<!-- The processor=SaxonLiaison setting causes our custom XSLTLiaison class to be used. -->
 		<!-- This works around bug #41314: http://issues.apache.org/bugzilla/show_bug.cgi?id=41314 -->
 		<!-- Should be fixed in Ant 1.8.0 by bug #46172: https://issues.apache.org/bugzilla/show_bug.cgi?id=46172 -->
-		<xslt classpath="${hr-xsl.basedir}/lib/saxon-b-8.8/saxon8.jar:${hr-xsl.basedir}/util" processor="SaxonLiaison">
+		<xslt classpathref="saxon.classpath" processor="SaxonLiaison">
 			<xmlcatalog>
 				<entity publicId="parameters" location="${basedir}/parameters.xsl"/>
 			</xmlcatalog>
