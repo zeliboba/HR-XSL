@@ -233,15 +233,38 @@
 					<row> 
 						<entry>
 		 
-							<xsl:if test="sep:DeliveryAddress/sep:BuildingNumber"> 
-								<xsl:value-of select="sep:DeliveryAddress/sep:BuildingNumber"/> 
-							</xsl:if> 
-				 
-							<xsl:if test="sep:DeliveryAddress/sep:StreetName"> 
-								<xsl:text> </xsl:text> 
-								<xsl:value-of select="sep:DeliveryAddress/sep:StreetName"/> 
-							</xsl:if> 
-				 
+							<xsl:choose>
+
+								<!-- In German and Austrian addresses, StreetName comes before BuildingNumber -->
+								<xsl:when test="matches(sep:CountryCode,'DE|AT')">
+
+									<xsl:if test="sep:DeliveryAddress/sep:StreetName"> 
+										<xsl:value-of select="sep:DeliveryAddress/sep:StreetName"/> 
+									</xsl:if> 
+						 
+									<xsl:if test="sep:DeliveryAddress/sep:BuildingNumber"> 
+										<xsl:text> </xsl:text> 
+										<xsl:value-of select="sep:DeliveryAddress/sep:BuildingNumber"/> 
+									</xsl:if> 
+
+								</xsl:when>
+
+								<!-- Otherwise BuildingNumber comes before StreetName -->
+								<xsl:otherwise>
+
+									<xsl:if test="sep:DeliveryAddress/sep:BuildingNumber"> 
+										<xsl:value-of select="sep:DeliveryAddress/sep:BuildingNumber"/> 
+									</xsl:if> 
+						 
+									<xsl:if test="sep:DeliveryAddress/sep:StreetName"> 
+										<xsl:text> </xsl:text> 
+										<xsl:value-of select="sep:DeliveryAddress/sep:StreetName"/> 
+									</xsl:if> 
+
+								</xsl:otherwise>
+
+							</xsl:choose>
+
 							<xsl:if test="sep:DeliveryAddress/sep:Unit"> 
 								<xsl:text> </xsl:text> 
 								<xsl:value-of select="sep:DeliveryAddress/sep:Unit"/> 
