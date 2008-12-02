@@ -260,11 +260,9 @@ Author: Trevor Harmon
 	<macrodef name="validate">
 		<attribute name="in" description="The filename of the HR-XML resume"/>
 		<sequential>
-			<exec executable="xmllint">
-				<arg line="--noout"/>
-				<arg line="--schema ${hr-xml.dir}/SEP/Resume.xsd"/>
-				<arg line="@{in}"/>
-			</exec>
+			<schemavalidate file="@{in}" lenient="false" failonerror="true" warn="true">
+				<schema namespace="http://ns.hr-xml.org/2007-04-15" file="${hr-xml.dir}/SEP/Resume.xsd"/>
+			</schemavalidate>
 		</sequential>
 	</macrodef>
 	
