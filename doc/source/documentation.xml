@@ -226,7 +226,11 @@
 			</para>
 			
 			<para>
-				One such tool is known as <emphasis>xmllint</emphasis>. If you have this program installed, you can validate your CV or résumé by running the following command:
+				The examples bundled with HR-XSL demonstrate one way of validating an HR-XML file. Simply switch to one of the example directories and type <userinput>ant validate</userinput>. If the command succeeds with no errors, the file is valid; otherwise, errors will be shown. (The command uses Ant's <function>&lt;schemavalidate&gt;</function> task to perform the validation. Refer to the <filename>util/hr-xsl.xml</filename> file to see how it is invoked.)
+			</para>
+			
+			<para>
+				Another way to validate an HR-XML file is with a tool called <emphasis>xmllint</emphasis>. If you have this program installed, you can validate your CV or résumé by running the following command:
 			</para>
 			
 			<blockquote>
@@ -236,7 +240,7 @@
 			</blockquote>
 				
 			<para>
-				Here, <filename>Resume.xsd</filename> refers to the XML Schema Definition file for HR-XML Resume, which can be obtained by downloading the <ulink url="http://sourceforge.net/project/showfiles.php?group_id=50922&amp;package_id=196442">HR-XML distribution</ulink>.
+				Here, <filename>Resume.xsd</filename> refers to the XML Schema Definition file for HR-XML Resume, which is bundled with <filename class="directory">HR-XSL</filename> in the lib directory.
 			</para>
 		</sect1>
 		
