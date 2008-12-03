@@ -7,6 +7,10 @@ Author: Trevor Harmon
 
 <project name="hr-xsl" default="all">
 
+	<!-- Require Ant 1.8 or higher so that the Xslt task uses Saxon properly -->
+	<antversion property="ant.version.1.8" atleast="1.8"/>
+	<fail unless="ant.version.1.8" message="Ant 1.8 or higher is required"/>
+
 	<!-- Handle to the environment properties -->
 	<property environment="env"/>
 	
@@ -28,11 +32,17 @@ Author: Trevor Harmon
 		<fileset dir="${hr-xsl.basedir}/lib/saxon-b-9.1.0.2">   
 			<include name="**/*.jar"/>   
 		</fileset> 
-		<!-- Adding this location to the path allows our custom XSLTLiaison class to be used. -->
-		<!-- This works around bug #41314: http://issues.apache.org/bugzilla/show_bug.cgi?id=41314 -->
-		<!-- Should be fixed in Ant 1.8.0 by bug #46172: https://issues.apache.org/bugzilla/show_bug.cgi?id=46172 -->
-		<pathelement location="${hr-xsl.basedir}/util"/>  
 	</path>   
+
+	<!-- Performs an XSL translation of an XML file using the Saxon processor. -->
+	<presetdef name="saxon">
+		<xslt classpathref="saxon.classpath">
+			<factory name="net.sf.saxon.TransformerFactoryImpl"/>
+			<xmlcatalog>
+				<entity publicId="parameters" location="${basedir}/parameters.xsl"/>
+			</xmlcatalog>
+		</xslt>
+	</presetdef>
 
 	<!-- Load the FOP task -->
     <taskdef name="fop" classname="org.apache.fop.tools.anttasks.Fop">
@@ -74,18 +84,6 @@ Author: Trevor Harmon
 		</sequential>
 	</macrodef>
 	
-	<!-- Performs an XSL translation of an XML file using the Saxon processor. -->
-	<presetdef name="saxon">
-		<!-- The processor=SaxonLiaison setting causes our custom XSLTLiaison class to be used. -->
-		<!-- This works around bug #41314: http://issues.apache.org/bugzilla/show_bug.cgi?id=41314 -->
-		<!-- Should be fixed in Ant 1.8.0 by bug #46172: https://issues.apache.org/bugzilla/show_bug.cgi?id=46172 -->
-		<xslt classpathref="saxon.classpath" processor="SaxonLiaison">
-			<xmlcatalog>
-				<entity publicId="parameters" location="${basedir}/parameters.xsl"/>
-			</xmlcatalog>
-		</xslt>
-	</presetdef>
-
 	<!-- Converts an HR-XML resume file into DocBook format -->
 	<macrodef name="resume-to-docbook">
 		<attribute name="in" description="The filename of the HR-XML resume"/>
