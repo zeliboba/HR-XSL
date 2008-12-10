@@ -7,6 +7,7 @@
 
 	<!-- Example of localization -->
 	<!-- <xsl:param name="lang" select="'it'"/>  -->
+	<!-- <xsl:param name="l10n.gentext.default.language">it</xsl:param> -->
 
 
 	<!-- DocBook parameters -->
