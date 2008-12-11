@@ -107,8 +107,10 @@ Author: Trevor Harmon
 		<sequential> 
 			<saxon in="@{in}" out="@{out}" style="${hr-xsl.basedir}/util/customization-layer.xsl">
 				<xmlcatalog> 
-					<entity publicId="stylesheet" location="${docbook.xsl.dir}/@{format}/docbook.xsl"/> 
-				</xmlcatalog> 
+					<entity publicId="stylesheet" location="${docbook.xsl.dir}/@{format}/docbook.xsl"/>
+					<!-- Use the local DocBook DTD so that translations can be performed offline -->
+					<dtd publicId="-//OASIS//DTD DocBook XML V4.5//EN" location="${docbook.xml.dir}/docbookx.dtd"/>
+				</xmlcatalog>
 			</saxon>
 		</sequential> 
 	</macrodef>
