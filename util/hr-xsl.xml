@@ -26,7 +26,11 @@ Author: Trevor Harmon
 	<!-- Location of the DocBook DTD -->
 	<property name="docbook.xml.dir" value="${hr-xsl.basedir}/lib/docbook-xml-4.5"/> 
 	
+	<!-- Location of HR-XML distribution -->
 	<property name="hr-xml.dir" value="${hr-xsl.basedir}/lib/hr-xml-2.5/HR-XML-2_5"/>
+	
+	<!-- Location of user's XSL parameters file -->
+	<property name="parameters.file" value="${basedir}/parameters.xsl"/>
 
 	<path id="saxon.classpath">   
 		<fileset dir="${hr-xsl.basedir}/lib/saxon-b-9.1.0.2">   
@@ -39,7 +43,7 @@ Author: Trevor Harmon
 		<xslt classpathref="saxon.classpath">
 			<factory name="net.sf.saxon.TransformerFactoryImpl"/>
 			<xmlcatalog>
-				<entity publicId="parameters" location="${basedir}/parameters.xsl"/>
+				<entity publicId="parameters" location="${parameters.file}"/>
 			</xmlcatalog>
 		</xslt>
 	</presetdef>
