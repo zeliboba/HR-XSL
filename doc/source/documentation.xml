@@ -288,7 +288,15 @@
 				
 				<para>
 					If you are using the included HR-XSL helper script (<filename>util/hr-xsl.xml</filename>), you simply add these elements to a file called <filename>parameters.xsl</filename>, then place this file in the same directory as your build script. Refer to the examples in the HR-XSL distribution (in the <filename class="directory">examples</filename> directory) to see how this is done.<footnote><para>If for some reason you are not using the included helper script, you will need to create a <ulink url="http://www.sagehill.net/docbookxsl/CustomMethods.html#CustomizationLayer">customization layer</ulink> and add your parameters there. See the <filename>customization-layer.xsl</filename> file in the <filename class="directory">util</filename> directory for an example.</para></footnote>
-				</para>					
+				</para>
+				
+				<para>
+					To use a different file name, specify a value for the <varname>parameters.file</varname> property when launching Ant. For example:
+				</para>
+				
+				<para>
+					<userinput>ant -Dparameters.file=<replaceable>myfile.xsl</replaceable></userinput>
+				</para>
 			
 				<para>					
 <xref linkend="hr-xsl.stylesheet.parameters"/> lists the parameters that can be used in HR-XSL. (Currently, there is only one parameter, but future versions of HR-XSL should offer more.)
