@@ -31,7 +31,14 @@ Author: Trevor Harmon
 	
 	<!-- Location of user's XSL parameters file -->
 	<property name="parameters.file" value="${basedir}/parameters.xsl"/>
-
+	<fail message="The XSL parameters file (${parameters.file}) could not be found. You might need to specify the full path to the file.">
+		<condition>
+			<not>
+				<available file="${parameters.file}"/>
+			</not>
+		</condition>
+	</fail>
+	
 	<path id="saxon.classpath">   
 		<fileset dir="${hr-xsl.basedir}/lib/saxon-b-9.1.0.2">   
 			<include name="**/*.jar"/>   
