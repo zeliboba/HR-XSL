@@ -1,3 +1,31 @@
+0.13 (2010-02-21) Trevor Harmon
+Libraries
+	- Upgraded Saxon-B to 9.1.0.8
+	- Upgraded JTidy to r938
+	- Upgraded DocBook XSL to 1.74.0
+	- Upgraded FOP to 0.95
+	- Added offo-hyphenation so FOP can use it
+Build script
+	- Added error checking for the parameters.file property so that a friendlier message is displayed if the parameters file is not found
+	- Made parameters.xsl file name configurable in hr-xsl.xml script
+	- Implemented feature request #2411472: Allow off-line work
+	- Ant 1.8.0 or higher is now required to run the build script. This allows removal of the SaxonLiason hack.
+	- Changed the validate macro to use Ant's built-in cross-platform SchemaValidate task, instead of relying on the external xmllint program
+	- Fixed handling of path variable so that both "Path" and "PATH" work on Windows
+	- Fixed Lynx to run on Windows
+Stylesheets
+	- Fixed doctype in DocBook output to specify 4.5 version of DocBook
+	- Added German translation (patch #2406217). Thanks Adrian!
+	- Fixed bug #2404574: localization example in parameters.xsl is incomplete. Thanks Adrian!
+	- Added special handling of German and Austrian addresses so that StreetName comes before BuildingNumber
+	- Changed PostalAddress handling to support non-US and non-Canadian ordering of postal code, region, and municipality
+	- Publications and speaking events are now sorted by date
+Documentation
+	- Updated the section on validating an HR-XML file
+	- Fixed bug #1939268: miscellaneous documentation issues
+Web site
+	- Added link to JobStairs, which supports HR-XML
+	
 0.12 (2007-10-07) Trevor Harmon
 Stylesheets
 	- Email in ContactInfo now uses DocBook's <email> tag instead of <ulink> for better output formatting. Thanks to Guido De Rosa for the patch!
