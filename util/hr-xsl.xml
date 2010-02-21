@@ -40,7 +40,7 @@ Author: Trevor Harmon
 	</fail>
 	
 	<path id="saxon.classpath">   
-		<fileset dir="${hr-xsl.basedir}/lib/saxon-b-9.1.0.2">   
+		<fileset dir="${hr-xsl.basedir}/lib/saxon-b-9.1.0.8">
 			<include name="**/*.jar"/>   
 		</fileset> 
 	</path>   
@@ -71,7 +71,7 @@ Author: Trevor Harmon
 	<!-- Load the JTidy task -->
 	<taskdef name="tidy" classname="org.w3c.tidy.ant.JTidyTask">
 		<classpath>
-			<pathelement location="${hr-xsl.basedir}/lib/jtidy-r8-SNAPSHOT/jtidy-r8-SNAPSHOT.jar"/>
+			<pathelement location="${hr-xsl.basedir}/lib/jtidy-r938/jtidy-r938.jar"/>
 		</classpath>
 	</taskdef>
 
