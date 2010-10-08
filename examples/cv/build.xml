@@ -4,7 +4,7 @@
 
 	<import file="../../util/hr-xsl.xml"/>
 
-	<target name="all" depends="html, pdf, text"/>
+	<target name="all" depends="html, pdf, rtf, text"/>
 
 	<target name="html">
 		<resume-to-html in="cv.xml"/>
@@ -12,6 +12,10 @@
 
 	<target name="pdf">
 		<resume-to-pdf in="cv.xml"/>
+	</target>
+
+	<target name="rtf">
+		<resume-to-rtf in="cv.xml"/>
 	</target>
 
 	<target name="text">
@@ -27,6 +31,7 @@
 		<delete file="cv.html"/>
 		<delete file="cv.fo"/>
 		<delete file="cv.pdf"/>
+		<delete file="cv.rtf"/>
 		<delete file="cv.txt"/>
 	</target>
 

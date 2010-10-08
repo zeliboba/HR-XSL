@@ -227,6 +227,64 @@ Author: Trevor Harmon
 
 		</sequential> 
 	</macrodef> 
+
+	<!-- Converts an HR-XML resume to RTF -->
+	<macrodef name="resume-to-rtf"> 
+		<attribute name="in" description="The filename of the HR-XML resume"/> 
+		<sequential> 
+
+			<!-- Determine the filenames -->
+			<dirname property="in.dir" file="@{in}"/> 
+			<basename property="in.filename" file="@{in}" suffix=".xml"/>  
+			<property name="in" value="${in.dir}/${in.filename}"/>
+
+			<!-- Convert the HR-XML to DocBook -->
+			<outofdate>
+				<sourcefiles>
+					<pathelement path="@{in}"/>
+				</sourcefiles>
+				<targetfiles>
+					<pathelement path="${in}-docbook.xml"/>
+				</targetfiles>
+				<sequential>
+					<resume-to-docbook in="@{in}"/> 
+					<!-- Do not tidy the XML output. Both jTidy and xmllint are unable to preserve spaces properly when tidying. -->
+					<!-- <tidy-xml in="${in}-docbook.xml"/> -->
+				</sequential>
+			</outofdate>
+
+			<!-- Convert the DocBook to FO -->
+			<outofdate> 
+				<sourcefiles> 
+					<pathelement path="${in}-docbook.xml"/> 
+				</sourcefiles> 
+				<targetfiles> 
+					<pathelement path="${in}.fo"/> 
+				</targetfiles> 
+				<sequential> 
+					<docbook-to format="fo" in="${in}-docbook.xml" out="${in}.fo"/>  
+					<!-- Do not tidy the XML output. Both jTidy and xmllint are unable to preserve spaces properly when tidying. -->
+					<!-- <tidy-xml in="${in}.fo"/>  -->
+				</sequential> 
+			</outofdate> 
+
+			<!-- Convert the FO to RTF -->
+			<outofdate> 
+				<sourcefiles> 
+					<pathelement path="${in}.fo"/> 
+				</sourcefiles> 
+				<targetfiles> 
+					<pathelement path="${in}.rtf"/> 
+				</targetfiles> 
+				<sequential> 
+					<fop fofile="${in}.fo" outfile="${in}.rtf"
+						userconfig="${hr-xsl.basedir}/lib/fop-0.95/conf/fop.xconf"
+						format="application/rtf"/> 
+				</sequential> 
+			</outofdate> 
+
+		</sequential> 
+	</macrodef> 
 	
 	<!-- Converts an HR-XML resume to plain text -->
 	<macrodef name="resume-to-text"> 
