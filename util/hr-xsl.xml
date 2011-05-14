@@ -106,7 +106,7 @@ Author: Trevor Harmon
 			<property name="in" value="${in.dir}/${in.filename}"/>
 			<saxon in="@{in}" out="${in}-docbook.xml" style="${hr-xsl.basedir}/util/customization-layer.xsl">
 				<xmlcatalog>
-					<entity publicId="stylesheet" location="${hr-xsl.basedir}/xsl/docbook/hr-xsl.xsl"/>
+					<entity publicId="stylesheet" location="${hr-xsl.basedir}/xsl/europass-xsl-V2.0/cv_en_GB_V2.0.xsl"/>
 				</xmlcatalog>
 			</saxon>
 		</sequential>
